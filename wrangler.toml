@@ -1,0 +1,30 @@
+name = "clinuxflow-api"
+main = "src/index.js"
+compatibility_date = "2026-07-19"
+
+# Import .yaml files as raw text (e.g. data/vitals-room.yaml) — Workers has no filesystem, so
+# everything the routes used to read via fs.readFileSync is now a bundled import instead.
+[[rules]]
+type = "Text"
+globs = ["**/*.yaml"]
+fallthrough = true
+
+# Workers AI binding — used by POST /api/workflow/test-scribe. Authenticates automatically for
+# this account; no API token/account ID needs to be configured for the Worker itself.
+# Note: `wrangler dev` needs an authenticated session (`wrangler login` or a valid
+# CLOUDFLARE_API_TOKEN) to simulate this binding locally — without it, `wrangler dev` will fail
+# to start entirely. Deploys are unaffected either way.
+[ai]
+binding = "AI"
+
+# D1 binding for src/lib/local-queue-manager.js (replaces better-sqlite3, which can't run in
+# Workers). Schema + legacy data seed live in migrations/.
+[[d1_databases]]
+binding = "DB"
+database_name = "clinuxflow"
+database_id = "a0679d3f-5f0a-421b-95a0-6f115f6a0924"
+
+# KV binding for src/lib/forms-library.js (replaces on-disk forms-library/<formId>/ writes).
+[[kv_namespaces]]
+binding = "FORMS_LIBRARY"
+id = "8effbe91589544ceb48e5f69fd2fda62"

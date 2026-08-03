@@ -1,0 +1,60 @@
+formId: advanced-clinical-matrix-v1
+title: "Comprehensive Multi-Specialty Examination Layout"
+composition:
+  - resourceType: Patient
+    id: section_demographics
+    label: "1. Administrative Demographics"
+    fields:
+      - id: "patient_gender" 
+        path: "Patient.gender"
+        label: "Biological Sex at Birth"
+        uiComponent: "Dropdown"
+        choices: ["male", "female", "other", "unknown"]
+        required: true
+  - resourceType: Observation
+    id: section_vitals
+    label: "2. Patient Vitals Matrix"
+    type: "group"
+    itemControl: "gtable"
+    repeats: true
+    fields:
+      - id: "systolic_bp" 
+        path: "Observation.component.valueQuantity.value"
+        label: "Systolic Blood Pressure"
+        uiComponent: "NumericInput"
+        unit: "mm[Hg]"
+        required: true
+      - id: "diastolic_bp"
+        path: "Observation.component.valueQuantity.value"
+        label: "Diastolic Blood Pressure"
+        uiComponent: "NumericInput"
+        unitChoices: ["mm[Hg]", "kPa"]
+  - resourceType: Condition
+    id: section_clinical
+    label: "3. Diagnostic Findings & Diagnostics"
+    fields:
+      - id: "condition_search" 
+        path: "Condition.clinicalStatus"
+        label: "Search Confirmed Diagnosis"
+        uiComponent: "Autocomplete"
+        valueSetUrl: "https://clinicaltables.nlm.nih.gov/fhir/R4/ValueSet/conditions" 
+        helpText: "Begin typing clinical terms to search SNOMED-CT database tables."
+      - id: "condition_severity"
+        path: "Condition.severity"
+        label: "Clinical Severity Scaling"
+        uiComponent: "Dropdown"
+        choices: ["Mild", "Moderate", "Severe"]
+        skipLogic:
+          sourceField: "condition_search" # Must match the updated source path string
+          operator: "exists"
+  - resourceType: MedicationRequest
+    id: section_medications
+    label: "4. Medication Management & Prescriptions"
+    fields:
+      - id: "medication_search" 
+        path: "MedicationRequest.medicationCodeableConcept"
+        label: "Search Prescribed Medications"
+        uiComponent: "Autocomplete"
+        valueSetUrl: "https://clinicaltables.nlm.nih.gov/fhir/R4/ValueSet/rxterms" 
+        helpText: "Begin typing medication names to search RxNorm database tables"
+

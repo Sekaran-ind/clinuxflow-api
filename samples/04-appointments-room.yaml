@@ -1,0 +1,31 @@
+formId: operations-scheduling-matrix-v1
+title: "Appointment Booking & Active Encounter Management"
+composition:
+  - resourceType: EpisodeOfCare
+    id: section_care_episode
+    label: "1. Active Long-Term Treatment Tracking"
+    fields:
+      - id: "episode_status"
+        path: "EpisodeOfCare.status"
+        label: "Episode Management Status"
+        description: "The overarching active administrative status tracking this continuous clinical care block."
+        uiComponent: "Dropdown"
+        choices: ["active", "finished", "cancelled"]
+        required: true
+
+  - resourceType: Encounter
+    id: section_visit_status
+    label: "2. Active Clinic Visit Status"
+    fields:
+      - id: "enc_status_tracker"
+        path: "Encounter.status"
+        label: "Encounter Lifecycle State"
+        description: "The operational phase of the patient clinic visit tracking from arrival to checkout."
+        uiComponent: "Dropdown"
+        choices: ["planned", "arrived", "in-progress", "finished", "cancelled"]
+        required: true
+      - id: "enc_period_start"
+        path: "Encounter.actualPeriod.start"
+        label: "Check-in Timestamp"
+        description: "The exact date and arrival clock time when the patient checked into the facility room slot."
+        uiComponent: "DatePicker"

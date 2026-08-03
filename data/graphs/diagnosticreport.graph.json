@@ -1,0 +1,1846 @@
+[
+  {
+    "path": "DiagnosticReport.resourceType",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a DiagnosticReport resource",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "resource",
+        "textinput",
+        "diagnosticreport"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"DiagnosticReport.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a DiagnosticReport resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.id",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "textinput",
+        "logical",
+        "resource",
+        "used",
+        "url",
+        "once",
+        "assigned",
+        "never",
+        "changes"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"DiagnosticReport.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.text",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "text",
+        "dropdown",
+        "human",
+        "readable",
+        "narrative",
+        "summary",
+        "resource",
+        "can",
+        "used",
+        "represent",
+        "content",
+        "need",
+        "not",
+        "encode",
+        "all",
+        "structured",
+        "data",
+        "but",
+        "required",
+        "contain",
+        "sufficient",
+        "detail",
+        "make",
+        "clinically",
+        "safe",
+        "just",
+        "read",
+        "definitions",
+        "may",
+        "define",
+        "what",
+        "should",
+        "represented",
+        "ensure",
+        "clinical",
+        "safety"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"DiagnosticReport.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "DiagnosticReport.extension",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"DiagnosticReport.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.modifierExtension",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "modifies",
+        "understanding",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "allowed",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"DiagnosticReport.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.identifier",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Identifiers assigned to this report by the performer or other systems.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "textinput",
+        "identifiers",
+        "assigned",
+        "performer",
+        "other",
+        "systems"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"DiagnosticReport.identifier\"\n        label: \"Enter identifier\"\n        description: \"Identifiers assigned to this report by the performer or other systems.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.identifier.id",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"DiagnosticReport.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.identifier.extension",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"DiagnosticReport.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.identifier.use",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The purpose of this identifier.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "use",
+        "textinput",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"DiagnosticReport.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "DiagnosticReport.identifier.type",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "dropdown",
+        "coded",
+        "can",
+        "used",
+        "determine",
+        "which",
+        "use",
+        "specific",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"DiagnosticReport.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "DiagnosticReport.identifier.system",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "system",
+        "textinput",
+        "establishes",
+        "namespace",
+        "url",
+        "describes",
+        "set",
+        "values",
+        "are",
+        "unique"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"DiagnosticReport.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.identifier.value",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "textinput",
+        "portion",
+        "typically",
+        "relevant",
+        "user",
+        "which",
+        "unique",
+        "within",
+        "context",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"DiagnosticReport.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.identifier.period",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "period",
+        "textinput",
+        "time",
+        "during",
+        "which",
+        "iswas",
+        "valid",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"DiagnosticReport.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.identifier.period.id",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"DiagnosticReport.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.identifier.period.extension",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"DiagnosticReport.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.identifier.period.start",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"DiagnosticReport.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.identifier.period.end",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"DiagnosticReport.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.identifier.assigner",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "assigner",
+        "traversalPath": "assigner.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "identifier",
+        "assigner",
+        "dropdown",
+        "organization",
+        "issuedmanages"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"DiagnosticReport.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "DiagnosticReport.basedOn",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "basedOn",
+        "traversalPath": "basedOn.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"based_on\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Details concerning a service requested.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "based",
+        "multiselect",
+        "details",
+        "concerning",
+        "service",
+        "requested"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"based_on\"\n        path: \"DiagnosticReport.basedOn\"\n        label: \"Enter basedOn\"\n        description: \"Details concerning a service requested.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.status",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"unknown\\\" | \\\"registered\\\" | \\\"preliminary\\\" | \\\"final\\\" | \\\"amended\\\" | \\\"corrected\\\" | \\\"cancelled\\\" | \\\"entered-in-error\\\" | \\\"partial\\\" | \\\"appended\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The status of the diagnostic report.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "status",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"DiagnosticReport.status\"\n        label: \"Enter status\"\n        description: \"The status of the diagnostic report.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "unknown",
+      "registered",
+      "preliminary",
+      "final",
+      "amended",
+      "corrected",
+      "cancelled",
+      "entered-in-error",
+      "partial",
+      "appended"
+    ]
+  },
+  {
+    "path": "DiagnosticReport.category",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"category\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "category",
+        "multiselect",
+        "code",
+        "classifies",
+        "clinical",
+        "discipline",
+        "department",
+        "service",
+        "created",
+        "cardiology",
+        "biochemistry",
+        "hematology",
+        "mri",
+        "used",
+        "searching",
+        "sorting",
+        "display",
+        "purposes"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"category\"\n        path: \"DiagnosticReport.category\"\n        label: \"Enter category\"\n        description: \"A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.code",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A code or name that describes this diagnostic report.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "code",
+        "dropdown",
+        "name",
+        "describes"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"DiagnosticReport.code\"\n        label: \"Enter code\"\n        description: \"A code or name that describes this diagnostic report.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "DiagnosticReport.subject",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"subject\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The subject of the report. Usually, but not always, this is a patient. However, diagnostic services also perform analyses on specimens collected from a variety of other sources.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "subject",
+        "dropdown",
+        "usually",
+        "but",
+        "not",
+        "always",
+        "patient",
+        "however",
+        "services",
+        "also",
+        "perform",
+        "analyses",
+        "specimens",
+        "collected",
+        "variety",
+        "other",
+        "sources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"subject\"\n        path: \"DiagnosticReport.subject\"\n        label: \"Enter subject\"\n        description: \"The subject of the report. Usually, but not always, this is a patient. However, diagnostic services also perform analyses on specimens collected from a variety of other sources.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "DiagnosticReport.encounter",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "encounter-link",
+        "targetResource": "encounter",
+        "traversalPath": "encounter.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"encounter\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The healthcare event (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "encounter",
+        "dropdown",
+        "healthcare",
+        "event",
+        "patient",
+        "provider",
+        "interaction",
+        "which",
+        "diagnosticreport",
+        "about"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"encounter\"\n        path: \"DiagnosticReport.encounter\"\n        label: \"Enter encounter\"\n        description: \"The healthcare event (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "DiagnosticReport.effectiveDateTime",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"effective_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "effective",
+        "date",
+        "time",
+        "textinput",
+        "period",
+        "observed",
+        "values",
+        "are",
+        "related",
+        "when",
+        "subject",
+        "patient",
+        "usually",
+        "either",
+        "procedure",
+        "specimen",
+        "collections",
+        "but",
+        "very",
+        "often",
+        "source",
+        "datetime",
+        "not",
+        "known",
+        "only",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"effective_date_time\"\n        path: \"DiagnosticReport.effectiveDateTime\"\n        label: \"Enter effectiveDateTime\"\n        description: \"The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.effectivePeriod",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"effective_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "effective",
+        "period",
+        "textinput",
+        "time",
+        "observed",
+        "values",
+        "are",
+        "related",
+        "when",
+        "subject",
+        "patient",
+        "usually",
+        "either",
+        "procedure",
+        "specimen",
+        "collections",
+        "but",
+        "very",
+        "often",
+        "source",
+        "datetime",
+        "not",
+        "known",
+        "only",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"effective_period\"\n        path: \"DiagnosticReport.effectivePeriod\"\n        label: \"Enter effectivePeriod\"\n        description: \"The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.effectivePeriod.id",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "effective",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"DiagnosticReport.effectivePeriod.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.effectivePeriod.extension",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "effective",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"DiagnosticReport.effectivePeriod.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.effectivePeriod.start",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "effective",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"DiagnosticReport.effectivePeriod.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.effectivePeriod.end",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "effective",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"DiagnosticReport.effectivePeriod.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.issued",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "Instant",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"issued\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "issued",
+        "textinput",
+        "date",
+        "time",
+        "version",
+        "made",
+        "available",
+        "providers",
+        "typically",
+        "after",
+        "reviewed",
+        "verified"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"issued\"\n        path: \"DiagnosticReport.issued\"\n        label: \"Enter issued\"\n        description: \"The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.performer",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "performer-link",
+        "targetResource": "performer",
+        "traversalPath": "performer.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"performer\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The diagnostic service that is responsible for issuing the report.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "performer",
+        "multiselect",
+        "service",
+        "responsible",
+        "issuing"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"performer\"\n        path: \"DiagnosticReport.performer\"\n        label: \"Enter performer\"\n        description: \"The diagnostic service that is responsible for issuing the report.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.resultsInterpreter",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "resultsInterpreter-link",
+        "targetResource": "resultsInterpreter",
+        "traversalPath": "resultsInterpreter.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"results_interpreter\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The practitioner or organization that is responsible for the report's conclusions and interpretations.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "results",
+        "interpreter",
+        "multiselect",
+        "practitioner",
+        "organization",
+        "responsible",
+        "reports",
+        "conclusions",
+        "interpretations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"results_interpreter\"\n        path: \"DiagnosticReport.resultsInterpreter\"\n        label: \"Enter resultsInterpreter\"\n        description: \"The practitioner or organization that is responsible for the report's conclusions and interpretations.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.specimen",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "specimen-link",
+        "targetResource": "specimen",
+        "traversalPath": "specimen.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"specimen\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Details about the specimens on which this diagnostic report is based.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "specimen",
+        "multiselect",
+        "details",
+        "about",
+        "specimens",
+        "which",
+        "based"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"specimen\"\n        path: \"DiagnosticReport.specimen\"\n        label: \"Enter specimen\"\n        description: \"Details about the specimens on which this diagnostic report is based.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.result",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "result-link",
+        "targetResource": "result",
+        "traversalPath": "result.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"result\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "[Observations](observation.html) that are part of this diagnostic report.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "result",
+        "multiselect",
+        "observationsobservation",
+        "html",
+        "are",
+        "part"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"result\"\n        path: \"DiagnosticReport.result\"\n        label: \"Enter result\"\n        description: \"[Observations](observation.html) that are part of this diagnostic report.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.imagingStudy",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "imagingStudy-link",
+        "targetResource": "imagingStudy",
+        "traversalPath": "imagingStudy.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"imaging_study\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "imaging",
+        "study",
+        "multiselect",
+        "one",
+        "more",
+        "links",
+        "full",
+        "details",
+        "any",
+        "performed",
+        "during",
+        "investigation",
+        "typically",
+        "dicom",
+        "enabled",
+        "modalities",
+        "but",
+        "not",
+        "required",
+        "fully",
+        "pacs",
+        "viewer",
+        "can",
+        "use",
+        "information",
+        "provide",
+        "views",
+        "source",
+        "images"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"imaging_study\"\n        path: \"DiagnosticReport.imagingStudy\"\n        label: \"Enter imagingStudy\"\n        description: \"One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.media",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "DiagnosticReportMedia",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"media\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "media",
+        "textinput",
+        "list",
+        "key",
+        "images",
+        "associated",
+        "are",
+        "generally",
+        "created",
+        "during",
+        "process",
+        "may",
+        "directly",
+        "patient",
+        "treated",
+        "specimens",
+        "slides",
+        "interest"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"media\"\n        path: \"DiagnosticReport.media\"\n        label: \"Enter media\"\n        description: \"A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.media.id",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "media",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"DiagnosticReport.media.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.media.extension",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "media",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"DiagnosticReport.media.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.media.modifierExtension",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "media",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"DiagnosticReport.media.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.media.comment",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comment\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A comment about the image. Typically, this is used to provide an explanation for why the image is included, or to draw the viewer's attention to important features.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "media",
+        "comment",
+        "textinput",
+        "about",
+        "image",
+        "typically",
+        "used",
+        "provide",
+        "explanation",
+        "why",
+        "included",
+        "draw",
+        "viewers",
+        "attention",
+        "important",
+        "features"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comment\"\n        path: \"DiagnosticReport.media.comment\"\n        label: \"Enter comment\"\n        description: \"A comment about the image. Typically, this is used to provide an explanation for why the image is included, or to draw the viewer's attention to important features.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.media.link",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "link-link",
+        "targetResource": "link",
+        "traversalPath": "link.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"link\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Reference to the image source.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "media",
+        "link",
+        "dropdown",
+        "reference",
+        "image",
+        "source"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"link\"\n        path: \"DiagnosticReport.media.link\"\n        label: \"Enter link\"\n        description: \"Reference to the image source.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "DiagnosticReport.conclusion",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"conclusion\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "conclusion",
+        "textinput",
+        "concise",
+        "clinically",
+        "contextualized",
+        "summary",
+        "interpretationimpression"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"conclusion\"\n        path: \"DiagnosticReport.conclusion\"\n        label: \"Enter conclusion\"\n        description: \"Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.conclusionCode",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"conclusion_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "conclusion",
+        "code",
+        "multiselect",
+        "one",
+        "more",
+        "codes",
+        "represent",
+        "summary",
+        "interpretationimpression"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"conclusion_code\"\n        path: \"DiagnosticReport.conclusionCode\"\n        label: \"Enter conclusionCode\"\n        description: \"One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.presentedForm",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Attachment",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"presented_form\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "presented",
+        "form",
+        "textinput",
+        "rich",
+        "text",
+        "representation",
+        "entire",
+        "result",
+        "issued",
+        "service",
+        "multiple",
+        "formats",
+        "are",
+        "allowed",
+        "but",
+        "they",
+        "shall",
+        "semantically",
+        "equivalent"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"presented_form\"\n        path: \"DiagnosticReport.presentedForm\"\n        label: \"Enter presentedForm\"\n        description: \"Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.presentedForm.id",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "presented",
+        "form",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"DiagnosticReport.presentedForm.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.presentedForm.extension",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "presented",
+        "form",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"DiagnosticReport.presentedForm.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "DiagnosticReport.presentedForm.contentType",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"content_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "presented",
+        "form",
+        "content",
+        "textinput",
+        "identifies",
+        "data",
+        "attachment",
+        "allows",
+        "method",
+        "chosen",
+        "interpret",
+        "render",
+        "includes",
+        "mime",
+        "parameters",
+        "charset",
+        "where",
+        "appropriate"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"content_type\"\n        path: \"DiagnosticReport.presentedForm.contentType\"\n        label: \"Enter contentType\"\n        description: \"Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.presentedForm.data",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"data\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The actual data of the attachment - a sequence of bytes, base64 encoded.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "presented",
+        "form",
+        "data",
+        "textinput",
+        "actual",
+        "attachment",
+        "sequence",
+        "bytes",
+        "base",
+        "encoded"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"data\"\n        path: \"DiagnosticReport.presentedForm.data\"\n        label: \"Enter data\"\n        description: \"The actual data of the attachment - a sequence of bytes, base64 encoded.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.presentedForm.url",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"url\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A location where the data can be accessed.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "presented",
+        "form",
+        "url",
+        "textinput",
+        "location",
+        "where",
+        "data",
+        "can",
+        "accessed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"DiagnosticReport.presentedForm.url\"\n        label: \"Enter url\"\n        description: \"A location where the data can be accessed.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.presentedForm.size",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"size\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The number of bytes of data that make up this attachment (before base64 encoding, if that is done).",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "presented",
+        "form",
+        "size",
+        "textinput",
+        "number",
+        "bytes",
+        "data",
+        "make",
+        "attachment",
+        "before",
+        "base",
+        "encoding",
+        "done"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"size\"\n        path: \"DiagnosticReport.presentedForm.size\"\n        label: \"Enter size\"\n        description: \"The number of bytes of data that make up this attachment (before base64 encoding, if that is done).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.presentedForm.hash",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"hash\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The calculated hash of the data using SHA-1. Represented using base64.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "presented",
+        "form",
+        "hash",
+        "textinput",
+        "calculated",
+        "data",
+        "using",
+        "sha",
+        "represented",
+        "base"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"hash\"\n        path: \"DiagnosticReport.presentedForm.hash\"\n        label: \"Enter hash\"\n        description: \"The calculated hash of the data using SHA-1. Represented using base64.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.presentedForm.title",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"title\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A label or set of text to display in place of the data.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "presented",
+        "form",
+        "title",
+        "textinput",
+        "label",
+        "set",
+        "text",
+        "display",
+        "place",
+        "data"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"title\"\n        path: \"DiagnosticReport.presentedForm.title\"\n        label: \"Enter title\"\n        description: \"A label or set of text to display in place of the data.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "DiagnosticReport.presentedForm.creation",
+    "resourceType": "DiagnosticReport",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"creation\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date that the attachment was first created.",
+      "coreKeywords": [
+        "diagnostic",
+        "report",
+        "presented",
+        "form",
+        "creation",
+        "textinput",
+        "date",
+        "attachment",
+        "first",
+        "created"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"creation\"\n        path: \"DiagnosticReport.presentedForm.creation\"\n        label: \"Enter creation\"\n        description: \"The date that the attachment was first created.\"\n        uiComponent: \"TextInput\""
+  }
+]

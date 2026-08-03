@@ -1,0 +1,102 @@
+formId: system-staff-profile-v1
+title: "Staff Roster"
+composition:
+  - resourceType: Practitioner
+    id: section_staff
+    label: "Staff Details"
+    fields:
+      - id: "staff_name"
+        path: "Practitioner.name.text"
+        label: "Full Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "staff_phone"
+        path: "Practitioner.telecom.value"
+        label: "Phone"
+        uiComponent: "TextInput"
+      - id: "staff_email"
+        path: "Practitioner.telecom.value"
+        label: "Email"
+        uiComponent: "TextInput"
+      - id: "staff_qualification"
+        path: "Practitioner.qualification.code"
+        label: "Qualification"
+        uiComponent: "TextInput"
+      - id: "staff_license"
+        path: "Practitioner.identifier.value"
+        label: "License / Registration ID"
+        uiComponent: "TextInput"
+      - id: "staff_status"
+        path: "Practitioner.active"
+        label: "Active"
+        uiComponent: "Checkbox"
+  - resourceType: PractitionerRole
+    id: section_staff_role
+    label: "Role"
+    fields:
+      - id: "staff_role"
+        path: "PractitionerRole.code"
+        label: "Role"
+        uiComponent: "Dropdown"
+        choices: ["Chief of Medicine","Doctor","Nurse","Administrator","Receptionist","Radiologist"]
+      - id: "staff_specialty"
+        path: "PractitionerRole.specialty"
+        label: "Specialty"
+        uiComponent: "MultiSelect"
+        choices: ["Cardiology","Neurology","Radiology","Pediatrics","Orthopedics","Dermatology","General Medicine","ENT","Ophthalmology","Psychiatry"]
+
+  # ABDM's own fields, not this app's clinical vocabulary — staff_abdm_role (Doctor/Nurse/Facility
+  # Manager) is deliberately separate from staff_role above (Chief of Medicine/.../Administrator):
+  # the same person can hold a clinical role here and a different ABDM role in HPR's own registry.
+  # staff_aadhaar/staff_otp/staff_hpr_password are intentionally NOT fields on this form — see
+  # docs/onboarding/04-security-notes.md. They live only in the onboarding page's transient Alpine
+  # state so there is no code path by which SystemForms.saveDataRecord() could ever persist them.
+  - resourceType: Practitioner
+    id: section_staff_abdm_registration
+    label: "ABDM Professional Registration"
+    fields:
+      - id: "staff_first_name"
+        path: "Practitioner.name.given"
+        label: "First Name (as on Aadhaar)"
+        uiComponent: "TextInput"
+      - id: "staff_middle_name"
+        path: "Practitioner.name.given"
+        label: "Middle Name"
+        uiComponent: "TextInput"
+      - id: "staff_last_name"
+        path: "Practitioner.name.family"
+        label: "Last Name (as on Aadhaar)"
+        uiComponent: "TextInput"
+      - id: "staff_abdm_role"
+        path: "Practitioner.identifier.value"
+        label: "ABDM Role"
+        uiComponent: "Dropdown"
+        choices: ["Doctor","Nurse","Facility Manager"]
+      - id: "staff_hp_category_code"
+        path: "Practitioner.identifier.value"
+        label: "HP Category Code (HPR master: system-of-medicine)"
+        uiComponent: "TextInput"
+      - id: "staff_hp_subcategory_code"
+        path: "Practitioner.identifier.value"
+        label: "HP Sub-Category Code"
+        uiComponent: "TextInput"
+      - id: "staff_state_code"
+        path: "Practitioner.identifier.value"
+        label: "State LGD Code (HPR master: states)"
+        uiComponent: "TextInput"
+      - id: "staff_district_code"
+        path: "Practitioner.identifier.value"
+        label: "District LGD Code (HPR master: districts)"
+        uiComponent: "TextInput"
+      - id: "staff_council"
+        path: "Practitioner.identifier.value"
+        label: "Registered with a Medical/Nursing Council"
+        uiComponent: "Checkbox"
+      - id: "staff_hprid"
+        path: "Practitioner.identifier.value"
+        label: "HPR ID (assigned after creation)"
+        uiComponent: "TextInput"
+      - id: "staff_hpr_id_number"
+        path: "Practitioner.identifier.value"
+        label: "HPR ID Number (assigned after creation)"
+        uiComponent: "TextInput"

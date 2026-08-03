@@ -1,0 +1,30 @@
+formId: clinical-consultation-scribe-v1
+title: "Ambient Consultation Intake & Medical Scribe Matrix"
+composition:
+  - resourceType: Observation
+    id: section_vital_signs
+    label: "1. Longitudinal Hemodynamics & Vitals"
+    itemControl: "gtable"
+    repeats: true
+    fields:
+      - id: "systolic_measurement"
+        path: "Observation.component.valueQuantity.value"
+        label: "Systolic Blood Pressure"
+        description: "The upper numeric value tracking metric capturing active ventricular cardiac contraction."
+        uiComponent: "NumericInput"
+      - id: "diastolic_measurement"
+        path: "Observation.component.valueQuantity.value"
+        label: "Diastolic Blood Pressure"
+        description: "The lower numeric value tracking metric capturing minimum arterial pressure during resting beats."
+        uiComponent: "NumericInput"
+
+  - resourceType: Condition
+    id: section_diagnoses
+    label: "2. Confirmed Diagnostic Findings"
+    fields:
+      - id: "condition_snomed_search"
+        path: "Condition.clinicalStatus.coding.code"
+        label: "Search Active Conditions / Diagnoses"
+        description: "The standard clinical vocabulary terminology selection mapping for active medical conditions."
+        uiComponent: "Autocomplete"
+        valueSetUrl: "https://nih.gov"

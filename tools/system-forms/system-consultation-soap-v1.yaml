@@ -1,0 +1,32 @@
+formId: system-consultation-soap-v1
+title: "Consultation SOAP Note"
+composition:
+  - resourceType: Condition
+    id: section_soap
+    label: "SOAP Note"
+    fields:
+      - id: "soap_encounter_ref"
+        path: "Condition.encounter"
+        label: "Encounter"
+        uiComponent: "TextInput"
+        required: true
+      - id: "soap_subjective"
+        path: "Condition.note.text"
+        label: "Subjective"
+        uiComponent: "TextInput"
+        keywords: ["complains", "reports", "states", "feels", "patient says"]
+      - id: "soap_objective"
+        path: "Condition.note.text"
+        label: "Objective"
+        uiComponent: "TextInput"
+        keywords: ["exam reveals", "vitals", "observed", "measured", "on examination"]
+      - id: "soap_assessment"
+        path: "Condition.note.text"
+        label: "Assessment"
+        uiComponent: "TextInput"
+        keywords: ["diagnosis", "assessment", "likely", "impression", "consistent with"]
+      - id: "soap_plan"
+        path: "Condition.note.text"
+        label: "Plan"
+        uiComponent: "TextInput"
+        keywords: ["plan", "prescribe", "recommend", "follow-up", "advised"]

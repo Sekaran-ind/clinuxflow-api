@@ -1,0 +1,31 @@
+formId: clinic-personnel-onboarding-v1
+title: "Staff and Care Team Personnel Onboarding"
+composition:
+  - resourceType: Practitioner
+    id: section_staff_demographics
+    label: "1. Personnel Demographic Registry"
+    fields:
+      - id: "staff_full_name"
+        path: "Practitioner.name.text"
+        label: "Full Legal Name"
+        description: "The full legal name of the clinical provider, administrative worker, or financial staff member."
+        uiComponent: "TextInput"
+        required: true
+
+  - resourceType: PractitionerRole
+    id: section_staff_assignment
+    label: "2. Care Team Operational Role and Scope"
+    fields:
+      - id: "staff_role_classification"
+        path: "PractitionerRole.code.coding.code"
+        label: "Staff Persona Classification"
+        description: "The designated administrative or medical role type describing this staff profile's room access scope."
+        uiComponent: "Dropdown"
+        choices: ["Physician", "Nurse", "Radiologist", "Front Desk Admin", "Finance Officer", "Pharmacist"]
+        required: true
+      - id: "staff_specialty_multi"
+        path: "PractitionerRole.specialty.coding.code"
+        label: "Assigned Functional Specialties"
+        description: "The specific clinical focus areas or skill tracks attached to this user account profile configuration."
+        uiComponent: "MultiSelect"
+        choices: ["Cardiology", "Neurology", "Triage Intake", "Medical Billing", "Inventory Control"]

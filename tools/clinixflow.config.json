@@ -1,0 +1,89 @@
+{
+  "project": {
+    "name": "ClinixFlow Core Edge Engine",
+    "environment": "production-pilot",
+    "port": 3000
+  },
+  "directories": {
+    "classes": "node_modules/@smile-cdr/fhirts/dist/FHIR-R4/classes",
+    "schemaOutput": "data/form-schematics.schema.json",
+    "dictionaryOutput": "config/extracted-dictionary.json",
+    "runtimeYamlInput": "runtime-room-input.yaml",
+    "questionnaireJsonOutput": "questionnaire-output.json"
+  },
+
+  "validation": {
+    "allowedResources": [
+      "Patient", "Observation", "Encounter", "Condition", "MedicationRequest",
+      "Organization", "Location", "Practitioner", "PractitionerRole",
+      "Coverage", "Claim", "Invoice", "Account",
+      "DiagnosticReport", "ServiceRequest", "Specimen",
+      "Appointment", "Schedule", "Slot",
+      "Medication", "MedicationDispense", "SupplyDelivery", "PaymentNotice",
+      "Device", "DeviceMetric", "Consent", "Contract", "HealthcareService",
+      "EpisodeOfCare"
+    ],
+    "// ─── UPGRADED: IMMUTABLE GLOBAL RUNTIME PRIMITIVES REGISTRY ───": "",
+    "runtimePolymorphicPrimitives": [
+      "Extension",
+      "Reference",
+      "Narrative",
+      "CodeableConcept"
+    ],
+    "systemOverheadProperties": ["meta", "implicitRules", "language"],
+    "circularDependencyPruneTokens": ["Extension", "Reference", "Narrative"],
+    "allowedUiComponents": [
+      "NumericInput", "TextInput", "Dropdown", "MultiSelect", 
+      "Checkbox", "DatePicker", "Hidden", "Autocomplete",
+      "ClaimsBar", "LabLedger", "ScheduleGrid", "InventoryCounter",
+      "SignaturePad", "DeviceChecklist"
+    ]
+  },
+  "uiMappingToFhir": {
+    "NumericInput": { "fhirType": "decimal", "repeats": false },
+    "Checkbox": { "fhirType": "boolean", "repeats": false },
+    "DatePicker": { "fhirType": "date", "repeats": false },
+    "Dropdown": { "fhirType": "choice", "repeats": false },
+    "MultiSelect": { "fhirType": "choice", "repeats": true },
+    "Autocomplete": { "fhirType": "open-choice", "repeats": false },
+    "InventoryCounter": { "fhirType": "integer", "repeats": false },
+    "SignaturePad": { "fhirType": "string", "repeats": false },
+    "DeviceChecklist": { "fhirType": "string", "repeats": true },
+    "TextInput": { "fhirType": "string", "repeats": false },
+    "ClaimsBar": { "fhirType": "string", "repeats": false },
+    "LabLedger": { "fhirType": "string", "repeats": true },
+    "ScheduleGrid": { "fhirType": "string", "repeats": false },
+    "Hidden": { "fhirType": "string", "repeats": false }
+  },
+  "// ─── THE NEW GOVERNANCE AND REGULATORY POLICY MATRIX CONFIGS ───": "",
+  "governancePolicies": {
+    "metricsCollectionEnabled": true,
+    "targetConvergenceVelocity": 0.85,
+    "minimumSimilarityThreshold": 0.55,
+    "maximumAllowedFrictionSeconds": 30.0,
+    "provenanceTracking": {
+      "captureRawAudioHashes": true,
+      "logLlmTokenProbabilities": false
+    }
+  },
+    "embeddingEngine": {
+    "similarityThreshold": 0.48
+  },
+  "cloudflare": {
+    "inferenceModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "embeddingModel": "@cf/baai/bge-large-en-v1.5"
+  },
+  "// ─── THE SOLUTION: DECENTRALIZED CARE TEAM CONFIGURATION REGISTRY ───": "",
+  "onboardingRolesRegistry": [
+    {
+      "id": "clinic-admin-setup",
+      "displayName": "Clinic Facility Onboarding",
+      "targetYaml": "formId: clinic-onboarding-protocol-v1\ntitle: \"ClinixFlow Enterprise Administrative Bootstrapper\"\ncomposition:\n  - resourceType: Organization\n    id: section_organization\n    label: \"1. Corporate Registration & Billing Details\"\n    fields:\n      - id: \"onboarding_org_name\"\n        path: \"Organization.name\"\n        label: \"Official Clinical Practice Name\"\n        description: \"The primary legal commercial entity name for billing registration.\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"onboarding_org_tax\"\n        path: \"Organization.identifier.value\"\n        label: \"Practice Corporate Tax Identifier Number\"\n        description: \"The official unique corporate business tax registration code.\"\n        uiComponent: \"TextInput\"\n  - resourceType: Location\n    id: section_location\n    label: \"2. Physical Facility Operating Address\"\n    fields:\n      - id: \"onboarding_loc_name\"\n        path: \"Location.name\"\n        label: \"Facility Branch Name\"\n        description: \"The named location moniker for this physical outpatient branch office.\"\n        uiComponent: \"TextInput\"\n      - id: \"onboarding_loc_address\"\n        path: \"Location.address.text\"\n        label: \"Complete Facility Physical Postal Address\"\n        description: \"The absolute geographical street code routing address for patient check-ins.\"\n        uiComponent: \"TextInput\""
+    },
+    {
+      "id": "care-team-user-setup",
+      "displayName": "Care Team User Registration",
+      "targetYaml": "formId: care-team-registration-v1\ntitle: \"Clinical Staff & Persona Provisioning Protocol\"\ncomposition:\n  - resourceType: Practitioner\n    id: section_practitioner\n    label: \"1. Lead Clinical Staff Demographics\"\n    fields:\n      - id: \"onboarding_staff_name\"\n        path: \"Practitioner.name.text\"\n        label: \"Full Name of Lead Medical Provider\"\n        description: \"The official full legal name of the practicing medical clinician provider.\"\n        uiComponent: \"TextInput\"\n        required: true\n  - resourceType: PractitionerRole\n    id: section_practitioner_role\n    label: \"2. Provider Clinical Specialty Assignment\"\n    fields:\n      - id: \"onboarding_staff_specialty\"\n        path: \"PractitionerRole.code.coding.code\"\n        label: \"Lead Core Clinical Specialty\"\n        description: \"The primary specialized clinical category assigned to this staff member profile.\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"Cardiology\", \"Neurology\", \"Radiology\", \"Pediatrics\", \"Finance\", \"Triage\"]\n        required: true"
+    }
+  ]
+}

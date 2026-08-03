@@ -1,0 +1,48 @@
+formId: emergency-triage-matrix-v1
+title: "Advanced Emergency Department Resuscitation Layout"
+composition:
+  - resourceType: Encounter
+    id: section_encounter
+    label: "1. Triage Classification"
+    fields:
+      - id: "triage_acuity"
+        path: "Encounter.status"
+        label: "Acuity Level Assignment"
+        uiComponent: "Dropdown"
+        choices: ["triaged", "in-progress", "finished"]
+        required: true
+  - resourceType: Observation
+    id: section_trauma_vitals
+    label: "2. Resuscitation Hemodynamics"
+    itemControl: "gtable"
+    repeats: true
+    fields:
+      - id: "heart_rate"
+        path: "Observation.component.valueQuantity.value"
+        label: "Heart Rate Metrics"
+        uiComponent: "NumericInput"
+        unit: "bpm"
+        required: true
+      - id: "oxygen_saturation"
+        path: "Observation.component.valueQuantity.value"
+        label: "Peripheral Oxygen Saturation"
+        uiComponent: "NumericInput"
+        unit: "%"
+        required: true
+  - resourceType: Condition
+    id: section_acute_findings
+    label: "3. Traumatic Diagnostic Findings"
+    fields:
+      - id: "primary_diagnosis"
+        path: "Condition.clinicalStatus.coding.code"
+        label: "Suspected Acute Traumatic Injury"
+        uiComponent: "Autocomplete"
+        valueSetUrl: "https://nih.gov"
+      - id: "injury_severity"
+        path: "Condition.severity.coding.code"
+        label: "Trauma Severity Scale Evaluation"
+        uiComponent: "Dropdown"
+        choices: ["Mild", "Moderate", "Severe"]
+        skipLogic:
+          sourceField: "primary_diagnosis"
+          operator: "exists"

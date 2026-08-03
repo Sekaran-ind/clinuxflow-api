@@ -1,0 +1,29 @@
+formId: system-patient-profile-v1
+title: "Patients"
+composition:
+  - resourceType: Patient
+    id: section_patient
+    label: "Patient Details"
+    fields:
+      - id: "patient_name"
+        path: "Patient.name.text"
+        label: "Full Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "patient_gender"
+        path: "Patient.gender"
+        label: "Gender"
+        uiComponent: "Dropdown"
+        choices: ["male","female","other","unknown"]
+      - id: "patient_birthdate"
+        path: "Patient.birthDate"
+        label: "Date of Birth"
+        uiComponent: "DatePicker"
+      - id: "patient_emergency_contact_name"
+        path: "Patient.contact.name.text"
+        label: "Emergency Contact Name"
+        uiComponent: "TextInput"
+      - id: "patient_emergency_contact_phone"
+        path: "Patient.contact.telecom.value"
+        label: "Emergency Contact Phone"
+        uiComponent: "TextInput"

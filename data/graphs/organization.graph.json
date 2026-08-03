@@ -1,0 +1,3199 @@
+[
+  {
+    "path": "Organization.resourceType",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a Organization resource",
+      "coreKeywords": [
+        "organization",
+        "resource",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Organization.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Organization resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "coreKeywords": [
+        "organization",
+        "textinput",
+        "logical",
+        "resource",
+        "used",
+        "url",
+        "once",
+        "assigned",
+        "never",
+        "changes"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.text",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "coreKeywords": [
+        "organization",
+        "text",
+        "dropdown",
+        "human",
+        "readable",
+        "narrative",
+        "summary",
+        "resource",
+        "can",
+        "used",
+        "represent",
+        "content",
+        "need",
+        "not",
+        "encode",
+        "all",
+        "structured",
+        "data",
+        "but",
+        "required",
+        "contain",
+        "sufficient",
+        "detail",
+        "make",
+        "clinically",
+        "safe",
+        "just",
+        "read",
+        "definitions",
+        "may",
+        "define",
+        "what",
+        "should",
+        "represented",
+        "ensure",
+        "clinical",
+        "safety"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Organization.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Organization.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.modifierExtension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "organization",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "modifies",
+        "understanding",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "allowed",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Organization.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.identifier",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Identifier for the organization that is used to identify the organization across multiple disparate systems.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "textinput",
+        "used",
+        "identify",
+        "across",
+        "multiple",
+        "disparate",
+        "systems"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Organization.identifier\"\n        label: \"Enter identifier\"\n        description: \"Identifier for the organization that is used to identify the organization across multiple disparate systems.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.identifier.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.identifier.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.identifier.use",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The purpose of this identifier.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "use",
+        "textinput",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Organization.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "Organization.identifier.type",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "dropdown",
+        "coded",
+        "can",
+        "used",
+        "determine",
+        "which",
+        "use",
+        "specific",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Organization.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Organization.identifier.system",
+    "resourceType": "Organization",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "system",
+        "textinput",
+        "establishes",
+        "namespace",
+        "url",
+        "describes",
+        "set",
+        "values",
+        "are",
+        "unique"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Organization.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.identifier.value",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "textinput",
+        "portion",
+        "typically",
+        "relevant",
+        "user",
+        "which",
+        "unique",
+        "within",
+        "context",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Organization.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.identifier.period",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "period",
+        "textinput",
+        "time",
+        "during",
+        "which",
+        "iswas",
+        "valid",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Organization.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.identifier.period.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.identifier.period.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.identifier.period.start",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Organization.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.identifier.period.end",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Organization.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.identifier.assigner",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "assigner",
+        "traversalPath": "assigner.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "coreKeywords": [
+        "organization",
+        "identifier",
+        "assigner",
+        "dropdown",
+        "issuedmanages"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Organization.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Organization.active",
+    "resourceType": "Organization",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"active\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Whether the organization's record is still in active use.",
+      "coreKeywords": [
+        "organization",
+        "active",
+        "checkbox",
+        "whether",
+        "organizations",
+        "record",
+        "still",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"active\"\n        path: \"Organization.active\"\n        label: \"Enter active\"\n        description: \"Whether the organization's record is still in active use.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Organization.type",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The kind(s) of organization that this is.",
+      "coreKeywords": [
+        "organization",
+        "multiselect",
+        "kinds"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Organization.type\"\n        label: \"Enter type\"\n        description: \"The kind(s) of organization that this is.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.name",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"name\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A name associated with the organization.",
+      "coreKeywords": [
+        "organization",
+        "name",
+        "textinput",
+        "associated"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"Organization.name\"\n        label: \"Enter name\"\n        description: \"A name associated with the organization.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.alias",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"alias\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A list of alternate names that the organization is known as, or was known as in the past.",
+      "coreKeywords": [
+        "organization",
+        "alias",
+        "textinput",
+        "list",
+        "alternate",
+        "names",
+        "known",
+        "past"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"alias\"\n        path: \"Organization.alias\"\n        label: \"Enter alias\"\n        description: \"A list of alternate names that the organization is known as, or was known as in the past.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.telecom",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "ContactPoint",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"telecom\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A contact detail for the organization.",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "textinput",
+        "contact",
+        "detail"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"telecom\"\n        path: \"Organization.telecom\"\n        label: \"Enter telecom\"\n        description: \"A contact detail for the organization.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.telecom.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.telecom.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.telecom.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.telecom.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.telecom.system",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" (\\\"phone\\\" | \\\"fax\\\" | \\\"email\\\" | \\\"pager\\\" | \\\"url\\\" | \\\"sms\\\" | \\\"other\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Telecommunications form for contact point - what communications system is required to make use of the contact.",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "system",
+        "textinput",
+        "telecommunications",
+        "form",
+        "contact",
+        "point",
+        "what",
+        "communications",
+        "required",
+        "make",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Organization.telecom.system\"\n        label: \"Enter system\"\n        description: \"Telecommunications form for contact point - what communications system is required to make use of the contact.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "phone",
+      "fax",
+      "email",
+      "pager",
+      "url",
+      "sms",
+      "other"
+    ]
+  },
+  {
+    "path": "Organization.telecom.value",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "textinput",
+        "actual",
+        "contact",
+        "point",
+        "details",
+        "form",
+        "meaningful",
+        "designated",
+        "communication",
+        "system",
+        "phone",
+        "number",
+        "email",
+        "address"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Organization.telecom.value\"\n        label: \"Enter value\"\n        description: \"The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.telecom.use",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"temp\\\" | \\\"old\\\" | \\\"home\\\" | \\\"work\\\" | \\\"mobile\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Identifies the purpose for the contact point.",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "use",
+        "textinput",
+        "identifies",
+        "purpose",
+        "contact",
+        "point"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Organization.telecom.use\"\n        label: \"Enter use\"\n        description: \"Identifies the purpose for the contact point.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "temp",
+      "old",
+      "home",
+      "work",
+      "mobile"
+    ]
+  },
+  {
+    "path": "Organization.telecom.rank",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "rank",
+        "textinput",
+        "specifies",
+        "preferred",
+        "order",
+        "which",
+        "use",
+        "set",
+        "contacts",
+        "contactpoints",
+        "lower",
+        "values",
+        "are",
+        "more",
+        "than",
+        "those",
+        "higher"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"Organization.telecom.rank\"\n        label: \"Enter rank\"\n        description: \"Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.telecom.period",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period when the contact point was/is in use.",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "period",
+        "textinput",
+        "time",
+        "when",
+        "contact",
+        "point",
+        "wasis",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Organization.telecom.period\"\n        label: \"Enter period\"\n        description: \"Time period when the contact point was/is in use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.telecom.period.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.telecom.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.telecom.period.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.telecom.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.telecom.period.start",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Organization.telecom.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.telecom.period.end",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "organization",
+        "telecom",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Organization.telecom.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Address",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"address\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "An address for the organization.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"address\"\n        path: \"Organization.address\"\n        label: \"Enter address\"\n        description: \"An address for the organization.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.address.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.address.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.address.use",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"temp\\\" | \\\"old\\\" | \\\"home\\\" | \\\"work\\\" | \\\"billing\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The purpose of this address.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "use",
+        "textinput",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Organization.address.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this address.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "temp",
+      "old",
+      "home",
+      "work",
+      "billing"
+    ]
+  },
+  {
+    "path": "Organization.address.type",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" (\\\"postal\\\" | \\\"physical\\\" | \\\"both\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "textinput",
+        "distinguishes",
+        "between",
+        "physical",
+        "addresses",
+        "those",
+        "you",
+        "can",
+        "visit",
+        "mailing",
+        "boxes",
+        "care",
+        "most",
+        "are",
+        "both"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Organization.address.type\"\n        label: \"Enter type\"\n        description: \"Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "postal",
+      "physical",
+      "both"
+    ]
+  },
+  {
+    "path": "Organization.address.text",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "text",
+        "textinput",
+        "specifies",
+        "entire",
+        "should",
+        "displayed",
+        "postal",
+        "label",
+        "may",
+        "provided",
+        "instead",
+        "well",
+        "specific",
+        "parts"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Organization.address.text\"\n        label: \"Enter text\"\n        description: \"Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address.line",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"line\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "line",
+        "textinput",
+        "component",
+        "house",
+        "number",
+        "apartment",
+        "street",
+        "name",
+        "direction",
+        "box",
+        "delivery",
+        "hints",
+        "similar",
+        "information"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"line\"\n        path: \"Organization.address.line\"\n        label: \"Enter line\"\n        description: \"This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address.city",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"city\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The name of the city, town, suburb, village or other community or delivery center.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "city",
+        "textinput",
+        "name",
+        "town",
+        "suburb",
+        "village",
+        "other",
+        "community",
+        "delivery",
+        "center"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"city\"\n        path: \"Organization.address.city\"\n        label: \"Enter city\"\n        description: \"The name of the city, town, suburb, village or other community or delivery center.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address.district",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"district\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The name of the administrative area (county).",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "district",
+        "textinput",
+        "name",
+        "administrative",
+        "area",
+        "county"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"district\"\n        path: \"Organization.address.district\"\n        label: \"Enter district\"\n        description: \"The name of the administrative area (county).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address.state",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"state\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "state",
+        "textinput",
+        "sub",
+        "unit",
+        "country",
+        "limited",
+        "sovereignty",
+        "federally",
+        "organized",
+        "code",
+        "may",
+        "used",
+        "codes",
+        "are",
+        "common",
+        "use",
+        "letter"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"state\"\n        path: \"Organization.address.state\"\n        label: \"Enter state\"\n        description: \"Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address.postalCode",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"postal_code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A postal code designating a region defined by the postal service.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "postal",
+        "code",
+        "dropdown",
+        "designating",
+        "region",
+        "defined",
+        "service"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"postal_code\"\n        path: \"Organization.address.postalCode\"\n        label: \"Enter postalCode\"\n        description: \"A postal code designating a region defined by the postal service.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Organization.address.country",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"country\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Country - a nation as commonly understood or generally accepted.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "country",
+        "textinput",
+        "nation",
+        "commonly",
+        "understood",
+        "generally",
+        "accepted"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"country\"\n        path: \"Organization.address.country\"\n        label: \"Enter country\"\n        description: \"Country - a nation as commonly understood or generally accepted.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address.period",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period when address was/is in use.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "period",
+        "textinput",
+        "time",
+        "when",
+        "wasis",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Organization.address.period\"\n        label: \"Enter period\"\n        description: \"Time period when address was/is in use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address.period.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.address.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address.period.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.address.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.address.period.start",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Organization.address.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.address.period.end",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "organization",
+        "address",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Organization.address.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.partOf",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "partOf-link",
+        "targetResource": "partOf",
+        "traversalPath": "partOf.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"part_of\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The organization of which this organization forms a part.",
+      "coreKeywords": [
+        "organization",
+        "part",
+        "dropdown",
+        "which",
+        "forms"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"part_of\"\n        path: \"Organization.partOf\"\n        label: \"Enter partOf\"\n        description: \"The organization of which this organization forms a part.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Organization.contact",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "OrganizationContact",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contact\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contact for the organization for a certain purpose.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "textinput",
+        "certain",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contact\"\n        path: \"Organization.contact\"\n        label: \"Enter contact\"\n        description: \"Contact for the organization for a certain purpose.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.contact.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.contact.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.contact.modifierExtension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Organization.contact.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.contact.purpose",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"purpose\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Indicates a purpose for which the contact can be reached.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "purpose",
+        "dropdown",
+        "indicates",
+        "which",
+        "can",
+        "reached"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"purpose\"\n        path: \"Organization.contact.purpose\"\n        label: \"Enter purpose\"\n        description: \"Indicates a purpose for which the contact can be reached.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Organization.contact.name",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"name\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A name associated with the contact.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "textinput",
+        "associated"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"Organization.contact.name\"\n        label: \"Enter name\"\n        description: \"A name associated with the contact.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.name.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.contact.name.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.name.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.contact.name.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.contact.name.use",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"old\\\" | \\\"nickname\\\" | \\\"anonymous\\\" | \\\"maiden\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Identifies the purpose for this name.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "use",
+        "textinput",
+        "identifies",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Organization.contact.name.use\"\n        label: \"Enter use\"\n        description: \"Identifies the purpose for this name.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "old",
+      "nickname",
+      "anonymous",
+      "maiden"
+    ]
+  },
+  {
+    "path": "Organization.contact.name.text",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "text",
+        "textinput",
+        "specifies",
+        "entire",
+        "should",
+        "displayed",
+        "application",
+        "may",
+        "provided",
+        "instead",
+        "well",
+        "specific",
+        "parts"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Organization.contact.name.text\"\n        label: \"Enter text\"\n        description: \"Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.name.family",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"family\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "family",
+        "textinput",
+        "part",
+        "links",
+        "genealogy",
+        "some",
+        "cultures",
+        "eritrea",
+        "son",
+        "first",
+        "his",
+        "father"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"family\"\n        path: \"Organization.contact.name.family\"\n        label: \"Enter family\"\n        description: \"The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.name.given",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"given\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Given name.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "given",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"given\"\n        path: \"Organization.contact.name.given\"\n        label: \"Enter given\"\n        description: \"Given name.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.name.prefix",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"prefix\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "prefix",
+        "textinput",
+        "part",
+        "acquired",
+        "title",
+        "due",
+        "academic",
+        "legal",
+        "employment",
+        "nobility",
+        "status",
+        "etc",
+        "appears",
+        "start"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"prefix\"\n        path: \"Organization.contact.name.prefix\"\n        label: \"Enter prefix\"\n        description: \"Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.name.suffix",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"suffix\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "suffix",
+        "textinput",
+        "part",
+        "acquired",
+        "title",
+        "due",
+        "academic",
+        "legal",
+        "employment",
+        "nobility",
+        "status",
+        "etc",
+        "appears",
+        "end"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"suffix\"\n        path: \"Organization.contact.name.suffix\"\n        label: \"Enter suffix\"\n        description: \"Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.name.period",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Indicates the period of time when this name was valid for the named person.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "period",
+        "textinput",
+        "indicates",
+        "time",
+        "when",
+        "valid",
+        "named",
+        "person"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Organization.contact.name.period\"\n        label: \"Enter period\"\n        description: \"Indicates the period of time when this name was valid for the named person.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.name.period.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.contact.name.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.name.period.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.contact.name.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.contact.name.period.start",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Organization.contact.name.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.name.period.end",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "name",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Organization.contact.name.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.telecom",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "ContactPoint",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"telecom\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "textinput",
+        "detail",
+        "telephone",
+        "number",
+        "email",
+        "address",
+        "which",
+        "party",
+        "may",
+        "contacted"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"telecom\"\n        path: \"Organization.contact.telecom\"\n        label: \"Enter telecom\"\n        description: \"A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.telecom.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.contact.telecom.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.telecom.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.contact.telecom.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.contact.telecom.system",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" (\\\"phone\\\" | \\\"fax\\\" | \\\"email\\\" | \\\"pager\\\" | \\\"url\\\" | \\\"sms\\\" | \\\"other\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Telecommunications form for contact point - what communications system is required to make use of the contact.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "system",
+        "textinput",
+        "telecommunications",
+        "form",
+        "point",
+        "what",
+        "communications",
+        "required",
+        "make",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Organization.contact.telecom.system\"\n        label: \"Enter system\"\n        description: \"Telecommunications form for contact point - what communications system is required to make use of the contact.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "phone",
+      "fax",
+      "email",
+      "pager",
+      "url",
+      "sms",
+      "other"
+    ]
+  },
+  {
+    "path": "Organization.contact.telecom.value",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "textinput",
+        "actual",
+        "point",
+        "details",
+        "form",
+        "meaningful",
+        "designated",
+        "communication",
+        "system",
+        "phone",
+        "number",
+        "email",
+        "address"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Organization.contact.telecom.value\"\n        label: \"Enter value\"\n        description: \"The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.telecom.use",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"temp\\\" | \\\"old\\\" | \\\"home\\\" | \\\"work\\\" | \\\"mobile\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Identifies the purpose for the contact point.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "use",
+        "textinput",
+        "identifies",
+        "purpose",
+        "point"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Organization.contact.telecom.use\"\n        label: \"Enter use\"\n        description: \"Identifies the purpose for the contact point.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "temp",
+      "old",
+      "home",
+      "work",
+      "mobile"
+    ]
+  },
+  {
+    "path": "Organization.contact.telecom.rank",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "rank",
+        "textinput",
+        "specifies",
+        "preferred",
+        "order",
+        "which",
+        "use",
+        "set",
+        "contacts",
+        "contactpoints",
+        "lower",
+        "values",
+        "are",
+        "more",
+        "than",
+        "those",
+        "higher"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"Organization.contact.telecom.rank\"\n        label: \"Enter rank\"\n        description: \"Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.telecom.period",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period when the contact point was/is in use.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "period",
+        "textinput",
+        "time",
+        "when",
+        "point",
+        "wasis",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Organization.contact.telecom.period\"\n        label: \"Enter period\"\n        description: \"Time period when the contact point was/is in use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.telecom.period.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.contact.telecom.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.telecom.period.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.contact.telecom.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.contact.telecom.period.start",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Organization.contact.telecom.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.telecom.period.end",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "telecom",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Organization.contact.telecom.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"address\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Visiting or postal addresses for the contact.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "textinput",
+        "visiting",
+        "postal",
+        "addresses"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"address\"\n        path: \"Organization.contact.address\"\n        label: \"Enter address\"\n        description: \"Visiting or postal addresses for the contact.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.contact.address.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.contact.address.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.contact.address.use",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"temp\\\" | \\\"old\\\" | \\\"home\\\" | \\\"work\\\" | \\\"billing\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The purpose of this address.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "use",
+        "textinput",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Organization.contact.address.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this address.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "temp",
+      "old",
+      "home",
+      "work",
+      "billing"
+    ]
+  },
+  {
+    "path": "Organization.contact.address.type",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" (\\\"postal\\\" | \\\"physical\\\" | \\\"both\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "textinput",
+        "distinguishes",
+        "between",
+        "physical",
+        "addresses",
+        "those",
+        "you",
+        "can",
+        "visit",
+        "mailing",
+        "boxes",
+        "care",
+        "most",
+        "are",
+        "both"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Organization.contact.address.type\"\n        label: \"Enter type\"\n        description: \"Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "postal",
+      "physical",
+      "both"
+    ]
+  },
+  {
+    "path": "Organization.contact.address.text",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "text",
+        "textinput",
+        "specifies",
+        "entire",
+        "should",
+        "displayed",
+        "postal",
+        "label",
+        "may",
+        "provided",
+        "instead",
+        "well",
+        "specific",
+        "parts"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Organization.contact.address.text\"\n        label: \"Enter text\"\n        description: \"Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address.line",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"line\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "line",
+        "textinput",
+        "component",
+        "house",
+        "number",
+        "apartment",
+        "street",
+        "name",
+        "direction",
+        "box",
+        "delivery",
+        "hints",
+        "similar",
+        "information"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"line\"\n        path: \"Organization.contact.address.line\"\n        label: \"Enter line\"\n        description: \"This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address.city",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"city\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The name of the city, town, suburb, village or other community or delivery center.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "city",
+        "textinput",
+        "name",
+        "town",
+        "suburb",
+        "village",
+        "other",
+        "community",
+        "delivery",
+        "center"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"city\"\n        path: \"Organization.contact.address.city\"\n        label: \"Enter city\"\n        description: \"The name of the city, town, suburb, village or other community or delivery center.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address.district",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"district\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The name of the administrative area (county).",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "district",
+        "textinput",
+        "name",
+        "administrative",
+        "area",
+        "county"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"district\"\n        path: \"Organization.contact.address.district\"\n        label: \"Enter district\"\n        description: \"The name of the administrative area (county).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address.state",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"state\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "state",
+        "textinput",
+        "sub",
+        "unit",
+        "country",
+        "limited",
+        "sovereignty",
+        "federally",
+        "organized",
+        "code",
+        "may",
+        "used",
+        "codes",
+        "are",
+        "common",
+        "use",
+        "letter"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"state\"\n        path: \"Organization.contact.address.state\"\n        label: \"Enter state\"\n        description: \"Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address.postalCode",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"postal_code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A postal code designating a region defined by the postal service.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "postal",
+        "code",
+        "dropdown",
+        "designating",
+        "region",
+        "defined",
+        "service"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"postal_code\"\n        path: \"Organization.contact.address.postalCode\"\n        label: \"Enter postalCode\"\n        description: \"A postal code designating a region defined by the postal service.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Organization.contact.address.country",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"country\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Country - a nation as commonly understood or generally accepted.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "country",
+        "textinput",
+        "nation",
+        "commonly",
+        "understood",
+        "generally",
+        "accepted"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"country\"\n        path: \"Organization.contact.address.country\"\n        label: \"Enter country\"\n        description: \"Country - a nation as commonly understood or generally accepted.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address.period",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period when address was/is in use.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "period",
+        "textinput",
+        "time",
+        "when",
+        "wasis",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Organization.contact.address.period\"\n        label: \"Enter period\"\n        description: \"Time period when address was/is in use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address.period.id",
+    "resourceType": "Organization",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Organization.contact.address.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address.period.extension",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Organization.contact.address.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Organization.contact.address.period.start",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Organization.contact.address.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.contact.address.period.end",
+    "resourceType": "Organization",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "organization",
+        "contact",
+        "address",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Organization.contact.address.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Organization.endpoint",
+    "resourceType": "Organization",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "endpoint-link",
+        "targetResource": "endpoint",
+        "traversalPath": "endpoint.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"endpoint\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Technical endpoints providing access to services operated for the organization.",
+      "coreKeywords": [
+        "organization",
+        "endpoint",
+        "multiselect",
+        "technical",
+        "endpoints",
+        "providing",
+        "access",
+        "services",
+        "operated"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"endpoint\"\n        path: \"Organization.endpoint\"\n        label: \"Enter endpoint\"\n        description: \"Technical endpoints providing access to services operated for the organization.\"\n        uiComponent: \"MultiSelect\""
+  }
+]

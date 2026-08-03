@@ -1,0 +1,33 @@
+formId: system-appointments-profile-v1
+title: "Appointments"
+composition:
+  - resourceType: Appointment
+    id: section_appointment
+    label: "Appointment Details"
+    fields:
+      - id: "appt_patient"
+        path: "Appointment.participant.actor"
+        label: "Patient"
+        uiComponent: "TextInput"
+      - id: "appt_staff"
+        path: "Appointment.participant.actor"
+        label: "Staff Member"
+        uiComponent: "TextInput"
+      - id: "appt_status"
+        path: "Appointment.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["proposed","booked","arrived","fulfilled","cancelled","noshow"]
+        required: true
+      - id: "appt_start"
+        path: "Appointment.start"
+        label: "Start Time"
+        uiComponent: "TextInput"
+      - id: "appt_end"
+        path: "Appointment.end"
+        label: "End Time"
+        uiComponent: "TextInput"
+      - id: "appt_description"
+        path: "Appointment.description"
+        label: "Reason / Notes"
+        uiComponent: "TextInput"

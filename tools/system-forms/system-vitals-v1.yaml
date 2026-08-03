@@ -1,0 +1,28 @@
+formId: system-vitals-v1
+title: "Vitals"
+composition:
+  - resourceType: Observation
+    id: section_vitals
+    label: "Vitals Capture"
+    fields:
+      - id: "vitals_encounter_ref"
+        path: "Observation.encounter"
+        label: "Encounter"
+        uiComponent: "TextInput"
+        required: true
+      - id: "vitals_systolic"
+        path: "Observation.component.valueQuantity.value"
+        label: "Systolic BP"
+        uiComponent: "TextInput"
+      - id: "vitals_diastolic"
+        path: "Observation.component.valueQuantity.value"
+        label: "Diastolic BP"
+        uiComponent: "TextInput"
+      - id: "vitals_pulse"
+        path: "Observation.component.valueQuantity.value"
+        label: "Pulse (bpm)"
+        uiComponent: "TextInput"
+      - id: "vitals_temperature"
+        path: "Observation.component.valueQuantity.value"
+        label: "Temperature (°F)"
+        uiComponent: "TextInput"

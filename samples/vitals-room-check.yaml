@@ -1,0 +1,20 @@
+formId: baseline-triage-v1
+composition:
+  - resourceType: Patient
+    fields:
+      - path: "Patient.gender"
+        label: "Biological Sex"
+        uiComponent: "Dropdown"
+        choices: ["male", "female", "other", "unknown"]
+        required: true
+
+  - resourceType: Observation
+    fields:
+      - path: "Observation.valueQuantity"
+        label: "Systolic Blood Pressure"
+        uiComponent: "NumericInput"
+        required: true
+      - path: "Observation.status"
+        label: "Internal Process Flag"
+        uiComponent: "Hidden"
+        defaultValue: "final"

@@ -1,0 +1,36 @@
+formId: clinic-corporate-onboarding-v1
+title: "Clinic Facility Infrastructure Registration"
+composition:
+  - resourceType: Organization
+    id: section_organization_profile
+    label: "1. Legal Entity & Corporate Registration"
+    fields:
+      - id: "org_legal_name"
+        path: "Organization.name"
+        label: "Official Corporate Name"
+        description: "The primary registered commercial name of the medical practice or corporate group entity."
+        uiComponent: "TextInput"
+        required: true
+      - id: "org_tax_identifier"
+        path: "Organization.identifier.value"
+        label: "Practice Corporate Tax ID"
+        description: "The official federal business tax registration number or employer identification token code."
+        uiComponent: "TextInput"
+        required: true
+
+  - resourceType: Location
+    id: section_branch_location
+    label: "2. Physical Facility Operating Branch"
+    fields:
+      - id: "loc_facility_name"
+        path: "Location.name"
+        label: "Clinic Branch Nickname"
+        description: "The custom moniker or name distinguishing this specific physical office location branch."
+        uiComponent: "TextInput"
+        required: true
+      - id: "loc_postal_address"
+        path: "Location.address.text"
+        label: "Complete Facility Physical Address"
+        description: "The complete geographical street, postal code, and routing address for patient check-ins."
+        uiComponent: "TextInput"
+        required: true

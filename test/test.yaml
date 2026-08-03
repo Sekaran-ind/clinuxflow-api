@@ -1,0 +1,49 @@
+formId: clinic-onboarding-protocol-v1
+title: "ClinixFlow Enterprise Administrative Bootstrapper"
+composition:
+  - resourceType: Organization
+    id: section_organization
+    label: "1. Corporate Registration & Billing Details"
+    fields:
+      - id: "onboarding_org_name"
+        path: "Organization.name"
+        label: "Official Clinical Practice Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "onboarding_org_tax"
+        path: "Organization.identifier.value"
+        label: "Practice Corporate Tax Identifier Number"
+        uiComponent: "TextInput"
+
+  - resourceType: Location
+    id: section_location
+    label: "2. Physical Facility Operating Address"
+    fields:
+      - id: "onboarding_loc_name"
+        path: "Location.name"
+        label: "Facility Branch Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "onboarding_loc_address"
+        path: "Location.address.text"
+        label: "Complete Facility Physical Postal Address"
+        uiComponent: "TextInput"
+
+  - resourceType: Practitioner
+    id: section_practitioner
+    label: "3. Lead Clinical Staff and Role Registration"
+    fields:
+      - id: "onboarding_staff_name"
+        path: "Practitioner.name.text"
+        label: "Full Name of Lead Medical Provider"
+        uiComponent: "TextInput"
+        required: true
+  - resourceType: PractitionerRole
+    id: section_practitioner_role
+    label: "4. Provider Clinical Specialty Assignment"
+    fields:
+      - id: "onboarding_staff_specialty"
+        path: "PractitionerRole.code.coding.code" # MATCHES RESOURCE TYPE PERFECTLY
+        label: "Lead Core Clinical Specialty"
+        uiComponent: "MultiSelect"
+        choices: ["Cardiology", "Pediatrics", "Emergency Medicine", "Endocrinology"]

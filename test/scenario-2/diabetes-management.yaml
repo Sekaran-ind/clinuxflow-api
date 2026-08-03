@@ -1,0 +1,47 @@
+formId: diabetes-chronic-review-v1
+title: "Comprehensive Metabolic & Endocrine Tracking Protocol"
+composition:
+  - resourceType: Patient
+    id: section_demographics
+    label: "1. Core Demographics"
+    fields:
+      - id: "patient_gender"
+        path: "Patient.gender"
+        label: "Biological Sex at Birth"
+        uiComponent: "Dropdown"
+        choices: ["male", "female", "other"]
+  - resourceType: Observation
+    id: section_metabolic_labs
+    label: "2. Glycemic & Renal Metrics Matrix"
+    itemControl: "gtable"
+    repeats: true
+    fields:
+      - id: "hba1c_level"
+        path: "Observation.component.valueQuantity.value"
+        label: "Hemoglobin A1c Value"
+        uiComponent: "NumericInput"
+        unit: "%"
+        required: true
+      - id: "fasting_glucose"
+        path: "Observation.component.valueQuantity.value"
+        label: "Fasting Plasma Glucose Metrics"
+        uiComponent: "NumericInput"
+        unit: "mg/dL"
+  - resourceType: Condition
+    id: section_complications
+    label: "3. Secondary Complications"
+    fields:
+      - id: "complication_search"
+        path: "Condition.clinicalStatus.coding.code"
+        label: "Active Secondary Endocrine Complication"
+        uiComponent: "Autocomplete"
+        valueSetUrl: "https://nih.gov"
+  - resourceType: MedicationRequest
+    id: section_pharmacotherapy
+    label: "4. Adjusted Prescription Registry"
+    fields:
+      - id: "primary_anti_hyperglycemic"
+        path: "MedicationRequest.medicationCodeableConcept.coding.code"
+        label: "Search Prescribed Diabetes Management Medication"
+        uiComponent: "Autocomplete"
+        valueSetUrl: "https://nih.gov"

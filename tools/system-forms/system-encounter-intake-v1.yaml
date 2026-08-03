@@ -1,0 +1,27 @@
+formId: system-encounter-intake-v1
+title: "Encounter Intake"
+composition:
+  - resourceType: Encounter
+    id: section_encounter
+    label: "Encounter Details"
+    fields:
+      - id: "encounter_patient_ref"
+        path: "Encounter.subject"
+        label: "Patient"
+        uiComponent: "TextInput"
+        required: true
+      - id: "encounter_chief_complaint"
+        path: "Encounter.reasonCode"
+        label: "Chief Complaint"
+        uiComponent: "TextInput"
+      - id: "encounter_status"
+        path: "Encounter.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["arrived","in-progress","finished","cancelled"]
+        required: true
+      - id: "encounter_priority"
+        path: "Encounter.priority"
+        label: "Triage Priority"
+        uiComponent: "Dropdown"
+        choices: ["Normal","Emergency"]

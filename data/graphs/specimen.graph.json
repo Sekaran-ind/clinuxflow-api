@@ -1,0 +1,4247 @@
+[
+  {
+    "path": "Specimen.resourceType",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a Specimen resource",
+      "coreKeywords": [
+        "specimen",
+        "resource",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Specimen.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Specimen resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "coreKeywords": [
+        "specimen",
+        "textinput",
+        "logical",
+        "resource",
+        "used",
+        "url",
+        "once",
+        "assigned",
+        "never",
+        "changes"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.text",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "coreKeywords": [
+        "specimen",
+        "text",
+        "dropdown",
+        "human",
+        "readable",
+        "narrative",
+        "summary",
+        "resource",
+        "can",
+        "used",
+        "represent",
+        "content",
+        "need",
+        "not",
+        "encode",
+        "all",
+        "structured",
+        "data",
+        "but",
+        "required",
+        "contain",
+        "sufficient",
+        "detail",
+        "make",
+        "clinically",
+        "safe",
+        "just",
+        "read",
+        "definitions",
+        "may",
+        "define",
+        "what",
+        "should",
+        "represented",
+        "ensure",
+        "clinical",
+        "safety"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Specimen.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.modifierExtension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "specimen",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "modifies",
+        "understanding",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "allowed",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Specimen.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.identifier",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Id for specimen.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Specimen.identifier\"\n        label: \"Enter identifier\"\n        description: \"Id for specimen.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.identifier.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.identifier.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.identifier.use",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The purpose of this identifier.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "use",
+        "textinput",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Specimen.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "Specimen.identifier.type",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "dropdown",
+        "coded",
+        "can",
+        "used",
+        "determine",
+        "which",
+        "use",
+        "specific",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Specimen.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.identifier.system",
+    "resourceType": "Specimen",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "system",
+        "textinput",
+        "establishes",
+        "namespace",
+        "url",
+        "describes",
+        "set",
+        "values",
+        "are",
+        "unique"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Specimen.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.identifier.value",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "textinput",
+        "portion",
+        "typically",
+        "relevant",
+        "user",
+        "which",
+        "unique",
+        "within",
+        "context",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Specimen.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.identifier.period",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "period",
+        "textinput",
+        "time",
+        "during",
+        "which",
+        "iswas",
+        "valid",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Specimen.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.identifier.period.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.identifier.period.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.identifier.period.start",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Specimen.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.identifier.period.end",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Specimen.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.identifier.assigner",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "assigner",
+        "traversalPath": "assigner.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "coreKeywords": [
+        "specimen",
+        "identifier",
+        "assigner",
+        "dropdown",
+        "organization",
+        "issuedmanages"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Specimen.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"accession_identifier\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "textinput",
+        "assigned",
+        "lab",
+        "when",
+        "accessioning",
+        "specimens",
+        "not",
+        "necessarily",
+        "same",
+        "depending",
+        "local",
+        "procedures"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"accession_identifier\"\n        path: \"Specimen.accessionIdentifier\"\n        label: \"Enter accessionIdentifier\"\n        description: \"The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.accessionIdentifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.accessionIdentifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier.use",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The purpose of this identifier.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "use",
+        "textinput",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Specimen.accessionIdentifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "Specimen.accessionIdentifier.type",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "dropdown",
+        "coded",
+        "can",
+        "used",
+        "determine",
+        "which",
+        "use",
+        "specific",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Specimen.accessionIdentifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier.system",
+    "resourceType": "Specimen",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "system",
+        "textinput",
+        "establishes",
+        "namespace",
+        "url",
+        "describes",
+        "set",
+        "values",
+        "are",
+        "unique"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Specimen.accessionIdentifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier.value",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "textinput",
+        "portion",
+        "typically",
+        "relevant",
+        "user",
+        "which",
+        "unique",
+        "within",
+        "context",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Specimen.accessionIdentifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier.period",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "period",
+        "textinput",
+        "time",
+        "during",
+        "which",
+        "iswas",
+        "valid",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Specimen.accessionIdentifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier.period.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.accessionIdentifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier.period.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.accessionIdentifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier.period.start",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Specimen.accessionIdentifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier.period.end",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Specimen.accessionIdentifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.accessionIdentifier.assigner",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "assigner",
+        "traversalPath": "assigner.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "coreKeywords": [
+        "specimen",
+        "accession",
+        "identifier",
+        "assigner",
+        "dropdown",
+        "organization",
+        "issuedmanages"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Specimen.accessionIdentifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.status",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"entered-in-error\\\" | \\\"available\\\" | \\\"unavailable\\\" | \\\"unsatisfactory\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The availability of the specimen.",
+      "coreKeywords": [
+        "specimen",
+        "status",
+        "textinput",
+        "availability"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Specimen.status\"\n        label: \"Enter status\"\n        description: \"The availability of the specimen.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "entered-in-error",
+      "available",
+      "unavailable",
+      "unsatisfactory"
+    ]
+  },
+  {
+    "path": "Specimen.type",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The kind of material that forms the specimen.",
+      "coreKeywords": [
+        "specimen",
+        "dropdown",
+        "kind",
+        "material",
+        "forms"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Specimen.type\"\n        label: \"Enter type\"\n        description: \"The kind of material that forms the specimen.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.subject",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"subject\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Where the specimen came from. This may be from patient(s), from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device.",
+      "coreKeywords": [
+        "specimen",
+        "subject",
+        "dropdown",
+        "where",
+        "came",
+        "may",
+        "patients",
+        "location",
+        "source",
+        "environmental",
+        "sample",
+        "sampling",
+        "substance",
+        "device"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"subject\"\n        path: \"Specimen.subject\"\n        label: \"Enter subject\"\n        description: \"Where the specimen came from. This may be from patient(s), from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.receivedTime",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"received_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time when specimen was received for processing or testing.",
+      "coreKeywords": [
+        "specimen",
+        "received",
+        "time",
+        "textinput",
+        "when",
+        "processing",
+        "testing"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"received_time\"\n        path: \"Specimen.receivedTime\"\n        label: \"Enter receivedTime\"\n        description: \"Time when specimen was received for processing or testing.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.parent",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "parent-link",
+        "targetResource": "parent",
+        "traversalPath": "parent.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"parent\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.",
+      "coreKeywords": [
+        "specimen",
+        "parent",
+        "multiselect",
+        "reference",
+        "source",
+        "which",
+        "used",
+        "when",
+        "either",
+        "derived",
+        "component",
+        "another"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"parent\"\n        path: \"Specimen.parent\"\n        label: \"Enter parent\"\n        description: \"Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.request",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "request-link",
+        "targetResource": "request",
+        "traversalPath": "request.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"request\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Details concerning a service request that required a specimen to be collected.",
+      "coreKeywords": [
+        "specimen",
+        "request",
+        "multiselect",
+        "details",
+        "concerning",
+        "service",
+        "required",
+        "collected"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"request\"\n        path: \"Specimen.request\"\n        label: \"Enter request\"\n        description: \"Details concerning a service request that required a specimen to be collected.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.collection",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"collection\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Details concerning the specimen collection.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "textinput",
+        "details",
+        "concerning"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"collection\"\n        path: \"Specimen.collection\"\n        label: \"Enter collection\"\n        description: \"Details concerning the specimen collection.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.collection.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.collection.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.collection.modifierExtension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Specimen.collection.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.collection.collector",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "collector-link",
+        "targetResource": "collector",
+        "traversalPath": "collector.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"collector\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Person who collected the specimen.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "collector",
+        "dropdown",
+        "person",
+        "who",
+        "collected"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"collector\"\n        path: \"Specimen.collection.collector\"\n        label: \"Enter collector\"\n        description: \"Person who collected the specimen.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.collection.collectedDateTime",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"collected_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time when specimen was collected from subject - the physiologically relevant time.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "collected",
+        "date",
+        "time",
+        "textinput",
+        "when",
+        "subject",
+        "physiologically",
+        "relevant"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"collected_date_time\"\n        path: \"Specimen.collection.collectedDateTime\"\n        label: \"Enter collectedDateTime\"\n        description: \"Time when specimen was collected from subject - the physiologically relevant time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.collectedPeriod",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"collected_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time when specimen was collected from subject - the physiologically relevant time.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "collected",
+        "period",
+        "textinput",
+        "time",
+        "when",
+        "subject",
+        "physiologically",
+        "relevant"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"collected_period\"\n        path: \"Specimen.collection.collectedPeriod\"\n        label: \"Enter collectedPeriod\"\n        description: \"Time when specimen was collected from subject - the physiologically relevant time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.collectedPeriod.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "collected",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.collection.collectedPeriod.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.collectedPeriod.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "collected",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.collection.collectedPeriod.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.collection.collectedPeriod.start",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "collected",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Specimen.collection.collectedPeriod.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.collectedPeriod.end",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "collected",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Specimen.collection.collectedPeriod.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.duration",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"duration\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The span of time over which the collection of a specimen occurred.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "duration",
+        "textinput",
+        "span",
+        "time",
+        "which",
+        "occurred"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"duration\"\n        path: \"Specimen.collection.duration\"\n        label: \"Enter duration\"\n        description: \"The span of time over which the collection of a specimen occurred.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.duration.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "duration",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.collection.duration.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.duration.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "duration",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.collection.duration.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.collection.duration.value",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "duration",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Specimen.collection.duration.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.duration.comparator",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "duration",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Specimen.collection.duration.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Specimen.collection.duration.unit",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "duration",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Specimen.collection.duration.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.duration.system",
+    "resourceType": "Specimen",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "duration",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Specimen.collection.duration.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.duration.code",
+    "resourceType": "Specimen",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "duration",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Specimen.collection.duration.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.collection.quantity",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"quantity\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "quantity",
+        "textinput",
+        "collected",
+        "instance",
+        "volume",
+        "blood",
+        "sample",
+        "physical",
+        "measurement",
+        "anatomic",
+        "pathology"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"quantity\"\n        path: \"Specimen.collection.quantity\"\n        label: \"Enter quantity\"\n        description: \"The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.quantity.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "quantity",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.collection.quantity.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.quantity.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "quantity",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.collection.quantity.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.collection.quantity.value",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "quantity",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Specimen.collection.quantity.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.quantity.comparator",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "quantity",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Specimen.collection.quantity.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Specimen.collection.quantity.unit",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "quantity",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Specimen.collection.quantity.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.quantity.system",
+    "resourceType": "Specimen",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "quantity",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Specimen.collection.quantity.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.quantity.code",
+    "resourceType": "Specimen",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "quantity",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Specimen.collection.quantity.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.collection.method",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"method\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded value specifying the technique that is used to perform the procedure.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "method",
+        "dropdown",
+        "coded",
+        "specifying",
+        "technique",
+        "used",
+        "perform",
+        "procedure"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"method\"\n        path: \"Specimen.collection.method\"\n        label: \"Enter method\"\n        description: \"A coded value specifying the technique that is used to perform the procedure.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.collection.bodySite",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"body_site\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Anatomical location from which the specimen was collected (if subject is a patient). This is the target site. This element is not used for environmental specimens.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "body",
+        "site",
+        "dropdown",
+        "anatomical",
+        "location",
+        "which",
+        "collected",
+        "subject",
+        "patient",
+        "target",
+        "not",
+        "used",
+        "environmental",
+        "specimens"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"body_site\"\n        path: \"Specimen.collection.bodySite\"\n        label: \"Enter bodySite\"\n        description: \"Anatomical location from which the specimen was collected (if subject is a patient). This is the target site. This element is not used for environmental specimens.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.collection.fastingStatusCodeableConcept",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"fasting_status_codeable_concept\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Abstinence or reduction from some or all food, drink, or both, for a period of time prior to sample collection.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "fasting",
+        "status",
+        "codeable",
+        "concept",
+        "dropdown",
+        "abstinence",
+        "reduction",
+        "some",
+        "all",
+        "food",
+        "drink",
+        "both",
+        "period",
+        "time",
+        "prior",
+        "sample"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"fasting_status_codeable_concept\"\n        path: \"Specimen.collection.fastingStatusCodeableConcept\"\n        label: \"Enter fastingStatusCodeableConcept\"\n        description: \"Abstinence or reduction from some or all food, drink, or both, for a period of time prior to sample collection.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.collection.fastingStatusDuration",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"fasting_status_duration\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Abstinence or reduction from some or all food, drink, or both, for a period of time prior to sample collection.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "fasting",
+        "status",
+        "duration",
+        "textinput",
+        "abstinence",
+        "reduction",
+        "some",
+        "all",
+        "food",
+        "drink",
+        "both",
+        "period",
+        "time",
+        "prior",
+        "sample"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"fasting_status_duration\"\n        path: \"Specimen.collection.fastingStatusDuration\"\n        label: \"Enter fastingStatusDuration\"\n        description: \"Abstinence or reduction from some or all food, drink, or both, for a period of time prior to sample collection.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.fastingStatusDuration.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "fasting",
+        "status",
+        "duration",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.collection.fastingStatusDuration.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.fastingStatusDuration.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "fasting",
+        "status",
+        "duration",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.collection.fastingStatusDuration.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.collection.fastingStatusDuration.value",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "fasting",
+        "status",
+        "duration",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Specimen.collection.fastingStatusDuration.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.fastingStatusDuration.comparator",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "fasting",
+        "status",
+        "duration",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Specimen.collection.fastingStatusDuration.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Specimen.collection.fastingStatusDuration.unit",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "fasting",
+        "status",
+        "duration",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Specimen.collection.fastingStatusDuration.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.fastingStatusDuration.system",
+    "resourceType": "Specimen",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "fasting",
+        "status",
+        "duration",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Specimen.collection.fastingStatusDuration.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.collection.fastingStatusDuration.code",
+    "resourceType": "Specimen",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "specimen",
+        "collection",
+        "fasting",
+        "status",
+        "duration",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Specimen.collection.fastingStatusDuration.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.processing",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "SpecimenProcessing",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"processing\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Details concerning processing and processing steps for the specimen.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "textinput",
+        "details",
+        "concerning",
+        "steps"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"processing\"\n        path: \"Specimen.processing\"\n        label: \"Enter processing\"\n        description: \"Details concerning processing and processing steps for the specimen.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.processing.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.processing.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.processing.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.processing.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.processing.modifierExtension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Specimen.processing.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.processing.description",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Textual description of procedure.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "description",
+        "textinput",
+        "textual",
+        "procedure"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"Specimen.processing.description\"\n        label: \"Enter description\"\n        description: \"Textual description of procedure.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.processing.procedure",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"procedure\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded value specifying the procedure used to process the specimen.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "procedure",
+        "dropdown",
+        "coded",
+        "specifying",
+        "used",
+        "process"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"procedure\"\n        path: \"Specimen.processing.procedure\"\n        label: \"Enter procedure\"\n        description: \"A coded value specifying the procedure used to process the specimen.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.processing.additive",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "additive-link",
+        "targetResource": "additive",
+        "traversalPath": "additive.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"additive\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Material used in the processing step.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "additive",
+        "multiselect",
+        "material",
+        "used",
+        "step"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"additive\"\n        path: \"Specimen.processing.additive\"\n        label: \"Enter additive\"\n        description: \"Material used in the processing step.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.processing.timeDateTime",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A record of the time or period when the specimen processing occurred. For example the time of sample fixation or the period of time the sample was in formalin.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "time",
+        "date",
+        "textinput",
+        "record",
+        "period",
+        "when",
+        "occurred",
+        "example",
+        "sample",
+        "fixation",
+        "formalin"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time_date_time\"\n        path: \"Specimen.processing.timeDateTime\"\n        label: \"Enter timeDateTime\"\n        description: \"A record of the time or period when the specimen processing occurred. For example the time of sample fixation or the period of time the sample was in formalin.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.processing.timePeriod",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A record of the time or period when the specimen processing occurred. For example the time of sample fixation or the period of time the sample was in formalin.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "time",
+        "period",
+        "textinput",
+        "record",
+        "when",
+        "occurred",
+        "example",
+        "sample",
+        "fixation",
+        "formalin"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time_period\"\n        path: \"Specimen.processing.timePeriod\"\n        label: \"Enter timePeriod\"\n        description: \"A record of the time or period when the specimen processing occurred. For example the time of sample fixation or the period of time the sample was in formalin.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.processing.timePeriod.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "time",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.processing.timePeriod.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.processing.timePeriod.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "time",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.processing.timePeriod.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.processing.timePeriod.start",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "time",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Specimen.processing.timePeriod.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.processing.timePeriod.end",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "specimen",
+        "processing",
+        "time",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Specimen.processing.timePeriod.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "SpecimenContainer",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"container\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The container holding the specimen. The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "textinput",
+        "holding",
+        "recursive",
+        "nature",
+        "containers",
+        "blood",
+        "tube",
+        "tray",
+        "rack",
+        "not",
+        "addressed",
+        "here"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"container\"\n        path: \"Specimen.container\"\n        label: \"Enter container\"\n        description: \"The container holding the specimen. The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.container.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.container.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.container.modifierExtension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Specimen.container.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.container.identifier",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "textinput",
+        "there",
+        "may",
+        "multiple",
+        "manufacturers",
+        "bar",
+        "code",
+        "lab",
+        "assigned",
+        "etc",
+        "differ",
+        "some",
+        "circumstances"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Specimen.container.identifier\"\n        label: \"Enter identifier\"\n        description: \"Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.identifier.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.container.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.identifier.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.container.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.container.identifier.use",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The purpose of this identifier.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "use",
+        "textinput",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Specimen.container.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "Specimen.container.identifier.type",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "dropdown",
+        "coded",
+        "can",
+        "used",
+        "determine",
+        "which",
+        "use",
+        "specific",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Specimen.container.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.container.identifier.system",
+    "resourceType": "Specimen",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "system",
+        "textinput",
+        "establishes",
+        "namespace",
+        "url",
+        "describes",
+        "set",
+        "values",
+        "are",
+        "unique"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Specimen.container.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.identifier.value",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "textinput",
+        "portion",
+        "typically",
+        "relevant",
+        "user",
+        "which",
+        "unique",
+        "within",
+        "context",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Specimen.container.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.identifier.period",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "period",
+        "textinput",
+        "time",
+        "during",
+        "which",
+        "iswas",
+        "valid",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Specimen.container.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.identifier.period.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.container.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.identifier.period.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.container.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.container.identifier.period.start",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Specimen.container.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.identifier.period.end",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Specimen.container.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.identifier.assigner",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "assigner",
+        "traversalPath": "assigner.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "identifier",
+        "assigner",
+        "dropdown",
+        "organization",
+        "issuedmanages"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Specimen.container.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.container.description",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Textual description of the container.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "description",
+        "textinput",
+        "textual"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"Specimen.container.description\"\n        label: \"Enter description\"\n        description: \"Textual description of the container.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.type",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The type of container associated with the specimen (e.g. slide, aliquot, etc.).",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "dropdown",
+        "associated",
+        "slide",
+        "aliquot",
+        "etc"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Specimen.container.type\"\n        label: \"Enter type\"\n        description: \"The type of container associated with the specimen (e.g. slide, aliquot, etc.).\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.container.capacity",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"capacity\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The capacity (volume or other measure) the container may contain.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "capacity",
+        "textinput",
+        "volume",
+        "other",
+        "measure",
+        "may",
+        "contain"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"capacity\"\n        path: \"Specimen.container.capacity\"\n        label: \"Enter capacity\"\n        description: \"The capacity (volume or other measure) the container may contain.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.capacity.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "capacity",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.container.capacity.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.capacity.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "capacity",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.container.capacity.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.container.capacity.value",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "capacity",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Specimen.container.capacity.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.capacity.comparator",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "capacity",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Specimen.container.capacity.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Specimen.container.capacity.unit",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "capacity",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Specimen.container.capacity.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.capacity.system",
+    "resourceType": "Specimen",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "capacity",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Specimen.container.capacity.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.capacity.code",
+    "resourceType": "Specimen",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "capacity",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Specimen.container.capacity.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.container.specimenQuantity",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"specimen_quantity\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "quantity",
+        "textinput",
+        "may",
+        "volume",
+        "dimensions",
+        "other",
+        "appropriate",
+        "measurements",
+        "depending"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"specimen_quantity\"\n        path: \"Specimen.container.specimenQuantity\"\n        label: \"Enter specimenQuantity\"\n        description: \"The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.specimenQuantity.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "quantity",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.container.specimenQuantity.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.specimenQuantity.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "quantity",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.container.specimenQuantity.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.container.specimenQuantity.value",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "quantity",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Specimen.container.specimenQuantity.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.specimenQuantity.comparator",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "quantity",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Specimen.container.specimenQuantity.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Specimen.container.specimenQuantity.unit",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "quantity",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Specimen.container.specimenQuantity.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.specimenQuantity.system",
+    "resourceType": "Specimen",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "quantity",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Specimen.container.specimenQuantity.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.container.specimenQuantity.code",
+    "resourceType": "Specimen",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "quantity",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Specimen.container.specimenQuantity.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.container.additiveCodeableConcept",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"additive_codeable_concept\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Introduced substance to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "additive",
+        "codeable",
+        "concept",
+        "dropdown",
+        "introduced",
+        "substance",
+        "preserve",
+        "maintain",
+        "enhance",
+        "examples",
+        "formalin",
+        "citrate",
+        "edta"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"additive_codeable_concept\"\n        path: \"Specimen.container.additiveCodeableConcept\"\n        label: \"Enter additiveCodeableConcept\"\n        description: \"Introduced substance to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.container.additiveReference",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "additiveReference-link",
+        "targetResource": "additiveReference",
+        "traversalPath": "additiveReference.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"additive_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Introduced substance to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.",
+      "coreKeywords": [
+        "specimen",
+        "container",
+        "additive",
+        "reference",
+        "dropdown",
+        "introduced",
+        "substance",
+        "preserve",
+        "maintain",
+        "enhance",
+        "examples",
+        "formalin",
+        "citrate",
+        "edta"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"additive_reference\"\n        path: \"Specimen.container.additiveReference\"\n        label: \"Enter additiveReference\"\n        description: \"Introduced substance to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.condition",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"condition\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A mode or state of being that describes the nature of the specimen.",
+      "coreKeywords": [
+        "specimen",
+        "condition",
+        "multiselect",
+        "mode",
+        "state",
+        "being",
+        "describes",
+        "nature"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"condition\"\n        path: \"Specimen.condition\"\n        label: \"Enter condition\"\n        description: \"A mode or state of being that describes the nature of the specimen.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.note",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).",
+      "coreKeywords": [
+        "specimen",
+        "note",
+        "textinput",
+        "communicate",
+        "any",
+        "details",
+        "issues",
+        "about",
+        "during",
+        "collection",
+        "example",
+        "broken",
+        "vial",
+        "sent",
+        "patient",
+        "frozen"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"Specimen.note\"\n        label: \"Enter note\"\n        description: \"To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.note.id",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "specimen",
+        "note",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Specimen.note.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.note.extension",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "specimen",
+        "note",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Specimen.note.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Specimen.note.authorReference",
+    "resourceType": "Specimen",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "authorReference",
+        "traversalPath": "authorReference.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The individual responsible for making the annotation.",
+      "coreKeywords": [
+        "specimen",
+        "note",
+        "author",
+        "reference",
+        "dropdown",
+        "individual",
+        "responsible",
+        "making",
+        "annotation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"Specimen.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"The individual responsible for making the annotation.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Specimen.note.authorString",
+    "resourceType": "Specimen",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The individual responsible for making the annotation.",
+      "coreKeywords": [
+        "specimen",
+        "note",
+        "author",
+        "string",
+        "textinput",
+        "individual",
+        "responsible",
+        "making",
+        "annotation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"Specimen.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"The individual responsible for making the annotation.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.note.time",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Indicates when this particular annotation was made.",
+      "coreKeywords": [
+        "specimen",
+        "note",
+        "time",
+        "textinput",
+        "indicates",
+        "when",
+        "particular",
+        "annotation",
+        "made"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"Specimen.note.time\"\n        label: \"Enter time\"\n        description: \"Indicates when this particular annotation was made.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Specimen.note.text",
+    "resourceType": "Specimen",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The text of the annotation in markdown format.",
+      "coreKeywords": [
+        "specimen",
+        "note",
+        "text",
+        "textinput",
+        "annotation",
+        "markdown",
+        "format"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Specimen.note.text\"\n        label: \"Enter text\"\n        description: \"The text of the annotation in markdown format.\"\n        uiComponent: \"TextInput\""
+  }
+]

@@ -1,0 +1,1828 @@
+[
+  {
+    "path": "Appointment.resourceType",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a Appointment resource",
+      "coreKeywords": [
+        "appointment",
+        "resource",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Appointment.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Appointment resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.id",
+    "resourceType": "Appointment",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "coreKeywords": [
+        "appointment",
+        "textinput",
+        "logical",
+        "resource",
+        "used",
+        "url",
+        "once",
+        "assigned",
+        "never",
+        "changes"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Appointment.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.text",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "coreKeywords": [
+        "appointment",
+        "text",
+        "dropdown",
+        "human",
+        "readable",
+        "narrative",
+        "summary",
+        "resource",
+        "can",
+        "used",
+        "represent",
+        "content",
+        "need",
+        "not",
+        "encode",
+        "all",
+        "structured",
+        "data",
+        "but",
+        "required",
+        "contain",
+        "sufficient",
+        "detail",
+        "make",
+        "clinically",
+        "safe",
+        "just",
+        "read",
+        "definitions",
+        "may",
+        "define",
+        "what",
+        "should",
+        "represented",
+        "ensure",
+        "clinical",
+        "safety"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Appointment.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Appointment.extension",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "appointment",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Appointment.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.modifierExtension",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "appointment",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "modifies",
+        "understanding",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "allowed",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Appointment.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.identifier",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This records identifiers associated with this appointment concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "textinput",
+        "records",
+        "identifiers",
+        "associated",
+        "concern",
+        "are",
+        "defined",
+        "business",
+        "processes",
+        "andor",
+        "used",
+        "refer",
+        "when",
+        "direct",
+        "url",
+        "reference",
+        "resource",
+        "itself",
+        "not",
+        "appropriate",
+        "cda",
+        "documents",
+        "written",
+        "printed",
+        "documentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Appointment.identifier\"\n        label: \"Enter identifier\"\n        description: \"This records identifiers associated with this appointment concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.identifier.id",
+    "resourceType": "Appointment",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Appointment.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.identifier.extension",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Appointment.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.identifier.use",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The purpose of this identifier.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "use",
+        "textinput",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Appointment.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "Appointment.identifier.type",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "dropdown",
+        "coded",
+        "can",
+        "used",
+        "determine",
+        "which",
+        "use",
+        "specific",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Appointment.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Appointment.identifier.system",
+    "resourceType": "Appointment",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "system",
+        "textinput",
+        "establishes",
+        "namespace",
+        "url",
+        "describes",
+        "set",
+        "values",
+        "are",
+        "unique"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Appointment.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.identifier.value",
+    "resourceType": "Appointment",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "textinput",
+        "portion",
+        "typically",
+        "relevant",
+        "user",
+        "which",
+        "unique",
+        "within",
+        "context",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Appointment.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.identifier.period",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "period",
+        "textinput",
+        "time",
+        "during",
+        "which",
+        "iswas",
+        "valid",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Appointment.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.identifier.period.id",
+    "resourceType": "Appointment",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Appointment.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.identifier.period.extension",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Appointment.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.identifier.period.start",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Appointment.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.identifier.period.end",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Appointment.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.identifier.assigner",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "assigner",
+        "traversalPath": "assigner.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "coreKeywords": [
+        "appointment",
+        "identifier",
+        "assigner",
+        "dropdown",
+        "organization",
+        "issuedmanages"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Appointment.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Appointment.status",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"cancelled\\\" | \\\"entered-in-error\\\" | \\\"arrived\\\" | \\\"proposed\\\" | \\\"pending\\\" | \\\"booked\\\" | \\\"fulfilled\\\" | \\\"noshow\\\" | \\\"checked-in\\\" | \\\"waitlist\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The overall status of the Appointment. Each of the participants has their own participation status which indicates their involvement in the process, however this status indicates the shared status.",
+      "coreKeywords": [
+        "appointment",
+        "status",
+        "textinput",
+        "overall",
+        "participants",
+        "has",
+        "own",
+        "participation",
+        "which",
+        "indicates",
+        "involvement",
+        "process",
+        "however",
+        "shared"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Appointment.status\"\n        label: \"Enter status\"\n        description: \"The overall status of the Appointment. Each of the participants has their own participation status which indicates their involvement in the process, however this status indicates the shared status.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "cancelled",
+      "entered-in-error",
+      "arrived",
+      "proposed",
+      "pending",
+      "booked",
+      "fulfilled",
+      "noshow",
+      "checked-in",
+      "waitlist"
+    ]
+  },
+  {
+    "path": "Appointment.cancelationReason",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"cancelation_reason\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The coded reason for the appointment being cancelled. This is often used in reporting/billing/futher processing to determine if further actions are required, or specific fees apply.",
+      "coreKeywords": [
+        "appointment",
+        "cancelation",
+        "reason",
+        "dropdown",
+        "coded",
+        "being",
+        "cancelled",
+        "often",
+        "used",
+        "reportingbillingfuther",
+        "processing",
+        "determine",
+        "further",
+        "actions",
+        "are",
+        "required",
+        "specific",
+        "fees",
+        "apply"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"cancelation_reason\"\n        path: \"Appointment.cancelationReason\"\n        label: \"Enter cancelationReason\"\n        description: \"The coded reason for the appointment being cancelled. This is often used in reporting/billing/futher processing to determine if further actions are required, or specific fees apply.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Appointment.serviceCategory",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"service_category\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A broad categorization of the service that is to be performed during this appointment.",
+      "coreKeywords": [
+        "appointment",
+        "service",
+        "category",
+        "multiselect",
+        "broad",
+        "categorization",
+        "performed",
+        "during"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"service_category\"\n        path: \"Appointment.serviceCategory\"\n        label: \"Enter serviceCategory\"\n        description: \"A broad categorization of the service that is to be performed during this appointment.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.serviceType",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"service_type\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The specific service that is to be performed during this appointment.",
+      "coreKeywords": [
+        "appointment",
+        "service",
+        "multiselect",
+        "specific",
+        "performed",
+        "during"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"service_type\"\n        path: \"Appointment.serviceType\"\n        label: \"Enter serviceType\"\n        description: \"The specific service that is to be performed during this appointment.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.specialty",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"specialty\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The specialty of a practitioner that would be required to perform the service requested in this appointment.",
+      "coreKeywords": [
+        "appointment",
+        "specialty",
+        "multiselect",
+        "practitioner",
+        "would",
+        "required",
+        "perform",
+        "service",
+        "requested"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"specialty\"\n        path: \"Appointment.specialty\"\n        label: \"Enter specialty\"\n        description: \"The specialty of a practitioner that would be required to perform the service requested in this appointment.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.appointmentType",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"appointment_type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The style of appointment or patient that has been booked in the slot (not service type).",
+      "coreKeywords": [
+        "appointment",
+        "dropdown",
+        "style",
+        "patient",
+        "has",
+        "booked",
+        "slot",
+        "not",
+        "service"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"appointment_type\"\n        path: \"Appointment.appointmentType\"\n        label: \"Enter appointmentType\"\n        description: \"The style of appointment or patient that has been booked in the slot (not service type).\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Appointment.reasonCode",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"reason_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The coded reason that this appointment is being scheduled. This is more clinical than administrative.",
+      "coreKeywords": [
+        "appointment",
+        "reason",
+        "code",
+        "multiselect",
+        "coded",
+        "being",
+        "scheduled",
+        "more",
+        "clinical",
+        "than",
+        "administrative"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason_code\"\n        path: \"Appointment.reasonCode\"\n        label: \"Enter reasonCode\"\n        description: \"The coded reason that this appointment is being scheduled. This is more clinical than administrative.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.reasonReference",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "reasonReference",
+        "traversalPath": "reasonReference.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"reason_reference\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.",
+      "coreKeywords": [
+        "appointment",
+        "reason",
+        "reference",
+        "multiselect",
+        "has",
+        "scheduled",
+        "take",
+        "place",
+        "specified",
+        "using",
+        "information",
+        "another",
+        "resource",
+        "when",
+        "patient",
+        "arrives",
+        "encounter",
+        "begins",
+        "may",
+        "used",
+        "admission",
+        "diagnosis",
+        "indication",
+        "will",
+        "typically",
+        "condition",
+        "other",
+        "resources",
+        "referenced",
+        "evidence",
+        "detail",
+        "procedure"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason_reference\"\n        path: \"Appointment.reasonReference\"\n        label: \"Enter reasonReference\"\n        description: \"Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.priority",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"priority\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The priority of the appointment. Can be used to make informed decisions if needing to re-prioritize appointments. (The iCal Standard specifies 0 as undefined, 1 as highest, 9 as lowest priority).",
+      "coreKeywords": [
+        "appointment",
+        "priority",
+        "textinput",
+        "can",
+        "used",
+        "make",
+        "informed",
+        "decisions",
+        "needing",
+        "prioritize",
+        "appointments",
+        "ical",
+        "standard",
+        "specifies",
+        "undefined",
+        "highest",
+        "lowest"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"priority\"\n        path: \"Appointment.priority\"\n        label: \"Enter priority\"\n        description: \"The priority of the appointment. Can be used to make informed decisions if needing to re-prioritize appointments. (The iCal Standard specifies 0 as undefined, 1 as highest, 9 as lowest priority).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.description",
+    "resourceType": "Appointment",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. Detailed or expanded information should be put in the comment field.",
+      "coreKeywords": [
+        "appointment",
+        "description",
+        "textinput",
+        "brief",
+        "would",
+        "shown",
+        "subject",
+        "line",
+        "meeting",
+        "request",
+        "list",
+        "detailed",
+        "expanded",
+        "information",
+        "should",
+        "put",
+        "comment",
+        "field"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"Appointment.description\"\n        label: \"Enter description\"\n        description: \"The brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. Detailed or expanded information should be put in the comment field.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.supportingInformation",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "supportingInformation-link",
+        "targetResource": "supportingInformation",
+        "traversalPath": "supportingInformation.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"supporting_information\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional information to support the appointment provided when making the appointment.",
+      "coreKeywords": [
+        "appointment",
+        "supporting",
+        "information",
+        "multiselect",
+        "additional",
+        "support",
+        "provided",
+        "when",
+        "making"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"supporting_information\"\n        path: \"Appointment.supportingInformation\"\n        label: \"Enter supportingInformation\"\n        description: \"Additional information to support the appointment provided when making the appointment.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.start",
+    "resourceType": "Appointment",
+    "primitiveType": "Instant",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Date/Time that the appointment is to take place.",
+      "coreKeywords": [
+        "appointment",
+        "start",
+        "textinput",
+        "datetime",
+        "take",
+        "place"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Appointment.start\"\n        label: \"Enter start\"\n        description: \"Date/Time that the appointment is to take place.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.end",
+    "resourceType": "Appointment",
+    "primitiveType": "Instant",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Date/Time that the appointment is to conclude.",
+      "coreKeywords": [
+        "appointment",
+        "end",
+        "textinput",
+        "datetime",
+        "conclude"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Appointment.end\"\n        label: \"Enter end\"\n        description: \"Date/Time that the appointment is to conclude.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.minutesDuration",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"minutes_duration\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Number of minutes that the appointment is to take. This can be less than the duration between the start and end times. For example, where the actual time of appointment is only an estimate or if a 30 minute appointment is being requested, but any time would work. Also, if there is, for example, a planned 15 minute break in the middle of a long appointment, the duration may be 15 minutes less than the difference between the start and end.",
+      "coreKeywords": [
+        "appointment",
+        "minutes",
+        "duration",
+        "textinput",
+        "number",
+        "take",
+        "can",
+        "less",
+        "than",
+        "between",
+        "start",
+        "end",
+        "times",
+        "example",
+        "where",
+        "actual",
+        "time",
+        "only",
+        "estimate",
+        "minute",
+        "being",
+        "requested",
+        "but",
+        "any",
+        "would",
+        "work",
+        "also",
+        "there",
+        "planned",
+        "break",
+        "middle",
+        "long",
+        "may",
+        "difference"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"minutes_duration\"\n        path: \"Appointment.minutesDuration\"\n        label: \"Enter minutesDuration\"\n        description: \"Number of minutes that the appointment is to take. This can be less than the duration between the start and end times. For example, where the actual time of appointment is only an estimate or if a 30 minute appointment is being requested, but any time would work. Also, if there is, for example, a planned 15 minute break in the middle of a long appointment, the duration may be 15 minutes less than the difference between the start and end.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.slot",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "slot-link",
+        "targetResource": "slot",
+        "traversalPath": "slot.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"slot\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The slots from the participants' schedules that will be filled by the appointment.",
+      "coreKeywords": [
+        "appointment",
+        "slot",
+        "multiselect",
+        "slots",
+        "participants",
+        "schedules",
+        "will",
+        "filled"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"slot\"\n        path: \"Appointment.slot\"\n        label: \"Enter slot\"\n        description: \"The slots from the participants' schedules that will be filled by the appointment.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.created",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"created\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date that this appointment was initially created. This could be different to the meta.lastModified value on the initial entry, as this could have been before the resource was created on the FHIR server, and should remain unchanged over the lifespan of the appointment.",
+      "coreKeywords": [
+        "appointment",
+        "created",
+        "textinput",
+        "date",
+        "initially",
+        "could",
+        "different",
+        "meta",
+        "lastmodified",
+        "initial",
+        "entry",
+        "have",
+        "before",
+        "resource",
+        "fhir",
+        "server",
+        "should",
+        "remain",
+        "unchanged",
+        "lifespan"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"created\"\n        path: \"Appointment.created\"\n        label: \"Enter created\"\n        description: \"The date that this appointment was initially created. This could be different to the meta.lastModified value on the initial entry, as this could have been before the resource was created on the FHIR server, and should remain unchanged over the lifespan of the appointment.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.comment",
+    "resourceType": "Appointment",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comment\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional comments about the appointment.",
+      "coreKeywords": [
+        "appointment",
+        "comment",
+        "textinput",
+        "additional",
+        "comments",
+        "about"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comment\"\n        path: \"Appointment.comment\"\n        label: \"Enter comment\"\n        description: \"Additional comments about the appointment.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.patientInstruction",
+    "resourceType": "Appointment",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"patient_instruction\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "While Appointment.comment contains information for internal use, Appointment.patientInstructions is used to capture patient facing information about the Appointment (e.g. please bring your referral or fast from 8pm night before).",
+      "coreKeywords": [
+        "appointment",
+        "patient",
+        "instruction",
+        "textinput",
+        "while",
+        "comment",
+        "information",
+        "internal",
+        "use",
+        "patientinstructions",
+        "used",
+        "capture",
+        "facing",
+        "about",
+        "please",
+        "bring",
+        "your",
+        "referral",
+        "fast",
+        "night",
+        "before"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"patient_instruction\"\n        path: \"Appointment.patientInstruction\"\n        label: \"Enter patientInstruction\"\n        description: \"While Appointment.comment contains information for internal use, Appointment.patientInstructions is used to capture patient facing information about the Appointment (e.g. please bring your referral or fast from 8pm night before).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.basedOn",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "basedOn",
+        "traversalPath": "basedOn.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"based_on\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The service request this appointment is allocated to assess (e.g. incoming referral or procedure request).",
+      "coreKeywords": [
+        "appointment",
+        "based",
+        "multiselect",
+        "service",
+        "request",
+        "allocated",
+        "assess",
+        "incoming",
+        "referral",
+        "procedure"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"based_on\"\n        path: \"Appointment.basedOn\"\n        label: \"Enter basedOn\"\n        description: \"The service request this appointment is allocated to assess (e.g. incoming referral or procedure request).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.participant",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "AppointmentParticipant",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"participant\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "List of participants involved in the appointment.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "textinput",
+        "list",
+        "participants",
+        "involved"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"participant\"\n        path: \"Appointment.participant\"\n        label: \"Enter participant\"\n        description: \"List of participants involved in the appointment.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.participant.id",
+    "resourceType": "Appointment",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Appointment.participant.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.participant.extension",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Appointment.participant.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.participant.modifierExtension",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Appointment.participant.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.participant.type",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Role of participant in the appointment.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "multiselect",
+        "role"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Appointment.participant.type\"\n        label: \"Enter type\"\n        description: \"Role of participant in the appointment.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.participant.actor",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "actor",
+        "traversalPath": "actor.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"actor\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A Person, Location/HealthcareService or Device that is participating in the appointment.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "actor",
+        "dropdown",
+        "person",
+        "locationhealthcareservice",
+        "device",
+        "participating"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"actor\"\n        path: \"Appointment.participant.actor\"\n        label: \"Enter actor\"\n        description: \"A Person, Location/HealthcareService or Device that is participating in the appointment.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Appointment.participant.required",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"required\\\": \\\"\" (\\\"required\\\" | \\\"optional\\\" | \\\"information-only\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Whether this participant is required to be present at the meeting. This covers a use-case where two doctors need to meet to discuss the results for a specific patient, and the patient is not required to be present.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "required",
+        "textinput",
+        "whether",
+        "present",
+        "meeting",
+        "covers",
+        "use",
+        "case",
+        "where",
+        "two",
+        "doctors",
+        "need",
+        "meet",
+        "discuss",
+        "results",
+        "specific",
+        "patient",
+        "not"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"required\"\n        path: \"Appointment.participant.required\"\n        label: \"Enter required\"\n        description: \"Whether this participant is required to be present at the meeting. This covers a use-case where two doctors need to meet to discuss the results for a specific patient, and the patient is not required to be present.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "required",
+      "optional",
+      "information-only"
+    ]
+  },
+  {
+    "path": "Appointment.participant.status",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"accepted\\\" | \\\"declined\\\" | \\\"tentative\\\" | \\\"needs-action\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Participation status of the actor.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "status",
+        "textinput",
+        "participation",
+        "actor"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Appointment.participant.status\"\n        label: \"Enter status\"\n        description: \"Participation status of the actor.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "accepted",
+      "declined",
+      "tentative",
+      "needs-action"
+    ]
+  },
+  {
+    "path": "Appointment.participant.period",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Participation period of the actor.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "period",
+        "textinput",
+        "participation",
+        "actor"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Appointment.participant.period\"\n        label: \"Enter period\"\n        description: \"Participation period of the actor.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.participant.period.id",
+    "resourceType": "Appointment",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Appointment.participant.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.participant.period.extension",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Appointment.participant.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.participant.period.start",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Appointment.participant.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.participant.period.end",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "appointment",
+        "participant",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Appointment.participant.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.requestedPeriod",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Period",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"requested_period\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within. The duration (usually in minutes) could also be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time. However, in other situations the duration may be calculated by the scheduling system.",
+      "coreKeywords": [
+        "appointment",
+        "requested",
+        "period",
+        "textinput",
+        "set",
+        "date",
+        "ranges",
+        "potentially",
+        "including",
+        "times",
+        "preferred",
+        "scheduled",
+        "within",
+        "duration",
+        "usually",
+        "minutes",
+        "could",
+        "also",
+        "provided",
+        "indicate",
+        "length",
+        "fill",
+        "populate",
+        "startend",
+        "actual",
+        "allocated",
+        "time",
+        "however",
+        "other",
+        "situations",
+        "may",
+        "calculated",
+        "scheduling",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"requested_period\"\n        path: \"Appointment.requestedPeriod\"\n        label: \"Enter requestedPeriod\"\n        description: \"A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within. The duration (usually in minutes) could also be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time. However, in other situations the duration may be calculated by the scheduling system.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.requestedPeriod.id",
+    "resourceType": "Appointment",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "appointment",
+        "requested",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Appointment.requestedPeriod.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.requestedPeriod.extension",
+    "resourceType": "Appointment",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "appointment",
+        "requested",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Appointment.requestedPeriod.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Appointment.requestedPeriod.start",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "appointment",
+        "requested",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Appointment.requestedPeriod.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Appointment.requestedPeriod.end",
+    "resourceType": "Appointment",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "appointment",
+        "requested",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Appointment.requestedPeriod.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  }
+]

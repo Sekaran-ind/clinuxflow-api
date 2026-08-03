@@ -1,0 +1,26 @@
+formId: system-prescription-v1
+title: "Prescription"
+composition:
+  - resourceType: MedicationRequest
+    id: section_prescription
+    label: "Medication"
+    fields:
+      - id: "rx_encounter_ref"
+        path: "MedicationRequest.encounter"
+        label: "Encounter"
+        uiComponent: "TextInput"
+        required: true
+      - id: "rx_medication"
+        path: "MedicationRequest.medicationCodeableConcept"
+        label: "Medication"
+        uiComponent: "TextInput"
+        required: true
+      - id: "rx_dosage"
+        path: "MedicationRequest.dosageInstruction.text"
+        label: "Dosage Instructions"
+        uiComponent: "TextInput"
+      - id: "rx_status"
+        path: "MedicationRequest.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["active","completed","cancelled"]

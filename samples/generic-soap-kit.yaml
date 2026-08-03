@@ -1,0 +1,111 @@
+formId: global-multi-discipline-soap-v1
+title: "Universal Clinical SOAP Note & Care Team Matrix"
+composition:
+  - resourceType: Organization
+    id: section_parent_facility
+    label: "1. Corporate Context Anchor"
+    fields:
+      - id: "facility_organization_name"
+        path: "Organization.name"
+        label: "Practice Facility Name"
+        description: "The primary legal commercial entity or practice group clinic name where care is delivered."
+        uiComponent: "Hidden" # Set dynamically on login/checkout by the workspace cache
+
+  - resourceType: Patient
+    id: section_patient_demographics
+    label: "2. Patient Administrative Details"
+    fields:
+      - id: "client_biological_gender"
+        path: "Patient.gender"
+        label: "Biological Sex at Birth"
+        description: "The official biological gender classification code of the patient recorded during room intake."
+        uiComponent: "Dropdown"
+        choices: ["male", "female", "other", "unknown"]
+
+  - resourceType: Practitioner
+    id: section_care_team_staff
+    label: "3. Multi-Provider Attending Registry"
+    itemControl: "gtable"
+    repeats: true # ─── ALLOWS MULTIPLE PROVIDERS TO REGISTER NATIVELY IN THIS SECTION ───
+    fields:
+      - id: "attending_provider_name"
+        path: "Practitioner.name.text"
+        label: "Attending Staff Full Name"
+        description: "The full legal name of the clinical doctor, nurse, technician, or provider executing care."
+        uiComponent: "TextInput"
+        required: true
+
+  - resourceType: Encounter
+    id: section_clinical_encounter
+    label: "4. Encounter Context & Participant Roles"
+    itemControl: "gtable"
+    repeats: true
+    fields:
+      - id: "visit_lifecycle_status"
+        path: "Encounter.status"
+        label: "Visit Lifecycle State"
+        description: "The operational phase of the patient clinic visit tracking from arrival to checkout."
+        uiComponent: "Dropdown"
+        choices: ["arrived", "in-progress", "finished"]
+        required: true
+      - id: "chief_complaint_narrative"
+        path: "Encounter.reasonCode.text"
+        label: "Chief Presenting Complaint"
+        description: "The primary stated symptom, problem, or descriptive reason that caused the patient to seek medical review today."
+        uiComponent: "TextInput"
+        required: true
+      - id: "provider_participant_role"
+        path: "Encounter.participant.type.coding.code"
+        label: "Staff Engagement Type Code"
+        description: "The operational capacity code assigned to a staff member provider, such as ADM, ATND, or CON."
+        uiComponent: "Dropdown"
+        choices: ["ADM", "ATND", "CON", "DIS"]
+
+  - resourceType: Observation
+    id: section_subjective_objective
+    label: "5. Subjective Intake & Objective Examination"
+    itemControl: "gtable"
+    repeats: true
+    fields:
+      - id: "subjective_narrative"
+        path: "Observation.component.valueString"
+        label: "S — Subjective History"
+        description: "The qualitative clinical history provided by the patient, including symptom durations, onset, pain scales, or diet reviews."
+        uiComponent: "TextInput"
+      - id: "objective_findings"
+        path: "Observation.component.valueString"
+        label: "O — Objective Metrics"
+        description: "The physical exam findings, vital signs, quantitative test tracking measurements, or laboratory data collected by the staff."
+        uiComponent: "TextInput"
+
+  - resourceType: Condition
+    id: section_assessment_layer
+    label: "6. Assessment & Clinical Diagnostic Coding"
+    fields:
+      - id: "assessment_summary"
+        path: "Condition.note.text"
+        label: "A — Assessment Summary"
+        description: "The clinician's differential diagnosis, progressive overview, or evaluation of the problem's severity state."
+        uiComponent: "TextInput"
+      - id: "confirmed_diagnosis_code"
+        path: "Condition.clinicalStatus.coding.code"
+        label: "Primary SNOMED/ICD Terminology Search"
+        description: "The formal dictionary lookup used to attach an interoperable vocabulary code to the primary condition."
+        uiComponent: "Autocomplete"
+        valueSetUrl: "https://nih.gov"
+
+  - resourceType: MedicationRequest
+    id: section_plan_layer
+    label: "7. Treatment Plan & Management Strategy"
+    fields:
+      - id: "plan_narrative"
+        path: "MedicationRequest.note.text"
+        label: "P — Plan Strategy"
+        description: "The itemized treatment strategy, future lab order instructions, follow-up timelines, or behavioral counseling goals."
+        uiComponent: "TextInput"
+      - id: "prescribed_medication_search"
+        path: "MedicationRequest.medicationCodeableConcept.coding.code"
+        label: "Search Ordered Outpatient Pharmacotherapy"
+        description: "The RxNorm lookup utility used to select and document newly initiated medications, tablet strengths, and fills."
+        uiComponent: "Autocomplete"
+        valueSetUrl: "https://nih.gov"

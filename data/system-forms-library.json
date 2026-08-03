@@ -1,0 +1,1586 @@
+{
+  "system-hospital-profile-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-hospital-profile-v1\ntitle: \"Hospitals\"\ncomposition:\n  - resourceType: Organization\n    id: section_hospital\n    label: \"Hospital Details\"\n    fields:\n      - id: \"hospital_name\"\n        path: \"Organization.name\"\n        label: \"Hospital Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"hospital_legalname\"\n        path: \"Organization.alias\"\n        label: \"Legal / Trade Name\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_type\"\n        path: \"Organization.type\"\n        label: \"Facility Type\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Hospital\",\"Clinic\",\"Pharmacy\",\"Laboratory\",\"Imaging Centre\"]\n      - id: \"hospital_npi\"\n        path: \"Organization.identifier.value\"\n        label: \"NPI / Registration No.\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_address\"\n        path: \"Organization.address.text\"\n        label: \"Street Address\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_city\"\n        path: \"Organization.address.city\"\n        label: \"City\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_state\"\n        path: \"Organization.address.state\"\n        label: \"State\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_pin\"\n        path: \"Organization.address.postalCode\"\n        label: \"PIN Code\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_country\"\n        path: \"Organization.address.country\"\n        label: \"Country\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_phone\"\n        path: \"Organization.telecom.value\"\n        label: \"Primary Phone\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_whatsapp\"\n        path: \"Organization.telecom.value\"\n        label: \"WhatsApp Number\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_email\"\n        path: \"Organization.telecom.value\"\n        label: \"Email Address\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_website\"\n        path: \"Organization.telecom.value\"\n        label: \"Website URL\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Organization\n    id: section_hospital_abdm_facility_type\n    label: \"Facility Type & Ownership\"\n    fields:\n      - id: \"hospital_ownership_code\"\n        path: \"Organization.type\"\n        label: \"Ownership Code (HFR master: OWNER)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_facility_type\"\n        path: \"Organization.type\"\n        label: \"Facility Type Code (HFR master: facility-types)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_facility_subtype\"\n        path: \"Organization.type\"\n        label: \"Facility Sub-Type Code (HFR master: facility-sub-types)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_operational_status\"\n        path: \"Organization.active\"\n        label: \"Operational Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Functional\",\"Non-Functional\"]\n\n  - resourceType: Organization\n    id: section_hospital_abdm_location\n    label: \"ABDM Location (LGD Codes)\"\n    fields:\n      - id: \"hospital_state_lgd_code\"\n        path: \"Organization.address.state\"\n        label: \"State LGD Code (HFR master: lgd/states)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_district_lgd_code\"\n        path: \"Organization.address.district\"\n        label: \"District LGD Code (HFR master: lgd/districts)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_subdistrict_lgd_code\"\n        path: \"Organization.address.district\"\n        label: \"Sub-District LGD Code (HFR master: lgd/subdistricts)\"\n        uiComponent: \"TextInput\"\n\n  # STARTER FIELD SET — New_HFR_APIs_Documentation_SBX.pdf (basic/additional/detailed information's\n  # full field list, 60+ fields per the gateway's own route comment) could not be read this\n  # session — no PDF text-extraction tool was available. Only the fields already confirmed from\n  # clinuxflow-abdm-gateway/src/routes/hfr.js and the integration-approach doc are modeled below.\n  # Do not treat this section as complete; extend it once the PDF has been extracted.\n  - resourceType: Organization\n    id: section_hospital_abdm_registration\n    label: \"ABDM Facility Registration\"\n    fields:\n      - id: \"hospital_tracking_id\"\n        path: \"Organization.identifier.value\"\n        label: \"Tracking ID (from Basic Information step)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_facility_id\"\n        path: \"Organization.identifier.value\"\n        label: \"ABDM Facility ID (from Submit step)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_abdm_software_code\"\n        path: \"Organization.identifier.value\"\n        label: \"ABDM-Compliant Software Code (get-Software-details master)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_source_of_information\"\n        path: \"Organization.identifier.value\"\n        label: \"Source of Information\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_source_unique_id\"\n        path: \"Organization.identifier.value\"\n        label: \"Source Unique ID\"\n        uiComponent: \"TextInput\"\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-hospital-profile-v1",
+          "status": "active",
+          "title": "Hospitals",
+          "subjectType": [
+            "Organization"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_hospital",
+              "text": "Hospital Details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "hospital_name",
+                  "text": "Hospital Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Organization#Organization.name"
+                },
+                {
+                  "linkId": "hospital_legalname",
+                  "text": "Legal / Trade Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.alias"
+                },
+                {
+                  "linkId": "hospital_type",
+                  "text": "Facility Type",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.type",
+                  "answerOption": [
+                    {
+                      "valueString": "Hospital"
+                    },
+                    {
+                      "valueString": "Clinic"
+                    },
+                    {
+                      "valueString": "Pharmacy"
+                    },
+                    {
+                      "valueString": "Laboratory"
+                    },
+                    {
+                      "valueString": "Imaging Centre"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "hospital_npi",
+                  "text": "NPI / Registration No.",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.identifier.value"
+                },
+                {
+                  "linkId": "hospital_address",
+                  "text": "Street Address",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.address.text"
+                },
+                {
+                  "linkId": "hospital_city",
+                  "text": "City",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.address.city"
+                },
+                {
+                  "linkId": "hospital_state",
+                  "text": "State",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.address.state"
+                },
+                {
+                  "linkId": "hospital_pin",
+                  "text": "PIN Code",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.address.postalCode"
+                },
+                {
+                  "linkId": "hospital_country",
+                  "text": "Country",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.address.country"
+                },
+                {
+                  "linkId": "hospital_phone",
+                  "text": "Primary Phone",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.telecom.value"
+                },
+                {
+                  "linkId": "hospital_whatsapp",
+                  "text": "WhatsApp Number",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.telecom.value"
+                },
+                {
+                  "linkId": "hospital_email",
+                  "text": "Email Address",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.telecom.value"
+                },
+                {
+                  "linkId": "hospital_website",
+                  "text": "Website URL",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.telecom.value"
+                }
+              ]
+            },
+            {
+              "linkId": "section_hospital_abdm_facility_type",
+              "text": "Facility Type & Ownership",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "hospital_ownership_code",
+                  "text": "Ownership Code (HFR master: OWNER)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.type"
+                },
+                {
+                  "linkId": "hospital_facility_type",
+                  "text": "Facility Type Code (HFR master: facility-types)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.type"
+                },
+                {
+                  "linkId": "hospital_facility_subtype",
+                  "text": "Facility Sub-Type Code (HFR master: facility-sub-types)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.type"
+                },
+                {
+                  "linkId": "hospital_operational_status",
+                  "text": "Operational Status",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.active",
+                  "answerOption": [
+                    {
+                      "valueString": "Functional"
+                    },
+                    {
+                      "valueString": "Non-Functional"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "section_hospital_abdm_location",
+              "text": "ABDM Location (LGD Codes)",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "hospital_state_lgd_code",
+                  "text": "State LGD Code (HFR master: lgd/states)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.address.state"
+                },
+                {
+                  "linkId": "hospital_district_lgd_code",
+                  "text": "District LGD Code (HFR master: lgd/districts)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.address.district"
+                },
+                {
+                  "linkId": "hospital_subdistrict_lgd_code",
+                  "text": "Sub-District LGD Code (HFR master: lgd/subdistricts)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.address.district"
+                }
+              ]
+            },
+            {
+              "linkId": "section_hospital_abdm_registration",
+              "text": "ABDM Facility Registration",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "hospital_tracking_id",
+                  "text": "Tracking ID (from Basic Information step)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.identifier.value"
+                },
+                {
+                  "linkId": "hospital_facility_id",
+                  "text": "ABDM Facility ID (from Submit step)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.identifier.value"
+                },
+                {
+                  "linkId": "hospital_abdm_software_code",
+                  "text": "ABDM-Compliant Software Code (get-Software-details master)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.identifier.value"
+                },
+                {
+                  "linkId": "hospital_source_of_information",
+                  "text": "Source of Information",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.identifier.value"
+                },
+                {
+                  "linkId": "hospital_source_unique_id",
+                  "text": "Source Unique ID",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.identifier.value"
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.042Z"
+      }
+    ]
+  },
+  "system-patient-profile-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-patient-profile-v1\ntitle: \"Patients\"\ncomposition:\n  - resourceType: Patient\n    id: section_patient\n    label: \"Patient Details\"\n    fields:\n      - id: \"patient_name\"\n        path: \"Patient.name.text\"\n        label: \"Full Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"patient_gender\"\n        path: \"Patient.gender\"\n        label: \"Gender\"\n        uiComponent: \"Dropdown\"\n        choices: [\"male\",\"female\",\"other\",\"unknown\"]\n      - id: \"patient_birthdate\"\n        path: \"Patient.birthDate\"\n        label: \"Date of Birth\"\n        uiComponent: \"DatePicker\"\n      - id: \"patient_emergency_contact_name\"\n        path: \"Patient.contact.name.text\"\n        label: \"Emergency Contact Name\"\n        uiComponent: \"TextInput\"\n      - id: \"patient_emergency_contact_phone\"\n        path: \"Patient.contact.telecom.value\"\n        label: \"Emergency Contact Phone\"\n        uiComponent: \"TextInput\"\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-patient-profile-v1",
+          "status": "active",
+          "title": "Patients",
+          "subjectType": [
+            "Patient"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_patient",
+              "text": "Patient Details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "patient_name",
+                  "text": "Full Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Patient#Patient.name.text"
+                },
+                {
+                  "linkId": "patient_gender",
+                  "text": "Gender",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Patient#Patient.gender",
+                  "answerOption": [
+                    {
+                      "valueString": "male"
+                    },
+                    {
+                      "valueString": "female"
+                    },
+                    {
+                      "valueString": "other"
+                    },
+                    {
+                      "valueString": "unknown"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "patient_birthdate",
+                  "text": "Date of Birth",
+                  "type": "date",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Patient#Patient.birthDate"
+                },
+                {
+                  "linkId": "patient_emergency_contact_name",
+                  "text": "Emergency Contact Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Patient#Patient.contact.name.text"
+                },
+                {
+                  "linkId": "patient_emergency_contact_phone",
+                  "text": "Emergency Contact Phone",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Patient#Patient.contact.telecom.value"
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.044Z"
+      }
+    ]
+  },
+  "system-staff-profile-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-staff-profile-v1\ntitle: \"Staff Roster\"\ncomposition:\n  - resourceType: Practitioner\n    id: section_staff\n    label: \"Staff Details\"\n    fields:\n      - id: \"staff_name\"\n        path: \"Practitioner.name.text\"\n        label: \"Full Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"staff_phone\"\n        path: \"Practitioner.telecom.value\"\n        label: \"Phone\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_email\"\n        path: \"Practitioner.telecom.value\"\n        label: \"Email\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_qualification\"\n        path: \"Practitioner.qualification.code\"\n        label: \"Qualification\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_license\"\n        path: \"Practitioner.identifier.value\"\n        label: \"License / Registration ID\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_status\"\n        path: \"Practitioner.active\"\n        label: \"Active\"\n        uiComponent: \"Checkbox\"\n  - resourceType: PractitionerRole\n    id: section_staff_role\n    label: \"Role\"\n    fields:\n      - id: \"staff_role\"\n        path: \"PractitionerRole.code\"\n        label: \"Role\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Chief of Medicine\",\"Doctor\",\"Nurse\",\"Administrator\",\"Receptionist\",\"Radiologist\"]\n      - id: \"staff_specialty\"\n        path: \"PractitionerRole.specialty\"\n        label: \"Specialty\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"Cardiology\",\"Neurology\",\"Radiology\",\"Pediatrics\",\"Orthopedics\",\"Dermatology\",\"General Medicine\",\"ENT\",\"Ophthalmology\",\"Psychiatry\"]\n\n  # ABDM's own fields, not this app's clinical vocabulary — staff_abdm_role (Doctor/Nurse/Facility\n  # Manager) is deliberately separate from staff_role above (Chief of Medicine/.../Administrator):\n  # the same person can hold a clinical role here and a different ABDM role in HPR's own registry.\n  # staff_aadhaar/staff_otp/staff_hpr_password are intentionally NOT fields on this form — see\n  # docs/onboarding/04-security-notes.md. They live only in the onboarding page's transient Alpine\n  # state so there is no code path by which SystemForms.saveDataRecord() could ever persist them.\n  - resourceType: Practitioner\n    id: section_staff_abdm_registration\n    label: \"ABDM Professional Registration\"\n    fields:\n      - id: \"staff_first_name\"\n        path: \"Practitioner.name.given\"\n        label: \"First Name (as on Aadhaar)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_middle_name\"\n        path: \"Practitioner.name.given\"\n        label: \"Middle Name\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_last_name\"\n        path: \"Practitioner.name.family\"\n        label: \"Last Name (as on Aadhaar)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_abdm_role\"\n        path: \"Practitioner.identifier.value\"\n        label: \"ABDM Role\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Doctor\",\"Nurse\",\"Facility Manager\"]\n      - id: \"staff_hp_category_code\"\n        path: \"Practitioner.identifier.value\"\n        label: \"HP Category Code (HPR master: system-of-medicine)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_hp_subcategory_code\"\n        path: \"Practitioner.identifier.value\"\n        label: \"HP Sub-Category Code\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_state_code\"\n        path: \"Practitioner.identifier.value\"\n        label: \"State LGD Code (HPR master: states)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_district_code\"\n        path: \"Practitioner.identifier.value\"\n        label: \"District LGD Code (HPR master: districts)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_council\"\n        path: \"Practitioner.identifier.value\"\n        label: \"Registered with a Medical/Nursing Council\"\n        uiComponent: \"Checkbox\"\n      - id: \"staff_hprid\"\n        path: \"Practitioner.identifier.value\"\n        label: \"HPR ID (assigned after creation)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_hpr_id_number\"\n        path: \"Practitioner.identifier.value\"\n        label: \"HPR ID Number (assigned after creation)\"\n        uiComponent: \"TextInput\"\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-staff-profile-v1",
+          "status": "active",
+          "title": "Staff Roster",
+          "subjectType": [
+            "Practitioner"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_staff",
+              "text": "Staff Details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "staff_name",
+                  "text": "Full Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.name.text"
+                },
+                {
+                  "linkId": "staff_phone",
+                  "text": "Phone",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.telecom.value"
+                },
+                {
+                  "linkId": "staff_email",
+                  "text": "Email",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.telecom.value"
+                },
+                {
+                  "linkId": "staff_qualification",
+                  "text": "Qualification",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.qualification.code"
+                },
+                {
+                  "linkId": "staff_license",
+                  "text": "License / Registration ID",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.identifier.value"
+                },
+                {
+                  "linkId": "staff_status",
+                  "text": "Active",
+                  "type": "boolean",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.active"
+                }
+              ]
+            },
+            {
+              "linkId": "section_staff_role",
+              "text": "Role",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "staff_role",
+                  "text": "Role",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/PractitionerRole#PractitionerRole.code",
+                  "answerOption": [
+                    {
+                      "valueString": "Chief of Medicine"
+                    },
+                    {
+                      "valueString": "Doctor"
+                    },
+                    {
+                      "valueString": "Nurse"
+                    },
+                    {
+                      "valueString": "Administrator"
+                    },
+                    {
+                      "valueString": "Receptionist"
+                    },
+                    {
+                      "valueString": "Radiologist"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "staff_specialty",
+                  "text": "Specialty",
+                  "type": "choice",
+                  "repeats": true,
+                  "required": false,
+                  "definition": "http://hl7.org/PractitionerRole#PractitionerRole.specialty",
+                  "answerOption": [
+                    {
+                      "valueString": "Cardiology"
+                    },
+                    {
+                      "valueString": "Neurology"
+                    },
+                    {
+                      "valueString": "Radiology"
+                    },
+                    {
+                      "valueString": "Pediatrics"
+                    },
+                    {
+                      "valueString": "Orthopedics"
+                    },
+                    {
+                      "valueString": "Dermatology"
+                    },
+                    {
+                      "valueString": "General Medicine"
+                    },
+                    {
+                      "valueString": "ENT"
+                    },
+                    {
+                      "valueString": "Ophthalmology"
+                    },
+                    {
+                      "valueString": "Psychiatry"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "section_staff_abdm_registration",
+              "text": "ABDM Professional Registration",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "staff_first_name",
+                  "text": "First Name (as on Aadhaar)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.name.given"
+                },
+                {
+                  "linkId": "staff_middle_name",
+                  "text": "Middle Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.name.given"
+                },
+                {
+                  "linkId": "staff_last_name",
+                  "text": "Last Name (as on Aadhaar)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.name.family"
+                },
+                {
+                  "linkId": "staff_abdm_role",
+                  "text": "ABDM Role",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.identifier.value",
+                  "answerOption": [
+                    {
+                      "valueString": "Doctor"
+                    },
+                    {
+                      "valueString": "Nurse"
+                    },
+                    {
+                      "valueString": "Facility Manager"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "staff_hp_category_code",
+                  "text": "HP Category Code (HPR master: system-of-medicine)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.identifier.value"
+                },
+                {
+                  "linkId": "staff_hp_subcategory_code",
+                  "text": "HP Sub-Category Code",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.identifier.value"
+                },
+                {
+                  "linkId": "staff_state_code",
+                  "text": "State LGD Code (HPR master: states)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.identifier.value"
+                },
+                {
+                  "linkId": "staff_district_code",
+                  "text": "District LGD Code (HPR master: districts)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.identifier.value"
+                },
+                {
+                  "linkId": "staff_council",
+                  "text": "Registered with a Medical/Nursing Council",
+                  "type": "boolean",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.identifier.value"
+                },
+                {
+                  "linkId": "staff_hprid",
+                  "text": "HPR ID (assigned after creation)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.identifier.value"
+                },
+                {
+                  "linkId": "staff_hpr_id_number",
+                  "text": "HPR ID Number (assigned after creation)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Practitioner#Practitioner.identifier.value"
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.046Z"
+      }
+    ]
+  },
+  "system-services-profile-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-services-profile-v1\ntitle: \"Services\"\ncomposition:\n  - resourceType: HealthcareService\n    id: section_services_matrix\n    label: \"Service Details\"\n    fields:\n      - id: \"service_name\"\n        path: \"HealthcareService.name\"\n        label: \"Service Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"service_specialty_category\"\n        path: \"HealthcareService.category\"\n        label: \"Core Specialty Category\"\n        description: \"The primary clinical vertical or domain classification such as Cardiology, Pediatrics, Optometry, or Lab Diagnostics.\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Cardiology\", \"Pediatrics\", \"Ophthalmology\", \"Optometry\", \"Diet & Wellness\", \"General Medicine\"]\n        required: true\n      - id: \"service_program_name\"\n        path: \"HealthcareService.program\"\n        label: \"Target Clinical Program Name\"\n        description: \"The formal named program or specific diagnostic track offered, like Type 2 Diabetes Management or Periodontal Charting.\"\n        uiComponent: \"TextInput\"\n      - id: \"service_description\"\n        path: \"HealthcareService.comment\"\n        label: \"Description\"\n        uiComponent: \"TextInput\"\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-services-profile-v1",
+          "status": "active",
+          "title": "Services",
+          "subjectType": [
+            "HealthcareService"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_services_matrix",
+              "text": "Service Details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "service_name",
+                  "text": "Service Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/HealthcareService#HealthcareService.name"
+                },
+                {
+                  "linkId": "service_specialty_category",
+                  "text": "Core Specialty Category",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/HealthcareService#HealthcareService.category",
+                  "description": "The primary clinical vertical or domain classification such as Cardiology, Pediatrics, Optometry, or Lab Diagnostics.",
+                  "answerOption": [
+                    {
+                      "valueString": "Cardiology"
+                    },
+                    {
+                      "valueString": "Pediatrics"
+                    },
+                    {
+                      "valueString": "Ophthalmology"
+                    },
+                    {
+                      "valueString": "Optometry"
+                    },
+                    {
+                      "valueString": "Diet & Wellness"
+                    },
+                    {
+                      "valueString": "General Medicine"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "service_program_name",
+                  "text": "Target Clinical Program Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/HealthcareService#HealthcareService.program",
+                  "description": "The formal named program or specific diagnostic track offered, like Type 2 Diabetes Management or Periodontal Charting."
+                },
+                {
+                  "linkId": "service_description",
+                  "text": "Description",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/HealthcareService#HealthcareService.comment"
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.047Z"
+      }
+    ]
+  },
+  "system-consents-profile-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-consents-profile-v1\ntitle: \"Legal Consents\"\ncomposition:\n  - resourceType: Consent\n    id: section_consent\n    label: \"Consent Details\"\n    fields:\n      - id: \"consent_title\"\n        path: \"Consent.sourceAttachment.title\"\n        label: \"Title\"\n        uiComponent: \"TextInput\"\n      - id: \"consent_category\"\n        path: \"Consent.category\"\n        label: \"Consent Type\"\n        uiComponent: \"Dropdown\"\n        choices: [\"HIPAA Privacy Notice\",\"Informed Consent for Treatment\",\"Financial Responsibility\",\"Telemedicine Consent\",\"Photography / Research\",\"Minor Treatment Consent\"]\n        required: true\n      - id: \"consent_status\"\n        path: \"Consent.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"draft\",\"active\",\"inactive\",\"entered-in-error\",\"rejected\"]\n      - id: \"consent_datetime\"\n        path: \"Consent.dateTime\"\n        label: \"Date Signed\"\n        uiComponent: \"DatePicker\"\n      - id: \"consent_expiry\"\n        path: \"Consent.provision.period.end\"\n        label: \"Expiry Date\"\n        uiComponent: \"DatePicker\"\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-consents-profile-v1",
+          "status": "active",
+          "title": "Legal Consents",
+          "subjectType": [
+            "Consent"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_consent",
+              "text": "Consent Details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "consent_title",
+                  "text": "Title",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Consent#Consent.sourceAttachment.title"
+                },
+                {
+                  "linkId": "consent_category",
+                  "text": "Consent Type",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Consent#Consent.category",
+                  "answerOption": [
+                    {
+                      "valueString": "HIPAA Privacy Notice"
+                    },
+                    {
+                      "valueString": "Informed Consent for Treatment"
+                    },
+                    {
+                      "valueString": "Financial Responsibility"
+                    },
+                    {
+                      "valueString": "Telemedicine Consent"
+                    },
+                    {
+                      "valueString": "Photography / Research"
+                    },
+                    {
+                      "valueString": "Minor Treatment Consent"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "consent_status",
+                  "text": "Status",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Consent#Consent.status",
+                  "answerOption": [
+                    {
+                      "valueString": "draft"
+                    },
+                    {
+                      "valueString": "active"
+                    },
+                    {
+                      "valueString": "inactive"
+                    },
+                    {
+                      "valueString": "entered-in-error"
+                    },
+                    {
+                      "valueString": "rejected"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "consent_datetime",
+                  "text": "Date Signed",
+                  "type": "date",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Consent#Consent.dateTime"
+                },
+                {
+                  "linkId": "consent_expiry",
+                  "text": "Expiry Date",
+                  "type": "date",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Consent#Consent.provision.period.end"
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.048Z"
+      }
+    ]
+  },
+  "system-appointments-profile-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-appointments-profile-v1\ntitle: \"Appointments\"\ncomposition:\n  - resourceType: Appointment\n    id: section_appointment\n    label: \"Appointment Details\"\n    fields:\n      - id: \"appt_patient\"\n        path: \"Appointment.participant.actor\"\n        label: \"Patient\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_staff\"\n        path: \"Appointment.participant.actor\"\n        label: \"Staff Member\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_status\"\n        path: \"Appointment.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"proposed\",\"booked\",\"arrived\",\"fulfilled\",\"cancelled\",\"noshow\"]\n        required: true\n      - id: \"appt_start\"\n        path: \"Appointment.start\"\n        label: \"Start Time\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_end\"\n        path: \"Appointment.end\"\n        label: \"End Time\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_description\"\n        path: \"Appointment.description\"\n        label: \"Reason / Notes\"\n        uiComponent: \"TextInput\"\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-appointments-profile-v1",
+          "status": "active",
+          "title": "Appointments",
+          "subjectType": [
+            "Appointment"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_appointment",
+              "text": "Appointment Details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "appt_patient",
+                  "text": "Patient",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Appointment#Appointment.participant.actor"
+                },
+                {
+                  "linkId": "appt_staff",
+                  "text": "Staff Member",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Appointment#Appointment.participant.actor"
+                },
+                {
+                  "linkId": "appt_status",
+                  "text": "Status",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Appointment#Appointment.status",
+                  "answerOption": [
+                    {
+                      "valueString": "proposed"
+                    },
+                    {
+                      "valueString": "booked"
+                    },
+                    {
+                      "valueString": "arrived"
+                    },
+                    {
+                      "valueString": "fulfilled"
+                    },
+                    {
+                      "valueString": "cancelled"
+                    },
+                    {
+                      "valueString": "noshow"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "appt_start",
+                  "text": "Start Time",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Appointment#Appointment.start"
+                },
+                {
+                  "linkId": "appt_end",
+                  "text": "End Time",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Appointment#Appointment.end"
+                },
+                {
+                  "linkId": "appt_description",
+                  "text": "Reason / Notes",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Appointment#Appointment.description"
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.049Z"
+      }
+    ]
+  },
+  "system-office-hours-profile-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-office-hours-profile-v1\ntitle: \"Office Hours\"\ncomposition:\n  - resourceType: Location\n    id: section_hours\n    label: \"Operating Hours\"\n    fields:\n      - id: \"hours_days\"\n        path: \"Location.hoursOfOperation.daysOfWeek\"\n        label: \"Days of Week\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"mon\",\"tue\",\"wed\",\"thu\",\"fri\",\"sat\",\"sun\"]\n      - id: \"hours_open\"\n        path: \"Location.hoursOfOperation.openingTime\"\n        label: \"Opening Time\"\n        uiComponent: \"TextInput\"\n      - id: \"hours_close\"\n        path: \"Location.hoursOfOperation.closingTime\"\n        label: \"Closing Time\"\n        uiComponent: \"TextInput\"\n      - id: \"hours_allday\"\n        path: \"Location.hoursOfOperation.allDay\"\n        label: \"Open All Day\"\n        uiComponent: \"Checkbox\"\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-office-hours-profile-v1",
+          "status": "active",
+          "title": "Office Hours",
+          "subjectType": [
+            "Location"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_hours",
+              "text": "Operating Hours",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "hours_days",
+                  "text": "Days of Week",
+                  "type": "choice",
+                  "repeats": true,
+                  "required": false,
+                  "definition": "http://hl7.org/Location#Location.hoursOfOperation.daysOfWeek",
+                  "answerOption": [
+                    {
+                      "valueString": "mon"
+                    },
+                    {
+                      "valueString": "tue"
+                    },
+                    {
+                      "valueString": "wed"
+                    },
+                    {
+                      "valueString": "thu"
+                    },
+                    {
+                      "valueString": "fri"
+                    },
+                    {
+                      "valueString": "sat"
+                    },
+                    {
+                      "valueString": "sun"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "hours_open",
+                  "text": "Opening Time",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Location#Location.hoursOfOperation.openingTime"
+                },
+                {
+                  "linkId": "hours_close",
+                  "text": "Closing Time",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Location#Location.hoursOfOperation.closingTime"
+                },
+                {
+                  "linkId": "hours_allday",
+                  "text": "Open All Day",
+                  "type": "boolean",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Location#Location.hoursOfOperation.allDay"
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.050Z"
+      }
+    ]
+  },
+  "system-locations-profile-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-locations-profile-v1\ntitle: \"Locations\"\ncomposition:\n  - resourceType: Location\n    id: section_location\n    label: \"Location Details\"\n    fields:\n      - id: \"location_name\"\n        path: \"Location.name\"\n        label: \"Branch Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"location_address\"\n        path: \"Location.address.text\"\n        label: \"Address\"\n        uiComponent: \"TextInput\"\n      - id: \"location_phone\"\n        path: \"Location.telecom.value\"\n        label: \"Phone\"\n        uiComponent: \"TextInput\"\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-locations-profile-v1",
+          "status": "active",
+          "title": "Locations",
+          "subjectType": [
+            "Location"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_location",
+              "text": "Location Details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "location_name",
+                  "text": "Branch Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Location#Location.name"
+                },
+                {
+                  "linkId": "location_address",
+                  "text": "Address",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Location#Location.address.text"
+                },
+                {
+                  "linkId": "location_phone",
+                  "text": "Phone",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Location#Location.telecom.value"
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.050Z"
+      }
+    ]
+  },
+  "system-encounter-intake-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-encounter-intake-v1\ntitle: \"Encounter Intake\"\ncomposition:\n  - resourceType: Encounter\n    id: section_encounter\n    label: \"Encounter Details\"\n    fields:\n      - id: \"encounter_patient_ref\"\n        path: \"Encounter.subject\"\n        label: \"Patient\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"encounter_chief_complaint\"\n        path: \"Encounter.reasonCode\"\n        label: \"Chief Complaint\"\n        uiComponent: \"TextInput\"\n      - id: \"encounter_status\"\n        path: \"Encounter.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"arrived\",\"in-progress\",\"finished\",\"cancelled\"]\n        required: true\n      - id: \"encounter_priority\"\n        path: \"Encounter.priority\"\n        label: \"Triage Priority\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Normal\",\"Emergency\"]\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-encounter-intake-v1",
+          "status": "active",
+          "title": "Encounter Intake",
+          "subjectType": [
+            "Encounter"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_encounter",
+              "text": "Encounter Details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "encounter_patient_ref",
+                  "text": "Patient",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Encounter#Encounter.subject"
+                },
+                {
+                  "linkId": "encounter_chief_complaint",
+                  "text": "Chief Complaint",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Encounter#Encounter.reasonCode"
+                },
+                {
+                  "linkId": "encounter_status",
+                  "text": "Status",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Encounter#Encounter.status",
+                  "answerOption": [
+                    {
+                      "valueString": "arrived"
+                    },
+                    {
+                      "valueString": "in-progress"
+                    },
+                    {
+                      "valueString": "finished"
+                    },
+                    {
+                      "valueString": "cancelled"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "encounter_priority",
+                  "text": "Triage Priority",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Encounter#Encounter.priority",
+                  "answerOption": [
+                    {
+                      "valueString": "Normal"
+                    },
+                    {
+                      "valueString": "Emergency"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.051Z"
+      }
+    ]
+  },
+  "system-vitals-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-vitals-v1\ntitle: \"Vitals\"\ncomposition:\n  - resourceType: Observation\n    id: section_vitals\n    label: \"Vitals Capture\"\n    fields:\n      - id: \"vitals_encounter_ref\"\n        path: \"Observation.encounter\"\n        label: \"Encounter\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"vitals_systolic\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Systolic BP\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_diastolic\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Diastolic BP\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_pulse\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Pulse (bpm)\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_temperature\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Temperature (°F)\"\n        uiComponent: \"TextInput\"\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-vitals-v1",
+          "status": "active",
+          "title": "Vitals",
+          "subjectType": [
+            "Observation"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_vitals",
+              "text": "Vitals Capture",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "vitals_encounter_ref",
+                  "text": "Encounter",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Observation#Observation.encounter"
+                },
+                {
+                  "linkId": "vitals_systolic",
+                  "text": "Systolic BP",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Observation#Observation.component.valueQuantity.value"
+                },
+                {
+                  "linkId": "vitals_diastolic",
+                  "text": "Diastolic BP",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Observation#Observation.component.valueQuantity.value"
+                },
+                {
+                  "linkId": "vitals_pulse",
+                  "text": "Pulse (bpm)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Observation#Observation.component.valueQuantity.value"
+                },
+                {
+                  "linkId": "vitals_temperature",
+                  "text": "Temperature (°F)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Observation#Observation.component.valueQuantity.value"
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.051Z"
+      }
+    ]
+  },
+  "system-consultation-soap-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-consultation-soap-v1\ntitle: \"Consultation SOAP Note\"\ncomposition:\n  - resourceType: Condition\n    id: section_soap\n    label: \"SOAP Note\"\n    fields:\n      - id: \"soap_encounter_ref\"\n        path: \"Condition.encounter\"\n        label: \"Encounter\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"soap_subjective\"\n        path: \"Condition.note.text\"\n        label: \"Subjective\"\n        uiComponent: \"TextInput\"\n        keywords: [\"complains\", \"reports\", \"states\", \"feels\", \"patient says\"]\n      - id: \"soap_objective\"\n        path: \"Condition.note.text\"\n        label: \"Objective\"\n        uiComponent: \"TextInput\"\n        keywords: [\"exam reveals\", \"vitals\", \"observed\", \"measured\", \"on examination\"]\n      - id: \"soap_assessment\"\n        path: \"Condition.note.text\"\n        label: \"Assessment\"\n        uiComponent: \"TextInput\"\n        keywords: [\"diagnosis\", \"assessment\", \"likely\", \"impression\", \"consistent with\"]\n      - id: \"soap_plan\"\n        path: \"Condition.note.text\"\n        label: \"Plan\"\n        uiComponent: \"TextInput\"\n        keywords: [\"plan\", \"prescribe\", \"recommend\", \"follow-up\", \"advised\"]\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-consultation-soap-v1",
+          "status": "active",
+          "title": "Consultation SOAP Note",
+          "subjectType": [
+            "Condition"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_soap",
+              "text": "SOAP Note",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "soap_encounter_ref",
+                  "text": "Encounter",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Condition#Condition.encounter"
+                },
+                {
+                  "linkId": "soap_subjective",
+                  "text": "Subjective",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Condition#Condition.note.text",
+                  "keywords": [
+                    "complains",
+                    "reports",
+                    "states",
+                    "feels",
+                    "patient says"
+                  ]
+                },
+                {
+                  "linkId": "soap_objective",
+                  "text": "Objective",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Condition#Condition.note.text",
+                  "keywords": [
+                    "exam reveals",
+                    "vitals",
+                    "observed",
+                    "measured",
+                    "on examination"
+                  ]
+                },
+                {
+                  "linkId": "soap_assessment",
+                  "text": "Assessment",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Condition#Condition.note.text",
+                  "keywords": [
+                    "diagnosis",
+                    "assessment",
+                    "likely",
+                    "impression",
+                    "consistent with"
+                  ]
+                },
+                {
+                  "linkId": "soap_plan",
+                  "text": "Plan",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Condition#Condition.note.text",
+                  "keywords": [
+                    "plan",
+                    "prescribe",
+                    "recommend",
+                    "follow-up",
+                    "advised"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.052Z"
+      }
+    ]
+  },
+  "system-prescription-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-prescription-v1\ntitle: \"Prescription\"\ncomposition:\n  - resourceType: MedicationRequest\n    id: section_prescription\n    label: \"Medication\"\n    fields:\n      - id: \"rx_encounter_ref\"\n        path: \"MedicationRequest.encounter\"\n        label: \"Encounter\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"rx_medication\"\n        path: \"MedicationRequest.medicationCodeableConcept\"\n        label: \"Medication\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"rx_dosage\"\n        path: \"MedicationRequest.dosageInstruction.text\"\n        label: \"Dosage Instructions\"\n        uiComponent: \"TextInput\"\n      - id: \"rx_status\"\n        path: \"MedicationRequest.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"active\",\"completed\",\"cancelled\"]\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-prescription-v1",
+          "status": "active",
+          "title": "Prescription",
+          "subjectType": [
+            "MedicationRequest"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_prescription",
+              "text": "Medication",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "rx_encounter_ref",
+                  "text": "Encounter",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/MedicationRequest#MedicationRequest.encounter"
+                },
+                {
+                  "linkId": "rx_medication",
+                  "text": "Medication",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/MedicationRequest#MedicationRequest.medicationCodeableConcept"
+                },
+                {
+                  "linkId": "rx_dosage",
+                  "text": "Dosage Instructions",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/MedicationRequest#MedicationRequest.dosageInstruction.text"
+                },
+                {
+                  "linkId": "rx_status",
+                  "text": "Status",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/MedicationRequest#MedicationRequest.status",
+                  "answerOption": [
+                    {
+                      "valueString": "active"
+                    },
+                    {
+                      "valueString": "completed"
+                    },
+                    {
+                      "valueString": "cancelled"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.052Z"
+      }
+    ]
+  },
+  "system-billing-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-billing-v1\ntitle: \"Billing & Payment\"\ncomposition:\n  - resourceType: Invoice\n    id: section_billing\n    label: \"Billing Details\"\n    fields:\n      - id: \"billing_encounter_ref\"\n        path: \"Invoice.subject\"\n        label: \"Encounter\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"billing_total\"\n        path: \"Invoice.totalGross.value\"\n        label: \"Total Amount\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"billing_status\"\n        path: \"Invoice.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"draft\",\"issued\",\"balanced\",\"cancelled\"]\n        required: true\n      - id: \"billing_payment_method\"\n        path: \"Invoice.paymentTerms\"\n        label: \"Payment Method\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Cash\",\"Card\",\"UPI\",\"Insurance\"]\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-billing-v1",
+          "status": "active",
+          "title": "Billing & Payment",
+          "subjectType": [
+            "Invoice"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_billing",
+              "text": "Billing Details",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "billing_encounter_ref",
+                  "text": "Encounter",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Invoice#Invoice.subject"
+                },
+                {
+                  "linkId": "billing_total",
+                  "text": "Total Amount",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Invoice#Invoice.totalGross.value"
+                },
+                {
+                  "linkId": "billing_status",
+                  "text": "Status",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Invoice#Invoice.status",
+                  "answerOption": [
+                    {
+                      "valueString": "draft"
+                    },
+                    {
+                      "valueString": "issued"
+                    },
+                    {
+                      "valueString": "balanced"
+                    },
+                    {
+                      "valueString": "cancelled"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "billing_payment_method",
+                  "text": "Payment Method",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Invoice#Invoice.paymentTerms",
+                  "answerOption": [
+                    {
+                      "valueString": "Cash"
+                    },
+                    {
+                      "valueString": "Card"
+                    },
+                    {
+                      "valueString": "UPI"
+                    },
+                    {
+                      "valueString": "Insurance"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-08-02T14:00:38.052Z"
+      }
+    ]
+  }
+}

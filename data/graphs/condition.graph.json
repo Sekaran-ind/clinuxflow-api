@@ -1,0 +1,3754 @@
+[
+  {
+    "path": "Condition.resourceType",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a Condition resource",
+      "coreKeywords": [
+        "condition",
+        "resource",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Condition.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Condition resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "coreKeywords": [
+        "condition",
+        "textinput",
+        "logical",
+        "resource",
+        "used",
+        "url",
+        "once",
+        "assigned",
+        "never",
+        "changes"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.text",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "coreKeywords": [
+        "condition",
+        "text",
+        "dropdown",
+        "human",
+        "readable",
+        "narrative",
+        "summary",
+        "resource",
+        "can",
+        "used",
+        "represent",
+        "content",
+        "need",
+        "not",
+        "encode",
+        "all",
+        "structured",
+        "data",
+        "but",
+        "required",
+        "contain",
+        "sufficient",
+        "detail",
+        "make",
+        "clinically",
+        "safe",
+        "just",
+        "read",
+        "definitions",
+        "may",
+        "define",
+        "what",
+        "should",
+        "represented",
+        "ensure",
+        "clinical",
+        "safety"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Condition.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.modifierExtension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "condition",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "modifies",
+        "understanding",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "allowed",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Condition.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.identifier",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Business identifiers assigned to this condition by the performer or other systems which remain constant as the resource is updated and propagates from server to server.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "textinput",
+        "business",
+        "identifiers",
+        "assigned",
+        "performer",
+        "other",
+        "systems",
+        "which",
+        "remain",
+        "constant",
+        "resource",
+        "updated",
+        "propagates",
+        "server"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Condition.identifier\"\n        label: \"Enter identifier\"\n        description: \"Business identifiers assigned to this condition by the performer or other systems which remain constant as the resource is updated and propagates from server to server.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.identifier.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.identifier.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.identifier.use",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The purpose of this identifier.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "use",
+        "textinput",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Condition.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "Condition.identifier.type",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "dropdown",
+        "coded",
+        "can",
+        "used",
+        "determine",
+        "which",
+        "use",
+        "specific",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Condition.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.identifier.system",
+    "resourceType": "Condition",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "system",
+        "textinput",
+        "establishes",
+        "namespace",
+        "url",
+        "describes",
+        "set",
+        "values",
+        "are",
+        "unique"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Condition.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.identifier.value",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "textinput",
+        "portion",
+        "typically",
+        "relevant",
+        "user",
+        "which",
+        "unique",
+        "within",
+        "context",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Condition.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.identifier.period",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "period",
+        "textinput",
+        "time",
+        "during",
+        "which",
+        "iswas",
+        "valid",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Condition.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.identifier.period.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.identifier.period.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.identifier.period.start",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Condition.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.identifier.period.end",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Condition.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.identifier.assigner",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "assigner",
+        "traversalPath": "assigner.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "coreKeywords": [
+        "condition",
+        "identifier",
+        "assigner",
+        "dropdown",
+        "organization",
+        "issuedmanages"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Condition.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.clinicalStatus",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"clinical_status\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The clinical status of the condition.",
+      "coreKeywords": [
+        "condition",
+        "clinical",
+        "status",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"clinical_status\"\n        path: \"Condition.clinicalStatus\"\n        label: \"Enter clinicalStatus\"\n        description: \"The clinical status of the condition.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.verificationStatus",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"verification_status\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The verification status to support the clinical status of the condition.",
+      "coreKeywords": [
+        "condition",
+        "verification",
+        "status",
+        "dropdown",
+        "support",
+        "clinical"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"verification_status\"\n        path: \"Condition.verificationStatus\"\n        label: \"Enter verificationStatus\"\n        description: \"The verification status to support the clinical status of the condition.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.category",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"category\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A category assigned to the condition.",
+      "coreKeywords": [
+        "condition",
+        "category",
+        "multiselect",
+        "assigned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"category\"\n        path: \"Condition.category\"\n        label: \"Enter category\"\n        description: \"A category assigned to the condition.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.severity",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"severity\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A subjective assessment of the severity of the condition as evaluated by the clinician.",
+      "coreKeywords": [
+        "condition",
+        "severity",
+        "dropdown",
+        "subjective",
+        "assessment",
+        "evaluated",
+        "clinician"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"severity\"\n        path: \"Condition.severity\"\n        label: \"Enter severity\"\n        description: \"A subjective assessment of the severity of the condition as evaluated by the clinician.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.code",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Identification of the condition, problem or diagnosis.",
+      "coreKeywords": [
+        "condition",
+        "code",
+        "dropdown",
+        "identification",
+        "problem",
+        "diagnosis"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Condition.code\"\n        label: \"Enter code\"\n        description: \"Identification of the condition, problem or diagnosis.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.bodySite",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"body_site\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The anatomical location where this condition manifests itself.",
+      "coreKeywords": [
+        "condition",
+        "body",
+        "site",
+        "multiselect",
+        "anatomical",
+        "location",
+        "where",
+        "manifests",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"body_site\"\n        path: \"Condition.bodySite\"\n        label: \"Enter bodySite\"\n        description: \"The anatomical location where this condition manifests itself.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.subject",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"subject\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Indicates the patient or group who the condition record is associated with.",
+      "coreKeywords": [
+        "condition",
+        "subject",
+        "dropdown",
+        "indicates",
+        "patient",
+        "group",
+        "who",
+        "record",
+        "associated"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"subject\"\n        path: \"Condition.subject\"\n        label: \"Enter subject\"\n        description: \"Indicates the patient or group who the condition record is associated with.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.encounter",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "encounter-link",
+        "targetResource": "encounter",
+        "traversalPath": "encounter.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"encounter\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The Encounter during which this Condition was created or to which the creation of this record is tightly associated.",
+      "coreKeywords": [
+        "condition",
+        "encounter",
+        "dropdown",
+        "during",
+        "which",
+        "created",
+        "creation",
+        "record",
+        "tightly",
+        "associated"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"encounter\"\n        path: \"Condition.encounter\"\n        label: \"Enter encounter\"\n        description: \"The Encounter during which this Condition was created or to which the creation of this record is tightly associated.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.onsetDateTime",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Estimated or actual date or date-time the condition began, in the opinion of the clinician.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "date",
+        "time",
+        "textinput",
+        "estimated",
+        "actual",
+        "began",
+        "opinion",
+        "clinician"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_date_time\"\n        path: \"Condition.onsetDateTime\"\n        label: \"Enter onsetDateTime\"\n        description: \"Estimated or actual date or date-time the condition began, in the opinion of the clinician.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetAge",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_age\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Estimated or actual date or date-time the condition began, in the opinion of the clinician.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "age",
+        "textinput",
+        "estimated",
+        "actual",
+        "date",
+        "time",
+        "began",
+        "opinion",
+        "clinician"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_age\"\n        path: \"Condition.onsetAge\"\n        label: \"Enter onsetAge\"\n        description: \"Estimated or actual date or date-time the condition began, in the opinion of the clinician.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetAge.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "age",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.onsetAge.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetAge.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "age",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.onsetAge.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.onsetAge.value",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "age",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Condition.onsetAge.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetAge.comparator",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "age",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Condition.onsetAge.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Condition.onsetAge.unit",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "age",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Condition.onsetAge.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetAge.system",
+    "resourceType": "Condition",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "age",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Condition.onsetAge.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetAge.code",
+    "resourceType": "Condition",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "age",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Condition.onsetAge.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.onsetPeriod",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Estimated or actual date or date-time the condition began, in the opinion of the clinician.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "period",
+        "textinput",
+        "estimated",
+        "actual",
+        "date",
+        "time",
+        "began",
+        "opinion",
+        "clinician"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_period\"\n        path: \"Condition.onsetPeriod\"\n        label: \"Enter onsetPeriod\"\n        description: \"Estimated or actual date or date-time the condition began, in the opinion of the clinician.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetPeriod.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.onsetPeriod.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetPeriod.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.onsetPeriod.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.onsetPeriod.start",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Condition.onsetPeriod.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetPeriod.end",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Condition.onsetPeriod.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_range\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Estimated or actual date or date-time the condition began, in the opinion of the clinician.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "textinput",
+        "estimated",
+        "actual",
+        "date",
+        "time",
+        "began",
+        "opinion",
+        "clinician"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_range\"\n        path: \"Condition.onsetRange\"\n        label: \"Enter onsetRange\"\n        description: \"Estimated or actual date or date-time the condition began, in the opinion of the clinician.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.onsetRange.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.onsetRange.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.onsetRange.low",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"low\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The low limit. The boundary is inclusive.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "textinput",
+        "limit",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"low\"\n        path: \"Condition.onsetRange.low\"\n        label: \"Enter low\"\n        description: \"The low limit. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.low.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.onsetRange.low.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.low.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.onsetRange.low.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.onsetRange.low.value",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Condition.onsetRange.low.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.low.comparator",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Condition.onsetRange.low.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Condition.onsetRange.low.unit",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Condition.onsetRange.low.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.low.system",
+    "resourceType": "Condition",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Condition.onsetRange.low.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.low.code",
+    "resourceType": "Condition",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Condition.onsetRange.low.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.onsetRange.high",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"high\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The high limit. The boundary is inclusive.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "textinput",
+        "limit",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"high\"\n        path: \"Condition.onsetRange.high\"\n        label: \"Enter high\"\n        description: \"The high limit. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.high.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.onsetRange.high.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.high.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.onsetRange.high.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.onsetRange.high.value",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Condition.onsetRange.high.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.high.comparator",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Condition.onsetRange.high.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Condition.onsetRange.high.unit",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Condition.onsetRange.high.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.high.system",
+    "resourceType": "Condition",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Condition.onsetRange.high.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.onsetRange.high.code",
+    "resourceType": "Condition",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Condition.onsetRange.high.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.onsetString",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Estimated or actual date or date-time the condition began, in the opinion of the clinician.",
+      "coreKeywords": [
+        "condition",
+        "onset",
+        "string",
+        "textinput",
+        "estimated",
+        "actual",
+        "date",
+        "time",
+        "began",
+        "opinion",
+        "clinician"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_string\"\n        path: \"Condition.onsetString\"\n        label: \"Enter onsetString\"\n        description: \"Estimated or actual date or date-time the condition began, in the opinion of the clinician.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementDateTime",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"abatement_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date or estimated date that the condition resolved or went into remission. This is called \\\"abatement\\\" because of the many overloaded connotations associated with \\\"remission\\\" or \\\"resolution\\\" - Conditions are never really resolved, but they can abate.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "date",
+        "time",
+        "textinput",
+        "estimated",
+        "resolved",
+        "went",
+        "remission",
+        "called",
+        "because",
+        "many",
+        "overloaded",
+        "connotations",
+        "associated",
+        "resolution",
+        "conditions",
+        "are",
+        "never",
+        "really",
+        "but",
+        "they",
+        "can",
+        "abate"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"abatement_date_time\"\n        path: \"Condition.abatementDateTime\"\n        label: \"Enter abatementDateTime\"\n        description: \"The date or estimated date that the condition resolved or went into remission. This is called \\\"abatement\\\" because of the many overloaded connotations associated with \\\"remission\\\" or \\\"resolution\\\" - Conditions are never really resolved, but they can abate.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementAge",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"abatement_age\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date or estimated date that the condition resolved or went into remission. This is called \\\"abatement\\\" because of the many overloaded connotations associated with \\\"remission\\\" or \\\"resolution\\\" - Conditions are never really resolved, but they can abate.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "age",
+        "textinput",
+        "date",
+        "estimated",
+        "resolved",
+        "went",
+        "remission",
+        "called",
+        "because",
+        "many",
+        "overloaded",
+        "connotations",
+        "associated",
+        "resolution",
+        "conditions",
+        "are",
+        "never",
+        "really",
+        "but",
+        "they",
+        "can",
+        "abate"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"abatement_age\"\n        path: \"Condition.abatementAge\"\n        label: \"Enter abatementAge\"\n        description: \"The date or estimated date that the condition resolved or went into remission. This is called \\\"abatement\\\" because of the many overloaded connotations associated with \\\"remission\\\" or \\\"resolution\\\" - Conditions are never really resolved, but they can abate.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementAge.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "age",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.abatementAge.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementAge.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "age",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.abatementAge.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.abatementAge.value",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "age",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Condition.abatementAge.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementAge.comparator",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "age",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Condition.abatementAge.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Condition.abatementAge.unit",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "age",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Condition.abatementAge.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementAge.system",
+    "resourceType": "Condition",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "age",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Condition.abatementAge.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementAge.code",
+    "resourceType": "Condition",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "age",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Condition.abatementAge.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.abatementPeriod",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"abatement_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date or estimated date that the condition resolved or went into remission. This is called \\\"abatement\\\" because of the many overloaded connotations associated with \\\"remission\\\" or \\\"resolution\\\" - Conditions are never really resolved, but they can abate.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "period",
+        "textinput",
+        "date",
+        "estimated",
+        "resolved",
+        "went",
+        "remission",
+        "called",
+        "because",
+        "many",
+        "overloaded",
+        "connotations",
+        "associated",
+        "resolution",
+        "conditions",
+        "are",
+        "never",
+        "really",
+        "but",
+        "they",
+        "can",
+        "abate"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"abatement_period\"\n        path: \"Condition.abatementPeriod\"\n        label: \"Enter abatementPeriod\"\n        description: \"The date or estimated date that the condition resolved or went into remission. This is called \\\"abatement\\\" because of the many overloaded connotations associated with \\\"remission\\\" or \\\"resolution\\\" - Conditions are never really resolved, but they can abate.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementPeriod.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.abatementPeriod.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementPeriod.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.abatementPeriod.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.abatementPeriod.start",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Condition.abatementPeriod.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementPeriod.end",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Condition.abatementPeriod.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"abatement_range\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date or estimated date that the condition resolved or went into remission. This is called \\\"abatement\\\" because of the many overloaded connotations associated with \\\"remission\\\" or \\\"resolution\\\" - Conditions are never really resolved, but they can abate.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "textinput",
+        "date",
+        "estimated",
+        "resolved",
+        "went",
+        "remission",
+        "called",
+        "because",
+        "many",
+        "overloaded",
+        "connotations",
+        "associated",
+        "resolution",
+        "conditions",
+        "are",
+        "never",
+        "really",
+        "but",
+        "they",
+        "can",
+        "abate"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"abatement_range\"\n        path: \"Condition.abatementRange\"\n        label: \"Enter abatementRange\"\n        description: \"The date or estimated date that the condition resolved or went into remission. This is called \\\"abatement\\\" because of the many overloaded connotations associated with \\\"remission\\\" or \\\"resolution\\\" - Conditions are never really resolved, but they can abate.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.abatementRange.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.abatementRange.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.abatementRange.low",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"low\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The low limit. The boundary is inclusive.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "low",
+        "textinput",
+        "limit",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"low\"\n        path: \"Condition.abatementRange.low\"\n        label: \"Enter low\"\n        description: \"The low limit. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.low.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "low",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.abatementRange.low.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.low.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "low",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.abatementRange.low.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.abatementRange.low.value",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "low",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Condition.abatementRange.low.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.low.comparator",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "low",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Condition.abatementRange.low.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Condition.abatementRange.low.unit",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "low",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Condition.abatementRange.low.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.low.system",
+    "resourceType": "Condition",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "low",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Condition.abatementRange.low.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.low.code",
+    "resourceType": "Condition",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "low",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Condition.abatementRange.low.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.abatementRange.high",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"high\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The high limit. The boundary is inclusive.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "high",
+        "textinput",
+        "limit",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"high\"\n        path: \"Condition.abatementRange.high\"\n        label: \"Enter high\"\n        description: \"The high limit. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.high.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "high",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.abatementRange.high.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.high.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "high",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.abatementRange.high.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.abatementRange.high.value",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "high",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Condition.abatementRange.high.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.high.comparator",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "high",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Condition.abatementRange.high.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Condition.abatementRange.high.unit",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "high",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Condition.abatementRange.high.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.high.system",
+    "resourceType": "Condition",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "high",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Condition.abatementRange.high.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.abatementRange.high.code",
+    "resourceType": "Condition",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "range",
+        "high",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Condition.abatementRange.high.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.abatementString",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"abatement_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date or estimated date that the condition resolved or went into remission. This is called \\\"abatement\\\" because of the many overloaded connotations associated with \\\"remission\\\" or \\\"resolution\\\" - Conditions are never really resolved, but they can abate.",
+      "coreKeywords": [
+        "condition",
+        "abatement",
+        "string",
+        "textinput",
+        "date",
+        "estimated",
+        "resolved",
+        "went",
+        "remission",
+        "called",
+        "because",
+        "many",
+        "overloaded",
+        "connotations",
+        "associated",
+        "resolution",
+        "conditions",
+        "are",
+        "never",
+        "really",
+        "but",
+        "they",
+        "can",
+        "abate"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"abatement_string\"\n        path: \"Condition.abatementString\"\n        label: \"Enter abatementString\"\n        description: \"The date or estimated date that the condition resolved or went into remission. This is called \\\"abatement\\\" because of the many overloaded connotations associated with \\\"remission\\\" or \\\"resolution\\\" - Conditions are never really resolved, but they can abate.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.recordedDate",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"recorded_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The recordedDate represents when this particular Condition record was created in the system, which is often a system-generated date.",
+      "coreKeywords": [
+        "condition",
+        "recorded",
+        "date",
+        "textinput",
+        "recordeddate",
+        "represents",
+        "when",
+        "particular",
+        "record",
+        "created",
+        "system",
+        "which",
+        "often",
+        "generated"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"recorded_date\"\n        path: \"Condition.recordedDate\"\n        label: \"Enter recordedDate\"\n        description: \"The recordedDate represents when this particular Condition record was created in the system, which is often a system-generated date.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.recorder",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "recorder-link",
+        "targetResource": "recorder",
+        "traversalPath": "recorder.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"recorder\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Individual who recorded the record and takes responsibility for its content.",
+      "coreKeywords": [
+        "condition",
+        "recorder",
+        "dropdown",
+        "individual",
+        "who",
+        "recorded",
+        "record",
+        "takes",
+        "responsibility",
+        "its",
+        "content"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"recorder\"\n        path: \"Condition.recorder\"\n        label: \"Enter recorder\"\n        description: \"Individual who recorded the record and takes responsibility for its content.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.asserter",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "asserter-link",
+        "targetResource": "asserter",
+        "traversalPath": "asserter.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"asserter\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Individual who is making the condition statement.",
+      "coreKeywords": [
+        "condition",
+        "asserter",
+        "dropdown",
+        "individual",
+        "who",
+        "making",
+        "statement"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"asserter\"\n        path: \"Condition.asserter\"\n        label: \"Enter asserter\"\n        description: \"Individual who is making the condition statement.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.stage",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "ConditionStage",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"stage\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Clinical stage or grade of a condition. May include formal severity assessments.",
+      "coreKeywords": [
+        "condition",
+        "stage",
+        "textinput",
+        "clinical",
+        "grade",
+        "may",
+        "include",
+        "formal",
+        "severity",
+        "assessments"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"stage\"\n        path: \"Condition.stage\"\n        label: \"Enter stage\"\n        description: \"Clinical stage or grade of a condition. May include formal severity assessments.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.stage.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "stage",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.stage.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.stage.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "stage",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.stage.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.stage.modifierExtension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "condition",
+        "stage",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Condition.stage.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.stage.summary",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"summary\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A simple summary of the stage such as \\\"Stage 3\\\". The determination of the stage is disease-specific.",
+      "coreKeywords": [
+        "condition",
+        "stage",
+        "summary",
+        "dropdown",
+        "simple",
+        "determination",
+        "disease",
+        "specific"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"summary\"\n        path: \"Condition.stage.summary\"\n        label: \"Enter summary\"\n        description: \"A simple summary of the stage such as \\\"Stage 3\\\". The determination of the stage is disease-specific.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.stage.assessment",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "assessment-link",
+        "targetResource": "assessment",
+        "traversalPath": "assessment.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assessment\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Reference to a formal record of the evidence on which the staging assessment is based.",
+      "coreKeywords": [
+        "condition",
+        "stage",
+        "assessment",
+        "multiselect",
+        "reference",
+        "formal",
+        "record",
+        "evidence",
+        "which",
+        "staging",
+        "based"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assessment\"\n        path: \"Condition.stage.assessment\"\n        label: \"Enter assessment\"\n        description: \"Reference to a formal record of the evidence on which the staging assessment is based.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.stage.type",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The kind of staging, such as pathological or clinical staging.",
+      "coreKeywords": [
+        "condition",
+        "stage",
+        "dropdown",
+        "kind",
+        "staging",
+        "pathological",
+        "clinical"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Condition.stage.type\"\n        label: \"Enter type\"\n        description: \"The kind of staging, such as pathological or clinical staging.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.evidence",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "ConditionEvidence",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"evidence\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Supporting evidence / manifestations that are the basis of the Condition's verification status, such as evidence that confirmed or refuted the condition.",
+      "coreKeywords": [
+        "condition",
+        "evidence",
+        "textinput",
+        "supporting",
+        "manifestations",
+        "are",
+        "basis",
+        "conditions",
+        "verification",
+        "status",
+        "confirmed",
+        "refuted"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"evidence\"\n        path: \"Condition.evidence\"\n        label: \"Enter evidence\"\n        description: \"Supporting evidence / manifestations that are the basis of the Condition's verification status, such as evidence that confirmed or refuted the condition.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.evidence.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "evidence",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.evidence.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.evidence.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "evidence",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.evidence.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.evidence.modifierExtension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "condition",
+        "evidence",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Condition.evidence.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.evidence.code",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A manifestation or symptom that led to the recording of this condition.",
+      "coreKeywords": [
+        "condition",
+        "evidence",
+        "code",
+        "multiselect",
+        "manifestation",
+        "symptom",
+        "led",
+        "recording"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Condition.evidence.code\"\n        label: \"Enter code\"\n        description: \"A manifestation or symptom that led to the recording of this condition.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.evidence.detail",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "detail-link",
+        "targetResource": "detail",
+        "traversalPath": "detail.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"detail\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Links to other relevant information, including pathology reports.",
+      "coreKeywords": [
+        "condition",
+        "evidence",
+        "detail",
+        "multiselect",
+        "links",
+        "other",
+        "relevant",
+        "information",
+        "including",
+        "pathology",
+        "reports"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"detail\"\n        path: \"Condition.evidence.detail\"\n        label: \"Enter detail\"\n        description: \"Links to other relevant information, including pathology reports.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.note",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional information about the Condition. This is a general notes/comments entry for description of the Condition, its diagnosis and prognosis.",
+      "coreKeywords": [
+        "condition",
+        "note",
+        "textinput",
+        "additional",
+        "information",
+        "about",
+        "general",
+        "notescomments",
+        "entry",
+        "description",
+        "its",
+        "diagnosis",
+        "prognosis"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"Condition.note\"\n        label: \"Enter note\"\n        description: \"Additional information about the Condition. This is a general notes/comments entry for description of the Condition, its diagnosis and prognosis.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.note.id",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "condition",
+        "note",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Condition.note.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.note.extension",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "condition",
+        "note",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Condition.note.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Condition.note.authorReference",
+    "resourceType": "Condition",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "authorReference",
+        "traversalPath": "authorReference.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The individual responsible for making the annotation.",
+      "coreKeywords": [
+        "condition",
+        "note",
+        "author",
+        "reference",
+        "dropdown",
+        "individual",
+        "responsible",
+        "making",
+        "annotation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"Condition.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"The individual responsible for making the annotation.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Condition.note.authorString",
+    "resourceType": "Condition",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The individual responsible for making the annotation.",
+      "coreKeywords": [
+        "condition",
+        "note",
+        "author",
+        "string",
+        "textinput",
+        "individual",
+        "responsible",
+        "making",
+        "annotation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"Condition.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"The individual responsible for making the annotation.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.note.time",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Indicates when this particular annotation was made.",
+      "coreKeywords": [
+        "condition",
+        "note",
+        "time",
+        "textinput",
+        "indicates",
+        "when",
+        "particular",
+        "annotation",
+        "made"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"Condition.note.time\"\n        label: \"Enter time\"\n        description: \"Indicates when this particular annotation was made.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Condition.note.text",
+    "resourceType": "Condition",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The text of the annotation in markdown format.",
+      "coreKeywords": [
+        "condition",
+        "note",
+        "text",
+        "textinput",
+        "annotation",
+        "markdown",
+        "format"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Condition.note.text\"\n        label: \"Enter text\"\n        description: \"The text of the annotation in markdown format.\"\n        uiComponent: \"TextInput\""
+  }
+]

@@ -1,0 +1,19 @@
+formId: clinic-services-registry-v1
+title: "Clinical Core Healthcare Service Provisioning"
+composition:
+  - resourceType: HealthcareService
+    id: section_services_matrix
+    label: "1. Service Lines & Specialized Offerings"
+    fields:
+      - id: "service_specialty_category"
+        path: "HealthcareService.category"
+        label: "Core Specialty Category"
+        description: "The primary clinical vertical or domain classification such as Cardiology, Pediatrics, Optometry, or Lab Diagnostics."
+        uiComponent: "Dropdown"
+        choices: ["Cardiology", "Pediatrics", "Ophthalmology", "Optometry", "Diet & Wellness", "General Medicine"]
+        required: true
+      - id: "service_program_name"
+        path: "HealthcareService.program"
+        label: "Target Clinical Program Name"
+        description: "The formal named program or specific diagnostic track offered, like Type 2 Diabetes Management or Periodontal Charting."
+        uiComponent: "TextInput"

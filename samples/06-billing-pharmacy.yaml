@@ -1,0 +1,36 @@
+formId: commercial-billing-pharmacy-v1
+title: "Point-of-Sale Billing Ledger & Pharmacy Dispensing Sheet"
+composition:
+  - resourceType: Invoice
+    id: section_itemized_billing
+    label: "1. Itemized Practice Charge Sheet"
+    fields:
+      - id: "invoice_monetary_total"
+        path: "Invoice.totalNet"
+        label: "Gross Itemized Charge Total"
+        description: "The absolute combined monetary value total calculated across all billable clinic service lines."
+        uiComponent: "NumericInput"
+        required: true
+      - id: "invoice_payment_status"
+        path: "Invoice.status"
+        label: "Billing Settlement State"
+        description: "The transactional accounting state of the statement, moving from issued to balanced, paid, or frozen."
+        uiComponent: "Dropdown"
+        choices: ["draft", "issued", "balanced", "cancelled"]
+        required: true
+
+  - resourceType: MedicationDispense
+    id: section_pharmacy_counter
+    label: "2. Internal Pharmacy Dispensation Log"
+    fields:
+      - id: "dispense_drug_name"
+        path: "MedicationDispense.medicationCodeableConcept.coding.code"
+        label: "Search Filled Product Registry"
+        description: "The explicit retail drug selection token or naming tracker for the medication filled at the counter."
+        uiComponent: "Autocomplete"
+        valueSetUrl: "https://nih.gov"
+      - id: "dispense_quantity_count"
+        path: "MedicationDispense.quantity.value"
+        label: "Total Units Dispensed"
+        description: "The exact numeric count of physical unit items (tablets, capsules, vials) handed off to the patient."
+        uiComponent: "NumericInput"

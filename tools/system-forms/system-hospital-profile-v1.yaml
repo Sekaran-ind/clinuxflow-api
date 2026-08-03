@@ -1,0 +1,130 @@
+formId: system-hospital-profile-v1
+title: "Hospitals"
+composition:
+  - resourceType: Organization
+    id: section_hospital
+    label: "Hospital Details"
+    fields:
+      - id: "hospital_name"
+        path: "Organization.name"
+        label: "Hospital Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "hospital_legalname"
+        path: "Organization.alias"
+        label: "Legal / Trade Name"
+        uiComponent: "TextInput"
+      - id: "hospital_type"
+        path: "Organization.type"
+        label: "Facility Type"
+        uiComponent: "Dropdown"
+        choices: ["Hospital","Clinic","Pharmacy","Laboratory","Imaging Centre"]
+      - id: "hospital_npi"
+        path: "Organization.identifier.value"
+        label: "NPI / Registration No."
+        uiComponent: "TextInput"
+      - id: "hospital_address"
+        path: "Organization.address.text"
+        label: "Street Address"
+        uiComponent: "TextInput"
+      - id: "hospital_city"
+        path: "Organization.address.city"
+        label: "City"
+        uiComponent: "TextInput"
+      - id: "hospital_state"
+        path: "Organization.address.state"
+        label: "State"
+        uiComponent: "TextInput"
+      - id: "hospital_pin"
+        path: "Organization.address.postalCode"
+        label: "PIN Code"
+        uiComponent: "TextInput"
+      - id: "hospital_country"
+        path: "Organization.address.country"
+        label: "Country"
+        uiComponent: "TextInput"
+      - id: "hospital_phone"
+        path: "Organization.telecom.value"
+        label: "Primary Phone"
+        uiComponent: "TextInput"
+      - id: "hospital_whatsapp"
+        path: "Organization.telecom.value"
+        label: "WhatsApp Number"
+        uiComponent: "TextInput"
+      - id: "hospital_email"
+        path: "Organization.telecom.value"
+        label: "Email Address"
+        uiComponent: "TextInput"
+      - id: "hospital_website"
+        path: "Organization.telecom.value"
+        label: "Website URL"
+        uiComponent: "TextInput"
+
+  - resourceType: Organization
+    id: section_hospital_abdm_facility_type
+    label: "Facility Type & Ownership"
+    fields:
+      - id: "hospital_ownership_code"
+        path: "Organization.type"
+        label: "Ownership Code (HFR master: OWNER)"
+        uiComponent: "TextInput"
+      - id: "hospital_facility_type"
+        path: "Organization.type"
+        label: "Facility Type Code (HFR master: facility-types)"
+        uiComponent: "TextInput"
+      - id: "hospital_facility_subtype"
+        path: "Organization.type"
+        label: "Facility Sub-Type Code (HFR master: facility-sub-types)"
+        uiComponent: "TextInput"
+      - id: "hospital_operational_status"
+        path: "Organization.active"
+        label: "Operational Status"
+        uiComponent: "Dropdown"
+        choices: ["Functional","Non-Functional"]
+
+  - resourceType: Organization
+    id: section_hospital_abdm_location
+    label: "ABDM Location (LGD Codes)"
+    fields:
+      - id: "hospital_state_lgd_code"
+        path: "Organization.address.state"
+        label: "State LGD Code (HFR master: lgd/states)"
+        uiComponent: "TextInput"
+      - id: "hospital_district_lgd_code"
+        path: "Organization.address.district"
+        label: "District LGD Code (HFR master: lgd/districts)"
+        uiComponent: "TextInput"
+      - id: "hospital_subdistrict_lgd_code"
+        path: "Organization.address.district"
+        label: "Sub-District LGD Code (HFR master: lgd/subdistricts)"
+        uiComponent: "TextInput"
+
+  # STARTER FIELD SET — New_HFR_APIs_Documentation_SBX.pdf (basic/additional/detailed information's
+  # full field list, 60+ fields per the gateway's own route comment) could not be read this
+  # session — no PDF text-extraction tool was available. Only the fields already confirmed from
+  # clinuxflow-abdm-gateway/src/routes/hfr.js and the integration-approach doc are modeled below.
+  # Do not treat this section as complete; extend it once the PDF has been extracted.
+  - resourceType: Organization
+    id: section_hospital_abdm_registration
+    label: "ABDM Facility Registration"
+    fields:
+      - id: "hospital_tracking_id"
+        path: "Organization.identifier.value"
+        label: "Tracking ID (from Basic Information step)"
+        uiComponent: "TextInput"
+      - id: "hospital_facility_id"
+        path: "Organization.identifier.value"
+        label: "ABDM Facility ID (from Submit step)"
+        uiComponent: "TextInput"
+      - id: "hospital_abdm_software_code"
+        path: "Organization.identifier.value"
+        label: "ABDM-Compliant Software Code (get-Software-details master)"
+        uiComponent: "TextInput"
+      - id: "hospital_source_of_information"
+        path: "Organization.identifier.value"
+        label: "Source of Information"
+        uiComponent: "TextInput"
+      - id: "hospital_source_unique_id"
+        path: "Organization.identifier.value"
+        label: "Source Unique ID"
+        uiComponent: "TextInput"

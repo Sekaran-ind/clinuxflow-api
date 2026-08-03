@@ -1,0 +1,28 @@
+formId: system-billing-v1
+title: "Billing & Payment"
+composition:
+  - resourceType: Invoice
+    id: section_billing
+    label: "Billing Details"
+    fields:
+      - id: "billing_encounter_ref"
+        path: "Invoice.subject"
+        label: "Encounter"
+        uiComponent: "TextInput"
+        required: true
+      - id: "billing_total"
+        path: "Invoice.totalGross.value"
+        label: "Total Amount"
+        uiComponent: "TextInput"
+        required: true
+      - id: "billing_status"
+        path: "Invoice.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["draft","issued","balanced","cancelled"]
+        required: true
+      - id: "billing_payment_method"
+        path: "Invoice.paymentTerms"
+        label: "Payment Method"
+        uiComponent: "Dropdown"
+        choices: ["Cash","Card","UPI","Insurance"]

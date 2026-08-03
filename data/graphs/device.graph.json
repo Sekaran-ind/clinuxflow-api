@@ -1,0 +1,3535 @@
+[
+  {
+    "path": "Device.resourceType",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a Device resource",
+      "coreKeywords": [
+        "device",
+        "resource",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Device.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Device resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "coreKeywords": [
+        "device",
+        "textinput",
+        "logical",
+        "resource",
+        "used",
+        "url",
+        "once",
+        "assigned",
+        "never",
+        "changes"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.text",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "coreKeywords": [
+        "device",
+        "text",
+        "dropdown",
+        "human",
+        "readable",
+        "narrative",
+        "summary",
+        "resource",
+        "can",
+        "used",
+        "represent",
+        "content",
+        "need",
+        "not",
+        "encode",
+        "all",
+        "structured",
+        "data",
+        "but",
+        "required",
+        "contain",
+        "sufficient",
+        "detail",
+        "make",
+        "clinically",
+        "safe",
+        "just",
+        "read",
+        "definitions",
+        "may",
+        "define",
+        "what",
+        "should",
+        "represented",
+        "ensure",
+        "clinical",
+        "safety"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Device.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.modifierExtension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "device",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "resource",
+        "modifies",
+        "understanding",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "allowed",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Device.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.identifier",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique instance identifiers assigned to a device by manufacturers other organizations or owners.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "textinput",
+        "unique",
+        "instance",
+        "identifiers",
+        "assigned",
+        "manufacturers",
+        "other",
+        "organizations",
+        "owners"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Device.identifier\"\n        label: \"Enter identifier\"\n        description: \"Unique instance identifiers assigned to a device by manufacturers other organizations or owners.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.identifier.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.identifier.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.identifier.use",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The purpose of this identifier.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "use",
+        "textinput",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Device.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "Device.identifier.type",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "dropdown",
+        "coded",
+        "can",
+        "used",
+        "determine",
+        "which",
+        "use",
+        "specific",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Device.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.identifier.system",
+    "resourceType": "Device",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "system",
+        "textinput",
+        "establishes",
+        "namespace",
+        "url",
+        "describes",
+        "set",
+        "values",
+        "are",
+        "unique"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Device.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.identifier.value",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "textinput",
+        "portion",
+        "typically",
+        "relevant",
+        "user",
+        "which",
+        "unique",
+        "within",
+        "context",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Device.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.identifier.period",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "period",
+        "textinput",
+        "time",
+        "during",
+        "which",
+        "iswas",
+        "valid",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Device.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.identifier.period.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.identifier.period.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.identifier.period.start",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Device.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.identifier.period.end",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Device.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.identifier.assigner",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "assigner",
+        "traversalPath": "assigner.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "coreKeywords": [
+        "device",
+        "identifier",
+        "assigner",
+        "dropdown",
+        "organization",
+        "issuedmanages"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Device.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.definition",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "definition-link",
+        "targetResource": "definition",
+        "traversalPath": "definition.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"definition\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The reference to the definition for the device.",
+      "coreKeywords": [
+        "device",
+        "definition",
+        "dropdown",
+        "reference"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"definition\"\n        path: \"Device.definition\"\n        label: \"Enter definition\"\n        description: \"The reference to the definition for the device.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.udiCarrier",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "DeviceUdiCarrier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"udi_carrier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique device identifier (UDI) assigned to device label or package. Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.",
+      "coreKeywords": [
+        "device",
+        "udi",
+        "carrier",
+        "textinput",
+        "unique",
+        "identifier",
+        "assigned",
+        "label",
+        "package",
+        "note",
+        "may",
+        "include",
+        "multiple",
+        "udicarriers",
+        "either",
+        "just",
+        "udicarrier",
+        "jurisdiction",
+        "sold",
+        "jurisdictions",
+        "could",
+        "have"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"udi_carrier\"\n        path: \"Device.udiCarrier\"\n        label: \"Enter udiCarrier\"\n        description: \"Unique device identifier (UDI) assigned to device label or package. Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.udiCarrier.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "udi",
+        "carrier",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.udiCarrier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.udiCarrier.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "udi",
+        "carrier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.udiCarrier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.udiCarrier.modifierExtension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "device",
+        "udi",
+        "carrier",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Device.udiCarrier.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.udiCarrier.deviceIdentifier",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"device_identifier\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The device identifier (DI) is a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device.",
+      "coreKeywords": [
+        "device",
+        "udi",
+        "carrier",
+        "identifier",
+        "textinput",
+        "mandatory",
+        "fixed",
+        "portion",
+        "identifies",
+        "labeler",
+        "specific",
+        "version",
+        "model"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"device_identifier\"\n        path: \"Device.udiCarrier.deviceIdentifier\"\n        label: \"Enter deviceIdentifier\"\n        description: \"The device identifier (DI) is a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.udiCarrier.issuer",
+    "resourceType": "Device",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"issuer\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization that is charged with issuing UDIs for devices. For example, the US FDA issuers include : 1) GS1: http://hl7.org/fhir/NamingSystem/gs1-di, 2) HIBCC: http://hl7.org/fhir/NamingSystem/hibcc-dI, 3) ICCBBA for blood containers: http://hl7.org/fhir/NamingSystem/iccbba-blood-di, 4) ICCBA for other devices: http://hl7.org/fhir/NamingSystem/iccbba-other-di.",
+      "coreKeywords": [
+        "device",
+        "udi",
+        "carrier",
+        "issuer",
+        "textinput",
+        "organization",
+        "charged",
+        "issuing",
+        "udis",
+        "devices",
+        "example",
+        "fda",
+        "issuers",
+        "include",
+        "httphl",
+        "orgfhirnamingsystemgs",
+        "hibcc",
+        "orgfhirnamingsystemhibcc",
+        "iccbba",
+        "blood",
+        "containers",
+        "orgfhirnamingsystemiccbba",
+        "iccba",
+        "other"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"issuer\"\n        path: \"Device.udiCarrier.issuer\"\n        label: \"Enter issuer\"\n        description: \"Organization that is charged with issuing UDIs for devices. For example, the US FDA issuers include : 1) GS1: http://hl7.org/fhir/NamingSystem/gs1-di, 2) HIBCC: http://hl7.org/fhir/NamingSystem/hibcc-dI, 3) ICCBBA for blood containers: http://hl7.org/fhir/NamingSystem/iccbba-blood-di, 4) ICCBA for other devices: http://hl7.org/fhir/NamingSystem/iccbba-other-di.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.udiCarrier.jurisdiction",
+    "resourceType": "Device",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"jurisdiction\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identity of the authoritative source for UDI generation within a jurisdiction. All UDIs are globally unique within a single namespace with the appropriate repository uri as the system. For example, UDIs of devices managed in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/fda-udi.",
+      "coreKeywords": [
+        "device",
+        "udi",
+        "carrier",
+        "jurisdiction",
+        "textinput",
+        "identity",
+        "authoritative",
+        "source",
+        "generation",
+        "within",
+        "all",
+        "udis",
+        "are",
+        "globally",
+        "unique",
+        "single",
+        "namespace",
+        "appropriate",
+        "repository",
+        "uri",
+        "system",
+        "example",
+        "devices",
+        "managed",
+        "fda",
+        "httphl",
+        "orgfhirnamingsystemfda"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"jurisdiction\"\n        path: \"Device.udiCarrier.jurisdiction\"\n        label: \"Enter jurisdiction\"\n        description: \"The identity of the authoritative source for UDI generation within a jurisdiction. All UDIs are globally unique within a single namespace with the appropriate repository uri as the system. For example, UDIs of devices managed in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/fda-udi.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.udiCarrier.carrierAIDC",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"carrier_a_i_d_c\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The full UDI carrier of the Automatic Identification and Data Capture (AIDC) technology representation of the barcode string as printed on the packaging of the device - e.g., a barcode or RFID. Because of limitations on character sets in XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be base64 encoded.",
+      "coreKeywords": [
+        "device",
+        "udi",
+        "carrier",
+        "textinput",
+        "full",
+        "automatic",
+        "identification",
+        "data",
+        "capture",
+        "aidc",
+        "technology",
+        "representation",
+        "barcode",
+        "string",
+        "printed",
+        "packaging",
+        "rfid",
+        "because",
+        "limitations",
+        "character",
+        "sets",
+        "xml",
+        "need",
+        "round",
+        "trip",
+        "json",
+        "through",
+        "formats",
+        "shall",
+        "base",
+        "encoded"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"carrier_a_i_d_c\"\n        path: \"Device.udiCarrier.carrierAIDC\"\n        label: \"Enter carrierAIDC\"\n        description: \"The full UDI carrier of the Automatic Identification and Data Capture (AIDC) technology representation of the barcode string as printed on the packaging of the device - e.g., a barcode or RFID. Because of limitations on character sets in XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be base64 encoded.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.udiCarrier.carrierHRF",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"carrier_h_r_f\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The full UDI carrier as the human readable form (HRF) representation of the barcode string as printed on the packaging of the device.",
+      "coreKeywords": [
+        "device",
+        "udi",
+        "carrier",
+        "textinput",
+        "full",
+        "human",
+        "readable",
+        "form",
+        "hrf",
+        "representation",
+        "barcode",
+        "string",
+        "printed",
+        "packaging"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"carrier_h_r_f\"\n        path: \"Device.udiCarrier.carrierHRF\"\n        label: \"Enter carrierHRF\"\n        description: \"The full UDI carrier as the human readable form (HRF) representation of the barcode string as printed on the packaging of the device.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.udiCarrier.entryType",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"entry_type\\\": \\\"\" (\\\"unknown\\\" | \\\"barcode\\\" | \\\"rfid\\\" | \\\"manual\\\" | \\\"card\\\" | \\\"self-reported\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded entry to indicate how the data was entered.",
+      "coreKeywords": [
+        "device",
+        "udi",
+        "carrier",
+        "entry",
+        "textinput",
+        "coded",
+        "indicate",
+        "how",
+        "data",
+        "entered"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"entry_type\"\n        path: \"Device.udiCarrier.entryType\"\n        label: \"Enter entryType\"\n        description: \"A coded entry to indicate how the data was entered.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "unknown",
+      "barcode",
+      "rfid",
+      "manual",
+      "card",
+      "self-reported"
+    ]
+  },
+  {
+    "path": "Device.status",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"unknown\\\" | \\\"entered-in-error\\\" | \\\"active\\\" | \\\"inactive\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Status of the Device availability.",
+      "coreKeywords": [
+        "device",
+        "status",
+        "textinput",
+        "availability"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Device.status\"\n        label: \"Enter status\"\n        description: \"Status of the Device availability.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "unknown",
+      "entered-in-error",
+      "active",
+      "inactive"
+    ]
+  },
+  {
+    "path": "Device.statusReason",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status_reason\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Reason for the dtatus of the Device availability.",
+      "coreKeywords": [
+        "device",
+        "status",
+        "reason",
+        "multiselect",
+        "dtatus",
+        "availability"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status_reason\"\n        path: \"Device.statusReason\"\n        label: \"Enter statusReason\"\n        description: \"Reason for the dtatus of the Device availability.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.distinctIdentifier",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"distinct_identifier\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The distinct identification string as required by regulation for a human cell, tissue, or cellular and tissue-based product.",
+      "coreKeywords": [
+        "device",
+        "distinct",
+        "identifier",
+        "textinput",
+        "identification",
+        "string",
+        "required",
+        "regulation",
+        "human",
+        "cell",
+        "tissue",
+        "cellular",
+        "based",
+        "product"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"distinct_identifier\"\n        path: \"Device.distinctIdentifier\"\n        label: \"Enter distinctIdentifier\"\n        description: \"The distinct identification string as required by regulation for a human cell, tissue, or cellular and tissue-based product.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.manufacturer",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"manufacturer\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A name of the manufacturer.",
+      "coreKeywords": [
+        "device",
+        "manufacturer",
+        "textinput",
+        "name"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"manufacturer\"\n        path: \"Device.manufacturer\"\n        label: \"Enter manufacturer\"\n        description: \"A name of the manufacturer.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.manufactureDate",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"manufacture_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date and time when the device was manufactured.",
+      "coreKeywords": [
+        "device",
+        "manufacture",
+        "date",
+        "textinput",
+        "time",
+        "when",
+        "manufactured"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"manufacture_date\"\n        path: \"Device.manufactureDate\"\n        label: \"Enter manufactureDate\"\n        description: \"The date and time when the device was manufactured.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.expirationDate",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"expiration_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date and time beyond which this device is no longer valid or should not be used (if applicable).",
+      "coreKeywords": [
+        "device",
+        "expiration",
+        "date",
+        "textinput",
+        "time",
+        "beyond",
+        "which",
+        "longer",
+        "valid",
+        "should",
+        "not",
+        "used",
+        "applicable"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"expiration_date\"\n        path: \"Device.expirationDate\"\n        label: \"Enter expirationDate\"\n        description: \"The date and time beyond which this device is no longer valid or should not be used (if applicable).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.lotNumber",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"lot_number\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Lot number assigned by the manufacturer.",
+      "coreKeywords": [
+        "device",
+        "lot",
+        "number",
+        "textinput",
+        "assigned",
+        "manufacturer"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"lot_number\"\n        path: \"Device.lotNumber\"\n        label: \"Enter lotNumber\"\n        description: \"Lot number assigned by the manufacturer.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.serialNumber",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"serial_number\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The serial number assigned by the organization when the device was manufactured.",
+      "coreKeywords": [
+        "device",
+        "serial",
+        "number",
+        "textinput",
+        "assigned",
+        "organization",
+        "when",
+        "manufactured"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"serial_number\"\n        path: \"Device.serialNumber\"\n        label: \"Enter serialNumber\"\n        description: \"The serial number assigned by the organization when the device was manufactured.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.deviceName",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "DeviceDeviceName",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"device_name\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device. This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.",
+      "coreKeywords": [
+        "device",
+        "name",
+        "textinput",
+        "represents",
+        "manufacturers",
+        "provided",
+        "udi",
+        "label",
+        "person",
+        "describing",
+        "typically",
+        "would",
+        "used",
+        "when",
+        "provides",
+        "names",
+        "one",
+        "available",
+        "devicedefinition"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"device_name\"\n        path: \"Device.deviceName\"\n        label: \"Enter deviceName\"\n        description: \"This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device. This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.deviceName.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "name",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.deviceName.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.deviceName.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "name",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.deviceName.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.deviceName.modifierExtension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "device",
+        "name",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Device.deviceName.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.deviceName.name",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"name\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The name of the device.",
+      "coreKeywords": [
+        "device",
+        "name",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"Device.deviceName.name\"\n        label: \"Enter name\"\n        description: \"The name of the device.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.deviceName.type",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" (\\\"other\\\" | \\\"udi-label-name\\\" | \\\"user-friendly-name\\\" | \\\"patient-reported-name\\\" | \\\"manufacturer-name\\\" | \\\"model-name\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The type of deviceName. UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.",
+      "coreKeywords": [
+        "device",
+        "name",
+        "textinput",
+        "devicename",
+        "udilabelname",
+        "userfriendlyname",
+        "patientreportedname",
+        "manufacturedevicename",
+        "modelname"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Device.deviceName.type\"\n        label: \"Enter type\"\n        description: \"The type of deviceName. UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "other",
+      "udi-label-name",
+      "user-friendly-name",
+      "patient-reported-name",
+      "manufacturer-name",
+      "model-name"
+    ]
+  },
+  {
+    "path": "Device.modelNumber",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"model_number\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The model number for the device.",
+      "coreKeywords": [
+        "device",
+        "model",
+        "number",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"model_number\"\n        path: \"Device.modelNumber\"\n        label: \"Enter modelNumber\"\n        description: \"The model number for the device.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.partNumber",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"part_number\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The part number of the device.",
+      "coreKeywords": [
+        "device",
+        "part",
+        "number",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"part_number\"\n        path: \"Device.partNumber\"\n        label: \"Enter partNumber\"\n        description: \"The part number of the device.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.type",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The kind or type of device.",
+      "coreKeywords": [
+        "device",
+        "dropdown",
+        "kind"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Device.type\"\n        label: \"Enter type\"\n        description: \"The kind or type of device.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.specialization",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "DeviceSpecialization",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"specialization\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The capabilities supported on a device, the standards to which the device conforms for a particular purpose, and used for the communication.",
+      "coreKeywords": [
+        "device",
+        "specialization",
+        "textinput",
+        "capabilities",
+        "supported",
+        "standards",
+        "which",
+        "conforms",
+        "particular",
+        "purpose",
+        "used",
+        "communication"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"specialization\"\n        path: \"Device.specialization\"\n        label: \"Enter specialization\"\n        description: \"The capabilities supported on a device, the standards to which the device conforms for a particular purpose, and used for the communication.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.specialization.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "specialization",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.specialization.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.specialization.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "specialization",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.specialization.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.specialization.modifierExtension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "device",
+        "specialization",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Device.specialization.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.specialization.systemType",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system_type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The standard that is used to operate and communicate.",
+      "coreKeywords": [
+        "device",
+        "specialization",
+        "system",
+        "dropdown",
+        "standard",
+        "used",
+        "operate",
+        "communicate"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system_type\"\n        path: \"Device.specialization.systemType\"\n        label: \"Enter systemType\"\n        description: \"The standard that is used to operate and communicate.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.specialization.version",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The version of the standard that is used to operate and communicate.",
+      "coreKeywords": [
+        "device",
+        "specialization",
+        "version",
+        "textinput",
+        "standard",
+        "used",
+        "operate",
+        "communicate"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Device.specialization.version\"\n        label: \"Enter version\"\n        description: \"The version of the standard that is used to operate and communicate.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.version",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "DeviceVersion",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The actual design of the device or software version running on the device.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "textinput",
+        "actual",
+        "design",
+        "software",
+        "running"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Device.version\"\n        label: \"Enter version\"\n        description: \"The actual design of the device or software version running on the device.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.version.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.version.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.version.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.version.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.version.modifierExtension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "device",
+        "version",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Device.version.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.version.type",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The type of the device version.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Device.version.type\"\n        label: \"Enter type\"\n        description: \"The type of the device version.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.version.component",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"component\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A single component of the device version.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "textinput",
+        "single"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"component\"\n        path: \"Device.version.component\"\n        label: \"Enter component\"\n        description: \"A single component of the device version.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.version.component.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.version.component.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.version.component.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.version.component.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.version.component.use",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The purpose of this identifier.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "use",
+        "textinput",
+        "purpose",
+        "identifier"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Device.version.component.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "Device.version.component.type",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "dropdown",
+        "coded",
+        "identifier",
+        "can",
+        "used",
+        "determine",
+        "which",
+        "use",
+        "specific",
+        "purpose"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Device.version.component.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.version.component.system",
+    "resourceType": "Device",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "system",
+        "textinput",
+        "establishes",
+        "namespace",
+        "url",
+        "describes",
+        "set",
+        "values",
+        "are",
+        "unique"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Device.version.component.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.version.component.value",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "textinput",
+        "portion",
+        "identifier",
+        "typically",
+        "relevant",
+        "user",
+        "which",
+        "unique",
+        "within",
+        "context",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Device.version.component.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.version.component.period",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "period",
+        "textinput",
+        "time",
+        "during",
+        "which",
+        "identifier",
+        "iswas",
+        "valid",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Device.version.component.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.version.component.period.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.version.component.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.version.component.period.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.version.component.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.version.component.period.start",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Device.version.component.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.version.component.period.end",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Device.version.component.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.version.component.assigner",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "assigner",
+        "traversalPath": "assigner.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "component",
+        "assigner",
+        "dropdown",
+        "organization",
+        "issuedmanages",
+        "identifier"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Device.version.component.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.version.value",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The version text.",
+      "coreKeywords": [
+        "device",
+        "version",
+        "textinput",
+        "text"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Device.version.value\"\n        label: \"Enter value\"\n        description: \"The version text.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.property",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "DeviceProperty",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"property\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.",
+      "coreKeywords": [
+        "device",
+        "textinput",
+        "actual",
+        "configuration",
+        "settings",
+        "actually",
+        "operates",
+        "regulation",
+        "status",
+        "time",
+        "properties"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"property\"\n        path: \"Device.property\"\n        label: \"Enter property\"\n        description: \"The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.property.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.property.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.property.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.property.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.property.modifierExtension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "coreKeywords": [
+        "device",
+        "modifier",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "modifies",
+        "understanding",
+        "which",
+        "contained",
+        "andor",
+        "containing",
+        "elements",
+        "descendants",
+        "usually",
+        "provide",
+        "negation",
+        "qualification",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met",
+        "applications",
+        "processing",
+        "resource",
+        "are",
+        "required",
+        "check",
+        "change",
+        "meaning",
+        "domainresource",
+        "including",
+        "cannot",
+        "modifierextension",
+        "itself"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Device.property.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.property.type",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Code that specifies the property DeviceDefinitionPropetyCode (Extensible).",
+      "coreKeywords": [
+        "device",
+        "dropdown",
+        "code",
+        "specifies",
+        "devicedefinitionpropetycode",
+        "extensible"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Device.property.type\"\n        label: \"Enter type\"\n        description: \"Code that specifies the property DeviceDefinitionPropetyCode (Extensible).\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.property.valueQuantity",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Quantity",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_quantity\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Property value as a quantity.",
+      "coreKeywords": [
+        "device",
+        "quantity",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_quantity\"\n        path: \"Device.property.valueQuantity\"\n        label: \"Enter valueQuantity\"\n        description: \"Property value as a quantity.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.property.valueQuantity.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "quantity",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.property.valueQuantity.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.property.valueQuantity.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "quantity",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.property.valueQuantity.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.property.valueQuantity.value",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "coreKeywords": [
+        "device",
+        "quantity",
+        "textinput",
+        "measured",
+        "amount",
+        "includes",
+        "implicit",
+        "precision",
+        "presentation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Device.property.valueQuantity.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.property.valueQuantity.comparator",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "coreKeywords": [
+        "device",
+        "quantity",
+        "comparator",
+        "textinput",
+        "how",
+        "should",
+        "understood",
+        "represented",
+        "whether",
+        "actual",
+        "greater",
+        "less",
+        "than",
+        "stated",
+        "due",
+        "measurement",
+        "issues",
+        "then",
+        "real"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Device.property.valueQuantity.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Device.property.valueQuantity.unit",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A human-readable form of the unit.",
+      "coreKeywords": [
+        "device",
+        "quantity",
+        "unit",
+        "textinput",
+        "human",
+        "readable",
+        "form"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Device.property.valueQuantity.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.property.valueQuantity.system",
+    "resourceType": "Device",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "coreKeywords": [
+        "device",
+        "quantity",
+        "system",
+        "textinput",
+        "identification",
+        "provides",
+        "coded",
+        "form",
+        "unit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Device.property.valueQuantity.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.property.valueQuantity.code",
+    "resourceType": "Device",
+    "primitiveType": "Code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "coreKeywords": [
+        "device",
+        "quantity",
+        "code",
+        "dropdown",
+        "computer",
+        "processable",
+        "form",
+        "unit",
+        "some",
+        "representation",
+        "system"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Device.property.valueQuantity.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.property.valueCode",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Property value as a code, e.g., NTP4 (synced to NTP).",
+      "coreKeywords": [
+        "device",
+        "code",
+        "multiselect",
+        "ntp",
+        "synced"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_code\"\n        path: \"Device.property.valueCode\"\n        label: \"Enter valueCode\"\n        description: \"Property value as a code, e.g., NTP4 (synced to NTP).\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.patient",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "patient-link",
+        "targetResource": "patient",
+        "traversalPath": "patient.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"patient\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Patient information, If the device is affixed to a person.",
+      "coreKeywords": [
+        "device",
+        "patient",
+        "dropdown",
+        "information",
+        "affixed",
+        "person"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"patient\"\n        path: \"Device.patient\"\n        label: \"Enter patient\"\n        description: \"Patient information, If the device is affixed to a person.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.owner",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "owner-link",
+        "targetResource": "owner",
+        "traversalPath": "owner.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"owner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "An organization that is responsible for the provision and ongoing maintenance of the device.",
+      "coreKeywords": [
+        "device",
+        "owner",
+        "dropdown",
+        "organization",
+        "responsible",
+        "provision",
+        "ongoing",
+        "maintenance"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"owner\"\n        path: \"Device.owner\"\n        label: \"Enter owner\"\n        description: \"An organization that is responsible for the provision and ongoing maintenance of the device.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.contact",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "ContactPoint",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contact\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contact details for an organization or a particular human that is responsible for the device.",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "textinput",
+        "details",
+        "organization",
+        "particular",
+        "human",
+        "responsible"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contact\"\n        path: \"Device.contact\"\n        label: \"Enter contact\"\n        description: \"Contact details for an organization or a particular human that is responsible for the device.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.contact.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.contact.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.contact.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.contact.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.contact.system",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" (\\\"phone\\\" | \\\"fax\\\" | \\\"email\\\" | \\\"pager\\\" | \\\"url\\\" | \\\"sms\\\" | \\\"other\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Telecommunications form for contact point - what communications system is required to make use of the contact.",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "system",
+        "textinput",
+        "telecommunications",
+        "form",
+        "point",
+        "what",
+        "communications",
+        "required",
+        "make",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Device.contact.system\"\n        label: \"Enter system\"\n        description: \"Telecommunications form for contact point - what communications system is required to make use of the contact.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "phone",
+      "fax",
+      "email",
+      "pager",
+      "url",
+      "sms",
+      "other"
+    ]
+  },
+  {
+    "path": "Device.contact.value",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "textinput",
+        "actual",
+        "point",
+        "details",
+        "form",
+        "meaningful",
+        "designated",
+        "communication",
+        "system",
+        "phone",
+        "number",
+        "email",
+        "address"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Device.contact.value\"\n        label: \"Enter value\"\n        description: \"The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.contact.use",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"temp\\\" | \\\"old\\\" | \\\"home\\\" | \\\"work\\\" | \\\"mobile\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Identifies the purpose for the contact point.",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "use",
+        "textinput",
+        "identifies",
+        "purpose",
+        "point"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Device.contact.use\"\n        label: \"Enter use\"\n        description: \"Identifies the purpose for the contact point.\"\n        uiComponent: \"TextInput\"",
+    "choices": [
+      "temp",
+      "old",
+      "home",
+      "work",
+      "mobile"
+    ]
+  },
+  {
+    "path": "Device.contact.rank",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "rank",
+        "textinput",
+        "specifies",
+        "preferred",
+        "order",
+        "which",
+        "use",
+        "set",
+        "contacts",
+        "contactpoints",
+        "lower",
+        "values",
+        "are",
+        "more",
+        "than",
+        "those",
+        "higher"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"Device.contact.rank\"\n        label: \"Enter rank\"\n        description: \"Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.contact.period",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period when the contact point was/is in use.",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "period",
+        "textinput",
+        "time",
+        "when",
+        "point",
+        "wasis",
+        "use"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Device.contact.period\"\n        label: \"Enter period\"\n        description: \"Time period when the contact point was/is in use.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.contact.period.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "period",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.contact.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.contact.period.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "period",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.contact.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.contact.period.start",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "period",
+        "start",
+        "textinput",
+        "boundary",
+        "inclusive"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Device.contact.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.contact.period.end",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "coreKeywords": [
+        "device",
+        "contact",
+        "period",
+        "end",
+        "textinput",
+        "missing",
+        "means",
+        "known",
+        "planned",
+        "time",
+        "instance",
+        "created",
+        "start",
+        "may",
+        "past",
+        "date",
+        "future",
+        "which",
+        "expectedplanned"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Device.contact.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.location",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "location-link",
+        "targetResource": "location",
+        "traversalPath": "location.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"location\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The place where the device can be found.",
+      "coreKeywords": [
+        "device",
+        "location",
+        "dropdown",
+        "place",
+        "where",
+        "can",
+        "found"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"location\"\n        path: \"Device.location\"\n        label: \"Enter location\"\n        description: \"The place where the device can be found.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.url",
+    "resourceType": "Device",
+    "primitiveType": "Uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"url\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A network address on which the device may be contacted directly.",
+      "coreKeywords": [
+        "device",
+        "url",
+        "textinput",
+        "network",
+        "address",
+        "which",
+        "may",
+        "contacted",
+        "directly"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"Device.url\"\n        label: \"Enter url\"\n        description: \"A network address on which the device may be contacted directly.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.note",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Descriptive information, usage information or implantation information that is not captured in an existing element.",
+      "coreKeywords": [
+        "device",
+        "note",
+        "textinput",
+        "descriptive",
+        "information",
+        "usage",
+        "implantation",
+        "not",
+        "captured",
+        "existing"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"Device.note\"\n        label: \"Enter note\"\n        description: \"Descriptive information, usage information or implantation information that is not captured in an existing element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.note.id",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "coreKeywords": [
+        "device",
+        "note",
+        "textinput",
+        "unique",
+        "within",
+        "resource",
+        "internal",
+        "references",
+        "may",
+        "any",
+        "string",
+        "does",
+        "not",
+        "contain",
+        "spaces"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Device.note.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.note.extension",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "coreKeywords": [
+        "device",
+        "note",
+        "extension",
+        "multiselect",
+        "may",
+        "used",
+        "represent",
+        "additional",
+        "information",
+        "not",
+        "part",
+        "basic",
+        "definition",
+        "make",
+        "use",
+        "extensions",
+        "safe",
+        "manageable",
+        "there",
+        "strict",
+        "set",
+        "governance",
+        "applied",
+        "though",
+        "any",
+        "implementer",
+        "can",
+        "define",
+        "requirements",
+        "shall",
+        "met"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Device.note.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.note.authorReference",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "authorReference",
+        "traversalPath": "authorReference.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The individual responsible for making the annotation.",
+      "coreKeywords": [
+        "device",
+        "note",
+        "author",
+        "reference",
+        "dropdown",
+        "individual",
+        "responsible",
+        "making",
+        "annotation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"Device.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"The individual responsible for making the annotation.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Device.note.authorString",
+    "resourceType": "Device",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The individual responsible for making the annotation.",
+      "coreKeywords": [
+        "device",
+        "note",
+        "author",
+        "string",
+        "textinput",
+        "individual",
+        "responsible",
+        "making",
+        "annotation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"Device.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"The individual responsible for making the annotation.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.note.time",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Indicates when this particular annotation was made.",
+      "coreKeywords": [
+        "device",
+        "note",
+        "time",
+        "textinput",
+        "indicates",
+        "when",
+        "particular",
+        "annotation",
+        "made"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"Device.note.time\"\n        label: \"Enter time\"\n        description: \"Indicates when this particular annotation was made.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.note.text",
+    "resourceType": "Device",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The text of the annotation in markdown format.",
+      "coreKeywords": [
+        "device",
+        "note",
+        "text",
+        "textinput",
+        "annotation",
+        "markdown",
+        "format"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Device.note.text\"\n        label: \"Enter text\"\n        description: \"The text of the annotation in markdown format.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Device.safety",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"safety\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Provides additional safety characteristics about a medical device. For example devices containing latex.",
+      "coreKeywords": [
+        "device",
+        "safety",
+        "multiselect",
+        "provides",
+        "additional",
+        "characteristics",
+        "about",
+        "medical",
+        "example",
+        "devices",
+        "containing",
+        "latex"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"safety\"\n        path: \"Device.safety\"\n        label: \"Enter safety\"\n        description: \"Provides additional safety characteristics about a medical device. For example devices containing latex.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Device.parent",
+    "resourceType": "Device",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "parent-link",
+        "targetResource": "parent",
+        "traversalPath": "parent.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"parent\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The parent device.",
+      "coreKeywords": [
+        "device",
+        "parent",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"parent\"\n        path: \"Device.parent\"\n        label: \"Enter parent\"\n        description: \"The parent device.\"\n        uiComponent: \"Dropdown\""
+  }
+]

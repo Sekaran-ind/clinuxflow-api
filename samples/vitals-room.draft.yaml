@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=./form-schematics.schema.json
+formId: advanced-clinical-matrix-v1
+title: "Comprehensive Multi-Specialty Examination Layout"
+
+composition:
+  - resourceType: Patient
+    id: section_demographics
+    label: "1. Administrative Demographics"
+    type: "group" # Group Section Nesting
+    fields:
+      - path: "Patient.gender"
+        label: "Biological Sex at Birth"
+        uiComponent: "Dropdown"
+        choices: ["male", "female", "other", "unknown"]
+        required: true
+
+  - resourceType: Observation
+    id: section_vitals
+    label: "2. Patient Vitals Matrix"
+    type: "group"
+    itemControl: "gtable" # Feature 6: Renders nested values as a Grid Table row structure
+    repeats: true         # Feature 5 & 9: Allows nurses to add multiple vital snapshots
+    fields:
+      - path: "Observation.valueQuantity"
+        label: "Systolic Blood Pressure"
+        uiComponent: "NumericInput"
+        unit: "mmHg"       # Feature 3: Numeric field with unit code mappings
+        required: true
+      - path: "Observation.component.valueQuantity"
+        label: "Diastolic Blood Pressure"
+        uiComponent: "NumericInput"
+        unitChoices: ["kg", "lbs"]
+
+  - resourceType: Condition
+    id: section_clinical
+    label: "3. Diagnostic Findings & Diagnostics"
+    type: "group"
+    fields:
+      - path: "Condition.code"
+        label: "Search Confirmed Diagnosis"
+        uiComponent: "Autocomplete"
+        # Feature 4: Real-time dynamic terminology lookup using external HL7 ValueSet URL
+        valueSetUrl: "http://hl7.org" 
+        helpText: "Begin typing clinical terms to search SNOMED-CT database tables." # Feature 7: Inline context help
+      
+      - path: "Condition.severity"
+        label: "Clinical Severity Scaling"
+        uiComponent: "Dropdown"
+        choices: ["Mild", "Moderate", "Severe"]
+        # Feature 8: Skip Logic Rule - Hidden until triggering condition from another field is met
+        skipLogic:
+          sourceField: "Condition.code"
+          operator: "exists"
