@@ -1,0 +1,10 @@
+# Copy this file to .dev.vars (gitignored) for local `wrangler dev`.
+
+# Overrides wrangler.toml's [vars] ENVIRONMENT = "production" — keeps Designer's dev-testing
+# test-scribe harness working locally.
+ENVIRONMENT=development
+
+# Shared secret clinux-frontend sends as X-Service-Key — must match the frontend's
+# VITE_SERVICE_KEY for local dev. Any value works locally; production uses a real random secret
+# set via `wrangler secret put SERVICE_KEY`.
+SERVICE_KEY=dev-local-shared-secret

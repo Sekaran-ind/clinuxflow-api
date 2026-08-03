@@ -2,6 +2,19 @@ name = "clinuxflow-api"
 main = "src/index.js"
 compatibility_date = "2026-07-19"
 
+# ENVIRONMENT="production" here is the deployed default; local `wrangler dev` overrides it to
+# "development" via .dev.vars (which takes precedence over [vars]). Used by
+# POST /api/workflow/test-scribe to deny Designer's dev-testing harness (source: 'designer-test')
+# once live, without affecting ConsultationDesk.vue's real scribe feature.
+[vars]
+ENVIRONMENT = "production"
+
+# --- Secrets (do NOT put these here) ------------------------------------------------------
+# Set with `wrangler secret put SERVICE_KEY`; for local dev, copy .dev.vars.example to
+# .dev.vars and fill it in.
+#   SERVICE_KEY - shared secret clinux-frontend sends as X-Service-Key; see src/index.js's
+#                 auth middleware. Any long random string; generate with e.g. `openssl rand -hex 32`.
+
 # Import .yaml files as raw text (e.g. data/vitals-room.yaml) — Workers has no filesystem, so
 # everything the routes used to read via fs.readFileSync is now a bundled import instead.
 [[rules]]

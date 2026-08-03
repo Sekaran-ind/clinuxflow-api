@@ -12,7 +12,29 @@ import clinicSpecialities from '../data/clinic-specialities.json';
 
 const app = new Hono();
 
-app.use('/api/*', cors());
+// Locked down to clinux-frontend's real origins rather than wildcarded — this API fronts a
+// paid Workers AI call (test-scribe) and a write endpoint (save-to-library), so an open CORS
+// policy would let any webpage's JS call them on a visitor's behalf.
+const ALLOWED_ORIGINS = [
+    'https://clinux.yaxb.ai',
+    'http://localhost:5173',
+    'capacitor://localhost',
+    'http://localhost',
+];
+app.use('/api/*', cors({ origin: ALLOWED_ORIGINS }));
+
+// Shared-secret gate: clinux-frontend is the only intended caller. CORS alone only stops
+// browser-originated cross-origin requests — it does nothing against a script/curl calling this
+// Worker's URL directly, which is the actual risk for test-scribe (real Workers AI cost per
+// call) and save-to-library (unauthenticated write to the shared forms library). Fails closed
+// if SERVICE_KEY isn't configured.
+app.use('/api/*', async (c, next) => {
+    const key = c.req.header('X-Service-Key');
+    if (!c.env.SERVICE_KEY || key !== c.env.SERVICE_KEY) {
+        return c.json({ success: false, error: 'Unauthorized' }, 401);
+    }
+    return next();
+});
 
 /**
  * GET /api/workflow/system-forms
@@ -263,7 +285,17 @@ app.post('/api/workflow/test-scribe-mock', async (c) => {
  */
 app.post('/api/workflow/test-scribe', async (c) => {
     try {
-        const { transcript, activeBlueprint, context } = await c.req.json();
+        const { transcript, activeBlueprint, context, source } = await c.req.json();
+
+        // Designer.vue's testVoiceScribeExtraction() is a design-time tool for tuning a form's
+        // keyword-training before it ever reaches a real encounter — it tags its own requests
+        // with source: 'designer-test'. ConsultationDesk.vue's real "Generate SOAP draft"
+        // feature never sends this field, so it's unaffected. Only Designer's dev-testing path
+        // is denied in production; it still works under `wrangler dev` (ENVIRONMENT=development
+        // via .dev.vars) for actually building/tuning forms.
+        if (source === 'designer-test' && c.env.ENVIRONMENT === 'production') {
+            return c.json({ success: false, error: 'test-scribe is disabled for Designer test runs in production. Use test-scribe-mock, or test locally with `wrangler dev`.' }, 403);
+        }
 
         if (!activeBlueprint || !activeBlueprint.item) {
             return c.json({ success: false, error: "No compiled blueprint active. Rebuild form first." }, 400);
