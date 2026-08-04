@@ -242,7 +242,15 @@ function buildShardedHealthcareKnowledgeGraph() {
     const masterUniquePathsList = [];
 
     config.validation.allowedResources.forEach(resourceName => {
-        const sourceFile = project.getSourceFile(path.join(CLASSES_DIR, `${resourceName}.d.ts`));
+        // @smile-cdr/fhirts ships these as lowerCamelCase filenames (Patient -> patient.d.ts,
+        // MedicationRequest -> medicationRequest.d.ts) even though the exported class inside is
+        // PascalCase. Looking this up with the PascalCase resourceName directly only "works" on
+        // a case-insensitive filesystem (macOS/Windows) — on Linux (incl. GitHub Actions' Ubuntu
+        // runners) getSourceFile() silently returns undefined for every resource, which leaves
+        // masterUniquePathsList empty and makes ajv reject the schema's `enum: []` downstream in
+        // build-system-forms.js with a much less obvious error at a different step entirely.
+        const classFileName = resourceName.charAt(0).toLowerCase() + resourceName.slice(1);
+        const sourceFile = project.getSourceFile(path.join(CLASSES_DIR, `${classFileName}.d.ts`));
         if (!sourceFile) return;
 
         const classDecl = sourceFile.getClass(resourceName);

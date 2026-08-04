@@ -21,6 +21,13 @@ jobs:
 
       - run: npm ci
 
+      - name: DEBUG diagnose fhirts classes dir
+        run: |
+          echo "NODE_ENV=$NODE_ENV"
+          ls node_modules/@smile-cdr/fhirts/dist/FHIR-R4/classes/ | wc -l
+          ls node_modules/@smile-cdr/fhirts/dist/FHIR-R4/classes/ | head -5
+          node -e "console.log(require('fs').existsSync('node_modules/@smile-cdr/fhirts/dist/FHIR-R4/classes/patient.d.ts'))"
+
       # wrangler-action calls `wrangler deploy` directly, bypassing npm's own `predeploy` hook —
       # run the same kernel build (dictionary/graphs-bundle/system-forms) explicitly here so CI
       # regenerates the bundled data/*.json exactly like a local `npm run deploy` would.
