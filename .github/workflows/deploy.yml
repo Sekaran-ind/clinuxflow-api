@@ -23,8 +23,12 @@ jobs:
 
       # wrangler-action calls `wrangler deploy` directly, bypassing npm's own `predeploy` hook —
       # run the same kernel build (dictionary/graphs-bundle/system-forms) explicitly here so CI
-      # regenerates the bundled data/*.json exactly like a local `npm run deploy` would.
+      # regenerates the bundled data/*.json exactly like a local `npm run deploy` would. Must run
+      # before `npm test` too — yaml-to-questionnaire.test.js exercises the real compiled
+      # data/graphs.bundle.json, not a mock of it.
       - run: npm run build:kernel
+
+      - run: npm test
 
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3

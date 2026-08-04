@@ -5,6 +5,7 @@ import { compileYamlToQuestionnaire } from './lib/yaml-to-questionnaire.js';
 import { ComprehensiveLocalExtractor } from './lib/local-extractor.js';
 import { LocalQueueManager } from './lib/local-queue-manager.js';
 import { saveFormVersion } from './lib/forms-library.js';
+import { serviceKeyAuth } from './lib/serviceAuth.js';
 
 import systemFormsLibrary from '../data/system-forms-library.json';
 import defaultBlueprintYaml from '../data/vitals-room.yaml';
@@ -23,18 +24,8 @@ const ALLOWED_ORIGINS = [
 ];
 app.use('/api/*', cors({ origin: ALLOWED_ORIGINS }));
 
-// Shared-secret gate: clinux-frontend is the only intended caller. CORS alone only stops
-// browser-originated cross-origin requests — it does nothing against a script/curl calling this
-// Worker's URL directly, which is the actual risk for test-scribe (real Workers AI cost per
-// call) and save-to-library (unauthenticated write to the shared forms library). Fails closed
-// if SERVICE_KEY isn't configured.
-app.use('/api/*', async (c, next) => {
-    const key = c.req.header('X-Service-Key');
-    if (!c.env.SERVICE_KEY || key !== c.env.SERVICE_KEY) {
-        return c.json({ success: false, error: 'Unauthorized' }, 401);
-    }
-    return next();
-});
+// See src/lib/serviceAuth.js for what/why — unit tested there.
+app.use('/api/*', serviceKeyAuth());
 
 /**
  * GET /api/workflow/system-forms
