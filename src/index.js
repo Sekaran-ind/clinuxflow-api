@@ -1,11 +1,16 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
+import { v4 as uuidv4 } from 'uuid';
 
 import { compileYamlToQuestionnaire } from './lib/yaml-to-questionnaire.js';
 import { ComprehensiveLocalExtractor } from './lib/local-extractor.js';
 import { LocalQueueManager } from './lib/local-queue-manager.js';
 import { saveFormVersion } from './lib/forms-library.js';
 import { serviceKeyAuth } from './lib/serviceAuth.js';
+import { hashPassword, verifyPassword } from './lib/passwordHash.js';
+import { issueSessionToken } from './lib/session.js';
+import { AccountsDb } from './lib/accounts-db.js';
+import { requireUser, requirePaidTier } from './lib/userAuth.js';
 
 import systemFormsLibrary from '../data/system-forms-library.json';
 import defaultBlueprintYaml from '../data/vitals-room.yaml';
@@ -26,6 +31,130 @@ app.use('/api/*', cors({ origin: ALLOWED_ORIGINS }));
 
 // See src/lib/serviceAuth.js for what/why — unit tested there.
 app.use('/api/*', serviceKeyAuth());
+
+/**
+ * POST /api/auth/register
+ * Body: { clinicName, email, password, adminName?, designation? }
+ * Creates a new clinic (tier defaults to 'free') and its first account atomically, and returns a
+ * session token. Still gated by serviceKeyAuth() above — X-Service-Key is an independent
+ * anti-abuse layer proving "this is clinux-frontend", not superseded by this account-level auth.
+ */
+app.post('/api/auth/register', async (c) => {
+    try {
+        const { clinicName, email, password, adminName, designation } = await c.req.json();
+        if (!clinicName || !email || !password) {
+            return c.json({ success: false, error: 'clinicName, email, and password are required.' }, 400);
+        }
+        if (password.length < 8) {
+            return c.json({ success: false, error: 'Password must be at least 8 characters.' }, 400);
+        }
+        const normalizedEmail = String(email).trim().toLowerCase();
+
+        const existing = await AccountsDb.getAccountByEmail(c.env.DB, normalizedEmail);
+        if (existing) {
+            return c.json({ success: false, error: 'An account with this email already exists.' }, 409);
+        }
+        if (!c.env.JWT_SECRET) {
+            return c.json({ success: false, error: 'Server auth is not configured.' }, 500);
+        }
+
+        const clinicId = uuidv4();
+        const accountId = uuidv4();
+        const passwordHash = await hashPassword(password);
+
+        try {
+            await AccountsDb.createClinicAndAccount(
+                c.env.DB, clinicId, clinicName, accountId, normalizedEmail, passwordHash, adminName, designation
+            );
+        } catch (err) {
+            // Narrow TOCTOU race: two concurrent registrations for the same email both pass the
+            // getAccountByEmail check above; D1's UNIQUE(email) constraint rejects the second.
+            if (String(err.message).includes('UNIQUE')) {
+                return c.json({ success: false, error: 'An account with this email already exists.' }, 409);
+            }
+            throw err;
+        }
+
+        const token = await issueSessionToken({ sub: accountId, clinicId, email: normalizedEmail }, c.env.JWT_SECRET);
+
+        return c.json({
+            success: true,
+            token,
+            account: {
+                id: accountId, clinicId, email: normalizedEmail,
+                adminName: adminName ?? null, designation: designation ?? null,
+                clinicName, tier: 'free',
+            },
+        }, 201);
+    } catch (err) {
+        console.error('❌ Register Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * POST /api/auth/login
+ * Body: { email, password }
+ * Generic "Invalid email or password" on any failure (unknown email or wrong password) — doesn't
+ * leak which one was wrong.
+ */
+app.post('/api/auth/login', async (c) => {
+    try {
+        const { email, password } = await c.req.json();
+        if (!email || !password) {
+            return c.json({ success: false, error: 'email and password are required.' }, 400);
+        }
+        const normalizedEmail = String(email).trim().toLowerCase();
+
+        const account = await AccountsDb.getAccountByEmail(c.env.DB, normalizedEmail);
+        if (!account || !(await verifyPassword(password, account.password_hash))) {
+            return c.json({ success: false, error: 'Invalid email or password.' }, 401);
+        }
+        if (!c.env.JWT_SECRET) {
+            return c.json({ success: false, error: 'Server auth is not configured.' }, 500);
+        }
+
+        const clinic = await AccountsDb.getClinicById(c.env.DB, account.clinic_id);
+        const token = await issueSessionToken(
+            { sub: account.id, clinicId: account.clinic_id, email: account.email }, c.env.JWT_SECRET
+        );
+
+        return c.json({
+            success: true,
+            token,
+            account: {
+                id: account.id, clinicId: account.clinic_id, email: account.email,
+                adminName: account.admin_name, designation: account.designation,
+                clinicName: clinic?.name ?? '', tier: clinic?.tier ?? 'free',
+            },
+        });
+    } catch (err) {
+        console.error('❌ Login Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * GET /api/auth/me
+ * Re-fetches the caller's account + clinic (fresh tier included) — clinux-frontend calls this on
+ * app boot when a session token exists, so a tier change since last login takes effect without a
+ * fresh login.
+ */
+app.get('/api/auth/me', requireUser(), async (c) => {
+    const user = c.get('user');
+    const account = await AccountsDb.getAccountById(c.env.DB, user.accountId);
+    if (!account) return c.json({ success: false, error: 'Account not found.' }, 404);
+
+    const clinic = await AccountsDb.getClinicById(c.env.DB, account.clinic_id);
+    return c.json({
+        success: true,
+        account: {
+            id: account.id, clinicId: account.clinic_id, email: account.email,
+            adminName: account.admin_name, designation: account.designation,
+            clinicName: clinic?.name ?? '', tier: clinic?.tier ?? 'free',
+        },
+    });
+});
 
 /**
  * GET /api/workflow/system-forms
@@ -273,8 +402,11 @@ app.post('/api/workflow/test-scribe-mock', async (c) => {
  * Ported off the original CLOUDFLARE_ACCOUNT_ID/CLOUDFLARE_AUTH_TOKEN REST call — running inside
  * a Worker, the AI binding authenticates automatically for this account, so no credentials need
  * to be configured at all.
+ *
+ * requireUser()/requirePaidTier(): this is a real per-call Workers AI cost, gated to paid-tier
+ * clinics only — free tier gets zero access, by design (see src/lib/userAuth.js).
  */
-app.post('/api/workflow/test-scribe', async (c) => {
+app.post('/api/workflow/test-scribe', requireUser(), requirePaidTier(), async (c) => {
     try {
         const { transcript, activeBlueprint, context, source } = await c.req.json();
 

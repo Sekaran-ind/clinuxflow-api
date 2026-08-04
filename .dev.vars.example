@@ -8,3 +8,8 @@ ENVIRONMENT=development
 # VITE_SERVICE_KEY for local dev. Any value works locally; production uses a real random secret
 # set via `wrangler secret put SERVICE_KEY`.
 SERVICE_KEY=dev-local-shared-secret
+
+# Signs/verifies per-account session JWTs (see src/lib/session.js). Any value works locally;
+# production uses a real random secret set via `wrangler secret put JWT_SECRET`. Must differ
+# from SERVICE_KEY — they gate different things.
+JWT_SECRET=dev-local-jwt-secret

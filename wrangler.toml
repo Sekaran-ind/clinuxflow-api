@@ -10,10 +10,14 @@ compatibility_date = "2026-07-19"
 ENVIRONMENT = "production"
 
 # --- Secrets (do NOT put these here) ------------------------------------------------------
-# Set with `wrangler secret put SERVICE_KEY`; for local dev, copy .dev.vars.example to
-# .dev.vars and fill it in.
+# Set with `wrangler secret put SERVICE_KEY` / `wrangler secret put JWT_SECRET`; for local dev,
+# copy .dev.vars.example to .dev.vars and fill it in.
 #   SERVICE_KEY - shared secret clinux-frontend sends as X-Service-Key; see src/index.js's
 #                 auth middleware. Any long random string; generate with e.g. `openssl rand -hex 32`.
+#   JWT_SECRET  - signs/verifies per-account session tokens issued by POST /api/auth/register|
+#                 login (see src/lib/session.js, src/lib/userAuth.js). Independent of
+#                 SERVICE_KEY — one gates "is this clinux-frontend", the other gates "which
+#                 logged-in account is this". Any long random string, generate the same way.
 
 # Import .yaml files as raw text (e.g. data/vitals-room.yaml) — Workers has no filesystem, so
 # everything the routes used to read via fs.readFileSync is now a bundled import instead.
@@ -31,7 +35,8 @@ fallthrough = true
 binding = "AI"
 
 # D1 binding for src/lib/local-queue-manager.js (replaces better-sqlite3, which can't run in
-# Workers). Schema + legacy data seed live in migrations/.
+# Workers) and src/lib/accounts-db.js (auth: clinics + accounts). Schema + legacy data seed live
+# in migrations/.
 [[d1_databases]]
 binding = "DB"
 database_name = "clinuxflow"
