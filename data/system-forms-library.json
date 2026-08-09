@@ -283,7 +283,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-04T02:12:49.037Z"
+        "savedAt": "2026-08-09T15:16:09.740Z"
       }
     ]
   },
@@ -376,7 +376,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-04T02:12:49.039Z"
+        "savedAt": "2026-08-09T15:16:09.742Z"
       }
     ]
   },
@@ -646,7 +646,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-04T02:12:49.041Z"
+        "savedAt": "2026-08-09T15:16:09.744Z"
       }
     ]
   },
@@ -739,7 +739,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-04T02:12:49.042Z"
+        "savedAt": "2026-08-09T15:16:09.745Z"
       }
     ]
   },
@@ -855,7 +855,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-04T02:12:49.043Z"
+        "savedAt": "2026-08-09T15:16:09.745Z"
       }
     ]
   },
@@ -962,7 +962,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-04T02:12:49.043Z"
+        "savedAt": "2026-08-09T15:16:09.746Z"
       }
     ]
   },
@@ -1056,7 +1056,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-04T02:12:49.044Z"
+        "savedAt": "2026-08-09T15:16:09.746Z"
       }
     ]
   },
@@ -1119,11 +1119,11 @@
             }
           ]
         },
-        "savedAt": "2026-08-04T02:12:49.044Z"
+        "savedAt": "2026-08-09T15:16:09.747Z"
       }
     ]
   },
-  "system-encounter-intake-v1": {
+  "system-encounter-composition-v1": {
     "isSystem": true,
     "archived": false,
     "bookmarked": false,
@@ -1132,12 +1132,12 @@
       {
         "version": 1,
         "status": "final",
-        "yaml": "formId: system-encounter-intake-v1\ntitle: \"Encounter Intake\"\ncomposition:\n  - resourceType: Encounter\n    id: section_encounter\n    label: \"Encounter Details\"\n    fields:\n      - id: \"encounter_patient_ref\"\n        path: \"Encounter.subject\"\n        label: \"Patient\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"encounter_chief_complaint\"\n        path: \"Encounter.reasonCode\"\n        label: \"Chief Complaint\"\n        uiComponent: \"TextInput\"\n      - id: \"encounter_status\"\n        path: \"Encounter.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"arrived\",\"in-progress\",\"finished\",\"cancelled\"]\n        required: true\n      - id: \"encounter_priority\"\n        path: \"Encounter.priority\"\n        label: \"Triage Priority\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Normal\",\"Emergency\"]\n",
+        "yaml": "formId: system-encounter-composition-v1\ntitle: \"Consultation\"\n# Merges the former system-encounter-intake-v1 / system-vitals-v1 / system-consultation-soap-v1 /\n# system-prescription-v1 / system-billing-v1 into one Encounter-centered composition — one\n# record per patient visit instead of five separately-keyed ones, loosely \"linked\" only by each\n# copying the same encounter id into its own *_encounter_ref string field (never a real FHIR\n# Reference). Encounter MUST stay composition block 0 — yaml-to-questionnaire.js derives\n# subjectType only from composition[0].resourceType. UI-facing label is \"Consultation\"; the FHIR\n# resourceType stays Encounter.\ncomposition:\n  - resourceType: Encounter\n    id: section_encounter\n    label: \"Encounter Details\"\n    fields:\n      - id: \"encounter_patient_ref\"\n        path: \"Encounter.subject\"\n        label: \"Patient\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"encounter_chief_complaint\"\n        path: \"Encounter.reasonCode\"\n        label: \"Chief Complaint\"\n        uiComponent: \"TextInput\"\n      - id: \"encounter_status\"\n        path: \"Encounter.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"arrived\",\"in-progress\",\"finished\",\"cancelled\"]\n        required: true\n      - id: \"encounter_priority\"\n        path: \"Encounter.priority\"\n        label: \"Triage Priority\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Normal\",\"Emergency\"]\n\n  - resourceType: Observation\n    id: section_vitals\n    label: \"Vitals Capture\"\n    repeats: true\n    fields:\n      - id: \"vitals_systolic\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Systolic BP\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_diastolic\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Diastolic BP\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_pulse\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Pulse (bpm)\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_temperature\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Temperature (°F)\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Condition\n    id: section_soap\n    label: \"SOAP Note\"\n    fields:\n      - id: \"soap_subjective\"\n        path: \"Condition.note.text\"\n        label: \"Subjective\"\n        uiComponent: \"TextInput\"\n        keywords: [\"complains\", \"reports\", \"states\", \"feels\", \"patient says\"]\n      - id: \"soap_objective\"\n        path: \"Condition.note.text\"\n        label: \"Objective\"\n        uiComponent: \"TextInput\"\n        keywords: [\"exam reveals\", \"vitals\", \"observed\", \"measured\", \"on examination\"]\n      - id: \"soap_assessment\"\n        path: \"Condition.note.text\"\n        label: \"Assessment\"\n        uiComponent: \"TextInput\"\n        keywords: [\"diagnosis\", \"assessment\", \"likely\", \"impression\", \"consistent with\"]\n      - id: \"soap_plan\"\n        path: \"Condition.note.text\"\n        label: \"Plan\"\n        uiComponent: \"TextInput\"\n        keywords: [\"plan\", \"prescribe\", \"recommend\", \"follow-up\", \"advised\"]\n\n  - resourceType: MedicationRequest\n    id: section_prescription\n    label: \"Medication\"\n    repeats: true\n    fields:\n      - id: \"rx_medication\"\n        path: \"MedicationRequest.medicationCodeableConcept\"\n        label: \"Medication\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"rx_dosage\"\n        path: \"MedicationRequest.dosageInstruction.text\"\n        label: \"Dosage Instructions\"\n        uiComponent: \"TextInput\"\n      - id: \"rx_status\"\n        path: \"MedicationRequest.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"active\",\"completed\",\"cancelled\"]\n\n  - resourceType: Invoice\n    id: section_billing\n    label: \"Billing Details\"\n    fields:\n      - id: \"billing_total\"\n        path: \"Invoice.totalGross.value\"\n        label: \"Total Amount\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"billing_status\"\n        path: \"Invoice.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"draft\",\"issued\",\"balanced\",\"cancelled\"]\n        required: true\n      - id: \"billing_payment_method\"\n        path: \"Invoice.paymentTerms\"\n        label: \"Payment Method\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Cash\",\"Card\",\"UPI\",\"Insurance\"]\n",
         "questionnaire": {
           "resourceType": "Questionnaire",
-          "id": "system-encounter-intake-v1",
+          "id": "system-encounter-composition-v1",
           "status": "active",
-          "title": "Encounter Intake",
+          "title": "Consultation",
           "subjectType": [
             "Encounter"
           ],
@@ -1209,52 +1209,13 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        "savedAt": "2026-08-04T02:12:49.045Z"
-      }
-    ]
-  },
-  "system-vitals-v1": {
-    "isSystem": true,
-    "archived": false,
-    "bookmarked": false,
-    "activeVersion": 1,
-    "versions": [
-      {
-        "version": 1,
-        "status": "final",
-        "yaml": "formId: system-vitals-v1\ntitle: \"Vitals\"\ncomposition:\n  - resourceType: Observation\n    id: section_vitals\n    label: \"Vitals Capture\"\n    fields:\n      - id: \"vitals_encounter_ref\"\n        path: \"Observation.encounter\"\n        label: \"Encounter\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"vitals_systolic\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Systolic BP\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_diastolic\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Diastolic BP\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_pulse\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Pulse (bpm)\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_temperature\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Temperature (°F)\"\n        uiComponent: \"TextInput\"\n",
-        "questionnaire": {
-          "resourceType": "Questionnaire",
-          "id": "system-vitals-v1",
-          "status": "active",
-          "title": "Vitals",
-          "subjectType": [
-            "Observation"
-          ],
-          "extension": [
-            {
-              "url": "http://hl7.org",
-              "valueCode": "definition"
-            }
-          ],
-          "item": [
+            },
             {
               "linkId": "section_vitals",
               "text": "Vitals Capture",
               "type": "group",
-              "repeats": false,
+              "repeats": true,
               "item": [
-                {
-                  "linkId": "vitals_encounter_ref",
-                  "text": "Encounter",
-                  "type": "string",
-                  "repeats": false,
-                  "required": true,
-                  "definition": "http://hl7.org/Observation#Observation.encounter"
-                },
                 {
                   "linkId": "vitals_systolic",
                   "text": "Systolic BP",
@@ -1288,52 +1249,13 @@
                   "definition": "http://hl7.org/Observation#Observation.component.valueQuantity.value"
                 }
               ]
-            }
-          ]
-        },
-        "savedAt": "2026-08-04T02:12:49.046Z"
-      }
-    ]
-  },
-  "system-consultation-soap-v1": {
-    "isSystem": true,
-    "archived": false,
-    "bookmarked": false,
-    "activeVersion": 1,
-    "versions": [
-      {
-        "version": 1,
-        "status": "final",
-        "yaml": "formId: system-consultation-soap-v1\ntitle: \"Consultation SOAP Note\"\ncomposition:\n  - resourceType: Condition\n    id: section_soap\n    label: \"SOAP Note\"\n    fields:\n      - id: \"soap_encounter_ref\"\n        path: \"Condition.encounter\"\n        label: \"Encounter\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"soap_subjective\"\n        path: \"Condition.note.text\"\n        label: \"Subjective\"\n        uiComponent: \"TextInput\"\n        keywords: [\"complains\", \"reports\", \"states\", \"feels\", \"patient says\"]\n      - id: \"soap_objective\"\n        path: \"Condition.note.text\"\n        label: \"Objective\"\n        uiComponent: \"TextInput\"\n        keywords: [\"exam reveals\", \"vitals\", \"observed\", \"measured\", \"on examination\"]\n      - id: \"soap_assessment\"\n        path: \"Condition.note.text\"\n        label: \"Assessment\"\n        uiComponent: \"TextInput\"\n        keywords: [\"diagnosis\", \"assessment\", \"likely\", \"impression\", \"consistent with\"]\n      - id: \"soap_plan\"\n        path: \"Condition.note.text\"\n        label: \"Plan\"\n        uiComponent: \"TextInput\"\n        keywords: [\"plan\", \"prescribe\", \"recommend\", \"follow-up\", \"advised\"]\n",
-        "questionnaire": {
-          "resourceType": "Questionnaire",
-          "id": "system-consultation-soap-v1",
-          "status": "active",
-          "title": "Consultation SOAP Note",
-          "subjectType": [
-            "Condition"
-          ],
-          "extension": [
-            {
-              "url": "http://hl7.org",
-              "valueCode": "definition"
-            }
-          ],
-          "item": [
+            },
             {
               "linkId": "section_soap",
               "text": "SOAP Note",
               "type": "group",
               "repeats": false,
               "item": [
-                {
-                  "linkId": "soap_encounter_ref",
-                  "text": "Encounter",
-                  "type": "string",
-                  "repeats": false,
-                  "required": true,
-                  "definition": "http://hl7.org/Condition#Condition.encounter"
-                },
                 {
                   "linkId": "soap_subjective",
                   "text": "Subjective",
@@ -1395,52 +1317,13 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        "savedAt": "2026-08-04T02:12:49.046Z"
-      }
-    ]
-  },
-  "system-prescription-v1": {
-    "isSystem": true,
-    "archived": false,
-    "bookmarked": false,
-    "activeVersion": 1,
-    "versions": [
-      {
-        "version": 1,
-        "status": "final",
-        "yaml": "formId: system-prescription-v1\ntitle: \"Prescription\"\ncomposition:\n  - resourceType: MedicationRequest\n    id: section_prescription\n    label: \"Medication\"\n    fields:\n      - id: \"rx_encounter_ref\"\n        path: \"MedicationRequest.encounter\"\n        label: \"Encounter\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"rx_medication\"\n        path: \"MedicationRequest.medicationCodeableConcept\"\n        label: \"Medication\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"rx_dosage\"\n        path: \"MedicationRequest.dosageInstruction.text\"\n        label: \"Dosage Instructions\"\n        uiComponent: \"TextInput\"\n      - id: \"rx_status\"\n        path: \"MedicationRequest.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"active\",\"completed\",\"cancelled\"]\n",
-        "questionnaire": {
-          "resourceType": "Questionnaire",
-          "id": "system-prescription-v1",
-          "status": "active",
-          "title": "Prescription",
-          "subjectType": [
-            "MedicationRequest"
-          ],
-          "extension": [
-            {
-              "url": "http://hl7.org",
-              "valueCode": "definition"
-            }
-          ],
-          "item": [
+            },
             {
               "linkId": "section_prescription",
               "text": "Medication",
               "type": "group",
-              "repeats": false,
+              "repeats": true,
               "item": [
-                {
-                  "linkId": "rx_encounter_ref",
-                  "text": "Encounter",
-                  "type": "string",
-                  "repeats": false,
-                  "required": true,
-                  "definition": "http://hl7.org/MedicationRequest#MedicationRequest.encounter"
-                },
                 {
                   "linkId": "rx_medication",
                   "text": "Medication",
@@ -1477,52 +1360,13 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        "savedAt": "2026-08-04T02:12:49.046Z"
-      }
-    ]
-  },
-  "system-billing-v1": {
-    "isSystem": true,
-    "archived": false,
-    "bookmarked": false,
-    "activeVersion": 1,
-    "versions": [
-      {
-        "version": 1,
-        "status": "final",
-        "yaml": "formId: system-billing-v1\ntitle: \"Billing & Payment\"\ncomposition:\n  - resourceType: Invoice\n    id: section_billing\n    label: \"Billing Details\"\n    fields:\n      - id: \"billing_encounter_ref\"\n        path: \"Invoice.subject\"\n        label: \"Encounter\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"billing_total\"\n        path: \"Invoice.totalGross.value\"\n        label: \"Total Amount\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"billing_status\"\n        path: \"Invoice.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"draft\",\"issued\",\"balanced\",\"cancelled\"]\n        required: true\n      - id: \"billing_payment_method\"\n        path: \"Invoice.paymentTerms\"\n        label: \"Payment Method\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Cash\",\"Card\",\"UPI\",\"Insurance\"]\n",
-        "questionnaire": {
-          "resourceType": "Questionnaire",
-          "id": "system-billing-v1",
-          "status": "active",
-          "title": "Billing & Payment",
-          "subjectType": [
-            "Invoice"
-          ],
-          "extension": [
-            {
-              "url": "http://hl7.org",
-              "valueCode": "definition"
-            }
-          ],
-          "item": [
+            },
             {
               "linkId": "section_billing",
               "text": "Billing Details",
               "type": "group",
               "repeats": false,
               "item": [
-                {
-                  "linkId": "billing_encounter_ref",
-                  "text": "Encounter",
-                  "type": "string",
-                  "repeats": false,
-                  "required": true,
-                  "definition": "http://hl7.org/Invoice#Invoice.subject"
-                },
                 {
                   "linkId": "billing_total",
                   "text": "Total Amount",
@@ -1579,7 +1423,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-04T02:12:49.047Z"
+        "savedAt": "2026-08-09T15:16:09.748Z"
       }
     ]
   }
