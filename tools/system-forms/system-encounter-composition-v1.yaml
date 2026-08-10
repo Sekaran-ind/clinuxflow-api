@@ -103,6 +103,7 @@ composition:
   - resourceType: Invoice
     id: section_billing
     label: "Billing Details"
+    repeats: true
     fields:
       - id: "billing_total"
         path: "Invoice.totalGross.value"
