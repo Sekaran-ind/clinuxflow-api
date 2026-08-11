@@ -142,6 +142,14 @@ export function compileYamlToQuestionnaire(yamlSource) {
         item: []
     };
 
+    // Optional — tags a custom form as belonging to the Patient or Hospital journey so those
+    // workflows can surface it themselves (see clinux-custom-forms-in-patient-hospital-journeys
+    // memory note). A plain top-level property, same non-standard-but-established convention
+    // this compiler already uses for id/title above rather than a proper FHIR extension.
+    if (yamlDoc.journey) {
+        fhirQuestionnaire.journey = yamlDoc.journey;
+    }
+
     // Flatten composition configurations down into individual Questionnaire sections
     yamlDoc.composition.forEach(resourceBlock => {
 
