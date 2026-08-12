@@ -22,14 +22,8 @@ const YAML_DIR = path.join(DIR, 'system-forms');
 // Fixed sidebar display order — must match clinux-frontend's SYSTEM_FORM_IDS
 // (src/data/useSystemForms.js).
 const FORM_IDS = [
-    'system-hospital-profile-v1',
+    'system-provider-composition-v1',
     'system-patient-profile-v1',
-    'system-staff-profile-v1',
-    'system-services-profile-v1',
-    'system-consents-profile-v1',
-    'system-appointments-profile-v1',
-    'system-office-hours-profile-v1',
-    'system-locations-profile-v1',
     'system-encounter-composition-v1',
 ];
 
