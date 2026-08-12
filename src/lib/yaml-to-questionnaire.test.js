@@ -60,6 +60,28 @@ composition:
         expect(b.type).toBe('choice');
     });
 
+    // Optional journey: tag (Patient/Front Desk vs Hospital-management workflows surfacing a
+    // custom form themselves) — see clinux-custom-forms-in-patient-hospital-journeys memory
+    // note. A plain top-level pass-through, same non-standard-but-established convention this
+    // compiler already uses for id/title.
+    it('passes an optional journey tag through onto the compiled Questionnaire', () => {
+        const result = compileYamlToQuestionnaire(VALID_YAML.replace('title: "Test Vitals"', 'title: "Test Vitals"\njourney: patient'));
+        expect(result.success).toBe(true);
+        expect(result.questionnaire.journey).toBe('patient');
+    });
+
+    it('omits journey entirely from the compiled Questionnaire when not set in the YAML', () => {
+        const result = compileYamlToQuestionnaire(VALID_YAML);
+        expect(result.success).toBe(true);
+        expect(result.questionnaire.journey).toBeUndefined();
+    });
+
+    it('rejects an unrecognized journey value', () => {
+        const result = compileYamlToQuestionnaire(VALID_YAML.replace('title: "Test Vitals"', 'title: "Test Vitals"\njourney: not-a-real-journey'));
+        expect(result.success).toBe(false);
+        expect(result.errors.some((e) => e.includes('Structural Error'))).toBe(true);
+    });
+
     it('rejects malformed YAML with a syntax error', () => {
         const result = compileYamlToQuestionnaire('formId: [unclosed');
         expect(result.success).toBe(false);

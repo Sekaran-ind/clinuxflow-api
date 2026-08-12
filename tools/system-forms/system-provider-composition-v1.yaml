@@ -1,0 +1,382 @@
+formId: system-provider-composition-v1
+title: "Provider"
+# Merges the 7 formerly-separate clinic-management forms (system-hospital-profile-v1,
+# system-locations-profile-v1, system-staff-profile-v1, system-services-profile-v1,
+# system-office-hours-profile-v1, system-consents-profile-v1, system-appointments-profile-v1)
+# into one Organization-anchored composition — the clinic-management-side mirror of
+# system-encounter-composition-v1.yaml's Patient-side merge. Organization MUST stay
+# composition[0] — yaml-to-questionnaire.js derives subjectType only from
+# composition[0].resourceType, same hard constraint as the Encounter file.
+#
+# Administrator is deliberately NOT its own block here — it stays a staff_role choice value
+# (confirmed decision, not an oversight) since it has no fields distinct from Staff today.
+#
+# Hospital's own 3 ABDM sub-blocks (facility-type/location/registration) stay separate,
+# non-repeating blocks rather than being collapsed into section_hospital — Hospital never
+# repeats, so there's no correspondence-across-instances risk the way there would be for Staff
+# (see below), and keeping them separate minimizes changes to the already-delicate ABDM
+# registration field set.
+#
+# Staff's 3 former blocks (core/PractitionerRole/ABDM-registration) ARE collapsed into one
+# section_staff block, repeats:true — collapsing is required here: if core/role/ABDM-
+# registration stayed 3 independently-repeating sibling blocks, instance N of "core" would have
+# no guaranteed correspondence to instance N of "role" for the same staff member once there's
+# more than one. Each field keeps its original, accurate FHIR path even though they now share
+# one block.
+composition:
+  - resourceType: Organization
+    id: section_hospital
+    label: "Hospital Details"
+    fields:
+      - id: "hospital_name"
+        path: "Organization.name"
+        label: "Hospital Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "hospital_legalname"
+        path: "Organization.alias"
+        label: "Legal / Trade Name"
+        uiComponent: "TextInput"
+      - id: "hospital_type"
+        path: "Organization.type"
+        label: "Facility Type"
+        uiComponent: "Dropdown"
+        choices: ["Hospital","Clinic","Pharmacy","Laboratory","Imaging Centre"]
+      - id: "hospital_npi"
+        path: "Organization.identifier.value"
+        label: "NPI / Registration No."
+        uiComponent: "TextInput"
+      - id: "hospital_address"
+        path: "Organization.address.text"
+        label: "Street Address"
+        uiComponent: "TextInput"
+      - id: "hospital_city"
+        path: "Organization.address.city"
+        label: "City"
+        uiComponent: "TextInput"
+      - id: "hospital_state"
+        path: "Organization.address.state"
+        label: "State"
+        uiComponent: "TextInput"
+      - id: "hospital_pin"
+        path: "Organization.address.postalCode"
+        label: "PIN Code"
+        uiComponent: "TextInput"
+      - id: "hospital_country"
+        path: "Organization.address.country"
+        label: "Country"
+        uiComponent: "TextInput"
+      - id: "hospital_phone"
+        path: "Organization.telecom.value"
+        label: "Primary Phone"
+        uiComponent: "TextInput"
+      - id: "hospital_whatsapp"
+        path: "Organization.telecom.value"
+        label: "WhatsApp Number"
+        uiComponent: "TextInput"
+      - id: "hospital_email"
+        path: "Organization.telecom.value"
+        label: "Email Address"
+        uiComponent: "TextInput"
+      - id: "hospital_website"
+        path: "Organization.telecom.value"
+        label: "Website URL"
+        uiComponent: "TextInput"
+
+  - resourceType: Organization
+    id: section_hospital_abdm_facility_type
+    label: "Facility Type & Ownership"
+    fields:
+      - id: "hospital_ownership_code"
+        path: "Organization.type"
+        label: "Ownership Code (HFR master: OWNER)"
+        uiComponent: "TextInput"
+      - id: "hospital_facility_type"
+        path: "Organization.type"
+        label: "Facility Type Code (HFR master: facility-types)"
+        uiComponent: "TextInput"
+      - id: "hospital_facility_subtype"
+        path: "Organization.type"
+        label: "Facility Sub-Type Code (HFR master: facility-sub-types)"
+        uiComponent: "TextInput"
+      - id: "hospital_operational_status"
+        path: "Organization.active"
+        label: "Operational Status"
+        uiComponent: "Dropdown"
+        choices: ["Functional","Non-Functional"]
+
+  - resourceType: Organization
+    id: section_hospital_abdm_location
+    label: "ABDM Location (LGD Codes)"
+    fields:
+      - id: "hospital_state_lgd_code"
+        path: "Organization.address.state"
+        label: "State LGD Code (HFR master: lgd/states)"
+        uiComponent: "TextInput"
+      - id: "hospital_district_lgd_code"
+        path: "Organization.address.district"
+        label: "District LGD Code (HFR master: lgd/districts)"
+        uiComponent: "TextInput"
+      - id: "hospital_subdistrict_lgd_code"
+        path: "Organization.address.district"
+        label: "Sub-District LGD Code (HFR master: lgd/subdistricts)"
+        uiComponent: "TextInput"
+
+  # STARTER FIELD SET — see system-hospital-profile-v1.yaml's original header comment (ported
+  # verbatim): New_HFR_APIs_Documentation_SBX.pdf's full field list could not be extracted this
+  # session. Not complete; extend once the PDF has been extracted.
+  - resourceType: Organization
+    id: section_hospital_abdm_registration
+    label: "ABDM Facility Registration"
+    fields:
+      - id: "hospital_tracking_id"
+        path: "Organization.identifier.value"
+        label: "Tracking ID (from Basic Information step)"
+        uiComponent: "TextInput"
+      - id: "hospital_facility_id"
+        path: "Organization.identifier.value"
+        label: "ABDM Facility ID (from Submit step)"
+        uiComponent: "TextInput"
+      - id: "hospital_abdm_software_code"
+        path: "Organization.identifier.value"
+        label: "ABDM-Compliant Software Code (get-Software-details master)"
+        uiComponent: "TextInput"
+      - id: "hospital_source_of_information"
+        path: "Organization.identifier.value"
+        label: "Source of Information"
+        uiComponent: "TextInput"
+      - id: "hospital_source_unique_id"
+        path: "Organization.identifier.value"
+        label: "Source Unique ID"
+        uiComponent: "TextInput"
+
+  - resourceType: Location
+    id: section_location
+    label: "Branch / Location Details"
+    repeats: true
+    fields:
+      - id: "location_name"
+        path: "Location.name"
+        label: "Branch Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "location_address"
+        path: "Location.address.text"
+        label: "Address"
+        uiComponent: "TextInput"
+      - id: "location_phone"
+        path: "Location.telecom.value"
+        label: "Phone"
+        uiComponent: "TextInput"
+
+  - resourceType: Practitioner
+    id: section_staff
+    label: "Staff Details"
+    repeats: true
+    fields:
+      - id: "staff_name"
+        path: "Practitioner.name.text"
+        label: "Full Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "staff_phone"
+        path: "Practitioner.telecom.value"
+        label: "Phone"
+        uiComponent: "TextInput"
+      - id: "staff_email"
+        path: "Practitioner.telecom.value"
+        label: "Email"
+        uiComponent: "TextInput"
+      - id: "staff_qualification"
+        path: "Practitioner.qualification.code"
+        label: "Qualification"
+        uiComponent: "TextInput"
+      - id: "staff_license"
+        path: "Practitioner.identifier.value"
+        label: "License / Registration ID"
+        uiComponent: "TextInput"
+      - id: "staff_status"
+        path: "Practitioner.active"
+        label: "Active"
+        uiComponent: "Checkbox"
+      # staff_role/staff_specialty were PractitionerRole.code/PractitionerRole.specialty across 2
+      # separate blocks before this merge — collapsing Staff into one repeating block (required so
+      # a repeating instance's core/role/ABDM-registration fields stay correlated; see this file's
+      # header comment) means every field here must share the block's one resourceType, and the
+      # compiler enforces path.startsWith(`${resourceType}.`) with no exception. Practitioner.
+      # extension is FHIR's own designed-for-this escape hatch for an attribute with no first-
+      # class field — reused across both, same convention this file's own ABDM fields already use
+      # (7 fields sharing Practitioner.identifier.value below).
+      - id: "staff_role"
+        path: "Practitioner.extension"
+        label: "Role"
+        uiComponent: "Dropdown"
+        choices: ["Chief of Medicine","Doctor","Nurse","Administrator","Receptionist","Radiologist"]
+      - id: "staff_specialty"
+        path: "Practitioner.extension"
+        label: "Specialty"
+        uiComponent: "MultiSelect"
+        choices: ["Cardiology","Neurology","Radiology","Pediatrics","Orthopedics","Dermatology","General Medicine","ENT","Ophthalmology","Psychiatry"]
+      # ABDM's own fields, not this app's clinical vocabulary — staff_abdm_role (Doctor/Nurse/
+      # Facility Manager) is deliberately separate from staff_role above (Chief of Medicine/.../
+      # Administrator): the same person can hold a clinical role here and a different ABDM role
+      # in HPR's own registry. staff_aadhaar/staff_otp/staff_hpr_password are intentionally NOT
+      # fields on this form — see docs/onboarding/04-security-notes.md. They live only in the
+      # onboarding page's transient state so there is no code path by which
+      # SystemForms.saveDataRecord() could ever persist them.
+      - id: "staff_first_name"
+        path: "Practitioner.name.given"
+        label: "First Name (as on Aadhaar)"
+        uiComponent: "TextInput"
+      - id: "staff_middle_name"
+        path: "Practitioner.name.given"
+        label: "Middle Name"
+        uiComponent: "TextInput"
+      - id: "staff_last_name"
+        path: "Practitioner.name.family"
+        label: "Last Name (as on Aadhaar)"
+        uiComponent: "TextInput"
+      - id: "staff_abdm_role"
+        path: "Practitioner.identifier.value"
+        label: "ABDM Role"
+        uiComponent: "Dropdown"
+        choices: ["Doctor","Nurse","Facility Manager"]
+      - id: "staff_hp_category_code"
+        path: "Practitioner.identifier.value"
+        label: "HP Category Code (HPR master: system-of-medicine)"
+        uiComponent: "TextInput"
+      - id: "staff_hp_subcategory_code"
+        path: "Practitioner.identifier.value"
+        label: "HP Sub-Category Code"
+        uiComponent: "TextInput"
+      - id: "staff_state_code"
+        path: "Practitioner.identifier.value"
+        label: "State LGD Code (HPR master: states)"
+        uiComponent: "TextInput"
+      - id: "staff_district_code"
+        path: "Practitioner.identifier.value"
+        label: "District LGD Code (HPR master: districts)"
+        uiComponent: "TextInput"
+      - id: "staff_council"
+        path: "Practitioner.identifier.value"
+        label: "Registered with a Medical/Nursing Council"
+        uiComponent: "Checkbox"
+      - id: "staff_hprid"
+        path: "Practitioner.identifier.value"
+        label: "HPR ID (assigned after creation)"
+        uiComponent: "TextInput"
+      - id: "staff_hpr_id_number"
+        path: "Practitioner.identifier.value"
+        label: "HPR ID Number (assigned after creation)"
+        uiComponent: "TextInput"
+
+  - resourceType: HealthcareService
+    id: section_services_matrix
+    label: "Service Details"
+    repeats: true
+    fields:
+      - id: "service_name"
+        path: "HealthcareService.name"
+        label: "Service Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "service_specialty_category"
+        path: "HealthcareService.category"
+        label: "Core Specialty Category"
+        description: "The primary clinical vertical or domain classification such as Cardiology, Pediatrics, Optometry, or Lab Diagnostics."
+        uiComponent: "Dropdown"
+        choices: ["Cardiology", "Pediatrics", "Ophthalmology", "Optometry", "Diet & Wellness", "General Medicine"]
+        required: true
+      - id: "service_program_name"
+        path: "HealthcareService.program"
+        label: "Target Clinical Program Name"
+        description: "The formal named program or specific diagnostic track offered, like Type 2 Diabetes Management or Periodontal Charting."
+        uiComponent: "TextInput"
+      - id: "service_description"
+        path: "HealthcareService.comment"
+        label: "Description"
+        uiComponent: "TextInput"
+
+  - resourceType: Location
+    id: section_hours
+    label: "Operating Hours"
+    repeats: true
+    fields:
+      - id: "hours_days"
+        path: "Location.hoursOfOperation.daysOfWeek"
+        label: "Days of Week"
+        uiComponent: "MultiSelect"
+        choices: ["mon","tue","wed","thu","fri","sat","sun"]
+      - id: "hours_open"
+        path: "Location.hoursOfOperation.openingTime"
+        label: "Opening Time"
+        uiComponent: "TextInput"
+      - id: "hours_close"
+        path: "Location.hoursOfOperation.closingTime"
+        label: "Closing Time"
+        uiComponent: "TextInput"
+      - id: "hours_allday"
+        path: "Location.hoursOfOperation.allDay"
+        label: "Open All Day"
+        uiComponent: "Checkbox"
+
+  - resourceType: Consent
+    id: section_consent
+    label: "Consent Details"
+    repeats: true
+    fields:
+      - id: "consent_title"
+        path: "Consent.sourceAttachment.title"
+        label: "Title"
+        uiComponent: "TextInput"
+      - id: "consent_category"
+        path: "Consent.category"
+        label: "Consent Type"
+        uiComponent: "Dropdown"
+        choices: ["HIPAA Privacy Notice","Informed Consent for Treatment","Financial Responsibility","Telemedicine Consent","Photography / Research","Minor Treatment Consent"]
+        required: true
+      - id: "consent_status"
+        path: "Consent.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["draft","active","inactive","entered-in-error","rejected"]
+      - id: "consent_datetime"
+        path: "Consent.dateTime"
+        label: "Date Signed"
+        uiComponent: "DatePicker"
+      - id: "consent_expiry"
+        path: "Consent.provision.period.end"
+        label: "Expiry Date"
+        uiComponent: "DatePicker"
+
+  - resourceType: Appointment
+    id: section_appointment
+    label: "Appointment Details"
+    repeats: true
+    fields:
+      - id: "appt_patient"
+        path: "Appointment.participant.actor"
+        label: "Patient"
+        uiComponent: "TextInput"
+      - id: "appt_staff"
+        path: "Appointment.participant.actor"
+        label: "Staff Member"
+        uiComponent: "TextInput"
+      - id: "appt_status"
+        path: "Appointment.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["proposed","booked","arrived","fulfilled","cancelled","noshow"]
+        required: true
+      - id: "appt_start"
+        path: "Appointment.start"
+        label: "Start Time"
+        uiComponent: "TextInput"
+      - id: "appt_end"
+        path: "Appointment.end"
+        label: "End Time"
+        uiComponent: "TextInput"
+      - id: "appt_description"
+        path: "Appointment.description"
+        label: "Reason / Notes"
+        uiComponent: "TextInput"

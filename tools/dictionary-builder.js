@@ -286,6 +286,12 @@ function buildShardedHealthcareKnowledgeGraph() {
         "required": ["formId", "composition"],
         "properties": {
             "formId": { "type": "string" },
+            // Optional — tags a custom form as belonging to the Patient journey (Front Desk/
+            // Consultation Desk) or the Hospital journey, so those workflows can surface it
+            // themselves instead of it only ever being reachable from Designer's own Data
+            // Explorer. See clinux-custom-forms-in-patient-hospital-journeys memory note. Not
+            // required — system forms (Provider/Patient/Encounter) don't set this at all.
+            "journey": { "type": "string", "enum": ["patient", "hospital"] },
             "composition": {
                 "type": "array",
                 "items": {

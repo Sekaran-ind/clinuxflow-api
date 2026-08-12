@@ -10,6 +10,13 @@
     "formId": {
       "type": "string"
     },
+    "journey": {
+      "type": "string",
+      "enum": [
+        "patient",
+        "hospital"
+      ]
+    },
     "composition": {
       "type": "array",
       "items": {
