@@ -104,6 +104,69 @@ composition:
         expect(result.errors.some((e) => e.includes('Composition Mismatch'))).toBe(true);
     });
 
+    // Mirrors the real merged tools/system-forms/system-encounter-composition-v1.yaml shape:
+    // 5 composition blocks, Encounter first (subjectType is derived only from composition[0]'s
+    // resourceType), with Vitals/Prescription marked repeats: true for multiple readings/meds
+    // per visit while SOAP/Billing stay singular.
+    it('compiles a 5-block Encounter-composition form with subjectType and repeats set correctly', () => {
+        const yamlSource = `
+formId: test-encounter-composition-v1
+title: "Consultation"
+composition:
+  - resourceType: Encounter
+    id: section_encounter
+    fields:
+      - id: "encounter_status"
+        path: "Encounter.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["arrived", "finished"]
+  - resourceType: Observation
+    id: section_vitals
+    repeats: true
+    fields:
+      - id: "vitals_systolic"
+        path: "Observation.valueQuantity"
+        label: "Systolic BP"
+        uiComponent: "NumericInput"
+  - resourceType: Condition
+    id: section_soap
+    fields:
+      - id: "soap_subjective"
+        path: "Condition.note.text"
+        label: "Subjective"
+        uiComponent: "TextInput"
+  - resourceType: MedicationRequest
+    id: section_prescription
+    repeats: true
+    fields:
+      - id: "rx_status"
+        path: "MedicationRequest.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["active", "completed"]
+  - resourceType: Invoice
+    id: section_billing
+    fields:
+      - id: "billing_status"
+        path: "Invoice.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["draft", "issued"]
+`;
+        const result = compileYamlToQuestionnaire(yamlSource);
+        expect(result.success).toBe(true);
+        expect(result.questionnaire.subjectType).toEqual(['Encounter']);
+        expect(result.questionnaire.item).toHaveLength(5);
+
+        const byLinkId = Object.fromEntries(result.questionnaire.item.map((g) => [g.linkId, g]));
+        expect(byLinkId.section_vitals.repeats).toBe(true);
+        expect(byLinkId.section_prescription.repeats).toBe(true);
+        expect(byLinkId.section_encounter.repeats).toBe(false);
+        expect(byLinkId.section_soap.repeats).toBe(false);
+        expect(byLinkId.section_billing.repeats).toBe(false);
+    });
+
     it('carries choices through to answerOption for a Dropdown field', () => {
         const yamlSource = `
 formId: test-choices-v1

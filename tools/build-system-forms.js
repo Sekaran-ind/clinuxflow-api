@@ -30,11 +30,7 @@ const FORM_IDS = [
     'system-appointments-profile-v1',
     'system-office-hours-profile-v1',
     'system-locations-profile-v1',
-    'system-encounter-intake-v1',
-    'system-vitals-v1',
-    'system-consultation-soap-v1',
-    'system-prescription-v1',
-    'system-billing-v1',
+    'system-encounter-composition-v1',
 ];
 
 const catalog = {};

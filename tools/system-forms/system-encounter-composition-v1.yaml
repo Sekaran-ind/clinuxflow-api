@@ -1,0 +1,122 @@
+formId: system-encounter-composition-v1
+title: "Consultation"
+# Merges the former system-encounter-intake-v1 / system-vitals-v1 / system-consultation-soap-v1 /
+# system-prescription-v1 / system-billing-v1 into one Encounter-centered composition — one
+# record per patient visit instead of five separately-keyed ones, loosely "linked" only by each
+# copying the same encounter id into its own *_encounter_ref string field (never a real FHIR
+# Reference). Encounter MUST stay composition block 0 — yaml-to-questionnaire.js derives
+# subjectType only from composition[0].resourceType. UI-facing label is "Consultation"; the FHIR
+# resourceType stays Encounter.
+composition:
+  - resourceType: Encounter
+    id: section_encounter
+    label: "Encounter Details"
+    fields:
+      - id: "encounter_patient_ref"
+        path: "Encounter.subject"
+        label: "Patient"
+        uiComponent: "TextInput"
+        required: true
+      - id: "encounter_chief_complaint"
+        path: "Encounter.reasonCode"
+        label: "Chief Complaint"
+        uiComponent: "TextInput"
+      - id: "encounter_status"
+        path: "Encounter.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["arrived","in-progress","finished","cancelled"]
+        required: true
+      - id: "encounter_priority"
+        path: "Encounter.priority"
+        label: "Triage Priority"
+        uiComponent: "Dropdown"
+        choices: ["Normal","Emergency"]
+
+  - resourceType: Observation
+    id: section_vitals
+    label: "Vitals Capture"
+    repeats: true
+    fields:
+      - id: "vitals_systolic"
+        path: "Observation.component.valueQuantity.value"
+        label: "Systolic BP"
+        uiComponent: "TextInput"
+      - id: "vitals_diastolic"
+        path: "Observation.component.valueQuantity.value"
+        label: "Diastolic BP"
+        uiComponent: "TextInput"
+      - id: "vitals_pulse"
+        path: "Observation.component.valueQuantity.value"
+        label: "Pulse (bpm)"
+        uiComponent: "TextInput"
+      - id: "vitals_temperature"
+        path: "Observation.component.valueQuantity.value"
+        label: "Temperature (°F)"
+        uiComponent: "TextInput"
+
+  - resourceType: Condition
+    id: section_soap
+    label: "SOAP Note"
+    fields:
+      - id: "soap_subjective"
+        path: "Condition.note.text"
+        label: "Subjective"
+        uiComponent: "TextInput"
+        keywords: ["complains", "reports", "states", "feels", "patient says"]
+      - id: "soap_objective"
+        path: "Condition.note.text"
+        label: "Objective"
+        uiComponent: "TextInput"
+        keywords: ["exam reveals", "vitals", "observed", "measured", "on examination"]
+      - id: "soap_assessment"
+        path: "Condition.note.text"
+        label: "Assessment"
+        uiComponent: "TextInput"
+        keywords: ["diagnosis", "assessment", "likely", "impression", "consistent with"]
+      - id: "soap_plan"
+        path: "Condition.note.text"
+        label: "Plan"
+        uiComponent: "TextInput"
+        keywords: ["plan", "prescribe", "recommend", "follow-up", "advised"]
+
+  - resourceType: MedicationRequest
+    id: section_prescription
+    label: "Medication"
+    repeats: true
+    fields:
+      - id: "rx_medication"
+        path: "MedicationRequest.medicationCodeableConcept"
+        label: "Medication"
+        uiComponent: "TextInput"
+        required: true
+      - id: "rx_dosage"
+        path: "MedicationRequest.dosageInstruction.text"
+        label: "Dosage Instructions"
+        uiComponent: "TextInput"
+      - id: "rx_status"
+        path: "MedicationRequest.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["active","completed","cancelled"]
+
+  - resourceType: Invoice
+    id: section_billing
+    label: "Billing Details"
+    fields:
+      - id: "billing_total"
+        path: "Invoice.totalGross.value"
+        label: "Total Amount"
+        uiComponent: "TextInput"
+        required: true
+      - id: "billing_status"
+        path: "Invoice.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["draft","issued","balanced","cancelled"]
+        required: true
+      - id: "billing_payment_method"
+        path: "Invoice.paymentTerms"
+        label: "Payment Method"
+        uiComponent: "Dropdown"
+        choices: ["Cash","Card","UPI","Insurance"]
