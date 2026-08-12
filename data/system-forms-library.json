@@ -283,7 +283,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-09T15:16:09.740Z"
+        "savedAt": "2026-08-10T02:12:48.765Z"
       }
     ]
   },
@@ -376,7 +376,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-09T15:16:09.742Z"
+        "savedAt": "2026-08-10T02:12:48.767Z"
       }
     ]
   },
@@ -646,7 +646,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-09T15:16:09.744Z"
+        "savedAt": "2026-08-10T02:12:48.768Z"
       }
     ]
   },
@@ -739,7 +739,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-09T15:16:09.745Z"
+        "savedAt": "2026-08-10T02:12:48.769Z"
       }
     ]
   },
@@ -855,7 +855,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-09T15:16:09.745Z"
+        "savedAt": "2026-08-10T02:12:48.770Z"
       }
     ]
   },
@@ -962,7 +962,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-09T15:16:09.746Z"
+        "savedAt": "2026-08-10T02:12:48.770Z"
       }
     ]
   },
@@ -1056,7 +1056,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-09T15:16:09.746Z"
+        "savedAt": "2026-08-10T02:12:48.771Z"
       }
     ]
   },
@@ -1119,7 +1119,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-09T15:16:09.747Z"
+        "savedAt": "2026-08-10T02:12:48.771Z"
       }
     ]
   },
@@ -1132,7 +1132,7 @@
       {
         "version": 1,
         "status": "final",
-        "yaml": "formId: system-encounter-composition-v1\ntitle: \"Consultation\"\n# Merges the former system-encounter-intake-v1 / system-vitals-v1 / system-consultation-soap-v1 /\n# system-prescription-v1 / system-billing-v1 into one Encounter-centered composition — one\n# record per patient visit instead of five separately-keyed ones, loosely \"linked\" only by each\n# copying the same encounter id into its own *_encounter_ref string field (never a real FHIR\n# Reference). Encounter MUST stay composition block 0 — yaml-to-questionnaire.js derives\n# subjectType only from composition[0].resourceType. UI-facing label is \"Consultation\"; the FHIR\n# resourceType stays Encounter.\ncomposition:\n  - resourceType: Encounter\n    id: section_encounter\n    label: \"Encounter Details\"\n    fields:\n      - id: \"encounter_patient_ref\"\n        path: \"Encounter.subject\"\n        label: \"Patient\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"encounter_chief_complaint\"\n        path: \"Encounter.reasonCode\"\n        label: \"Chief Complaint\"\n        uiComponent: \"TextInput\"\n      - id: \"encounter_status\"\n        path: \"Encounter.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"arrived\",\"in-progress\",\"finished\",\"cancelled\"]\n        required: true\n      - id: \"encounter_priority\"\n        path: \"Encounter.priority\"\n        label: \"Triage Priority\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Normal\",\"Emergency\"]\n\n  - resourceType: Observation\n    id: section_vitals\n    label: \"Vitals Capture\"\n    repeats: true\n    fields:\n      - id: \"vitals_systolic\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Systolic BP\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_diastolic\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Diastolic BP\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_pulse\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Pulse (bpm)\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_temperature\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Temperature (°F)\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Condition\n    id: section_soap\n    label: \"SOAP Note\"\n    fields:\n      - id: \"soap_subjective\"\n        path: \"Condition.note.text\"\n        label: \"Subjective\"\n        uiComponent: \"TextInput\"\n        keywords: [\"complains\", \"reports\", \"states\", \"feels\", \"patient says\"]\n      - id: \"soap_objective\"\n        path: \"Condition.note.text\"\n        label: \"Objective\"\n        uiComponent: \"TextInput\"\n        keywords: [\"exam reveals\", \"vitals\", \"observed\", \"measured\", \"on examination\"]\n      - id: \"soap_assessment\"\n        path: \"Condition.note.text\"\n        label: \"Assessment\"\n        uiComponent: \"TextInput\"\n        keywords: [\"diagnosis\", \"assessment\", \"likely\", \"impression\", \"consistent with\"]\n      - id: \"soap_plan\"\n        path: \"Condition.note.text\"\n        label: \"Plan\"\n        uiComponent: \"TextInput\"\n        keywords: [\"plan\", \"prescribe\", \"recommend\", \"follow-up\", \"advised\"]\n\n  - resourceType: MedicationRequest\n    id: section_prescription\n    label: \"Medication\"\n    repeats: true\n    fields:\n      - id: \"rx_medication\"\n        path: \"MedicationRequest.medicationCodeableConcept\"\n        label: \"Medication\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"rx_dosage\"\n        path: \"MedicationRequest.dosageInstruction.text\"\n        label: \"Dosage Instructions\"\n        uiComponent: \"TextInput\"\n      - id: \"rx_status\"\n        path: \"MedicationRequest.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"active\",\"completed\",\"cancelled\"]\n\n  - resourceType: Invoice\n    id: section_billing\n    label: \"Billing Details\"\n    fields:\n      - id: \"billing_total\"\n        path: \"Invoice.totalGross.value\"\n        label: \"Total Amount\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"billing_status\"\n        path: \"Invoice.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"draft\",\"issued\",\"balanced\",\"cancelled\"]\n        required: true\n      - id: \"billing_payment_method\"\n        path: \"Invoice.paymentTerms\"\n        label: \"Payment Method\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Cash\",\"Card\",\"UPI\",\"Insurance\"]\n",
+        "yaml": "formId: system-encounter-composition-v1\ntitle: \"Consultation\"\n# Merges the former system-encounter-intake-v1 / system-vitals-v1 / system-consultation-soap-v1 /\n# system-prescription-v1 / system-billing-v1 into one Encounter-centered composition — one\n# record per patient visit instead of five separately-keyed ones, loosely \"linked\" only by each\n# copying the same encounter id into its own *_encounter_ref string field (never a real FHIR\n# Reference). Encounter MUST stay composition block 0 — yaml-to-questionnaire.js derives\n# subjectType only from composition[0].resourceType. UI-facing label is \"Consultation\"; the FHIR\n# resourceType stays Encounter.\ncomposition:\n  - resourceType: Encounter\n    id: section_encounter\n    label: \"Encounter Details\"\n    fields:\n      - id: \"encounter_patient_ref\"\n        path: \"Encounter.subject\"\n        label: \"Patient\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"encounter_chief_complaint\"\n        path: \"Encounter.reasonCode\"\n        label: \"Chief Complaint\"\n        uiComponent: \"TextInput\"\n      - id: \"encounter_status\"\n        path: \"Encounter.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"arrived\",\"in-progress\",\"finished\",\"cancelled\"]\n        required: true\n      - id: \"encounter_priority\"\n        path: \"Encounter.priority\"\n        label: \"Triage Priority\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Normal\",\"Emergency\"]\n\n  - resourceType: Observation\n    id: section_vitals\n    label: \"Vitals Capture\"\n    repeats: true\n    fields:\n      - id: \"vitals_systolic\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Systolic BP\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_diastolic\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Diastolic BP\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_pulse\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Pulse (bpm)\"\n        uiComponent: \"TextInput\"\n      - id: \"vitals_temperature\"\n        path: \"Observation.component.valueQuantity.value\"\n        label: \"Temperature (°F)\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Condition\n    id: section_soap\n    label: \"SOAP Note\"\n    fields:\n      - id: \"soap_subjective\"\n        path: \"Condition.note.text\"\n        label: \"Subjective\"\n        uiComponent: \"TextInput\"\n        keywords: [\"complains\", \"reports\", \"states\", \"feels\", \"patient says\"]\n      - id: \"soap_objective\"\n        path: \"Condition.note.text\"\n        label: \"Objective\"\n        uiComponent: \"TextInput\"\n        keywords: [\"exam reveals\", \"vitals\", \"observed\", \"measured\", \"on examination\"]\n      - id: \"soap_assessment\"\n        path: \"Condition.note.text\"\n        label: \"Assessment\"\n        uiComponent: \"TextInput\"\n        keywords: [\"diagnosis\", \"assessment\", \"likely\", \"impression\", \"consistent with\"]\n      - id: \"soap_plan\"\n        path: \"Condition.note.text\"\n        label: \"Plan\"\n        uiComponent: \"TextInput\"\n        keywords: [\"plan\", \"prescribe\", \"recommend\", \"follow-up\", \"advised\"]\n\n  - resourceType: MedicationRequest\n    id: section_prescription\n    label: \"Medication\"\n    repeats: true\n    fields:\n      - id: \"rx_medication\"\n        path: \"MedicationRequest.medicationCodeableConcept\"\n        label: \"Medication\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"rx_dosage\"\n        path: \"MedicationRequest.dosageInstruction.text\"\n        label: \"Dosage Instructions\"\n        uiComponent: \"TextInput\"\n      - id: \"rx_status\"\n        path: \"MedicationRequest.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"active\",\"completed\",\"cancelled\"]\n\n  - resourceType: Invoice\n    id: section_billing\n    label: \"Billing Details\"\n    repeats: true\n    fields:\n      - id: \"billing_total\"\n        path: \"Invoice.totalGross.value\"\n        label: \"Total Amount\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"billing_status\"\n        path: \"Invoice.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"draft\",\"issued\",\"balanced\",\"cancelled\"]\n        required: true\n      - id: \"billing_payment_method\"\n        path: \"Invoice.paymentTerms\"\n        label: \"Payment Method\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Cash\",\"Card\",\"UPI\",\"Insurance\"]\n",
         "questionnaire": {
           "resourceType": "Questionnaire",
           "id": "system-encounter-composition-v1",
@@ -1365,7 +1365,7 @@
               "linkId": "section_billing",
               "text": "Billing Details",
               "type": "group",
-              "repeats": false,
+              "repeats": true,
               "item": [
                 {
                   "linkId": "billing_total",
@@ -1423,7 +1423,7 @@
             }
           ]
         },
-        "savedAt": "2026-08-09T15:16:09.748Z"
+        "savedAt": "2026-08-10T02:12:48.772Z"
       }
     ]
   }
