@@ -13,3 +13,12 @@ SERVICE_KEY=dev-local-shared-secret
 # production uses a real random secret set via `wrangler secret put JWT_SECRET`. Must differ
 # from SERVICE_KEY — they gate different things.
 JWT_SECRET=dev-local-jwt-secret
+
+# Phase E video calling (see src/lib/realtime-client.js, POST /api/realtime/join). Leave unset
+# to leave video calling disabled locally (the endpoint 501s cleanly) — fill these in with real
+# values from a Cloudflare RealtimeKit app (dash.cloudflare.com -> Realtime -> Kit) once you have
+# one, to test it for real.
+# CF_REALTIME_ACCOUNT_ID=
+# CF_REALTIME_APP_ID=
+# CF_REALTIME_API_TOKEN=
+# CF_REALTIME_PRESET_NAME=group_call_host

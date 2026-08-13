@@ -25,4 +25,26 @@ export const AccountsDb = {
     getAccountById: (db, accountId) => {
         return db.prepare("SELECT * FROM accounts WHERE id = ?").bind(accountId).first();
     },
+
+    // Phase D: adds ANOTHER login onto an EXISTING clinic — unlike createClinicAndAccount above,
+    // there's no clinic insert here, and no batch()/rollback concern since only one row is
+    // written.
+    createTeammateAccount: (db, clinicId, accountId, email, passwordHash, adminName, designation) => {
+        return db.prepare(
+            "INSERT INTO accounts (id, clinic_id, email, password_hash, admin_name, designation) VALUES (?, ?, ?, ?, ?, ?)"
+        ).bind(accountId, clinicId, email, passwordHash, adminName ?? null, designation ?? null).run();
+    },
+
+    countAccountsByClinicId: (db, clinicId) => {
+        return db.prepare("SELECT COUNT(*) as count FROM accounts WHERE clinic_id = ?").bind(clinicId).first();
+    },
+
+    // No password_hash in the SELECT — this powers a "who else is on my team" list, never
+    // anything that needs the hash.
+    listAccountsByClinicId: async (db, clinicId) => {
+        const { results } = await db.prepare(
+            "SELECT id, email, admin_name, designation, created_at FROM accounts WHERE clinic_id = ? ORDER BY created_at ASC"
+        ).bind(clinicId).all();
+        return results;
+    },
 };

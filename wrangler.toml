@@ -18,6 +18,16 @@ ENVIRONMENT = "production"
 #                 login (see src/lib/session.js, src/lib/userAuth.js). Independent of
 #                 SERVICE_KEY — one gates "is this clinux-frontend", the other gates "which
 #                 logged-in account is this". Any long random string, generate the same way.
+#   CF_REALTIME_ACCOUNT_ID / CF_REALTIME_APP_ID / CF_REALTIME_API_TOKEN
+#               - Phase E video calling (see src/lib/realtime-client.js, POST /api/realtime/join).
+#                 From a Cloudflare RealtimeKit app you create yourself (dash.cloudflare.com ->
+#                 Realtime -> Kit); the API token needs "Realtime Admin" permission. Optional —
+#                 the endpoint 501s cleanly with "not configured yet" until these are set, rather
+#                 than erroring.
+#   CF_REALTIME_PRESET_NAME (optional)
+#               - The RealtimeKit preset name to add participants under (defaults to
+#                 'group_call_host' if unset) — matches whatever preset you create in the
+#                 RealtimeKit dashboard during setup.
 
 # Import .yaml files as raw text (e.g. data/vitals-room.yaml) — Workers has no filesystem, so
 # everything the routes used to read via fs.readFileSync is now a bundled import instead.

@@ -11,6 +11,8 @@ import { hashPassword, verifyPassword } from './lib/passwordHash.js';
 import { issueSessionToken } from './lib/session.js';
 import { AccountsDb } from './lib/accounts-db.js';
 import { requireUser, requirePaidTier } from './lib/userAuth.js';
+import { RealtimeClient } from './lib/realtime-client.js';
+import { EncounterMeetingsDb } from './lib/encounter-meetings-db.js';
 
 import systemFormsLibrary from '../data/system-forms-library.json';
 import defaultBlueprintYaml from '../data/vitals-room.yaml';
@@ -24,8 +26,19 @@ const app = new Hono();
 const ALLOWED_ORIGINS = [
     'https://clinux.yaxb.ai',
     'http://localhost:5173',
+    // Capacitor's two platforms default to two DIFFERENT origins when no `server.androidScheme`
+    // override is set in capacitor.config.json (confirmed against the actual config -- there is
+    // none): iOS uses capacitor://localhost, Android uses https://localhost. Both are needed --
+    // this isn't one scheme with two names, it's a real platform difference. http://localhost
+    // (no port) is kept too for whatever local testing originally added it.
     'capacitor://localhost',
+    'https://localhost',
     'http://localhost',
+    // The Tauri desktop app's own shared LAN server (src-tauri/src/shared_server.rs) — pages it
+    // serves call back into this API from that origin, not from clinux-frontend's normal dev/
+    // prod origins above. Local dev port only; a production deployment would need whatever real
+    // port the shared server binds to added here too.
+    `http://localhost:47856`,
 ];
 app.use('/api/*', cors({ origin: ALLOWED_ORIGINS }));
 
@@ -154,6 +167,145 @@ app.get('/api/auth/me', requireUser(), async (c) => {
             clinicName: clinic?.name ?? '', tier: clinic?.tier ?? 'free',
         },
     });
+});
+
+// "a clinic's 1-4 staff logins share one subscription" -- migrations/0003_add_accounts_and_
+// clinics.sql's own stated design constraint for this table, not a new business rule invented
+// here. Applies to every clinic regardless of tier -- multi-user itself isn't paid-gated, unlike
+// requirePaidTier()'s other features.
+const MAX_ACCOUNTS_PER_CLINIC = 4;
+
+/**
+ * POST /api/auth/invite
+ * Body: { email, password, adminName?, designation? }
+ * Adds another login to the CALLER's OWN clinic — clinicId always comes from the caller's own
+ * JWT (via requireUser()), never from the request body, so nobody can invite themselves into a
+ * clinic they don't belong to. This app has no mail server, so there's no invite email/link:
+ * the inviting admin sets the new teammate's email+password directly (same shape /register
+ * already uses minus the "create a new clinic" half) and shares it with them out of band.
+ */
+app.post('/api/auth/invite', requireUser(), async (c) => {
+    try {
+        const { email, password, adminName, designation } = await c.req.json();
+        if (!email || !password) {
+            return c.json({ success: false, error: 'email and password are required.' }, 400);
+        }
+        if (password.length < 8) {
+            return c.json({ success: false, error: 'Password must be at least 8 characters.' }, 400);
+        }
+        const normalizedEmail = String(email).trim().toLowerCase();
+        const clinicId = c.get('user').clinicId;
+
+        const existing = await AccountsDb.getAccountByEmail(c.env.DB, normalizedEmail);
+        if (existing) {
+            return c.json({ success: false, error: 'An account with this email already exists.' }, 409);
+        }
+
+        const { count } = await AccountsDb.countAccountsByClinicId(c.env.DB, clinicId);
+        if (count >= MAX_ACCOUNTS_PER_CLINIC) {
+            return c.json({ success: false, error: `This clinic already has the maximum of ${MAX_ACCOUNTS_PER_CLINIC} team accounts.` }, 403);
+        }
+
+        const accountId = uuidv4();
+        const passwordHash = await hashPassword(password);
+
+        try {
+            await AccountsDb.createTeammateAccount(c.env.DB, clinicId, accountId, normalizedEmail, passwordHash, adminName, designation);
+        } catch (err) {
+            // Same narrow TOCTOU race as /register: two concurrent invites for the same email.
+            if (String(err.message).includes('UNIQUE')) {
+                return c.json({ success: false, error: 'An account with this email already exists.' }, 409);
+            }
+            throw err;
+        }
+
+        return c.json({
+            success: true,
+            account: {
+                id: accountId, clinicId, email: normalizedEmail,
+                adminName: adminName ?? null, designation: designation ?? null,
+            },
+        }, 201);
+    } catch (err) {
+        console.error('❌ Invite Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * GET /api/auth/team
+ * Every login on the caller's own clinic — id/email/adminName/designation/createdAt only, never
+ * password hashes. Powers clinux-frontend's Team settings list.
+ */
+app.get('/api/auth/team', requireUser(), async (c) => {
+    const clinicId = c.get('user').clinicId;
+    const accounts = await AccountsDb.listAccountsByClinicId(c.env.DB, clinicId);
+    return c.json({
+        success: true,
+        accounts: accounts.map((a) => ({
+            id: a.id, email: a.email, adminName: a.admin_name, designation: a.designation, createdAt: a.created_at,
+        })),
+    });
+});
+
+/**
+ * POST /api/realtime/join
+ * Body: { encounterId, encounterTitle? }
+ * Phase E: video conferencing in Consultation Desk via Cloudflare RealtimeKit. Mints a
+ * short-lived RealtimeKit authToken for the CALLER to join this encounter's video call — the
+ * account-level Cloudflare API token never reaches the browser, same SERVICE_KEY/JWT_SECRET
+ * separation-of-concerns convention this file already follows everywhere else. Creates the
+ * underlying RealtimeKit meeting on the FIRST join for a given encounterId and reuses it for
+ * every participant after that (see EncounterMeetingsDb) — otherwise every care-team member
+ * joining would each land in their own separate meeting instead of the same call.
+ *
+ * 501s (not 500) if CF_REALTIME_* secrets aren't configured yet — this is an expected, not-yet-
+ * set-up state (see clinux-mobile-sync-multiuser-video-roadmap memory note), not a server error.
+ * Live-tested end-to-end against a real Cloudflare RealtimeKit account.
+ */
+app.post('/api/realtime/join', requireUser(), async (c) => {
+    const { CF_REALTIME_ACCOUNT_ID, CF_REALTIME_APP_ID, CF_REALTIME_API_TOKEN } = c.env;
+    if (!CF_REALTIME_ACCOUNT_ID || !CF_REALTIME_APP_ID || !CF_REALTIME_API_TOKEN) {
+        return c.json({ success: false, error: 'Video calling is not configured on this server yet.' }, 501);
+    }
+
+    try {
+        const { encounterId, encounterTitle } = await c.req.json();
+        if (!encounterId) {
+            return c.json({ success: false, error: 'encounterId is required.' }, 400);
+        }
+
+        const user = c.get('user');
+        const account = await AccountsDb.getAccountById(c.env.DB, user.accountId);
+        // Display name always comes from the account's own D1 row, never trusted from the
+        // request body — same convention /api/auth/invite already uses for clinicId.
+        const displayName = account?.admin_name || account?.email || 'Care team member';
+        // Configurable because the exact preset name depends on whatever preset the account
+        // owner creates in the RealtimeKit dashboard during setup (see this feature's own setup
+        // walkthrough) — 'group_call_host' is RealtimeKit's own commonly-used default preset
+        // name, not guaranteed to exist on every account.
+        const presetName = c.env.CF_REALTIME_PRESET_NAME || 'group_call_host';
+
+        let existing = await EncounterMeetingsDb.getByEncounterId(c.env.DB, encounterId);
+        let meetingId = existing?.cf_meeting_id;
+        if (!meetingId) {
+            meetingId = await RealtimeClient.createMeeting(
+                CF_REALTIME_ACCOUNT_ID, CF_REALTIME_APP_ID, CF_REALTIME_API_TOKEN,
+                encounterTitle || `Encounter ${encounterId}`
+            );
+            await EncounterMeetingsDb.create(c.env.DB, encounterId, user.clinicId, meetingId);
+        }
+
+        const authToken = await RealtimeClient.addParticipant(
+            CF_REALTIME_ACCOUNT_ID, CF_REALTIME_APP_ID, CF_REALTIME_API_TOKEN, meetingId,
+            { name: displayName, presetName, customParticipantId: user.accountId }
+        );
+
+        return c.json({ success: true, authToken, meetingId });
+    } catch (err) {
+        console.error('❌ Realtime Join Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 502);
+    }
 });
 
 /**
