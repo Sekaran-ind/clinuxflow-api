@@ -11,6 +11,8 @@ import { hashPassword, verifyPassword } from './lib/passwordHash.js';
 import { issueSessionToken } from './lib/session.js';
 import { AccountsDb } from './lib/accounts-db.js';
 import { requireUser, requirePaidTier } from './lib/userAuth.js';
+import { RealtimeClient } from './lib/realtime-client.js';
+import { EncounterMeetingsDb } from './lib/encounter-meetings-db.js';
 
 import systemFormsLibrary from '../data/system-forms-library.json';
 import defaultBlueprintYaml from '../data/vitals-room.yaml';
@@ -244,6 +246,66 @@ app.get('/api/auth/team', requireUser(), async (c) => {
             id: a.id, email: a.email, adminName: a.admin_name, designation: a.designation, createdAt: a.created_at,
         })),
     });
+});
+
+/**
+ * POST /api/realtime/join
+ * Body: { encounterId, encounterTitle? }
+ * Phase E: video conferencing in Consultation Desk via Cloudflare RealtimeKit. Mints a
+ * short-lived RealtimeKit authToken for the CALLER to join this encounter's video call — the
+ * account-level Cloudflare API token never reaches the browser, same SERVICE_KEY/JWT_SECRET
+ * separation-of-concerns convention this file already follows everywhere else. Creates the
+ * underlying RealtimeKit meeting on the FIRST join for a given encounterId and reuses it for
+ * every participant after that (see EncounterMeetingsDb) — otherwise every care-team member
+ * joining would each land in their own separate meeting instead of the same call.
+ *
+ * 501s (not 500) if CF_REALTIME_* secrets aren't configured yet — this is an expected, not-yet-
+ * set-up state (see clinux-mobile-sync-multiuser-video-roadmap memory note), not a server error.
+ * Live-tested end-to-end against a real Cloudflare RealtimeKit account.
+ */
+app.post('/api/realtime/join', requireUser(), async (c) => {
+    const { CF_REALTIME_ACCOUNT_ID, CF_REALTIME_APP_ID, CF_REALTIME_API_TOKEN } = c.env;
+    if (!CF_REALTIME_ACCOUNT_ID || !CF_REALTIME_APP_ID || !CF_REALTIME_API_TOKEN) {
+        return c.json({ success: false, error: 'Video calling is not configured on this server yet.' }, 501);
+    }
+
+    try {
+        const { encounterId, encounterTitle } = await c.req.json();
+        if (!encounterId) {
+            return c.json({ success: false, error: 'encounterId is required.' }, 400);
+        }
+
+        const user = c.get('user');
+        const account = await AccountsDb.getAccountById(c.env.DB, user.accountId);
+        // Display name always comes from the account's own D1 row, never trusted from the
+        // request body — same convention /api/auth/invite already uses for clinicId.
+        const displayName = account?.admin_name || account?.email || 'Care team member';
+        // Configurable because the exact preset name depends on whatever preset the account
+        // owner creates in the RealtimeKit dashboard during setup (see this feature's own setup
+        // walkthrough) — 'group_call_host' is RealtimeKit's own commonly-used default preset
+        // name, not guaranteed to exist on every account.
+        const presetName = c.env.CF_REALTIME_PRESET_NAME || 'group_call_host';
+
+        let existing = await EncounterMeetingsDb.getByEncounterId(c.env.DB, encounterId);
+        let meetingId = existing?.cf_meeting_id;
+        if (!meetingId) {
+            meetingId = await RealtimeClient.createMeeting(
+                CF_REALTIME_ACCOUNT_ID, CF_REALTIME_APP_ID, CF_REALTIME_API_TOKEN,
+                encounterTitle || `Encounter ${encounterId}`
+            );
+            await EncounterMeetingsDb.create(c.env.DB, encounterId, user.clinicId, meetingId);
+        }
+
+        const authToken = await RealtimeClient.addParticipant(
+            CF_REALTIME_ACCOUNT_ID, CF_REALTIME_APP_ID, CF_REALTIME_API_TOKEN, meetingId,
+            { name: displayName, presetName, customParticipantId: user.accountId }
+        );
+
+        return c.json({ success: true, authToken, meetingId });
+    } catch (err) {
+        console.error('❌ Realtime Join Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 502);
+    }
 });
 
 /**

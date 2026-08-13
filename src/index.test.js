@@ -2,6 +2,8 @@ import { describe, it, expect, vi, afterEach } from 'vitest';
 import app from './index.js';
 import { AccountsDb } from './lib/accounts-db.js';
 import { hashPassword } from './lib/passwordHash.js';
+import { RealtimeClient } from './lib/realtime-client.js';
+import { EncounterMeetingsDb } from './lib/encounter-meetings-db.js';
 
 const SERVICE_KEY = 'test-service-key';
 const JWT_SECRET = 'test-jwt-secret';
@@ -236,5 +238,115 @@ describe('POST /api/workflow/test-scribe wiring', () => {
             body: JSON.stringify({ transcript: 'test', activeBlueprint: { item: [] } }),
         }, baseEnv);
         expect(res.status).toBe(403);
+    });
+});
+
+describe('POST /api/realtime/join', () => {
+    const realtimeEnv = { ...baseEnv, CF_REALTIME_ACCOUNT_ID: 'acct1', CF_REALTIME_APP_ID: 'app1', CF_REALTIME_API_TOKEN: 'cftoken' };
+
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'a@b.com') {
+        const { issueSessionToken } = await import('./lib/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/realtime/join', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ encounterId: 'enc1' }),
+        }, realtimeEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('501s when Cloudflare RealtimeKit credentials are not configured', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/realtime/join', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ encounterId: 'enc1' }),
+        }, baseEnv); // no CF_REALTIME_* vars set
+        expect(res.status).toBe(501);
+    });
+
+    it('400s on a missing encounterId', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/realtime/join', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({}),
+        }, realtimeEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it('creates a new meeting on first join and returns an authToken', async () => {
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ id: 'acc1', admin_name: 'Dr A', email: 'a@b.com' });
+        vi.spyOn(EncounterMeetingsDb, 'getByEncounterId').mockResolvedValue(null);
+        const createSpy = vi.spyOn(RealtimeClient, 'createMeeting').mockResolvedValue('cf-meeting-123');
+        const dbCreateSpy = vi.spyOn(EncounterMeetingsDb, 'create').mockResolvedValue(undefined);
+        const addSpy = vi.spyOn(RealtimeClient, 'addParticipant').mockResolvedValue('cf-auth-token-xyz');
+
+        const token = await tokenFor('clinic1', 'acc1', 'a@b.com');
+        const res = await app.request('/api/realtime/join', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ encounterId: 'enc1', encounterTitle: 'Headache visit' }),
+        }, realtimeEnv);
+        expect(res.status).toBe(200);
+
+        const body = await res.json();
+        expect(body).toMatchObject({ success: true, authToken: 'cf-auth-token-xyz', meetingId: 'cf-meeting-123' });
+        expect(createSpy).toHaveBeenCalledWith('acct1', 'app1', 'cftoken', 'Headache visit');
+        expect(dbCreateSpy).toHaveBeenCalledWith(realtimeEnv.DB, 'enc1', 'clinic1', 'cf-meeting-123');
+        expect(addSpy).toHaveBeenCalledWith('acct1', 'app1', 'cftoken', 'cf-meeting-123', {
+            name: 'Dr A', presetName: 'group_call_host', customParticipantId: 'acc1',
+        });
+    });
+
+    it('reuses an EXISTING meeting for the same encounterId instead of creating a new one', async () => {
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ id: 'acc2', admin_name: 'Nurse B', email: 'b@c.com' });
+        vi.spyOn(EncounterMeetingsDb, 'getByEncounterId').mockResolvedValue({ encounter_id: 'enc1', cf_meeting_id: 'cf-meeting-existing' });
+        const createSpy = vi.spyOn(RealtimeClient, 'createMeeting');
+        vi.spyOn(RealtimeClient, 'addParticipant').mockResolvedValue('cf-auth-token-2');
+
+        const token = await tokenFor('clinic1', 'acc2', 'b@c.com');
+        const res = await app.request('/api/realtime/join', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ encounterId: 'enc1' }),
+        }, realtimeEnv);
+        expect(res.status).toBe(200);
+
+        const body = await res.json();
+        expect(body.meetingId).toBe('cf-meeting-existing');
+        expect(createSpy).not.toHaveBeenCalled();
+    });
+
+    it("uses the account's own D1 name, never anything from the request body", async () => {
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ id: 'acc3', admin_name: 'Real Name', email: 'c@d.com' });
+        vi.spyOn(EncounterMeetingsDb, 'getByEncounterId').mockResolvedValue({ cf_meeting_id: 'cf-meeting-x' });
+        const addSpy = vi.spyOn(RealtimeClient, 'addParticipant').mockResolvedValue('token');
+
+        const token = await tokenFor('clinic1', 'acc3', 'c@d.com');
+        await app.request('/api/realtime/join', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ encounterId: 'enc1', name: 'Spoofed Name' }),
+        }, realtimeEnv);
+
+        expect(addSpy).toHaveBeenCalledWith('acct1', 'app1', 'cftoken', 'cf-meeting-x', expect.objectContaining({ name: 'Real Name' }));
+    });
+
+    it('502s when the underlying Cloudflare API call fails', async () => {
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ id: 'acc1', admin_name: 'Dr A' });
+        vi.spyOn(EncounterMeetingsDb, 'getByEncounterId').mockResolvedValue(null);
+        vi.spyOn(RealtimeClient, 'createMeeting').mockRejectedValue(new Error('Cloudflare RealtimeKit request failed: HTTP 401'));
+
+        const token = await tokenFor();
+        const res = await app.request('/api/realtime/join', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ encounterId: 'enc1' }),
+        }, realtimeEnv);
+        expect(res.status).toBe(502);
     });
 });
