@@ -32,6 +32,11 @@ const ALLOWED_ORIGINS = [
     'capacitor://localhost',
     'https://localhost',
     'http://localhost',
+    // The Tauri desktop app's own shared LAN server (src-tauri/src/shared_server.rs) — pages it
+    // serves call back into this API from that origin, not from clinux-frontend's normal dev/
+    // prod origins above. Local dev port only; a production deployment would need whatever real
+    // port the shared server binds to added here too.
+    `http://localhost:47856`,
 ];
 app.use('/api/*', cors({ origin: ALLOWED_ORIGINS }));
 
@@ -159,6 +164,85 @@ app.get('/api/auth/me', requireUser(), async (c) => {
             adminName: account.admin_name, designation: account.designation,
             clinicName: clinic?.name ?? '', tier: clinic?.tier ?? 'free',
         },
+    });
+});
+
+// "a clinic's 1-4 staff logins share one subscription" -- migrations/0003_add_accounts_and_
+// clinics.sql's own stated design constraint for this table, not a new business rule invented
+// here. Applies to every clinic regardless of tier -- multi-user itself isn't paid-gated, unlike
+// requirePaidTier()'s other features.
+const MAX_ACCOUNTS_PER_CLINIC = 4;
+
+/**
+ * POST /api/auth/invite
+ * Body: { email, password, adminName?, designation? }
+ * Adds another login to the CALLER's OWN clinic — clinicId always comes from the caller's own
+ * JWT (via requireUser()), never from the request body, so nobody can invite themselves into a
+ * clinic they don't belong to. This app has no mail server, so there's no invite email/link:
+ * the inviting admin sets the new teammate's email+password directly (same shape /register
+ * already uses minus the "create a new clinic" half) and shares it with them out of band.
+ */
+app.post('/api/auth/invite', requireUser(), async (c) => {
+    try {
+        const { email, password, adminName, designation } = await c.req.json();
+        if (!email || !password) {
+            return c.json({ success: false, error: 'email and password are required.' }, 400);
+        }
+        if (password.length < 8) {
+            return c.json({ success: false, error: 'Password must be at least 8 characters.' }, 400);
+        }
+        const normalizedEmail = String(email).trim().toLowerCase();
+        const clinicId = c.get('user').clinicId;
+
+        const existing = await AccountsDb.getAccountByEmail(c.env.DB, normalizedEmail);
+        if (existing) {
+            return c.json({ success: false, error: 'An account with this email already exists.' }, 409);
+        }
+
+        const { count } = await AccountsDb.countAccountsByClinicId(c.env.DB, clinicId);
+        if (count >= MAX_ACCOUNTS_PER_CLINIC) {
+            return c.json({ success: false, error: `This clinic already has the maximum of ${MAX_ACCOUNTS_PER_CLINIC} team accounts.` }, 403);
+        }
+
+        const accountId = uuidv4();
+        const passwordHash = await hashPassword(password);
+
+        try {
+            await AccountsDb.createTeammateAccount(c.env.DB, clinicId, accountId, normalizedEmail, passwordHash, adminName, designation);
+        } catch (err) {
+            // Same narrow TOCTOU race as /register: two concurrent invites for the same email.
+            if (String(err.message).includes('UNIQUE')) {
+                return c.json({ success: false, error: 'An account with this email already exists.' }, 409);
+            }
+            throw err;
+        }
+
+        return c.json({
+            success: true,
+            account: {
+                id: accountId, clinicId, email: normalizedEmail,
+                adminName: adminName ?? null, designation: designation ?? null,
+            },
+        }, 201);
+    } catch (err) {
+        console.error('❌ Invite Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * GET /api/auth/team
+ * Every login on the caller's own clinic — id/email/adminName/designation/createdAt only, never
+ * password hashes. Powers clinux-frontend's Team settings list.
+ */
+app.get('/api/auth/team', requireUser(), async (c) => {
+    const clinicId = c.get('user').clinicId;
+    const accounts = await AccountsDb.listAccountsByClinicId(c.env.DB, clinicId);
+    return c.json({
+        success: true,
+        accounts: accounts.map((a) => ({
+            id: a.id, email: a.email, adminName: a.admin_name, designation: a.designation, createdAt: a.created_at,
+        })),
     });
 });
 

@@ -113,6 +113,106 @@ describe('POST /api/auth/login', () => {
     });
 });
 
+describe('POST /api/auth/invite', () => {
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
+        const { issueSessionToken } = await import('./lib/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+
+    it('401s with no Authorization header — inviting requires being logged in yourself', async () => {
+        const res = await app.request('/api/auth/invite', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'new@example.com', password: 'password123' }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('400s on missing fields', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/auth/invite', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ email: 'new@example.com' }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it('409s on a duplicate email', async () => {
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue({ id: 'existing' });
+        const token = await tokenFor();
+
+        const res = await app.request('/api/auth/invite', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ email: 'new@example.com', password: 'password123' }),
+        }, baseEnv);
+        expect(res.status).toBe(409);
+    });
+
+    it("403s once the caller's clinic already has the max team accounts", async () => {
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue(null);
+        vi.spyOn(AccountsDb, 'countAccountsByClinicId').mockResolvedValue({ count: 4 });
+        const token = await tokenFor();
+
+        const res = await app.request('/api/auth/invite', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ email: 'new@example.com', password: 'password123' }),
+        }, baseEnv);
+        expect(res.status).toBe(403);
+    });
+
+    it("201s and attaches the new account to the CALLER's OWN clinicId — never one from the request body", async () => {
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue(null);
+        vi.spyOn(AccountsDb, 'countAccountsByClinicId').mockResolvedValue({ count: 1 });
+        const createSpy = vi.spyOn(AccountsDb, 'createTeammateAccount').mockResolvedValue(undefined);
+        const token = await tokenFor('clinic-real', 'acc-admin', 'admin@a.com');
+
+        const res = await app.request('/api/auth/invite', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({
+                email: 'Teammate@Example.com', password: 'password123', adminName: 'Dr B', designation: 'Nurse',
+                clinicId: 'someone-elses-clinic', // must be ignored entirely
+            }),
+        }, baseEnv);
+        expect(res.status).toBe(201);
+
+        const body = await res.json();
+        expect(body.account).toMatchObject({ clinicId: 'clinic-real', email: 'teammate@example.com', adminName: 'Dr B' });
+        expect(createSpy).toHaveBeenCalledWith(baseEnv.DB, 'clinic-real', expect.any(String), 'teammate@example.com', expect.any(String), 'Dr B', 'Nurse');
+    });
+});
+
+describe('GET /api/auth/team', () => {
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/auth/team', {
+            headers: { 'X-Service-Key': SERVICE_KEY },
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it("200s with every account on the caller's clinic, never a password hash", async () => {
+        vi.spyOn(AccountsDb, 'listAccountsByClinicId').mockResolvedValue([
+            { id: 'acc1', email: 'a@b.com', admin_name: 'Dr A', designation: 'Doctor', created_at: '2026-01-01', password_hash: 'should-not-leak' },
+            { id: 'acc2', email: 'c@d.com', admin_name: 'Dr C', designation: 'Nurse', created_at: '2026-01-02', password_hash: 'should-not-leak' },
+        ]);
+        const { issueSessionToken } = await import('./lib/session.js');
+        const token = await issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
+
+        const res = await app.request('/api/auth/team', {
+            headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(200);
+
+        const body = await res.json();
+        expect(body.accounts).toHaveLength(2);
+        expect(body.accounts[0]).toMatchObject({ id: 'acc1', email: 'a@b.com', adminName: 'Dr A', designation: 'Doctor' });
+        expect(JSON.stringify(body.accounts)).not.toContain('should-not-leak');
+    });
+});
+
 describe('POST /api/workflow/test-scribe wiring', () => {
     it('401s with no Authorization header, never reaching the AI binding', async () => {
         // No c.env.AI provided at all — if the handler were reached without requireUser()
