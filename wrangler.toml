@@ -56,3 +56,29 @@ database_id = "a0679d3f-5f0a-421b-95a0-6f115f6a0924"
 [[kv_namespaces]]
 binding = "FORMS_LIBRARY"
 id = "8effbe91589544ceb48e5f69fd2fda62"
+
+# KV binding for src/lib/wikidataTagging.js — SPEC-06 §6's design-time/onboarding semantic
+# tagging (Phase 1 of docs/SPEC-08-CUBO-BUILD-SEQUENCE.md). Wikidata's own usage policy requires
+# a compliant User-Agent header, which browsers refuse to let JS set — this is why the lookup is
+# a backend proxy rather than a direct client-side call, same reasoning as ABDM's master-data
+# cache (clinuxflow-abdm-gateway/src/lib/masterData.js), which this mirrors.
+[[kv_namespaces]]
+binding = "WIKIDATA_CACHE"
+id = "77e29d5eb47f4df69caed004c98f81f9"
+
+# --- Durable Objects -----------------------------------------------------------------------
+# CHAT_SIGNALING: one instance per unordered pair of accounts (see chatRoomName() in
+#   src/index.js), pure WebRTC signaling relay for P2P user-to-user chat — GET /api/chat/signal.
+#   Holds only the two live WebSocket references in memory; never touches state.storage. See
+#   src/durable-objects/ChatSignalingRoom.js for the "nothing stored in the interim" rationale.
+[[durable_objects.bindings]]
+name = "CHAT_SIGNALING"
+class_name = "ChatSignalingRoom"
+
+# new_sqlite_classes, not new_classes — same free-plan requirement already hit and documented in
+# clinuxflow-abdm-gateway/wrangler.toml (classic KV-backed DO storage needs a paid Cloudflare
+# plan; SQLite-backed does not). This DO doesn't use state.storage at all, so either would work
+# code-wise, but new_sqlite_classes is what actually deploys on this account.
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["ChatSignalingRoom"]

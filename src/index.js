@@ -8,15 +8,20 @@ import { LocalQueueManager } from './lib/local-queue-manager.js';
 import { saveFormVersion } from './lib/forms-library.js';
 import { serviceKeyAuth } from './lib/serviceAuth.js';
 import { hashPassword, verifyPassword } from './lib/passwordHash.js';
-import { issueSessionToken } from './lib/session.js';
+import { issueSessionToken, verifySessionToken } from './lib/session.js';
 import { AccountsDb } from './lib/accounts-db.js';
 import { requireUser, requirePaidTier } from './lib/userAuth.js';
+import { UsageTracking } from './lib/usageTracking.js';
 import { RealtimeClient } from './lib/realtime-client.js';
 import { EncounterMeetingsDb } from './lib/encounter-meetings-db.js';
+import { EncounterCoordinationDb } from './lib/encounter-coordination-db.js';
+import { WikidataTagging, WikidataRateLimitError } from './lib/wikidataTagging.js';
 
 import systemFormsLibrary from '../data/system-forms-library.json';
 import defaultBlueprintYaml from '../data/vitals-room.yaml';
 import clinicSpecialities from '../data/clinic-specialities.json';
+
+export { ChatSignalingRoom } from './durable-objects/ChatSignalingRoom.js';
 
 const app = new Hono();
 
@@ -43,23 +48,42 @@ const ALLOWED_ORIGINS = [
 app.use('/api/*', cors({ origin: ALLOWED_ORIGINS }));
 
 // See src/lib/serviceAuth.js for what/why — unit tested there.
-app.use('/api/*', serviceKeyAuth());
+// /api/chat/signal is exempt: it's a WebSocket upgrade, and browsers' native WebSocket
+// constructor cannot set custom headers (no way to send X-Service-Key), unlike every other
+// route here which clinux-frontend reaches via apiFetch(). That route isn't left unauthenticated
+// though — the session JWT in its own ?token= query param (verified inside the handler, same
+// verifySessionToken() requireUser() uses) plus the staff/affiliate trust-boundary check take
+// over as its access control instead. It also isn't the kind of cost/abuse surface SERVICE_KEY
+// exists for in the first place (see this middleware's own comment) — no paid AI call, no
+// unauthenticated write to a shared resource, just a relay between two already-authenticated,
+// already-linked accounts.
+app.use('/api/*', serviceKeyAuth({ exemptPaths: ['/api/chat/signal'] }));
 
 /**
  * POST /api/auth/register
- * Body: { clinicName, email, password, adminName?, designation? }
+ * Body: { clinicName, email, password, adminName?, designation?, facilityType? }
  * Creates a new clinic (tier defaults to 'free') and its first account atomically, and returns a
  * session token. Still gated by serviceKeyAuth() above — X-Service-Key is an independent
  * anti-abuse layer proving "this is clinux-frontend", not superseded by this account-level auth.
+ *
+ * facilityType ('facility' | 'individual', default 'facility') is the unified onboarding
+ * journey's top-of-funnel fork — a standalone practitioner registering with no facility at all
+ * still goes through this exact endpoint (clinicName becomes their practice/own name), just
+ * tagged so the frontend journey skips every facility-only screen (HFR registration, team
+ * invites) for them. See migrations/0005's own comment for why this reuses the existing
+ * clinic-of-one shape rather than a schema change to the accounts/clinic_id relationship.
  */
 app.post('/api/auth/register', async (c) => {
     try {
-        const { clinicName, email, password, adminName, designation } = await c.req.json();
+        const { clinicName, email, password, adminName, designation, facilityType } = await c.req.json();
         if (!clinicName || !email || !password) {
             return c.json({ success: false, error: 'clinicName, email, and password are required.' }, 400);
         }
         if (password.length < 8) {
             return c.json({ success: false, error: 'Password must be at least 8 characters.' }, 400);
+        }
+        if (facilityType && !['facility', 'individual'].includes(facilityType)) {
+            return c.json({ success: false, error: "facilityType must be 'facility' or 'individual'." }, 400);
         }
         const normalizedEmail = String(email).trim().toLowerCase();
 
@@ -77,7 +101,8 @@ app.post('/api/auth/register', async (c) => {
 
         try {
             await AccountsDb.createClinicAndAccount(
-                c.env.DB, clinicId, clinicName, accountId, normalizedEmail, passwordHash, adminName, designation
+                c.env.DB, clinicId, clinicName, accountId, normalizedEmail, passwordHash, adminName, designation,
+                facilityType || 'facility'
             );
         } catch (err) {
             // Narrow TOCTOU race: two concurrent registrations for the same email both pass the
@@ -96,7 +121,7 @@ app.post('/api/auth/register', async (c) => {
             account: {
                 id: accountId, clinicId, email: normalizedEmail,
                 adminName: adminName ?? null, designation: designation ?? null,
-                clinicName, tier: 'free',
+                clinicName, tier: 'free', facilityType: facilityType || 'facility',
             },
         }, 201);
     } catch (err) {
@@ -139,6 +164,7 @@ app.post('/api/auth/login', async (c) => {
                 id: account.id, clinicId: account.clinic_id, email: account.email,
                 adminName: account.admin_name, designation: account.designation,
                 clinicName: clinic?.name ?? '', tier: clinic?.tier ?? 'free',
+                facilityType: clinic?.facility_type ?? 'facility',
             },
         });
     } catch (err) {
@@ -165,6 +191,7 @@ app.get('/api/auth/me', requireUser(), async (c) => {
             id: account.id, clinicId: account.clinic_id, email: account.email,
             adminName: account.admin_name, designation: account.designation,
             clinicName: clinic?.name ?? '', tier: clinic?.tier ?? 'free',
+            facilityType: clinic?.facility_type ?? 'facility',
         },
     });
 });
@@ -249,6 +276,350 @@ app.get('/api/auth/team', requireUser(), async (c) => {
 });
 
 /**
+ * POST /api/facility/affiliates
+ * Body: { practitionerEmail, role? }
+ * Links an EXISTING independent practitioner's account to the caller's facility as an affiliate
+ * — deliberately different from /api/auth/invite: this never creates a login, never touches
+ * MAX_ACCOUNTS_PER_CLINIC, and the practitioner keeps their own separate account/clinic (their
+ * own standalone practice, or staff of somewhere else). 404s if no account exists yet for that
+ * email — an affiliate has to already be a ClinuxFlow user (their own individual-practitioner
+ * registration, most likely) before a facility can reference them; there's no invite-by-email
+ * flow for this relationship type, matching this app's existing "no mail server" constraint.
+ */
+app.post('/api/facility/affiliates', requireUser(), async (c) => {
+    try {
+        const { practitionerEmail, role } = await c.req.json();
+        if (!practitionerEmail) {
+            return c.json({ success: false, error: 'practitionerEmail is required.' }, 400);
+        }
+        const facilityClinicId = c.get('user').clinicId;
+        const normalizedEmail = String(practitionerEmail).trim().toLowerCase();
+
+        const practitioner = await AccountsDb.getAccountByEmail(c.env.DB, normalizedEmail);
+        if (!practitioner) {
+            return c.json({ success: false, error: 'No ClinuxFlow account found for that email yet — the practitioner needs their own account first.' }, 404);
+        }
+        if (practitioner.clinic_id === facilityClinicId) {
+            return c.json({ success: false, error: 'This person is already a full staff account on this clinic, not an affiliate.' }, 400);
+        }
+
+        await AccountsDb.addAffiliate(c.env.DB, facilityClinicId, practitioner.id, role);
+
+        return c.json({
+            success: true,
+            affiliate: {
+                accountId: practitioner.id, email: practitioner.email,
+                adminName: practitioner.admin_name, designation: practitioner.designation, role: role ?? null,
+            },
+        }, 201);
+    } catch (err) {
+        console.error('❌ Add Affiliate Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * GET /api/facility/affiliates
+ * Every active affiliate linked to the caller's own facility.
+ */
+app.get('/api/facility/affiliates', requireUser(), async (c) => {
+    const facilityClinicId = c.get('user').clinicId;
+    const affiliates = await AccountsDb.listAffiliatesByFacility(c.env.DB, facilityClinicId);
+    return c.json({ success: true, affiliates });
+});
+
+/**
+ * DELETE /api/facility/affiliates/:accountId
+ * Revokes (not deletes — status flip, see migrations/0005) an affiliate link. The affiliate's own
+ * account is completely untouched; this only removes the facility's reference to them.
+ */
+app.delete('/api/facility/affiliates/:accountId', requireUser(), async (c) => {
+    const facilityClinicId = c.get('user').clinicId;
+    const practitionerAccountId = c.req.param('accountId');
+    await AccountsDb.revokeAffiliate(c.env.DB, facilityClinicId, practitionerAccountId);
+    return c.json({ success: true });
+});
+
+/**
+ * GET/PUT /api/provider-composition
+ * The direct (non-QR) Provider-composition mirror — see migrations/0005's own comment. Lets a
+ * freshly-invited teammate's device pull the clinic's Hospital Profile/Care Team/Services/Hours/
+ * Consents document from anywhere (not just the clinic's own LAN, which sharedServerSync.js's
+ * poll-and-merge already covers with zero server involvement). The owning clinic's own devices
+ * keep pushing their local-first writes here via PUT on every save, same "eventually consistent,
+ * best-effort" model as the rest of this app's sync — this is a mirror to pull from, not a new
+ * authority competing with the local-first collection.
+ */
+app.get('/api/provider-composition', requireUser(), async (c) => {
+    const clinicId = c.get('user').clinicId;
+    const row = await AccountsDb.getProviderComposition(c.env.DB, clinicId);
+    if (!row) return c.json({ success: false, error: 'No Provider composition stored yet for this clinic.' }, 404);
+    return c.json({ success: true, data: JSON.parse(row.data), updatedAt: row.updatedAt });
+});
+
+app.put('/api/provider-composition', requireUser(), async (c) => {
+    try {
+        const body = await c.req.json();
+        const clinicId = c.get('user').clinicId;
+        await AccountsDb.upsertProviderComposition(c.env.DB, clinicId, JSON.stringify(body));
+        return c.json({ success: true });
+    } catch (err) {
+        console.error('❌ Upsert Provider Composition Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * GET /api/encounters/assignments?stage=X
+ * "What's assigned/locked to ME" — the specialist-scoped Consultation queue this feeds
+ * ActiveSessionsLanding.vue's "assigned to me" filter with. Always scoped to the caller's own
+ * account/clinic — there is no way to query someone else's queue through this endpoint.
+ *
+ * Registered BEFORE GET /api/encounters/:id deliberately — Hono matches routes in registration
+ * order, and :id would otherwise swallow the literal path "assignments" as if it were an
+ * encounter id (a real bug caught live by the test suite: this exact collision 500'd until the
+ * two were reordered).
+ *
+ * requirePaidTier(): every route in this block is cloud-durable cross-location coordination —
+ * exactly the paid-tier capability defined in docs/SPEC-05-DATA-TIER-AND-ABDM-BOUNDARY.md §6.
+ * Free tier stays local-only/LAN-shared and never reaches this cost surface at all.
+ */
+app.get('/api/encounters/assignments', requireUser(), requirePaidTier(), async (c) => {
+    const stage = c.req.query('stage');
+    if (!stage) return c.json({ success: false, error: 'stage query param is required.' }, 400);
+    const user = c.get('user');
+    const rows = await EncounterCoordinationDb.listAssignedTo(c.env.DB, user.accountId, user.clinicId, stage);
+    await UsageTracking.recordRead(c.env.DB, user.clinicId);
+    return c.json({
+        success: true,
+        assignments: rows.map((r) => ({ encounterId: r.encounter_id, kind: r.kind, createdAt: r.created_at, expiresAt: r.expires_at })),
+    });
+});
+
+/**
+ * GET/PUT /api/encounters/:id
+ * The durable per-encounter document mirror — see migrations/0006's own comment. Same shape and
+ * purpose as GET/PUT /api/provider-composition above, just keyed per-encounter: lets a device
+ * that isn't on the clinic's LAN (assigned or self-locked into a stage from anywhere with
+ * internet) fetch the real QuestionnaireResponse content, not just a routing pointer.
+ */
+app.get('/api/encounters/:id', requireUser(), requirePaidTier(), async (c) => {
+    const row = await EncounterCoordinationDb.getDocument(c.env.DB, c.req.param('id'));
+    await UsageTracking.recordRead(c.env.DB, c.get('user').clinicId);
+    if (!row) return c.json({ success: false, error: 'No document stored yet for this encounter.' }, 404);
+    return c.json({ success: true, data: JSON.parse(row.data), updatedAt: row.updatedAt });
+});
+
+app.put('/api/encounters/:id', requireUser(), requirePaidTier(), async (c) => {
+    try {
+        const body = await c.req.json();
+        const clinicId = c.get('user').clinicId;
+        const result = await EncounterCoordinationDb.upsertDocument(c.env.DB, c.req.param('id'), clinicId, JSON.stringify(body));
+        await UsageTracking.recordWrite(c.env.DB, clinicId, result);
+        return c.json({ success: true });
+    } catch (err) {
+        console.error('❌ Upsert Encounter Document Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * POST /api/encounters/:id/assign
+ * Body: { assignedToAccountId }
+ * Durable routing to a specific specialist for the Consultation stage — a deliberate decision by
+ * Front Desk at Triage, not a concurrency race, so this always succeeds and overwrites whatever
+ * routing existed before (see EncounterCoordinationDb.assignEncounter's own comment). The
+ * assignee must be either a same-clinic staff account or an affiliate already linked to this
+ * facility (see migrations/0005) — never an arbitrary account id, same "can't route clinical
+ * work to a stranger" boundary /api/facility/affiliates already enforces for linking itself.
+ */
+app.post('/api/encounters/:id/assign', requireUser(), requirePaidTier(), async (c) => {
+    try {
+        const { assignedToAccountId } = await c.req.json();
+        if (!assignedToAccountId) return c.json({ success: false, error: 'assignedToAccountId is required.' }, 400);
+        const clinicId = c.get('user').clinicId;
+
+        const assignee = await AccountsDb.getAccountById(c.env.DB, assignedToAccountId);
+        if (!assignee) return c.json({ success: false, error: 'No account found for assignedToAccountId.' }, 404);
+
+        const isSameClinicStaff = assignee.clinic_id === clinicId;
+        let isAffiliate = false;
+        if (!isSameClinicStaff) {
+            const affiliates = await AccountsDb.listAffiliatesByFacility(c.env.DB, clinicId);
+            isAffiliate = affiliates.some((a) => a.accountId === assignedToAccountId);
+        }
+        if (!isSameClinicStaff && !isAffiliate) {
+            return c.json({ success: false, error: 'assignedToAccountId must be staff or a linked affiliate of this clinic.' }, 403);
+        }
+
+        const result = await EncounterCoordinationDb.assignEncounter(c.env.DB, c.req.param('id'), clinicId, assignedToAccountId, c.get('user').accountId);
+        await UsageTracking.recordWrite(c.env.DB, clinicId, result);
+        return c.json({ success: true });
+    } catch (err) {
+        console.error('❌ Assign Encounter Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * POST /api/encounters/:id/lock
+ * Body: { stage: 'onboarding' | 'checkout' }
+ * Atomic worklist-lock acquisition for the two SHARED stages (no specific assignee — any staff
+ * member can pick up any item, this just stops two people working the same one at once).
+ * 409s with who currently holds it if acquisition fails, rather than a generic error, so the UI
+ * can show "Currently being worked on by Dr. X" instead of a bare failure.
+ */
+app.post('/api/encounters/:id/lock', requireUser(), requirePaidTier(), async (c) => {
+    try {
+        const { stage } = await c.req.json();
+        if (!['onboarding', 'checkout'].includes(stage)) {
+            return c.json({ success: false, error: "stage must be 'onboarding' or 'checkout'." }, 400);
+        }
+        const user = c.get('user');
+        const encounterId = c.req.param('id');
+        const acquired = await EncounterCoordinationDb.acquireLock(c.env.DB, encounterId, user.clinicId, stage, user.accountId);
+        // acquireLock() returns a boolean (it interprets meta.changes itself), not the raw D1
+        // result, so this is the fixed-quantity-1 case documented on UsageTracking.record — an
+        // attempted upsert either way, win or lose the race.
+        await UsageTracking.record(c.env.DB, user.clinicId, 'd1_write', 1);
+        if (!acquired) {
+            const current = await EncounterCoordinationDb.getAssignment(c.env.DB, encounterId, stage);
+            const holder = current ? await AccountsDb.getAccountById(c.env.DB, current.assigned_to_account_id) : null;
+            return c.json({
+                success: false,
+                error: 'Already locked by someone else.',
+                lockedBy: holder ? (holder.admin_name || holder.email) : 'another staff member',
+            }, 409);
+        }
+        return c.json({ success: true });
+    } catch (err) {
+        console.error('❌ Acquire Lock Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * POST /api/encounters/:id/lock/renew
+ * Heartbeat while actively working — pushes the lock's expiry back out so a normal-length work
+ * session never trips the TTL that exists specifically to catch a crashed/closed device.
+ */
+app.post('/api/encounters/:id/lock/renew', requireUser(), requirePaidTier(), async (c) => {
+    const { stage } = await c.req.json();
+    const clinicId = c.get('user').clinicId;
+    const result = await EncounterCoordinationDb.renewLock(c.env.DB, c.req.param('id'), stage, c.get('user').accountId);
+    await UsageTracking.recordWrite(c.env.DB, clinicId, result);
+    return c.json({ success: true });
+});
+
+/**
+ * POST /api/encounters/:id/lock/release
+ * Explicit release on completing the stage or navigating away — the TTL is a safety net, not
+ * the primary release path.
+ */
+app.post('/api/encounters/:id/lock/release', requireUser(), requirePaidTier(), async (c) => {
+    const { stage } = await c.req.json();
+    const clinicId = c.get('user').clinicId;
+    const result = await EncounterCoordinationDb.releaseLock(c.env.DB, c.req.param('id'), stage, c.get('user').accountId);
+    await UsageTracking.recordWrite(c.env.DB, clinicId, result);
+    return c.json({ success: true });
+});
+
+/**
+ * GET /api/encounters/:id/assignment?stage=X
+ * Current assignment/lock status for one encounter — lets the shared Active Sessions landing
+ * show "Locked by Dr. X" / "Assigned to Dr. Y" badges for encounters that aren't the caller's
+ * own, not just for their own queue.
+ */
+app.get('/api/encounters/:id/assignment', requireUser(), requirePaidTier(), async (c) => {
+    const stage = c.req.query('stage');
+    if (!stage) return c.json({ success: false, error: 'stage query param is required.' }, 400);
+    const row = await EncounterCoordinationDb.getAssignment(c.env.DB, c.req.param('id'), stage);
+    await UsageTracking.recordRead(c.env.DB, c.get('user').clinicId);
+    if (!row || (row.expires_at && new Date(row.expires_at) < new Date())) {
+        return c.json({ success: true, assignment: null });
+    }
+    const holder = await AccountsDb.getAccountById(c.env.DB, row.assigned_to_account_id);
+    return c.json({
+        success: true,
+        assignment: {
+            accountId: row.assigned_to_account_id,
+            name: holder ? (holder.admin_name || holder.email) : null,
+            kind: row.kind,
+        },
+    });
+});
+
+/**
+ * GET /api/admin/usage-summary?days=30
+ * Per-clinic cloud-cost metering readback — see docs/SPEC-05-DATA-TIER-AND-ABDM-BOUNDARY.md and
+ * src/lib/usageTracking.js. Always scoped to the CALLER's own clinic, same "no way to query
+ * someone else's data" boundary as GET /api/encounters/assignments. Not itself paid-gated —
+ * every clinic should be able to see its own usage regardless of tier, including a free-tier
+ * clinic checking it's genuinely at zero on the paid-only components. Internal/admin use for
+ * now: the seed for pricing-model analysis, not yet a user-facing dashboard.
+ */
+app.get('/api/admin/usage-summary', requireUser(), async (c) => {
+    const days = Number(c.req.query('days')) || 30;
+    const rows = await UsageTracking.summaryForClinic(c.env.DB, c.get('user').clinicId, days);
+    return c.json({ success: true, usage: rows });
+});
+
+// Deterministic per-pair Durable Object name — sorted so it doesn't matter which side connects
+// first, both accountIds always resolve to the SAME room instance.
+function chatRoomName(accountIdA, accountIdB) {
+    return `chat:${[accountIdA, accountIdB].sort().join(':')}`;
+}
+
+/**
+ * GET /api/chat/signal?peer=<accountId>&token=<sessionToken>  (WebSocket upgrade)
+ * Pure WebRTC signaling relay for P2P user-to-user chat — see ChatSignalingRoom.js and
+ * docs/SPEC-05-DATA-TIER-AND-ABDM-BOUNDARY.md. Auth comes via ?token= rather than the usual
+ * Authorization header/requireUser() — browsers' native WebSocket API cannot set custom headers
+ * on the upgrade request, so the session JWT travels in the query string instead, verified here
+ * exactly like requireUser() does.
+ *
+ * Same staff-or-linked-affiliate trust boundary as POST /api/encounters/:id/assign — chat is
+ * only ever between people who already have a real reason to be talking (colleagues, or an
+ * affiliate already linked to the facility), never an arbitrary account id.
+ *
+ * Deliberately NOT requirePaidTier()'d and NOT UsageTracking'd: this is a thin, in-memory-only
+ * relay that never touches durable storage — categorically different from the cloud-durability
+ * cost surface that gate exists for (SPEC-05 §6), and the whole point raised when this was
+ * designed is that chat works the same in free, LAN-shared, or paid/ABDM mode.
+ */
+app.get('/api/chat/signal', async (c) => {
+    const token = c.req.query('token');
+    const peerAccountId = c.req.query('peer');
+    if (!token || !peerAccountId) return c.json({ success: false, error: 'token and peer query params are required.' }, 400);
+
+    let user;
+    try {
+        const payload = await verifySessionToken(token, c.env.JWT_SECRET);
+        user = { accountId: payload.sub, clinicId: payload.clinicId };
+    } catch {
+        return c.json({ success: false, error: 'Unauthorized' }, 401);
+    }
+    if (peerAccountId === user.accountId) return c.json({ success: false, error: 'Cannot open a chat with yourself.' }, 400);
+
+    const peerAccount = await AccountsDb.getAccountById(c.env.DB, peerAccountId);
+    if (!peerAccount) return c.json({ success: false, error: 'Unknown peer.' }, 404);
+
+    const isSameClinicStaff = peerAccount.clinic_id === user.clinicId;
+    let isAffiliate = false;
+    if (!isSameClinicStaff) {
+        const affiliates = await AccountsDb.listAffiliatesByFacility(c.env.DB, user.clinicId);
+        isAffiliate = affiliates.some((a) => a.accountId === peerAccountId);
+    }
+    if (!isSameClinicStaff && !isAffiliate) {
+        return c.json({ success: false, error: 'Can only chat with clinic staff or a linked affiliate.' }, 403);
+    }
+
+    const roomId = c.env.CHAT_SIGNALING.idFromName(chatRoomName(user.accountId, peerAccountId));
+    const stub = c.env.CHAT_SIGNALING.get(roomId);
+    return stub.fetch(c.req.raw);
+});
+
+/**
  * POST /api/realtime/join
  * Body: { encounterId, encounterTitle? }
  * Phase E: video conferencing in Consultation Desk via Cloudflare RealtimeKit. Mints a
@@ -317,6 +688,52 @@ app.post('/api/realtime/join', requireUser(), async (c) => {
  */
 app.get('/api/workflow/system-forms', (c) => {
     return c.json({ success: true, systemForms: systemFormsLibrary });
+});
+
+/**
+ * GET /api/nlp/wikidata-search?term=...
+ * SPEC-06 §6's design-time/onboarding semantic tagging — Designer.vue field-labeling and
+ * onboarding role/specialty tagging both start here. Returns candidate Wikidata concepts for a
+ * human to disambiguate/confirm — never auto-picks, since Wikidata is general-knowledge, not a
+ * clinical terminology, and a "closest match" can be wrong for clinically-precise terms.
+ * requireUser()-gated (not requirePaidTier()'d) — this is explicitly free/Cloud-tier-safe by
+ * design, unlike the paid-tier cloud-durability surface.
+ */
+app.get('/api/nlp/wikidata-search', requireUser(), async (c) => {
+    const term = c.req.query('term');
+    if (!term) return c.json({ success: false, error: 'term query param is required.' }, 400);
+    try {
+        const candidates = await WikidataTagging.search(c.env.WIKIDATA_CACHE, term);
+        return c.json({ success: true, candidates });
+    } catch (err) {
+        if (err instanceof WikidataRateLimitError) {
+            return c.json({ success: false, error: err.message, retryAfterSeconds: err.retryAfterSeconds }, 429);
+        }
+        console.error('❌ Wikidata Search Exception:', err.message);
+        return c.json({ success: false, error: 'Wikidata lookup failed — please try again.' }, 502);
+    }
+});
+
+/**
+ * GET /api/nlp/wikidata-concept?qid=...
+ * Full alias/synonym detail for a CONFIRMED concept — a separate call from the search above by
+ * design (wbsearchentities doesn't return aliases), fetched only once a human has picked the
+ * right candidate. This is what actually gets appended to a field's keywords / stored on an
+ * onboarding role tag.
+ */
+app.get('/api/nlp/wikidata-concept', requireUser(), async (c) => {
+    const qid = c.req.query('qid');
+    if (!qid) return c.json({ success: false, error: 'qid query param is required.' }, 400);
+    try {
+        const concept = await WikidataTagging.getConcept(c.env.WIKIDATA_CACHE, qid);
+        return c.json({ success: true, concept });
+    } catch (err) {
+        if (err instanceof WikidataRateLimitError) {
+            return c.json({ success: false, error: err.message, retryAfterSeconds: err.retryAfterSeconds }, 429);
+        }
+        console.error('❌ Wikidata Concept Exception:', err.message);
+        return c.json({ success: false, error: 'Wikidata lookup failed — please try again.' }, 502);
+    }
 });
 
 /**
@@ -593,6 +1010,10 @@ app.post('/api/workflow/test-scribe', requireUser(), requirePaidTier(), async (c
             ],
             temperature: 0.0
         });
+        // Cost attribution: the Workers AI call above is the actual billable event this route
+        // exists to gate behind requirePaidTier() — record it as soon as it succeeds, regardless
+        // of what the extraction logic below does with the response.
+        await UsageTracking.record(c.env.DB, c.get('user').clinicId, 'workers_ai_call', 1);
 
         console.log("☁️ Response from Llama-3.3-70B Production Inference Mesh..." + JSON.stringify(aiResult.response));
 
