@@ -279,11 +279,65 @@ function buildShardedHealthcareKnowledgeGraph() {
     });
 
     // 2. BACKWARDS-COMPATIBLE PASS: Output structural Ajv validation schema file
+    //
+    // "fields" is recursive as of this session (docs/SPEC-18-PLANDEFINITION-AUTHORING-VIA-YAML-
+    // PIPELINE.md's "check LHC-Forms nesting" follow-up) — LHC-Forms itself (verified against the
+    // real vendored lforms package's own sdc-support.md: repeats/enableWhen/enableWhenExpression
+    // are all real, supported SDC features, and FHIR Questionnaire.item.item nests to any depth
+    // natively) already supports arbitrarily nested repeating groups; this schema and
+    // yaml-to-questionnaire.js were the actual limitation, not LHC-Forms. `$ref`'d via
+    // `definitions.field` so a `type: "group"` field can itself contain `fields`, recursively.
+    // A leaf field (no `type`) keeps the exact same required shape as before — additive, not a
+    // breaking change to any existing YAML.
+    const fieldDefinition = {
+        "type": "object",
+        "oneOf": [
+            {
+                // Leaf field — unchanged from before this session.
+                "required": ["id", "path", "label", "uiComponent"],
+                "properties": {
+                    "id": { "type": "string" },
+                    "path": { "type": "string", "enum": masterUniquePathsList },
+                    "label": { "type": "string" },
+                    "uiComponent": { "type": "string", "enum": config.validation.allowedUiComponents },
+                    "description": { "type": "string" },
+                    "required": { "type": "boolean" },
+                    "choices": { "type": "array", "items": { "type": "string" } },
+                    "unit": { "type": "string" },
+                    "valueSetUrl": { "type": "string" },
+                    "terminologyServerUrl": { "type": "string" },
+                    "defaultValue": { "type": "string" },
+                    "repeats": { "type": "boolean" }
+                }
+            },
+            {
+                // Nested group field — new this session. `path` is the FHIR path this group
+                // itself corresponds to (e.g. "PlanDefinition.action.relatedAction"), absolute
+                // from the resourceType root same as a leaf field's `path`, not relative to its
+                // parent group — one consistent convention at every depth. Validated against the
+                // same masterUniquePathsList the leaf-field path enum uses, so an invalid nested
+                // group path is caught exactly like an invalid leaf path.
+                "required": ["id", "label", "type", "path", "fields"],
+                "properties": {
+                    "id": { "type": "string" },
+                    "path": { "type": "string", "enum": masterUniquePathsList },
+                    "label": { "type": "string" },
+                    "type": { "const": "group" },
+                    "repeats": { "type": "boolean" },
+                    "fields": { "type": "array", "items": { "$ref": "#/definitions/field" } }
+                }
+            }
+        ]
+    };
+
     const metaSchema = {
         "$schema": "http://json-schema.org",
         "title": "ClinixFlow Validation Schema Base",
         "type": "object",
         "required": ["formId", "composition"],
+        "definitions": {
+            "field": fieldDefinition
+        },
         "properties": {
             "formId": { "type": "string" },
             // Optional — tags a custom form as belonging to the Patient journey (Front Desk/
@@ -301,21 +355,7 @@ function buildShardedHealthcareKnowledgeGraph() {
                         "resourceType": { "type": "string", "enum": config.validation.allowedResources },
                         "fields": {
                             "type": "array",
-                            "items": {
-                                "type": "object",
-                                "required": ["id", "path", "label", "uiComponent"],
-                                "properties": {
-                                    "id": { "type": "string" },
-                                    "path": { "type": "string", "enum": masterUniquePathsList },
-                                    "label": { "type": "string" },
-                                    "uiComponent": { "type": "string", "enum": config.validation.allowedUiComponents },
-                                    "description": { "type": "string" },
-                                    "required": { "type": "boolean" },
-                                    "choices": { "type": "array", "items": { "type": "string" } },
-                                    "unit": { "type": "string" },
-                                    "valueSetUrl": { "type": "string" }
-                                }
-                            }
+                            "items": { "$ref": "#/definitions/field" }
                         }
                     }
                 }

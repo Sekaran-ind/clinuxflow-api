@@ -79,6 +79,50 @@ export function compileYamlToQuestionnaire(yamlSource) {
     }
 
     // 3. Phase 2 Verification: Semantic context validation against master code constraints
+    //
+    // Recursive as of this session (fields can now nest via type:"group", see
+    // docs/SPEC-18-PLANDEFINITION-AUTHORING-VIA-YAML-PIPELINE.md's LHC-Forms-nesting follow-up) —
+    // walks into field.fields for a group field exactly like it walks resourceBlock.fields,
+    // validating a nested group's own `path` the same way a leaf field's `path` is validated
+    // (both checked against the same shard graph, both must start with `${currentResource}.`).
+    function validateFieldList(fields, currentResource, shardGraphNodes, allowedShardPaths, blockIdx, pathContext) {
+        if (!Array.isArray(fields)) return;
+        fields.forEach((field) => {
+            const label = `${pathContext}${field.id || field.path}`;
+
+            // Audit each configured field path variable against the allowed shard set boundaries
+            if (!allowedShardPaths.has(field.path)) {
+                compilationErrors.push(`[Invalid FHIR Path] Block[${blockIdx}] targeting '${currentResource}' contains an unrecognized field path: '${field.path}' (${label}). Double check spelling or re-run dictionary builder.`);
+                return;
+            }
+
+            // Check A: Does the path explicitly match its structural category parent block?
+            if (!field.path.startsWith(`${currentResource}.`)) {
+                compilationErrors.push(
+                    `[Composition Mismatch] Block[${blockIdx}] targeting '${currentResource}' contains an invalid field reference path: '${field.path}' (${label}).`
+                );
+            }
+
+            // Find the node to execute your vocabulary checks
+            const targetNode = shardGraphNodes.find(n => n.path === field.path);
+
+            // Native enum enforcement validation guard rule
+            if (targetNode && targetNode.primitiveType === 'enum' && field.uiComponent === 'Dropdown') {
+                if (!field.choices || field.choices.length === 0) {
+                    compilationErrors.push(`[Missing Vocabulary Options] Path '${field.path}' (${label}) requires choices defined in the YAML file to build the dropdown UI selector.`);
+                }
+            }
+
+            if (field.type === 'group') {
+                if (!Array.isArray(field.fields) || field.fields.length === 0) {
+                    compilationErrors.push(`[Empty Group] Block[${blockIdx}] nested group '${field.id}' (${label}) has no fields.`);
+                } else {
+                    validateFieldList(field.fields, currentResource, shardGraphNodes, allowedShardPaths, blockIdx, `${label}.`);
+                }
+            }
+        });
+    }
+
     if (yamlDoc && Array.isArray(yamlDoc.composition)) {
         yamlDoc.composition.forEach((resourceBlock, blockIdx) => {
             const currentResource = resourceBlock.resourceType;
@@ -90,33 +134,7 @@ export function compileYamlToQuestionnaire(yamlSource) {
             }
 
             const allowedShardPaths = new Set(shardGraphNodes.map(node => node.path));
-
-            if (Array.isArray(resourceBlock.fields)) {
-                resourceBlock.fields.forEach((field) => {
-                    // Audit each configured field path variable against the allowed shard set boundaries
-                    if (!allowedShardPaths.has(field.path)) {
-                        compilationErrors.push(`[Invalid FHIR Path] Block[${blockIdx}] targeting '${currentResource}' contains an unrecognized field path: '${field.path}'. Double check spelling or re-run dictionary builder.`);
-                        return;
-                    }
-
-                    // Check A: Does the path explicitly match its structural category parent block?
-                    if (!field.path.startsWith(`${currentResource}.`)) {
-                        compilationErrors.push(
-                            `[Composition Mismatch] Block[${blockIdx}] targeting '${currentResource}' contains an invalid field reference path: '${field.path}'.`
-                        );
-                    }
-
-                    // Find the node to execute your vocabulary checks
-                    const targetNode = shardGraphNodes.find(n => n.path === field.path);
-
-                    // Native enum enforcement validation guard rule
-                    if (targetNode && targetNode.primitiveType === 'enum' && field.uiComponent === 'Dropdown') {
-                        if (!field.choices || field.choices.length === 0) {
-                            compilationErrors.push(`[Missing Vocabulary Options] Path '${field.path}' requires choices defined in the YAML file to build the dropdown UI selector.`);
-                        }
-                    }
-                });
-            }
+            validateFieldList(resourceBlock.fields, currentResource, shardGraphNodes, allowedShardPaths, blockIdx, '');
         });
     }
 
@@ -150,6 +168,175 @@ export function compileYamlToQuestionnaire(yamlSource) {
         fhirQuestionnaire.journey = yamlDoc.journey;
     }
 
+    // Feature 8 (helper): Inject Skip Logic constraints using standard enableWhen structures —
+    // extracted so it applies uniformly to leaf fields AND group-level items (see buildFhirItem
+    // below) — "conditions to display or hide the sections or elements" applies to sections too,
+    // not just fields, and LHC-Forms' enableWhen already supports that natively either way.
+    function buildEnableWhen(skipLogic) {
+        return [{
+            question: skipLogic.sourceField,
+            operator: skipLogic.operator === 'exists' ? 'exists' : '=',
+            answerBoolean: skipLogic.operator === 'exists' ? true : undefined,
+            answerString: skipLogic.operator !== 'exists' ? skipLogic.value : undefined
+        }];
+    }
+
+    // Recursive as of this session (docs/SPEC-18-PLANDEFINITION-AUTHORING-VIA-YAML-PIPELINE.md's
+    // LHC-Forms-nesting follow-up) — a field with `type: "group"` compiles into a nested FHIR
+    // group item with its own `item[]`, built by recursing into `field.fields`, instead of always
+    // being a leaf. LHC-Forms itself already supports item.item at any depth (verified against
+    // the vendored lforms package's own sdc-support.md this session — this was never a rendering
+    // limitation, only a YAML-authoring/compiler one). Everything below the group branch is
+    // exactly the same leaf-building logic that existed before this session, unchanged.
+    function buildFhirItem(field, resourceType) {
+        if (field.type === 'group') {
+            const groupItem = {
+                linkId: field.id,
+                text: field.label,
+                type: 'group',
+                repeats: field.repeats || false,
+                // Same "zero-code $extract mapping" purpose as a leaf's definition — tells an
+                // extractor this group corresponds to this exact FHIR path (e.g. an array field
+                // like PlanDefinition.action.relatedAction), so nested repeating groups no longer
+                // need to be inferred from sibling-field path convergence the way a flat
+                // (pre-nesting) group still is — see local-extractor.js's own comment on this.
+                definition: `http://hl7.org/${resourceType}#${field.path}`,
+                item: field.fields.map((child) => buildFhirItem(child, resourceType))
+            };
+            if (field.skipLogic) {
+                groupItem.enableWhen = buildEnableWhen(field.skipLogic);
+            }
+            return groupItem;
+        }
+
+        const fhirItem = {
+            linkId: field.id || field.path, // Your path maps directly to the unique form item ID
+            text: field.label,
+            type: mapUiComponentToFhirType(field.uiComponent),
+            repeats: field.uiComponent === 'MultiSelect' ? true : (field.repeats || false),
+            required: field.required || false,
+            // CRUCIAL SDC TASK: Embed the definition string enabling zero-code HAPI Server $extract mapping
+            definition: `http://hl7.org/${resourceType}#${field.path}`
+        };
+
+        if (field.description) {
+            fhirItem.description = field.description;
+        }
+
+        // Carries scribe-training keywords (set via the designer's "Training the Form" step
+        // and written back into the YAML) through to the compiled item, so reverse-mapping
+        // keyword matching survives a fresh recompile instead of only living in memory.
+        if (Array.isArray(field.keywords) && field.keywords.length > 0) {
+            fhirItem.keywords = field.keywords;
+        }
+
+        if (field.uiComponent === 'Autocomplete' && field.valueSetUrl) {
+            if (!fhirItem.extension) fhirItem.extension = [];
+
+            // 1. Inject the explicit item-level target terminology server URL — was hardcoded to
+            // clinicaltables.nlm.nih.gov regardless of what field.valueSetUrl actually pointed at
+            // (found this session authoring a condition-type field against ClinuxFlow's own
+            // endpoint — every existing sample happened to target clinicaltables.nlm.nih.gov or
+            // nih.gov, so this went unnoticed). `field.terminologyServerUrl` lets a YAML author
+            // say which server to query; defaults to the old hardcoded value so every existing
+            // YAML compiles to the exact same output as before this fix.
+            fhirItem.extension.push({
+                url: "http://hl7.org/fhir/StructureDefinition/terminology-server",
+                valueUrl: field.terminologyServerUrl || "https://clinicaltables.nlm.nih.gov/fhir/R4"
+            });
+
+            // 2. Inject the native NLM questionnaire-itemControl autocomplete metadata
+            fhirItem.extension.push({
+                url: "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                valueCodeableConcept: {
+                    coding: [{
+                        system: "http://hl7.org/fhir/questionnaire-item-control",
+                        code: "autocomplete",
+                        display: "Auto-complete"
+                    }],
+                    text: "Auto-complete"
+                }
+            });
+
+            // 3. Bind the canonical answer valueset target path destination directly
+            fhirItem.answerValueSet = field.valueSetUrl;
+        }
+
+        // Pre-populate hidden or admin elements natively using the initial parameter block
+        if (field.uiComponent === 'Hidden' && field.defaultValue !== undefined) {
+            fhirItem.initial = [{ valueString: String(field.defaultValue) }];
+            // Add standard UI hiding context extension hints for frontend renders
+            fhirItem.extension = [
+                {
+                    url: "http://hl7.org",
+                    valueBoolean: true
+                }
+            ];
+        }
+
+        // Advanced Feature: Handle a selection list of multiple unit measurement values (Dropdown selector)
+        if (field.unitChoices && Array.isArray(field.unitChoices)) {
+            if (!fhirItem.extension) fhirItem.extension = [];
+            field.unitChoices.forEach(unitCode => {
+                fhirItem.extension.push({
+                    url: "http://hl7.org",
+                    valueCoding: {
+                        system: "http://unitsofmeasure.org",
+                        code: unitCode,
+                        display: unitCode
+                    }
+                });
+            });
+        }
+        // Feature 3: Fallback safely to a single fixed static unit text marker extension if provided
+        else if (field.unit) {
+            if (!fhirItem.extension) fhirItem.extension = [];
+            fhirItem.extension.push({
+                url: "http://hl7.org",
+                valueCoding: {
+                    system: "http://unitsofmeasure.org",
+                    code: field.unit,
+                    display: field.unit
+                }
+            });
+        }
+
+        // Feature 7: Inject associated inline help text buttons into the view definition
+        if (field.helpText) {
+            if (!fhirItem.extension) fhirItem.extension = [];
+            fhirItem.extension.push({
+                url: "http://hl7.org",
+                valueCodeableConcept: {
+                    coding: [{ system: "http://hl7.org", code: "help" }]
+                }
+            });
+            // Append help sub-item display node sheet
+            fhirItem.item = [{
+                linkId: `${field.path}-help-text`,
+                text: field.helpText,
+                type: "display"
+            }];
+        }
+        // Feature 4: Handle large AJAX autocompletion links via answerValueSet target urls
+
+        if (field.valueSetUrl) {
+            fhirItem.answerValueSet = field.valueSetUrl;
+        }
+
+        // Feature 2: Append standard choice options to dropdown selectors if configured
+        if (field.choices && !field.valueSetUrl) {
+            fhirItem.answerOption = field.choices.map(choiceString =>
+                ({ valueString: choiceString }));
+        }
+
+        // Feature 8: Inject Skip Logic constraints using standard enableWhen structures
+        if (field.skipLogic) {
+            fhirItem.enableWhen = buildEnableWhen(field.skipLogic);
+        }
+
+        return fhirItem;
+    }
+
     // Flatten composition configurations down into individual Questionnaire sections
     yamlDoc.composition.forEach(resourceBlock => {
 
@@ -172,132 +359,12 @@ export function compileYamlToQuestionnaire(yamlSource) {
             }];
         }
 
+        if (resourceBlock.skipLogic) {
+            sectionGroupItem.enableWhen = buildEnableWhen(resourceBlock.skipLogic);
+        }
+
         resourceBlock.fields.forEach(field => {
-            const fhirItem = {
-                linkId: field.id || field.path, // Your path maps directly to the unique form item ID
-                text: field.label,
-                type: mapUiComponentToFhirType(field.uiComponent),
-                repeats: field.uiComponent === 'MultiSelect' ? true : (field.repeats || false),
-                required: field.required || false,
-                // CRUCIAL SDC TASK: Embed the definition string enabling zero-code HAPI Server $extract mapping
-                definition: `http://hl7.org/${resourceBlock.resourceType}#${field.path}`
-            };
-
-            if (field.description) {
-                fhirItem.description = field.description;
-            }
-
-            // Carries scribe-training keywords (set via the designer's "Training the Form" step
-            // and written back into the YAML) through to the compiled item, so reverse-mapping
-            // keyword matching survives a fresh recompile instead of only living in memory.
-            if (Array.isArray(field.keywords) && field.keywords.length > 0) {
-                fhirItem.keywords = field.keywords;
-            }
-
-            if (field.uiComponent === 'Autocomplete' && field.valueSetUrl) {
-                if (!fhirItem.extension) fhirItem.extension = [];
-
-                // 1. Inject the explicit item-level target terminology server URL
-                fhirItem.extension.push({
-                    url: "http://hl7.org/fhir/StructureDefinition/terminology-server",
-                    valueUrl: "https://clinicaltables.nlm.nih.gov/fhir/R4"
-                });
-
-                // 2. Inject the native NLM questionnaire-itemControl autocomplete metadata
-                fhirItem.extension.push({
-                    url: "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                    valueCodeableConcept: {
-                        coding: [{
-                            system: "http://hl7.org/fhir/questionnaire-item-control",
-                            code: "autocomplete",
-                            display: "Auto-complete"
-                        }],
-                        text: "Auto-complete"
-                    }
-                });
-
-                // 3. Bind the canonical answer valueset target path destination directly
-                fhirItem.answerValueSet = field.valueSetUrl;
-            }
-
-            // Pre-populate hidden or admin elements natively using the initial parameter block
-            if (field.uiComponent === 'Hidden' && field.defaultValue !== undefined) {
-                fhirItem.initial = [{ valueString: String(field.defaultValue) }];
-                // Add standard UI hiding context extension hints for frontend renders
-                fhirItem.extension = [
-                    {
-                        url: "http://hl7.org",
-                        valueBoolean: true
-                    }
-                ];
-            }
-
-            // Advanced Feature: Handle a selection list of multiple unit measurement values (Dropdown selector)
-            if (field.unitChoices && Array.isArray(field.unitChoices)) {
-                if (!fhirItem.extension) fhirItem.extension = [];
-                field.unitChoices.forEach(unitCode => {
-                    fhirItem.extension.push({
-                        url: "http://hl7.org",
-                        valueCoding: {
-                            system: "http://unitsofmeasure.org",
-                            code: unitCode,
-                            display: unitCode
-                        }
-                    });
-                });
-            }
-            // Feature 3: Fallback safely to a single fixed static unit text marker extension if provided
-            else if (field.unit) {
-                if (!fhirItem.extension) fhirItem.extension = [];
-                fhirItem.extension.push({
-                    url: "http://hl7.org",
-                    valueCoding: {
-                        system: "http://unitsofmeasure.org",
-                        code: field.unit,
-                        display: field.unit
-                    }
-                });
-            }
-
-            // Feature 7: Inject associated inline help text buttons into the view definition
-            if (field.helpText) {
-                if (!fhirItem.extension) fhirItem.extension = [];
-                fhirItem.extension.push({
-                    url: "http://hl7.org",
-                    valueCodeableConcept: {
-                        coding: [{ system: "http://hl7.org", code: "help" }]
-                    }
-                });
-                // Append help sub-item display node sheet
-                fhirItem.item = [{
-                    linkId: `${field.path}-help-text`,
-                    text: field.helpText,
-                    type: "display"
-                }];
-            }
-            // Feature 4: Handle large AJAX autocompletion links via answerValueSet target urls
-
-            if (field.valueSetUrl) {
-                fhirItem.answerValueSet = field.valueSetUrl;
-            }
-
-            // Feature 2: Append standard choice options to dropdown selectors if configured
-            if (field.choices && !field.valueSetUrl) {
-                fhirItem.answerOption = field.choices.map(choiceString =>
-                    ({ valueString: choiceString }));
-            }
-
-            // Feature 8: Inject Skip Logic constraints using standard enableWhen structures
-            if (field.skipLogic) {
-                fhirItem.enableWhen = [{
-                    question: field.skipLogic.sourceField,
-                    operator: field.skipLogic.operator === 'exists' ? 'exists' : '=',
-                    answerBoolean: field.skipLogic.operator === 'exists' ? true : undefined,
-                    answerString: field.skipLogic.operator !== 'exists' ? field.skipLogic.value : undefined
-                }];
-            }
-
-            sectionGroupItem.item.push(fhirItem);
+            sectionGroupItem.item.push(buildFhirItem(field, resourceBlock.resourceType));
         });
         fhirQuestionnaire.item.push(sectionGroupItem);
     });

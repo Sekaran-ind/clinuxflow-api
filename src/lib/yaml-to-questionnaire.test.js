@@ -207,4 +207,107 @@ composition:
             { valueString: '<' }, { valueString: '>' }, { valueString: '=' },
         ]);
     });
+
+    // Recursive field nesting, added this session — docs/SPEC-18-PLANDEFINITION-AUTHORING-VIA-
+    // YAML-PIPELINE.md's "check LHC-Forms nesting" follow-up. LHC-Forms already supports
+    // item.item at any depth (verified against the real vendored lforms package's own
+    // sdc-support.md); this was purely a YAML/compiler gap, closed here.
+    it('compiles a nested type:"group" field into a proper FHIR group item with its own definition and repeats', () => {
+        const yamlSource = `
+formId: test-nested-v1
+composition:
+  - resourceType: PlanDefinition
+    id: section_workflow_action
+    repeats: true
+    fields:
+      - id: "action_id"
+        path: "PlanDefinition.action.id"
+        label: "Action ID"
+        uiComponent: "TextInput"
+      - id: "action_related"
+        path: "PlanDefinition.action.relatedAction"
+        label: "Depends On"
+        type: "group"
+        repeats: true
+        fields:
+          - id: "relation_target"
+            path: "PlanDefinition.action.relatedAction.actionId"
+            label: "Target"
+            uiComponent: "TextInput"
+`;
+        const result = compileYamlToQuestionnaire(yamlSource);
+        expect(result.success).toBe(true);
+
+        const nestedGroup = result.questionnaire.item[0].item.find((i) => i.linkId === 'action_related');
+        expect(nestedGroup).toMatchObject({
+            type: 'group',
+            repeats: true,
+            definition: 'http://hl7.org/PlanDefinition#PlanDefinition.action.relatedAction',
+        });
+        expect(nestedGroup.item[0]).toMatchObject({ linkId: 'relation_target', type: 'string' });
+    });
+
+    // Found this session authoring a condition-type field: the terminology-server extension for
+    // an Autocomplete field was hardcoded to clinicaltables.nlm.nih.gov regardless of what
+    // field.valueSetUrl actually pointed at — every existing sample happened to target
+    // clinicaltables.nlm.nih.gov or nih.gov, so nobody had a real ValueSet on a different host to
+    // notice with. Fixed to use field.terminologyServerUrl when given, same hardcoded default
+    // otherwise (so every YAML that predates this fix compiles to identical output).
+    it('uses field.terminologyServerUrl for the Autocomplete terminology-server extension when given', () => {
+        const yamlSource = `
+formId: test-terminology-v1
+composition:
+  - resourceType: Observation
+    fields:
+      - id: "cond"
+        path: "Observation.valueQuantity.comparator"
+        label: "Comparator"
+        uiComponent: "Autocomplete"
+        valueSetUrl: "https://clinuxflow-api.example/api/valuesets/plandefinition-condition-types"
+        terminologyServerUrl: "https://clinuxflow-api.example"
+`;
+        const result = compileYamlToQuestionnaire(yamlSource);
+        expect(result.success).toBe(true);
+        const ext = result.questionnaire.item[0].item[0].extension.find((e) => e.url.includes('terminology-server'));
+        expect(ext.valueUrl).toBe('https://clinuxflow-api.example');
+    });
+
+    it('falls back to the original hardcoded terminology server when terminologyServerUrl is omitted (backward compatible)', () => {
+        const yamlSource = `
+formId: test-terminology-default-v1
+composition:
+  - resourceType: Observation
+    fields:
+      - id: "cond"
+        path: "Observation.valueQuantity.comparator"
+        label: "Comparator"
+        uiComponent: "Autocomplete"
+        valueSetUrl: "https://clinicaltables.nlm.nih.gov/fhir/R4/ValueSet/conditions"
+`;
+        const result = compileYamlToQuestionnaire(yamlSource);
+        expect(result.success).toBe(true);
+        const ext = result.questionnaire.item[0].item[0].extension.find((e) => e.url.includes('terminology-server'));
+        expect(ext.valueUrl).toBe('https://clinicaltables.nlm.nih.gov/fhir/R4');
+    });
+
+    it('rejects an invalid path on a nested group field the same way it rejects one on a leaf field', () => {
+        const yamlSource = `
+formId: test-nested-invalid-v1
+composition:
+  - resourceType: PlanDefinition
+    fields:
+      - id: "action_related"
+        path: "PlanDefinition.action.notARealPath"
+        label: "Bad"
+        type: "group"
+        fields:
+          - id: "x"
+            path: "PlanDefinition.action.relatedAction.actionId"
+            label: "X"
+            uiComponent: "TextInput"
+`;
+        const result = compileYamlToQuestionnaire(yamlSource);
+        expect(result.success).toBe(false);
+        expect(result.errors.some((e) => e.includes('Invalid FHIR Path'))).toBe(true);
+    });
 });

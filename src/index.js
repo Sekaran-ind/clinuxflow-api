@@ -20,6 +20,7 @@ import { WikidataTagging, WikidataRateLimitError } from './lib/wikidataTagging.j
 import systemFormsLibrary from '../data/system-forms-library.json';
 import defaultBlueprintYaml from '../data/vitals-room.yaml';
 import clinicSpecialities from '../data/clinic-specialities.json';
+import conditionTypes from '../data/condition-types.json';
 
 export { ChatSignalingRoom } from './durable-objects/ChatSignalingRoom.js';
 
@@ -59,31 +60,44 @@ app.use('/api/*', cors({ origin: ALLOWED_ORIGINS }));
 // already-linked accounts.
 app.use('/api/*', serviceKeyAuth({ exemptPaths: ['/api/chat/signal'] }));
 
+const VALID_ROLES = ['hospital_admin', 'health_professional', 'admin_and_health_professional'];
+
+// clinics.name is still NOT NULL, but sign-up no longer collects it (see SPEC-11) -- a
+// placeholder derived from the email/role stands in until the new Hospital/HFR journey captures
+// a real hospital_name and calls PATCH /api/auth/clinic-name.
+function deriveDefaultClinicName(email, role) {
+    const localPart = String(email).split('@')[0] || 'My';
+    const noun = (role === 'health_professional' || role === 'admin_and_health_professional') ? 'Practice' : 'Clinic';
+    return `${localPart}'s ${noun}`;
+}
+
 /**
  * POST /api/auth/register
- * Body: { clinicName, email, password, adminName?, designation?, facilityType? }
+ * Body: { email, password, role, adminName?, designation? }
  * Creates a new clinic (tier defaults to 'free') and its first account atomically, and returns a
  * session token. Still gated by serviceKeyAuth() above — X-Service-Key is an independent
  * anti-abuse layer proving "this is clinux-frontend", not superseded by this account-level auth.
  *
- * facilityType ('facility' | 'individual', default 'facility') is the unified onboarding
- * journey's top-of-funnel fork — a standalone practitioner registering with no facility at all
- * still goes through this exact endpoint (clinicName becomes their practice/own name), just
- * tagged so the frontend journey skips every facility-only screen (HFR registration, team
- * invites) for them. See migrations/0005's own comment for why this reuses the existing
- * clinic-of-one shape rather than a schema change to the accounts/clinic_id relationship.
+ * role ('hospital_admin' | 'health_professional' | 'admin_and_health_professional', required) is
+ * the simplified sign-up's only fork — it determines which self-service HFR (facility) and/or
+ * HPR (professional) onboarding journeys ClinicHome offers afterward (see
+ * docs/SPEC-11-ABDM-M1-M4-ALIGNMENT.md). clinicName is no longer collected here at all —
+ * facilityType is always forced to 'facility' (an admin_and_health_professional still needs a
+ * real facility record via the HFR journey, so no role means "never register a facility" under
+ * the new model) and clinicName gets a placeholder (see deriveDefaultClinicName above) until the
+ * Hospital journey replaces it with the real hospital_name.
  */
 app.post('/api/auth/register', async (c) => {
     try {
-        const { clinicName, email, password, adminName, designation, facilityType } = await c.req.json();
-        if (!clinicName || !email || !password) {
-            return c.json({ success: false, error: 'clinicName, email, and password are required.' }, 400);
+        const { email, password, role, adminName, designation } = await c.req.json();
+        if (!email || !password || !role) {
+            return c.json({ success: false, error: 'email, password, and role are required.' }, 400);
         }
         if (password.length < 8) {
             return c.json({ success: false, error: 'Password must be at least 8 characters.' }, 400);
         }
-        if (facilityType && !['facility', 'individual'].includes(facilityType)) {
-            return c.json({ success: false, error: "facilityType must be 'facility' or 'individual'." }, 400);
+        if (!VALID_ROLES.includes(role)) {
+            return c.json({ success: false, error: `role must be one of: ${VALID_ROLES.join(', ')}.` }, 400);
         }
         const normalizedEmail = String(email).trim().toLowerCase();
 
@@ -98,11 +112,13 @@ app.post('/api/auth/register', async (c) => {
         const clinicId = uuidv4();
         const accountId = uuidv4();
         const passwordHash = await hashPassword(password);
+        const facilityType = 'facility';
+        const clinicName = deriveDefaultClinicName(normalizedEmail, role);
 
         try {
             await AccountsDb.createClinicAndAccount(
                 c.env.DB, clinicId, clinicName, accountId, normalizedEmail, passwordHash, adminName, designation,
-                facilityType || 'facility'
+                facilityType, role
             );
         } catch (err) {
             // Narrow TOCTOU race: two concurrent registrations for the same email both pass the
@@ -121,7 +137,7 @@ app.post('/api/auth/register', async (c) => {
             account: {
                 id: accountId, clinicId, email: normalizedEmail,
                 adminName: adminName ?? null, designation: designation ?? null,
-                clinicName, tier: 'free', facilityType: facilityType || 'facility',
+                clinicName, tier: 'free', facilityType, role,
             },
         }, 201);
     } catch (err) {
@@ -164,7 +180,7 @@ app.post('/api/auth/login', async (c) => {
                 id: account.id, clinicId: account.clinic_id, email: account.email,
                 adminName: account.admin_name, designation: account.designation,
                 clinicName: clinic?.name ?? '', tier: clinic?.tier ?? 'free',
-                facilityType: clinic?.facility_type ?? 'facility',
+                facilityType: clinic?.facility_type ?? 'facility', role: account.role,
             },
         });
     } catch (err) {
@@ -191,9 +207,66 @@ app.get('/api/auth/me', requireUser(), async (c) => {
             id: account.id, clinicId: account.clinic_id, email: account.email,
             adminName: account.admin_name, designation: account.designation,
             clinicName: clinic?.name ?? '', tier: clinic?.tier ?? 'free',
-            facilityType: clinic?.facility_type ?? 'facility',
+            facilityType: clinic?.facility_type ?? 'facility', role: account.role,
         },
     });
+});
+
+/**
+ * PATCH /api/auth/clinic-name
+ * Body: { clinicName }
+ * Replaces the placeholder clinics.name sign-up left behind (see deriveDefaultClinicName above)
+ * with the real facility name — called by the new Hospital/HFR onboarding journey once it
+ * captures hospital_name, not by registration itself.
+ */
+app.patch('/api/auth/clinic-name', requireUser(), async (c) => {
+    try {
+        const { clinicName } = await c.req.json();
+        if (!clinicName || !String(clinicName).trim()) {
+            return c.json({ success: false, error: 'clinicName is required.' }, 400);
+        }
+        const clinicId = c.get('user').clinicId;
+        await AccountsDb.updateClinicName(c.env.DB, clinicId, String(clinicName).trim());
+        return c.json({ success: true, clinicName: String(clinicName).trim() });
+    } catch (err) {
+        console.error('❌ Update Clinic Name Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * PATCH /api/auth/change-password
+ * Body: { currentPassword, newPassword }
+ * Real backend for the register/login/change-password small closed loop (the deliberately small
+ * first test case for the new PlanDefinition/Task runtime — clinux-planDefinition-runtime-built
+ * memory note) — didn't exist anywhere in this app before this pass, verified by grep, not
+ * assumed missing. Mirrors PATCH /api/auth/clinic-name's exact shape above: requireUser()-gated,
+ * accountId/clinicId only ever come from the caller's own JWT.
+ */
+app.patch('/api/auth/change-password', requireUser(), async (c) => {
+    try {
+        const { currentPassword, newPassword } = await c.req.json();
+        if (!currentPassword || !newPassword) {
+            return c.json({ success: false, error: 'currentPassword and newPassword are required.' }, 400);
+        }
+        if (newPassword.length < 8) {
+            return c.json({ success: false, error: 'New password must be at least 8 characters.' }, 400);
+        }
+
+        const accountId = c.get('user').accountId;
+        const account = await AccountsDb.getAccountById(c.env.DB, accountId);
+        if (!account || !(await verifyPassword(currentPassword, account.password_hash))) {
+            return c.json({ success: false, error: 'Current password is incorrect.' }, 401);
+        }
+
+        const newHash = await hashPassword(newPassword);
+        await AccountsDb.updatePasswordHash(c.env.DB, accountId, newHash);
+
+        return c.json({ success: true });
+    } catch (err) {
+        console.error('❌ Change Password Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
 });
 
 // "a clinic's 1-4 staff logins share one subscription" -- migrations/0003_add_accounts_and_
@@ -757,6 +830,20 @@ app.get('/api/clinic-specialities/:folder/:file', (c) => {
     const markdown = clinicSpecialities.markdown[`${folder}/${file}`];
     if (!markdown) return c.json({ success: false, error: `Unknown role file: ${folder}/${file}` }, 404);
     return c.json({ success: true, folder, file, markdown });
+});
+
+/**
+ * GET /api/valuesets/plandefinition-condition-types
+ * SPEC-18 (docs/SPEC-18-PLANDEFINITION-AUTHORING-VIA-YAML-PIPELINE.md) §7 step 4 — the
+ * constrained condition-field type. Same "precomputed, no filesystem here" treatment as
+ * /api/clinic-specialities above — scripts/build-condition-types.js compiles
+ * config/plandefinition-condition-types/*.json into data/condition-types.json. Returns a
+ * pre-expanded FHIR ValueSet directly (LHC-Forms' own sdc-support.md: contained ValueSets are
+ * expected to already carry an expansion, not be expanded server-side at render time) — this is
+ * exactly what a `field.valueSetUrl`/`answerValueSet`-bound Autocomplete field fetches.
+ */
+app.get('/api/valuesets/plandefinition-condition-types', (c) => {
+    return c.json(conditionTypes.valueSet);
 });
 
 /**

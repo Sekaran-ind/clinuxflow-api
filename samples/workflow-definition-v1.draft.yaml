@@ -1,0 +1,130 @@
+formId: clinic-visit-workflow-v1
+title: "Clinic Visit Workflow — Room Sequencing"
+# DRAFT for review — not wired into the compiler's shard-graph-consuming build yet (that part IS
+# done, see below), still needs Task field paths before a Task-generation runtime can consume it.
+# SPEC-18 (docs/SPEC-18-PLANDEFINITION-AUTHORING-VIA-YAML-PIPELINE.md) §7 step 2/3: the first real
+# workflow-definition.yaml, five rooms, deliberately LINEAR only — no conditions/specialty
+# branching yet, per SPEC-18 §7's explicit deferral of the constrained condition-field type.
+#
+# REVISED from the original two-flat-tables version after confirming a real collision: that
+# version modeled "Rooms" (nodes) and "Sequencing" (edges) as two INDEPENDENTLY-repeating
+# top-level blocks sharing one PlanDefinition.action array — extracting them together showed the
+# edge row landing at the wrong array index, silently corrupting a node row (see SPEC-18 §7 step 2
+# / SPEC-13 §5.3's "third risk" for the confirmed reproduction). Fixed properly, not worked around:
+# yaml-to-questionnaire.js now supports genuinely nested `type: "group"` fields (confirmed this
+# session that LHC-Forms itself already supports arbitrarily nested repeating groups — this was a
+# YAML-authoring/compiler gap, not a rendering one), so `relatedAction` is modeled below as a
+# repeating group NESTED INSIDE its owning action — matching real FHIR PlanDefinition.action[i].
+# relatedAction[j] structure exactly, and local-extractor.js now walks a genuine stack of enclosing
+# repeating-group frames instead of one flat context, so this compiles and extracts correctly by
+# construction — no group-correspondence reconciliation needed, because there's only ever one
+# group being repeated at each level. Confirmed end to end: compiled, extracted a realistic
+# 2-room + 1-relatedAction response, action[0] (no dependency) came back untouched, action[1]'s
+# relatedAction landed correctly nested under action[1] only.
+#
+# Condition (SPEC-18 §7 step 4, the constrained condition-field type): nested the same way
+# relatedAction is — PlanDefinition.action.condition is itself repeatable (an action can have
+# multiple conditions, all must hold). The captured value is NEVER free-text FHIRPath — it's a
+# selection from a closed, curated CodeSystem/ValueSet (config/plandefinition-condition-types/ in
+# the clinixflow sandbox, served at GET /api/valuesets/plandefinition-condition-types, following
+# the exact same precedent clinic-specialities.json/ConceptMap already established for the
+# supported-specialities list — same mechanism, same "curated JSON catalog, not hand-typed
+# choices" discipline). `condition_kind` is fixed to "applicability" via Hidden+defaultValue,
+# consistent with never asking an author about a field with one obviously-correct answer in this
+# system's use case — "start"/"stop" kinds exist in FHIR but aren't used here. No room in this
+# draft actually uses a condition yet (linear-only, per SPEC-18 §7's original deferral) — the
+# field exists and is wired/tested, not yet exercised by real data.
+#
+# Worked example — filling this out for the five-room sequence should produce:
+#   Rooms (action, one repetition per room):
+#     facility_registration   | "Facility Registration"  (no relatedAction — nothing precedes it)
+#     provider_registration   | "Provider Registration"  -> relatedAction: facility_registration, after-start
+#       (a facility must exist, but doesn't need to be FULLY registered, before providers can
+#       start being affiliated to it — registration is ongoing/perpetual, see the
+#       roster/affiliation-machine discussion this spec's §5 references)
+#     front_desk               | "Front Desk"             -> relatedAction: facility_registration, after-end
+#       (patient intake needs the facility's own registration actually complete)
+#     consultation_desk        | "Consultation Desk"       -> relatedAction: front_desk, after-end
+#                                                              AND -> provider_registration, after-start
+#       (needs intake done, AND at least one actively-affiliated provider — not full roster
+#       completion, since roster never completes by design; two relatedAction entries on one
+#       action, which the nested-group repeats:true below already supports)
+#     checkout                 | "Checkout"                -> relatedAction: consultation_desk, after-end
+composition:
+  - resourceType: PlanDefinition
+    id: section_workflow_plan
+    label: "Workflow Definition"
+    fields:
+      - id: "plan_title"
+        path: "PlanDefinition.title"
+        label: "Workflow Title"
+        uiComponent: "TextInput"
+        required: true
+      - id: "plan_status"
+        path: "PlanDefinition.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["draft", "active", "retired"]
+        required: true
+      - id: "plan_type"
+        path: "PlanDefinition.type"
+        label: "Type"
+        uiComponent: "Dropdown"
+        choices: ["workflow-definition", "order-set", "clinical-protocol"]
+        required: true
+        description: "SPEC-18 §6 — workflow-definition for room sequencing (this file); order-set for a specialty's bundled consultation actions; never for reference/master-data lists — those are ValueSet, a different resourceType entirely, not PlanDefinition."
+
+  - resourceType: PlanDefinition
+    id: section_workflow_action
+    label: "Rooms"
+    repeats: true
+    fields:
+      - id: "action_id"
+        path: "PlanDefinition.action.id"
+        label: "Room ID"
+        uiComponent: "TextInput"
+        required: true
+        description: "Stable, unique within this plan — referenced by this same room's own Depends On entries, and by other rooms' Depends On entries, via this exact id."
+      - id: "action_title"
+        path: "PlanDefinition.action.title"
+        label: "Room Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "action_related"
+        path: "PlanDefinition.action.relatedAction"
+        label: "Depends On"
+        type: "group"
+        repeats: true
+        description: "Nested on purpose — each entry here belongs to THIS room, not a separate shared table. A room with no dependency (the root, Facility Registration) simply has none."
+        fields:
+          - id: "relation_target_action_id"
+            path: "PlanDefinition.action.relatedAction.actionId"
+            label: "Depends On Room"
+            uiComponent: "TextInput"
+            required: true
+          - id: "relation_relationship"
+            path: "PlanDefinition.action.relatedAction.relationship"
+            label: "Relationship"
+            uiComponent: "Dropdown"
+            choices: ["before-start", "before", "before-end", "concurrent-with-start", "concurrent", "concurrent-with-end", "after-start", "after", "after-end"]
+            required: true
+      - id: "action_condition"
+        path: "PlanDefinition.action.condition"
+        label: "Condition"
+        type: "group"
+        repeats: true
+        description: "Optional — most rooms have none. Never free-text FHIRPath; a selection from the curated condition-types ValueSet only."
+        fields:
+          - id: "condition_kind"
+            path: "PlanDefinition.action.condition.kind"
+            label: "Kind"
+            uiComponent: "Hidden"
+            defaultValue: "applicability"
+          - id: "condition_type"
+            path: "PlanDefinition.action.condition.expression.reference"
+            label: "Condition Type"
+            uiComponent: "Autocomplete"
+            valueSetUrl: "https://clinuxflow-api.example/api/valuesets/plandefinition-condition-types" # PLACEHOLDER host — real deployment's API_BASE not looked up this session, swap before this leaves draft
+            terminologyServerUrl: "https://clinuxflow-api.example" # same placeholder host — was hardcoded to clinicaltables.nlm.nih.gov before this session's fix, would have silently pointed the wrong server at a locally-served ValueSet
+            required: true
+            description: "Picks a pre-vetted condition by canonical URI (e.g. specialty-equals) — the actual FHIRPath it expands to lives in condition-type-templates.json, not authored here."

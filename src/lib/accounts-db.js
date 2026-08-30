@@ -11,13 +11,18 @@ export const AccountsDb = {
     // exactly one clinic row per account family). An individual practitioner's "clinic" is just
     // themselves; the onboarding journey uses this flag to skip every facility-only screen (HFR
     // registration, team invites) rather than the data model needing a parallel shape.
-    createClinicAndAccount: (db, clinicId, clinicName, accountId, email, passwordHash, adminName, designation, facilityType = 'facility') => {
+    //
+    // role ('hospital_admin' | 'health_professional' | 'admin_and_health_professional', see
+    // migrations/0008) is a SEPARATE concept from facilityType -- it routes which self-service
+    // HFR/HPR onboarding journeys ClinicHome offers the account (see docs/SPEC-11-ABDM-M1-M4-
+    // ALIGNMENT.md), not whether the clinic itself is a facility or a solo practice.
+    createClinicAndAccount: (db, clinicId, clinicName, accountId, email, passwordHash, adminName, designation, facilityType = 'facility', role = 'hospital_admin') => {
         return db.batch([
             db.prepare("INSERT INTO clinics (id, name, tier, facility_type) VALUES (?, ?, 'free', ?)")
                 .bind(clinicId, clinicName, facilityType),
             db.prepare(
-                "INSERT INTO accounts (id, clinic_id, email, password_hash, admin_name, designation) VALUES (?, ?, ?, ?, ?, ?)"
-            ).bind(accountId, clinicId, email, passwordHash, adminName ?? null, designation ?? null),
+                "INSERT INTO accounts (id, clinic_id, email, password_hash, admin_name, designation, role) VALUES (?, ?, ?, ?, ?, ?, ?)"
+            ).bind(accountId, clinicId, email, passwordHash, adminName ?? null, designation ?? null, role),
         ]);
     },
 
@@ -25,8 +30,23 @@ export const AccountsDb = {
         return db.prepare("SELECT * FROM clinics WHERE id = ?").bind(clinicId).first();
     },
 
+    // Sign-up no longer collects a clinic name up front (see SPEC-11) -- clinics.name starts as a
+    // placeholder derived from the registering email/role, replaced with the real hospital_name
+    // once the new Hospital/HFR journey captures it. Called from there, not from registration.
+    updateClinicName: (db, clinicId, name) => {
+        return db.prepare("UPDATE clinics SET name = ? WHERE id = ?").bind(name, clinicId).run();
+    },
+
     getAccountByEmail: (db, email) => {
         return db.prepare("SELECT * FROM accounts WHERE email = ?").bind(email).first();
+    },
+
+    // Change-password (SPEC-13/clinux-planDefinition-runtime-built's small closed-loop test case
+    // — register/login/change-password, deliberately small so the new PlanDefinition runtime has
+    // something well-understood to validate against). Mirrors updateClinicName's exact shape
+    // above — one column, one WHERE-by-id UPDATE, no batch() needed.
+    updatePasswordHash: (db, accountId, passwordHash) => {
+        return db.prepare("UPDATE accounts SET password_hash = ? WHERE id = ?").bind(passwordHash, accountId).run();
     },
 
     getAccountById: (db, accountId) => {

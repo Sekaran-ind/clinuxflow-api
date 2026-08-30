@@ -1,0 +1,75 @@
+{
+  "codeSystem": {
+    "resourceType": "CodeSystem",
+    "id": "plandefinition-condition-types",
+    "url": "http://yaxb.ai/clinixkernel/CodeSystem/plandefinition-condition-types",
+    "version": "1.0.0",
+    "name": "PlanDefinitionConditionTypes",
+    "title": "PlanDefinition Action Condition Types",
+    "status": "active",
+    "experimental": false,
+    "date": "2026-08-28",
+    "description": "A closed, curated set of PlanDefinition.action.condition types an author can select from when authoring a workflow-definition.yaml (see clinuxflow-api/docs/SPEC-18-PLANDEFINITION-AUTHORING-VIA-YAML-PIPELINE.md §7 step 4) — never free-text FHIRPath. Each concept's `code` is itself the canonical Expression.reference URI a compiled PlanDefinition.action.condition.expression.reference should hold; the actual FHIRPath template each code expands to lives separately in condition-type-templates.json, since that mapping isn't itself FHIR content, it's ClinixFlow-specific assembly logic. Deliberately a small starter set, not exhaustive — extend as real condition needs are named, not preemptively (same discipline abdmSchema.js's own option lists already use).",
+    "caseSensitive": true,
+    "content": "complete",
+    "concept": [
+      {
+        "code": "http://yaxb.ai/clinixkernel/Expression/specialty-equals",
+        "display": "Specialty equals...",
+        "definition": "True when the encounter's specialty matches a specific value — SPEC-13 (docs/SPEC-13-FHIR-WORKFLOW-DOCUMENTS-AND-CONFORMANCE.md) §2.1's motivating case: gating Consultation's specialty-specific sections."
+      },
+      {
+        "code": "http://yaxb.ai/clinixkernel/Expression/provider-actively-affiliated",
+        "display": "At least one provider is actively affiliated",
+        "definition": "True when the facility has at least one PractitionerRole with active=true and period covering now — the roster-liveness precondition discussed for gating Consultation on Provider Registration (SPEC-18 §5, SPEC-13's roster/affiliation-machine discussion). Not 'roster registration complete' — the roster never completes by design."
+      }
+    ]
+  },
+  "valueSet": {
+    "resourceType": "ValueSet",
+    "id": "plandefinition-condition-types",
+    "url": "http://yaxb.ai/clinixkernel/ValueSet/plandefinition-condition-types",
+    "version": "1.0.0",
+    "name": "PlanDefinitionConditionTypes",
+    "title": "PlanDefinition Action Condition Types",
+    "status": "active",
+    "compose": {
+      "include": [
+        {
+          "system": "http://yaxb.ai/clinixkernel/CodeSystem/plandefinition-condition-types"
+        }
+      ]
+    },
+    "expansion": {
+      "identifier": "urn:uuid:plandefinition-condition-types-expansion",
+      "timestamp": "2026-08-28T00:18:38.194Z",
+      "contains": [
+        {
+          "system": "http://yaxb.ai/clinixkernel/CodeSystem/plandefinition-condition-types",
+          "code": "http://yaxb.ai/clinixkernel/Expression/specialty-equals",
+          "display": "Specialty equals..."
+        },
+        {
+          "system": "http://yaxb.ai/clinixkernel/CodeSystem/plandefinition-condition-types",
+          "code": "http://yaxb.ai/clinixkernel/Expression/provider-actively-affiliated",
+          "display": "At least one provider is actively affiliated"
+        }
+      ]
+    }
+  },
+  "templates": {
+    "_comment": "NOT a FHIR resource — ClinixFlow-specific assembly data only, consumed when compiling a captured condition-type selection (from condition-types.json's CodeSystem) into the real PlanDefinition.action.condition.expression FHIRPath at extraction time. Each key is a condition-types.json concept's `code` (the Expression.reference URI). `{param}`-style placeholders are filled from a companion captured field when the condition needs one (e.g. which specialty) — not built/wired yet, see clinuxflow-api/docs/SPEC-18-PLANDEFINITION-AUTHORING-VIA-YAML-PIPELINE.md §7 step 4's open items. FHIRPath expressions below are illustrative/draft quality — written against the real shard-graph paths and the real clinic-specialties CodeSystem url, but NOT run through a real FHIRPath engine this session — verify before relying on them.",
+    "http://yaxb.ai/clinixkernel/Expression/specialty-equals": {
+      "fhirPathTemplate": "%encounter.serviceType.coding.where(system='http://yaxb.ai/clinixkernel/CodeSystem/clinic-specialties').code = '{specialtyCode}'",
+      "parameters": [
+        "specialtyCode"
+      ],
+      "parameterSource": "The specialtyCode value should be one of clinic-specialities.json's own numeric `code` values (e.g. \"2\" for Cardiology) — same catalog, reused, not a second vocabulary."
+    },
+    "http://yaxb.ai/clinixkernel/Expression/provider-actively-affiliated": {
+      "fhirPathTemplate": "%facility.practitionerRole.where(active=true).exists()",
+      "parameters": [],
+      "parameterSource": null
+    }
+  }
+}

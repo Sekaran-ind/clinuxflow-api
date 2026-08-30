@@ -19,7 +19,7 @@ describe('POST /api/auth/register', () => {
         const res = await app.request('/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ clinicName: 'C', email: 'a@b.com', password: 'password123' }),
+            body: JSON.stringify({ email: 'a@b.com', password: 'password123', role: 'hospital_admin' }),
         }, baseEnv);
         expect(res.status).toBe(401);
     });
@@ -37,7 +37,16 @@ describe('POST /api/auth/register', () => {
         const res = await app.request('/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
-            body: JSON.stringify({ clinicName: 'C', email: 'a@b.com', password: 'short' }),
+            body: JSON.stringify({ email: 'a@b.com', password: 'short', role: 'hospital_admin' }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it("400s on an invalid role", async () => {
+        const res = await app.request('/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'a@b.com', password: 'password123', role: 'nonsense' }),
         }, baseEnv);
         expect(res.status).toBe(400);
     });
@@ -49,14 +58,17 @@ describe('POST /api/auth/register', () => {
         const res = await app.request('/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
-            body: JSON.stringify({ clinicName: 'City Clinic', email: 'New@Example.com', password: 'password123' }),
+            body: JSON.stringify({ email: 'New@Example.com', password: 'password123', role: 'hospital_admin' }),
         }, baseEnv);
         expect(res.status).toBe(201);
 
         const body = await res.json();
         expect(body.success).toBe(true);
         expect(body.token).toBeTypeOf('string');
-        expect(body.account).toMatchObject({ email: 'new@example.com', clinicName: 'City Clinic', tier: 'free' });
+        expect(body.account).toMatchObject({
+            email: 'new@example.com', role: 'hospital_admin', tier: 'free',
+            facilityType: 'facility', clinicName: "new's Clinic",
+        });
     });
 
     it('409s on a duplicate email', async () => {
@@ -65,53 +77,30 @@ describe('POST /api/auth/register', () => {
         const res = await app.request('/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
-            body: JSON.stringify({ clinicName: 'C', email: 'a@b.com', password: 'password123' }),
+            body: JSON.stringify({ email: 'a@b.com', password: 'password123', role: 'hospital_admin' }),
         }, baseEnv);
         expect(res.status).toBe(409);
     });
 
-    it("400s on an invalid facilityType", async () => {
-        const res = await app.request('/api/auth/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
-            body: JSON.stringify({ clinicName: 'C', email: 'a@b.com', password: 'password123', facilityType: 'hospital' }),
-        }, baseEnv);
-        expect(res.status).toBe(400);
-    });
-
-    it("passes facilityType 'individual' through to AccountsDb and the response", async () => {
+    it("passes role through to AccountsDb and the response, deriving clinicName and forcing facilityType to 'facility'", async () => {
         vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue(null);
         const createSpy = vi.spyOn(AccountsDb, 'createClinicAndAccount').mockResolvedValue(undefined);
 
         const res = await app.request('/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
-            body: JSON.stringify({
-                clinicName: 'Dr. Solo', email: 'solo@example.com', password: 'password123', facilityType: 'individual',
-            }),
+            body: JSON.stringify({ email: 'solo@example.com', password: 'password123', role: 'admin_and_health_professional' }),
         }, baseEnv);
         expect(res.status).toBe(201);
 
         const body = await res.json();
-        expect(body.account.facilityType).toBe('individual');
-        expect(createSpy).toHaveBeenCalledWith(
-            baseEnv.DB, expect.any(String), 'Dr. Solo', expect.any(String), 'solo@example.com',
-            expect.any(String), undefined, undefined, 'individual'
-        );
-    });
-
-    it("defaults facilityType to 'facility' when omitted, unchanged from before", async () => {
-        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue(null);
-        vi.spyOn(AccountsDb, 'createClinicAndAccount').mockResolvedValue(undefined);
-
-        const res = await app.request('/api/auth/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
-            body: JSON.stringify({ clinicName: 'City Clinic', email: 'facility@example.com', password: 'password123' }),
-        }, baseEnv);
-
-        const body = await res.json();
+        expect(body.account.role).toBe('admin_and_health_professional');
         expect(body.account.facilityType).toBe('facility');
+        expect(body.account.clinicName).toBe("solo's Practice");
+        expect(createSpy).toHaveBeenCalledWith(
+            baseEnv.DB, expect.any(String), "solo's Practice", expect.any(String), 'solo@example.com',
+            expect.any(String), undefined, undefined, 'facility', 'admin_and_health_professional'
+        );
     });
 });
 
@@ -159,6 +148,121 @@ describe('POST /api/auth/login', () => {
         const body = await res.json();
         expect(body.token).toBeTypeOf('string');
         expect(body.account).toMatchObject({ id: 'acc1', clinicId: 'clinic1', clinicName: 'City Clinic', tier: 'paid' });
+    });
+});
+
+describe('PATCH /api/auth/clinic-name', () => {
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
+        const { issueSessionToken } = await import('./lib/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/auth/clinic-name', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ clinicName: 'Real Hospital' }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('400s on a missing/blank clinicName', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/auth/clinic-name', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ clinicName: '   ' }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it("200s and updates the CALLER's OWN clinicId — never one from the request body", async () => {
+        const updateSpy = vi.spyOn(AccountsDb, 'updateClinicName').mockResolvedValue(undefined);
+        const token = await tokenFor('clinic1');
+
+        const res = await app.request('/api/auth/clinic-name', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ clinicName: '  Real Hospital  ' }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+
+        const body = await res.json();
+        expect(body.success).toBe(true);
+        expect(body.clinicName).toBe('Real Hospital');
+        expect(updateSpy).toHaveBeenCalledWith(baseEnv.DB, 'clinic1', 'Real Hospital');
+    });
+});
+
+describe('PATCH /api/auth/change-password', () => {
+    // Small register/login/change-password closed loop, deliberately small so the new
+    // PlanDefinition/Task runtime (clinux-planDefinition-runtime-built memory note) has a
+    // well-understood real case to validate configuration against. Didn't exist as a route
+    // before this pass — verified by grep across this whole file/repo, not assumed missing.
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
+        const { issueSessionToken } = await import('./lib/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/auth/change-password', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ currentPassword: 'old12345', newPassword: 'new12345' }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('400s on a missing field', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/auth/change-password', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ currentPassword: 'old12345' }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it('400s on a new password under 8 characters — same rule POST /api/auth/register already enforces', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/auth/change-password', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ currentPassword: 'old12345', newPassword: 'short' }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it('401s when currentPassword is wrong — never leaks whether the account exists, same discipline as login', async () => {
+        const storedHash = await hashPassword('theRealPassword1');
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ id: 'acc1', password_hash: storedHash });
+        const token = await tokenFor('clinic1', 'acc1');
+
+        const res = await app.request('/api/auth/change-password', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ currentPassword: 'wrongPassword1', newPassword: 'new12345' }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it("200s and updates the CALLER's OWN accountId's password hash — never one from the request body", async () => {
+        const storedHash = await hashPassword('theRealPassword1');
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ id: 'acc1', password_hash: storedHash });
+        const updateSpy = vi.spyOn(AccountsDb, 'updatePasswordHash').mockResolvedValue(undefined);
+        const token = await tokenFor('clinic1', 'acc1');
+
+        const res = await app.request('/api/auth/change-password', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ currentPassword: 'theRealPassword1', newPassword: 'brandNewPassword1' }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+
+        const body = await res.json();
+        expect(body.success).toBe(true);
+        expect(updateSpy).toHaveBeenCalledTimes(1);
+        expect(updateSpy.mock.calls[0][1]).toBe('acc1'); // the caller's own accountId, not from the body
     });
 });
 
