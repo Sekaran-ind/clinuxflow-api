@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "clinuxflow-provider-role",
+  "url": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowProviderRole",
+  "version": "1.0.0",
+  "name": "ClinuxFlowProviderRole",
+  "title": "ClinuxFlow Provider Role (a Provider's role at their home Facility)",
+  "status": "active",
+  "description": "One Practitioner's role at ONE Facility, profiling FHIR R4 PractitionerRole — the real split this app's prior YAML never made (staff_role/staff_specialty lived on Practitioner.extension directly, which meant a Practitioner could never hold a second role at a second facility without a second, disconnected Practitioner record). PractitionerRole.practitioner + .organization are the two references that make one person's multiple roles across facilities/affiliates representable at all. Role codes grounded against the real HPR createHprId 'role' table (docs/NHPR SBX Doc/NHPR Doc/HPR/1. Register Healthcare Professional (Doctor & Nurse) API.pdf).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "PractitionerRole",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "PractitionerRole.active",
+        "path": "PractitionerRole.active",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "PractitionerRole.practitioner",
+        "path": "PractitionerRole.practitioner",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Reference", "targetProfile": ["https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowProvider"] }]
+      },
+      {
+        "id": "PractitionerRole.organization",
+        "path": "PractitionerRole.organization",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Reference", "targetProfile": ["https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowFacility"] }],
+        "comment": "The facility this role is held at. For a provider's HOME facility this is their own employer; ClinuxFlowAffiliatePractitionerRole (a sibling profile, same base resource) is the same shape used for a VISITING practitioner's role at a facility that isn't their home one — the distinction is which profile applies, not a different resource."
+      },
+      {
+        "id": "PractitionerRole.code",
+        "path": "PractitionerRole.code",
+        "min": 1,
+        "max": "1",
+        "comment": "HPR createHprId: role, Required — real HPR code table: 1=Healthcare Professional, 2=Facility Manager, 3=Healthcare Professional and Facility Manager. Bound to that real 3-value table, not an open string. (\"Administrator\" as a clinical-role concept in the prior YAML was really this HPR 'Facility Manager' role — reconciled here, not duplicated as a separate concept.)"
+      },
+      {
+        "id": "PractitionerRole.specialty",
+        "path": "PractitionerRole.specialty",
+        "min": 0,
+        "max": "*",
+        "comment": "A clinical specialty is a property of the ROLE (what this person does AT this facility), correctly modeled here rather than on Practitioner itself — matches real FHIR intent for PractitionerRole.specialty. Value binding: the reconciled specialty catalog (still an open item — see SPEC-23's own note on HealthcareService.category vs. clinic-specialities.json's divergent lists; this profile doesn't invent a third)."
+      },
+      {
+        "id": "PractitionerRole.period",
+        "path": "PractitionerRole.period",
+        "min": 0,
+        "max": "1",
+        "comment": "When this role started/ended at this facility — real FHIR element, genuinely useful for a role that changes over time (unlike a bare Practitioner.active flag)."
+      }
+    ]
+  }
+}

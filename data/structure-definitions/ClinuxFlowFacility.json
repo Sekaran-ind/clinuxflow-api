@@ -1,0 +1,327 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "clinuxflow-facility",
+  "url": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowFacility",
+  "version": "1.0.0",
+  "name": "ClinuxFlowFacility",
+  "title": "ClinuxFlow Facility",
+  "status": "active",
+  "description": "A clinic/hospital facility, profiling FHIR R4 Organization. Element cardinalities and required-ness are grounded directly against the real Ayushman Bharat Digital Mission Health Facility Registry (HFR) Basic/Additional Information APIs (docs/NHPR SBX Doc/NHPR Doc/HFR/New_HFR_APIs_Documentation_SBX.pdf) — not reverse-engineered from this app's own prior YAML, which had drifted (e.g. Organization.telecom.value used for phone/whatsapp/email/website with no differentiation at all). Fields the HFR API marks Required map to min:1 here; HFR-optional fields stay min:0. Real FHIR base cardinalities are narrowed, never widened, and every narrowing is a deliberate call, noted inline.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.name",
+        "path": "Organization.name",
+        "short": "Facility name",
+        "min": 1,
+        "max": "1",
+        "comment": "HFR Basic Information API: facilityName, Required."
+      },
+      {
+        "id": "Organization.alias",
+        "path": "Organization.alias",
+        "short": "Legal/trade name, if different from the display name",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Organization.active",
+        "path": "Organization.active",
+        "short": "Whether the facility is currently operational",
+        "min": 1,
+        "max": "1",
+        "comment": "HFR: facilityOperationalStatus, Required, a real boolean concept (Functional vs. not) — a Dropdown-with-string-choices capture of this was a real, live-found bug in the prior YAML (produced active:\"Functional\" instead of active:true). Must be captured as an actual boolean."
+      },
+      {
+        "id": "Organization.type",
+        "path": "Organization.type",
+        "short": "Facility type (HFR facilityTypeCode)",
+        "min": 1,
+        "max": "1",
+        "comment": "HFR Basic Information API: facilityTypeCode, Required — accepted codes per HFR's own fetch-facility-type master API. Narrowed from base FHIR's 0..* to 1..1: a facility has exactly one primary HFR type, not a set."
+      },
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "slicing": {
+          "discriminator": [{ "type": "value", "path": "system" }],
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Organization.identifier:hfrFacilityId",
+        "path": "Organization.identifier",
+        "sliceName": "hfrFacilityId",
+        "short": "The 12-character HFR-assigned Facility ID (starts with 'IN')",
+        "min": 0,
+        "max": "1",
+        "comment": "Server-assigned by HFR only AFTER the on-boarding API sequence completes (Basic -> Additional -> Detailed -> Submit) — genuinely absent for a facility still in Draft/Submitted status, hence min:0 even though it's the facility's real primary business identifier once assigned. HFR's own tracking ID (used before a real facilityId exists) is carried separately, not as an Organization.identifier."
+      },
+      {
+        "id": "Organization.identifier:hfrFacilityId.system",
+        "path": "Organization.identifier.system",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "https://facility.abdm.gov.in/hfr-id"
+      },
+      {
+        "id": "Organization.telecom",
+        "path": "Organization.telecom",
+        "slicing": {
+          "discriminator": [
+            { "type": "value", "path": "system" },
+            { "type": "value", "path": "use" }
+          ],
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "*",
+        "comment": "Sliced by system+use — the real, standard FHIR fix for the prior YAML's 4-way Organization.telecom.value collision (phone/whatsapp/email/website all landing on the same leaf with no way to tell them apart except array position)."
+      },
+      {
+        "id": "Organization.telecom:contactPhone",
+        "path": "Organization.telecom",
+        "sliceName": "contactPhone",
+        "short": "Primary facility contact number",
+        "min": 0,
+        "max": "1",
+        "comment": "HFR: facilityContactNumber, valid 10-digit mobile number."
+      },
+      {
+        "id": "Organization.telecom:contactPhone.system",
+        "path": "Organization.telecom.system",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Organization.telecom:contactPhone.use",
+        "path": "Organization.telecom.use",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "mobile"
+      },
+      {
+        "id": "Organization.telecom:landline",
+        "path": "Organization.telecom",
+        "sliceName": "landline",
+        "short": "Facility landline (with STD code)",
+        "min": 0,
+        "max": "1",
+        "comment": "HFR: facilityLandlineNumber + facilityStdCode, both optional, 6-8 digit landline."
+      },
+      {
+        "id": "Organization.telecom:landline.system",
+        "path": "Organization.telecom.system",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Organization.telecom:landline.use",
+        "path": "Organization.telecom.use",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "work"
+      },
+      {
+        "id": "Organization.telecom:email",
+        "path": "Organization.telecom",
+        "sliceName": "email",
+        "short": "Facility email address",
+        "min": 0,
+        "max": "1",
+        "comment": "HFR: facilityEmailId, optional."
+      },
+      {
+        "id": "Organization.telecom:email.system",
+        "path": "Organization.telecom.system",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "email"
+      },
+      {
+        "id": "Organization.telecom:website",
+        "path": "Organization.telecom",
+        "sliceName": "website",
+        "short": "Facility website URL",
+        "min": 0,
+        "max": "1",
+        "comment": "HFR: websiteLink, optional, must be a valid URL."
+      },
+      {
+        "id": "Organization.telecom:website.system",
+        "path": "Organization.telecom.system",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "url"
+      },
+      {
+        "id": "Organization.address",
+        "path": "Organization.address",
+        "short": "The facility's one registered address",
+        "min": 1,
+        "max": "1",
+        "comment": "Deliberately narrowed from base FHIR Organization.address's real 0..* — this profile treats a facility as having exactly one primary registered address (HFR itself has no concept of a facility with multiple registered addresses); a multi-branch clinic models each branch as its own Organization/Location, not multiple addresses on one Organization."
+      },
+      {
+        "id": "Organization.address.line",
+        "path": "Organization.address.line",
+        "min": 1,
+        "max": "2",
+        "comment": "HFR: addressLine1 (Required, min length 5) + addressLine2 (optional)."
+      },
+      {
+        "id": "Organization.address.country",
+        "path": "Organization.address.country",
+        "min": 1,
+        "max": "1",
+        "fixedString": "India",
+        "comment": "HFR: country, Required, \"By Default its India\" — a real fixed value per the spec, not an assumption."
+      },
+      {
+        "id": "Organization.address.postalCode",
+        "path": "Organization.address.postalCode",
+        "min": 1,
+        "max": "1",
+        "comment": "HFR: pincode, Required, 6-digit."
+      },
+      {
+        "id": "Organization.extension",
+        "path": "Organization.extension",
+        "slicing": {
+          "discriminator": [{ "type": "value", "path": "url" }],
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Organization.extension:lgdStateCode",
+        "path": "Organization.extension",
+        "sliceName": "lgdStateCode",
+        "short": "LGD (Local Government Directory) state code",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-state-lgd-code"] }],
+        "comment": "HFR: stateLGDCode, Required. No standard FHIR address element carries an LGD code — a real extension is the correct FHIR answer, not a repurposed Address.state string."
+      },
+      {
+        "id": "Organization.extension:lgdDistrictCode",
+        "path": "Organization.extension",
+        "sliceName": "lgdDistrictCode",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-district-lgd-code"] }],
+        "comment": "HFR: districtLGDCode, Required."
+      },
+      {
+        "id": "Organization.extension:lgdSubDistrictCode",
+        "path": "Organization.extension",
+        "sliceName": "lgdSubDistrictCode",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-subdistrict-lgd-code"] }],
+        "comment": "HFR: subDistrictLGDCode, Required."
+      },
+      {
+        "id": "Organization.extension:lgdVillageTownCode",
+        "path": "Organization.extension",
+        "sliceName": "lgdVillageTownCode",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-village-town-lgd-code"] }],
+        "comment": "HFR: villageCityTownLGDCode, Optional."
+      },
+      {
+        "id": "Organization.extension:facilityRegion",
+        "path": "Organization.extension",
+        "sliceName": "facilityRegion",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-region"] }],
+        "comment": "HFR: facilityRegion (R/U — Rural/Urban), Optional."
+      },
+      {
+        "id": "Organization.extension:geoLatitude",
+        "path": "Organization.extension",
+        "sliceName": "geoLatitude",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-latitude"] }],
+        "comment": "HFR: latitude, Required, -90.000000 to +90.000000. FHIR's Location.position exists for exactly this on a Location resource; kept as an extension here because this element belongs to the facility's own Organization-level registration payload, not a separate Location instance in this profile's scope."
+      },
+      {
+        "id": "Organization.extension:geoLongitude",
+        "path": "Organization.extension",
+        "sliceName": "geoLongitude",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-longitude"] }],
+        "comment": "HFR: longitude, Required, -180.000000 to +180.000000."
+      },
+      {
+        "id": "Organization.extension:ownershipCode",
+        "path": "Organization.extension",
+        "sliceName": "ownershipCode",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code"] }],
+        "comment": "HFR: ownershipCode, Required (get-master-data type='OWNER')."
+      },
+      {
+        "id": "Organization.extension:ownershipSubTypeCode",
+        "path": "Organization.extension",
+        "sliceName": "ownershipSubTypeCode",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-subtype-code"] }],
+        "comment": "HFR: ownershipSubTypeCode, Required (get-owner-subtype API)."
+      },
+      {
+        "id": "Organization.extension:facilitySubType",
+        "path": "Organization.extension",
+        "sliceName": "facilitySubType",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-subtype"] }],
+        "comment": "HFR: facilitySubType, Required (fetch-facility-sub-type API, keyed off facilityTypeCode)."
+      },
+      {
+        "id": "Organization.extension:systemOfMedicine",
+        "path": "Organization.extension",
+        "sliceName": "systemOfMedicine",
+        "min": 1,
+        "max": "*",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-system-of-medicine"] }],
+        "comment": "HFR: systemOfMedicineCode, Required, real multi-value (\"a comma separated string of codes\" per the API doc when a facility offers more than one) — modeled here as a real repeating extension, not a single comma-joined string."
+      },
+      {
+        "id": "Organization.extension:operationalStatusCode",
+        "path": "Organization.extension",
+        "sliceName": "operationalStatusCode",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-operational-status-code"] }],
+        "comment": "HFR's own coded operational-status value (get-master-data type='FAC-STATUS') — kept distinct from Organization.active above: active is the derived real FHIR boolean this profile requires for internal use (and fixes the historical Dropdown-as-string bug), this extension carries HFR's own richer status code (e.g. beyond just functional/non-functional) for round-tripping to the real HFR API untouched."
+      },
+      {
+        "id": "Organization.extension:tracking",
+        "path": "Organization.extension",
+        "sliceName": "tracking",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-tracking-id"] }],
+        "comment": "HFR's own trackingId — the facility's temporary handle before a real facilityId is assigned (see Organization.identifier:hfrFacilityId's own comment). Present only pre-submission."
+      }
+    ]
+  }
+}

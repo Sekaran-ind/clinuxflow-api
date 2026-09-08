@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "clinuxflow-affiliate-practitioner-role",
+  "url": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowAffiliatePractitionerRole",
+  "version": "1.0.0",
+  "name": "ClinuxFlowAffiliatePractitionerRole",
+  "title": "ClinuxFlow Affiliate Practitioner Role",
+  "status": "active",
+  "description": "A visiting/consulting practitioner's role at a facility that is NOT their home facility — the real, already-shipped 'Affiliates' tab in TeamSettingsModal.vue (practitionerEmail + role, via /api/facility/affiliates), formalized as FHIR. Same base resource as ClinuxFlowProviderRole (PractitionerRole) — the two profiles differ in which relationship they represent, not in shape: a Provider's own ProviderRole is their home-facility employment; this is a reference INTO someone else's own, independently-registered Practitioner (SPEC-24's own real modeling point: 'Affiliate' names two different FHIR shapes — this is the practitioner-level one; ClinuxFlowAffiliateOrganization is the organization-level one).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "PractitionerRole",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "PractitionerRole.active",
+        "path": "PractitionerRole.active",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "PractitionerRole.period",
+        "path": "PractitionerRole.period",
+        "min": 0,
+        "max": "1",
+        "comment": "A visiting arrangement is far more likely to be time-bounded than a home role — kept optional (not every visiting arrangement has a known end date) but genuinely more relevant here than on ClinuxFlowProviderRole."
+      },
+      {
+        "id": "PractitionerRole.practitioner",
+        "path": "PractitionerRole.practitioner",
+        "min": 1,
+        "max": "1",
+        "comment": "References the visiting practitioner's OWN Practitioner resource — most likely their own individual-practitioner registration elsewhere, not a record this facility owns or created. No targetProfile constraint to ClinuxFlowProvider specifically: an affiliate's own Practitioner record may not even conform to this tenant's own profile."
+      },
+      {
+        "id": "PractitionerRole.organization",
+        "path": "PractitionerRole.organization",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Reference", "targetProfile": ["https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowFacility"] }],
+        "comment": "The facility they're visiting/consulting AT — this profile's whole reason to exist."
+      },
+      {
+        "id": "PractitionerRole.code",
+        "path": "PractitionerRole.code",
+        "min": 0,
+        "max": "1",
+        "comment": "TeamSettingsModal.vue's existing 'role' field (freetext today, e.g. 'Visiting Cardiologist') — kept as a real CodeableConcept.text here rather than forcing it through the same coded HPR role table ClinuxFlowProviderRole uses (an external affiliate's own role framing isn't this facility's to code)."
+      }
+    ]
+  }
+}

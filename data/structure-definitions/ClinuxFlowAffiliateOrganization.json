@@ -1,0 +1,75 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "clinuxflow-affiliate-organization",
+  "url": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowAffiliateOrganization",
+  "version": "1.0.0",
+  "name": "ClinuxFlowAffiliateOrganization",
+  "title": "ClinuxFlow Affiliate Organization",
+  "status": "active",
+  "description": "An organization-to-organization relationship — a partner org (imaging centre, laboratory, billing service, ...) delivering a shared service to/through this facility. Profiles FHIR R4 OrganizationAffiliation, the resource built specifically for this ('org A provides service X to org B'), not a repurposed Organization or an ad hoc join table. Genuinely new — nothing in this app modeled organization-level affiliation before this spec (only the practitioner-level kind existed, see ClinuxFlowAffiliatePractitionerRole). No ABDM API reference exists for this concept (HFR/HPR have no organization-affiliation notion); cardinalities here are real FHIR R4 base-resource judgment, not a cited external spec.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "OrganizationAffiliation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/OrganizationAffiliation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "OrganizationAffiliation.active",
+        "path": "OrganizationAffiliation.active",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "OrganizationAffiliation.period",
+        "path": "OrganizationAffiliation.period",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "OrganizationAffiliation.organization",
+        "path": "OrganizationAffiliation.organization",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Reference", "targetProfile": ["https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowFacility"] }],
+        "comment": "The primary facility this affiliation is anchored to."
+      },
+      {
+        "id": "OrganizationAffiliation.participatingOrganization",
+        "path": "OrganizationAffiliation.participatingOrganization",
+        "min": 1,
+        "max": "1",
+        "comment": "The affiliate/partner organization providing the service. No targetProfile constraint to ClinuxFlowFacility: an affiliate org (e.g. an external diagnostic lab chain) has no reason to conform to this app's own Facility profile at all."
+      },
+      {
+        "id": "OrganizationAffiliation.code",
+        "path": "OrganizationAffiliation.code",
+        "min": 1,
+        "max": "*",
+        "comment": "The nature of the affiliation (e.g. 'provider', 'diagnostics', 'billing') — bound to real FHIR's own organization-role ValueSet where it fits, extended locally only for genuinely ClinuxFlow-specific relationship kinds (e.g. 'shared-imaging-service') not already covered by it."
+      },
+      {
+        "id": "OrganizationAffiliation.specialty",
+        "path": "OrganizationAffiliation.specialty",
+        "min": 0,
+        "max": "*",
+        "comment": "If the affiliation is clinical in nature (e.g. a visiting-specialist arrangement fulfilled at the org level rather than one named practitioner), the relevant specialty/specialties."
+      },
+      {
+        "id": "OrganizationAffiliation.healthcareService",
+        "path": "OrganizationAffiliation.healthcareService",
+        "min": 0,
+        "max": "*",
+        "comment": "Which of the primary facility's own HealthcareService entries this affiliate actually fulfills — real FHIR field for exactly SPEC-23's own framing ('administrative steps... some of these may become shared service offered by affiliates'). A HealthcareService with no healthcareService reference here is one the facility fulfills itself, not through an affiliate."
+      },
+      {
+        "id": "OrganizationAffiliation.telecom",
+        "path": "OrganizationAffiliation.telecom",
+        "min": 0,
+        "max": "*",
+        "comment": "A contact point for THIS AFFILIATION specifically (e.g. a dedicated referral line), distinct from the affiliate organization's own general telecom."
+      }
+    ]
+  }
+}
