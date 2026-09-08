@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { compileYamlToQuestionnaire } from './lib/yaml-to-questionnaire.js';
 import { ComprehensiveLocalExtractor } from './lib/local-extractor.js';
+import { FhirDocumentAssembler } from './lib/composition-assembler.js';
 import { LocalQueueManager } from './lib/local-queue-manager.js';
 import { saveFormVersion } from './lib/forms-library.js';
 import { serviceKeyAuth } from './lib/serviceAuth.js';
@@ -18,6 +19,7 @@ import { EncounterCoordinationDb } from './lib/encounter-coordination-db.js';
 import { WikidataTagging, WikidataRateLimitError } from './lib/wikidataTagging.js';
 
 import systemFormsLibrary from '../data/system-forms-library.json';
+import systemFlowsLibrary from '../data/system-flows-library.json';
 import defaultBlueprintYaml from '../data/vitals-room.yaml';
 import clinicSpecialities from '../data/clinic-specialities.json';
 import conditionTypes from '../data/condition-types.json';
@@ -265,6 +267,107 @@ app.patch('/api/auth/change-password', requireUser(), async (c) => {
         return c.json({ success: true });
     } catch (err) {
         console.error('❌ Change Password Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+// Normalizes a security answer the same way on both the set and verify paths (trimmed +
+// lowercased) so "Blue"/"blue "/" BLUE" all match -- a security answer isn't a password, users
+// shouldn't be locked out by casing/whitespace they don't remember precisely.
+function normalizeSecurityAnswer(answer) {
+    return String(answer).trim().toLowerCase();
+}
+
+/**
+ * PATCH /api/auth/security-question
+ * Body: { securityQuestion, securityAnswer }
+ * SPEC-20 §4's Forgot Password design. Deliberately separate from registration (see
+ * accounts-db.js's updateSecurityQuestion comment) -- the new entry-flow UI calls this right
+ * after register succeeds, using the token register already returned; also how a pre-existing
+ * account (created before migrations/0009) sets one for the first time.
+ */
+app.patch('/api/auth/security-question', requireUser(), async (c) => {
+    try {
+        const { securityQuestion, securityAnswer } = await c.req.json();
+        if (!securityQuestion || !String(securityQuestion).trim() || !securityAnswer || !String(securityAnswer).trim()) {
+            return c.json({ success: false, error: 'securityQuestion and securityAnswer are required.' }, 400);
+        }
+
+        const accountId = c.get('user').accountId;
+        const answerHash = await hashPassword(normalizeSecurityAnswer(securityAnswer));
+        await AccountsDb.updateSecurityQuestion(c.env.DB, accountId, String(securityQuestion).trim(), answerHash);
+
+        return c.json({ success: true });
+    } catch (err) {
+        console.error('❌ Update Security Question Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * POST /api/auth/forgot-password/question
+ * Body: { email }
+ * Public (X-Service-Key only, no session -- the whole point is the caller isn't logged in).
+ * Returns the account's own security question so the reset step can ask it. Honest tradeoff, not
+ * hidden: unlike login's deliberately generic "Invalid email or password" (which avoids leaking
+ * WHICH part was wrong), this necessarily reveals whether an account exists for the email --
+ * showing a real recovery question requires knowing there's an account to show one for. Accepted
+ * for this app's real threat model (a small clinic's own accounts), not a production
+ * enumeration-hardened flow.
+ */
+app.post('/api/auth/forgot-password/question', async (c) => {
+    try {
+        const { email } = await c.req.json();
+        if (!email) return c.json({ success: false, error: 'email is required.' }, 400);
+
+        const normalizedEmail = String(email).trim().toLowerCase();
+        const account = await AccountsDb.getAccountByEmail(c.env.DB, normalizedEmail);
+        if (!account || !account.security_question) {
+            return c.json({ success: false, error: 'No recovery option is set up for this account yet.' }, 404);
+        }
+
+        return c.json({ success: true, securityQuestion: account.security_question });
+    } catch (err) {
+        console.error('❌ Forgot Password Question Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * POST /api/auth/forgot-password/reset
+ * Body: { email, securityAnswer, newPassword }
+ * Public. Verifies the security answer and resets the password directly -- no separate
+ * token/expiry step, since with no email delivery a token would just be shown straight back in
+ * the same UI anyway, adding a click without adding real security. Deliberately does NOT return a
+ * session token -- the user logs in fresh with the new password afterward, same as any other
+ * password reset.
+ */
+app.post('/api/auth/forgot-password/reset', async (c) => {
+    try {
+        const { email, securityAnswer, newPassword } = await c.req.json();
+        if (!email || !securityAnswer || !newPassword) {
+            return c.json({ success: false, error: 'email, securityAnswer, and newPassword are required.' }, 400);
+        }
+        if (newPassword.length < 8) {
+            return c.json({ success: false, error: 'New password must be at least 8 characters.' }, 400);
+        }
+
+        const normalizedEmail = String(email).trim().toLowerCase();
+        const account = await AccountsDb.getAccountByEmail(c.env.DB, normalizedEmail);
+        if (!account || !account.security_answer_hash) {
+            return c.json({ success: false, error: 'No recovery option is set up for this account yet.' }, 404);
+        }
+        const answerCorrect = await verifyPassword(normalizeSecurityAnswer(securityAnswer), account.security_answer_hash);
+        if (!answerCorrect) {
+            return c.json({ success: false, error: 'That answer is incorrect.' }, 401);
+        }
+
+        const newHash = await hashPassword(newPassword);
+        await AccountsDb.updatePasswordHash(c.env.DB, account.id, newHash);
+
+        return c.json({ success: true });
+    } catch (err) {
+        console.error('❌ Forgot Password Reset Exception:', err.message);
         return c.json({ success: false, error: err.message }, 400);
     }
 });
@@ -764,6 +867,20 @@ app.get('/api/workflow/system-forms', (c) => {
 });
 
 /**
+ * GET /api/workflow/system-flows
+ * SPEC-22 decision #2's real loader — the actual missing link between the SPEC-18 YAML-authoring
+ * pipeline and the frontend's workflowRuntime.js/planDefinitionRunner.js, which until now only
+ * ever ran hand-authored JS PlanDefinition objects. Returns the pre-compiled-and-extracted
+ * system-flows catalog (tools/build-system-flows.js's output, bundled as
+ * data/system-flows-library.json — regenerate via `npm run build:system-flows`), shaped like
+ * clinux-frontend's flowsLibrary.js collection rows so seedSystemFlows() can merge it straight in,
+ * same "seed once, never overwrite a locally-edited copy" convention system-forms above uses.
+ */
+app.get('/api/workflow/system-flows', (c) => {
+    return c.json({ success: true, systemFlows: systemFlowsLibrary });
+});
+
+/**
  * GET /api/nlp/wikidata-search?term=...
  * SPEC-06 §6's design-time/onboarding semantic tagging — Designer.vue field-labeling and
  * onboarding role/specialty tagging both start here. Returns candidate Wikidata concepts for a
@@ -898,6 +1015,59 @@ app.post('/api/workflow/compile', async (c) => {
         });
     } catch (err) {
         console.error("❌ SDC Compiler Exception:", err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * POST /api/workflow/extract
+ * Body: { questionnaireJson: FHIR Questionnaire, responseJson: FHIR QuestionnaireResponse }
+ * The real missing half of the compile step for workflow-definition YAMLs specifically: compiling
+ * one produces an AUTHORING FORM (a Questionnaire describing a PlanDefinition's own steps), not
+ * the plan itself — this is what turns a filled-in response to that form into the real
+ * PlanDefinition (and any other FHIR resources the same composition declares), via the same
+ * ComprehensiveLocalExtractor every data-form save already extracts through
+ * (clinuxflow-api/src/lib/forms-library.js's saveFormVersion). Never wired to an HTTP endpoint
+ * before this — hospital-setup-workflow.test.js/build-system-flows.js both call the extractor
+ * directly, build-time or test-time; this is the first RUNTIME (request-time) caller, for the
+ * Room-Architect Designer's "Design & Compile Room" step filling in a room's own authoring form
+ * interactively instead of via a hand-built fixture.
+ */
+app.post('/api/workflow/extract', requireUser(), async (c) => {
+    try {
+        const { questionnaireJson, responseJson } = await c.req.json();
+        if (!questionnaireJson || !responseJson) {
+            return c.json({ success: false, error: 'questionnaireJson and responseJson are both required.' }, 400);
+        }
+        const result = ComprehensiveLocalExtractor.extract(questionnaireJson, responseJson);
+        return c.json({ success: true, resources: result, warnings: result.warnings || [] });
+    } catch (err) {
+        console.error('❌ Extraction Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * POST /api/workflow/assemble-document
+ * Body: { resources: FHIR resource[], title, typeText?, authorRef: {resourceType, id}, subjectRef?, status?, sectionPlan? }
+ * The real, missing "shared as a FHIR Document Composition" half of the Facility/Provider/Patient
+ * onboarding build — FhirDocumentAssembler wraps a set of already-extracted FHIR resources
+ * (POST /api/workflow/extract's own output, typically) into a real FHIR Bundle{type:'document'}
+ * with a proper Composition as its first entry, per the real FHIR document rules (every resource
+ * a section references is guaranteed present as a Bundle entry). Not connected to any HAPI/FHIR
+ * server here — this only assembles the document; storing/sharing it is a separate, not-yet-built
+ * step (see clinux-spec23-speciality-room-fixed-anchors memory note).
+ */
+app.post('/api/workflow/assemble-document', requireUser(), async (c) => {
+    try {
+        const { resources, ...meta } = await c.req.json();
+        if (!resources || !Array.isArray(resources)) {
+            return c.json({ success: false, error: 'resources (an array of FHIR resources) is required.' }, 400);
+        }
+        const bundle = FhirDocumentAssembler.assemble(resources, meta);
+        return c.json({ success: true, bundle });
+    } catch (err) {
+        console.error('❌ Document Assembly Exception:', err.message);
         return c.json({ success: false, error: err.message }, 400);
     }
 });

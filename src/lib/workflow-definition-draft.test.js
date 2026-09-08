@@ -41,7 +41,12 @@ describe('workflow-definition-v1.draft.yaml compiles through the real pipeline',
     });
   });
 
-  it('the Condition group (SPEC-18 §7 step 4) is a nested repeatable group whose type is Autocomplete-bound to the condition-types ValueSet, never free text', () => {
+  // UPDATE — reversed from the original curated-ValueSet design (condition_type, Autocomplete,
+  // answerValueSet-bound) to a plain expression field per explicit instruction ("expression.
+  // reference can be simplified... to make it as expression.expression... instead of valuesets
+  // and condition types"). See the sample YAML's own field-level comment for the real, stated
+  // tradeoff this reverses.
+  it('the Condition group (SPEC-18 §7 step 4) is a nested repeatable group with a plain expression field, mapped to expression.expression', () => {
     const result = compileYamlToQuestionnaire(draftYaml);
     const rooms = result.questionnaire.item.find((i) => i.text === 'Rooms');
     const condition = rooms.item.find((i) => i.text === 'Condition');
@@ -55,9 +60,10 @@ describe('workflow-definition-v1.draft.yaml compiles through the real pipeline',
     const kind = condition.item.find((i) => i.linkId === 'condition_kind');
     expect(kind.initial).toEqual([{ valueString: 'applicability' }]);
 
-    const conditionType = condition.item.find((i) => i.linkId === 'condition_type');
-    expect(conditionType.type).toBe('open-choice'); // Autocomplete -> open-choice, never a free string
-    expect(conditionType.answerValueSet).toContain('/api/valuesets/plandefinition-condition-types');
+    const expr = condition.item.find((i) => i.linkId === 'condition_expression');
+    expect(expr.type).toBe('string'); // TextInput -> string, a plain field, not Autocomplete/open-choice
+    expect(expr.answerValueSet).toBeUndefined(); // no curated catalog involved any more
+    expect(expr.definition).toBe('http://hl7.org/PlanDefinition#PlanDefinition.action.condition.expression.expression');
   });
 
   it('extracts a realistic filled response correctly — the room with no dependency stays untouched, the dependent room gets its own nested relatedAction, no cross-room corruption', () => {

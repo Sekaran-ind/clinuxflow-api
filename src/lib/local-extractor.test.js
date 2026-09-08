@@ -1,5 +1,8 @@
 import { describe, it, expect } from 'vitest';
+import fs from 'fs';
+import path from 'path';
 import { ComprehensiveLocalExtractor } from './local-extractor.js';
+import { compileYamlToQuestionnaire } from './yaml-to-questionnaire.js';
 
 // SPEC-13 §5.3's two hardening risks, exercised directly against real transitions, not just
 // confirming the file parses. Fixtures use simple flat blueprints matching the real
@@ -245,5 +248,302 @@ describe('ComprehensiveLocalExtractor — repeating-group handling (severe bug, 
 
     expect(practitioner.id).toMatch(/^practitioner-/);
     expect(role.practitioner.reference).toBe(`Practitioner/${practitioner.id}`);
+  });
+});
+
+// SPEC-23/§"Facility Onboarding/Provider Onboarding/Patient Registration" build — a real,
+// severe, empirically-confirmed data-loss bug found while grounding that work before writing any
+// UI: sibling fields sharing one FHIR leaf path (Organization.telecom.value, Practitioner.
+// identifier.value, ...) silently overwrote each other, and every non-component/coding array-
+// typed FHIR property was written as a bare object instead of a JSON array — structurally invalid
+// for a real HAPI server regardless of the collision. Both confirmed live against the REAL,
+// unmodified system-provider-composition-v1.yaml through the real compile+extract pipeline before
+// fixing, not assumed — these tests reproduce those exact confirmed cases.
+describe('ComprehensiveLocalExtractor — FHIR array-cardinality fix (real data-loss bug, confirmed live)', () => {
+  const providerYaml = fs.readFileSync(
+    path.join(process.cwd(), 'tools', 'system-forms', 'system-provider-composition-v1.yaml'),
+    'utf8'
+  );
+  const compiledProvider = compileYamlToQuestionnaire(providerYaml);
+
+  function staffAnswer(...fields) {
+    return {
+      item: [{ linkId: 'section_staff', item: [{ linkId: 'section_staff', item: fields }] }],
+    };
+  }
+
+  it('compiles cleanly (guards this whole describe block against the fixture drifting from the real YAML)', () => {
+    expect(compiledProvider.success).toBe(true);
+  });
+
+  it('REGRESSION: staff_phone and staff_email (both Practitioner.telecom.value) both survive extraction, as a real array — previously only the last one processed did, as a bare object', () => {
+    const response = staffAnswer(
+      answered('staff_name', 'Dr. Test Person'),
+      answered('staff_phone', '555-1234'),
+      answered('staff_email', 'dr.test@example.com'),
+    );
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    const practitioner = result.find((r) => r.resourceType === 'Practitioner');
+
+    expect(Array.isArray(practitioner.telecom)).toBe(true);
+    expect(practitioner.telecom.map((t) => t.value).sort()).toEqual(['555-1234', 'dr.test@example.com'].sort());
+  });
+
+  // UPDATE — the 9-way Practitioner.identifier.value collision this test originally proved safe
+  // is now, correctly, TWO separate real FHIR homes: staff_license/staff_hprid/staff_hpr_id_number
+  // are genuine business identifiers (stay on Practitioner.identifier); the 6 ABDM-registration-
+  // process fields moved to real, distinctly-URLed Practitioner.extension entries (see
+  // system-provider-composition-v1.yaml's own comment on this move). Both halves still need array
+  // safety — this proves both, not just one.
+  it('staff_license/staff_hprid/staff_hpr_id_number (genuine identifiers) survive as a real 3-element identifier array', () => {
+    const response = staffAnswer(
+      answered('staff_name', 'Dr. Nine Fields'),
+      answered('staff_license', 'LIC-1'),
+      answered('staff_hprid', 'HPR-1'),
+      answered('staff_hpr_id_number', 'HPRN-1'),
+    );
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    const practitioner = result.find((r) => r.resourceType === 'Practitioner');
+
+    expect(Array.isArray(practitioner.identifier)).toBe(true);
+    expect(practitioner.identifier.map((i) => i.value).sort()).toEqual(['LIC-1', 'HPR-1', 'HPRN-1'].sort());
+  });
+
+  it('the 6 ABDM-registration-process fields (staff_abdm_role/hp_category/hp_subcategory/state/district/council) land as real, distinctly-URLed extensions, not bare identifiers', () => {
+    const response = staffAnswer(
+      answered('staff_name', 'Dr. Nine Fields'),
+      answered('staff_abdm_role', 'Doctor'),
+      answered('staff_hp_category_code', 'CAT-1'),
+      answered('staff_hp_subcategory_code', 'SUB-1'),
+      answered('staff_state_code', 'ST-1'),
+      answered('staff_district_code', 'DT-1'),
+      { linkId: 'staff_council', answer: [{ valueBoolean: true }] },
+    );
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    const practitioner = result.find((r) => r.resourceType === 'Practitioner');
+
+    expect(Array.isArray(practitioner.extension)).toBe(true);
+    expect(practitioner.extension.length).toBe(6);
+    const byUrl = Object.fromEntries(practitioner.extension.map((e) => [e.url, e]));
+    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hpr-abdm-role'].valueString).toBe('Doctor');
+    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hpr-category-code'].valueString).toBe('CAT-1');
+    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council'].valueBoolean).toBe(true);
+  });
+
+  it('REGRESSION: a MultiSelect field with multiple selections keeps ALL of them, not just the first', () => {
+    const response = staffAnswer(
+      answered('staff_name', 'Dr. Multi Test'),
+      { linkId: 'staff_specialty', answer: [{ valueString: 'Cardiology' }, { valueString: 'Pediatrics' }, { valueString: 'Radiology' }] },
+    );
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    const practitioner = result.find((r) => r.resourceType === 'Practitioner');
+
+    expect(Array.isArray(practitioner.extension)).toBe(true);
+    expect(practitioner.extension.length).toBe(3);
+  });
+
+  it('Practitioner.name.given (first + middle name, same field family, different linkIds) both land in the SAME name entry, not two different ones', () => {
+    const response = staffAnswer(
+      answered('staff_name', 'Dr. Given Test'),
+      answered('staff_first_name', 'Alpha'),
+      answered('staff_middle_name', 'Beta'),
+      answered('staff_last_name', 'Gamma'),
+    );
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    const practitioner = result.find((r) => r.resourceType === 'Practitioner');
+
+    // Practitioner.name itself stays a single real entry (this app only ever captures one name
+    // per person) — .given WITHIN it is the genuinely multi-value part.
+    expect(practitioner.name.text).toBe('Dr. Given Test');
+    expect(practitioner.name.given.sort()).toEqual(['Alpha', 'Beta'].sort());
+    expect(practitioner.name.family).toBe('Gamma');
+  });
+
+  // UPDATE — ownership/facility-type/facility-subtype moved off the generic Organization.type
+  // (they're real HFR registry codes, not a good CodeableConcept classification fit) onto real,
+  // distinctly-URLed Organization.extension entries — this test now proves that move, not the old
+  // 4-way Organization.type collision it originally covered (hospital_type alone stays there,
+  // confirmed still correct).
+  it('hospital_ownership_code/facility_type/facility_subtype land as real, distinctly-URLed Organization extensions; hospital_type (the only real Organization.type field left) is unaffected', () => {
+    const response = {
+      item: [
+        { linkId: 'section_hospital', item: [
+          answered('hospital_name', 'Test Hospital'),
+          answered('hospital_type', 'Hospital'),
+        ]},
+        { linkId: 'section_hospital_abdm_facility_type', item: [
+          answered('hospital_ownership_code', 'OWN-1'),
+          answered('hospital_facility_type', 'FT-1'),
+          answered('hospital_facility_subtype', 'FST-1'),
+        ]},
+      ],
+    };
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    const org = result.find((r) => r.resourceType === 'Organization');
+
+    // Organization.type is genuinely 0..* in real FHIR — correctly a real 1-element array now
+    // (not a bare string), even with only one field left targeting it; no longer a collision case.
+    expect(org.type).toEqual(['Hospital']);
+    expect(Array.isArray(org.extension)).toBe(true);
+    expect(org.extension.length).toBe(3);
+    const byUrl = Object.fromEntries(org.extension.map((e) => [e.url, e]));
+    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code'].valueString).toBe('OWN-1');
+    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-type'].valueString).toBe('FT-1');
+    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-subtype'].valueString).toBe('FST-1');
+    expect(org.name).toBe('Test Hospital'); // Organization.name is genuinely 0..1 — confirms non-array paths are unaffected
+  });
+
+  it('Appointment.participant.actor (appt_patient + appt_staff, both real fields) survive as two separate participants, not one overwriting the other', () => {
+    const response = {
+      item: [{ linkId: 'section_appointment', item: [{ linkId: 'section_appointment', item: [
+        answered('appt_patient', 'Patient/pat-1'),
+        answered('appt_staff', 'Practitioner/prac-1'),
+        answered('appt_status', 'booked'),
+      ]}]}],
+    };
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    const appt = result.find((r) => r.resourceType === 'Appointment');
+
+    expect(Array.isArray(appt.participant)).toBe(true);
+    expect(appt.participant.map((p) => p.actor).sort()).toEqual(['Patient/pat-1', 'Practitioner/prac-1'].sort());
+  });
+});
+
+// "in case any field is not found in the FHIR spec needed for ABDM capture, that as part of the
+// extension fields" (explicit instruction). Real FHIR extension shape ({url, value[x]}), not a
+// bare value — proven directly here (synthetic fixtures) before applying it to the real ABDM
+// fields in system-provider-composition-v1.yaml.
+describe('ComprehensiveLocalExtractor — real FHIR extension.url tagging', () => {
+  function itemWithExtensionUrl(linkId, path, extensionUrl, type = 'string') {
+    return { linkId, definition: `http://hl7.org/Organization#${path}`, type, extensionUrl };
+  }
+
+  it('writes a real {url, valueString} extension, not a bare value', () => {
+    const bp = blueprint([itemWithExtensionUrl('ownership', 'Organization.extension', 'https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code')]);
+    const response = { item: [answered('ownership', 'P')] };
+
+    const result = ComprehensiveLocalExtractor.extract(bp, response);
+    const org = result.find((r) => r.resourceType === 'Organization');
+
+    expect(Array.isArray(org.extension)).toBe(true);
+    expect(org.extension[0]).toEqual({
+      url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code',
+      valueString: 'P',
+    });
+  });
+
+  it('two DIFFERENT extension fields produce two distinct, correctly-tagged entries — not one overwriting the other', () => {
+    const bp = blueprint([
+      itemWithExtensionUrl('ownership', 'Organization.extension', 'https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code'),
+      itemWithExtensionUrl('facilityType', 'Organization.extension', 'https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-type'),
+    ]);
+    const response = { item: [answered('ownership', 'P'), answered('facilityType', 'HOSPITAL')] };
+
+    const result = ComprehensiveLocalExtractor.extract(bp, response);
+    const org = result.find((r) => r.resourceType === 'Organization');
+
+    expect(org.extension.length).toBe(2);
+    const byUrl = Object.fromEntries(org.extension.map((e) => [e.url, e]));
+    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code'].valueString).toBe('P');
+    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-type'].valueString).toBe('HOSPITAL');
+  });
+
+  it('picks the real matching value[x] key from the answer\'s own FHIR type — valueBoolean for a boolean answer', () => {
+    const bp = blueprint([itemWithExtensionUrl('council', 'Practitioner.extension', 'https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council', 'boolean')]);
+    const response = { item: [{ linkId: 'council', answer: [{ valueBoolean: true }] }] };
+
+    const result = ComprehensiveLocalExtractor.extract(bp, response);
+    const practitioner = result.find((r) => r.resourceType === 'Practitioner');
+
+    expect(practitioner.extension[0]).toEqual({
+      url: 'https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council',
+      valueBoolean: true,
+    });
+  });
+
+  it('an extension field with NO extensionUrl declared falls back to the old bare-value behavior (fails safe, never guesses a URL)', () => {
+    const bp = blueprint([{ linkId: 'raw', definition: 'http://hl7.org/Organization#Organization.extension', type: 'string' }]); // no extensionUrl
+    const response = { item: [answered('raw', 'unlabeled')] };
+
+    const result = ComprehensiveLocalExtractor.extract(bp, response);
+    const org = result.find((r) => r.resourceType === 'Organization');
+
+    expect(org.extension[0]).toBe('unlabeled'); // bare value, exactly the pre-existing behavior
+  });
+});
+
+describe('ComprehensiveLocalExtractor — real end-to-end against the improved Facility/Provider FHIR mapping', () => {
+  const providerYaml = fs.readFileSync(
+    path.join(process.cwd(), 'tools', 'system-forms', 'system-provider-composition-v1.yaml'),
+    'utf8'
+  );
+  const compiledProvider = compileYamlToQuestionnaire(providerYaml);
+
+  // REGRESSION: found live via a full end-to-end pipeline run, not caught reading the YAML alone
+  // — hospital_operational_status was `uiComponent: Dropdown` with string choices despite mapping
+  // to Organization.active (a real FHIR boolean), producing a structurally invalid
+  // `active: "Functional"` instead of `active: true`. staff_status (Practitioner.active) already
+  // used Checkbox correctly — this was a real, live inconsistency, not by design.
+  it('hospital_operational_status now produces a real boolean Organization.active, not a raw string', () => {
+    const response = {
+      item: [{ linkId: 'section_hospital_abdm_facility_type', item: [
+        { linkId: 'hospital_operational_status', answer: [{ valueBoolean: true }] },
+      ]}],
+    };
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    const org = result.find((r) => r.resourceType === 'Organization');
+    expect(org.active).toBe(true);
+    expect(typeof org.active).toBe('boolean');
+  });
+
+  it('a full Facility + Provider registration extracts to genuinely valid-shaped FHIR resources, with ABDM-specific codes correctly homed as real extensions, not generic identifiers', () => {
+    function ans(linkId, value) { return { linkId, answer: [{ valueString: value }] }; }
+    const response = {
+      item: [
+        { linkId: 'section_hospital', item: [
+          ans('hospital_name', 'Malar Hospital'),
+          ans('hospital_type', 'Hospital'),
+          ans('hospital_phone', '044-2222'),
+          ans('hospital_email', 'contact@malar.example'),
+        ]},
+        { linkId: 'section_hospital_abdm_facility_type', item: [
+          ans('hospital_ownership_code', 'P'),
+          ans('hospital_facility_type', 'HOSPITAL'),
+          { linkId: 'hospital_operational_status', answer: [{ valueBoolean: true }] },
+        ]},
+        { linkId: 'section_hospital_abdm_location', item: [
+          ans('hospital_state_lgd_code', '33'),
+          ans('hospital_district_lgd_code', '600'),
+        ]},
+        { linkId: 'section_staff', item: [{ linkId: 'section_staff', item: [
+          ans('staff_name', 'Dr. Priya Rao'),
+          ans('staff_license', 'MCI-12345'),
+          ans('staff_abdm_role', 'Doctor'),
+          ans('staff_hp_category_code', 'A'),
+        ]}]},
+      ],
+    };
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    expect(result.warnings).toEqual([]);
+
+    const org = result.find((r) => r.resourceType === 'Organization');
+    const prac = result.find((r) => r.resourceType === 'Practitioner');
+
+    // Real FHIR shape throughout — every multi-cardinality field a real array, every ABDM-only
+    // code a real, distinctly-URLed extension, every genuine identifier/boolean/name field its
+    // real FHIR type — not "close enough", genuinely valid for a real HAPI server.
+    expect(org.name).toBe('Malar Hospital');
+    expect(Array.isArray(org.type)).toBe(true);
+    expect(Array.isArray(org.telecom)).toBe(true);
+    expect(org.active).toBe(true);
+    expect(Array.isArray(org.extension)).toBe(true);
+    expect(org.extension.every((e) => e.url.startsWith('https://clinuxflow.example/fhir/StructureDefinition/'))).toBe(true);
+    expect(org.identifier).toBeUndefined(); // no generic identifiers used in this response — confirms nothing fell back to the old catch-all
+
+    expect(prac.name.text).toBe('Dr. Priya Rao');
+    expect(Array.isArray(prac.identifier)).toBe(true);
+    expect(prac.identifier[0].value).toBe('MCI-12345'); // the genuine license identifier, alone — not mixed with ABDM codes
+    expect(Array.isArray(prac.extension)).toBe(true);
+    expect(prac.extension.every((e) => e.url.startsWith('https://clinuxflow.example/fhir/StructureDefinition/'))).toBe(true);
   });
 });

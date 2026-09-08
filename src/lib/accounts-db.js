@@ -49,6 +49,17 @@ export const AccountsDb = {
         return db.prepare("UPDATE accounts SET password_hash = ? WHERE id = ?").bind(passwordHash, accountId).run();
     },
 
+    // SPEC-20 (docs/SPEC-20-REFERENCE-PATTERN-JOURNEY-WORKBENCH-AND-UNAUTH-CUBO-ENTRY.md) §4's
+    // Forgot Password design (migrations/0009). A deliberately separate call, not folded into
+    // registration -- keeps createClinicAndAccount's contract (and its existing tests) unchanged;
+    // the new entry-flow UI calls this right after register succeeds, using the fresh token
+    // register already returns, same as change_password already does as its own independent step.
+    // Also how a pre-existing account (created before this migration) sets one for the first time.
+    updateSecurityQuestion: (db, accountId, securityQuestion, securityAnswerHash) => {
+        return db.prepare("UPDATE accounts SET security_question = ?, security_answer_hash = ? WHERE id = ?")
+            .bind(securityQuestion, securityAnswerHash, accountId).run();
+    },
+
     getAccountById: (db, accountId) => {
         return db.prepare("SELECT * FROM accounts WHERE id = ?").bind(accountId).first();
     },

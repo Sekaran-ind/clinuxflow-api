@@ -83,70 +83,108 @@ composition:
         label: "Website URL"
         uiComponent: "TextInput"
 
+  # UPDATE — real FHIR-native onboarding rebuild: ABDM's own field requirements (verified against
+  # abdmAdapter.js's real gateway request bodies — every field referenced there, e.g.
+  # buildHfrBasicInfoBody's ownershipCode/facilityType/facilitySubType/stateLGDCode/... — is
+  # captured somewhere in this file already; "keep the ABDM fields as reference for minimal
+  # completeness" confirmed no NEW fields were needed, just correct FHIR homes for them) are HFR
+  # registry CODES, not general clinical/demographic data — none of them are a good semantic fit
+  # for the generic paths they used before (Organization.type meant for a CodeableConcept
+  # classification, Organization.identifier.value meant for a business identifier, not
+  # registration-process metadata). "any field not found in the FHIR spec needed for ABDM capture
+  # goes into extension fields" (explicit instruction) — moved to real, distinctly-URLed
+  # Organization.extension entries instead. hospital_operational_status (Organization.active) and
+  # hospital_facility_id/hospital_npi (Organization.identifier.value) are UNCHANGED — those ARE
+  # already good, standard FHIR fits, not touched.
   - resourceType: Organization
     id: section_hospital_abdm_facility_type
     label: "Facility Type & Ownership"
     fields:
       - id: "hospital_ownership_code"
-        path: "Organization.type"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code"
         label: "Ownership Code (HFR master: OWNER)"
         uiComponent: "TextInput"
       - id: "hospital_facility_type"
-        path: "Organization.type"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-type"
         label: "Facility Type Code (HFR master: facility-types)"
         uiComponent: "TextInput"
       - id: "hospital_facility_subtype"
-        path: "Organization.type"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-subtype"
         label: "Facility Sub-Type Code (HFR master: facility-sub-types)"
         uiComponent: "TextInput"
+      # UPDATE — real bug found live via a full end-to-end pipeline test, not caught by reading
+      # the YAML alone: this was `uiComponent: Dropdown` with 2 string choices, but
+      # Organization.active is genuinely a FHIR boolean — the compiler maps Dropdown to a
+      # `choice`-type item regardless of the target path, and nothing converts the string answer
+      # "Functional"/"Non-Functional" into a real true/false, so extraction produced
+      # `active: "Functional"` — structurally invalid for a real boolean field. staff_status
+      # (Practitioner.active, right below in section_staff) already used Checkbox correctly; this
+      # one didn't, inconsistently. Fixed at the authoring level, not by adding string->boolean
+      # coercion to the extractor — a boolean concept should be captured as a real boolean.
       - id: "hospital_operational_status"
         path: "Organization.active"
-        label: "Operational Status"
-        uiComponent: "Dropdown"
-        choices: ["Functional","Non-Functional"]
+        label: "Currently Operational"
+        uiComponent: "Checkbox"
 
   - resourceType: Organization
     id: section_hospital_abdm_location
     label: "ABDM Location (LGD Codes)"
     fields:
+      # UPDATE — real bug this fix also closes: district_lgd_code and subdistrict_lgd_code both
+      # mapped to the SAME Organization.address.district path before — with the real array-
+      # cardinality fix (local-extractor.js's FHIR_ARRAY_PATHS), two fields sharing one leaf path
+      # now correctly get separate array slots, which for Organization.address (itself an array)
+      # would have split them into TWO DIFFERENT address entries instead of describing the SAME
+      # one facility address — a real, different bug the extension move avoids entirely, not just
+      # the "not really a FHIR-standard field" concern this section is otherwise about.
       - id: "hospital_state_lgd_code"
-        path: "Organization.address.state"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-state-lgd-code"
         label: "State LGD Code (HFR master: lgd/states)"
         uiComponent: "TextInput"
       - id: "hospital_district_lgd_code"
-        path: "Organization.address.district"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-district-lgd-code"
         label: "District LGD Code (HFR master: lgd/districts)"
         uiComponent: "TextInput"
       - id: "hospital_subdistrict_lgd_code"
-        path: "Organization.address.district"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-subdistrict-lgd-code"
         label: "Sub-District LGD Code (HFR master: lgd/subdistricts)"
         uiComponent: "TextInput"
 
-  # STARTER FIELD SET — see system-hospital-profile-v1.yaml's original header comment (ported
-  # verbatim): New_HFR_APIs_Documentation_SBX.pdf's full field list could not be extracted this
-  # session. Not complete; extend once the PDF has been extracted.
   - resourceType: Organization
     id: section_hospital_abdm_registration
     label: "ABDM Facility Registration"
     fields:
       - id: "hospital_tracking_id"
-        path: "Organization.identifier.value"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-tracking-id"
         label: "Tracking ID (from Basic Information step)"
         uiComponent: "TextInput"
+      # hospital_facility_id stays a real Organization.identifier — the ABDM-ASSIGNED facility id,
+      # once registration completes, is a genuine business identifier for this Organization (same
+      # reasoning hospital_npi already used), not registration-process metadata.
       - id: "hospital_facility_id"
         path: "Organization.identifier.value"
         label: "ABDM Facility ID (from Submit step)"
         uiComponent: "TextInput"
       - id: "hospital_abdm_software_code"
-        path: "Organization.identifier.value"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-software-code"
         label: "ABDM-Compliant Software Code (get-Software-details master)"
         uiComponent: "TextInput"
       - id: "hospital_source_of_information"
-        path: "Organization.identifier.value"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-source-of-information"
         label: "Source of Information"
         uiComponent: "TextInput"
       - id: "hospital_source_unique_id"
-        path: "Organization.identifier.value"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-source-unique-id"
         label: "Source Unique ID"
         uiComponent: "TextInput"
 
@@ -199,21 +237,26 @@ composition:
         path: "Practitioner.active"
         label: "Active"
         uiComponent: "Checkbox"
-      # staff_role/staff_specialty were PractitionerRole.code/PractitionerRole.specialty across 2
-      # separate blocks before this merge — collapsing Staff into one repeating block (required so
-      # a repeating instance's core/role/ABDM-registration fields stay correlated; see this file's
-      # header comment) means every field here must share the block's one resourceType, and the
-      # compiler enforces path.startsWith(`${resourceType}.`) with no exception. Practitioner.
-      # extension is FHIR's own designed-for-this escape hatch for an attribute with no first-
-      # class field — reused across both, same convention this file's own ABDM fields already use
-      # (7 fields sharing Practitioner.identifier.value below).
+      # UPDATE — real FHIR-native onboarding rebuild: staff_role/staff_specialty already used
+      # Practitioner.extension (FHIR's own real escape hatch for this — correct call, kept), but
+      # with NO `.url` — real FHIR extensions require one to say WHAT the extension is; multiple
+      # untagged entries in one array are not reliably distinguishable. Every ABDM-specific field
+      # below (previously piled onto the generic Practitioner.identifier.value, an 8-way collision
+      # now array-safe per local-extractor.js's fix but still the wrong FHIR home) moves to its own
+      # distinctly-URLed extension too — "any field not found in the FHIR spec needed for ABDM
+      # capture goes into extension fields" (explicit instruction). staff_license/staff_hprid/
+      # staff_hpr_id_number stay on Practitioner.identifier.value, UNCHANGED — those genuinely ARE
+      # business identifiers for this Practitioner (a license number, an ABDM-assigned HPR ID),
+      # not registration-process metadata.
       - id: "staff_role"
         path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/clinic-staff-role"
         label: "Role"
         uiComponent: "Dropdown"
         choices: ["Chief of Medicine","Doctor","Nurse","Administrator","Receptionist","Radiologist"]
       - id: "staff_specialty"
         path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/clinic-staff-specialty"
         label: "Specialty"
         uiComponent: "MultiSelect"
         choices: ["Cardiology","Neurology","Radiology","Pediatrics","Orthopedics","Dermatology","General Medicine","ENT","Ophthalmology","Psychiatry"]
@@ -237,28 +280,34 @@ composition:
         label: "Last Name (as on Aadhaar)"
         uiComponent: "TextInput"
       - id: "staff_abdm_role"
-        path: "Practitioner.identifier.value"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-abdm-role"
         label: "ABDM Role"
         uiComponent: "Dropdown"
         choices: ["Doctor","Nurse","Facility Manager"]
       - id: "staff_hp_category_code"
-        path: "Practitioner.identifier.value"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-category-code"
         label: "HP Category Code (HPR master: system-of-medicine)"
         uiComponent: "TextInput"
       - id: "staff_hp_subcategory_code"
-        path: "Practitioner.identifier.value"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-subcategory-code"
         label: "HP Sub-Category Code"
         uiComponent: "TextInput"
       - id: "staff_state_code"
-        path: "Practitioner.identifier.value"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-state-code"
         label: "State LGD Code (HPR master: states)"
         uiComponent: "TextInput"
       - id: "staff_district_code"
-        path: "Practitioner.identifier.value"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-district-code"
         label: "District LGD Code (HPR master: districts)"
         uiComponent: "TextInput"
       - id: "staff_council"
-        path: "Practitioner.identifier.value"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council"
         label: "Registered with a Medical/Nursing Council"
         uiComponent: "Checkbox"
       - id: "staff_hprid"

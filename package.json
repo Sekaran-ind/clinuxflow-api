@@ -7,10 +7,11 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "predeploy": "npm run build:kernel",
-    "build:kernel": "npm run build:dictionary && npm run build:graphs-bundle && npm run build:system-forms",
+    "build:kernel": "npm run build:dictionary && npm run build:graphs-bundle && npm run build:system-forms && npm run build:system-flows",
     "build:dictionary": "node tools/dictionary-builder.js",
     "build:graphs-bundle": "node tools/build-graphs-bundle.js",
     "build:system-forms": "node tools/build-system-forms.js",
+    "build:system-flows": "node tools/build-system-flows.js",
     "test": "vitest run"
   },
   "dependencies": {

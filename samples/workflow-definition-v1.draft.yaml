@@ -24,16 +24,17 @@ title: "Clinic Visit Workflow — Room Sequencing"
 #
 # Condition (SPEC-18 §7 step 4, the constrained condition-field type): nested the same way
 # relatedAction is — PlanDefinition.action.condition is itself repeatable (an action can have
-# multiple conditions, all must hold). The captured value is NEVER free-text FHIRPath — it's a
-# selection from a closed, curated CodeSystem/ValueSet (config/plandefinition-condition-types/ in
-# the clinixflow sandbox, served at GET /api/valuesets/plandefinition-condition-types, following
-# the exact same precedent clinic-specialities.json/ConceptMap already established for the
-# supported-specialities list — same mechanism, same "curated JSON catalog, not hand-typed
-# choices" discipline). `condition_kind` is fixed to "applicability" via Hidden+defaultValue,
-# consistent with never asking an author about a field with one obviously-correct answer in this
-# system's use case — "start"/"stop" kinds exist in FHIR but aren't used here. No room in this
-# draft actually uses a condition yet (linear-only, per SPEC-18 §7's original deferral) — the
-# field exists and is wired/tested, not yet exercised by real data.
+# multiple conditions, all must hold). `condition_kind` is fixed to "applicability" via
+# Hidden+defaultValue, consistent with never asking an author about a field with one obviously-
+# correct answer in this system's use case — "start"/"stop" kinds exist in FHIR but aren't used
+# here. No room in this draft actually uses a condition yet (linear-only) — the field exists and
+# is wired/tested, not yet exercised by real data.
+#
+# UPDATE — the expression itself is now plain, direct FHIRPath text (`condition_expression`,
+# mapped to PlanDefinition.action.condition.expression.expression), not a selection from a
+# curated ValueSet extracting into expression.reference the way this originally shipped (see
+# action_condition's own field-level comment below for the real tradeoff this reverses, stated
+# plainly rather than silently).
 #
 # Worked example — filling this out for the five-room sequence should produce:
 #   Rooms (action, one repetition per room):
@@ -113,18 +114,26 @@ composition:
         label: "Condition"
         type: "group"
         repeats: true
-        description: "Optional — most rooms have none. Never free-text FHIRPath; a selection from the curated condition-types ValueSet only."
+        description: "Optional — most rooms have none."
         fields:
           - id: "condition_kind"
             path: "PlanDefinition.action.condition.kind"
             label: "Kind"
             uiComponent: "Hidden"
             defaultValue: "applicability"
-          - id: "condition_type"
-            path: "PlanDefinition.action.condition.expression.reference"
-            label: "Condition Type"
-            uiComponent: "Autocomplete"
-            valueSetUrl: "https://clinuxflow-api.example/api/valuesets/plandefinition-condition-types" # PLACEHOLDER host — real deployment's API_BASE not looked up this session, swap before this leaves draft
-            terminologyServerUrl: "https://clinuxflow-api.example" # same placeholder host — was hardcoded to clinicaltables.nlm.nih.gov before this session's fix, would have silently pointed the wrong server at a locally-served ValueSet
-            required: true
-            description: "Picks a pre-vetted condition by canonical URI (e.g. specialty-equals) — the actual FHIRPath it expands to lives in condition-type-templates.json, not authored here."
+          # UPDATE — simplified away from the curated-ValueSet design this block originally used
+          # (condition_type, Autocomplete-bound to the condition-types ValueSet, extracting into
+          # expression.reference — see git history for that version) per explicit instruction:
+          # "expression.reference can be simplified during compilation to make it as
+          # expression.expression inside PlanDefinition instead of valuesets and condition types
+          # etc." Real tradeoff, stated plainly: this reverses SPEC-18 §7 step 4's deliberate
+          # "never free-text FHIRPath" decision — low-risk today since planDefinitionRunner.js has
+          # never evaluated PlanDefinition.action.condition for anything and no room has ever
+          # actually used one yet (this draft's own "most rooms have none" note); worth revisiting
+          # once a real condition-EVALUATING runtime step exists (sandboxing free-text FHIRPath
+          # would matter then).
+          - id: "condition_expression"
+            path: "PlanDefinition.action.condition.expression.expression"
+            label: "Expression"
+            uiComponent: "TextInput"
+            description: "A FHIRPath expression, authored directly — no curated condition-type catalog."

@@ -266,6 +266,147 @@ describe('PATCH /api/auth/change-password', () => {
     });
 });
 
+describe('PATCH /api/auth/security-question', () => {
+    // SPEC-20 (docs/SPEC-20-REFERENCE-PATTERN-JOURNEY-WORKBENCH-AND-UNAUTH-CUBO-ENTRY.md) §4's
+    // Forgot Password design — didn't exist before this pass, verified by grep not assumed.
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
+        const { issueSessionToken } = await import('./lib/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/auth/security-question', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ securityQuestion: 'First pet?', securityAnswer: 'Rex' }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('400s when securityAnswer is missing', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/auth/security-question', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ securityQuestion: 'First pet?' }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it("200s and sets the CALLER's OWN accountId's security question — never one from the request body", async () => {
+        const updateSpy = vi.spyOn(AccountsDb, 'updateSecurityQuestion').mockResolvedValue(undefined);
+        const token = await tokenFor('clinic1', 'acc1');
+
+        const res = await app.request('/api/auth/security-question', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ securityQuestion: 'First pet?', securityAnswer: 'Rex' }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+
+        expect(updateSpy).toHaveBeenCalledTimes(1);
+        expect(updateSpy.mock.calls[0][0]).toBe(baseEnv.DB);
+        expect(updateSpy.mock.calls[0][1]).toBe('acc1'); // the caller's own accountId
+        expect(updateSpy.mock.calls[0][2]).toBe('First pet?');
+        expect(updateSpy.mock.calls[0][3]).not.toBe('Rex'); // stored as a hash, never the raw answer
+    });
+});
+
+describe('POST /api/auth/forgot-password/question', () => {
+    it('401s without X-Service-Key', async () => {
+        const res = await app.request('/api/auth/forgot-password/question', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: 'a@b.com' }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('404s when no account exists for the email', async () => {
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue(null);
+        const res = await app.request('/api/auth/forgot-password/question', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'nobody@example.com' }),
+        }, baseEnv);
+        expect(res.status).toBe(404);
+    });
+
+    it('404s the same way when the account exists but never set a security question — same message, no distinguishing signal', async () => {
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue({ id: 'acc1', security_question: null });
+        const res = await app.request('/api/auth/forgot-password/question', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'a@b.com' }),
+        }, baseEnv);
+        expect(res.status).toBe(404);
+    });
+
+    it('200s with the real security question when set', async () => {
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue({ id: 'acc1', security_question: 'First pet?' });
+        const res = await app.request('/api/auth/forgot-password/question', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'a@b.com' }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+        expect(body.securityQuestion).toBe('First pet?');
+    });
+});
+
+describe('POST /api/auth/forgot-password/reset', () => {
+    it('404s when no account/security-question exists', async () => {
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue(null);
+        const res = await app.request('/api/auth/forgot-password/reset', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'a@b.com', securityAnswer: 'Rex', newPassword: 'brandNew123' }),
+        }, baseEnv);
+        expect(res.status).toBe(404);
+    });
+
+    it('401s when the answer is wrong', async () => {
+        const answerHash = await hashPassword('rex'); // normalized (lowercased) at set-time
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue({ id: 'acc1', security_answer_hash: answerHash });
+
+        const res = await app.request('/api/auth/forgot-password/reset', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'a@b.com', securityAnswer: 'Fido', newPassword: 'brandNew123' }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('200s, resets the password, and normalizes case/whitespace on the answer', async () => {
+        const answerHash = await hashPassword('rex');
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue({ id: 'acc1', security_answer_hash: answerHash });
+        const updateSpy = vi.spyOn(AccountsDb, 'updatePasswordHash').mockResolvedValue(undefined);
+
+        const res = await app.request('/api/auth/forgot-password/reset', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'a@b.com', securityAnswer: '  Rex  ', newPassword: 'brandNew123' }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+
+        const body = await res.json();
+        expect(body.success).toBe(true);
+        expect(body.token).toBeUndefined(); // deliberately no auto-login — log in fresh afterward
+        expect(updateSpy).toHaveBeenCalledTimes(1);
+        expect(updateSpy.mock.calls[0][1]).toBe('acc1');
+    });
+
+    it('400s on a new password under 8 characters', async () => {
+        const res = await app.request('/api/auth/forgot-password/reset', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'a@b.com', securityAnswer: 'Rex', newPassword: 'short' }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+});
+
 describe('POST /api/auth/invite', () => {
     async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
         const { issueSessionToken } = await import('./lib/session.js');
@@ -1172,5 +1313,143 @@ describe('POST /api/realtime/join', () => {
             body: JSON.stringify({ encounterId: 'enc1' }),
         }, realtimeEnv);
         expect(res.status).toBe(502);
+    });
+});
+
+describe('POST /api/workflow/extract', () => {
+    // SPEC-22 decision #2's real loader, request-time half — the Room-Architect Designer's
+    // "Design & Compile Room" step needs this to turn a filled-in authoring-form response into a
+    // real PlanDefinition interactively; hospital-setup-workflow.test.js/build-system-flows.js
+    // both call ComprehensiveLocalExtractor directly (build-time/test-time), this is the first
+    // real HTTP caller. Reuses the SAME real compiler + the SAME real hospital-setup-workflow-v1
+    // worked-example response as those, proving the endpoint wraps the extractor correctly rather
+    // than re-testing the extractor's own logic (already covered there).
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
+        const { issueSessionToken } = await import('./lib/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/workflow/extract', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ questionnaireJson: {}, responseJson: {} }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('400s when questionnaireJson or responseJson is missing', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/workflow/extract', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson: {} }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+        const body = await res.json();
+        expect(body.success).toBe(false);
+    });
+
+    it('extracts a real PlanDefinition from a real compiled Questionnaire + a real filled-in response', async () => {
+        const { compileYamlToQuestionnaire } = await import('./lib/yaml-to-questionnaire.js');
+        const { buildHospitalSetupWorkflowResponse } = await import('./lib/hospital-setup-workflow-response.js');
+        const fs = await import('fs');
+        const path = await import('path');
+        const yamlSource = fs.readFileSync(path.join(process.cwd(), 'samples', 'hospital-setup-workflow-v1.yaml'), 'utf8');
+        const compiled = compileYamlToQuestionnaire(yamlSource);
+        const responseJson = buildHospitalSetupWorkflowResponse();
+
+        const token = await tokenFor();
+        const res = await app.request('/api/workflow/extract', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson: compiled.questionnaire, responseJson }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+
+        const body = await res.json();
+        expect(body.success).toBe(true);
+        expect(body.warnings).toEqual([]);
+        const plan = body.resources.find((r) => r.resourceType === 'PlanDefinition');
+        expect(plan.title).toBe('Hospital Setup Workflow');
+        expect(plan.action.length).toBe(10);
+        expect(plan.action.map((a) => a.id)).toContain('section_appointment');
+    });
+});
+
+describe('POST /api/workflow/assemble-document', () => {
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
+        const { issueSessionToken } = await import('./lib/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/workflow/assemble-document', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ resources: [], title: 'x', authorRef: { resourceType: 'Practitioner', id: 'p1' } }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('400s when resources is missing', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/workflow/assemble-document', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ title: 'x', authorRef: { resourceType: 'Practitioner', id: 'p1' } }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it('400s when the assembler itself rejects (missing required FHIR fields), surfacing the real error', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/workflow/assemble-document', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ resources: [{ resourceType: 'Organization', id: 'org-1' }] }), // no title, no authorRef
+        }, baseEnv);
+        expect(res.status).toBe(400);
+        const body = await res.json();
+        expect(body.success).toBe(false);
+        expect(body.error).toMatch(/title/i);
+    });
+
+    it('assembles a real document Bundle from real extracted resources — the full compile -> extract -> assemble chain via real HTTP calls', async () => {
+        const { compileYamlToQuestionnaire } = await import('./lib/yaml-to-questionnaire.js');
+        const { ComprehensiveLocalExtractor } = await import('./lib/local-extractor.js');
+        const fs = await import('fs');
+        const path = await import('path');
+        const yamlSource = fs.readFileSync(path.join(process.cwd(), 'samples', 'hospital-setup-workflow-v1.yaml'), 'utf8');
+        // Use the real Provider composition instead — a genuine data-capture YAML, not the
+        // workflow-authoring one — to produce real Organization/Location resources to assemble.
+        const providerYaml = fs.readFileSync(path.join(process.cwd(), 'tools', 'system-forms', 'system-provider-composition-v1.yaml'), 'utf8');
+        const compiled = compileYamlToQuestionnaire(providerYaml);
+        const response = {
+            item: [{ linkId: 'section_hospital', item: [
+                { linkId: 'hospital_name', answer: [{ valueString: 'HTTP Test Hospital' }] },
+            ]}],
+        };
+        const resources = ComprehensiveLocalExtractor.extract(compiled.questionnaire, response);
+        const org = resources.find((r) => r.resourceType === 'Organization');
+
+        const token = await tokenFor();
+        const res = await app.request('/api/workflow/assemble-document', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({
+                resources,
+                title: 'HTTP Test Hospital — Facility Registration',
+                authorRef: { resourceType: 'Organization', id: org.id },
+            }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+
+        const body = await res.json();
+        expect(body.success).toBe(true);
+        expect(body.bundle.resourceType).toBe('Bundle');
+        expect(body.bundle.type).toBe('document');
+        expect(body.bundle.entry[0].resource.resourceType).toBe('Composition');
+        expect(body.bundle.entry.length).toBe(resources.length + 1);
     });
 });

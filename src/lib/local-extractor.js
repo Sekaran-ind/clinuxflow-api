@@ -1,5 +1,47 @@
 import { v4 as uuidv4 } from 'uuid';
 
+// A real, careful FHIR R4 cardinality reference — array-typed (0..*/1..*) properties, keyed by
+// the exact dotted path from the resourceType root (e.g. "Organization.telecom"). Deliberately
+// NOT a full FHIR StructureDefinition mirror — scoped to exactly what this app's own
+// system-forms YAML files use today (tools/system-forms/system-provider-composition-v1.yaml,
+// system-patient-profile-v1.yaml), checked against real FHIR R4 per-resource cardinality, not
+// guessed. Extend this set when a new resourceType/path is authored, same discipline the
+// condition-types ValueSet/clinic-specialities catalogs already use for "real curated data, not
+// invented".
+//
+// Found and fixed this session (empirically confirmed before fixing, not assumed): every one of
+// these paths was previously written as a bare object/scalar via the generic (non-component/
+// coding) branch of _setValueAtPath, so a SECOND field sharing the same leaf path (e.g.
+// hospital_phone + hospital_whatsapp + hospital_email + hospital_website all mapping to
+// Organization.telecom.value) silently overwrote every earlier one — confirmed live with
+// staff_phone/staff_email → only staff_email survived. Real, serious data loss for the exact
+// "3 good onboarding journeys, HAPI-ready" build this closes the door on until fixed.
+const FHIR_ARRAY_PATHS = new Set([
+  // Organization (Facility) — real R4 cardinality
+  'Organization.identifier', 'Organization.alias', 'Organization.type', 'Organization.telecom', 'Organization.address', 'Organization.extension',
+  // Location (Facility branches/hours) — Location.address is genuinely 0..1 in R4, deliberately
+  // NOT listed here; hoursOfOperation.daysOfWeek is an array WITHIN one hoursOfOperation entry.
+  'Location.identifier', 'Location.telecom', 'Location.hoursOfOperation', 'Location.hoursOfOperation.daysOfWeek',
+  // Practitioner (Provider) — .name is 0..* in R4 but this app only ever captures one name per
+  // person; left OUT of this set deliberately so name.text/.given/.family (different leaf paths,
+  // each called once) naturally converge on the same name[0] via _extractAnswers' own per-leaf-
+  // path ledger, rather than needing separate "pin to index 0" logic. .name.given (WITHIN that
+  // one name entry) genuinely needs array handling — a person can have more than one given name.
+  'Practitioner.identifier', 'Practitioner.telecom', 'Practitioner.extension', 'Practitioner.qualification', 'Practitioner.name.given',
+  // HealthcareService (Facility services)
+  'HealthcareService.category', 'HealthcareService.program',
+  // Consent (Facility)
+  'Consent.category',
+  // Appointment — participant.actor is written by BOTH appt_patient and appt_staff, a real
+  // Case-A collision (two different fields, same leaf path) exactly like Organization.telecom.
+  'Appointment.participant',
+  // Patient — same "only one instance captured today" reasoning as Practitioner.name; .contact
+  // and .name are both left out deliberately for the same convergence reason.
+]);
+function isArrayPath(absolutePath) {
+  return FHIR_ARRAY_PATHS.has(absolutePath);
+}
+
 // Converts a completed FHIR QuestionnaireResponse back into a set of discrete FHIR resources
 // (Patient, Observation, Condition, ...), using each Questionnaire item's `definition` string
 // (e.g. "http://hl7.org/Observation#Observation.component.valueQuantity.value") to know which
@@ -58,7 +100,8 @@ export class ComprehensiveLocalExtractor {
                     // lookup never accidentally resolves to a group's own path.
                     blueprintMap.set(item.linkId, {
                         definition: item.definition,
-                        type: item.type
+                        type: item.type,
+                        extensionUrl: item.extensionUrl, // real FHIR extension tagging — see yaml-to-questionnaire.js's own comment on this
                     });
                 }
                 if (item.item && Array.isArray(item.item)) {
@@ -87,7 +130,9 @@ export class ComprehensiveLocalExtractor {
 
         // Track active array index counts dynamically per resource path block to prevent collisions
         const dynamicArrayIndexTrackingLedger = new Map();
-        // groupLinkId -> how many instances of it have been seen so far, across the whole response
+        // Counter key (enclosing-frame path + this group's own linkId) -> how many instances of
+        // THIS group, under THIS specific parent instance, have been seen so far. Deliberately NOT
+        // keyed by linkId alone (see the real bug this fixed, at its use site below).
         const groupInstanceCounters = new Map();
 
         function getOrCreateCacheEntry(cacheKey, resourceType) {
@@ -119,8 +164,21 @@ export class ComprehensiveLocalExtractor {
                 if (isGroupInstance) {
                     let instanceIndex = 0;
                     if (meta.mode !== 'plain-object') {
-                        instanceIndex = groupInstanceCounters.get(answeredItem.linkId) || 0;
-                        groupInstanceCounters.set(answeredItem.linkId, instanceIndex + 1);
+                        // Real bug found via hospital-setup-workflow.test.js's 4-step case: with a
+                        // flat linkId-only key, a nested repeating group (e.g. relatedAction) kept
+                        // counting up across EVERY parent instance that contributed one, instead of
+                        // restarting at 0 for each parent's own array. workflow-definition-v1.draft.
+                        // yaml's 2-room fixture never caught this — only one room had a populated
+                        // relatedAction, so global index 0 == locally-scoped index 0 there either
+                        // way. A 3rd/4th action each contributing their own single relatedAction
+                        // exposed it: the extractor wrote into relatedAction[1]/[2] of their OWN
+                        // array instead of [0], leaving `undefined` holes at the front. Scoping the
+                        // key by the full enclosing-frame path (each frame's own linkId:instanceIndex)
+                        // makes each parent instance's nested count independent, matching this
+                        // function's own "genuinely nested... a frame per enclosing group" design.
+                        const counterKey = [...groupStack.map(f => `${f.groupLinkId}:${f.instanceIndex}`), answeredItem.linkId].join('>');
+                        instanceIndex = groupInstanceCounters.get(counterKey) || 0;
+                        groupInstanceCounters.set(counterKey, instanceIndex + 1);
                     }
                     extractAnswers(answeredItem.item, [...groupStack, { groupLinkId: answeredItem.linkId, instanceIndex, ...meta }]);
                     return;
@@ -147,28 +205,44 @@ export class ComprehensiveLocalExtractor {
                         const resourceType = pathTokens[0];
                         const propertyPathTokens = pathTokens.slice(1);
 
-                        const cleanValue = ComprehensiveLocalExtractor._extractAnswerValue(answeredItem.answer[0]);
-                        if (cleanValue !== undefined && cleanValue !== null) {
+                        // Real bug found live, not hypothetical: a MultiSelect field's multiple
+                        // selected answers were previously truncated to answer[0] alone — only
+                        // the FIRST checked box ever survived extraction. Every answer is now
+                        // extracted and written, each to its own array slot (see below).
+                        const cleanValues = (answeredItem.answer || [])
+                            .map((a) => ComprehensiveLocalExtractor._extractAnswerValue(a))
+                            .filter((v) => v !== undefined && v !== null);
+                        if (cleanValues.length > 0) {
                             const separateInstanceFrame = groupStack.find(f => f.mode === 'separate-instances' && f.resourceType === resourceType);
                             const cacheKey = separateInstanceFrame ? `${resourceType}#${separateInstanceFrame.instanceIndex}` : resourceType;
 
                             const resource = getOrCreateCacheEntry(cacheKey, resourceType);
 
                             const { pointer, consumedTokenCount } = ComprehensiveLocalExtractor._navigateToWriteTarget(resource, groupStack, resourceType);
-                            const remainingPath = propertyPathTokens.slice(consumedTokenCount).join('.');
 
+                            // Ledger now tracks a BASE slot per distinct linkId (not one fixed
+                            // slot) plus a running nextSlot counter, so a multi-answer field claims
+                            // as many consecutive slots as it has values, and the next DIFFERENT
+                            // linkId sharing this same leaf path starts right after them — the
+                            // real fix for the empirically-confirmed staff_phone/staff_email
+                            // (Organization.telecom.value ×4, Practitioner.identifier.value ×9,
+                            // etc.) sibling-collision data loss, generalizing the exact allocation
+                            // idea component/coding already proved, not a new mechanism.
                             const combinationTrackingKey = `${resourceType}.${rightHandPathString}`;
                             if (!dynamicArrayIndexTrackingLedger.has(combinationTrackingKey)) {
-                                dynamicArrayIndexTrackingLedger.set(combinationTrackingKey, []);
+                                dynamicArrayIndexTrackingLedger.set(combinationTrackingKey, { linkIdBase: new Map(), nextSlot: 0 });
                             }
-                            const processedLinkIdsList = dynamicArrayIndexTrackingLedger.get(combinationTrackingKey);
-                            let targetSlotIndex = processedLinkIdsList.indexOf(answeredItem.linkId);
-                            if (targetSlotIndex === -1) {
-                                processedLinkIdsList.push(answeredItem.linkId);
-                                targetSlotIndex = processedLinkIdsList.length - 1;
+                            const ledgerEntry = dynamicArrayIndexTrackingLedger.get(combinationTrackingKey);
+                            let baseSlot = ledgerEntry.linkIdBase.get(answeredItem.linkId);
+                            if (baseSlot === undefined) {
+                                baseSlot = ledgerEntry.nextSlot;
+                                ledgerEntry.linkIdBase.set(answeredItem.linkId, baseSlot);
+                                ledgerEntry.nextSlot += cleanValues.length;
                             }
 
-                            ComprehensiveLocalExtractor._setValueAtPath(pointer, remainingPath, cleanValue, targetSlotIndex);
+                            cleanValues.forEach((cleanValue, valueIndex) => {
+                                ComprehensiveLocalExtractor._setValueAtPath(resourceType, propertyPathTokens, consumedTokenCount, pointer, cleanValue, baseSlot + valueIndex, leafMeta.extensionUrl);
+                            });
                         }
                     }
                 }
@@ -239,6 +313,16 @@ export class ComprehensiveLocalExtractor {
         if (fhirAnswerNode.valueBoolean !== undefined) return fhirAnswerNode.valueBoolean;
         if (fhirAnswerNode.valueDate !== undefined) return fhirAnswerNode.valueDate;
         return fhirAnswerNode.valueString || null;
+    }
+
+    // The real FHIR extension.value[x] key for an already-coerced JS value — mirrors
+    // _extractAnswerValue's own type coercion above (decimal/integer/boolean fall through to
+    // string) so a real extension's value type matches whatever the answer's own FHIR-typed
+    // answer node actually carried, not a guess.
+    static _fhirValueKey(value) {
+        if (typeof value === 'boolean') return 'valueBoolean';
+        if (typeof value === 'number') return Number.isInteger(value) ? 'valueInteger' : 'valueDecimal';
+        return 'valueString';
     }
 
     /**
@@ -349,34 +433,55 @@ export class ComprehensiveLocalExtractor {
     }
 
     /**
-     * Writes assignedValue onto targetObj at the given dot-separated property path (already
-     * relative to whatever _navigateToWriteTarget resolved — group-array navigation happens
-     * before this is called now, not inside it). "component"/"coding" are FHIR list properties
-     * this extractor has always positionally populated — kept as the one remaining hardcoded
-     * array case, since they're leaf-level repetition (e.g. Observation.component), not a group.
-     * dynamicIndexOffset selects which array slot they write into.
+     * Writes assignedValue onto targetObj, walking `fullPathTokens` from `startIndex` (the part
+     * `_navigateToWriteTarget` didn't already consume via groupStack navigation) — `fullPathTokens`
+     * is passed in full (not pre-sliced) so the REAL absolute FHIR path can be reconstructed at
+     * each segment for the FHIR_ARRAY_PATHS lookup below, even though only the tail is actually
+     * walked on `targetObj`.
      *
-     * KNOWN GAP, found and flagged this session, not fixed here (docs/SPEC-13-FHIR-WORKFLOW-
-     * DOCUMENTS-AND-CONFORMANCE.md §5.3's revision): sibling LEAF fields within one group instance
-     * that happen to share the exact same path (e.g. system-provider-composition-v1.yaml's
-     * staff_phone/staff_email both mapping to `Practitioner.telecom.value`) still silently
-     * overwrite each other — a different bug from group-repetition handling, still open.
+     * "component"/"coding" are FHIR list properties this extractor has always positionally
+     * populated by NAME alone (not resourceType-aware) — kept exactly as before, unchanged, since
+     * real production YAMLs (system-encounter-composition-v1.yaml and several samples) already
+     * depend on this shape and it isn't broken. FHIR_ARRAY_PATHS below is the real, resourceType-
+     * aware generalization of the SAME idea for every other array-typed FHIR property this app's
+     * Facility/Provider/Patient composition YAMLs actually use — same "isArrayType ->
+     * dynamicIndexOffset selects which slot" mechanism, just driven by a real cardinality table
+     * instead of two hardcoded names.
+     *
+     * REAL BUG, confirmed live before fixing (not assumed): every non-component/coding path
+     * previously always took the plain-object branch, so (a) a second field sharing the same leaf
+     * path silently overwrote the first (staff_phone/staff_email -> Practitioner.telecom.value,
+     * confirmed only staff_email survived), and (b) even a genuinely-array FHIR property (telecom,
+     * identifier, address, type, ...) was written as a bare object, not a JSON array — structurally
+     * invalid for a real HAPI FHIR server regardless of the collision issue. Both fixed together
+     * here, since they're the same root cause (array-typed properties never being treated as
+     * arrays outside the two hardcoded names).
      */
-    static _setValueAtPath(targetObj, dotPathString, assignedValue, dynamicIndexOffset = 0) {
-        const segments = dotPathString.split('.');
+    static _setValueAtPath(resourceType, fullPathTokens, startIndex, targetObj, assignedValue, dynamicIndexOffset = 0, extensionUrl = undefined) {
         let activePointer = targetObj;
 
-        for (let i = 0; i < segments.length; i++) {
-            let currentKey = segments[i];
-            const isLastNode = (i === segments.length - 1);
+        for (let i = startIndex; i < fullPathTokens.length; i++) {
+            let currentKey = fullPathTokens[i];
+            const isLastNode = (i === fullPathTokens.length - 1);
 
-            const isArrayType = (currentKey === 'component' || currentKey === 'coding');
+            const absolutePath = `${resourceType}.${fullPathTokens.slice(0, i + 1).join('.')}`;
+            const isArrayType = currentKey === 'component' || currentKey === 'coding' || isArrayPath(absolutePath);
             const targetArrayIndex = isArrayType ? dynamicIndexOffset : 0;
 
             if (isLastNode) {
                 if (isArrayType) {
                     if (!Array.isArray(activePointer[currentKey])) activePointer[currentKey] = [];
-                    activePointer[currentKey][targetArrayIndex] = currentKey === 'coding' ? { code: assignedValue } : assignedValue;
+                    // Real FHIR extension shape ({url, value[x]}), not a bare value — "any field
+                    // not found in the FHIR spec needed for ABDM capture goes into extension
+                    // fields" (explicit instruction). Only applies when the YAML field actually
+                    // declared an extensionUrl; an `extension` path with none stays the old bare-
+                    // value behavior (there's no real prior case of this, but failing safe rather
+                    // than guessing a URL is the honest choice).
+                    if (currentKey === 'extension' && extensionUrl) {
+                        activePointer[currentKey][targetArrayIndex] = { url: extensionUrl, [ComprehensiveLocalExtractor._fhirValueKey(assignedValue)]: assignedValue };
+                    } else {
+                        activePointer[currentKey][targetArrayIndex] = currentKey === 'coding' ? { code: assignedValue } : assignedValue;
+                    }
                 } else {
                     activePointer[currentKey] = assignedValue;
                 }
@@ -386,7 +491,7 @@ export class ComprehensiveLocalExtractor {
                     if (!activePointer[currentKey][targetArrayIndex]) activePointer[currentKey][targetArrayIndex] = {};
                     activePointer = activePointer[currentKey][targetArrayIndex];
                 } else {
-                    if (isLastNode === false && segments[i + 1] === 'coding' && !activePointer[currentKey]) {
+                    if (isLastNode === false && fullPathTokens[i + 1] === 'coding' && !activePointer[currentKey]) {
                         activePointer[currentKey] = {};
                     }
                     if (!activePointer[currentKey]) activePointer[currentKey] = {};
@@ -420,17 +525,22 @@ export class ComprehensiveLocalExtractor {
      * full virtual-room-anchored key isn't constructible from today's real captured data, not
      * just an oversight here.
      *
-     * Also verified this session: the fields that WOULD otherwise be the obvious identity anchor
-     * — staff_email, staff_license, staff_hprid — all collide with sibling fields at the same
-     * `_setValueAtPath` target (see that method's own comment), so their extracted value cannot be
-     * trusted today either.
+     * UPDATE — (1) below is now done: FHIR_ARRAY_PATHS (this file's own header) fixed the sibling-
+     * collision bug, so staff_email/staff_license/staff_hprid each now land in their own real
+     * array slot instead of clobbering each other. Still NOT switching this resolver to email,
+     * though — real ContactPoint entries need a `.system` ('email'/'phone'/'url') to reliably tell
+     * WHICH telecom[N] is the email one; today's Staff form captures the values but never tags
+     * which is which, so finding "the email" would mean guessing by array position (fragile,
+     * depends on which fields happened to be filled). A new, still-open gap, not silently worked
+     * around here.
      *
      * Scoped to what's actually reliable right now: `Practitioner.name.text`, combined with
      * `context.facilityId` if the caller supplies one. Known, accepted limitation — a name is not
      * truly unique — kept deliberately rather than silently pretending a better key already works.
-     * Upgrade path, in order: (1) fix _setValueAtPath's sibling-collision gap so staff_email/
-     * staff_hprid are trustworthy, (2) add a Staff-form field referencing
-     * clinic-specialities.json's folder/file, (3) switch this resolver to key off that instead.
+     * Upgrade path, in order: (1) DONE — sibling-collision fix; (2) add `system` tagging to
+     * Staff-form telecom fields (or a Staff-form field referencing clinic-specialities.json's
+     * folder/file) so a real unique anchor becomes extractable; (3) switch this resolver to key
+     * off that instead.
      */
     static _practitionerIdentity(resource, context) {
         const name = resource?.name?.text;

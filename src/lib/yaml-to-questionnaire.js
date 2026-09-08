@@ -230,6 +230,18 @@ export function compileYamlToQuestionnaire(yamlSource) {
             fhirItem.keywords = field.keywords;
         }
 
+        // Facility/Provider FHIR-native onboarding build — "in case any field is not found in
+        // the FHIR spec needed for ABDM capture, that as part of the extension fields" (explicit
+        // instruction). Same "carry an extra YAML property straight through" precedent `keywords`
+        // above already established — a field authored with `path: "Organization.extension"` (or
+        // `Practitioner.extension`, or any other resource's `.extension`) plus `extensionUrl: "..."`
+        // compiles with that URL attached to the item, so local-extractor.js can write a REAL
+        // `{url, valueX}` FHIR extension instead of a bare, untagged value (its own previously-
+        // existing gap — see that file's own header comment on FHIR_ARRAY_PATHS).
+        if (field.extensionUrl) {
+            fhirItem.extensionUrl = field.extensionUrl;
+        }
+
         if (field.uiComponent === 'Autocomplete' && field.valueSetUrl) {
             if (!fhirItem.extension) fhirItem.extension = [];
 

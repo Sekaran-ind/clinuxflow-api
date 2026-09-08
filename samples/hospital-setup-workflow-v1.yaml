@@ -1,0 +1,135 @@
+formId: hospital-setup-workflow-v1
+title: "Hospital Setup — System Flow"
+# SPEC-22 (docs/SPEC-22-PERSISTED-WORKFLOW-SYSTEM-FLOWS-CUBO-STATE-MIRROR-DRAWER-CAPTURE.md)
+# decision 2's first real system-flow YAML — "let us start there" (user, confirming the
+# system-forms-only build sequence). Sequences the REAL, already-existing Hospital sections of
+# tools/system-forms/system-provider-composition-v1.yaml as PlanDefinition actions.
+#
+# Deliberately does NOT redeclare any of those sections' fields. SPEC-18's compiler produces one
+# Questionnaire group per `composition` block below; this file compiles to a SEPARATE
+# PlanDefinition whose action ids are set EQUAL to the real Provider-composition section ids they
+# sequence (section_hospital, etc.) — that shared id is the whole binding. The intended runtime
+# (Cübo's content pane, not yet built) resolves "current action = section_hospital" by slicing
+# that one group out of the ALREADY-COMPILED Provider Questionnaire and rendering it alone via the
+# existing LhcFormHost; on save it round-trips through the real, existing
+# formData.js#withGroupFields (merge one group's fields into the existing Provider record without
+# touching the others) fed by useSystemForms.js#extractResponse (reads a rendered LForms container
+# back out as a QuestionnaireResponse) — both already real and tested, neither modified by this
+# file. Two sources of truth for the same fields was the alternative rejected here.
+#
+# UPDATE — scope grew from the original 4-step (Hospital + ABDM sub-chain only) version to the
+# real, currently-running 10-action shape (clinux-frontend's hospitalSetupPlanDefinition.js):
+# section_hospital + its 3 ABDM sub-blocks, PLUS the 6 operational groups (Branch/Location, Staff,
+# Services, Hours, Consent, Appointment) — all real, confirmed `repeats: true` sections of
+# tools/system-forms/system-provider-composition-v1.yaml. See hospital-setup-workflow-response.js
+# for the full worked-example response this now compiles/extracts against — this file's own
+# `composition` schema needed NO changes to support the larger step count (Steps was always a
+# generic repeating group, not hardcoded to 4).
+#
+# Later, not-yet-implemented note: a subsequent design pass (SPEC-22 §5.8) decided section_staff
+# conceptually belongs to a separate "Provider" room (distinct from "Facility"), and
+# section_appointment should move to a global, non-room action list with real FHIR
+# Appointment.status-style transitions, tied to the app's Request-pattern workflow — NEITHER
+# relocation has been implemented yet; both stay listed here today because that's what the real,
+# currently-running plan actually does. Don't assume this file already reflects that later
+# decision.
+#
+# section_hospital_abdm_registration is flagged in its OWN source file as an incomplete "starter
+# field set" — sequencing it here only reserves the action id; it doesn't require its fields to be
+# complete yet.
+#
+# Worked example — filling this out for all 10 steps should produce: a linear ABDM sub-chain
+# (section_hospital -> facility_type -> location -> registration, each `after-end` the one
+# before — a hospital must exist before it can be classified, must be classified before its
+# location is coded, must be located before it can be registered) PLUS 6 siblings
+# (section_location/staff/services_matrix/hours/consent/appointment) that each depend ONLY on
+# section_hospital directly, not on each other or on the ABDM sub-chain — a real menu/checklist of
+# operational groups, not a forced order. See hospital-setup-workflow-response.js for the exact,
+# hand-built QuestionnaireResponse (there's no interactive authoring UI producing this yet).
+composition:
+  - resourceType: PlanDefinition
+    id: section_workflow_plan
+    label: "Hospital Setup Workflow"
+    fields:
+      - id: "plan_title"
+        path: "PlanDefinition.title"
+        label: "Workflow Title"
+        uiComponent: "TextInput"
+        required: true
+      - id: "plan_status"
+        path: "PlanDefinition.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["draft", "active", "retired"]
+        required: true
+      - id: "plan_type"
+        path: "PlanDefinition.type"
+        label: "Type"
+        uiComponent: "Dropdown"
+        choices: ["workflow-definition", "order-set", "clinical-protocol"]
+        required: true
+        description: "workflow-definition for a system-flow sequence (this file) — see SPEC-18 §6."
+
+  - resourceType: PlanDefinition
+    id: section_workflow_action
+    label: "Steps"
+    repeats: true
+    fields:
+      - id: "action_id"
+        path: "PlanDefinition.action.id"
+        label: "Step ID"
+        uiComponent: "TextInput"
+        required: true
+        description: "Set equal to the real Provider-composition section id it renders (section_hospital, etc.) — the binding between this sequence and the actual captured fields, not a separate lookup table."
+      - id: "action_title"
+        path: "PlanDefinition.action.title"
+        label: "Step Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "action_related"
+        path: "PlanDefinition.action.relatedAction"
+        label: "Depends On"
+        type: "group"
+        repeats: true
+        description: "Nested on purpose — each entry here belongs to THIS step, not a separate shared table. A step with no dependency (the root, Hospital Details) simply has none."
+        fields:
+          - id: "relation_target_action_id"
+            path: "PlanDefinition.action.relatedAction.actionId"
+            label: "Depends On Step"
+            uiComponent: "TextInput"
+            required: true
+          - id: "relation_relationship"
+            path: "PlanDefinition.action.relatedAction.relationship"
+            label: "Relationship"
+            uiComponent: "Dropdown"
+            choices: ["before-start", "before", "before-end", "concurrent-with-start", "concurrent", "concurrent-with-end", "after-start", "after", "after-end"]
+            required: true
+      - id: "action_condition"
+        path: "PlanDefinition.action.condition"
+        label: "Condition"
+        type: "group"
+        repeats: true
+        description: "Optional — no step in this flow uses one yet (deliberately linear)."
+        fields:
+          - id: "condition_kind"
+            path: "PlanDefinition.action.condition.kind"
+            label: "Kind"
+            uiComponent: "Hidden"
+            defaultValue: "applicability"
+          # UPDATE — simplified from the original curated-ValueSet design (condition_type,
+          # Autocomplete-bound to GET /api/valuesets/plandefinition-condition-types, extracting
+          # into expression.reference) per explicit instruction: "expression.reference can be
+          # simplified during compilation to make it as expression.expression inside
+          # PlanDefinition instead of valuesets and condition types etc." Real, not risky right
+          # now — planDefinitionRunner.js has never read PlanDefinition.action.condition for
+          # anything (only relatedAction/stateIn drives real transitions), and no room has ever
+          # actually filled this field with real data yet, per this comment's own original
+          # "no step in this flow uses one yet" note. The genuine tradeoff, stated plainly: this
+          # reverses SPEC-18 §7 step 4's deliberate "never free-text FHIRPath" decision — worth
+          # revisiting if/when a real condition-EVALUATING runtime step gets built later (sandboxing
+          # what's now free-text FHIRPath would matter then, not while nothing evaluates it).
+          - id: "condition_expression"
+            path: "PlanDefinition.action.condition.expression.expression"
+            label: "Expression"
+            uiComponent: "TextInput"
+            description: "A FHIRPath expression, authored directly — no curated condition-type catalog."

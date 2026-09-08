@@ -1,0 +1,21 @@
+-- SPEC-20 (docs/SPEC-20-REFERENCE-PATTERN-JOURNEY-WORKBENCH-AND-UNAUTH-CUBO-ENTRY.md) §4's
+-- Forgot Password design: security-question recovery, since no email-sending infrastructure
+-- exists anywhere in this app (same real gap Phase D's team-invite flow already documented
+-- working around by having the inviting admin set a new teammate's password directly out of
+-- band -- that shortcut doesn't work here, since the whole point is the user has lost the
+-- password and can't hand themselves a new one).
+--
+-- Nullable, not required -- every account created before this migration has neither column set,
+-- and making them NOT NULL would break existing rows. POST /api/auth/register accepts them as
+-- optional fields (existing register tests, and any future caller that doesn't collect one --
+-- e.g. createTeammateAccount -- stay valid); the new entry-flow UI is what actually requires them
+-- before calling register. An account with no security question set simply can't use
+-- forgot-password yet -- PATCH /api/auth/security-question lets it be set/changed after the fact,
+-- covering both new and pre-existing accounts.
+--
+-- security_answer_hash uses the exact same pbkdf2-sha256 scheme passwordHash.js already
+-- implements (hashPassword/verifyPassword reused directly, not a second hashing scheme) --
+-- answer text is normalized (trimmed + lowercased) before hashing/verifying so "Blue"/"blue "
+-- both match.
+ALTER TABLE accounts ADD COLUMN security_question TEXT;
+ALTER TABLE accounts ADD COLUMN security_answer_hash TEXT;

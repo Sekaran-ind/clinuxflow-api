@@ -310,4 +310,40 @@ composition:
         expect(result.success).toBe(false);
         expect(result.errors.some((e) => e.includes('Invalid FHIR Path'))).toBe(true);
     });
+
+    // "any field not found in the FHIR spec needed for ABDM capture goes into extension fields"
+    // (explicit instruction) — the compiler-side half; local-extractor.js's own tests prove the
+    // extraction-side write shape.
+    it('carries field.extensionUrl through onto the compiled item, same "extra YAML property survives compilation" precedent keywords already established', () => {
+        const yamlSource = `
+formId: test-extension-url-v1
+composition:
+  - resourceType: Organization
+    fields:
+      - id: "ownership"
+        path: "Organization.extension"
+        label: "Ownership"
+        uiComponent: "TextInput"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code"
+`;
+        const result = compileYamlToQuestionnaire(yamlSource);
+        expect(result.success).toBe(true);
+        expect(result.questionnaire.item[0].item[0].extensionUrl).toBe('https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code');
+    });
+
+    it('a field with no extensionUrl compiles with no extensionUrl property at all (not undefined-but-present)', () => {
+        const yamlSource = `
+formId: test-no-extension-url-v1
+composition:
+  - resourceType: Organization
+    fields:
+      - id: "name"
+        path: "Organization.name"
+        label: "Name"
+        uiComponent: "TextInput"
+`;
+        const result = compileYamlToQuestionnaire(yamlSource);
+        expect(result.success).toBe(true);
+        expect('extensionUrl' in result.questionnaire.item[0].item[0]).toBe(false);
+    });
 });
