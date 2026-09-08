@@ -213,7 +213,24 @@ export class ComprehensiveLocalExtractor {
                             .map((a) => ComprehensiveLocalExtractor._extractAnswerValue(a))
                             .filter((v) => v !== undefined && v !== null);
                         if (cleanValues.length > 0) {
-                            const separateInstanceFrame = groupStack.find(f => f.mode === 'separate-instances' && f.resourceType === resourceType);
+                            // SPEC-24 §2 real bug found live (a repeating Practitioner group with a
+                            // nested PractitionerRole sub-group — the real shape Provider capture
+                            // needs): this used to require the frame's OWN resourceType to match
+                            // the FIELD's resourceType, so a nested/sibling field belonging to a
+                            // DIFFERENT resourceType than its enclosing separate-instances frame
+                            // (e.g. PractitionerRole fields inside a Practitioner-typed repeating
+                            // group) fell through to the un-suffixed, singleton cache key — every
+                            // repetition silently clobbered the last one's PractitionerRole into a
+                            // single shared resource (confirmed empirically before this fix: 2 real
+                            // staff members in, 1 PractitionerRole out, holding only the second
+                            // one's code). The nearest ENCLOSING separate-instances frame, of ANY
+                            // resourceType, is what actually scopes "which repetition this
+                            // belongs to" — searched innermost-first so a genuinely nested repeat
+                            // (SPEC-18's own case) still finds its own closest boundary first, not
+                            // an outer one. This doesn't change behavior for the dominant existing
+                            // case (a field's own resourceType already matches its frame) since
+                            // that frame is still the nearest one found.
+                            const separateInstanceFrame = [...groupStack].reverse().find(f => f.mode === 'separate-instances');
                             const cacheKey = separateInstanceFrame ? `${resourceType}#${separateInstanceFrame.instanceIndex}` : resourceType;
 
                             const resource = getOrCreateCacheEntry(cacheKey, resourceType);
@@ -289,9 +306,20 @@ export class ComprehensiveLocalExtractor {
                 // Automatically tie the physical office branch to the parent corporate entity
                 resource.managingOrganization = { reference: `Organization/${resourceCache.Organization.id}` };
             }
-            if (type === 'PractitionerRole' && resourceCache.Practitioner && resourceCache.Organization) {
-                // Link the medical staff member's active profile role to the practice facility
-                resource.practitioner = { reference: `Practitioner/${resourceCache.Practitioner.id}` };
+            if (type === 'PractitionerRole' && resourceCache.Organization) {
+                // SPEC-24 §2 real bug found alongside the cache-key fix above: this used to read
+                // the bare `resourceCache.Practitioner` key, which only ever existed for a
+                // singleton (non-repeating) Practitioner — once a repeating Staff group correctly
+                // produces `Practitioner#0`, `Practitioner#1`, ... (the fix above), this lookup
+                // always missed and silently left EVERY PractitionerRole unlinked. A PractitionerRole
+                // belongs to the Practitioner from the SAME repetition — its own cacheKey carries
+                // that same "#N" suffix (both are nested under the identical enclosing
+                // separate-instances frame) — so that's looked up first, falling back to the
+                // unqualified singleton key for a non-repeating capture flow (e.g. a single
+                // "add myself" instance) where no suffix was ever assigned.
+                const instanceSuffix = cacheKey.includes('#') ? cacheKey.slice(cacheKey.indexOf('#')) : '';
+                const practitioner = resourceCache[`Practitioner${instanceSuffix}`] || resourceCache.Practitioner;
+                if (practitioner) resource.practitioner = { reference: `Practitioner/${practitioner.id}` };
                 resource.organization = { reference: `Organization/${resourceCache.Organization.id}` };
             }
 

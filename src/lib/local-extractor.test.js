@@ -249,6 +249,79 @@ describe('ComprehensiveLocalExtractor — repeating-group handling (severe bug, 
     expect(practitioner.id).toMatch(/^practitioner-/);
     expect(role.practitioner.reference).toBe(`Practitioner/${practitioner.id}`);
   });
+
+  it('SPEC-24 §2 real bug, confirmed live before this fix: a resourceType nested inside a DIFFERENT repeating resourceType\'s frame (PractitionerRole inside a repeating Practitioner "Staff" group — the real shape Provider capture needs) produced only ONE shared PractitionerRole, silently clobbered down to the last repetition\'s own values', () => {
+    const bp = blueprint([]);
+    bp.item = [{
+      linkId: 'section_staff', repeats: true, item: [
+        { linkId: 'staff_name', definition: 'http://hl7.org/Practitioner#Practitioner.name.text', type: 'string' },
+        {
+          linkId: 'staff_role_group', repeats: false, definition: 'http://hl7.org/Practitioner#PractitionerRole', item: [
+            { linkId: 'staff_role_code', definition: 'http://hl7.org/Practitioner#PractitionerRole.code', type: 'string' },
+          ],
+        },
+      ],
+    }];
+    const response = {
+      item: [
+        { linkId: 'section_staff', item: [
+          { linkId: 'staff_name', answer: [{ valueString: 'Dr. Alice' }] },
+          { linkId: 'staff_role_group', item: [{ linkId: 'staff_role_code', answer: [{ valueString: '1' }] }] },
+        ] },
+        { linkId: 'section_staff', item: [
+          { linkId: 'staff_name', answer: [{ valueString: 'Dr. Bob' }] },
+          { linkId: 'staff_role_group', item: [{ linkId: 'staff_role_code', answer: [{ valueString: '2' }] }] },
+        ] },
+      ],
+    };
+
+    const result = ComprehensiveLocalExtractor.extract(bp, response);
+    const roles = result.filter((r) => r.resourceType === 'PractitionerRole');
+
+    expect(roles.map((r) => r.code)).toEqual(['1', '2']); // both survive; used to collapse to just ['2']
+  });
+
+  it('each per-repetition PractitionerRole correctly cross-references its OWN Practitioner (and the shared singleton Organization), not another repetition\'s', () => {
+    const bp = blueprint([]);
+    bp.item = [
+      { linkId: 'section_hospital', item: [{ linkId: 'hospital_name', definition: 'http://hl7.org/Organization#Organization.name', type: 'string' }] },
+      {
+        linkId: 'section_staff', repeats: true, item: [
+          { linkId: 'staff_name', definition: 'http://hl7.org/Practitioner#Practitioner.name.text', type: 'string' },
+          {
+            linkId: 'staff_role_group', repeats: false, definition: 'http://hl7.org/Practitioner#PractitionerRole', item: [
+              { linkId: 'staff_role_code', definition: 'http://hl7.org/Practitioner#PractitionerRole.code', type: 'string' },
+            ],
+          },
+        ],
+      },
+    ];
+    const response = {
+      item: [
+        { linkId: 'section_hospital', item: [{ linkId: 'hospital_name', answer: [{ valueString: 'ABC Hospital' }] }] },
+        { linkId: 'section_staff', item: [
+          { linkId: 'staff_name', answer: [{ valueString: 'Dr. Alice' }] },
+          { linkId: 'staff_role_group', item: [{ linkId: 'staff_role_code', answer: [{ valueString: '1' }] }] },
+        ] },
+        { linkId: 'section_staff', item: [
+          { linkId: 'staff_name', answer: [{ valueString: 'Dr. Bob' }] },
+          { linkId: 'staff_role_group', item: [{ linkId: 'staff_role_code', answer: [{ valueString: '2' }] }] },
+        ] },
+      ],
+    };
+
+    const result = ComprehensiveLocalExtractor.extract(bp, response);
+    const org = result.find((r) => r.resourceType === 'Organization');
+    const alice = result.find((r) => r.resourceType === 'Practitioner' && r.name.text === 'Dr. Alice');
+    const bob = result.find((r) => r.resourceType === 'Practitioner' && r.name.text === 'Dr. Bob');
+    const aliceRole = result.find((r) => r.resourceType === 'PractitionerRole' && r.code === '1');
+    const bobRole = result.find((r) => r.resourceType === 'PractitionerRole' && r.code === '2');
+
+    expect(aliceRole.practitioner.reference).toBe(`Practitioner/${alice.id}`);
+    expect(bobRole.practitioner.reference).toBe(`Practitioner/${bob.id}`);
+    expect(aliceRole.organization.reference).toBe(`Organization/${org.id}`);
+    expect(bobRole.organization.reference).toBe(`Organization/${org.id}`);
+  });
 });
 
 // SPEC-23/§"Facility Onboarding/Provider Onboarding/Patient Registration" build — a real,
