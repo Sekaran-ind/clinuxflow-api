@@ -337,12 +337,6 @@ composition:
         path: "Practitioner.name.family"
         label: "Last Name (as on Aadhaar)"
         uiComponent: "TextInput"
-      - id: "staff_abdm_role"
-        path: "Practitioner.extension"
-        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-abdm-role"
-        label: "ABDM Role"
-        uiComponent: "Dropdown"
-        choices: ["Doctor","Nurse","Facility Manager"]
       - id: "staff_hp_category_code"
         path: "Practitioner.extension"
         extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-category-code"
@@ -376,6 +370,50 @@ composition:
         path: "Practitioner.identifier.value"
         label: "HPR ID Number (assigned after creation)"
         uiComponent: "TextInput"
+
+  # SPEC-24 §2's own real modeling upgrade: PractitionerRole (this Practitioner's role AT this
+  # facility) as a genuinely separate FHIR resource from Practitioner (the person), so one person
+  # can later hold roles at more than one facility — the split ClinuxFlowProviderRole.json is
+  # built against. A SIBLING top-level block, not nested inside section_staff above: nesting a
+  # DIFFERENT resourceType's fields inside a repeating group compiles clean through
+  # local-extractor.js (confirmed, and fixed a real cross-resourceType instance-clobbering bug
+  # doing so) but NOT through yaml-to-questionnaire.js's own schema/dictionary validation, which
+  # ties every field in a block — nested or not — to that ONE block's own declared resourceType;
+  # a bare resource-type name like "PractitionerRole" is not a real field PATH within Practitioner
+  # for that check to accept. Teaching the compiler a per-group resourceType override is a real,
+  # separate piece of work, not bundled into this pass. A sibling block needs no compiler change
+  # at all and is exactly the existing, already-proven pattern (section_hospital/section_staff/...
+  # are already siblings, each its own resourceType) — the only real requirement it adds is that
+  # the SAVE flow appends one section_staff instance and one section_staff_role instance together,
+  # always in lockstep (hand-guaranteed by ProviderBasicsHost.vue's own merge logic, not LForms'
+  # independent per-group "+ Add Another") — local-extractor.js's own separate-instances counter
+  # is a simple running count per group linkId, so matching append order is what keeps the Nth
+  # repetition of each block correctly correlated to the same real staff member.
+  #
+  # PractitionerRole.practitioner/.organization are NOT fields here — both get auto-linked by
+  # local-extractor.js (matching this SAME repetition's own Practitioner, and the one Organization
+  # in this record) once both resources exist in the same extraction — no manual reference field
+  # needed, same as it already worked for the single-Practitioner case.
+  - resourceType: PractitionerRole
+    id: section_staff_role
+    label: "Role at this Facility"
+    repeats: true
+    fields:
+      - id: "staff_role_active"
+        path: "PractitionerRole.active"
+        label: "Currently Active in this Role"
+        uiComponent: "Checkbox"
+      # Real HPR role codes confirmed against "1. Register Healthcare Professional (Doctor & Nurse)
+      # API.pdf"'s own Roles table (1/2/3) — this WAS staff_abdm_role on Practitioner.extension
+      # with invented Doctor/Nurse/Facility Manager choices, conflating the SEPARATE
+      # hpCategoryCode concept above with the real HPR role table; ClinuxFlowProviderRole.json's
+      # own comment already reconciles the prior YAML's "Administrator" concept as really being
+      # HPR's own "Facility Manager" role. Retargeted here, not duplicated.
+      - id: "staff_provider_role"
+        path: "PractitionerRole.code"
+        label: "HPR Role (HPR master: role)"
+        uiComponent: "Dropdown"
+        choices: ["Healthcare Professional", "Facility Manager", "Healthcare Professional and Facility Manager"]
 
   - resourceType: HealthcareService
     id: section_services_matrix

@@ -1576,3 +1576,100 @@ describe('POST /api/facility/conformance', () => {
         expect(body.nextActions.every((a) => a.sourceResourceId === body.organization.id)).toBe(true);
     });
 });
+
+describe('POST /api/provider/conformance', () => {
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
+        const { issueSessionToken } = await import('./lib/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+    async function compiledQuestionnaire() {
+        const { compileYamlToQuestionnaire } = await import('./lib/yaml-to-questionnaire.js');
+        const fs = await import('fs');
+        const path = await import('path');
+        const yamlSource = fs.readFileSync(path.join(process.cwd(), 'tools', 'system-forms', 'system-provider-composition-v1.yaml'), 'utf8');
+        return compileYamlToQuestionnaire(yamlSource).questionnaire;
+    }
+    function stringAnswer(linkId, value) { return { linkId, answer: [{ valueString: value }] }; }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/provider/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ questionnaireJson: {}, responseJson: {} }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('400s when responseJson is missing', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/provider/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson: {} }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it('reports an empty providers list when no staff have been captured yet', async () => {
+        const token = await tokenFor();
+        const questionnaireJson = await compiledQuestionnaire();
+        const res = await app.request('/api/provider/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson, responseJson: { item: [] } }),
+        }, baseEnv);
+        const body = await res.json();
+        expect(body.success).toBe(true);
+        expect(body.providers).toEqual([]);
+    });
+
+    it('the real chain: two staff members, each a real, correctly-paired Practitioner + PractitionerRole, auto-linked to the same real Organization', async () => {
+        const token = await tokenFor();
+        const questionnaireJson = await compiledQuestionnaire();
+        const responseJson = {
+            item: [
+                { linkId: 'section_hospital', item: [stringAnswer('hospital_name', 'ABC Hospital')] },
+                { linkId: 'section_staff', item: [
+                    stringAnswer('staff_first_name', 'Priya'), stringAnswer('staff_last_name', 'Rao'),
+                    stringAnswer('staff_email', 'priya@example.com'), stringAnswer('staff_hprid', 'priya@hpr.abdm'),
+                    stringAnswer('staff_hp_category_code', '1'), stringAnswer('staff_hp_subcategory_code', '1'),
+                ] },
+                { linkId: 'section_staff_role', item: [
+                    { linkId: 'staff_role_active', answer: [{ valueBoolean: true }] },
+                    stringAnswer('staff_provider_role', 'Healthcare Professional'),
+                ] },
+                { linkId: 'section_staff', item: [
+                    stringAnswer('staff_first_name', 'Arjun'), stringAnswer('staff_last_name', 'Mehta'),
+                ] },
+                { linkId: 'section_staff_role', item: [
+                    stringAnswer('staff_provider_role', 'Facility Manager'),
+                ] },
+            ],
+        };
+
+        const res = await app.request('/api/provider/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson, responseJson }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+
+        expect(body.providers).toHaveLength(2);
+        const priya = body.providers.find((p) => p.practitioner.name.given?.includes('Priya'));
+        const arjun = body.providers.find((p) => p.practitioner.name.given?.includes('Arjun'));
+
+        // Priya has a real license/HPR-id/category set but no license (identifier slicing is a
+        // known, deliberately deferred gap — see the YAML's own comment); Arjun has almost nothing.
+        expect(priya.role.code).toBe('Healthcare Professional');
+        expect(priya.role.practitioner.reference).toBe(`Practitioner/${priya.practitioner.id}`);
+        expect(arjun.role.code).toBe('Facility Manager');
+        expect(arjun.role.practitioner.reference).toBe(`Practitioner/${arjun.practitioner.id}`);
+        // Neither role got cross-linked to the OTHER practitioner — the real bug this whole chain exists to catch.
+        expect(priya.role.practitioner.reference).not.toBe(arjun.role.practitioner.reference);
+
+        expect(priya.roleValid).toBe(true); // PractitionerRole itself has no deferred-slicing gap
+        expect(priya.practitionerValid).toBe(false); // telecom:email/identifier:hprId slicing — known, deferred
+        expect(arjun.practitionerErrors.length).toBeGreaterThan(priya.practitionerErrors.length); // Arjun genuinely has less captured
+    });
+});

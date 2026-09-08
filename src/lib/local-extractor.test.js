@@ -382,10 +382,14 @@ describe('ComprehensiveLocalExtractor — FHIR array-cardinality fix (real data-
     expect(practitioner.identifier.map((i) => i.value).sort()).toEqual(['LIC-1', 'HPR-1', 'HPRN-1'].sort());
   });
 
-  it('the 6 ABDM-registration-process fields (staff_abdm_role/hp_category/hp_subcategory/state/district/council) land as real, distinctly-URLed extensions, not bare identifiers', () => {
+  // UPDATE — was 6 fields including staff_abdm_role; SPEC-24 §2 real re-homing moved that field
+  // off Practitioner.extension entirely (it's PractitionerRole.code now, a genuinely separate
+  // resource — see system-provider-composition-v1.yaml's own section_staff_role comment and the
+  // dedicated PractitionerRole test just below this one), leaving 5 real Practitioner-level
+  // ABDM-registration extensions here.
+  it('the 5 ABDM-registration-process fields (hp_category/hp_subcategory/state/district/council) land as real, distinctly-URLed extensions, not bare identifiers', () => {
     const response = staffAnswer(
       answered('staff_name', 'Dr. Nine Fields'),
-      answered('staff_abdm_role', 'Doctor'),
       answered('staff_hp_category_code', 'CAT-1'),
       answered('staff_hp_subcategory_code', 'SUB-1'),
       answered('staff_state_code', 'ST-1'),
@@ -396,11 +400,33 @@ describe('ComprehensiveLocalExtractor — FHIR array-cardinality fix (real data-
     const practitioner = result.find((r) => r.resourceType === 'Practitioner');
 
     expect(Array.isArray(practitioner.extension)).toBe(true);
-    expect(practitioner.extension.length).toBe(6);
+    expect(practitioner.extension.length).toBe(5);
     const byUrl = Object.fromEntries(practitioner.extension.map((e) => [e.url, e]));
-    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hpr-abdm-role'].valueString).toBe('Doctor');
     expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hpr-category-code'].valueString).toBe('CAT-1');
     expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council'].valueBoolean).toBe(true);
+  });
+
+  it('SPEC-24 §2: staff_provider_role/staff_role_active (section_staff_role, a sibling block) extract to a real, separate PractitionerRole resource, auto-linked to the Practitioner and Organization from the same submission', () => {
+    const response = {
+      item: [
+        { linkId: 'section_hospital', item: [answered('hospital_name', 'ABC Hospital')] },
+        { linkId: 'section_staff', item: [{ linkId: 'section_staff', item: [answered('staff_name', 'Dr. Role Test')] }] },
+        { linkId: 'section_staff_role', item: [
+          answered('staff_provider_role', 'Facility Manager'),
+          { linkId: 'staff_role_active', answer: [{ valueBoolean: true }] },
+        ] },
+      ],
+    };
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    const org = result.find((r) => r.resourceType === 'Organization');
+    const practitioner = result.find((r) => r.resourceType === 'Practitioner');
+    const role = result.find((r) => r.resourceType === 'PractitionerRole');
+
+    expect(role.code).toBe('Facility Manager');
+    expect(role.active).toBe(true);
+    expect(role.practitioner.reference).toBe(`Practitioner/${practitioner.id}`);
+    expect(role.organization.reference).toBe(`Organization/${org.id}`);
+    expect(practitioner.extension).toBeUndefined(); // the old, wrong Practitioner.extension home is gone, not just unused
   });
 
   it('REGRESSION: a MultiSelect field with multiple selections keeps ALL of them, not just the first', () => {
@@ -591,7 +617,6 @@ describe('ComprehensiveLocalExtractor — real end-to-end against the improved F
         { linkId: 'section_staff', item: [{ linkId: 'section_staff', item: [
           ans('staff_name', 'Dr. Priya Rao'),
           ans('staff_license', 'MCI-12345'),
-          ans('staff_abdm_role', 'Doctor'),
           ans('staff_hp_category_code', 'A'),
         ]}]},
       ],

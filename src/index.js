@@ -26,6 +26,8 @@ import defaultBlueprintYaml from '../data/vitals-room.yaml';
 import clinicSpecialities from '../data/clinic-specialities.json';
 import conditionTypes from '../data/condition-types.json';
 import clinuxFlowFacilitySd from '../data/structure-definitions/ClinuxFlowFacility.json';
+import clinuxFlowProviderSd from '../data/structure-definitions/ClinuxFlowProvider.json';
+import clinuxFlowProviderRoleSd from '../data/structure-definitions/ClinuxFlowProviderRole.json';
 import clinuxFlowOnboardingGraph from '../data/graph-definitions/ClinuxFlowOnboardingGraph.json';
 
 export { ChatSignalingRoom } from './durable-objects/ChatSignalingRoom.js';
@@ -1108,6 +1110,58 @@ app.post('/api/facility/conformance', requireUser(), async (c) => {
         return c.json({ success: true, valid, errors, organization, nextActions });
     } catch (err) {
         console.error('❌ Facility Conformance Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * POST /api/provider/conformance
+ * Body: { questionnaireJson, responseJson } — same shape as POST /api/facility/conformance.
+ * SPEC-24 §7 step 6's own "follow the proven pattern" — the same extract -> validate ->
+ * next-best-action chain, extended for Provider's real multiplicity: unlike a Facility (always
+ * exactly one Organization), there can be many Practitioner+PractitionerRole pairs, one per real
+ * staff member. Paired by their relative order WITHIN each resourceType (both derive their own
+ * "#N" repetition index from the same left-to-right scan of the response — see
+ * local-extractor.js's own separate-instances fix — so filtering by resourceType and zipping by
+ * that filtered position is correct regardless of whether the caller interleaves the two groups
+ * or submits all of one then all of the other; ProviderBasicsHost.vue does the latter). A missing
+ * PractitionerRole for a given Practitioner (not possible via that component's own lockstep
+ * add/remove, but not assumed here) is reported as its own real error, not silently skipped.
+ */
+app.post('/api/provider/conformance', requireUser(), async (c) => {
+    try {
+        const { questionnaireJson, responseJson } = await c.req.json();
+        if (!questionnaireJson || !responseJson) {
+            return c.json({ success: false, error: 'questionnaireJson and responseJson are both required.' }, 400);
+        }
+        const resources = ComprehensiveLocalExtractor.extract(questionnaireJson, responseJson);
+        const organization = resources.find((r) => r.resourceType === 'Organization');
+        const practitioners = resources.filter((r) => r.resourceType === 'Practitioner');
+        const roles = resources.filter((r) => r.resourceType === 'PractitionerRole');
+
+        const validationResults = {};
+        if (organization) validationResults[organization.id] = validate(clinuxFlowFacilitySd, organization);
+
+        const providers = practitioners.map((practitioner, i) => {
+            const role = roles[i] ?? null;
+            const practitionerResult = validate(clinuxFlowProviderSd, practitioner);
+            const roleResult = role
+                ? validate(clinuxFlowProviderRoleSd, role)
+                : { valid: false, errors: [{ path: 'PractitionerRole', message: 'No role captured for this staff member yet.' }] };
+            validationResults[practitioner.id] = practitionerResult;
+            if (role) validationResults[role.id] = roleResult;
+            return {
+                practitioner, practitionerValid: practitionerResult.valid, practitionerErrors: practitionerResult.errors,
+                role, roleValid: roleResult.valid, roleErrors: roleResult.errors,
+            };
+        });
+
+        const bundle = [organization, ...practitioners, ...roles].filter(Boolean);
+        const nextActions = nextBestActions(clinuxFlowOnboardingGraph, bundle, validationResults);
+
+        return c.json({ success: true, providers, nextActions });
+    } catch (err) {
+        console.error('❌ Provider Conformance Exception:', err.message);
         return c.json({ success: false, error: err.message }, 400);
     }
 });
