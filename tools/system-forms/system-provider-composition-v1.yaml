@@ -46,8 +46,14 @@ composition:
         path: "Organization.identifier.value"
         label: "NPI / Registration No."
         uiComponent: "TextInput"
+      # SPEC-24 real gap found via a live pipeline run against ClinuxFlowFacility.json: this was
+      # Organization.address.text (a free-text blob, real FHIR but not what the profile
+      # constrains) — the profile requires Organization.address.line (1..2, matching HFR's own
+      # addressLine1 Required + addressLine2 optional), which nothing here ever wrote to, so no
+      # facility could validate no matter how completely this field was filled in. Retargeted;
+      # .text was never a distinct field elsewhere, so this is a rename, not new data loss.
       - id: "hospital_address"
-        path: "Organization.address.text"
+        path: "Organization.address.line"
         label: "Street Address"
         uiComponent: "TextInput"
       - id: "hospital_city"
@@ -115,6 +121,33 @@ composition:
         extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-subtype"
         label: "Facility Sub-Type Code (HFR master: facility-sub-types)"
         uiComponent: "TextInput"
+      # SPEC-24 real gap found while wiring conformance-validator.js against real captured data,
+      # not while reading the YAML in isolation: ClinuxFlowFacility.json (data/structure-
+      # definitions) requires ownershipSubTypeCode/systemOfMedicine/geoLatitude/geoLongitude
+      # (min:1 each) — see New_HFR_APIs_Documentation_SBX.pdf's own get-owner-subtype and
+      # facility-registration field tables — but no field on this form ever captured them; a
+      # facility could never validate, full stop, no matter how completely both onboarding pages
+      # were filled in. ownershipSubTypeCode is a master-data code exactly like ownershipCode
+      # above it (real TextInput per HFR's own get-owner-subtype API, not a static local list).
+      - id: "hospital_ownership_subtype_code"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-subtype-code"
+        label: "Ownership Sub-Type Code (HFR master: get-owner-subtype)"
+        uiComponent: "TextInput"
+      # Real, standard AYUSH + Modern-Medicine/Dentistry categories, confirmed against
+      # New_HFR_APIs_Documentation_SBX.pdf's own worked samples (systemOfMedicineCode "M,D" =
+      # Modern Medicine + Dentistry, "UN,H" = Unani + Homeopathy) — HFR itself wants these as one
+      # comma-joined code string on the wire, but ClinuxFlowFacility.json's own comment is explicit
+      # that this profile models it as a real repeating extension, not a comma-joined string;
+      # MultiSelect already writes one array slot per selection (same mechanism staff_specialty
+      # above and hours_days below already use, and the one local-extractor.js MultiSelect bug —
+      # answers truncated to the first choice — is already fixed).
+      - id: "hospital_system_of_medicine"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-system-of-medicine"
+        label: "System(s) of Medicine (HFR master: MEDICINE)"
+        uiComponent: "MultiSelect"
+        choices: ["Modern Medicine (Allopathy)", "Ayurveda", "Homeopathy", "Unani", "Siddha", "Yoga & Naturopathy", "Dentistry"]
       # UPDATE — real bug found live via a full end-to-end pipeline test, not caught by reading
       # the YAML alone: this was `uiComponent: Dropdown` with 2 string choices, but
       # Organization.active is genuinely a FHIR boolean — the compiler maps Dropdown to a
@@ -128,6 +161,17 @@ composition:
         path: "Organization.active"
         label: "Currently Operational"
         uiComponent: "Checkbox"
+      # SPEC-24 real gap found the same way as ownership-subtype/system-of-medicine/geo above:
+      # HFR's own CODED operational-status value (get-master-data type='FAC-STATUS') is a real,
+      # required, distinct field from Organization.active above — active is this profile's own
+      # derived boolean for internal use (see ClinuxFlowFacility.json's own comment on this exact
+      # distinction); this extension round-trips HFR's richer status code untouched. Never
+      # captured before this.
+      - id: "hospital_operational_status_code"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-operational-status-code"
+        label: "Operational Status Code (HFR master: FAC-STATUS)"
+        uiComponent: "TextInput"
 
   - resourceType: Organization
     id: section_hospital_abdm_location
@@ -154,6 +198,20 @@ composition:
         path: "Organization.extension"
         extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-subdistrict-lgd-code"
         label: "Sub-District LGD Code (HFR master: lgd/subdistricts)"
+        uiComponent: "TextInput"
+      # SPEC-24: the other half of the same real gap noted above hospital_ownership_subtype_code
+      # — ClinuxFlowFacility.json requires geoLatitude/geoLongitude (HFR: latitude/longitude,
+      # Required, "-90.000000 to +90.000000"/"-180.000000 to +180.000000") but this form never
+      # captured them. TextInput, not a number field — HFR's own docs specify these as strings.
+      - id: "hospital_geo_latitude"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-latitude"
+        label: "Latitude"
+        uiComponent: "TextInput"
+      - id: "hospital_geo_longitude"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-longitude"
+        label: "Longitude"
         uiComponent: "TextInput"
 
   - resourceType: Organization

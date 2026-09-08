@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { compileYamlToQuestionnaire } from './lib/yaml-to-questionnaire.js';
 import { ComprehensiveLocalExtractor } from './lib/local-extractor.js';
 import { FhirDocumentAssembler } from './lib/composition-assembler.js';
+import { validate } from './lib/conformance-validator.js';
+import { nextBestActions } from './lib/next-best-action.js';
 import { LocalQueueManager } from './lib/local-queue-manager.js';
 import { saveFormVersion } from './lib/forms-library.js';
 import { serviceKeyAuth } from './lib/serviceAuth.js';
@@ -23,6 +25,8 @@ import systemFlowsLibrary from '../data/system-flows-library.json';
 import defaultBlueprintYaml from '../data/vitals-room.yaml';
 import clinicSpecialities from '../data/clinic-specialities.json';
 import conditionTypes from '../data/condition-types.json';
+import clinuxFlowFacilitySd from '../data/structure-definitions/ClinuxFlowFacility.json';
+import clinuxFlowOnboardingGraph from '../data/graph-definitions/ClinuxFlowOnboardingGraph.json';
 
 export { ChatSignalingRoom } from './durable-objects/ChatSignalingRoom.js';
 
@@ -1068,6 +1072,42 @@ app.post('/api/workflow/assemble-document', requireUser(), async (c) => {
         return c.json({ success: true, bundle });
     } catch (err) {
         console.error('❌ Document Assembly Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * POST /api/facility/conformance
+ * Body: { questionnaireJson, responseJson } — same shape as POST /api/workflow/extract.
+ * SPEC-24 (docs/SPEC-24-...md) §7 step 5's "prove the whole chain end to end": runs the SAME
+ * extraction POST /api/workflow/extract exposes, picks out the Organization it produced, checks
+ * it against the real ClinuxFlowFacility StructureDefinition (conformance-validator.js) — the
+ * "done = passes validation" replacement for the old ad-hoc `getAnswer(...,'hospital_name')`
+ * check (SPEC-23's own "no PlanDefinition/workflow for onboarding" correction stays true, nothing
+ * here is a tracked status) — and, once valid, walks ClinuxFlowOnboardingGraph from it
+ * (next-best-action.js) for what to capture next. Deliberately Facility-only for now: Provider/
+ * Affiliate/Patient don't have a real Profile-anchored capture UI yet (spec §7 step 6), so there's
+ * no second bundle member for next-best-action to reason about beyond the reverse (open-ended)
+ * candidates a lone, valid Facility already produces.
+ */
+app.post('/api/facility/conformance', requireUser(), async (c) => {
+    try {
+        const { questionnaireJson, responseJson } = await c.req.json();
+        if (!questionnaireJson || !responseJson) {
+            return c.json({ success: false, error: 'questionnaireJson and responseJson are both required.' }, 400);
+        }
+        const resources = ComprehensiveLocalExtractor.extract(questionnaireJson, responseJson);
+        const organization = resources.find((r) => r.resourceType === 'Organization');
+        if (!organization) {
+            return c.json({ success: true, valid: false, errors: [{ path: 'Organization', message: 'No facility data captured yet.' }], organization: null, nextActions: [] });
+        }
+        const { valid, errors } = validate(clinuxFlowFacilitySd, organization);
+        const nextActions = valid
+            ? nextBestActions(clinuxFlowOnboardingGraph, [organization], { [organization.id]: { valid: true } })
+            : [];
+        return c.json({ success: true, valid, errors, organization, nextActions });
+    } catch (err) {
+        console.error('❌ Facility Conformance Exception:', err.message);
         return c.json({ success: false, error: err.message }, 400);
     }
 });

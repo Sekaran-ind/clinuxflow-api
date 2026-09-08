@@ -1453,3 +1453,126 @@ describe('POST /api/workflow/assemble-document', () => {
         expect(body.bundle.entry.length).toBe(resources.length + 1);
     });
 });
+
+describe('POST /api/facility/conformance', () => {
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
+        const { issueSessionToken } = await import('./lib/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+
+    // The real, compiled system-provider-composition-v1.yaml Questionnaire — same "compile the
+    // real YAML, don't hand-build a fixture" discipline as the assemble-document test above.
+    async function compiledQuestionnaire() {
+        const { compileYamlToQuestionnaire } = await import('./lib/yaml-to-questionnaire.js');
+        const fs = await import('fs');
+        const path = await import('path');
+        const yamlSource = fs.readFileSync(path.join(process.cwd(), 'tools', 'system-forms', 'system-provider-composition-v1.yaml'), 'utf8');
+        return compileYamlToQuestionnaire(yamlSource).questionnaire;
+    }
+
+    function stringAnswer(linkId, value) { return { linkId, answer: [{ valueString: value }] }; }
+
+    // Every element ClinuxFlowFacility.json (data/structure-definitions) actually requires,
+    // through the real section_hospital + ABDM sub-groups — this is SPEC-24 §7 step 5's own
+    // "prove the whole chain end to end" case: real YAML -> real compiled Questionnaire -> real
+    // extraction -> real conformance validation, via one real HTTP call.
+    function completeHospitalAnswers() {
+        return [
+            stringAnswer('hospital_name', 'ABC Hospital'),
+            stringAnswer('hospital_type', 'Hospital'),
+            stringAnswer('hospital_address', 'Temple street'),
+            stringAnswer('hospital_pin', '600107'),
+            stringAnswer('hospital_country', 'India'),
+            stringAnswer('hospital_ownership_code', 'G'),
+            stringAnswer('hospital_facility_type', '5'),
+            stringAnswer('hospital_facility_subtype', '30'),
+            stringAnswer('hospital_ownership_subtype_code', 'S'),
+            { linkId: 'hospital_system_of_medicine', answer: [{ valueString: 'Modern Medicine (Allopathy)' }, { valueString: 'Dentistry' }] },
+            { linkId: 'hospital_operational_status', answer: [{ valueBoolean: true }] },
+            stringAnswer('hospital_operational_status_code', 'F'),
+            stringAnswer('hospital_state_lgd_code', '33'),
+            stringAnswer('hospital_district_lgd_code', '568'),
+            stringAnswer('hospital_subdistrict_lgd_code', '5704'),
+            stringAnswer('hospital_geo_latitude', '24.068570'),
+            stringAnswer('hospital_geo_longitude', '24.068570'),
+        ];
+    }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/facility/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ questionnaireJson: {}, responseJson: {} }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('400s when responseJson is missing', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson: {} }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it('reports invalid with real per-field errors for a facility missing most required fields — just the old ad-hoc "hospital_name present" check would have said this was done', async () => {
+        const token = await tokenFor();
+        const questionnaireJson = await compiledQuestionnaire();
+        const responseJson = { item: [{ linkId: 'section_hospital', item: [stringAnswer('hospital_name', 'Only A Name')] }] };
+
+        const res = await app.request('/api/facility/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson, responseJson }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+
+        const body = await res.json();
+        expect(body.success).toBe(true);
+        expect(body.valid).toBe(false);
+        expect(body.errors.length).toBeGreaterThan(0);
+        expect(body.errors.some((e) => e.path === 'Organization.address')).toBe(true);
+        expect(body.nextActions).toEqual([]); // never suggests a next step off an invalid facility
+    });
+
+    it('reports no facility captured yet distinctly from an incomplete one', async () => {
+        const token = await tokenFor();
+        const questionnaireJson = await compiledQuestionnaire();
+        const res = await app.request('/api/facility/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson, responseJson: { item: [] } }),
+        }, baseEnv);
+        const body = await res.json();
+        expect(body.valid).toBe(false);
+        expect(body.organization).toBeNull();
+    });
+
+    it('the real chain: a fully completed real HFR-grounded facility validates clean AND surfaces real next-best-actions off the real GraphDefinition', async () => {
+        const token = await tokenFor();
+        const questionnaireJson = await compiledQuestionnaire();
+        const responseJson = { item: [{ linkId: 'section_hospital', item: completeHospitalAnswers() }] };
+
+        const res = await app.request('/api/facility/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson, responseJson }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+
+        const body = await res.json();
+        expect(body.success).toBe(true);
+        expect(body.valid).toBe(true);
+        expect(body.errors).toEqual([]);
+        expect(body.organization.resourceType).toBe('Organization');
+
+        // Both real reverse-link candidates off ClinuxFlowOnboardingGraph (SPEC-24 §3) — a valid
+        // Facility can always take another staff role and another organization affiliation.
+        const linkIds = body.nextActions.map((a) => a.linkId);
+        expect(linkIds).toContain('role-at-facility');
+        expect(linkIds).toContain('affiliation-from-facility');
+        expect(body.nextActions.every((a) => a.sourceResourceId === body.organization.id)).toBe(true);
+    });
+});
