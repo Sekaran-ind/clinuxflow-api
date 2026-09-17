@@ -1,0 +1,97 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "clinuxflow-task",
+  "url": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowTask",
+  "version": "1.0.0",
+  "name": "ClinuxFlowTask",
+  "title": "ClinuxFlow Task",
+  "status": "active",
+  "description": "SPEC-25 (docs/SPEC-25-FEDERATED-TASK-PERSISTENCE.md) §5's data model, made real: one FHIR Task per running (or completed) PlanDefinition.action instance, not one per whole plan — several actions sharing one plan are several Tasks sharing one groupIdentifier, real FHIR's own field for exactly this. This is the RUNTIME layer's own resource (workflowRuntime.js/planDefinitionRunner.js), deliberately distinct from the stateless control-layer resources (SPEC-24) — see this profile's own header discipline: real FHIR Task, not an invented shape, same as every other ClinuxFlow*.json profile in this folder. A Task record here is a computed/projected view over {the XState actor snapshot for status, the audit log for note/history, the lock table for owner} — not a fourth, separately-written copy of the same facts.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Task",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Task",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Task.groupIdentifier",
+        "path": "Task.groupIdentifier",
+        "min": 1,
+        "max": "1",
+        "comment": "Narrowed from base Task's 0..1 — every ClinuxFlow Task belongs to exactly one running PlanDefinition instance. .value carries this app's own planId (e.g. ENTRY_PLAN_DEFINITION's id) — the same key taskActorSnapshots/task_snapshots already index by, not a second identifier scheme."
+      },
+      {
+        "id": "Task.status",
+        "path": "Task.status",
+        "min": 1,
+        "max": "1",
+        "comment": "Base Task's own required binding (draft | requested | received | accepted | rejected | ready | cancelled | in-progress | on-hold | failed | completed | entered-in-error), used as-is, not extended. This app's mapping from planDefinitionRunner.js's own per-action XState status (see SPEC-25 §5's table): pending/ready -> requested, active -> in-progress, done -> completed. No new codes invented."
+      },
+      {
+        "id": "Task.intent",
+        "path": "Task.intent",
+        "min": 1,
+        "max": "1",
+        "patternCode": "order",
+        "comment": "Base Task's own required binding is otherwise unused variability this app doesn't need — a ClinuxFlowTask always represents a definite, already-planned unit of work coming out of a compiled PlanDefinition.action, never a proposal/plan/option, so it's fixed to the real 'order' code rather than left open."
+      },
+      {
+        "id": "Task.for",
+        "path": "Task.for",
+        "min": 0,
+        "max": "1",
+        "comment": "The real FHIR resource this Task concerns, when there is one (e.g. an Organization/PractitionerRole/Encounter id) — ties a Task back to a real control- or runtime-layer entity instead of just an abstract action name. No fixed targetProfile: which resource type applies depends entirely on which PlanDefinition action this Task instance is for."
+      },
+      {
+        "id": "Task.owner",
+        "path": "Task.owner",
+        "min": 0,
+        "max": "1",
+        "comment": "Whoever currently holds this Task's single-writer lock (SPEC-25 §4/§6), or last held it. A ClinuxFlow account is an app-level auth identity, not itself a modeled FHIR resource, so this is expressed via Reference.identifier (real FHIR's own mechanism for a logical reference with no resolvable literal resource) carrying the accountId, rather than inventing a fake Practitioner just to satisfy Reference.reference."
+      },
+      {
+        "id": "Task.businessStatus",
+        "path": "Task.businessStatus",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Task.businessStatus.text",
+        "path": "Task.businessStatus.text",
+        "min": 0,
+        "max": "1",
+        "comment": "Human-readable status (e.g. 'Waiting on ABHA verification') — the only part of businessStatus this app populates; no local CodeableConcept coding is defined for it."
+      },
+      {
+        "id": "Task.authoredOn",
+        "path": "Task.authoredOn",
+        "min": 1,
+        "max": "1",
+        "comment": "Narrowed from base Task's 0..1 — always set, from the Task's first transition (planDefinitionRunner.js's own actor.start())."
+      },
+      {
+        "id": "Task.lastModified",
+        "path": "Task.lastModified",
+        "min": 1,
+        "max": "1",
+        "comment": "Narrowed from base Task's 0..1 — updated on every persisted snapshot write (workflowRuntime.js's actor.subscribe(), see workflowRuntime.js's own header on why subscribing rather than post-send-only persistence matters)."
+      },
+      {
+        "id": "Task.note",
+        "path": "Task.note",
+        "min": 0,
+        "max": "*",
+        "comment": "One entry per taskAuditLog/task_audit_log transition (SPEC-25 §6) — the durable audit trail SPEC-20 §4 originally asked for, now actually persisted rather than in-memory-only. Task.note.text carries a human-readable rendering of {from, to, at}; Task.note.time is the audit entry's own `at`."
+      },
+      {
+        "id": "Task.reasonReference",
+        "path": "Task.reasonReference",
+        "min": 0,
+        "max": "1",
+        "comment": "Set only when this Task was opened in direct response to a real next-best-action.js candidate (SPEC-24 §3) — carries that candidate's {linkId, sourceResourceId} as a logical reference (Reference.identifier, same reasoning as Task.owner above — the candidate isn't itself a persisted FHIR resource with its own id). A one-way citation into the control layer for traceability only (SPEC-25 §2) — the control layer itself never reads or writes this back."
+      }
+    ]
+  }
+}

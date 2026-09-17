@@ -14,8 +14,8 @@ import ajvErrors from 'ajv-errors';
 // plain JSON import (this module is now also run directly under Node by tools/build-system-
 // forms.js, not just bundled by wrangler/esbuild for the Worker) — both esbuild and Node support
 // the attribute, so this works in both places rather than needing two different import styles.
-import metaSchema from '../../data/form-schematics.schema.json' with { type: 'json' };
-import graphBundle from '../../data/graphs.bundle.json' with { type: 'json' };
+import metaSchema from '../../../data/form-schematics.schema.json' with { type: 'json' };
+import graphBundle from '../../../data/graphs.bundle.json' with { type: 'json' };
 
 // Initialize Ajv with error messaging modifiers. Ajv v8 reports errors as JSON Pointers by
 // default, so no explicit `jsonPointers` option is needed (it was an Ajv v6-era flag).

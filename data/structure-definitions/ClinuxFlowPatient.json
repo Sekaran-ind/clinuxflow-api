@@ -1,0 +1,129 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "clinuxflow-patient",
+  "url": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowPatient",
+  "version": "1.0.0",
+  "name": "ClinuxFlowPatient",
+  "title": "ClinuxFlow Patient",
+  "status": "active",
+  "description": "A patient's demographic record, profiling FHIR R4 Patient. Unlike Facility/Provider, no local ABDM sandbox reference doc exists for ABHA (Ayushman Bharat Health Account) issuance in this repo — this profile is grounded in real, general FHIR R4 Patient conventions and ABHA's own well-known public identifier shape, not a cited local API spec; that gap is stated honestly, not papered over. Deliberately staff-mediated capture, not self-registration: SPEC-21 §6 already resolved that Patient never gets a login to this app ('Patient will not have a login... can see his health records via digi-locker no features more than that') — this profile constrains what Front Desk/Consultation Desk capture on a patient's behalf, not a self-service form.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient.active",
+        "path": "Patient.active",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Patient.name",
+        "path": "Patient.name",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Patient.name.given",
+        "path": "Patient.name.given",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Patient.name.family",
+        "path": "Patient.name.family",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Patient.gender",
+        "path": "Patient.gender",
+        "min": 1,
+        "max": "1",
+        "comment": "Required for real clinical use (dosing, reference ranges) even though ABHA's own KYC step doesn't strictly gate on it."
+      },
+      {
+        "id": "Patient.birthDate",
+        "path": "Patient.birthDate",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Patient.telecom",
+        "path": "Patient.telecom",
+        "slicing": {
+          "discriminator": [{ "type": "value", "path": "system" }],
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Patient.telecom:mobile",
+        "path": "Patient.telecom",
+        "sliceName": "mobile",
+        "min": 1,
+        "max": "1",
+        "comment": "Real, practical requirement — this is the number an ABHA linkage (OTP-based) and any DigiLocker export flow both key off."
+      },
+      {
+        "id": "Patient.telecom:mobile.system",
+        "path": "Patient.telecom.system",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Patient.telecom:mobile.use",
+        "path": "Patient.telecom.use",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "mobile"
+      },
+      {
+        "id": "Patient.identifier",
+        "path": "Patient.identifier",
+        "slicing": {
+          "discriminator": [{ "type": "value", "path": "system" }],
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Patient.identifier:abhaNumber",
+        "path": "Patient.identifier",
+        "sliceName": "abhaNumber",
+        "min": 0,
+        "max": "1",
+        "comment": "The 14-digit ABHA number, when the patient already has one (or gets one linked during this visit) — genuinely optional at capture time; a walk-in patient without ABHA yet must still be registerable."
+      },
+      {
+        "id": "Patient.identifier:abhaNumber.system",
+        "path": "Patient.identifier.system",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "https://healthid.ndhm.gov.in/abha-number"
+      },
+      {
+        "id": "Patient.identifier:abhaAddress",
+        "path": "Patient.identifier",
+        "sliceName": "abhaAddress",
+        "min": 0,
+        "max": "1",
+        "comment": "The human-friendly ABHA address ('name@abdm'), a separate real identifier from the numeric ABHA number itself."
+      },
+      {
+        "id": "Patient.address",
+        "path": "Patient.address",
+        "min": 0,
+        "max": "1",
+        "comment": "Narrowed from base FHIR's 0..* — one current address is what this app's own capture surfaces (Front Desk/Consultation) actually ask for."
+      }
+    ]
+  }
+}

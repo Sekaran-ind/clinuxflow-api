@@ -66,11 +66,21 @@ export const AccountsDb = {
 
     // Phase D: adds ANOTHER login onto an EXISTING clinic — unlike createClinicAndAccount above,
     // there's no clinic insert here, and no batch()/rollback concern since only one row is
-    // written.
-    createTeammateAccount: (db, clinicId, accountId, email, passwordHash, adminName, designation) => {
+    // written. status defaults to 'active' (POST /api/auth/invite's own existing behavior,
+    // unchanged) — SPEC-26's POST .../join-tokens/:token/redeem passes 'pending' explicitly for a
+    // staff account created via token redemption, since that account must not be able to log in
+    // until the admin approves the request (see migrations/0012's own comment on why).
+    createTeammateAccount: (db, clinicId, accountId, email, passwordHash, adminName, designation, status = 'active') => {
         return db.prepare(
-            "INSERT INTO accounts (id, clinic_id, email, password_hash, admin_name, designation) VALUES (?, ?, ?, ?, ?, ?)"
-        ).bind(accountId, clinicId, email, passwordHash, adminName ?? null, designation ?? null).run();
+            "INSERT INTO accounts (id, clinic_id, email, password_hash, admin_name, designation, status) VALUES (?, ?, ?, ?, ?, ?, ?)"
+        ).bind(accountId, clinicId, email, passwordHash, adminName ?? null, designation ?? null, status).run();
+    },
+
+    // SPEC-26 §9's .../decide route — flips a pending-via-token staff account to 'active' on
+    // approval or 'rejected' on rejection (POST /api/auth/login's own status check is what this
+    // actually gates).
+    setAccountStatus: (db, accountId, status) => {
+        return db.prepare("UPDATE accounts SET status = ? WHERE id = ?").bind(status, accountId).run();
     },
 
     countAccountsByClinicId: (db, clinicId) => {
@@ -78,10 +88,11 @@ export const AccountsDb = {
     },
 
     // No password_hash in the SELECT — this powers a "who else is on my team" list, never
-    // anything that needs the hash.
+    // anything that needs the hash. status included (SPEC-26) so the admin's own team list can
+    // show "pending approval" for a not-yet-decided join-token account, not just Cübo's chat card.
     listAccountsByClinicId: async (db, clinicId) => {
         const { results } = await db.prepare(
-            "SELECT id, email, admin_name, designation, created_at FROM accounts WHERE clinic_id = ? ORDER BY created_at ASC"
+            "SELECT id, email, admin_name, designation, created_at, status FROM accounts WHERE clinic_id = ? ORDER BY created_at ASC"
         ).bind(clinicId).all();
         return results;
     },
@@ -125,14 +136,23 @@ export const AccountsDb = {
     // row per clinic; upsert on every PUT, same ON CONFLICT pattern the Tauri shared server's own
     // /api/collections/:name route already uses for the identical reason (idempotent re-push).
     getProviderComposition: (db, clinicId) => {
-        return db.prepare("SELECT data, updated_at AS updatedAt FROM provider_composition WHERE clinic_id = ?")
+        return db.prepare("SELECT data, updated_at AS updatedAt, published_at AS publishedAt FROM provider_composition WHERE clinic_id = ?")
             .bind(clinicId).first();
     },
 
-    upsertProviderComposition: (db, clinicId, dataJson) => {
+    // published: whether onboarding.js's publish() has run — see migrations/0012's own comment
+    // on why this couldn't just be inferred from data existing. One-way: a false here NEVER
+    // clears an already-set published_at (COALESCE keeps the existing value), matching
+    // everPublished's own client-side "go live" semantics — publishing is never un-done by a
+    // later ordinary save.
+    upsertProviderComposition: (db, clinicId, dataJson, published = false) => {
         return db.prepare(
-            `INSERT INTO provider_composition (clinic_id, data, updated_at) VALUES (?, ?, datetime('now'))
-             ON CONFLICT(clinic_id) DO UPDATE SET data = excluded.data, updated_at = excluded.updated_at`
-        ).bind(clinicId, dataJson).run();
+            `INSERT INTO provider_composition (clinic_id, data, updated_at, published_at)
+             VALUES (?, ?, datetime('now'), CASE WHEN ? THEN datetime('now') ELSE NULL END)
+             ON CONFLICT(clinic_id) DO UPDATE SET
+                data = excluded.data,
+                updated_at = excluded.updated_at,
+                published_at = COALESCE(provider_composition.published_at, excluded.published_at)`
+        ).bind(clinicId, dataJson, published ? 1 : 0).run();
     },
 };

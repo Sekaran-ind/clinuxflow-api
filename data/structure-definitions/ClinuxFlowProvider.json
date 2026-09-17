@@ -1,0 +1,211 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "clinuxflow-provider",
+  "url": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowProvider",
+  "version": "1.0.0",
+  "name": "ClinuxFlowProvider",
+  "title": "ClinuxFlow Provider (the person)",
+  "status": "active",
+  "description": "A healthcare professional's own identity, profiling FHIR R4 Practitioner. Grounded directly against the real Healthcare Professional Registry (HPR) Create-HPRID API (docs/NHPR SBX Doc/NHPR Doc/HPR/1. Register Healthcare Professional (Doctor & Nurse) API.pdf, its own Mandatory-field table) — not the prior YAML, which conflated the person (Practitioner) with their role at one facility (see ClinuxFlowProviderRole, a separate profile) by piling both onto Practitioner.extension.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Practitioner",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Practitioner",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Practitioner.active",
+        "path": "Practitioner.active",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Practitioner.name",
+        "path": "Practitioner.name",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Practitioner.name.given",
+        "path": "Practitioner.name.given",
+        "min": 1,
+        "max": "2",
+        "comment": "HPR createHprId: firstName (Required) + middleName (optional) — modeled as HumanName.given[0]/given[1], the standard FHIR home for a given/middle name, not a single freetext name."
+      },
+      {
+        "id": "Practitioner.name.family",
+        "path": "Practitioner.name.family",
+        "min": 0,
+        "max": "1",
+        "comment": "HPR: lastName, optional (a real HPR quirk — the person-level API allows no surname; a workplace-role display name is a separate, ProviderRole-level concern)."
+      },
+      {
+        "id": "Practitioner.gender",
+        "path": "Practitioner.gender",
+        "min": 0,
+        "max": "1",
+        "comment": "HPR: gender ('M'/'F'/...), captured on the real /checkHpIdAccountExist response — bound to FHIR's own administrative-gender ValueSet, not a re-encoded HPR string."
+      },
+      {
+        "id": "Practitioner.birthDate",
+        "path": "Practitioner.birthDate",
+        "min": 0,
+        "max": "1",
+        "comment": "HPR returns yearOfBirth/monthOfBirth/dayOfBirth as three separate fields (Aadhaar-sourced) — composed into one real FHIR date here, the standard element for it, rather than three separate custom fields."
+      },
+      {
+        "id": "Practitioner.photo",
+        "path": "Practitioner.photo",
+        "min": 0,
+        "max": "1",
+        "comment": "HPR: profilePhoto, optional base64 image."
+      },
+      {
+        "id": "Practitioner.telecom",
+        "path": "Practitioner.telecom",
+        "slicing": {
+          "discriminator": [{ "type": "value", "path": "system" }],
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.telecom:email",
+        "path": "Practitioner.telecom",
+        "sliceName": "email",
+        "min": 1,
+        "max": "1",
+        "comment": "HPR createHprId: email, Required."
+      },
+      {
+        "id": "Practitioner.telecom:email.system",
+        "path": "Practitioner.telecom.system",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "email"
+      },
+      {
+        "id": "Practitioner.telecom:mobile",
+        "path": "Practitioner.telecom",
+        "sliceName": "mobile",
+        "min": 0,
+        "max": "1",
+        "comment": "HPR: mobile, captured during Aadhaar/OTP verification, not the createHprId payload itself."
+      },
+      {
+        "id": "Practitioner.telecom:mobile.system",
+        "path": "Practitioner.telecom.system",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Practitioner.telecom:mobile.use",
+        "path": "Practitioner.telecom.use",
+        "min": 1,
+        "max": "1",
+        "fixedCode": "mobile"
+      },
+      {
+        "id": "Practitioner.identifier",
+        "path": "Practitioner.identifier",
+        "slicing": {
+          "discriminator": [{ "type": "value", "path": "system" }],
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.identifier:hprId",
+        "path": "Practitioner.identifier",
+        "sliceName": "hprId",
+        "min": 1,
+        "max": "1",
+        "comment": "HPR createHprId: hprId (Required, from the Get-Suggestion API — e.g. 'userid@hpr.abdm'), and the real HPR-issued hprIdNumber returned once created. This is the one genuine business identifier every provider profile needs; license/registration numbers (real, distinct identifiers) are separate slices below."
+      },
+      {
+        "id": "Practitioner.identifier:hprId.system",
+        "path": "Practitioner.identifier.system",
+        "min": 1,
+        "max": "1",
+        "fixedUri": "https://facility.abdm.gov.in/hpr-id"
+      },
+      {
+        "id": "Practitioner.identifier:licenseNumber",
+        "path": "Practitioner.identifier",
+        "sliceName": "licenseNumber",
+        "min": 0,
+        "max": "1",
+        "comment": "The professional's real state/council medical registration/license number — genuinely a business identifier (Practitioner.qualification also exists for the qualification itself; this slice is the registration number, which qualification.identifier could also carry, but a top-level identifier slice keeps it consistent with hprId's own shape and easy to query)."
+      },
+      {
+        "id": "Practitioner.extension",
+        "path": "Practitioner.extension",
+        "slicing": {
+          "discriminator": [{ "type": "value", "path": "url" }],
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Practitioner.extension:sourceType",
+        "path": "Practitioner.extension",
+        "sliceName": "sourceType",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-source-type"] }],
+        "comment": "HPR: sourceType (e.g. 'AADHAAR') — how this identity was originally verified. No standard FHIR element for identity-verification provenance at this level; a real extension."
+      },
+      {
+        "id": "Practitioner.extension:hpCategoryCode",
+        "path": "Practitioner.extension",
+        "sliceName": "hpCategoryCode",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-category-code"] }],
+        "comment": "HPR createHprId: hpCategoryCode, Required — real HPR code table: 1=Doctor, 2=Nurse. Bound to that real 2-value ValueSet, not an open string."
+      },
+      {
+        "id": "Practitioner.extension:hpSubCategoryCode",
+        "path": "Practitioner.extension",
+        "sliceName": "hpSubCategoryCode",
+        "min": 1,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-subcategory-code"] }],
+        "comment": "HPR: hpSubCategoryCode, Required — real HPR code table, e.g. 1=Modern Medicine, 2=Dentist, 3=Ayurveda, 4=Unani, 89=Sowa-Rigpa, 5=Siddha, 6=Homoeopathy (doctor); 7=RANM, 9=RN & RM, 10=RLHV, 8=RN (nurse). Bound to that real, cited table — not this app's own invented specialty list."
+      },
+      {
+        "id": "Practitioner.extension:council",
+        "path": "Practitioner.extension",
+        "sliceName": "council",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council"] }],
+        "comment": "HPR: council, a real boolean (Optional)."
+      },
+      {
+        "id": "Practitioner.extension:jurisdictionState",
+        "path": "Practitioner.extension",
+        "sliceName": "jurisdictionState",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-jurisdiction-state-code"] }],
+        "comment": "HPR: stateCode (LGD state code from master data), Optional — the state this professional's registration is anchored to; distinct from any one facility's own address."
+      },
+      {
+        "id": "Practitioner.extension:jurisdictionDistrict",
+        "path": "Practitioner.extension",
+        "sliceName": "jurisdictionDistrict",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-jurisdiction-district-code"] }],
+        "comment": "HPR: districtCode, Optional."
+      }
+    ]
+  }
+}

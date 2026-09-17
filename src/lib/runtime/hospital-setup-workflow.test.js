@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
-import { compileYamlToQuestionnaire } from './yaml-to-questionnaire.js';
-import { ComprehensiveLocalExtractor } from './local-extractor.js';
+import { compileYamlToQuestionnaire } from '../shared/yaml-to-questionnaire.js';
+import { ComprehensiveLocalExtractor } from '../shared/local-extractor.js';
 import { buildHospitalSetupWorkflowResponse } from './hospital-setup-workflow-response.js';
 
 // SPEC-22 (docs/SPEC-22-PERSISTED-WORKFLOW-SYSTEM-FLOWS-CUBO-STATE-MIRROR-DRAWER-CAPTURE.md)

@@ -82,3 +82,25 @@ class_name = "ChatSignalingRoom"
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["ChatSignalingRoom"]
+
+# --- Queues ----------------------------------------------------------------------------------
+# CUBO_TASK_QUEUE: named generically on purpose (not "join-request-delivery") — durable delivery
+# for ANY action a P2P chat card triggers, of which facility-join-request (docs/SPEC-26-FACILITY-
+# JOIN-TOKEN-LINKING.md §6/§8) is only the first. The user's own framing: Cübo should be a
+# generic event bridge dispatching off a Task specification, not one hardcoded branch per action
+# type in CuboContactConversation.vue — this queue is provisioned ahead of that generalization
+# (still undesigned/unbuilt) so the delivery plumbing doesn't need renaming again once it lands.
+# src/lib/control/join-request-queue-consumer.js is CURRENTLY the only consumer wired to it (via
+# app.queue in src/index.js); src/routes/control.js's POST .../deliver is CURRENTLY the only
+# producer. Only ciphertext ever passes through it (see that consumer's own header comment).
+#
+# Provisioned (`wrangler queues create cubo-task-queue`, explicit go-ahead) — Standard Queues
+# pricing: 10,000 ops/day included free, $0.40/million after (confirmed against the dashboard
+# before creating this, not assumed). Real resource now exists on this account, ready for
+# `--remote`/a real deploy — deploying itself is a separate action, still not done here.
+[[queues.producers]]
+binding = "CUBO_TASK_QUEUE"
+queue = "cubo-task-queue"
+
+[[queues.consumers]]
+queue = "cubo-task-queue"

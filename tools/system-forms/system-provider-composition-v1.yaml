@@ -46,8 +46,14 @@ composition:
         path: "Organization.identifier.value"
         label: "NPI / Registration No."
         uiComponent: "TextInput"
+      # SPEC-24 real gap found via a live pipeline run against ClinuxFlowFacility.json: this was
+      # Organization.address.text (a free-text blob, real FHIR but not what the profile
+      # constrains) — the profile requires Organization.address.line (1..2, matching HFR's own
+      # addressLine1 Required + addressLine2 optional), which nothing here ever wrote to, so no
+      # facility could validate no matter how completely this field was filled in. Retargeted;
+      # .text was never a distinct field elsewhere, so this is a rename, not new data loss.
       - id: "hospital_address"
-        path: "Organization.address.text"
+        path: "Organization.address.line"
         label: "Street Address"
         uiComponent: "TextInput"
       - id: "hospital_city"
@@ -115,6 +121,33 @@ composition:
         extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-subtype"
         label: "Facility Sub-Type Code (HFR master: facility-sub-types)"
         uiComponent: "TextInput"
+      # SPEC-24 real gap found while wiring conformance-validator.js against real captured data,
+      # not while reading the YAML in isolation: ClinuxFlowFacility.json (data/structure-
+      # definitions) requires ownershipSubTypeCode/systemOfMedicine/geoLatitude/geoLongitude
+      # (min:1 each) — see New_HFR_APIs_Documentation_SBX.pdf's own get-owner-subtype and
+      # facility-registration field tables — but no field on this form ever captured them; a
+      # facility could never validate, full stop, no matter how completely both onboarding pages
+      # were filled in. ownershipSubTypeCode is a master-data code exactly like ownershipCode
+      # above it (real TextInput per HFR's own get-owner-subtype API, not a static local list).
+      - id: "hospital_ownership_subtype_code"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-subtype-code"
+        label: "Ownership Sub-Type Code (HFR master: get-owner-subtype)"
+        uiComponent: "TextInput"
+      # Real, standard AYUSH + Modern-Medicine/Dentistry categories, confirmed against
+      # New_HFR_APIs_Documentation_SBX.pdf's own worked samples (systemOfMedicineCode "M,D" =
+      # Modern Medicine + Dentistry, "UN,H" = Unani + Homeopathy) — HFR itself wants these as one
+      # comma-joined code string on the wire, but ClinuxFlowFacility.json's own comment is explicit
+      # that this profile models it as a real repeating extension, not a comma-joined string;
+      # MultiSelect already writes one array slot per selection (same mechanism staff_specialty
+      # above and hours_days below already use, and the one local-extractor.js MultiSelect bug —
+      # answers truncated to the first choice — is already fixed).
+      - id: "hospital_system_of_medicine"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-system-of-medicine"
+        label: "System(s) of Medicine (HFR master: MEDICINE)"
+        uiComponent: "MultiSelect"
+        choices: ["Modern Medicine (Allopathy)", "Ayurveda", "Homeopathy", "Unani", "Siddha", "Yoga & Naturopathy", "Dentistry"]
       # UPDATE — real bug found live via a full end-to-end pipeline test, not caught by reading
       # the YAML alone: this was `uiComponent: Dropdown` with 2 string choices, but
       # Organization.active is genuinely a FHIR boolean — the compiler maps Dropdown to a
@@ -128,6 +161,155 @@ composition:
         path: "Organization.active"
         label: "Currently Operational"
         uiComponent: "Checkbox"
+      # SPEC-24 real gap found the same way as ownership-subtype/system-of-medicine/geo above:
+      # HFR's own CODED operational-status value (get-master-data type='FAC-STATUS') is a real,
+      # required, distinct field from Organization.active above — active is this profile's own
+      # derived boolean for internal use (see ClinuxFlowFacility.json's own comment on this exact
+      # distinction); this extension round-trips HFR's richer status code untouched. Never
+      # captured before this.
+      - id: "hospital_operational_status_code"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-operational-status-code"
+        label: "Operational Status Code (HFR master: FAC-STATUS)"
+        uiComponent: "TextInput"
+      # Real fields found missing while grounding FacilityHfrPanel.vue's basic-information body
+      # against New_HFR_APIs_Documentation_SBX.pdf §2.1's own real sample request (read directly,
+      # not guessed) — ownershipSubTypeCode2 is a SECOND, distinct ownership sub-type code
+      # (PP01/PN01-style, HFR master PROFIT-TYPE/NON-PROFIT-TYPE — confirmed reliably fetchable
+      # live, unlike get-owner-subtype/facility-types/facility-sub-types which are all returning
+      # real HIS-500s on the sandbox as of this build), separate from
+      # hospital_ownership_subtype_code above it (that one stays TextInput — its own master data
+      # source is one of the broken ones).
+      - id: "hospital_ownership_subtype_code_2"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-subtype-code-2"
+        label: "Ownership Sub-Type Code 2 (HFR master: PROFIT-TYPE / NON-PROFIT-TYPE)"
+        uiComponent: "TextInput"
+      - id: "hospital_type_of_service_code"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-type-of-service-code"
+        label: "Type of Service (HFR master: TYPE-SERVICE)"
+        uiComponent: "TextInput"
+      - id: "hospital_speciality_type_code"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-speciality-type-code"
+        label: "Speciality Type (Single or Multiple)"
+        uiComponent: "TextInput"
+      - id: "hospital_facility_region"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-region"
+        label: "Facility Region (U = Urban, R = Rural)"
+        uiComponent: "TextInput"
+      # Additional Information API's own hasX general-information flags (New_HFR_APIs_Documentation
+      # _SBX.pdf §2.2). UPDATE — real bug found and fixed while building the Detailed Information
+      # follow-up: these are NOT plain Y/N booleans (Checkbox was wrong) — the doc's own real
+      # sample uses "YALL" (Yes, available for everyone), confirmed live against get-master-data
+      # type='GENERAL-INFO-OPTIONS' (3 real codes: YALL/YIN/N). TextInput (a coded value, captured
+      # by a hand-authored panel dropdown — see FacilityHfrPanel.vue), not Checkbox.
+      - id: "hospital_has_dialysis_center"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-dialysis-center"
+        label: "Has Dialysis Center (HFR master: GENERAL-INFO-OPTIONS)"
+        uiComponent: "TextInput"
+      - id: "hospital_has_pharmacy"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-pharmacy"
+        label: "Has Pharmacy (HFR master: GENERAL-INFO-OPTIONS)"
+        uiComponent: "TextInput"
+      - id: "hospital_has_blood_bank"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-blood-bank"
+        label: "Has Blood Bank (HFR master: GENERAL-INFO-OPTIONS)"
+        uiComponent: "TextInput"
+      - id: "hospital_has_cath_lab"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-cath-lab"
+        label: "Has Cath Lab (HFR master: GENERAL-INFO-OPTIONS)"
+        uiComponent: "TextInput"
+      - id: "hospital_has_diagnostic_lab"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-diagnostic-lab"
+        label: "Has Diagnostic Lab (HFR master: GENERAL-INFO-OPTIONS)"
+        uiComponent: "TextInput"
+      - id: "hospital_has_imaging_center"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-imaging-center"
+        label: "Has Imaging Center (HFR master: GENERAL-INFO-OPTIONS)"
+        uiComponent: "TextInput"
+      # Real base FHIR field (not an ABDM extension) captured here for real, closing a standing
+      # gap found live: FacilityBasicsHost.vue never rendered ANY field for Organization.active
+      # (min:1, Required) after the old LForms-rendered page was retired — silently unfillable.
+      - id: "hospital_operational_status"
+        path: "Organization.active"
+        label: "Currently Operational"
+        uiComponent: "Checkbox"
+
+      # --- Detailed Information API's own conditional sections (New_HFR_APIs_Documentation_SBX.pdf
+      # §2.3) — only required/sent when the corresponding hasX flag above is YALL/YIN, per the
+      # doc's own error-response sample (sending an irrelevant section is REJECTED, not ignored).
+      # FacilityHfrPanel.vue shows each of these conditionally.
+      - id: "hospital_pharmacy_jan_aushadhi"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-jan-aushadhi"
+        label: "Is Jan Aushadhi Kendra (HFR master: GENERAL-INFO-OPTIONS)"
+        uiComponent: "TextInput"
+      - id: "hospital_pharmacy_jan_aushadhi_id"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-jan-aushadhi-id"
+        label: "Jan Aushadhi Kendra ID"
+        uiComponent: "TextInput"
+      - id: "hospital_pharmacy_drug_license"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-drug-license"
+        label: "Pharmacy Drug License Number"
+        uiComponent: "TextInput"
+      - id: "hospital_pharmacy_gstin"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-gstin"
+        label: "Pharmacy GSTIN Number"
+        uiComponent: "TextInput"
+      - id: "hospital_pharmacist_registration"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacist-registration"
+        label: "Pharmacist Registration Number"
+        uiComponent: "TextInput"
+      - id: "hospital_bloodbank_eraktkosh"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-eraktkosh"
+        label: "Registered in e-Raktkosh (HFR master: GENERAL-INFO-OPTIONS)"
+        uiComponent: "TextInput"
+      - id: "hospital_bloodbank_eraktkosh_id"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-eraktkosh-id"
+        label: "e-Raktkosh ID"
+        uiComponent: "TextInput"
+      - id: "hospital_bloodbank_license"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-license"
+        label: "Blood Bank License Number"
+        uiComponent: "TextInput"
+      - id: "hospital_imaging_services"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-imaging-services"
+        label: "Imaging Services Offered (HFR master: IMAGING)"
+        uiComponent: "MultiSelect"
+        choices: ["X-Ray", "CT-Scan", "MRI(Magnetic Resonance Imaging)", "Ultrasonography(USG)", "ColorDoppler"]
+      - id: "hospital_diagnostic_services"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-diagnostic-services"
+        label: "Diagnostic Lab Services Offered (HFR master: DIAGNOSTIC)"
+        uiComponent: "MultiSelect"
+        choices: ["Pathology", "Haematology", "Cytology", "Microbiology", "Serology", "Biochemistry", "Histopathology", "Genetics", "Virology", "Cytopathology", "MolecularBiology", "Toxicology", "OralPathology"]
+      - id: "hospital_total_beds"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-total-beds"
+        label: "Total Number of Beds"
+        uiComponent: "TextInput"
+      - id: "hospital_dental_chairs"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-dental-chairs"
+        label: "Number of Dental Chairs"
+        uiComponent: "TextInput"
 
   - resourceType: Organization
     id: section_hospital_abdm_location
@@ -154,6 +336,20 @@ composition:
         path: "Organization.extension"
         extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-subdistrict-lgd-code"
         label: "Sub-District LGD Code (HFR master: lgd/subdistricts)"
+        uiComponent: "TextInput"
+      # SPEC-24: the other half of the same real gap noted above hospital_ownership_subtype_code
+      # — ClinuxFlowFacility.json requires geoLatitude/geoLongitude (HFR: latitude/longitude,
+      # Required, "-90.000000 to +90.000000"/"-180.000000 to +180.000000") but this form never
+      # captured them. TextInput, not a number field — HFR's own docs specify these as strings.
+      - id: "hospital_geo_latitude"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-latitude"
+        label: "Latitude"
+        uiComponent: "TextInput"
+      - id: "hospital_geo_longitude"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-longitude"
+        label: "Longitude"
         uiComponent: "TextInput"
 
   - resourceType: Organization
@@ -279,12 +475,6 @@ composition:
         path: "Practitioner.name.family"
         label: "Last Name (as on Aadhaar)"
         uiComponent: "TextInput"
-      - id: "staff_abdm_role"
-        path: "Practitioner.extension"
-        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-abdm-role"
-        label: "ABDM Role"
-        uiComponent: "Dropdown"
-        choices: ["Doctor","Nurse","Facility Manager"]
       - id: "staff_hp_category_code"
         path: "Practitioner.extension"
         extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-category-code"
@@ -318,6 +508,50 @@ composition:
         path: "Practitioner.identifier.value"
         label: "HPR ID Number (assigned after creation)"
         uiComponent: "TextInput"
+
+  # SPEC-24 §2's own real modeling upgrade: PractitionerRole (this Practitioner's role AT this
+  # facility) as a genuinely separate FHIR resource from Practitioner (the person), so one person
+  # can later hold roles at more than one facility — the split ClinuxFlowProviderRole.json is
+  # built against. A SIBLING top-level block, not nested inside section_staff above: nesting a
+  # DIFFERENT resourceType's fields inside a repeating group compiles clean through
+  # local-extractor.js (confirmed, and fixed a real cross-resourceType instance-clobbering bug
+  # doing so) but NOT through yaml-to-questionnaire.js's own schema/dictionary validation, which
+  # ties every field in a block — nested or not — to that ONE block's own declared resourceType;
+  # a bare resource-type name like "PractitionerRole" is not a real field PATH within Practitioner
+  # for that check to accept. Teaching the compiler a per-group resourceType override is a real,
+  # separate piece of work, not bundled into this pass. A sibling block needs no compiler change
+  # at all and is exactly the existing, already-proven pattern (section_hospital/section_staff/...
+  # are already siblings, each its own resourceType) — the only real requirement it adds is that
+  # the SAVE flow appends one section_staff instance and one section_staff_role instance together,
+  # always in lockstep (hand-guaranteed by ProviderBasicsHost.vue's own merge logic, not LForms'
+  # independent per-group "+ Add Another") — local-extractor.js's own separate-instances counter
+  # is a simple running count per group linkId, so matching append order is what keeps the Nth
+  # repetition of each block correctly correlated to the same real staff member.
+  #
+  # PractitionerRole.practitioner/.organization are NOT fields here — both get auto-linked by
+  # local-extractor.js (matching this SAME repetition's own Practitioner, and the one Organization
+  # in this record) once both resources exist in the same extraction — no manual reference field
+  # needed, same as it already worked for the single-Practitioner case.
+  - resourceType: PractitionerRole
+    id: section_staff_role
+    label: "Role at this Facility"
+    repeats: true
+    fields:
+      - id: "staff_role_active"
+        path: "PractitionerRole.active"
+        label: "Currently Active in this Role"
+        uiComponent: "Checkbox"
+      # Real HPR role codes confirmed against "1. Register Healthcare Professional (Doctor & Nurse)
+      # API.pdf"'s own Roles table (1/2/3) — this WAS staff_abdm_role on Practitioner.extension
+      # with invented Doctor/Nurse/Facility Manager choices, conflating the SEPARATE
+      # hpCategoryCode concept above with the real HPR role table; ClinuxFlowProviderRole.json's
+      # own comment already reconciles the prior YAML's "Administrator" concept as really being
+      # HPR's own "Facility Manager" role. Retargeted here, not duplicated.
+      - id: "staff_provider_role"
+        path: "PractitionerRole.code"
+        label: "HPR Role (HPR master: role)"
+        uiComponent: "Dropdown"
+        choices: ["Healthcare Professional", "Facility Manager", "Healthcare Professional and Facility Manager"]
 
   - resourceType: HealthcareService
     id: section_services_matrix
@@ -397,6 +631,69 @@ composition:
         path: "Consent.provision.period.end"
         label: "Expiry Date"
         uiComponent: "DatePicker"
+
+  # SPEC-24 §7 step 6 (Affiliate Organization) — genuinely new: an organization-to-organization
+  # relationship (a partner imaging centre/lab/billing service delivering a shared service to/
+  # through this facility), profiled as ClinuxFlowAffiliateOrganization (data/structure-
+  # definitions), FHIR R4's own OrganizationAffiliation resource, not a repurposed Organization.
+  # Distinct from section_staff_role's affiliate case (ClinuxFlowAffiliatePractitionerRole,
+  # captured entirely outside this YAML — see TeamSettingsModal.vue's Affiliates tab): that one is
+  # a practitioner-level, account-linking relationship; this one is org-level and admin-configured,
+  # same tier as Services/Hours/Consents above.
+  #
+  # `participatingOrganization` deliberately captured as a plain string (no target resource — an
+  # external affiliate org has no reason to conform to this app's own Facility profile, same
+  # reasoning ClinuxFlowAffiliateOrganization.json's own comment gives), same simplification the
+  # WHOLE compiler pipeline already uses for every Reference/CodeableConcept leaf (a bare value,
+  # not a real {reference,display}/{coding,text} object) — confirmed via the generated dictionary
+  # (data/form-schematics.schema.json): '.participatingOrganization.display' is NOT a recognized
+  # path (Reference is treated as opaque/unwalked here, unlike identifier's own richer sub-tree),
+  # only the bare '.participatingOrganization' path is. `.code`/`.specialty` map straight to their
+  # real CodeableConcept-array paths — MultiSelect's own multi-answer handling (local-extractor
+  # .js's dynamicArrayIndexTrackingLedger) gives each its own array slot, matching HealthcareService
+  # .category's precedent above.
+  #
+  # `.healthcareService` (which of THIS facility's own HealthcareService entries the affiliate
+  # fulfills — a real Reference, per the StructureDefinition) has NO field here: it would need a
+  # genuine cross-group-instance reference-picker this compiler has no mechanism for yet (unlike
+  # the auto-linked 1:1 references such as PractitionerRole.organization) — left deliberately
+  # uncaptured rather than faked with a free-text field that isn't really a Reference. Same
+  # honesty as Provider's own deferred telecom/identifier-slicing gap.
+  - resourceType: OrganizationAffiliation
+    id: section_affiliate_organization
+    label: "Affiliate Organization"
+    repeats: true
+    fields:
+      - id: "affiliate_org_name"
+        path: "OrganizationAffiliation.participatingOrganization"
+        label: "Partner Organization Name"
+        description: "The affiliate/partner organization providing the service (e.g. an external diagnostic lab chain)."
+        uiComponent: "TextInput"
+        required: true
+      - id: "affiliate_org_relationship"
+        path: "OrganizationAffiliation.code"
+        label: "Relationship"
+        description: "The nature of the affiliation."
+        uiComponent: "MultiSelect"
+        choices: ["Provider", "Diagnostics", "Billing", "Shared Imaging Service", "Laboratory", "Pharmacy"]
+        required: true
+      - id: "affiliate_org_specialty"
+        path: "OrganizationAffiliation.specialty"
+        label: "Specialty (if clinical)"
+        uiComponent: "MultiSelect"
+        choices: ["Cardiology", "Neurology", "Radiology", "Pediatrics", "Orthopedics", "Dermatology", "General Medicine", "ENT", "Ophthalmology", "Psychiatry"]
+      - id: "affiliate_org_phone"
+        path: "OrganizationAffiliation.telecom.value"
+        label: "Phone"
+        uiComponent: "TextInput"
+      - id: "affiliate_org_email"
+        path: "OrganizationAffiliation.telecom.value"
+        label: "Email"
+        uiComponent: "TextInput"
+      - id: "affiliate_org_active"
+        path: "OrganizationAffiliation.active"
+        label: "Active"
+        uiComponent: "Checkbox"
 
   - resourceType: Appointment
     id: section_appointment

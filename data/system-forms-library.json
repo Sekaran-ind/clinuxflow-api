@@ -8,7 +8,7 @@
       {
         "version": 1,
         "status": "final",
-        "yaml": "formId: system-provider-composition-v1\ntitle: \"Provider\"\n# Merges the 7 formerly-separate clinic-management forms (system-hospital-profile-v1,\n# system-locations-profile-v1, system-staff-profile-v1, system-services-profile-v1,\n# system-office-hours-profile-v1, system-consents-profile-v1, system-appointments-profile-v1)\n# into one Organization-anchored composition — the clinic-management-side mirror of\n# system-encounter-composition-v1.yaml's Patient-side merge. Organization MUST stay\n# composition[0] — yaml-to-questionnaire.js derives subjectType only from\n# composition[0].resourceType, same hard constraint as the Encounter file.\n#\n# Administrator is deliberately NOT its own block here — it stays a staff_role choice value\n# (confirmed decision, not an oversight) since it has no fields distinct from Staff today.\n#\n# Hospital's own 3 ABDM sub-blocks (facility-type/location/registration) stay separate,\n# non-repeating blocks rather than being collapsed into section_hospital — Hospital never\n# repeats, so there's no correspondence-across-instances risk the way there would be for Staff\n# (see below), and keeping them separate minimizes changes to the already-delicate ABDM\n# registration field set.\n#\n# Staff's 3 former blocks (core/PractitionerRole/ABDM-registration) ARE collapsed into one\n# section_staff block, repeats:true — collapsing is required here: if core/role/ABDM-\n# registration stayed 3 independently-repeating sibling blocks, instance N of \"core\" would have\n# no guaranteed correspondence to instance N of \"role\" for the same staff member once there's\n# more than one. Each field keeps its original, accurate FHIR path even though they now share\n# one block.\ncomposition:\n  - resourceType: Organization\n    id: section_hospital\n    label: \"Hospital Details\"\n    fields:\n      - id: \"hospital_name\"\n        path: \"Organization.name\"\n        label: \"Hospital Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"hospital_legalname\"\n        path: \"Organization.alias\"\n        label: \"Legal / Trade Name\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_type\"\n        path: \"Organization.type\"\n        label: \"Facility Type\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Hospital\",\"Clinic\",\"Pharmacy\",\"Laboratory\",\"Imaging Centre\"]\n      - id: \"hospital_npi\"\n        path: \"Organization.identifier.value\"\n        label: \"NPI / Registration No.\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_address\"\n        path: \"Organization.address.text\"\n        label: \"Street Address\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_city\"\n        path: \"Organization.address.city\"\n        label: \"City\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_state\"\n        path: \"Organization.address.state\"\n        label: \"State\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_pin\"\n        path: \"Organization.address.postalCode\"\n        label: \"PIN Code\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_country\"\n        path: \"Organization.address.country\"\n        label: \"Country\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_phone\"\n        path: \"Organization.telecom.value\"\n        label: \"Primary Phone\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_whatsapp\"\n        path: \"Organization.telecom.value\"\n        label: \"WhatsApp Number\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_email\"\n        path: \"Organization.telecom.value\"\n        label: \"Email Address\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_website\"\n        path: \"Organization.telecom.value\"\n        label: \"Website URL\"\n        uiComponent: \"TextInput\"\n\n  # UPDATE — real FHIR-native onboarding rebuild: ABDM's own field requirements (verified against\n  # abdmAdapter.js's real gateway request bodies — every field referenced there, e.g.\n  # buildHfrBasicInfoBody's ownershipCode/facilityType/facilitySubType/stateLGDCode/... — is\n  # captured somewhere in this file already; \"keep the ABDM fields as reference for minimal\n  # completeness\" confirmed no NEW fields were needed, just correct FHIR homes for them) are HFR\n  # registry CODES, not general clinical/demographic data — none of them are a good semantic fit\n  # for the generic paths they used before (Organization.type meant for a CodeableConcept\n  # classification, Organization.identifier.value meant for a business identifier, not\n  # registration-process metadata). \"any field not found in the FHIR spec needed for ABDM capture\n  # goes into extension fields\" (explicit instruction) — moved to real, distinctly-URLed\n  # Organization.extension entries instead. hospital_operational_status (Organization.active) and\n  # hospital_facility_id/hospital_npi (Organization.identifier.value) are UNCHANGED — those ARE\n  # already good, standard FHIR fits, not touched.\n  - resourceType: Organization\n    id: section_hospital_abdm_facility_type\n    label: \"Facility Type & Ownership\"\n    fields:\n      - id: \"hospital_ownership_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code\"\n        label: \"Ownership Code (HFR master: OWNER)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_facility_type\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-type\"\n        label: \"Facility Type Code (HFR master: facility-types)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_facility_subtype\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-subtype\"\n        label: \"Facility Sub-Type Code (HFR master: facility-sub-types)\"\n        uiComponent: \"TextInput\"\n      # UPDATE — real bug found live via a full end-to-end pipeline test, not caught by reading\n      # the YAML alone: this was `uiComponent: Dropdown` with 2 string choices, but\n      # Organization.active is genuinely a FHIR boolean — the compiler maps Dropdown to a\n      # `choice`-type item regardless of the target path, and nothing converts the string answer\n      # \"Functional\"/\"Non-Functional\" into a real true/false, so extraction produced\n      # `active: \"Functional\"` — structurally invalid for a real boolean field. staff_status\n      # (Practitioner.active, right below in section_staff) already used Checkbox correctly; this\n      # one didn't, inconsistently. Fixed at the authoring level, not by adding string->boolean\n      # coercion to the extractor — a boolean concept should be captured as a real boolean.\n      - id: \"hospital_operational_status\"\n        path: \"Organization.active\"\n        label: \"Currently Operational\"\n        uiComponent: \"Checkbox\"\n\n  - resourceType: Organization\n    id: section_hospital_abdm_location\n    label: \"ABDM Location (LGD Codes)\"\n    fields:\n      # UPDATE — real bug this fix also closes: district_lgd_code and subdistrict_lgd_code both\n      # mapped to the SAME Organization.address.district path before — with the real array-\n      # cardinality fix (local-extractor.js's FHIR_ARRAY_PATHS), two fields sharing one leaf path\n      # now correctly get separate array slots, which for Organization.address (itself an array)\n      # would have split them into TWO DIFFERENT address entries instead of describing the SAME\n      # one facility address — a real, different bug the extension move avoids entirely, not just\n      # the \"not really a FHIR-standard field\" concern this section is otherwise about.\n      - id: \"hospital_state_lgd_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-state-lgd-code\"\n        label: \"State LGD Code (HFR master: lgd/states)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_district_lgd_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-district-lgd-code\"\n        label: \"District LGD Code (HFR master: lgd/districts)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_subdistrict_lgd_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-subdistrict-lgd-code\"\n        label: \"Sub-District LGD Code (HFR master: lgd/subdistricts)\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Organization\n    id: section_hospital_abdm_registration\n    label: \"ABDM Facility Registration\"\n    fields:\n      - id: \"hospital_tracking_id\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-tracking-id\"\n        label: \"Tracking ID (from Basic Information step)\"\n        uiComponent: \"TextInput\"\n      # hospital_facility_id stays a real Organization.identifier — the ABDM-ASSIGNED facility id,\n      # once registration completes, is a genuine business identifier for this Organization (same\n      # reasoning hospital_npi already used), not registration-process metadata.\n      - id: \"hospital_facility_id\"\n        path: \"Organization.identifier.value\"\n        label: \"ABDM Facility ID (from Submit step)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_abdm_software_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-software-code\"\n        label: \"ABDM-Compliant Software Code (get-Software-details master)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_source_of_information\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-source-of-information\"\n        label: \"Source of Information\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_source_unique_id\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-source-unique-id\"\n        label: \"Source Unique ID\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Location\n    id: section_location\n    label: \"Branch / Location Details\"\n    repeats: true\n    fields:\n      - id: \"location_name\"\n        path: \"Location.name\"\n        label: \"Branch Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"location_address\"\n        path: \"Location.address.text\"\n        label: \"Address\"\n        uiComponent: \"TextInput\"\n      - id: \"location_phone\"\n        path: \"Location.telecom.value\"\n        label: \"Phone\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Practitioner\n    id: section_staff\n    label: \"Staff Details\"\n    repeats: true\n    fields:\n      - id: \"staff_name\"\n        path: \"Practitioner.name.text\"\n        label: \"Full Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"staff_phone\"\n        path: \"Practitioner.telecom.value\"\n        label: \"Phone\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_email\"\n        path: \"Practitioner.telecom.value\"\n        label: \"Email\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_qualification\"\n        path: \"Practitioner.qualification.code\"\n        label: \"Qualification\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_license\"\n        path: \"Practitioner.identifier.value\"\n        label: \"License / Registration ID\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_status\"\n        path: \"Practitioner.active\"\n        label: \"Active\"\n        uiComponent: \"Checkbox\"\n      # UPDATE — real FHIR-native onboarding rebuild: staff_role/staff_specialty already used\n      # Practitioner.extension (FHIR's own real escape hatch for this — correct call, kept), but\n      # with NO `.url` — real FHIR extensions require one to say WHAT the extension is; multiple\n      # untagged entries in one array are not reliably distinguishable. Every ABDM-specific field\n      # below (previously piled onto the generic Practitioner.identifier.value, an 8-way collision\n      # now array-safe per local-extractor.js's fix but still the wrong FHIR home) moves to its own\n      # distinctly-URLed extension too — \"any field not found in the FHIR spec needed for ABDM\n      # capture goes into extension fields\" (explicit instruction). staff_license/staff_hprid/\n      # staff_hpr_id_number stay on Practitioner.identifier.value, UNCHANGED — those genuinely ARE\n      # business identifiers for this Practitioner (a license number, an ABDM-assigned HPR ID),\n      # not registration-process metadata.\n      - id: \"staff_role\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/clinic-staff-role\"\n        label: \"Role\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Chief of Medicine\",\"Doctor\",\"Nurse\",\"Administrator\",\"Receptionist\",\"Radiologist\"]\n      - id: \"staff_specialty\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/clinic-staff-specialty\"\n        label: \"Specialty\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"Cardiology\",\"Neurology\",\"Radiology\",\"Pediatrics\",\"Orthopedics\",\"Dermatology\",\"General Medicine\",\"ENT\",\"Ophthalmology\",\"Psychiatry\"]\n      # ABDM's own fields, not this app's clinical vocabulary — staff_abdm_role (Doctor/Nurse/\n      # Facility Manager) is deliberately separate from staff_role above (Chief of Medicine/.../\n      # Administrator): the same person can hold a clinical role here and a different ABDM role\n      # in HPR's own registry. staff_aadhaar/staff_otp/staff_hpr_password are intentionally NOT\n      # fields on this form — see docs/onboarding/04-security-notes.md. They live only in the\n      # onboarding page's transient state so there is no code path by which\n      # SystemForms.saveDataRecord() could ever persist them.\n      - id: \"staff_first_name\"\n        path: \"Practitioner.name.given\"\n        label: \"First Name (as on Aadhaar)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_middle_name\"\n        path: \"Practitioner.name.given\"\n        label: \"Middle Name\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_last_name\"\n        path: \"Practitioner.name.family\"\n        label: \"Last Name (as on Aadhaar)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_abdm_role\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hpr-abdm-role\"\n        label: \"ABDM Role\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Doctor\",\"Nurse\",\"Facility Manager\"]\n      - id: \"staff_hp_category_code\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hpr-category-code\"\n        label: \"HP Category Code (HPR master: system-of-medicine)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_hp_subcategory_code\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hpr-subcategory-code\"\n        label: \"HP Sub-Category Code\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_state_code\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hpr-state-code\"\n        label: \"State LGD Code (HPR master: states)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_district_code\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hpr-district-code\"\n        label: \"District LGD Code (HPR master: districts)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_council\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council\"\n        label: \"Registered with a Medical/Nursing Council\"\n        uiComponent: \"Checkbox\"\n      - id: \"staff_hprid\"\n        path: \"Practitioner.identifier.value\"\n        label: \"HPR ID (assigned after creation)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_hpr_id_number\"\n        path: \"Practitioner.identifier.value\"\n        label: \"HPR ID Number (assigned after creation)\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: HealthcareService\n    id: section_services_matrix\n    label: \"Service Details\"\n    repeats: true\n    fields:\n      - id: \"service_name\"\n        path: \"HealthcareService.name\"\n        label: \"Service Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"service_specialty_category\"\n        path: \"HealthcareService.category\"\n        label: \"Core Specialty Category\"\n        description: \"The primary clinical vertical or domain classification such as Cardiology, Pediatrics, Optometry, or Lab Diagnostics.\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Cardiology\", \"Pediatrics\", \"Ophthalmology\", \"Optometry\", \"Diet & Wellness\", \"General Medicine\"]\n        required: true\n      - id: \"service_program_name\"\n        path: \"HealthcareService.program\"\n        label: \"Target Clinical Program Name\"\n        description: \"The formal named program or specific diagnostic track offered, like Type 2 Diabetes Management or Periodontal Charting.\"\n        uiComponent: \"TextInput\"\n      - id: \"service_description\"\n        path: \"HealthcareService.comment\"\n        label: \"Description\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Location\n    id: section_hours\n    label: \"Operating Hours\"\n    repeats: true\n    fields:\n      - id: \"hours_days\"\n        path: \"Location.hoursOfOperation.daysOfWeek\"\n        label: \"Days of Week\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"mon\",\"tue\",\"wed\",\"thu\",\"fri\",\"sat\",\"sun\"]\n      - id: \"hours_open\"\n        path: \"Location.hoursOfOperation.openingTime\"\n        label: \"Opening Time\"\n        uiComponent: \"TextInput\"\n      - id: \"hours_close\"\n        path: \"Location.hoursOfOperation.closingTime\"\n        label: \"Closing Time\"\n        uiComponent: \"TextInput\"\n      - id: \"hours_allday\"\n        path: \"Location.hoursOfOperation.allDay\"\n        label: \"Open All Day\"\n        uiComponent: \"Checkbox\"\n\n  - resourceType: Consent\n    id: section_consent\n    label: \"Consent Details\"\n    repeats: true\n    fields:\n      - id: \"consent_title\"\n        path: \"Consent.sourceAttachment.title\"\n        label: \"Title\"\n        uiComponent: \"TextInput\"\n      - id: \"consent_category\"\n        path: \"Consent.category\"\n        label: \"Consent Type\"\n        uiComponent: \"Dropdown\"\n        choices: [\"HIPAA Privacy Notice\",\"Informed Consent for Treatment\",\"Financial Responsibility\",\"Telemedicine Consent\",\"Photography / Research\",\"Minor Treatment Consent\"]\n        required: true\n      - id: \"consent_status\"\n        path: \"Consent.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"draft\",\"active\",\"inactive\",\"entered-in-error\",\"rejected\"]\n      - id: \"consent_datetime\"\n        path: \"Consent.dateTime\"\n        label: \"Date Signed\"\n        uiComponent: \"DatePicker\"\n      - id: \"consent_expiry\"\n        path: \"Consent.provision.period.end\"\n        label: \"Expiry Date\"\n        uiComponent: \"DatePicker\"\n\n  - resourceType: Appointment\n    id: section_appointment\n    label: \"Appointment Details\"\n    repeats: true\n    fields:\n      - id: \"appt_patient\"\n        path: \"Appointment.participant.actor\"\n        label: \"Patient\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_staff\"\n        path: \"Appointment.participant.actor\"\n        label: \"Staff Member\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_status\"\n        path: \"Appointment.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"proposed\",\"booked\",\"arrived\",\"fulfilled\",\"cancelled\",\"noshow\"]\n        required: true\n      - id: \"appt_start\"\n        path: \"Appointment.start\"\n        label: \"Start Time\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_end\"\n        path: \"Appointment.end\"\n        label: \"End Time\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_description\"\n        path: \"Appointment.description\"\n        label: \"Reason / Notes\"\n        uiComponent: \"TextInput\"\n",
+        "yaml": "formId: system-provider-composition-v1\ntitle: \"Provider\"\n# Merges the 7 formerly-separate clinic-management forms (system-hospital-profile-v1,\n# system-locations-profile-v1, system-staff-profile-v1, system-services-profile-v1,\n# system-office-hours-profile-v1, system-consents-profile-v1, system-appointments-profile-v1)\n# into one Organization-anchored composition — the clinic-management-side mirror of\n# system-encounter-composition-v1.yaml's Patient-side merge. Organization MUST stay\n# composition[0] — yaml-to-questionnaire.js derives subjectType only from\n# composition[0].resourceType, same hard constraint as the Encounter file.\n#\n# Administrator is deliberately NOT its own block here — it stays a staff_role choice value\n# (confirmed decision, not an oversight) since it has no fields distinct from Staff today.\n#\n# Hospital's own 3 ABDM sub-blocks (facility-type/location/registration) stay separate,\n# non-repeating blocks rather than being collapsed into section_hospital — Hospital never\n# repeats, so there's no correspondence-across-instances risk the way there would be for Staff\n# (see below), and keeping them separate minimizes changes to the already-delicate ABDM\n# registration field set.\n#\n# Staff's 3 former blocks (core/PractitionerRole/ABDM-registration) ARE collapsed into one\n# section_staff block, repeats:true — collapsing is required here: if core/role/ABDM-\n# registration stayed 3 independently-repeating sibling blocks, instance N of \"core\" would have\n# no guaranteed correspondence to instance N of \"role\" for the same staff member once there's\n# more than one. Each field keeps its original, accurate FHIR path even though they now share\n# one block.\ncomposition:\n  - resourceType: Organization\n    id: section_hospital\n    label: \"Hospital Details\"\n    fields:\n      - id: \"hospital_name\"\n        path: \"Organization.name\"\n        label: \"Hospital Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"hospital_legalname\"\n        path: \"Organization.alias\"\n        label: \"Legal / Trade Name\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_type\"\n        path: \"Organization.type\"\n        label: \"Facility Type\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Hospital\",\"Clinic\",\"Pharmacy\",\"Laboratory\",\"Imaging Centre\"]\n      - id: \"hospital_npi\"\n        path: \"Organization.identifier.value\"\n        label: \"NPI / Registration No.\"\n        uiComponent: \"TextInput\"\n      # SPEC-24 real gap found via a live pipeline run against ClinuxFlowFacility.json: this was\n      # Organization.address.text (a free-text blob, real FHIR but not what the profile\n      # constrains) — the profile requires Organization.address.line (1..2, matching HFR's own\n      # addressLine1 Required + addressLine2 optional), which nothing here ever wrote to, so no\n      # facility could validate no matter how completely this field was filled in. Retargeted;\n      # .text was never a distinct field elsewhere, so this is a rename, not new data loss.\n      - id: \"hospital_address\"\n        path: \"Organization.address.line\"\n        label: \"Street Address\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_city\"\n        path: \"Organization.address.city\"\n        label: \"City\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_state\"\n        path: \"Organization.address.state\"\n        label: \"State\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_pin\"\n        path: \"Organization.address.postalCode\"\n        label: \"PIN Code\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_country\"\n        path: \"Organization.address.country\"\n        label: \"Country\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_phone\"\n        path: \"Organization.telecom.value\"\n        label: \"Primary Phone\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_whatsapp\"\n        path: \"Organization.telecom.value\"\n        label: \"WhatsApp Number\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_email\"\n        path: \"Organization.telecom.value\"\n        label: \"Email Address\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_website\"\n        path: \"Organization.telecom.value\"\n        label: \"Website URL\"\n        uiComponent: \"TextInput\"\n\n  # UPDATE — real FHIR-native onboarding rebuild: ABDM's own field requirements (verified against\n  # abdmAdapter.js's real gateway request bodies — every field referenced there, e.g.\n  # buildHfrBasicInfoBody's ownershipCode/facilityType/facilitySubType/stateLGDCode/... — is\n  # captured somewhere in this file already; \"keep the ABDM fields as reference for minimal\n  # completeness\" confirmed no NEW fields were needed, just correct FHIR homes for them) are HFR\n  # registry CODES, not general clinical/demographic data — none of them are a good semantic fit\n  # for the generic paths they used before (Organization.type meant for a CodeableConcept\n  # classification, Organization.identifier.value meant for a business identifier, not\n  # registration-process metadata). \"any field not found in the FHIR spec needed for ABDM capture\n  # goes into extension fields\" (explicit instruction) — moved to real, distinctly-URLed\n  # Organization.extension entries instead. hospital_operational_status (Organization.active) and\n  # hospital_facility_id/hospital_npi (Organization.identifier.value) are UNCHANGED — those ARE\n  # already good, standard FHIR fits, not touched.\n  - resourceType: Organization\n    id: section_hospital_abdm_facility_type\n    label: \"Facility Type & Ownership\"\n    fields:\n      - id: \"hospital_ownership_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code\"\n        label: \"Ownership Code (HFR master: OWNER)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_facility_type\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-type\"\n        label: \"Facility Type Code (HFR master: facility-types)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_facility_subtype\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-subtype\"\n        label: \"Facility Sub-Type Code (HFR master: facility-sub-types)\"\n        uiComponent: \"TextInput\"\n      # SPEC-24 real gap found while wiring conformance-validator.js against real captured data,\n      # not while reading the YAML in isolation: ClinuxFlowFacility.json (data/structure-\n      # definitions) requires ownershipSubTypeCode/systemOfMedicine/geoLatitude/geoLongitude\n      # (min:1 each) — see New_HFR_APIs_Documentation_SBX.pdf's own get-owner-subtype and\n      # facility-registration field tables — but no field on this form ever captured them; a\n      # facility could never validate, full stop, no matter how completely both onboarding pages\n      # were filled in. ownershipSubTypeCode is a master-data code exactly like ownershipCode\n      # above it (real TextInput per HFR's own get-owner-subtype API, not a static local list).\n      - id: \"hospital_ownership_subtype_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-subtype-code\"\n        label: \"Ownership Sub-Type Code (HFR master: get-owner-subtype)\"\n        uiComponent: \"TextInput\"\n      # Real, standard AYUSH + Modern-Medicine/Dentistry categories, confirmed against\n      # New_HFR_APIs_Documentation_SBX.pdf's own worked samples (systemOfMedicineCode \"M,D\" =\n      # Modern Medicine + Dentistry, \"UN,H\" = Unani + Homeopathy) — HFR itself wants these as one\n      # comma-joined code string on the wire, but ClinuxFlowFacility.json's own comment is explicit\n      # that this profile models it as a real repeating extension, not a comma-joined string;\n      # MultiSelect already writes one array slot per selection (same mechanism staff_specialty\n      # above and hours_days below already use, and the one local-extractor.js MultiSelect bug —\n      # answers truncated to the first choice — is already fixed).\n      - id: \"hospital_system_of_medicine\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-system-of-medicine\"\n        label: \"System(s) of Medicine (HFR master: MEDICINE)\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"Modern Medicine (Allopathy)\", \"Ayurveda\", \"Homeopathy\", \"Unani\", \"Siddha\", \"Yoga & Naturopathy\", \"Dentistry\"]\n      # UPDATE — real bug found live via a full end-to-end pipeline test, not caught by reading\n      # the YAML alone: this was `uiComponent: Dropdown` with 2 string choices, but\n      # Organization.active is genuinely a FHIR boolean — the compiler maps Dropdown to a\n      # `choice`-type item regardless of the target path, and nothing converts the string answer\n      # \"Functional\"/\"Non-Functional\" into a real true/false, so extraction produced\n      # `active: \"Functional\"` — structurally invalid for a real boolean field. staff_status\n      # (Practitioner.active, right below in section_staff) already used Checkbox correctly; this\n      # one didn't, inconsistently. Fixed at the authoring level, not by adding string->boolean\n      # coercion to the extractor — a boolean concept should be captured as a real boolean.\n      - id: \"hospital_operational_status\"\n        path: \"Organization.active\"\n        label: \"Currently Operational\"\n        uiComponent: \"Checkbox\"\n      # SPEC-24 real gap found the same way as ownership-subtype/system-of-medicine/geo above:\n      # HFR's own CODED operational-status value (get-master-data type='FAC-STATUS') is a real,\n      # required, distinct field from Organization.active above — active is this profile's own\n      # derived boolean for internal use (see ClinuxFlowFacility.json's own comment on this exact\n      # distinction); this extension round-trips HFR's richer status code untouched. Never\n      # captured before this.\n      - id: \"hospital_operational_status_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-operational-status-code\"\n        label: \"Operational Status Code (HFR master: FAC-STATUS)\"\n        uiComponent: \"TextInput\"\n      # Real fields found missing while grounding FacilityHfrPanel.vue's basic-information body\n      # against New_HFR_APIs_Documentation_SBX.pdf §2.1's own real sample request (read directly,\n      # not guessed) — ownershipSubTypeCode2 is a SECOND, distinct ownership sub-type code\n      # (PP01/PN01-style, HFR master PROFIT-TYPE/NON-PROFIT-TYPE — confirmed reliably fetchable\n      # live, unlike get-owner-subtype/facility-types/facility-sub-types which are all returning\n      # real HIS-500s on the sandbox as of this build), separate from\n      # hospital_ownership_subtype_code above it (that one stays TextInput — its own master data\n      # source is one of the broken ones).\n      - id: \"hospital_ownership_subtype_code_2\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-subtype-code-2\"\n        label: \"Ownership Sub-Type Code 2 (HFR master: PROFIT-TYPE / NON-PROFIT-TYPE)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_type_of_service_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-type-of-service-code\"\n        label: \"Type of Service (HFR master: TYPE-SERVICE)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_speciality_type_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-speciality-type-code\"\n        label: \"Speciality Type (Single or Multiple)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_facility_region\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-region\"\n        label: \"Facility Region (U = Urban, R = Rural)\"\n        uiComponent: \"TextInput\"\n      # Additional Information API's own hasX general-information flags (New_HFR_APIs_Documentation\n      # _SBX.pdf §2.2). UPDATE — real bug found and fixed while building the Detailed Information\n      # follow-up: these are NOT plain Y/N booleans (Checkbox was wrong) — the doc's own real\n      # sample uses \"YALL\" (Yes, available for everyone), confirmed live against get-master-data\n      # type='GENERAL-INFO-OPTIONS' (3 real codes: YALL/YIN/N). TextInput (a coded value, captured\n      # by a hand-authored panel dropdown — see FacilityHfrPanel.vue), not Checkbox.\n      - id: \"hospital_has_dialysis_center\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-has-dialysis-center\"\n        label: \"Has Dialysis Center (HFR master: GENERAL-INFO-OPTIONS)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_has_pharmacy\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-has-pharmacy\"\n        label: \"Has Pharmacy (HFR master: GENERAL-INFO-OPTIONS)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_has_blood_bank\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-has-blood-bank\"\n        label: \"Has Blood Bank (HFR master: GENERAL-INFO-OPTIONS)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_has_cath_lab\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-has-cath-lab\"\n        label: \"Has Cath Lab (HFR master: GENERAL-INFO-OPTIONS)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_has_diagnostic_lab\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-has-diagnostic-lab\"\n        label: \"Has Diagnostic Lab (HFR master: GENERAL-INFO-OPTIONS)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_has_imaging_center\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-has-imaging-center\"\n        label: \"Has Imaging Center (HFR master: GENERAL-INFO-OPTIONS)\"\n        uiComponent: \"TextInput\"\n      # Real base FHIR field (not an ABDM extension) captured here for real, closing a standing\n      # gap found live: FacilityBasicsHost.vue never rendered ANY field for Organization.active\n      # (min:1, Required) after the old LForms-rendered page was retired — silently unfillable.\n      - id: \"hospital_operational_status\"\n        path: \"Organization.active\"\n        label: \"Currently Operational\"\n        uiComponent: \"Checkbox\"\n\n      # --- Detailed Information API's own conditional sections (New_HFR_APIs_Documentation_SBX.pdf\n      # §2.3) — only required/sent when the corresponding hasX flag above is YALL/YIN, per the\n      # doc's own error-response sample (sending an irrelevant section is REJECTED, not ignored).\n      # FacilityHfrPanel.vue shows each of these conditionally.\n      - id: \"hospital_pharmacy_jan_aushadhi\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-jan-aushadhi\"\n        label: \"Is Jan Aushadhi Kendra (HFR master: GENERAL-INFO-OPTIONS)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_pharmacy_jan_aushadhi_id\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-jan-aushadhi-id\"\n        label: \"Jan Aushadhi Kendra ID\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_pharmacy_drug_license\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-drug-license\"\n        label: \"Pharmacy Drug License Number\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_pharmacy_gstin\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-gstin\"\n        label: \"Pharmacy GSTIN Number\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_pharmacist_registration\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacist-registration\"\n        label: \"Pharmacist Registration Number\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_bloodbank_eraktkosh\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-eraktkosh\"\n        label: \"Registered in e-Raktkosh (HFR master: GENERAL-INFO-OPTIONS)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_bloodbank_eraktkosh_id\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-eraktkosh-id\"\n        label: \"e-Raktkosh ID\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_bloodbank_license\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-license\"\n        label: \"Blood Bank License Number\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_imaging_services\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-imaging-services\"\n        label: \"Imaging Services Offered (HFR master: IMAGING)\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"X-Ray\", \"CT-Scan\", \"MRI(Magnetic Resonance Imaging)\", \"Ultrasonography(USG)\", \"ColorDoppler\"]\n      - id: \"hospital_diagnostic_services\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-diagnostic-services\"\n        label: \"Diagnostic Lab Services Offered (HFR master: DIAGNOSTIC)\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"Pathology\", \"Haematology\", \"Cytology\", \"Microbiology\", \"Serology\", \"Biochemistry\", \"Histopathology\", \"Genetics\", \"Virology\", \"Cytopathology\", \"MolecularBiology\", \"Toxicology\", \"OralPathology\"]\n      - id: \"hospital_total_beds\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-total-beds\"\n        label: \"Total Number of Beds\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_dental_chairs\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-dental-chairs\"\n        label: \"Number of Dental Chairs\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Organization\n    id: section_hospital_abdm_location\n    label: \"ABDM Location (LGD Codes)\"\n    fields:\n      # UPDATE — real bug this fix also closes: district_lgd_code and subdistrict_lgd_code both\n      # mapped to the SAME Organization.address.district path before — with the real array-\n      # cardinality fix (local-extractor.js's FHIR_ARRAY_PATHS), two fields sharing one leaf path\n      # now correctly get separate array slots, which for Organization.address (itself an array)\n      # would have split them into TWO DIFFERENT address entries instead of describing the SAME\n      # one facility address — a real, different bug the extension move avoids entirely, not just\n      # the \"not really a FHIR-standard field\" concern this section is otherwise about.\n      - id: \"hospital_state_lgd_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-state-lgd-code\"\n        label: \"State LGD Code (HFR master: lgd/states)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_district_lgd_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-district-lgd-code\"\n        label: \"District LGD Code (HFR master: lgd/districts)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_subdistrict_lgd_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-subdistrict-lgd-code\"\n        label: \"Sub-District LGD Code (HFR master: lgd/subdistricts)\"\n        uiComponent: \"TextInput\"\n      # SPEC-24: the other half of the same real gap noted above hospital_ownership_subtype_code\n      # — ClinuxFlowFacility.json requires geoLatitude/geoLongitude (HFR: latitude/longitude,\n      # Required, \"-90.000000 to +90.000000\"/\"-180.000000 to +180.000000\") but this form never\n      # captured them. TextInput, not a number field — HFR's own docs specify these as strings.\n      - id: \"hospital_geo_latitude\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-latitude\"\n        label: \"Latitude\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_geo_longitude\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-longitude\"\n        label: \"Longitude\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Organization\n    id: section_hospital_abdm_registration\n    label: \"ABDM Facility Registration\"\n    fields:\n      - id: \"hospital_tracking_id\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-tracking-id\"\n        label: \"Tracking ID (from Basic Information step)\"\n        uiComponent: \"TextInput\"\n      # hospital_facility_id stays a real Organization.identifier — the ABDM-ASSIGNED facility id,\n      # once registration completes, is a genuine business identifier for this Organization (same\n      # reasoning hospital_npi already used), not registration-process metadata.\n      - id: \"hospital_facility_id\"\n        path: \"Organization.identifier.value\"\n        label: \"ABDM Facility ID (from Submit step)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_abdm_software_code\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-software-code\"\n        label: \"ABDM-Compliant Software Code (get-Software-details master)\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_source_of_information\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-source-of-information\"\n        label: \"Source of Information\"\n        uiComponent: \"TextInput\"\n      - id: \"hospital_source_unique_id\"\n        path: \"Organization.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hfr-source-unique-id\"\n        label: \"Source Unique ID\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Location\n    id: section_location\n    label: \"Branch / Location Details\"\n    repeats: true\n    fields:\n      - id: \"location_name\"\n        path: \"Location.name\"\n        label: \"Branch Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"location_address\"\n        path: \"Location.address.text\"\n        label: \"Address\"\n        uiComponent: \"TextInput\"\n      - id: \"location_phone\"\n        path: \"Location.telecom.value\"\n        label: \"Phone\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Practitioner\n    id: section_staff\n    label: \"Staff Details\"\n    repeats: true\n    fields:\n      - id: \"staff_name\"\n        path: \"Practitioner.name.text\"\n        label: \"Full Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"staff_phone\"\n        path: \"Practitioner.telecom.value\"\n        label: \"Phone\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_email\"\n        path: \"Practitioner.telecom.value\"\n        label: \"Email\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_qualification\"\n        path: \"Practitioner.qualification.code\"\n        label: \"Qualification\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_license\"\n        path: \"Practitioner.identifier.value\"\n        label: \"License / Registration ID\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_status\"\n        path: \"Practitioner.active\"\n        label: \"Active\"\n        uiComponent: \"Checkbox\"\n      # UPDATE — real FHIR-native onboarding rebuild: staff_role/staff_specialty already used\n      # Practitioner.extension (FHIR's own real escape hatch for this — correct call, kept), but\n      # with NO `.url` — real FHIR extensions require one to say WHAT the extension is; multiple\n      # untagged entries in one array are not reliably distinguishable. Every ABDM-specific field\n      # below (previously piled onto the generic Practitioner.identifier.value, an 8-way collision\n      # now array-safe per local-extractor.js's fix but still the wrong FHIR home) moves to its own\n      # distinctly-URLed extension too — \"any field not found in the FHIR spec needed for ABDM\n      # capture goes into extension fields\" (explicit instruction). staff_license/staff_hprid/\n      # staff_hpr_id_number stay on Practitioner.identifier.value, UNCHANGED — those genuinely ARE\n      # business identifiers for this Practitioner (a license number, an ABDM-assigned HPR ID),\n      # not registration-process metadata.\n      - id: \"staff_role\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/clinic-staff-role\"\n        label: \"Role\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Chief of Medicine\",\"Doctor\",\"Nurse\",\"Administrator\",\"Receptionist\",\"Radiologist\"]\n      - id: \"staff_specialty\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/clinic-staff-specialty\"\n        label: \"Specialty\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"Cardiology\",\"Neurology\",\"Radiology\",\"Pediatrics\",\"Orthopedics\",\"Dermatology\",\"General Medicine\",\"ENT\",\"Ophthalmology\",\"Psychiatry\"]\n      # ABDM's own fields, not this app's clinical vocabulary — staff_abdm_role (Doctor/Nurse/\n      # Facility Manager) is deliberately separate from staff_role above (Chief of Medicine/.../\n      # Administrator): the same person can hold a clinical role here and a different ABDM role\n      # in HPR's own registry. staff_aadhaar/staff_otp/staff_hpr_password are intentionally NOT\n      # fields on this form — see docs/onboarding/04-security-notes.md. They live only in the\n      # onboarding page's transient state so there is no code path by which\n      # SystemForms.saveDataRecord() could ever persist them.\n      - id: \"staff_first_name\"\n        path: \"Practitioner.name.given\"\n        label: \"First Name (as on Aadhaar)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_middle_name\"\n        path: \"Practitioner.name.given\"\n        label: \"Middle Name\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_last_name\"\n        path: \"Practitioner.name.family\"\n        label: \"Last Name (as on Aadhaar)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_hp_category_code\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hpr-category-code\"\n        label: \"HP Category Code (HPR master: system-of-medicine)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_hp_subcategory_code\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hpr-subcategory-code\"\n        label: \"HP Sub-Category Code\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_state_code\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hpr-state-code\"\n        label: \"State LGD Code (HPR master: states)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_district_code\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hpr-district-code\"\n        label: \"District LGD Code (HPR master: districts)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_council\"\n        path: \"Practitioner.extension\"\n        extensionUrl: \"https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council\"\n        label: \"Registered with a Medical/Nursing Council\"\n        uiComponent: \"Checkbox\"\n      - id: \"staff_hprid\"\n        path: \"Practitioner.identifier.value\"\n        label: \"HPR ID (assigned after creation)\"\n        uiComponent: \"TextInput\"\n      - id: \"staff_hpr_id_number\"\n        path: \"Practitioner.identifier.value\"\n        label: \"HPR ID Number (assigned after creation)\"\n        uiComponent: \"TextInput\"\n\n  # SPEC-24 §2's own real modeling upgrade: PractitionerRole (this Practitioner's role AT this\n  # facility) as a genuinely separate FHIR resource from Practitioner (the person), so one person\n  # can later hold roles at more than one facility — the split ClinuxFlowProviderRole.json is\n  # built against. A SIBLING top-level block, not nested inside section_staff above: nesting a\n  # DIFFERENT resourceType's fields inside a repeating group compiles clean through\n  # local-extractor.js (confirmed, and fixed a real cross-resourceType instance-clobbering bug\n  # doing so) but NOT through yaml-to-questionnaire.js's own schema/dictionary validation, which\n  # ties every field in a block — nested or not — to that ONE block's own declared resourceType;\n  # a bare resource-type name like \"PractitionerRole\" is not a real field PATH within Practitioner\n  # for that check to accept. Teaching the compiler a per-group resourceType override is a real,\n  # separate piece of work, not bundled into this pass. A sibling block needs no compiler change\n  # at all and is exactly the existing, already-proven pattern (section_hospital/section_staff/...\n  # are already siblings, each its own resourceType) — the only real requirement it adds is that\n  # the SAVE flow appends one section_staff instance and one section_staff_role instance together,\n  # always in lockstep (hand-guaranteed by ProviderBasicsHost.vue's own merge logic, not LForms'\n  # independent per-group \"+ Add Another\") — local-extractor.js's own separate-instances counter\n  # is a simple running count per group linkId, so matching append order is what keeps the Nth\n  # repetition of each block correctly correlated to the same real staff member.\n  #\n  # PractitionerRole.practitioner/.organization are NOT fields here — both get auto-linked by\n  # local-extractor.js (matching this SAME repetition's own Practitioner, and the one Organization\n  # in this record) once both resources exist in the same extraction — no manual reference field\n  # needed, same as it already worked for the single-Practitioner case.\n  - resourceType: PractitionerRole\n    id: section_staff_role\n    label: \"Role at this Facility\"\n    repeats: true\n    fields:\n      - id: \"staff_role_active\"\n        path: \"PractitionerRole.active\"\n        label: \"Currently Active in this Role\"\n        uiComponent: \"Checkbox\"\n      # Real HPR role codes confirmed against \"1. Register Healthcare Professional (Doctor & Nurse)\n      # API.pdf\"'s own Roles table (1/2/3) — this WAS staff_abdm_role on Practitioner.extension\n      # with invented Doctor/Nurse/Facility Manager choices, conflating the SEPARATE\n      # hpCategoryCode concept above with the real HPR role table; ClinuxFlowProviderRole.json's\n      # own comment already reconciles the prior YAML's \"Administrator\" concept as really being\n      # HPR's own \"Facility Manager\" role. Retargeted here, not duplicated.\n      - id: \"staff_provider_role\"\n        path: \"PractitionerRole.code\"\n        label: \"HPR Role (HPR master: role)\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Healthcare Professional\", \"Facility Manager\", \"Healthcare Professional and Facility Manager\"]\n\n  - resourceType: HealthcareService\n    id: section_services_matrix\n    label: \"Service Details\"\n    repeats: true\n    fields:\n      - id: \"service_name\"\n        path: \"HealthcareService.name\"\n        label: \"Service Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"service_specialty_category\"\n        path: \"HealthcareService.category\"\n        label: \"Core Specialty Category\"\n        description: \"The primary clinical vertical or domain classification such as Cardiology, Pediatrics, Optometry, or Lab Diagnostics.\"\n        uiComponent: \"Dropdown\"\n        choices: [\"Cardiology\", \"Pediatrics\", \"Ophthalmology\", \"Optometry\", \"Diet & Wellness\", \"General Medicine\"]\n        required: true\n      - id: \"service_program_name\"\n        path: \"HealthcareService.program\"\n        label: \"Target Clinical Program Name\"\n        description: \"The formal named program or specific diagnostic track offered, like Type 2 Diabetes Management or Periodontal Charting.\"\n        uiComponent: \"TextInput\"\n      - id: \"service_description\"\n        path: \"HealthcareService.comment\"\n        label: \"Description\"\n        uiComponent: \"TextInput\"\n\n  - resourceType: Location\n    id: section_hours\n    label: \"Operating Hours\"\n    repeats: true\n    fields:\n      - id: \"hours_days\"\n        path: \"Location.hoursOfOperation.daysOfWeek\"\n        label: \"Days of Week\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"mon\",\"tue\",\"wed\",\"thu\",\"fri\",\"sat\",\"sun\"]\n      - id: \"hours_open\"\n        path: \"Location.hoursOfOperation.openingTime\"\n        label: \"Opening Time\"\n        uiComponent: \"TextInput\"\n      - id: \"hours_close\"\n        path: \"Location.hoursOfOperation.closingTime\"\n        label: \"Closing Time\"\n        uiComponent: \"TextInput\"\n      - id: \"hours_allday\"\n        path: \"Location.hoursOfOperation.allDay\"\n        label: \"Open All Day\"\n        uiComponent: \"Checkbox\"\n\n  - resourceType: Consent\n    id: section_consent\n    label: \"Consent Details\"\n    repeats: true\n    fields:\n      - id: \"consent_title\"\n        path: \"Consent.sourceAttachment.title\"\n        label: \"Title\"\n        uiComponent: \"TextInput\"\n      - id: \"consent_category\"\n        path: \"Consent.category\"\n        label: \"Consent Type\"\n        uiComponent: \"Dropdown\"\n        choices: [\"HIPAA Privacy Notice\",\"Informed Consent for Treatment\",\"Financial Responsibility\",\"Telemedicine Consent\",\"Photography / Research\",\"Minor Treatment Consent\"]\n        required: true\n      - id: \"consent_status\"\n        path: \"Consent.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"draft\",\"active\",\"inactive\",\"entered-in-error\",\"rejected\"]\n      - id: \"consent_datetime\"\n        path: \"Consent.dateTime\"\n        label: \"Date Signed\"\n        uiComponent: \"DatePicker\"\n      - id: \"consent_expiry\"\n        path: \"Consent.provision.period.end\"\n        label: \"Expiry Date\"\n        uiComponent: \"DatePicker\"\n\n  # SPEC-24 §7 step 6 (Affiliate Organization) — genuinely new: an organization-to-organization\n  # relationship (a partner imaging centre/lab/billing service delivering a shared service to/\n  # through this facility), profiled as ClinuxFlowAffiliateOrganization (data/structure-\n  # definitions), FHIR R4's own OrganizationAffiliation resource, not a repurposed Organization.\n  # Distinct from section_staff_role's affiliate case (ClinuxFlowAffiliatePractitionerRole,\n  # captured entirely outside this YAML — see TeamSettingsModal.vue's Affiliates tab): that one is\n  # a practitioner-level, account-linking relationship; this one is org-level and admin-configured,\n  # same tier as Services/Hours/Consents above.\n  #\n  # `participatingOrganization` deliberately captured as a plain string (no target resource — an\n  # external affiliate org has no reason to conform to this app's own Facility profile, same\n  # reasoning ClinuxFlowAffiliateOrganization.json's own comment gives), same simplification the\n  # WHOLE compiler pipeline already uses for every Reference/CodeableConcept leaf (a bare value,\n  # not a real {reference,display}/{coding,text} object) — confirmed via the generated dictionary\n  # (data/form-schematics.schema.json): '.participatingOrganization.display' is NOT a recognized\n  # path (Reference is treated as opaque/unwalked here, unlike identifier's own richer sub-tree),\n  # only the bare '.participatingOrganization' path is. `.code`/`.specialty` map straight to their\n  # real CodeableConcept-array paths — MultiSelect's own multi-answer handling (local-extractor\n  # .js's dynamicArrayIndexTrackingLedger) gives each its own array slot, matching HealthcareService\n  # .category's precedent above.\n  #\n  # `.healthcareService` (which of THIS facility's own HealthcareService entries the affiliate\n  # fulfills — a real Reference, per the StructureDefinition) has NO field here: it would need a\n  # genuine cross-group-instance reference-picker this compiler has no mechanism for yet (unlike\n  # the auto-linked 1:1 references such as PractitionerRole.organization) — left deliberately\n  # uncaptured rather than faked with a free-text field that isn't really a Reference. Same\n  # honesty as Provider's own deferred telecom/identifier-slicing gap.\n  - resourceType: OrganizationAffiliation\n    id: section_affiliate_organization\n    label: \"Affiliate Organization\"\n    repeats: true\n    fields:\n      - id: \"affiliate_org_name\"\n        path: \"OrganizationAffiliation.participatingOrganization\"\n        label: \"Partner Organization Name\"\n        description: \"The affiliate/partner organization providing the service (e.g. an external diagnostic lab chain).\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"affiliate_org_relationship\"\n        path: \"OrganizationAffiliation.code\"\n        label: \"Relationship\"\n        description: \"The nature of the affiliation.\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"Provider\", \"Diagnostics\", \"Billing\", \"Shared Imaging Service\", \"Laboratory\", \"Pharmacy\"]\n        required: true\n      - id: \"affiliate_org_specialty\"\n        path: \"OrganizationAffiliation.specialty\"\n        label: \"Specialty (if clinical)\"\n        uiComponent: \"MultiSelect\"\n        choices: [\"Cardiology\", \"Neurology\", \"Radiology\", \"Pediatrics\", \"Orthopedics\", \"Dermatology\", \"General Medicine\", \"ENT\", \"Ophthalmology\", \"Psychiatry\"]\n      - id: \"affiliate_org_phone\"\n        path: \"OrganizationAffiliation.telecom.value\"\n        label: \"Phone\"\n        uiComponent: \"TextInput\"\n      - id: \"affiliate_org_email\"\n        path: \"OrganizationAffiliation.telecom.value\"\n        label: \"Email\"\n        uiComponent: \"TextInput\"\n      - id: \"affiliate_org_active\"\n        path: \"OrganizationAffiliation.active\"\n        label: \"Active\"\n        uiComponent: \"Checkbox\"\n\n  - resourceType: Appointment\n    id: section_appointment\n    label: \"Appointment Details\"\n    repeats: true\n    fields:\n      - id: \"appt_patient\"\n        path: \"Appointment.participant.actor\"\n        label: \"Patient\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_staff\"\n        path: \"Appointment.participant.actor\"\n        label: \"Staff Member\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_status\"\n        path: \"Appointment.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"proposed\",\"booked\",\"arrived\",\"fulfilled\",\"cancelled\",\"noshow\"]\n        required: true\n      - id: \"appt_start\"\n        path: \"Appointment.start\"\n        label: \"Start Time\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_end\"\n        path: \"Appointment.end\"\n        label: \"End Time\"\n        uiComponent: \"TextInput\"\n      - id: \"appt_description\"\n        path: \"Appointment.description\"\n        label: \"Reason / Notes\"\n        uiComponent: \"TextInput\"\n",
         "questionnaire": {
           "resourceType": "Questionnaire",
           "id": "system-provider-composition-v1",
@@ -85,7 +85,7 @@
                   "type": "string",
                   "repeats": false,
                   "required": false,
-                  "definition": "http://hl7.org/Organization#Organization.address.text"
+                  "definition": "http://hl7.org/Organization#Organization.address.line"
                 },
                 {
                   "linkId": "hospital_city",
@@ -187,12 +187,326 @@
                   "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-subtype"
                 },
                 {
+                  "linkId": "hospital_ownership_subtype_code",
+                  "text": "Ownership Sub-Type Code (HFR master: get-owner-subtype)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-subtype-code"
+                },
+                {
+                  "linkId": "hospital_system_of_medicine",
+                  "text": "System(s) of Medicine (HFR master: MEDICINE)",
+                  "type": "choice",
+                  "repeats": true,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-system-of-medicine",
+                  "answerOption": [
+                    {
+                      "valueString": "Modern Medicine (Allopathy)"
+                    },
+                    {
+                      "valueString": "Ayurveda"
+                    },
+                    {
+                      "valueString": "Homeopathy"
+                    },
+                    {
+                      "valueString": "Unani"
+                    },
+                    {
+                      "valueString": "Siddha"
+                    },
+                    {
+                      "valueString": "Yoga & Naturopathy"
+                    },
+                    {
+                      "valueString": "Dentistry"
+                    }
+                  ]
+                },
+                {
                   "linkId": "hospital_operational_status",
                   "text": "Currently Operational",
                   "type": "boolean",
                   "repeats": false,
                   "required": false,
                   "definition": "http://hl7.org/Organization#Organization.active"
+                },
+                {
+                  "linkId": "hospital_operational_status_code",
+                  "text": "Operational Status Code (HFR master: FAC-STATUS)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-operational-status-code"
+                },
+                {
+                  "linkId": "hospital_ownership_subtype_code_2",
+                  "text": "Ownership Sub-Type Code 2 (HFR master: PROFIT-TYPE / NON-PROFIT-TYPE)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-subtype-code-2"
+                },
+                {
+                  "linkId": "hospital_type_of_service_code",
+                  "text": "Type of Service (HFR master: TYPE-SERVICE)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-type-of-service-code"
+                },
+                {
+                  "linkId": "hospital_speciality_type_code",
+                  "text": "Speciality Type (Single or Multiple)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-speciality-type-code"
+                },
+                {
+                  "linkId": "hospital_facility_region",
+                  "text": "Facility Region (U = Urban, R = Rural)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-region"
+                },
+                {
+                  "linkId": "hospital_has_dialysis_center",
+                  "text": "Has Dialysis Center (HFR master: GENERAL-INFO-OPTIONS)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-dialysis-center"
+                },
+                {
+                  "linkId": "hospital_has_pharmacy",
+                  "text": "Has Pharmacy (HFR master: GENERAL-INFO-OPTIONS)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-pharmacy"
+                },
+                {
+                  "linkId": "hospital_has_blood_bank",
+                  "text": "Has Blood Bank (HFR master: GENERAL-INFO-OPTIONS)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-blood-bank"
+                },
+                {
+                  "linkId": "hospital_has_cath_lab",
+                  "text": "Has Cath Lab (HFR master: GENERAL-INFO-OPTIONS)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-cath-lab"
+                },
+                {
+                  "linkId": "hospital_has_diagnostic_lab",
+                  "text": "Has Diagnostic Lab (HFR master: GENERAL-INFO-OPTIONS)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-diagnostic-lab"
+                },
+                {
+                  "linkId": "hospital_has_imaging_center",
+                  "text": "Has Imaging Center (HFR master: GENERAL-INFO-OPTIONS)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-has-imaging-center"
+                },
+                {
+                  "linkId": "hospital_operational_status",
+                  "text": "Currently Operational",
+                  "type": "boolean",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.active"
+                },
+                {
+                  "linkId": "hospital_pharmacy_jan_aushadhi",
+                  "text": "Is Jan Aushadhi Kendra (HFR master: GENERAL-INFO-OPTIONS)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-jan-aushadhi"
+                },
+                {
+                  "linkId": "hospital_pharmacy_jan_aushadhi_id",
+                  "text": "Jan Aushadhi Kendra ID",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-jan-aushadhi-id"
+                },
+                {
+                  "linkId": "hospital_pharmacy_drug_license",
+                  "text": "Pharmacy Drug License Number",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-drug-license"
+                },
+                {
+                  "linkId": "hospital_pharmacy_gstin",
+                  "text": "Pharmacy GSTIN Number",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-gstin"
+                },
+                {
+                  "linkId": "hospital_pharmacist_registration",
+                  "text": "Pharmacist Registration Number",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacist-registration"
+                },
+                {
+                  "linkId": "hospital_bloodbank_eraktkosh",
+                  "text": "Registered in e-Raktkosh (HFR master: GENERAL-INFO-OPTIONS)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-eraktkosh"
+                },
+                {
+                  "linkId": "hospital_bloodbank_eraktkosh_id",
+                  "text": "e-Raktkosh ID",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-eraktkosh-id"
+                },
+                {
+                  "linkId": "hospital_bloodbank_license",
+                  "text": "Blood Bank License Number",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-license"
+                },
+                {
+                  "linkId": "hospital_imaging_services",
+                  "text": "Imaging Services Offered (HFR master: IMAGING)",
+                  "type": "choice",
+                  "repeats": true,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-imaging-services",
+                  "answerOption": [
+                    {
+                      "valueString": "X-Ray"
+                    },
+                    {
+                      "valueString": "CT-Scan"
+                    },
+                    {
+                      "valueString": "MRI(Magnetic Resonance Imaging)"
+                    },
+                    {
+                      "valueString": "Ultrasonography(USG)"
+                    },
+                    {
+                      "valueString": "ColorDoppler"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "hospital_diagnostic_services",
+                  "text": "Diagnostic Lab Services Offered (HFR master: DIAGNOSTIC)",
+                  "type": "choice",
+                  "repeats": true,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-diagnostic-services",
+                  "answerOption": [
+                    {
+                      "valueString": "Pathology"
+                    },
+                    {
+                      "valueString": "Haematology"
+                    },
+                    {
+                      "valueString": "Cytology"
+                    },
+                    {
+                      "valueString": "Microbiology"
+                    },
+                    {
+                      "valueString": "Serology"
+                    },
+                    {
+                      "valueString": "Biochemistry"
+                    },
+                    {
+                      "valueString": "Histopathology"
+                    },
+                    {
+                      "valueString": "Genetics"
+                    },
+                    {
+                      "valueString": "Virology"
+                    },
+                    {
+                      "valueString": "Cytopathology"
+                    },
+                    {
+                      "valueString": "MolecularBiology"
+                    },
+                    {
+                      "valueString": "Toxicology"
+                    },
+                    {
+                      "valueString": "OralPathology"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "hospital_total_beds",
+                  "text": "Total Number of Beds",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-total-beds"
+                },
+                {
+                  "linkId": "hospital_dental_chairs",
+                  "text": "Number of Dental Chairs",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-dental-chairs"
                 }
               ]
             },
@@ -228,6 +542,24 @@
                   "required": false,
                   "definition": "http://hl7.org/Organization#Organization.extension",
                   "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-subdistrict-lgd-code"
+                },
+                {
+                  "linkId": "hospital_geo_latitude",
+                  "text": "Latitude",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-latitude"
+                },
+                {
+                  "linkId": "hospital_geo_longitude",
+                  "text": "Longitude",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Organization#Organization.extension",
+                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-longitude"
                 }
               ]
             },
@@ -464,26 +796,6 @@
                   "definition": "http://hl7.org/Practitioner#Practitioner.name.family"
                 },
                 {
-                  "linkId": "staff_abdm_role",
-                  "text": "ABDM Role",
-                  "type": "choice",
-                  "repeats": false,
-                  "required": false,
-                  "definition": "http://hl7.org/Practitioner#Practitioner.extension",
-                  "extensionUrl": "https://clinuxflow.example/fhir/StructureDefinition/hpr-abdm-role",
-                  "answerOption": [
-                    {
-                      "valueString": "Doctor"
-                    },
-                    {
-                      "valueString": "Nurse"
-                    },
-                    {
-                      "valueString": "Facility Manager"
-                    }
-                  ]
-                },
-                {
                   "linkId": "staff_hp_category_code",
                   "text": "HP Category Code (HPR master: system-of-medicine)",
                   "type": "string",
@@ -543,6 +855,41 @@
                   "repeats": false,
                   "required": false,
                   "definition": "http://hl7.org/Practitioner#Practitioner.identifier.value"
+                }
+              ]
+            },
+            {
+              "linkId": "section_staff_role",
+              "text": "Role at this Facility",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "linkId": "staff_role_active",
+                  "text": "Currently Active in this Role",
+                  "type": "boolean",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/PractitionerRole#PractitionerRole.active"
+                },
+                {
+                  "linkId": "staff_provider_role",
+                  "text": "HPR Role (HPR master: role)",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/PractitionerRole#PractitionerRole.code",
+                  "answerOption": [
+                    {
+                      "valueString": "Healthcare Professional"
+                    },
+                    {
+                      "valueString": "Facility Manager"
+                    },
+                    {
+                      "valueString": "Healthcare Professional and Facility Manager"
+                    }
+                  ]
                 }
               ]
             },
@@ -757,6 +1104,116 @@
               ]
             },
             {
+              "linkId": "section_affiliate_organization",
+              "text": "Affiliate Organization",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "linkId": "affiliate_org_name",
+                  "text": "Partner Organization Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/OrganizationAffiliation#OrganizationAffiliation.participatingOrganization",
+                  "description": "The affiliate/partner organization providing the service (e.g. an external diagnostic lab chain)."
+                },
+                {
+                  "linkId": "affiliate_org_relationship",
+                  "text": "Relationship",
+                  "type": "choice",
+                  "repeats": true,
+                  "required": true,
+                  "definition": "http://hl7.org/OrganizationAffiliation#OrganizationAffiliation.code",
+                  "description": "The nature of the affiliation.",
+                  "answerOption": [
+                    {
+                      "valueString": "Provider"
+                    },
+                    {
+                      "valueString": "Diagnostics"
+                    },
+                    {
+                      "valueString": "Billing"
+                    },
+                    {
+                      "valueString": "Shared Imaging Service"
+                    },
+                    {
+                      "valueString": "Laboratory"
+                    },
+                    {
+                      "valueString": "Pharmacy"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "affiliate_org_specialty",
+                  "text": "Specialty (if clinical)",
+                  "type": "choice",
+                  "repeats": true,
+                  "required": false,
+                  "definition": "http://hl7.org/OrganizationAffiliation#OrganizationAffiliation.specialty",
+                  "answerOption": [
+                    {
+                      "valueString": "Cardiology"
+                    },
+                    {
+                      "valueString": "Neurology"
+                    },
+                    {
+                      "valueString": "Radiology"
+                    },
+                    {
+                      "valueString": "Pediatrics"
+                    },
+                    {
+                      "valueString": "Orthopedics"
+                    },
+                    {
+                      "valueString": "Dermatology"
+                    },
+                    {
+                      "valueString": "General Medicine"
+                    },
+                    {
+                      "valueString": "ENT"
+                    },
+                    {
+                      "valueString": "Ophthalmology"
+                    },
+                    {
+                      "valueString": "Psychiatry"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "affiliate_org_phone",
+                  "text": "Phone",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/OrganizationAffiliation#OrganizationAffiliation.telecom.value"
+                },
+                {
+                  "linkId": "affiliate_org_email",
+                  "text": "Email",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/OrganizationAffiliation#OrganizationAffiliation.telecom.value"
+                },
+                {
+                  "linkId": "affiliate_org_active",
+                  "text": "Active",
+                  "type": "boolean",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/OrganizationAffiliation#OrganizationAffiliation.active"
+                }
+              ]
+            },
+            {
               "linkId": "section_appointment",
               "text": "Appointment Details",
               "type": "group",
@@ -834,7 +1291,7 @@
             }
           ]
         },
-        "savedAt": "2026-09-05T14:09:05.810Z"
+        "savedAt": "2026-09-09T13:59:40.446Z"
       }
     ]
   },
@@ -847,7 +1304,7 @@
       {
         "version": 1,
         "status": "final",
-        "yaml": "formId: system-patient-profile-v1\ntitle: \"Patients\"\ncomposition:\n  - resourceType: Patient\n    id: section_patient\n    label: \"Patient Details\"\n    fields:\n      - id: \"patient_name\"\n        path: \"Patient.name.text\"\n        label: \"Full Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"patient_gender\"\n        path: \"Patient.gender\"\n        label: \"Gender\"\n        uiComponent: \"Dropdown\"\n        choices: [\"male\",\"female\",\"other\",\"unknown\"]\n      - id: \"patient_birthdate\"\n        path: \"Patient.birthDate\"\n        label: \"Date of Birth\"\n        uiComponent: \"DatePicker\"\n      - id: \"patient_emergency_contact_name\"\n        path: \"Patient.contact.name.text\"\n        label: \"Emergency Contact Name\"\n        uiComponent: \"TextInput\"\n      - id: \"patient_emergency_contact_phone\"\n        path: \"Patient.contact.telecom.value\"\n        label: \"Emergency Contact Phone\"\n        uiComponent: \"TextInput\"\n",
+        "yaml": "formId: system-patient-profile-v1\ntitle: \"Patients\"\ncomposition:\n  - resourceType: Patient\n    id: section_patient\n    label: \"Patient Details\"\n    fields:\n      # SPEC-24 §7 step 6 (Patient) — real capture-form gap found comparing this form against\n      # ClinuxFlowPatient.json: Patient.name.given (required, min 1) had no field at all — only\n      # patient_name -> Patient.name.text existed, which real FHIR doesn't treat as satisfying\n      # .given. patient_first_name/patient_last_name are NEW, genuinely required fields;\n      # patient_name stays (AiEngine.vue's own patient grid/modal — a separate consumer of this\n      # same form, unrelated to SPEC-24 — reads/writes it directly, so it can't be removed).\n      # PatientBasicsHost.vue's own extract() derives patient_name from first+last automatically\n      # so a patient is only ever typed once, not two redundant \"name\" prompts.\n      - id: \"patient_name\"\n        path: \"Patient.name.text\"\n        label: \"Full Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"patient_first_name\"\n        path: \"Patient.name.given\"\n        label: \"First Name\"\n        uiComponent: \"TextInput\"\n        required: true\n      - id: \"patient_last_name\"\n        path: \"Patient.name.family\"\n        label: \"Last Name\"\n        uiComponent: \"TextInput\"\n      - id: \"patient_active\"\n        path: \"Patient.active\"\n        label: \"Active\"\n        uiComponent: \"Checkbox\"\n      - id: \"patient_gender\"\n        path: \"Patient.gender\"\n        label: \"Gender\"\n        uiComponent: \"Dropdown\"\n        choices: [\"male\",\"female\",\"other\",\"unknown\"]\n      - id: \"patient_birthdate\"\n        path: \"Patient.birthDate\"\n        label: \"Date of Birth\"\n        uiComponent: \"DatePicker\"\n      - id: \"patient_emergency_contact_name\"\n        path: \"Patient.contact.name.text\"\n        label: \"Emergency Contact Name\"\n        uiComponent: \"TextInput\"\n      - id: \"patient_emergency_contact_phone\"\n        path: \"Patient.contact.telecom.value\"\n        label: \"Emergency Contact Phone\"\n        uiComponent: \"TextInput\"\n      # SPEC-24 §7 step 6 (Patient) — real ABHA integration (docs/NHPR SBX Doc/NHPR Doc/ABHA/),\n      # not a passive form field: PatientAbhaPanel.vue (clinux-frontend) writes these three from a\n      # real ABHA profile (found-by-mobile-search or created-via-Aadhaar, both against\n      # clinuxflow-abdm-gateway's /abha/* routes) once a patient completes that flow — same\n      # \"layer real ABDM registration onto local FHIR capture\" precedent AbdmOnboarding.vue/\n      # abdmAdapter.js already established for Facility/Provider. patient_mobile is the PATIENT's\n      # own number (distinct from patient_emergency_contact_phone above, someone else's). Real,\n      # known-deferred gap, same as Provider's own Practitioner.telecom/.identifier slicing:\n      # Patient.telecom:mobile and .identifier:abhaNumber/:abhaAddress are FHIR-sliced (fixed\n      # system/use sub-values) — this compiler has no mechanism to co-locate a hidden fixed-value\n      # sibling onto the SAME array element as these visible fields (confirmed via local-\n      # extractor.js's own FHIR_ARRAY_PATHS handling: each leaf gets its own independent array\n      # entry) — so full valid:true on those two slices stays unreachable regardless of how real\n      # and OTP-verified the underlying value is. Flagged in-code, not silently worked around.\n      - id: \"patient_mobile\"\n        path: \"Patient.telecom.value\"\n        label: \"Mobile Number\"\n        uiComponent: \"TextInput\"\n      - id: \"patient_abha_number\"\n        path: \"Patient.identifier.value\"\n        label: \"ABHA Number\"\n        uiComponent: \"TextInput\"\n      - id: \"patient_abha_address\"\n        path: \"Patient.identifier.value\"\n        label: \"ABHA Address\"\n        uiComponent: \"TextInput\"\n",
         "questionnaire": {
           "resourceType": "Questionnaire",
           "id": "system-patient-profile-v1",
@@ -876,6 +1333,30 @@
                   "repeats": false,
                   "required": true,
                   "definition": "http://hl7.org/Patient#Patient.name.text"
+                },
+                {
+                  "linkId": "patient_first_name",
+                  "text": "First Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": true,
+                  "definition": "http://hl7.org/Patient#Patient.name.given"
+                },
+                {
+                  "linkId": "patient_last_name",
+                  "text": "Last Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Patient#Patient.name.family"
+                },
+                {
+                  "linkId": "patient_active",
+                  "text": "Active",
+                  "type": "boolean",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Patient#Patient.active"
                 },
                 {
                   "linkId": "patient_gender",
@@ -922,12 +1403,36 @@
                   "repeats": false,
                   "required": false,
                   "definition": "http://hl7.org/Patient#Patient.contact.telecom.value"
+                },
+                {
+                  "linkId": "patient_mobile",
+                  "text": "Mobile Number",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Patient#Patient.telecom.value"
+                },
+                {
+                  "linkId": "patient_abha_number",
+                  "text": "ABHA Number",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Patient#Patient.identifier.value"
+                },
+                {
+                  "linkId": "patient_abha_address",
+                  "text": "ABHA Address",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Patient#Patient.identifier.value"
                 }
               ]
             }
           ]
         },
-        "savedAt": "2026-09-05T14:09:05.812Z"
+        "savedAt": "2026-09-09T13:59:40.449Z"
       }
     ]
   },
@@ -1231,7 +1736,127 @@
             }
           ]
         },
-        "savedAt": "2026-09-05T14:09:05.813Z"
+        "savedAt": "2026-09-09T13:59:40.450Z"
+      }
+    ]
+  },
+  "system-join-request-v1": {
+    "isSystem": true,
+    "archived": false,
+    "bookmarked": false,
+    "activeVersion": 1,
+    "versions": [
+      {
+        "version": 1,
+        "status": "final",
+        "yaml": "formId: system-join-request-v1\ntitle: \"Facility Join Request\"\ncomposition:\n  # docs/SPEC-26-FACILITY-JOIN-TOKEN-LINKING.md §6 — the LForms-rendered card a facility admin\n  # opens inside Cübo's chat to review a staff/affiliate join-token redemption before approving or\n  # rejecting it. resourceType: Consent (a real, already-proven-compiling resourceType in this\n  # pipeline — see section_consent in system-provider-composition-v1.yaml) is a genuine semantic\n  # fit, not a workaround: FHIR's own Consent resource is literally \"a record of a choice to\n  # permit or deny... performance of one or more actions\" — exactly what a facility admin does\n  # here. `status`/`category` reuse Consent's own real leaf paths with real choices (status:\n  # draft/active/rejected maps directly onto pending_admin_review/approved/rejected); the\n  # remaining fields use other real, dictionary-confirmed Consent string leaves (verified against\n  # data/graphs/consent.graph.json, not guessed) for the free-text details a chat card needs to\n  # show. This record is NEVER run through ComprehensiveLocalExtractor or any conformance\n  # validator — it exists purely so LhcFormHost.vue has something real to render, encoded/decoded\n  # via sessionShare.js's buildJoinRequestSharePayload/decodeJoinRequestShareKey, never persisted\n  # as FHIR anywhere.\n  - resourceType: Consent\n    id: section_join_request\n    label: \"Join Request\"\n    fields:\n      - id: \"request_link_kind\"\n        path: \"Consent.category\"\n        label: \"Requesting to join as\"\n        uiComponent: \"Dropdown\"\n        choices: [\"staff\", \"affiliate\"]\n      - id: \"request_status\"\n        path: \"Consent.status\"\n        label: \"Status\"\n        uiComponent: \"Dropdown\"\n        choices: [\"draft\", \"active\", \"inactive\", \"entered-in-error\", \"rejected\"]\n      - id: \"request_person_name\"\n        path: \"Consent.sourceAttachment.title\"\n        label: \"Name\"\n        uiComponent: \"TextInput\"\n      - id: \"request_person_email\"\n        path: \"Consent.identifier.value\"\n        label: \"Email\"\n        uiComponent: \"TextInput\"\n      - id: \"request_declared_role\"\n        path: \"Consent.provision.purpose.display\"\n        label: \"Declared Role (affiliate only)\"\n        uiComponent: \"TextInput\"\n      - id: \"request_person_setup_stage\"\n        path: \"Consent.provision.class.display\"\n        label: \"Identity verification stage\"\n        uiComponent: \"TextInput\"\n      - id: \"request_token\"\n        path: \"Consent.provision.securityLabel.display\"\n        label: \"Join token\"\n        uiComponent: \"TextInput\"\n",
+        "questionnaire": {
+          "resourceType": "Questionnaire",
+          "id": "system-join-request-v1",
+          "status": "active",
+          "title": "Facility Join Request",
+          "subjectType": [
+            "Consent"
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org",
+              "valueCode": "definition"
+            }
+          ],
+          "item": [
+            {
+              "linkId": "section_join_request",
+              "text": "Join Request",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "request_link_kind",
+                  "text": "Requesting to join as",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Consent#Consent.category",
+                  "answerOption": [
+                    {
+                      "valueString": "staff"
+                    },
+                    {
+                      "valueString": "affiliate"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "request_status",
+                  "text": "Status",
+                  "type": "choice",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Consent#Consent.status",
+                  "answerOption": [
+                    {
+                      "valueString": "draft"
+                    },
+                    {
+                      "valueString": "active"
+                    },
+                    {
+                      "valueString": "inactive"
+                    },
+                    {
+                      "valueString": "entered-in-error"
+                    },
+                    {
+                      "valueString": "rejected"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "request_person_name",
+                  "text": "Name",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Consent#Consent.sourceAttachment.title"
+                },
+                {
+                  "linkId": "request_person_email",
+                  "text": "Email",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Consent#Consent.identifier.value"
+                },
+                {
+                  "linkId": "request_declared_role",
+                  "text": "Declared Role (affiliate only)",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Consent#Consent.provision.purpose.display"
+                },
+                {
+                  "linkId": "request_person_setup_stage",
+                  "text": "Identity verification stage",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Consent#Consent.provision.class.display"
+                },
+                {
+                  "linkId": "request_token",
+                  "text": "Join token",
+                  "type": "string",
+                  "repeats": false,
+                  "required": false,
+                  "definition": "http://hl7.org/Consent#Consent.provision.securityLabel.display"
+                }
+              ]
+            }
+          ]
+        },
+        "savedAt": "2026-09-09T13:59:40.451Z"
       }
     ]
   }

@@ -11,9 +11,9 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { compileYamlToQuestionnaire } from '../src/lib/yaml-to-questionnaire.js';
-import { ComprehensiveLocalExtractor } from '../src/lib/local-extractor.js';
-import { buildHospitalSetupWorkflowResponse } from '../src/lib/hospital-setup-workflow-response.js';
+import { compileYamlToQuestionnaire } from '../src/lib/shared/yaml-to-questionnaire.js';
+import { ComprehensiveLocalExtractor } from '../src/lib/shared/local-extractor.js';
+import { buildHospitalSetupWorkflowResponse } from '../src/lib/runtime/hospital-setup-workflow-response.js';
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const SAMPLES_DIR = path.join(DIR, '..', 'samples');
