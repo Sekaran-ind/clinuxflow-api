@@ -36,7 +36,19 @@ const FHIR_ARRAY_PATHS = new Set([
   // Case-A collision (two different fields, same leaf path) exactly like Organization.telecom.
   'Appointment.participant',
   // Patient — same "only one instance captured today" reasoning as Practitioner.name; .contact
-  // and .name are both left out deliberately for the same convergence reason.
+  // and .name are both left out deliberately for the same convergence reason. .identifier IS
+  // included (SPEC-24 §7 step 6): patient_abha_number/patient_abha_address are two distinct
+  // linkIds sharing this same leaf path, the same sibling-collision shape Organization.telecom's
+  // own fix addresses — without this, only the second-written identifier would survive. .telecom
+  // included too, for real structural correctness (a JSON array, not a bare object) even though
+  // only one patient_mobile field exists today.
+  'Patient.identifier', 'Patient.telecom',
+  // OrganizationAffiliation (SPEC-24 §7 step 6, Affiliate Organization) — .code/.specialty are
+  // real CodeableConcept 0..* arrays (MultiSelect's own multi-answer handling needs the array
+  // write path, not a scalar overwrite); .telecom has the same affiliate_org_phone/
+  // affiliate_org_email sibling-collision shape Organization.telecom already had before its own
+  // fix (see this Set's own header comment).
+  'OrganizationAffiliation.code', 'OrganizationAffiliation.specialty', 'OrganizationAffiliation.telecom',
 ]);
 function isArrayPath(absolutePath) {
   return FHIR_ARRAY_PATHS.has(absolutePath);
@@ -320,6 +332,13 @@ export class ComprehensiveLocalExtractor {
                 const instanceSuffix = cacheKey.includes('#') ? cacheKey.slice(cacheKey.indexOf('#')) : '';
                 const practitioner = resourceCache[`Practitioner${instanceSuffix}`] || resourceCache.Practitioner;
                 if (practitioner) resource.practitioner = { reference: `Practitioner/${practitioner.id}` };
+                resource.organization = { reference: `Organization/${resourceCache.Organization.id}` };
+            }
+            // SPEC-24 §7 step 6 (Affiliate Organization) — same free structural link Location/
+            // PractitionerRole already get: OrganizationAffiliation.organization is always THIS
+            // facility (there's only ever one Organization in a Provider-composition document),
+            // never something a form field needs to ask the user for.
+            if (type === 'OrganizationAffiliation' && resourceCache.Organization) {
                 resource.organization = { reference: `Organization/${resourceCache.Organization.id}` };
             }
 

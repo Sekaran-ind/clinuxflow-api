@@ -22,7 +22,8 @@
       "Medication", "MedicationDispense", "SupplyDelivery", "PaymentNotice",
       "Device", "DeviceMetric", "Consent", "Contract", "HealthcareService",
       "EpisodeOfCare",
-      "PlanDefinition"
+      "PlanDefinition",
+      "OrganizationAffiliation"
     ],
     "// ─── UPGRADED: IMMUTABLE GLOBAL RUNTIME PRIMITIVES REGISTRY ───": "",
     "runtimePolymorphicPrimitives": [

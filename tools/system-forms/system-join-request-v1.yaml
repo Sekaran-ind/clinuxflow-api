@@ -1,0 +1,51 @@
+formId: system-join-request-v1
+title: "Facility Join Request"
+composition:
+  # docs/SPEC-26-FACILITY-JOIN-TOKEN-LINKING.md §6 — the LForms-rendered card a facility admin
+  # opens inside Cübo's chat to review a staff/affiliate join-token redemption before approving or
+  # rejecting it. resourceType: Consent (a real, already-proven-compiling resourceType in this
+  # pipeline — see section_consent in system-provider-composition-v1.yaml) is a genuine semantic
+  # fit, not a workaround: FHIR's own Consent resource is literally "a record of a choice to
+  # permit or deny... performance of one or more actions" — exactly what a facility admin does
+  # here. `status`/`category` reuse Consent's own real leaf paths with real choices (status:
+  # draft/active/rejected maps directly onto pending_admin_review/approved/rejected); the
+  # remaining fields use other real, dictionary-confirmed Consent string leaves (verified against
+  # data/graphs/consent.graph.json, not guessed) for the free-text details a chat card needs to
+  # show. This record is NEVER run through ComprehensiveLocalExtractor or any conformance
+  # validator — it exists purely so LhcFormHost.vue has something real to render, encoded/decoded
+  # via sessionShare.js's buildJoinRequestSharePayload/decodeJoinRequestShareKey, never persisted
+  # as FHIR anywhere.
+  - resourceType: Consent
+    id: section_join_request
+    label: "Join Request"
+    fields:
+      - id: "request_link_kind"
+        path: "Consent.category"
+        label: "Requesting to join as"
+        uiComponent: "Dropdown"
+        choices: ["staff", "affiliate"]
+      - id: "request_status"
+        path: "Consent.status"
+        label: "Status"
+        uiComponent: "Dropdown"
+        choices: ["draft", "active", "inactive", "entered-in-error", "rejected"]
+      - id: "request_person_name"
+        path: "Consent.sourceAttachment.title"
+        label: "Name"
+        uiComponent: "TextInput"
+      - id: "request_person_email"
+        path: "Consent.identifier.value"
+        label: "Email"
+        uiComponent: "TextInput"
+      - id: "request_declared_role"
+        path: "Consent.provision.purpose.display"
+        label: "Declared Role (affiliate only)"
+        uiComponent: "TextInput"
+      - id: "request_person_setup_stage"
+        path: "Consent.provision.class.display"
+        label: "Identity verification stage"
+        uiComponent: "TextInput"
+      - id: "request_token"
+        path: "Consent.provision.securityLabel.display"
+        label: "Join token"
+        uiComponent: "TextInput"

@@ -248,7 +248,37 @@
         "min": 0,
         "max": "1",
         "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-region"] }],
-        "comment": "HFR: facilityRegion (R/U — Rural/Urban), Optional."
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-facility-region" },
+        "comment": "HFR: facilityRegion (R/U — Rural/Urban), Optional. get-master-data type='FACILITY-REGION' — real master data, not a locally-invented 2-choice (found and fixed live: this field was first built from the doc's own worked sample alone, which happened to only show R/U, before checking whether it was ALSO a real master-data type)."
+      },
+      {
+        "id": "Organization.extension:typeOfServiceCode",
+        "path": "Organization.extension",
+        "sliceName": "typeOfServiceCode",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-type-of-service-code"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-type-service" },
+        "comment": "HFR Basic Information API: typeOfServiceCode, \"Yes, based on the facility type provided\" — conditionally required (not needed at all for several facility types per the doc's own exclusion list, e.g. Diagnostic Laboratory/Imaging Center/Pharmacy), modeled here as min:0 rather than a FHIRPath conditional-required invariant this profile doesn't otherwise use elsewhere. get-master-data type='TYPE-SERVICE'."
+      },
+      {
+        "id": "Organization.extension:specialityTypeCode",
+        "path": "Organization.extension",
+        "sliceName": "specialityTypeCode",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-speciality-type-code"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-speciality-type" },
+        "comment": "HFR Basic Information API: specialityTypeCode, \"Yes, based on the facility type provided\" — same real conditional-requiredness as typeOfServiceCode above, min:0 for the same reason. get-master-data type='SPECIALITY-TYPE' (real codes SINGLE/MULTI — a real bug found and fixed live: this app's own capture UI first hardcoded 'MULTIPLE', which isn't a real HFR code at all)."
+      },
+      {
+        "id": "Organization.extension:ownershipSubTypeCode2",
+        "path": "Organization.extension",
+        "sliceName": "ownershipSubTypeCode2",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-subtype-code-2"] }],
+        "comment": "HFR Basic Information API: ownershipSubTypeCode2 — present in the API's own real worked sample alongside ownershipSubTypeCode above (a genuinely SECOND, distinct sub-type code), but not documented in the API's own parameter table as separately required, hence min:0. Deliberately no `binding` here: this is really two sub-fields in one — a PROFIT-vs-NON-PROFIT category choice (not itself an ABDM master-data type, a real fixed 2-way domain split) selecting which of PROFIT-TYPE/NON-PROFIT-TYPE's real master-data ValueSet applies to the code actually stored — modeled as a real client-side cascading choice (see FacilityHfrPanel.vue) rather than one static binding, the same way this profile already treats State/District/SubDistrict LGD codes as a cascade rather than one flat ValueSet."
       },
       {
         "id": "Organization.extension:geoLatitude",
@@ -275,6 +305,7 @@
         "min": 1,
         "max": "1",
         "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-owner" },
         "comment": "HFR: ownershipCode, Required (get-master-data type='OWNER')."
       },
       {
@@ -302,7 +333,8 @@
         "min": 1,
         "max": "*",
         "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-system-of-medicine"] }],
-        "comment": "HFR: systemOfMedicineCode, Required, real multi-value (\"a comma separated string of codes\" per the API doc when a facility offers more than one) — modeled here as a real repeating extension, not a single comma-joined string."
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-medicine" },
+        "comment": "HFR: systemOfMedicineCode, Required, real multi-value (\"a comma separated string of codes\" per the API doc when a facility offers more than one) — modeled here as a real repeating extension, not a single comma-joined string. get-master-data type='MEDICINE' — 9 real codes (UN/M/YN/SR/A/SD/H/P/D); a real gap found live while grounding this: this profile's own capture UI never actually rendered a field for this element at all after AbdmOnboarding.vue's LForms rendering was retired, and the prior hand-picked 7-choice label list (missing Physiotherapy and Sowa-Rigpa, and stored labels, not the real wire codes) predates this binding."
       },
       {
         "id": "Organization.extension:operationalStatusCode",
@@ -311,6 +343,7 @@
         "min": 1,
         "max": "1",
         "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-operational-status-code"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-fac-status" },
         "comment": "HFR's own coded operational-status value (get-master-data type='FAC-STATUS') — kept distinct from Organization.active above: active is the derived real FHIR boolean this profile requires for internal use (and fixes the historical Dropdown-as-string bug), this extension carries HFR's own richer status code (e.g. beyond just functional/non-functional) for round-tripping to the real HFR API untouched."
       },
       {
@@ -321,6 +354,178 @@
         "max": "1",
         "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-tracking-id"] }],
         "comment": "HFR's own trackingId — the facility's temporary handle before a real facilityId is assigned (see Organization.identifier:hfrFacilityId's own comment). Present only pre-submission."
+      },
+      {
+        "id": "Organization.extension:hasDialysisCenter",
+        "path": "Organization.extension",
+        "sliceName": "hasDialysisCenter",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-has-dialysis-center"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-general-info-options" },
+        "comment": "HFR Additional Information API: hasDialysisCenter. Real bug found and fixed: NOT a plain Y/N boolean — get-master-data type='GENERAL-INFO-OPTIONS' has 3 real codes (YALL/YIN/N), confirmed against the doc's own worked sample."
+      },
+      {
+        "id": "Organization.extension:hasPharmacy",
+        "path": "Organization.extension",
+        "sliceName": "hasPharmacy",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-has-pharmacy"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-general-info-options" },
+        "comment": "HFR Additional Information API: hasPharmacy. Gates whether Detailed Information's pharmacyDetails section is required."
+      },
+      {
+        "id": "Organization.extension:hasBloodBank",
+        "path": "Organization.extension",
+        "sliceName": "hasBloodBank",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-has-blood-bank"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-general-info-options" },
+        "comment": "HFR Additional Information API: hasBloodBank. Gates whether Detailed Information's bloodBankDetails section is required."
+      },
+      {
+        "id": "Organization.extension:hasCathLab",
+        "path": "Organization.extension",
+        "sliceName": "hasCathLab",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-has-cath-lab"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-general-info-options" },
+        "comment": "HFR Additional Information API: hasCathLab."
+      },
+      {
+        "id": "Organization.extension:hasDiagnosticLab",
+        "path": "Organization.extension",
+        "sliceName": "hasDiagnosticLab",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-has-diagnostic-lab"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-general-info-options" },
+        "comment": "HFR Additional Information API: hasDiagnosticLab. Gates whether Detailed Information's diagnosticServices section is required."
+      },
+      {
+        "id": "Organization.extension:hasImagingCenter",
+        "path": "Organization.extension",
+        "sliceName": "hasImagingCenter",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-has-imaging-center"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-general-info-options" },
+        "comment": "HFR Additional Information API: hasImagingCenter. Gates whether Detailed Information's imagingServices section is required."
+      },
+      {
+        "id": "Organization.extension:pharmacyJanAushadhi",
+        "path": "Organization.extension",
+        "sliceName": "pharmacyJanAushadhi",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-jan-aushadhi"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-general-info-options" },
+        "comment": "HFR Detailed Information API: pharmacyDetails.isJanAushadhiKendra — required only when hasPharmacy is YALL/YIN."
+      },
+      {
+        "id": "Organization.extension:pharmacyJanAushadhiId",
+        "path": "Organization.extension",
+        "sliceName": "pharmacyJanAushadhiId",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-jan-aushadhi-id"] }],
+        "comment": "HFR Detailed Information API: pharmacyDetails.janAushadhiKendraId — required only if isJanAushadhiKendra is Y."
+      },
+      {
+        "id": "Organization.extension:pharmacyDrugLicense",
+        "path": "Organization.extension",
+        "sliceName": "pharmacyDrugLicense",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-drug-license"] }],
+        "comment": "HFR Detailed Information API: pharmacyDetails.drugLicenseNumber — required when hasPharmacy is YALL/YIN."
+      },
+      {
+        "id": "Organization.extension:pharmacyGstin",
+        "path": "Organization.extension",
+        "sliceName": "pharmacyGstin",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacy-gstin"] }],
+        "comment": "HFR Detailed Information API: pharmacyDetails.pharmacyGstinNumber, Optional."
+      },
+      {
+        "id": "Organization.extension:pharmacistRegistration",
+        "path": "Organization.extension",
+        "sliceName": "pharmacistRegistration",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-pharmacist-registration"] }],
+        "comment": "HFR Detailed Information API: pharmacyDetails.pharmacistRegistrationNumber, Optional."
+      },
+      {
+        "id": "Organization.extension:bloodbankERaktkosh",
+        "path": "Organization.extension",
+        "sliceName": "bloodbankERaktkosh",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-eraktkosh"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-general-info-options" },
+        "comment": "HFR Detailed Information API: bloodBankDetails.isFacilityRegisteredInERaktkosh — required when hasBloodBank is YALL/YIN."
+      },
+      {
+        "id": "Organization.extension:bloodbankERaktkoshId",
+        "path": "Organization.extension",
+        "sliceName": "bloodbankERaktkoshId",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-eraktkosh-id"] }],
+        "comment": "HFR Detailed Information API: bloodBankDetails.eRaktoshId — required if registered in e-Raktkosh."
+      },
+      {
+        "id": "Organization.extension:bloodbankLicense",
+        "path": "Organization.extension",
+        "sliceName": "bloodbankLicense",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-bloodbank-license"] }],
+        "comment": "HFR Detailed Information API: bloodBankDetails.bloodBankLicenseNumber — required when hasBloodBank is YALL/YIN."
+      },
+      {
+        "id": "Organization.extension:imagingServices",
+        "path": "Organization.extension",
+        "sliceName": "imagingServices",
+        "min": 0,
+        "max": "*",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-imaging-services"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-imaging" },
+        "comment": "HFR Detailed Information API: imagingServices[].service — required (List) when hasImagingCenter is YALL/YIN, one entry per service offered (equipment count sent as 1 per entry, not separately captured here)."
+      },
+      {
+        "id": "Organization.extension:diagnosticServices",
+        "path": "Organization.extension",
+        "sliceName": "diagnosticServices",
+        "min": 0,
+        "max": "*",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-diagnostic-services"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/hfr-diagnostic" },
+        "comment": "HFR Detailed Information API: diagnosticServices — required (comma-separated codes) when hasDiagnosticLab is YALL/YIN."
+      },
+      {
+        "id": "Organization.extension:totalBeds",
+        "path": "Organization.extension",
+        "sliceName": "totalBeds",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-total-beds"] }],
+        "comment": "HFR Detailed Information API: medicalInfrastructure.totalNumberOfBeds — required, based on facility type, must be >= the sum of the individual bed-count fields this profile does not separately capture (IPD/ICU/HDU/daycare beds each with/without oxygen or ventilators)."
+      },
+      {
+        "id": "Organization.extension:dentalChairs",
+        "path": "Organization.extension",
+        "sliceName": "dentalChairs",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hfr-dental-chairs"] }],
+        "comment": "HFR Detailed Information API: medicalInfrastructure.countDentalChairs, Optional (mandatory in practice only when Dentistry is among the facility's systemOfMedicine — not separately gated here)."
       }
     ]
   }

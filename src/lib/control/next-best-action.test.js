@@ -5,7 +5,7 @@ import { dirname, join } from 'path';
 import { nextBestActions } from './next-best-action.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const graphPath = join(__dirname, '..', '..', 'data', 'graph-definitions', 'ClinuxFlowOnboardingGraph.json');
+const graphPath = join(__dirname, '..', '..', '..', 'data', 'graph-definitions', 'ClinuxFlowOnboardingGraph.json');
 const graph = JSON.parse(readFileSync(graphPath, 'utf-8'));
 
 const valid = { valid: true, errors: [] };

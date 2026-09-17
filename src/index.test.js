@@ -1,12 +1,15 @@
 import { describe, it, expect, vi, afterEach, beforeEach } from 'vitest';
 import app from './index.js';
-import { AccountsDb } from './lib/accounts-db.js';
-import { hashPassword } from './lib/passwordHash.js';
-import { RealtimeClient } from './lib/realtime-client.js';
-import { EncounterMeetingsDb } from './lib/encounter-meetings-db.js';
-import { EncounterCoordinationDb } from './lib/encounter-coordination-db.js';
-import { UsageTracking } from './lib/usageTracking.js';
-import { WikidataTagging, WikidataRateLimitError } from './lib/wikidataTagging.js';
+import { AccountsDb } from './lib/shared/accounts-db.js';
+import { hashPassword } from './lib/shared/passwordHash.js';
+import { RealtimeClient } from './lib/runtime/realtime-client.js';
+import { EncounterMeetingsDb } from './lib/runtime/encounter-meetings-db.js';
+import { EncounterCoordinationDb } from './lib/runtime/encounter-coordination-db.js';
+import { TaskDb } from './lib/runtime/task-db.js';
+import { ContactMeetingsDb } from './lib/runtime/contact-meetings-db.js';
+import { UsageTracking } from './lib/shared/usageTracking.js';
+import { WikidataTagging, WikidataRateLimitError } from './lib/control/wikidataTagging.js';
+import { JoinTokensDb } from './lib/control/join-tokens-db.js';
 
 const SERVICE_KEY = 'test-service-key';
 const JWT_SECRET = 'test-jwt-secret';
@@ -153,7 +156,7 @@ describe('POST /api/auth/login', () => {
 
 describe('PATCH /api/auth/clinic-name', () => {
     async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
     }
 
@@ -200,7 +203,7 @@ describe('PATCH /api/auth/change-password', () => {
     // well-understood real case to validate configuration against. Didn't exist as a route
     // before this pass — verified by grep across this whole file/repo, not assumed missing.
     async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
     }
 
@@ -270,7 +273,7 @@ describe('PATCH /api/auth/security-question', () => {
     // SPEC-20 (docs/SPEC-20-REFERENCE-PATTERN-JOURNEY-WORKBENCH-AND-UNAUTH-CUBO-ENTRY.md) §4's
     // Forgot Password design — didn't exist before this pass, verified by grep not assumed.
     async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
     }
 
@@ -407,76 +410,15 @@ describe('POST /api/auth/forgot-password/reset', () => {
     });
 });
 
-describe('POST /api/auth/invite', () => {
-    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
-        const { issueSessionToken } = await import('./lib/session.js');
-        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
-    }
-
-    it('401s with no Authorization header — inviting requires being logged in yourself', async () => {
-        const res = await app.request('/api/auth/invite', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
-            body: JSON.stringify({ email: 'new@example.com', password: 'password123' }),
-        }, baseEnv);
-        expect(res.status).toBe(401);
-    });
-
-    it('400s on missing fields', async () => {
-        const token = await tokenFor();
-        const res = await app.request('/api/auth/invite', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
-            body: JSON.stringify({ email: 'new@example.com' }),
-        }, baseEnv);
-        expect(res.status).toBe(400);
-    });
-
-    it('409s on a duplicate email', async () => {
-        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue({ id: 'existing' });
-        const token = await tokenFor();
-
-        const res = await app.request('/api/auth/invite', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
-            body: JSON.stringify({ email: 'new@example.com', password: 'password123' }),
-        }, baseEnv);
-        expect(res.status).toBe(409);
-    });
-
-    it("403s once the caller's clinic already has the max team accounts", async () => {
-        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue(null);
-        vi.spyOn(AccountsDb, 'countAccountsByClinicId').mockResolvedValue({ count: 4 });
-        const token = await tokenFor();
-
-        const res = await app.request('/api/auth/invite', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
-            body: JSON.stringify({ email: 'new@example.com', password: 'password123' }),
-        }, baseEnv);
-        expect(res.status).toBe(403);
-    });
-
-    it("201s and attaches the new account to the CALLER's OWN clinicId — never one from the request body", async () => {
-        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue(null);
-        vi.spyOn(AccountsDb, 'countAccountsByClinicId').mockResolvedValue({ count: 1 });
-        const createSpy = vi.spyOn(AccountsDb, 'createTeammateAccount').mockResolvedValue(undefined);
-        const token = await tokenFor('clinic-real', 'acc-admin', 'admin@a.com');
-
-        const res = await app.request('/api/auth/invite', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
-            body: JSON.stringify({
-                email: 'Teammate@Example.com', password: 'password123', adminName: 'Dr B', designation: 'Nurse',
-                clinicId: 'someone-elses-clinic', // must be ignored entirely
-            }),
-        }, baseEnv);
-        expect(res.status).toBe(201);
-
-        const body = await res.json();
-        expect(body.account).toMatchObject({ clinicId: 'clinic-real', email: 'teammate@example.com', adminName: 'Dr B' });
-        expect(createSpy).toHaveBeenCalledWith(baseEnv.DB, 'clinic-real', expect.any(String), 'teammate@example.com', expect.any(String), 'Dr B', 'Nurse');
-    });
+// POST /api/auth/invite retired (SPEC-26) — its own describe block removed with it (was here,
+// see git history); coverage for the new mechanism lives in the
+// 'POST /api/facility/join-tokens/:token/redeem' and '.../decide' blocks below.
+it('POST /api/auth/invite no longer exists (retired by SPEC-26)', async () => {
+    const res = await app.request('/api/auth/invite', {
+        method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+        body: JSON.stringify({ email: 'x@a.com', password: 'password123' }),
+    }, baseEnv);
+    expect(res.status).toBe(404);
 });
 
 describe('GET /api/auth/team', () => {
@@ -492,7 +434,7 @@ describe('GET /api/auth/team', () => {
             { id: 'acc1', email: 'a@b.com', admin_name: 'Dr A', designation: 'Doctor', created_at: '2026-01-01', password_hash: 'should-not-leak' },
             { id: 'acc2', email: 'c@d.com', admin_name: 'Dr C', designation: 'Nurse', created_at: '2026-01-02', password_hash: 'should-not-leak' },
         ]);
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         const token = await issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
 
         const res = await app.request('/api/auth/team', {
@@ -509,7 +451,7 @@ describe('GET /api/auth/team', () => {
 
 describe('POST /api/facility/affiliates', () => {
     async function tokenFor(clinicId = 'facility-clinic', accountId = 'acc-admin', email = 'admin@facility.com') {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
     }
 
@@ -578,7 +520,7 @@ describe('POST /api/facility/affiliates', () => {
 
 describe('GET/DELETE /api/facility/affiliates', () => {
     async function tokenFor() {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: 'acc-admin', clinicId: 'facility-clinic', email: 'admin@facility.com' }, JWT_SECRET);
     }
 
@@ -619,9 +561,83 @@ describe('GET/DELETE /api/facility/affiliates', () => {
     });
 });
 
+describe('GET /api/facility/affiliates/conformance', () => {
+    async function tokenFor() {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: 'acc-admin', clinicId: 'facility-clinic', email: 'admin@facility.com' }, JWT_SECRET);
+    }
+
+    // Real, compiled YAML -> real extraction, same discipline as the facility/provider
+    // conformance tests below -- not a hand-built Organization fixture.
+    async function compositionRowWithOrganization() {
+        const { compileYamlToQuestionnaire } = await import('./lib/shared/yaml-to-questionnaire.js');
+        const fs = await import('fs');
+        const path = await import('path');
+        const yamlSource = fs.readFileSync(path.join(process.cwd(), 'tools', 'system-forms', 'system-provider-composition-v1.yaml'), 'utf8');
+        const questionnaire = compileYamlToQuestionnaire(yamlSource).questionnaire;
+        const responseJson = { item: [{ linkId: 'section_hospital', item: [{ linkId: 'hospital_name', answer: [{ valueString: 'ABC Hospital' }] }] }] };
+        return { questionnaire, dataJson: JSON.stringify(responseJson) };
+    }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/facility/affiliates/conformance', { headers: { 'X-Service-Key': SERVICE_KEY } }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('reports hasOrganization:false and an empty list when nothing has been saved/linked yet', async () => {
+        vi.spyOn(AccountsDb, 'getProviderComposition').mockResolvedValue(null);
+        vi.spyOn(AccountsDb, 'listAffiliatesByFacility').mockResolvedValue([]);
+        const token = await tokenFor();
+
+        const res = await app.request('/api/facility/affiliates/conformance', {
+            headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+        expect(body.success).toBe(true);
+        expect(body.hasOrganization).toBe(false);
+        expect(body.affiliates).toEqual([]);
+    });
+
+    it('builds and validates a real PractitionerRole per linked affiliate once a Facility Organization exists', async () => {
+        const { dataJson } = await compositionRowWithOrganization();
+        vi.spyOn(AccountsDb, 'getProviderComposition').mockResolvedValue({ data: dataJson, updatedAt: '2026-01-01T00:00:00Z' });
+        vi.spyOn(AccountsDb, 'listAffiliatesByFacility').mockResolvedValue([
+            { accountId: 'acc-doc', role: 'Visiting Cardiologist', status: 'active', email: 'doc@example.com', adminName: 'Dr Doc' },
+        ]);
+        const token = await tokenFor();
+
+        const res = await app.request('/api/facility/affiliates/conformance', {
+            headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+        expect(body.hasOrganization).toBe(true);
+        expect(body.affiliates).toHaveLength(1);
+        expect(body.affiliates[0].role.organization.reference).toMatch(/^Organization\//);
+        expect(body.affiliates[0].role.code).toEqual([{ text: 'Visiting Cardiologist' }]);
+        expect(body.affiliates[0].valid).toBe(true); // active + practitioner + organization all present; code is optional
+    });
+
+    it('honestly reports a missing Organization link rather than silently dropping it', async () => {
+        vi.spyOn(AccountsDb, 'getProviderComposition').mockResolvedValue(null); // Hospital Profile never saved
+        vi.spyOn(AccountsDb, 'listAffiliatesByFacility').mockResolvedValue([
+            { accountId: 'acc-doc', role: null, status: 'active', email: 'doc@example.com', adminName: 'Dr Doc' },
+        ]);
+        const token = await tokenFor();
+
+        const res = await app.request('/api/facility/affiliates/conformance', {
+            headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        const body = await res.json();
+        expect(body.affiliates[0].valid).toBe(false);
+        expect(body.affiliates[0].errors.some((e) => e.path === 'PractitionerRole.organization')).toBe(true);
+    });
+});
+
 describe('GET/PUT /api/provider-composition', () => {
     async function tokenFor() {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
     }
 
@@ -670,11 +686,422 @@ describe('GET/PUT /api/provider-composition', () => {
         const res = await app.request('/api/provider-composition', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
-            body: JSON.stringify({ resourceType: 'QuestionnaireResponse', item: [{ linkId: 'section_hospital' }], clinicId: 'someone-elses-clinic' }),
+            body: JSON.stringify({
+                data: { resourceType: 'QuestionnaireResponse', item: [{ linkId: 'section_hospital' }] },
+                published: true,
+                clinicId: 'someone-elses-clinic',
+            }),
         }, baseEnv);
         expect(res.status).toBe(200);
 
-        expect(upsertSpy).toHaveBeenCalledWith(baseEnv.DB, 'clinic1', expect.stringContaining('section_hospital'));
+        expect(upsertSpy).toHaveBeenCalledWith(baseEnv.DB, 'clinic1', expect.stringContaining('section_hospital'), true);
+    });
+
+    it('PUT defaults published to false when omitted', async () => {
+        const upsertSpy = vi.spyOn(AccountsDb, 'upsertProviderComposition').mockResolvedValue(undefined);
+        const token = await tokenFor();
+
+        await app.request('/api/provider-composition', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ data: { resourceType: 'QuestionnaireResponse', item: [] } }),
+        }, baseEnv);
+
+        expect(upsertSpy).toHaveBeenCalledWith(baseEnv.DB, 'clinic1', expect.any(String), false);
+    });
+});
+
+// docs/SPEC-26-FACILITY-JOIN-TOKEN-LINKING.md — token-based staff/affiliate linking.
+describe('POST /api/facility/join-tokens (issue)', () => {
+    async function tokenFor() {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'admin@a.com' }, JWT_SECRET);
+    }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/facility/join-tokens', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ linkKind: 'staff' }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('409s when the facility has not published yet', async () => {
+        vi.spyOn(AccountsDb, 'getProviderComposition').mockResolvedValue(null);
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ linkKind: 'staff' }),
+        }, baseEnv);
+        expect(res.status).toBe(409);
+        const body = await res.json();
+        expect(body.stage).toBe('draft');
+    });
+
+    it('200s and issues a token once the facility is published', async () => {
+        vi.spyOn(AccountsDb, 'getProviderComposition').mockResolvedValue({
+            data: JSON.stringify({ item: [{ linkId: 'section_hospital', item: [{ linkId: 'hospital_name', answer: [{ valueString: 'ABC' }] }] }] }),
+            publishedAt: '2026-09-09T00:00:00Z',
+        });
+        vi.spyOn(JoinTokensDb, 'issue').mockResolvedValue(undefined);
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ expires_at: '2026-09-12T00:00:00Z' });
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ linkKind: 'affiliate' }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+        expect(body.token).toMatch(/^[A-Z0-9]{8}$/);
+        expect(body.expiresAt).toBe('2026-09-12T00:00:00Z');
+    });
+
+    it('400s an invalid linkKind', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ linkKind: 'bogus' }),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+});
+
+describe('POST /api/facility/join-tokens/:token/renew', () => {
+    async function tokenFor() {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'admin@a.com' }, JWT_SECRET);
+    }
+
+    it('409s when the token is not renewable (not found/not yours/already redeemed)', async () => {
+        vi.spyOn(JoinTokensDb, 'renew').mockResolvedValue({ meta: { changes: 0 } });
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/renew', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(409);
+    });
+
+    it('200s and returns the new expiry on success', async () => {
+        vi.spyOn(JoinTokensDb, 'renew').mockResolvedValue({ meta: { changes: 1 } });
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ expires_at: '2026-09-15T00:00:00Z' });
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/renew', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        expect((await res.json()).expiresAt).toBe('2026-09-15T00:00:00Z');
+    });
+});
+
+describe('POST /api/facility/join-tokens/:token/redeem', () => {
+    const issuedRow = {
+        token: 'ABC12345', facility_clinic_id: 'clinic1', link_kind: 'staff',
+        issued_by_account_id: 'admin1', status: 'issued', expires_at: '2099-01-01T00:00:00Z',
+    };
+    const publishedComposition = {
+        data: JSON.stringify({ item: [{ linkId: 'section_hospital', item: [{ linkId: 'hospital_name', answer: [{ valueString: 'ABC' }] }] }] }),
+        publishedAt: '2026-09-09T00:00:00Z',
+    };
+
+    it('404s an invalid token', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue(null);
+        const res = await app.request('/api/facility/join-tokens/NOPE/redeem', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({}),
+        }, baseEnv);
+        expect(res.status).toBe(404);
+    });
+
+    it('409s a token that is not `issued` (already redeemed)', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ ...issuedRow, status: 'redeemed' });
+        const res = await app.request('/api/facility/join-tokens/ABC12345/redeem', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({}),
+        }, baseEnv);
+        expect(res.status).toBe(409);
+    });
+
+    it('410s an expired token', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ ...issuedRow, expires_at: '2000-01-01T00:00:00Z' });
+        const res = await app.request('/api/facility/join-tokens/ABC12345/redeem', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({}),
+        }, baseEnv);
+        expect(res.status).toBe(410);
+    });
+
+    it("409s if the facility's own setup stage regressed below the eligibility bar", async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue(issuedRow);
+        vi.spyOn(AccountsDb, 'getProviderComposition').mockResolvedValue(null);
+        const res = await app.request('/api/facility/join-tokens/ABC12345/redeem', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({}),
+        }, baseEnv);
+        expect(res.status).toBe(409);
+    });
+
+    it('creates a new PENDING staff account and does NOT hand back a usable session token', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue(issuedRow);
+        vi.spyOn(AccountsDb, 'getProviderComposition').mockResolvedValue(publishedComposition);
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue(null);
+        vi.spyOn(AccountsDb, 'countAccountsByClinicId').mockResolvedValue({ count: 1 });
+        const createSpy = vi.spyOn(AccountsDb, 'createTeammateAccount').mockResolvedValue(undefined);
+        vi.spyOn(JoinTokensDb, 'redeem').mockResolvedValue(true);
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ id: 'admin1', admin_name: 'Dr Admin' });
+        vi.spyOn(AccountsDb, 'getClinicById').mockResolvedValue({ name: 'ABC Hospital' });
+
+        const res = await app.request('/api/facility/join-tokens/ABC12345/redeem', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'new@a.com', password: 'password123', adminName: 'New Person' }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+        expect(body.sessionToken).toBeUndefined();
+        expect(body.personEmail).toBe('new@a.com');
+        expect(body.admin).toEqual({ accountId: 'admin1', name: 'Dr Admin' });
+        expect(body.facilityName).toBe('ABC Hospital');
+        expect(createSpy).toHaveBeenCalledWith(baseEnv.DB, 'clinic1', expect.any(String), 'new@a.com', expect.any(String), 'New Person', undefined, 'pending');
+    });
+
+    it('409s a staff redeem when the email already has an account', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue(issuedRow);
+        vi.spyOn(AccountsDb, 'getProviderComposition').mockResolvedValue(publishedComposition);
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue({ id: 'existing' });
+        const res = await app.request('/api/facility/join-tokens/ABC12345/redeem', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'taken@a.com', password: 'password123' }),
+        }, baseEnv);
+        expect(res.status).toBe(409);
+    });
+
+    it('401s an unauthenticated affiliate redemption attempt (must log in first)', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ ...issuedRow, link_kind: 'affiliate' });
+        vi.spyOn(AccountsDb, 'getProviderComposition').mockResolvedValue(publishedComposition);
+        const res = await app.request('/api/facility/join-tokens/ABC12345/redeem', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({}),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('an already-authenticated caller redeeming (affiliate) reuses their existing account, no new one created', async () => {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        const callerToken = await issueSessionToken({ sub: 'affiliate-acc', clinicId: 'affiliate-own-clinic', email: 'aff@a.com' }, JWT_SECRET);
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ ...issuedRow, link_kind: 'affiliate' });
+        vi.spyOn(AccountsDb, 'getProviderComposition').mockResolvedValue(publishedComposition);
+        const createSpy = vi.spyOn(AccountsDb, 'createTeammateAccount');
+        vi.spyOn(JoinTokensDb, 'redeem').mockResolvedValue(true);
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ id: 'admin1', admin_name: 'Dr Admin' });
+        vi.spyOn(AccountsDb, 'getClinicById').mockResolvedValue({ name: 'ABC Hospital' });
+
+        const res = await app.request('/api/facility/join-tokens/ABC12345/redeem', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${callerToken}` },
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+        expect(body.accountId).toBe('affiliate-acc');
+        expect(body.sessionToken).toBeUndefined();
+        expect(body.personEmail).toBeNull();
+        expect(createSpy).not.toHaveBeenCalled();
+    });
+});
+
+describe('POST /api/facility/join-tokens/:token/deliver', () => {
+    async function tokenFor(accountId = 'redeemer1') {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: accountId, clinicId: 'clinic-redeemer', email: 'r@a.com' }, JWT_SECRET);
+    }
+
+    it('403s when the caller is not who redeemed this token', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ redeemed_by_account_id: 'someone-else' });
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/deliver', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ ciphertext: 'cfx1.xxx' }),
+        }, baseEnv);
+        expect(res.status).toBe(403);
+    });
+
+    it('sends onto the CUBO_TASK_QUEUE, tagged with its own type, when the binding is configured', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ redeemed_by_account_id: 'redeemer1' });
+        const send = vi.fn().mockResolvedValue(undefined);
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/deliver', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ ciphertext: 'cfx1.xxx' }),
+        }, { ...baseEnv, CUBO_TASK_QUEUE: { send } });
+        expect(res.status).toBe(200);
+        expect(send).toHaveBeenCalledWith({ type: 'facility-join-request', token: 'ABC12345', ciphertext: 'cfx1.xxx' });
+    });
+
+    it('degrades to a direct durable write when the queue binding is absent (local dev)', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ redeemed_by_account_id: 'redeemer1' });
+        const setSpy = vi.spyOn(JoinTokensDb, 'setPendingPayload').mockResolvedValue(undefined);
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/deliver', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ ciphertext: 'cfx1.xxx' }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        expect(setSpy).toHaveBeenCalledWith(baseEnv.DB, 'ABC12345', 'cfx1.xxx');
+    });
+});
+
+describe('POST /api/facility/join-tokens/:token/decide', () => {
+    async function tokenFor() {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: 'admin1', clinicId: 'clinic1', email: 'admin@a.com' }, JWT_SECRET);
+    }
+
+    it("403s a decision on another facility's token", async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ facility_clinic_id: 'someone-elses-clinic' });
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/decide', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ decision: 'approved' }),
+        }, baseEnv);
+        expect(res.status).toBe(403);
+    });
+
+    it('409s a decision on a token not awaiting one', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ facility_clinic_id: 'clinic1' });
+        vi.spyOn(JoinTokensDb, 'decide').mockResolvedValue({ meta: { changes: 0 } });
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/decide', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ decision: 'approved' }),
+        }, baseEnv);
+        expect(res.status).toBe(409);
+    });
+
+    it('approving a STAFF request flips their account status to active, never touches facility_affiliates', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ facility_clinic_id: 'clinic1', link_kind: 'staff', redeemed_by_account_id: 'newstaff1' });
+        vi.spyOn(JoinTokensDb, 'decide').mockResolvedValue({ meta: { changes: 1 } });
+        const statusSpy = vi.spyOn(AccountsDb, 'setAccountStatus').mockResolvedValue(undefined);
+        const addAffiliateSpy = vi.spyOn(AccountsDb, 'addAffiliate');
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/decide', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ decision: 'approved' }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        expect(statusSpy).toHaveBeenCalledWith(baseEnv.DB, 'newstaff1', 'active');
+        expect(addAffiliateSpy).not.toHaveBeenCalled();
+    });
+
+    it('rejecting a STAFF request flips their account status to rejected', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ facility_clinic_id: 'clinic1', link_kind: 'staff', redeemed_by_account_id: 'newstaff1' });
+        vi.spyOn(JoinTokensDb, 'decide').mockResolvedValue({ meta: { changes: 1 } });
+        const statusSpy = vi.spyOn(AccountsDb, 'setAccountStatus').mockResolvedValue(undefined);
+        const token = await tokenFor();
+        await app.request('/api/facility/join-tokens/ABC12345/decide', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ decision: 'rejected' }),
+        }, baseEnv);
+        expect(statusSpy).toHaveBeenCalledWith(baseEnv.DB, 'newstaff1', 'rejected');
+    });
+
+    it('approving an AFFILIATE request adds the facility_affiliates row with the given role, never touches account status', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ facility_clinic_id: 'clinic1', link_kind: 'affiliate', redeemed_by_account_id: 'aff1' });
+        vi.spyOn(JoinTokensDb, 'decide').mockResolvedValue({ meta: { changes: 1 } });
+        const addAffiliateSpy = vi.spyOn(AccountsDb, 'addAffiliate').mockResolvedValue(undefined);
+        const statusSpy = vi.spyOn(AccountsDb, 'setAccountStatus');
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/decide', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ decision: 'approved', role: 'Visiting Cardiologist' }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        expect(addAffiliateSpy).toHaveBeenCalledWith(baseEnv.DB, 'clinic1', 'aff1', 'Visiting Cardiologist');
+        expect(statusSpy).not.toHaveBeenCalled();
+    });
+});
+
+describe('GET /api/facility/join-tokens', () => {
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/facility/join-tokens', { headers: { 'X-Service-Key': SERVICE_KEY } }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it("200s with the caller's own facility's tokens", async () => {
+        vi.spyOn(JoinTokensDb, 'listByClinic').mockResolvedValue([{ token: 'ABC12345', status: 'issued' }]);
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        const token = await issueSessionToken({ sub: 'admin1', clinicId: 'clinic1', email: 'admin@a.com' }, JWT_SECRET);
+        const res = await app.request('/api/facility/join-tokens', { headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` } }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+        expect(body.tokens).toEqual([{ token: 'ABC12345', status: 'issued' }]);
+    });
+});
+
+describe('GET /api/facility/join-tokens/pending', () => {
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/facility/join-tokens/pending', { headers: { 'X-Service-Key': SERVICE_KEY } }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('200s with redeemed-but-undecided tokens issued by the CALLER, joined with redeemer identity', async () => {
+        vi.spyOn(JoinTokensDb, 'listPendingByIssuer').mockResolvedValue([
+            { token: 'ABC12345', linkKind: 'staff', accountId: 'newstaff1', email: 'new@a.com', adminName: 'New Hire', createdAt: '2026-09-09T00:00:00Z' },
+        ]);
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        const token = await issueSessionToken({ sub: 'admin1', clinicId: 'clinic1', email: 'admin@a.com' }, JWT_SECRET);
+        const res = await app.request('/api/facility/join-tokens/pending', { headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` } }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+        expect(body.pending[0]).toMatchObject({ token: 'ABC12345', accountId: 'newstaff1', adminName: 'New Hire' });
+    });
+});
+
+describe('GET /api/facility/join-tokens/:token/payload', () => {
+    async function tokenFor() {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: 'admin1', clinicId: 'clinic1', email: 'admin@a.com' }, JWT_SECRET);
+    }
+
+    it("403s for another facility's token", async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ facility_clinic_id: 'someone-elses-clinic' });
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/payload', { headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` } }, baseEnv);
+        expect(res.status).toBe(403);
+    });
+
+    it('200s with the stored ciphertext (never plaintext)', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ facility_clinic_id: 'clinic1', pending_payload: 'cfx1.xxx' });
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/payload', { headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` } }, baseEnv);
+        expect(res.status).toBe(200);
+        expect((await res.json()).ciphertext).toBe('cfx1.xxx');
+    });
+
+    it('returns null (not an error) when nothing has been delivered yet', async () => {
+        vi.spyOn(JoinTokensDb, 'getByToken').mockResolvedValue({ facility_clinic_id: 'clinic1', pending_payload: null });
+        const token = await tokenFor();
+        const res = await app.request('/api/facility/join-tokens/ABC12345/payload', { headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` } }, baseEnv);
+        expect((await res.json()).ciphertext).toBeNull();
+    });
+});
+
+describe('POST /api/auth/login account status gate (SPEC-26)', () => {
+    it('403s a pending (unapproved) account, even with the correct password', async () => {
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue({ id: 'acc1', password_hash: await hashPassword('password123'), status: 'pending' });
+        const res = await app.request('/api/auth/login', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'a@b.com', password: 'password123' }),
+        }, baseEnv);
+        expect(res.status).toBe(403);
+    });
+
+    it('403s a rejected account', async () => {
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue({ id: 'acc1', password_hash: await hashPassword('password123'), status: 'rejected' });
+        const res = await app.request('/api/auth/login', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'a@b.com', password: 'password123' }),
+        }, baseEnv);
+        expect(res.status).toBe(403);
     });
 });
 
@@ -686,7 +1113,7 @@ describe('GET/PUT /api/provider-composition', () => {
 // middleware everywhere.
 describe('GET/PUT /api/encounters/:id (document mirror)', () => {
     async function tokenFor() {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
     }
 
@@ -721,7 +1148,7 @@ describe('GET/PUT /api/encounters/:id (document mirror)', () => {
 
 describe('POST /api/encounters/:id/assign', () => {
     async function tokenFor() {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: 'acc-admin', clinicId: 'clinic1', email: 'admin@a.com' }, JWT_SECRET);
     }
 
@@ -805,7 +1232,7 @@ describe('POST /api/encounters/:id/assign', () => {
 
 describe('POST /api/encounters/:id/lock', () => {
     async function tokenFor(accountId = 'acc1') {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: accountId, clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
     }
 
@@ -867,7 +1294,7 @@ describe('POST /api/encounters/:id/lock', () => {
 
 describe('GET /api/encounters/:id/assignment', () => {
     async function tokenFor() {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
     }
 
@@ -917,7 +1344,7 @@ describe('GET /api/encounters/:id/assignment', () => {
 
 describe('GET /api/encounters/assignments', () => {
     async function tokenFor() {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
     }
 
@@ -945,9 +1372,240 @@ describe('GET /api/encounters/assignments', () => {
     });
 });
 
+// SPEC-25 (docs/SPEC-25-FEDERATED-TASK-PERSISTENCE.md) §6/§10 step 4 — same requireUser()+
+// requirePaidTier() gate and route-shape conventions as the /api/encounters/* block above,
+// mirrored here for /api/tasks/:planId/*.
+describe('GET/PUT /api/tasks/:planId/snapshot', () => {
+    async function tokenFor() {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
+    }
+
+    beforeEach(() => {
+        vi.spyOn(AccountsDb, 'getClinicById').mockResolvedValue({ id: 'clinic1', tier: 'paid' });
+    });
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/tasks/plan1/snapshot', { headers: { 'X-Service-Key': SERVICE_KEY } }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('403s a logged-in free-tier caller', async () => {
+        vi.spyOn(AccountsDb, 'getClinicById').mockResolvedValue({ id: 'clinic1', tier: 'free' });
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/snapshot', {
+            headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(403);
+    });
+
+    it('GET 404s when nothing has ever been pushed for this plan', async () => {
+        vi.spyOn(TaskDb, 'getSnapshot').mockResolvedValue(null);
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/snapshot', {
+            headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(404);
+    });
+
+    it('GET 200s with the parsed snapshot', async () => {
+        vi.spyOn(TaskDb, 'getSnapshot').mockResolvedValue({ snapshot: JSON.stringify({ value: { register: 'done' } }), updatedAt: '2026-09-09' });
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/snapshot', {
+            headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+        expect(body.snapshot).toEqual({ value: { register: 'done' } });
+    });
+
+    it('PUT 200s and upserts against the planId in the URL', async () => {
+        const upsertSpy = vi.spyOn(TaskDb, 'upsertSnapshot').mockResolvedValue({ meta: { changes: 1 } });
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/snapshot', {
+            method: 'PUT', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ value: { register: 'done' } }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        expect(upsertSpy).toHaveBeenCalledWith(baseEnv.DB, 'plan1', 'clinic1', JSON.stringify({ value: { register: 'done' } }));
+    });
+});
+
+describe('POST/GET /api/tasks/:planId/audit', () => {
+    async function tokenFor() {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
+    }
+
+    beforeEach(() => {
+        vi.spyOn(AccountsDb, 'getClinicById').mockResolvedValue({ id: 'clinic1', tier: 'paid' });
+    });
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/tasks/plan1/audit', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ taskId: 'plan1:register', actionId: 'register', toStatus: 'done' }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('400s on a missing taskId/actionId', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/audit', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({}),
+        }, baseEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it('200s and appends with the CALLER as accountId, never a client-supplied one', async () => {
+        const appendSpy = vi.spyOn(TaskDb, 'appendAuditEntry').mockResolvedValue({ meta: { changes: 1 } });
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/audit', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ taskId: 'plan1:register', actionId: 'register', fromStatus: 'ready', toStatus: 'done', accountId: 'someone-else' }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        expect(appendSpy).toHaveBeenCalledWith(baseEnv.DB, expect.objectContaining({
+            planId: 'plan1', taskId: 'plan1:register', clinicId: 'clinic1', accountId: 'acc1',
+            actionId: 'register', fromStatus: 'ready', toStatus: 'done',
+        }));
+    });
+
+    it('GET 200s with the full trail, oldest first, as returned by TaskDb', async () => {
+        vi.spyOn(TaskDb, 'listAuditLog').mockResolvedValue([
+            { id: 'a1', task_id: 'plan1:register', account_id: 'acc1', action_id: 'register', from_status: null, to_status: 'ready', created_at: '2026-09-09T00:00:00Z' },
+        ]);
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/audit', {
+            headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+        expect(body.entries).toEqual([
+            { id: 'a1', taskId: 'plan1:register', accountId: 'acc1', actionId: 'register', fromStatus: null, toStatus: 'ready', createdAt: '2026-09-09T00:00:00Z' },
+        ]);
+    });
+});
+
+describe('POST /api/tasks/:planId/lock', () => {
+    async function tokenFor(accountId = 'acc1') {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: accountId, clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
+    }
+
+    beforeEach(() => {
+        vi.spyOn(AccountsDb, 'getClinicById').mockResolvedValue({ id: 'clinic1', tier: 'paid' });
+    });
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/tasks/plan1/lock', { method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY } }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('403s a logged-in free-tier caller', async () => {
+        vi.spyOn(AccountsDb, 'getClinicById').mockResolvedValue({ id: 'clinic1', tier: 'free' });
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/lock', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(403);
+    });
+
+    it('200s when the lock is successfully acquired', async () => {
+        vi.spyOn(TaskDb, 'acquireLock').mockResolvedValue(true);
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/lock', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(200);
+    });
+
+    it('409s with who holds it when acquisition fails', async () => {
+        vi.spyOn(TaskDb, 'acquireLock').mockResolvedValue(false);
+        vi.spyOn(TaskDb, 'getLock').mockResolvedValue({ assigned_to_account_id: 'acc-other' });
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ admin_name: 'Dr Other', email: 'other@a.com' });
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/lock', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(409);
+        const body = await res.json();
+        expect(body.lockedBy).toBe('Dr Other');
+    });
+});
+
+describe('POST /api/tasks/:planId/lock/renew and /release', () => {
+    async function tokenFor() {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
+    }
+
+    beforeEach(() => {
+        vi.spyOn(AccountsDb, 'getClinicById').mockResolvedValue({ id: 'clinic1', tier: 'paid' });
+    });
+
+    it('renew 200s and renews against the CALLER account, not a client-supplied one', async () => {
+        const renewSpy = vi.spyOn(TaskDb, 'renewLock').mockResolvedValue({ meta: { changes: 1 } });
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/lock/renew', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        expect(renewSpy).toHaveBeenCalledWith(baseEnv.DB, 'plan1', 'acc1');
+    });
+
+    it('release 200s and releases against the CALLER account', async () => {
+        const releaseSpy = vi.spyOn(TaskDb, 'releaseLock').mockResolvedValue({ meta: { changes: 1 } });
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/lock/release', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        expect(releaseSpy).toHaveBeenCalledWith(baseEnv.DB, 'plan1', 'acc1');
+    });
+});
+
+describe('GET /api/tasks/:planId/lock', () => {
+    async function tokenFor() {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
+    }
+
+    beforeEach(() => {
+        vi.spyOn(AccountsDb, 'getClinicById').mockResolvedValue({ id: 'clinic1', tier: 'paid' });
+    });
+
+    it('returns null when nothing has ever held this lock', async () => {
+        vi.spyOn(TaskDb, 'getLock').mockResolvedValue(null);
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/lock', { headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` } }, baseEnv);
+        const body = await res.json();
+        expect(body.lock).toBeNull();
+    });
+
+    it('active:false for a released (expires_at NULL) row — task_locks rows are never deleted, so a real "last held it" answer', async () => {
+        vi.spyOn(TaskDb, 'getLock').mockResolvedValue({ assigned_to_account_id: 'acc-doc', expires_at: null });
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ admin_name: 'Dr Doc' });
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/lock', { headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` } }, baseEnv);
+        const body = await res.json();
+        expect(body.lock).toEqual({ accountId: 'acc-doc', name: 'Dr Doc', active: false });
+    });
+
+    it('active:true for a still-unexpired lock', async () => {
+        vi.spyOn(TaskDb, 'getLock').mockResolvedValue({ assigned_to_account_id: 'acc-doc', expires_at: '2999-01-01T00:00:00.000Z' });
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ admin_name: 'Dr Doc' });
+        const token = await tokenFor();
+        const res = await app.request('/api/tasks/plan1/lock', { headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` } }, baseEnv);
+        const body = await res.json();
+        expect(body.lock).toEqual({ accountId: 'acc-doc', name: 'Dr Doc', active: true });
+    });
+});
+
 describe('GET /api/admin/usage-summary', () => {
     async function tokenFor() {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
     }
 
@@ -1004,7 +1662,7 @@ describe('POST /api/workflow/test-scribe wiring', () => {
 
     it('403s a logged-in free-tier caller before ever reaching the AI binding', async () => {
         vi.spyOn(AccountsDb, 'getClinicById').mockResolvedValue({ id: 'clinic1', tier: 'free' });
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         const token = await issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
 
         const res = await app.request('/api/workflow/test-scribe', {
@@ -1018,7 +1676,7 @@ describe('POST /api/workflow/test-scribe wiring', () => {
 
 describe('GET /api/chat/signal', () => {
     async function tokenFor(accountId = 'acc1', clinicId = 'clinic1') {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: accountId, clinicId, email: 'a@b.com' }, JWT_SECRET);
     }
 
@@ -1111,7 +1769,7 @@ describe('GET /api/chat/signal', () => {
 
 describe('GET /api/nlp/wikidata-search', () => {
     async function tokenFor() {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
     }
 
@@ -1174,7 +1832,7 @@ describe('GET /api/nlp/wikidata-search', () => {
 
 describe('GET /api/nlp/wikidata-concept', () => {
     async function tokenFor() {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: 'acc1', clinicId: 'clinic1', email: 'a@b.com' }, JWT_SECRET);
     }
 
@@ -1210,7 +1868,7 @@ describe('POST /api/realtime/join', () => {
     const realtimeEnv = { ...baseEnv, CF_REALTIME_ACCOUNT_ID: 'acct1', CF_REALTIME_APP_ID: 'app1', CF_REALTIME_API_TOKEN: 'cftoken' };
 
     async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'a@b.com') {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
     }
 
@@ -1316,6 +1974,104 @@ describe('POST /api/realtime/join', () => {
     });
 });
 
+// Hospital/Provider/Affiliate journey follow-up — the same trust-boundary tests
+// GET /api/chat/signal already has, plus the same create/reuse-meeting tests
+// POST /api/realtime/join already has, combined for the new contact-call route.
+describe('POST /api/realtime/contact-call/:peerAccountId/join', () => {
+    const realtimeEnv = { ...baseEnv, CF_REALTIME_ACCOUNT_ID: 'acct1', CF_REALTIME_APP_ID: 'app1', CF_REALTIME_API_TOKEN: 'cftoken' };
+
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'a@b.com') {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/realtime/contact-call/acc2/join', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY },
+        }, realtimeEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('501s when Cloudflare RealtimeKit credentials are not configured', async () => {
+        const token = await tokenFor();
+        const res = await app.request('/api/realtime/contact-call/acc2/join', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, baseEnv); // no CF_REALTIME_* vars set
+        expect(res.status).toBe(501);
+    });
+
+    it('400s when calling yourself', async () => {
+        const token = await tokenFor('clinic1', 'acc1');
+        const res = await app.request('/api/realtime/contact-call/acc1/join', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, realtimeEnv);
+        expect(res.status).toBe(400);
+    });
+
+    it('404s on an unknown peer', async () => {
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue(null);
+        const token = await tokenFor();
+        const res = await app.request('/api/realtime/contact-call/nope/join', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, realtimeEnv);
+        expect(res.status).toBe(404);
+    });
+
+    it("403s if the peer is neither same-clinic staff nor a linked affiliate", async () => {
+        vi.spyOn(AccountsDb, 'getAccountById').mockResolvedValue({ id: 'acc2', clinic_id: 'clinic-other', admin_name: 'Stranger' });
+        vi.spyOn(AccountsDb, 'listAffiliatesByFacility').mockResolvedValue([]);
+        const token = await tokenFor('clinic1', 'acc1');
+        const res = await app.request('/api/realtime/contact-call/acc2/join', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, realtimeEnv);
+        expect(res.status).toBe(403);
+    });
+
+    it('200s and creates a new meeting on first join for same-clinic staff, keyed by the deterministic room id', async () => {
+        vi.spyOn(AccountsDb, 'getAccountById').mockImplementation(async (db, id) => (
+            id === 'acc1' ? { id: 'acc1', clinic_id: 'clinic1', admin_name: 'Dr A' } : { id: 'acc2', clinic_id: 'clinic1', admin_name: 'Dr B' }
+        ));
+        vi.spyOn(ContactMeetingsDb, 'getByRoomId').mockResolvedValue(null);
+        const createSpy = vi.spyOn(RealtimeClient, 'createMeeting').mockResolvedValue('cf-meeting-abc');
+        const dbCreateSpy = vi.spyOn(ContactMeetingsDb, 'create').mockResolvedValue(undefined);
+        const addSpy = vi.spyOn(RealtimeClient, 'addParticipant').mockResolvedValue('cf-auth-token-1');
+
+        const token = await tokenFor('clinic1', 'acc1');
+        const res = await app.request('/api/realtime/contact-call/acc2/join', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, realtimeEnv);
+        expect(res.status).toBe(200);
+
+        const body = await res.json();
+        expect(body).toMatchObject({ success: true, authToken: 'cf-auth-token-1', meetingId: 'cf-meeting-abc' });
+        // chatRoomName() sorts the pair -- same room regardless of who initiates.
+        expect(dbCreateSpy).toHaveBeenCalledWith(realtimeEnv.DB, 'chat:acc1:acc2', 'cf-meeting-abc');
+        expect(createSpy).toHaveBeenCalled();
+        expect(addSpy).toHaveBeenCalledWith('acct1', 'app1', 'cftoken', 'cf-meeting-abc', {
+            name: 'Dr A', presetName: 'group_call_host', customParticipantId: 'acc1',
+        });
+    });
+
+    it('200s for a linked affiliate of a DIFFERENT clinic and reuses an existing meeting', async () => {
+        vi.spyOn(AccountsDb, 'getAccountById').mockImplementation(async (db, id) => (
+            id === 'acc1' ? { id: 'acc1', clinic_id: 'clinic1', admin_name: 'Dr A' } : { id: 'acc-aff', clinic_id: 'clinic-other', admin_name: 'Dr Affiliate' }
+        ));
+        vi.spyOn(AccountsDb, 'listAffiliatesByFacility').mockResolvedValue([{ accountId: 'acc-aff' }]);
+        vi.spyOn(ContactMeetingsDb, 'getByRoomId').mockResolvedValue({ room_id: 'chat:acc-aff:acc1', cf_meeting_id: 'cf-meeting-existing' });
+        const createSpy = vi.spyOn(RealtimeClient, 'createMeeting');
+        vi.spyOn(RealtimeClient, 'addParticipant').mockResolvedValue('token');
+
+        const token = await tokenFor('clinic1', 'acc1');
+        const res = await app.request('/api/realtime/contact-call/acc-aff/join', {
+            method: 'POST', headers: { 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+        }, realtimeEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+        expect(body.meetingId).toBe('cf-meeting-existing');
+        expect(createSpy).not.toHaveBeenCalled();
+    });
+});
+
 describe('POST /api/workflow/extract', () => {
     // SPEC-22 decision #2's real loader, request-time half — the Room-Architect Designer's
     // "Design & Compile Room" step needs this to turn a filled-in authoring-form response into a
@@ -1325,7 +2081,7 @@ describe('POST /api/workflow/extract', () => {
     // worked-example response as those, proving the endpoint wraps the extractor correctly rather
     // than re-testing the extractor's own logic (already covered there).
     async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
     }
 
@@ -1351,8 +2107,8 @@ describe('POST /api/workflow/extract', () => {
     });
 
     it('extracts a real PlanDefinition from a real compiled Questionnaire + a real filled-in response', async () => {
-        const { compileYamlToQuestionnaire } = await import('./lib/yaml-to-questionnaire.js');
-        const { buildHospitalSetupWorkflowResponse } = await import('./lib/hospital-setup-workflow-response.js');
+        const { compileYamlToQuestionnaire } = await import('./lib/shared/yaml-to-questionnaire.js');
+        const { buildHospitalSetupWorkflowResponse } = await import('./lib/runtime/hospital-setup-workflow-response.js');
         const fs = await import('fs');
         const path = await import('path');
         const yamlSource = fs.readFileSync(path.join(process.cwd(), 'samples', 'hospital-setup-workflow-v1.yaml'), 'utf8');
@@ -1379,7 +2135,7 @@ describe('POST /api/workflow/extract', () => {
 
 describe('POST /api/workflow/assemble-document', () => {
     async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
     }
 
@@ -1416,8 +2172,8 @@ describe('POST /api/workflow/assemble-document', () => {
     });
 
     it('assembles a real document Bundle from real extracted resources — the full compile -> extract -> assemble chain via real HTTP calls', async () => {
-        const { compileYamlToQuestionnaire } = await import('./lib/yaml-to-questionnaire.js');
-        const { ComprehensiveLocalExtractor } = await import('./lib/local-extractor.js');
+        const { compileYamlToQuestionnaire } = await import('./lib/shared/yaml-to-questionnaire.js');
+        const { ComprehensiveLocalExtractor } = await import('./lib/shared/local-extractor.js');
         const fs = await import('fs');
         const path = await import('path');
         const yamlSource = fs.readFileSync(path.join(process.cwd(), 'samples', 'hospital-setup-workflow-v1.yaml'), 'utf8');
@@ -1456,14 +2212,14 @@ describe('POST /api/workflow/assemble-document', () => {
 
 describe('POST /api/facility/conformance', () => {
     async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
     }
 
     // The real, compiled system-provider-composition-v1.yaml Questionnaire — same "compile the
     // real YAML, don't hand-build a fixture" discipline as the assemble-document test above.
     async function compiledQuestionnaire() {
-        const { compileYamlToQuestionnaire } = await import('./lib/yaml-to-questionnaire.js');
+        const { compileYamlToQuestionnaire } = await import('./lib/shared/yaml-to-questionnaire.js');
         const fs = await import('fs');
         const path = await import('path');
         const yamlSource = fs.readFileSync(path.join(process.cwd(), 'tools', 'system-forms', 'system-provider-composition-v1.yaml'), 'utf8');
@@ -1579,11 +2335,11 @@ describe('POST /api/facility/conformance', () => {
 
 describe('POST /api/provider/conformance', () => {
     async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
-        const { issueSessionToken } = await import('./lib/session.js');
+        const { issueSessionToken } = await import('./lib/shared/session.js');
         return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
     }
     async function compiledQuestionnaire() {
-        const { compileYamlToQuestionnaire } = await import('./lib/yaml-to-questionnaire.js');
+        const { compileYamlToQuestionnaire } = await import('./lib/shared/yaml-to-questionnaire.js');
         const fs = await import('fs');
         const path = await import('path');
         const yamlSource = fs.readFileSync(path.join(process.cwd(), 'tools', 'system-forms', 'system-provider-composition-v1.yaml'), 'utf8');
@@ -1671,5 +2427,189 @@ describe('POST /api/provider/conformance', () => {
         expect(priya.roleValid).toBe(true); // PractitionerRole itself has no deferred-slicing gap
         expect(priya.practitionerValid).toBe(false); // telecom:email/identifier:hprId slicing — known, deferred
         expect(arjun.practitionerErrors.length).toBeGreaterThan(priya.practitionerErrors.length); // Arjun genuinely has less captured
+    });
+});
+
+describe('POST /api/affiliate-organization/conformance', () => {
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+    async function compiledQuestionnaire() {
+        const { compileYamlToQuestionnaire } = await import('./lib/shared/yaml-to-questionnaire.js');
+        const fs = await import('fs');
+        const path = await import('path');
+        const yamlSource = fs.readFileSync(path.join(process.cwd(), 'tools', 'system-forms', 'system-provider-composition-v1.yaml'), 'utf8');
+        return compileYamlToQuestionnaire(yamlSource).questionnaire;
+    }
+    function stringAnswer(linkId, value) { return { linkId, answer: [{ valueString: value }] }; }
+    function multiAnswer(linkId, values) { return { linkId, answer: values.map((v) => ({ valueString: v })) }; }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/affiliate-organization/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ questionnaireJson: {}, responseJson: {} }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('reports an empty list when none have been captured yet', async () => {
+        const token = await tokenFor();
+        const questionnaireJson = await compiledQuestionnaire();
+        const res = await app.request('/api/affiliate-organization/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson, responseJson: { item: [] } }),
+        }, baseEnv);
+        const body = await res.json();
+        expect(body.success).toBe(true);
+        expect(body.affiliations).toEqual([]);
+    });
+
+    it('the real chain: a real OrganizationAffiliation, auto-linked to this facility\'s own Organization, validated with real MultiSelect-produced arrays', async () => {
+        const token = await tokenFor();
+        const questionnaireJson = await compiledQuestionnaire();
+        const responseJson = {
+            item: [
+                { linkId: 'section_hospital', item: [stringAnswer('hospital_name', 'ABC Hospital')] },
+                { linkId: 'section_affiliate_organization', item: [
+                    stringAnswer('affiliate_org_name', 'City Diagnostics Lab'),
+                    multiAnswer('affiliate_org_relationship', ['Diagnostics', 'Laboratory']),
+                    { linkId: 'affiliate_org_active', answer: [{ valueBoolean: true }] },
+                ] },
+            ],
+        };
+
+        const res = await app.request('/api/affiliate-organization/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson, responseJson }),
+        }, baseEnv);
+        expect(res.status).toBe(200);
+        const body = await res.json();
+
+        expect(body.affiliations).toHaveLength(1);
+        const org = body.affiliations[0].organizationAffiliation;
+        expect(org.participatingOrganization).toBe('City Diagnostics Lab');
+        expect(org.code).toEqual(['Diagnostics', 'Laboratory']); // both MultiSelect answers survived, not truncated to the first
+        expect(org.organization.reference).toMatch(/^Organization\//); // auto-linked, never a form field
+        expect(body.affiliations[0].valid).toBe(true); // active + code + organization + participatingOrganization all present
+
+        // Two real, distinct next-best-action behaviors, both correct given how this entity is
+        // actually captured (see the YAML's own comment on why participatingOrganization is a
+        // plain string, not a real Reference): (1) 'affiliation-from-facility' (reverse, source =
+        // the Facility Organization) stays suppressed — this Organization only has hospital_name
+        // set, genuinely invalid, already covered by the facility conformance tests. (2)
+        // 'affiliate-partner-org' (forward, source = this valid OrganizationAffiliation) DOES
+        // fire — participatingOrganization has no `.reference` to resolve (it's a bare string,
+        // not a real target Organization instance), so next-best-action.js correctly reports the
+        // partner org as not-yet-linked, an honest reflection of the real capture gap rather than
+        // a false "done".
+        expect(body.nextActions.map((a) => a.linkId)).toEqual(['affiliate-partner-org']);
+    });
+
+    it('reports a real cardinality error when a required field is missing (no relationship code)', async () => {
+        const token = await tokenFor();
+        const questionnaireJson = await compiledQuestionnaire();
+        const responseJson = {
+            item: [
+                { linkId: 'section_hospital', item: [stringAnswer('hospital_name', 'ABC Hospital')] },
+                { linkId: 'section_affiliate_organization', item: [stringAnswer('affiliate_org_name', 'City Diagnostics Lab')] },
+            ],
+        };
+
+        const res = await app.request('/api/affiliate-organization/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson, responseJson }),
+        }, baseEnv);
+        const body = await res.json();
+        expect(body.affiliations[0].valid).toBe(false);
+        expect(body.affiliations[0].errors.some((e) => e.path === 'OrganizationAffiliation.code')).toBe(true);
+    });
+});
+
+describe('POST /api/patient/conformance', () => {
+    async function tokenFor(clinicId = 'clinic1', accountId = 'acc1', email = 'admin@a.com') {
+        const { issueSessionToken } = await import('./lib/shared/session.js');
+        return issueSessionToken({ sub: accountId, clinicId, email }, JWT_SECRET);
+    }
+    async function compiledQuestionnaire() {
+        const { compileYamlToQuestionnaire } = await import('./lib/shared/yaml-to-questionnaire.js');
+        const fs = await import('fs');
+        const path = await import('path');
+        const yamlSource = fs.readFileSync(path.join(process.cwd(), 'tools', 'system-forms', 'system-patient-profile-v1.yaml'), 'utf8');
+        return compileYamlToQuestionnaire(yamlSource).questionnaire;
+    }
+    function stringAnswer(linkId, value) { return { linkId, answer: [{ valueString: value }] }; }
+
+    it('401s with no Authorization header', async () => {
+        const res = await app.request('/api/patient/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ questionnaireJson: {}, responseJson: {} }),
+        }, baseEnv);
+        expect(res.status).toBe(401);
+    });
+
+    it('reports no patient captured yet distinctly from an incomplete one', async () => {
+        const token = await tokenFor();
+        const questionnaireJson = await compiledQuestionnaire();
+        const res = await app.request('/api/patient/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson, responseJson: { item: [] } }),
+        }, baseEnv);
+        const body = await res.json();
+        expect(body.valid).toBe(false);
+        expect(body.patient).toBeNull();
+    });
+
+    it('the real chain: patient_first_name/patient_active close two real gaps the old patient_name-only form left open', async () => {
+        const token = await tokenFor();
+        const questionnaireJson = await compiledQuestionnaire();
+        // Only the legacy full-name field — the real gap this session found (Patient.name.given
+        // has no way to be satisfied by Patient.name.text alone).
+        const legacyOnlyResponse = { item: [{ linkId: 'section_patient', item: [stringAnswer('patient_name', 'Arjun Verma')] }] };
+        const legacyRes = await app.request('/api/patient/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson, responseJson: legacyOnlyResponse }),
+        }, baseEnv);
+        const legacyBody = await legacyRes.json();
+        expect(legacyBody.valid).toBe(false);
+        expect(legacyBody.errors.some((e) => e.path === 'Patient.name.given')).toBe(true);
+
+        // Full capture via the new fields — .active/.name.given/.gender/.birthDate/.telecom:mobile
+        // all real requirements; the mobile/identifier SLICE requirements stay unreachable (known,
+        // deferred — see the YAML's own comment), so this is deliberately not asserted valid:true.
+        const fullResponse = {
+            item: [{ linkId: 'section_patient', item: [
+                stringAnswer('patient_name', 'Arjun Verma'),
+                stringAnswer('patient_first_name', 'Arjun'),
+                stringAnswer('patient_last_name', 'Verma'),
+                { linkId: 'patient_active', answer: [{ valueBoolean: true }] },
+                stringAnswer('patient_gender', 'male'),
+                { linkId: 'patient_birthdate', answer: [{ valueDate: '1990-01-01' }] },
+                stringAnswer('patient_mobile', '9876543210'),
+            ] }],
+        };
+        const res = await app.request('/api/patient/conformance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY, Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ questionnaireJson, responseJson: fullResponse }),
+        }, baseEnv);
+        const body = await res.json();
+        // Patient.name.given is max:1 in ClinuxFlowPatient.json (narrower than base FHIR's 0..*,
+        // this app only ever captures one) — not in FHIR_ARRAY_PATHS, so a plain scalar, matching
+        // Practitioner.telecom's own "not every array-typed base FHIR field needs array handling
+        // here" precedent.
+        expect(body.patient.name.given).toBe('Arjun');
+        expect(body.patient.name.family).toBe('Verma');
+        expect(body.patient.active).toBe(true);
+        expect(body.errors.some((e) => e.path === 'Patient.name.given')).toBe(false); // the real gap this session closed
+        // The known-deferred slicing gap, honestly still present:
+        expect(body.errors.some((e) => e.path === 'Patient.telecom:mobile')).toBe(true);
     });
 });

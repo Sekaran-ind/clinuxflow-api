@@ -5,7 +5,7 @@ import { dirname, join } from 'path';
 import { validate } from './conformance-validator.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const sdDir = join(__dirname, '..', '..', 'data', 'structure-definitions');
+const sdDir = join(__dirname, '..', '..', '..', 'data', 'structure-definitions');
 function loadSd(name) {
   return JSON.parse(readFileSync(join(sdDir, `${name}.json`), 'utf-8'));
 }

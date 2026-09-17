@@ -14,17 +14,22 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { compileYamlToQuestionnaire } from '../src/lib/yaml-to-questionnaire.js';
+import { compileYamlToQuestionnaire } from '../src/lib/shared/yaml-to-questionnaire.js';
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const YAML_DIR = path.join(DIR, 'system-forms');
 
 // Fixed sidebar display order — must match clinux-frontend's SYSTEM_FORM_IDS
-// (src/data/useSystemForms.js).
+// (src/data/useSystemForms.js). system-join-request-v1 (SPEC-26 §6) is deliberately NOT added to
+// that list — it's never opened via Designer's Forms Library sidebar, only rendered inline inside
+// a Cübo chat card, so it doesn't need sidebar ordering; GET /api/workflow/system-forms/
+// seedSystemForms() still picks it up since that path merges every compiled form, not just the
+// ones SYSTEM_FORM_IDS names.
 const FORM_IDS = [
     'system-provider-composition-v1',
     'system-patient-profile-v1',
     'system-encounter-composition-v1',
+    'system-join-request-v1',
 ];
 
 const catalog = {};

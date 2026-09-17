@@ -5,11 +5,32 @@ composition:
     id: section_patient
     label: "Patient Details"
     fields:
+      # SPEC-24 §7 step 6 (Patient) — real capture-form gap found comparing this form against
+      # ClinuxFlowPatient.json: Patient.name.given (required, min 1) had no field at all — only
+      # patient_name -> Patient.name.text existed, which real FHIR doesn't treat as satisfying
+      # .given. patient_first_name/patient_last_name are NEW, genuinely required fields;
+      # patient_name stays (AiEngine.vue's own patient grid/modal — a separate consumer of this
+      # same form, unrelated to SPEC-24 — reads/writes it directly, so it can't be removed).
+      # PatientBasicsHost.vue's own extract() derives patient_name from first+last automatically
+      # so a patient is only ever typed once, not two redundant "name" prompts.
       - id: "patient_name"
         path: "Patient.name.text"
         label: "Full Name"
         uiComponent: "TextInput"
         required: true
+      - id: "patient_first_name"
+        path: "Patient.name.given"
+        label: "First Name"
+        uiComponent: "TextInput"
+        required: true
+      - id: "patient_last_name"
+        path: "Patient.name.family"
+        label: "Last Name"
+        uiComponent: "TextInput"
+      - id: "patient_active"
+        path: "Patient.active"
+        label: "Active"
+        uiComponent: "Checkbox"
       - id: "patient_gender"
         path: "Patient.gender"
         label: "Gender"
@@ -26,4 +47,30 @@ composition:
       - id: "patient_emergency_contact_phone"
         path: "Patient.contact.telecom.value"
         label: "Emergency Contact Phone"
+        uiComponent: "TextInput"
+      # SPEC-24 §7 step 6 (Patient) — real ABHA integration (docs/NHPR SBX Doc/NHPR Doc/ABHA/),
+      # not a passive form field: PatientAbhaPanel.vue (clinux-frontend) writes these three from a
+      # real ABHA profile (found-by-mobile-search or created-via-Aadhaar, both against
+      # clinuxflow-abdm-gateway's /abha/* routes) once a patient completes that flow — same
+      # "layer real ABDM registration onto local FHIR capture" precedent AbdmOnboarding.vue/
+      # abdmAdapter.js already established for Facility/Provider. patient_mobile is the PATIENT's
+      # own number (distinct from patient_emergency_contact_phone above, someone else's). Real,
+      # known-deferred gap, same as Provider's own Practitioner.telecom/.identifier slicing:
+      # Patient.telecom:mobile and .identifier:abhaNumber/:abhaAddress are FHIR-sliced (fixed
+      # system/use sub-values) — this compiler has no mechanism to co-locate a hidden fixed-value
+      # sibling onto the SAME array element as these visible fields (confirmed via local-
+      # extractor.js's own FHIR_ARRAY_PATHS handling: each leaf gets its own independent array
+      # entry) — so full valid:true on those two slices stays unreachable regardless of how real
+      # and OTP-verified the underlying value is. Flagged in-code, not silently worked around.
+      - id: "patient_mobile"
+        path: "Patient.telecom.value"
+        label: "Mobile Number"
+        uiComponent: "TextInput"
+      - id: "patient_abha_number"
+        path: "Patient.identifier.value"
+        label: "ABHA Number"
+        uiComponent: "TextInput"
+      - id: "patient_abha_address"
+        path: "Patient.identifier.value"
+        label: "ABHA Address"
         uiComponent: "TextInput"
