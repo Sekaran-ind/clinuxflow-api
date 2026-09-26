@@ -27,7 +27,12 @@ const FHIR_ARRAY_PATHS = new Set([
   // each called once) naturally converge on the same name[0] via _extractAnswers' own per-leaf-
   // path ledger, rather than needing separate "pin to index 0" logic. .name.given (WITHIN that
   // one name entry) genuinely needs array handling — a person can have more than one given name.
-  'Practitioner.identifier', 'Practitioner.telecom', 'Practitioner.extension', 'Practitioner.qualification', 'Practitioner.name.given',
+  // .qualification.extension added alongside the bare .qualification/.extension entries — a real
+  // gap found live: multiple extension fields WITHIN one qualification entry (college/university/
+  // registered-council/etc., none of which have a direct FHIR sub-field on Practitioner.qualification)
+  // need their own array-write handling at THIS specific nested path, not just the two top-level
+  // ones.
+  'Practitioner.identifier', 'Practitioner.telecom', 'Practitioner.extension', 'Practitioner.qualification', 'Practitioner.qualification.extension', 'Practitioner.name.given',
   // HealthcareService (Facility services)
   'HealthcareService.category', 'HealthcareService.program',
   // Consent (Facility)
@@ -114,6 +119,7 @@ export class ComprehensiveLocalExtractor {
                         definition: item.definition,
                         type: item.type,
                         extensionUrl: item.extensionUrl, // real FHIR extension tagging — see yaml-to-questionnaire.js's own comment on this
+                        refTo: item.refTo, // branch/similar reference fields — see yaml-to-questionnaire.js's own comment on this
                     });
                 }
                 if (item.item && Array.isArray(item.item)) {
@@ -247,6 +253,33 @@ export class ComprehensiveLocalExtractor {
 
                             const resource = getOrCreateCacheEntry(cacheKey, resourceType);
 
+                            // Branch/similar reference field (SPEC-24 follow-up) — the submitted
+                            // value is a Location repetition's own instance index, not a real id
+                            // (a not-yet-extracted repeating group has no id yet to offer — see
+                            // getOrCreateCacheEntry's own id assignment above for why it's still
+                            // too early here even though ids get assigned eagerly: the specific
+                            // Location#N this points at may not have been *created* yet if
+                            // section_location happens to be ordered after this field in the
+                            // document). Deferred to the finalization pass below, once every
+                            // resource in the document definitely has a real id. Deliberately
+                            // scoped to a direct "ResourceType.field" path (no nested navigation,
+                            // no ledger slotting) — the two real cases needing this
+                            // (HealthcareService.location, PractitionerRole.location) are both
+                            // exactly that shape.
+                            if (leafMeta.refTo) {
+                                if (propertyPathTokens.length !== 1) {
+                                    const warning = `refTo field "${answeredItem.linkId}" has a nested path (${rightHandPathString}) — only a direct "ResourceType.field" reference is supported. Answer dropped.`;
+                                    console.warn(`⚠️ ${warning}`);
+                                    warnings.push(warning);
+                                } else {
+                                    if (!resource.__pendingRefs) resource.__pendingRefs = [];
+                                    cleanValues.forEach((cleanValue) => {
+                                        resource.__pendingRefs.push({ field: propertyPathTokens[0], refType: leafMeta.refTo, index: Number(cleanValue) });
+                                    });
+                                }
+                                return;
+                            }
+
                             const { pointer, consumedTokenCount } = ComprehensiveLocalExtractor._navigateToWriteTarget(resource, groupStack, resourceType);
 
                             // Ledger now tracks a BASE slot per distinct linkId (not one fixed
@@ -340,6 +373,28 @@ export class ComprehensiveLocalExtractor {
             // never something a form field needs to ask the user for.
             if (type === 'OrganizationAffiliation' && resourceCache.Organization) {
                 resource.organization = { reference: `Organization/${resourceCache.Organization.id}` };
+            }
+
+            // Branch/similar reference field resolution (SPEC-24 follow-up) — every resource in
+            // the document now has a real id (this whole pass runs after extractAnswers
+            // completes), so each pending index-based reference resolves against the SAME
+            // resourceCache the auto-links above already read from. A missing target (e.g. the
+            // user picked a branch that's since been removed from the same edit) drops the
+            // reference with a warning rather than writing a broken one — same "answer dropped,
+            // not a thrown error" contract every other malformed-input path in this file already
+            // has.
+            if (resource.__pendingRefs) {
+                resource.__pendingRefs.forEach(({ field, refType, index }) => {
+                    if (Number.isNaN(index)) return;
+                    const target = resourceCache[`${refType}#${index}`] || (index === 0 ? resourceCache[refType] : undefined);
+                    if (!target) {
+                        warnings.push(`${cacheKey}'s ${field} referenced ${refType}#${index}, which doesn't exist in this document — reference dropped.`);
+                        return;
+                    }
+                    if (!resource[field]) resource[field] = [];
+                    resource[field].push({ reference: `${refType}/${target.id}` });
+                });
+                delete resource.__pendingRefs;
             }
 
             finalizedOutputResources.push(resource);

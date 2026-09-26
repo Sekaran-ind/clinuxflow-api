@@ -126,3 +126,34 @@ describe('nextBestActions — degenerate inputs', () => {
     expect(nextBestActions({ ...graph, link: [] }, [facility], { 'org-1': valid })).toEqual([]);
   });
 });
+
+// ClinuxFlowPatientGraph.json — a second, real GraphDefinition instance run through this same
+// pure walker with zero code changes (its own design goal — see the graph file's own header).
+// One reverse link only: Patient -> Encounter.
+const patientGraphPath = join(__dirname, '..', '..', '..', 'data', 'graph-definitions', 'ClinuxFlowPatientGraph.json');
+const patientGraph = JSON.parse(readFileSync(patientGraphPath, 'utf-8'));
+
+describe('nextBestActions — ClinuxFlowPatientGraph (reverse Patient -> Encounter link)', () => {
+  const patient = { resourceType: 'Patient', id: 'pat-1', active: true };
+
+  it('offers "capture an Encounter for this patient" once the Patient is valid', () => {
+    const actions = nextBestActions(patientGraph, [patient], { 'pat-1': valid });
+    expect(actions).toEqual([{
+      resourceType: 'Encounter',
+      profiles: [],
+      reason: patientGraph.link[0].description,
+      linkId: 'encounters-for-patient',
+      sourceResourceId: 'pat-1',
+    }]);
+  });
+
+  it('surfaces nothing for a patient that has not passed conformance validation yet', () => {
+    expect(nextBestActions(patientGraph, [patient], { 'pat-1': invalid })).toEqual([]);
+  });
+
+  it('keeps offering it even once an Encounter already exists — a patient can always start another visit', () => {
+    const existingEncounter = { resourceType: 'Encounter', id: 'enc-1', subject: { reference: 'Patient/pat-1' } };
+    const actions = nextBestActions(patientGraph, [patient, existingEncounter], { 'pat-1': valid });
+    expect(actions.filter((a) => a.linkId === 'encounters-for-patient')).toHaveLength(1);
+  });
+});

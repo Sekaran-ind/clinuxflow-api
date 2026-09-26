@@ -242,6 +242,18 @@ export function compileYamlToQuestionnaire(yamlSource) {
             fhirItem.extensionUrl = field.extensionUrl;
         }
 
+        // Branch(-and-similar) reference fields (SPEC-24 follow-up: Services/Staff scoped to a
+        // Location) — same "carry an extra YAML property straight through" precedent as
+        // extensionUrl above. A field authored with `refTo: "Location"` compiles with that target
+        // type attached, so local-extractor.js can defer the raw submitted value (that Location
+        // repetition's own instance index — see its own header comment on why index-correlation,
+        // not a real id, is what a not-yet-extracted repeating group can offer) to a real
+        // `{reference: "Location/<id>"}` once every resource in the document has a real id, rather
+        // than writing the raw index straight onto the resource as if it were a plain value.
+        if (field.refTo) {
+            fhirItem.refTo = field.refTo;
+        }
+
         if (field.uiComponent === 'Autocomplete' && field.valueSetUrl) {
             if (!fhirItem.extension) fhirItem.extension = [];
 

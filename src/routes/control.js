@@ -10,7 +10,9 @@ import { validate } from '../lib/control/conformance-validator.js';
 import { nextBestActions } from '../lib/control/next-best-action.js';
 import { WikidataTagging, WikidataRateLimitError } from '../lib/control/wikidataTagging.js';
 import { AccountsDb } from '../lib/shared/accounts-db.js';
-import { requireUser } from '../lib/shared/userAuth.js';
+import { requireUser, requirePaidTier } from '../lib/shared/userAuth.js';
+import { resourceConfig } from '../lib/control/resource-registry.js';
+import { ResourceRecordsDb } from '../lib/control/resource-records-db.js';
 import { JoinTokensDb, generateJoinToken } from '../lib/control/join-tokens-db.js';
 import { deriveStageFromCompositionRow, canAcceptFacilityJoinToken } from '../lib/control/facility-setup-stage.js';
 import { hashPassword } from '../lib/shared/passwordHash.js';
@@ -25,7 +27,6 @@ import clinuxFlowProviderSd from '../../data/structure-definitions/ClinuxFlowPro
 import clinuxFlowProviderRoleSd from '../../data/structure-definitions/ClinuxFlowProviderRole.json';
 import clinuxFlowAffiliatePractitionerRoleSd from '../../data/structure-definitions/ClinuxFlowAffiliatePractitionerRole.json';
 import clinuxFlowAffiliateOrganizationSd from '../../data/structure-definitions/ClinuxFlowAffiliateOrganization.json';
-import clinuxFlowPatientSd from '../../data/structure-definitions/ClinuxFlowPatient.json';
 import clinuxFlowOnboardingGraph from '../../data/graph-definitions/ClinuxFlowOnboardingGraph.json';
 
 export const controlRoutes = new Hono();
@@ -94,6 +95,62 @@ app.delete('/api/facility/affiliates/:accountId', requireUser(), async (c) => {
     const practitionerAccountId = c.req.param('accountId');
     await AccountsDb.revokeAffiliate(c.env.DB, facilityClinicId, practitionerAccountId);
     return c.json({ success: true });
+});
+
+/**
+ * GET /api/practitioner/affiliations
+ * The reverse of GET /api/facility/affiliates — every facility the CALLER (as a practitioner) is
+ * actively affiliated with. Real gap found live: an independent practitioner who redeemed a
+ * facility's join link and got approved had no way to see that anywhere — .../decide (below)
+ * wrote the relationship, but nothing ever read it back on the practitioner's own side. Powers
+ * PractitionerHome.vue's "Clinic Association" card.
+ */
+app.get('/api/practitioner/affiliations', requireUser(), async (c) => {
+    const affiliations = await AccountsDb.listAffiliationsByAccount(c.env.DB, c.get('user').accountId);
+    return c.json({ success: true, affiliations });
+});
+
+// ============================================================================================
+// Organization Affiliates (migrations/0015) — the org-to-org counterpart to the practitioner
+// affiliate routes just above. Same consistent shape: a GET (facility's own list), a DELETE
+// (revoke), and a reverse GET (which OTHER facilities has my own organization been linked to as
+// a partner) — mirroring GET /api/facility/affiliates, DELETE .../affiliates/:accountId, and
+// GET /api/practitioner/affiliations one-for-one. Linking itself goes through the SAME join-token
+// issue/redeem/deliver/decide pipeline (linkKind: 'organization'), not a separate mechanism.
+// ============================================================================================
+
+/**
+ * GET /api/facility/organization-affiliates
+ * Every active partner organization linked to the caller's own facility.
+ */
+app.get('/api/facility/organization-affiliates', requireUser(), async (c) => {
+    const facilityClinicId = c.get('user').clinicId;
+    const affiliates = await AccountsDb.listOrganizationAffiliatesByFacility(c.env.DB, facilityClinicId);
+    return c.json({ success: true, affiliates });
+});
+
+/**
+ * DELETE /api/facility/organization-affiliates/:clinicId
+ * Revokes (status flip, not delete) an organization affiliate link. The OTHER organization's own
+ * clinic/account is completely untouched; this only removes the facility's reference to them.
+ */
+app.delete('/api/facility/organization-affiliates/:clinicId', requireUser(), async (c) => {
+    const facilityClinicId = c.get('user').clinicId;
+    const affiliateClinicId = c.req.param('clinicId');
+    await AccountsDb.revokeOrganizationAffiliate(c.env.DB, facilityClinicId, affiliateClinicId);
+    return c.json({ success: true });
+});
+
+/**
+ * GET /api/facility/organization-affiliations
+ * The reverse of GET /api/facility/organization-affiliates — every facility the CALLER's own
+ * organization is affiliated WITH, as a partner. Powers ClinicHome.vue's/TeamSettingsModal.vue's
+ * "Partner Organizations" surfaces on the organization that redeemed someone else's join link.
+ */
+app.get('/api/facility/organization-affiliations', requireUser(), async (c) => {
+    const clinicId = c.get('user').clinicId;
+    const affiliations = await AccountsDb.listOrganizationAffiliationsByClinic(c.env.DB, clinicId);
+    return c.json({ success: true, affiliations });
 });
 
 /**
@@ -195,7 +252,12 @@ app.put('/api/provider-composition', requireUser(), async (c) => {
 // ============================================================================================
 // Facility join-token linking — docs/SPEC-26-FACILITY-JOIN-TOKEN-LINKING.md. Replaces
 // POST /api/auth/invite's admin-invents-a-password flow and POST /api/facility/affiliates'
-// email-lookup-only flow with one self-service mechanism for BOTH relationship types.
+// email-lookup-only flow with one self-service mechanism for ALL THREE relationship types: Staff,
+// Practitioner Affiliate, and (migrations/0015) Organization Affiliate — a facility-to-facility
+// link (partner lab, imaging centre, ...), the real/resolvable counterpart to the Provider
+// composition's own free-text-only section_affiliate_organization group. Product direction: keep
+// all three "managed in a similar way" through this one token issue/redeem/decide pipeline rather
+// than inventing a separate mechanism per relationship kind.
 // ============================================================================================
 
 /**
@@ -207,8 +269,8 @@ app.put('/api/provider-composition', requireUser(), async (c) => {
 app.post('/api/facility/join-tokens', requireUser(), async (c) => {
     try {
         const { linkKind } = await c.req.json();
-        if (!['staff', 'affiliate'].includes(linkKind)) {
-            return c.json({ success: false, error: "linkKind must be 'staff' or 'affiliate'." }, 400);
+        if (!['staff', 'affiliate', 'organization'].includes(linkKind)) {
+            return c.json({ success: false, error: "linkKind must be 'staff', 'affiliate', or 'organization'." }, 400);
         }
         const clinicId = c.get('user').clinicId;
         const compositionRow = await AccountsDb.getProviderComposition(c.env.DB, clinicId);
@@ -396,9 +458,9 @@ app.post('/api/facility/join-tokens/:token/deliver', requireUser(), async (c) =>
  * POST /api/facility/join-tokens/:token/decide
  * The real authorization write (SPEC-26 §6/§9) — fired from the admin's chat-card Approve/Reject
  * buttons, only on a token this admin's own facility issued and that's actually `redeemed`.
- * `role` (affiliate only) travels here as a small explicit field since SPEC-26 §6 deliberately
- * keeps the full request content out of D1 — the admin's own UI reads it off the decrypted chat
- * card and passes just this one field along at decision time.
+ * `role` (affiliate/organization only) travels here as a small explicit field since SPEC-26 §6
+ * deliberately keeps the full request content out of D1 — the admin's own UI reads it off the
+ * decrypted chat card and passes just this one field along at decision time.
  */
 app.post('/api/facility/join-tokens/:token/decide', requireUser(), async (c) => {
     try {
@@ -417,13 +479,48 @@ app.post('/api/facility/join-tokens/:token/decide', requireUser(), async (c) => 
             return c.json({ success: false, error: 'This token is not awaiting a decision (already decided, or not yet redeemed).' }, 409);
         }
 
-        if (row.link_kind === 'staff') {
+        // Real bug found live (kept, unchanged, for 'staff'): an already-registered, independent
+        // practitioner (their own account, own clinic_id from individual registration) CAN
+        // redeem a 'staff' token via the bearer path — .../redeem's own comment explicitly
+        // anticipates this. Blindly flipping accounts.status for every 'staff'-kind decision was
+        // a no-op for that account: its clinic_id was never this facility's, and by this app's
+        // immutable-clinic_id identity model never gets corrected by flipping `status`.
+        // Distinguish a GENUINELY fresh account created inline at redeem time (its clinic_id
+        // already IS this facility's — the only case setAccountStatus is meaningful for) from
+        // any pre-existing account, which gets a facility_affiliates cross-reference instead —
+        // the one relationship table an independent practitioner's own client can actually query
+        // back (GET /api/practitioner/affiliations above).
+        //
+        // 'organization' (migrations/0015) is a genuinely 3rd case, not a variant of the above:
+        // the redeeming ACCOUNT belongs to another facility's admin, but what actually gets
+        // linked is that admin's own CLINIC (facility-to-facility), not their account — so it
+        // goes to facility_organization_affiliates, keyed by clinic ids, not accounts.
+        let isFreshStaffAccount = false;
+        let redeemerAccount = null;
+        if (row.link_kind !== 'affiliate') {
+            // 'staff' needs this to tell fresh-account-vs-pre-existing apart (above); 'organization'
+            // needs it to resolve the redeeming admin's OWN clinic_id (below) — 'affiliate' never
+            // needed this lookup and still doesn't, no reason to add a DB round-trip there.
+            redeemerAccount = await AccountsDb.getAccountById(c.env.DB, row.redeemed_by_account_id);
+            isFreshStaffAccount = row.link_kind === 'staff' && redeemerAccount?.clinic_id === row.facility_clinic_id;
+        }
+
+        if (isFreshStaffAccount) {
             // The account was created 'pending' at redeem time (see that route's own comment) —
             // this is the one place that ever flips it.
             await AccountsDb.setAccountStatus(c.env.DB, row.redeemed_by_account_id, decision === 'approved' ? 'active' : 'rejected');
+        } else if (decision === 'approved' && row.link_kind === 'organization') {
+            await AccountsDb.addOrganizationAffiliate(c.env.DB, row.facility_clinic_id, redeemerAccount.clinic_id, role || null);
         } else if (decision === 'approved') {
-            // Affiliates keep their own separate account/login always (migrations/0005's own
-            // rule) — approval only ever adds the cross-reference row, never touches clinic_id.
+            // Affiliates (practitioners) keep their own separate account/login always
+            // (migrations/0005's own rule) — approval only ever adds the cross-reference row,
+            // never touches clinic_id. A rejected decision against a pre-existing independent
+            // account/organization intentionally does nothing further here — their own
+            // account/clinic is unrelated to this facility's decision; calling
+            // setAccountStatus('rejected') on it would have locked them out of their OWN account
+            // over a different facility's rejection, a second real bug the 'staff' fix above
+            // already closes, and the same reasoning is why 'organization' rejections never
+            // touch anything either.
             await AccountsDb.addAffiliate(c.env.DB, row.facility_clinic_id, row.redeemed_by_account_id, role || null);
         }
 
@@ -671,33 +768,127 @@ app.post('/api/affiliate-organization/conformance', requireUser(), async (c) => 
     }
 });
 
+// RETIRED — POST /api/patient/conformance (SPEC-24 §7 step 6's Patient-specific hand-copy of the
+// facility/provider/affiliate-organization conformance skeleton above). Cutover to the generic
+// POST /api/resources/Patient/conformance below (resource-registry.js) once that path was proven
+// behaviorally equivalent and live-verified end to end (clinux-frontend's FrontDesk.vue/
+// PatientHome.vue both repointed) — this is the actual "stop hand-copying" payoff the generic
+// layer exists for. Deleted outright, not left dead: grep-confirmed zero remaining frontend
+// callers first, same discipline CustomFormHost.vue's own retirement used.
+
+// ============================================================================================
+// Generic StructureDefinition-anchored conformance/search/save — the real fix for the 5 hand-
+// copied conformance endpoints above (facility/provider/affiliate-organization/affiliates/
+// patient all repeat the same extract -> validate -> next-best-action skeleton by hand). Driven
+// by resource-registry.js's static map instead: Patient is the only entry today, but a future
+// entity is onboarded by adding a registry entry, not a new route file. migrations/0013's
+// resource_records table (via resource-records-db.js) is the generic, paid-tier, cross-device
+// mirror this layer persists/searches against — local-first (formData.js) stays the primary,
+// always-available store for every tier; this is additive, not a replacement.
+// ============================================================================================
+
 /**
- * POST /api/patient/conformance
- * Body: { questionnaireJson, responseJson } — same shape as POST /api/facility/conformance.
- * SPEC-24 §7 step 6's own "follow the proven pattern" for Patient — extract -> validate against
- * ClinuxFlowPatient, single resource (a patient record is never repeating within one
- * QuestionnaireResponse, same shape as Facility). Deliberately NO next-best-action step:
- * ClinuxFlowOnboardingGraph.json's own header explicitly excludes Patient as a graph node
- * ("staff-mediated, part of the clinical/Front-Desk flow, not this onboarding graph" — SPEC-21
- * §6's resolution), so there is no real structural dependency for next-best-action.js to walk
- * here — returning an empty array would be a hollow gesture, not a real chain, so this endpoint
- * just doesn't pretend to have one.
+ * POST /api/resources/:resourceType/conformance
+ * Body: { questionnaireJson, responseJson } — identical contract to every conformance route
+ * above. 404s on an unregistered resourceType (honest, not a silent no-op). Unlike
+ * POST /api/patient/conformance, this DOES run next-best-action once valid — Patient now has its
+ * own real graph (ClinuxFlowPatientGraph.json, resource-registry.js), so the reason the old route
+ * skipped it ("no real structural dependency here") no longer applies.
  */
-app.post('/api/patient/conformance', requireUser(), async (c) => {
+app.post('/api/resources/:resourceType/conformance', requireUser(), async (c) => {
     try {
+        const { resourceType } = c.req.param();
+        const config = resourceConfig(resourceType);
+        if (!config) return c.json({ success: false, error: `"${resourceType}" is not a registered resource type.` }, 404);
+
         const { questionnaireJson, responseJson } = await c.req.json();
         if (!questionnaireJson || !responseJson) {
             return c.json({ success: false, error: 'questionnaireJson and responseJson are both required.' }, 400);
         }
         const resources = ComprehensiveLocalExtractor.extract(questionnaireJson, responseJson);
-        const patient = resources.find((r) => r.resourceType === 'Patient');
-        if (!patient) {
-            return c.json({ success: true, valid: false, errors: [{ path: 'Patient', message: 'No patient data captured yet.' }], patient: null });
+        const resource = resources.find((r) => r.resourceType === config.extractResourceType);
+        if (!resource) {
+            return c.json({ success: true, valid: false, errors: [{ path: resourceType, message: `No ${resourceType.toLowerCase()} data captured yet.` }], resource: null, nextActions: [] });
         }
-        const { valid, errors } = validate(clinuxFlowPatientSd, patient);
-        return c.json({ success: true, valid, errors, patient });
+        const { valid, errors } = validate(config.structureDefinition, resource);
+        const nextActions = valid
+            ? nextBestActions(config.graphDefinition, [resource], { [resource.id]: { valid: true } })
+            : [];
+        return c.json({ success: true, valid, errors, resource, nextActions });
     } catch (err) {
-        console.error('❌ Patient Conformance Exception:', err.message);
+        console.error('❌ Generic Resource Conformance Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * GET /api/resources/:resourceType/search?q=...
+ * requirePaidTier() — cross-device reach is the real cost surface (matches runtime.js's own
+ * "cloud-durable cross-location coordination" convention exactly). Always scoped to the caller's
+ * own clinicId; q is optional (empty = most-recently-updated first, same as an unfiltered list).
+ */
+app.get('/api/resources/:resourceType/search', requireUser(), requirePaidTier(), async (c) => {
+    try {
+        const { resourceType } = c.req.param();
+        const config = resourceConfig(resourceType);
+        if (!config) return c.json({ success: false, error: `"${resourceType}" is not a registered resource type.` }, 404);
+
+        const q = c.req.query('q') || '';
+        const clinicId = c.get('user').clinicId;
+        const results = await ResourceRecordsDb.search(c.env.DB, resourceType, clinicId, q);
+        const records = results.map((row) => ({ id: row.id, resource: JSON.parse(row.data), updatedAt: row.updatedAt }));
+        return c.json({ success: true, records });
+    } catch (err) {
+        console.error('❌ Generic Resource Search Exception:', err.message);
+        return c.json({ success: false, error: err.message }, 400);
+    }
+});
+
+/**
+ * POST /api/resources/:resourceType/save
+ * Body: { questionnaireJson, responseJson, recordId } — recordId is the caller's own STABLE
+ * local record id (formData.js's own row id, already used as the record identity everywhere
+ * client-side). Required, and deliberately overrides whatever id ComprehensiveLocalExtractor.
+ * extract() generates: that extractor mints a FRESH local-<type>-<uuid> on every single call
+ * (confirmed by reading local-extractor.js's own getOrCreateCacheEntry) — with no recordId
+ * override, saving the same patient twice would silently create two resource_records rows
+ * instead of updating one, defeating "save" entirely.
+ *
+ * Deliberately does NOT gate persistence on valid:true (a real, considered choice, not an
+ * oversight): Patient.telecom:mobile/identifier:abhaNumber's own known-deferred slicing gap
+ * (system-patient-profile-v1.yaml's own comment, confirmed live by this app's existing
+ * POST /api/patient/conformance test suite) makes full valid:true currently UNREACHABLE for
+ * every real patient regardless of how completely they're filled in — gating save on it would
+ * make this route unusable for its only registered consumer. This also matches this codebase's
+ * own existing precedent: PUT /api/provider-composition (accounts-db.js's
+ * upsertProviderComposition) persists unconditionally too, with conformance kept as a separate,
+ * parallel, advisory check (POST /api/provider/conformance) — not a save-time gate. valid/errors
+ * are still returned so a caller can show real conformance status without it blocking the save.
+ */
+app.post('/api/resources/:resourceType/save', requireUser(), requirePaidTier(), async (c) => {
+    try {
+        const { resourceType } = c.req.param();
+        const config = resourceConfig(resourceType);
+        if (!config) return c.json({ success: false, error: `"${resourceType}" is not a registered resource type.` }, 404);
+
+        const { questionnaireJson, responseJson, recordId } = await c.req.json();
+        if (!questionnaireJson || !responseJson || !recordId) {
+            return c.json({ success: false, error: 'questionnaireJson, responseJson and recordId are all required.' }, 400);
+        }
+        const resources = ComprehensiveLocalExtractor.extract(questionnaireJson, responseJson);
+        const resource = resources.find((r) => r.resourceType === config.extractResourceType);
+        if (!resource) {
+            return c.json({ success: false, error: `No ${resourceType.toLowerCase()} data captured yet.` }, 400);
+        }
+        resource.id = recordId; // stable identity — see this route's own header comment above
+
+        const { valid, errors } = validate(config.structureDefinition, resource);
+        const clinicId = c.get('user').clinicId;
+        const searchFields = config.searchFieldExtractor(resource);
+        await ResourceRecordsDb.upsert(c.env.DB, resourceType, recordId, clinicId, JSON.stringify(resource), searchFields);
+        return c.json({ success: true, valid, errors, resource });
+    } catch (err) {
+        console.error('❌ Generic Resource Save Exception:', err.message);
         return c.json({ success: false, error: err.message }, 400);
     }
 });

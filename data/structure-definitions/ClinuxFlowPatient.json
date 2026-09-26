@@ -6,7 +6,7 @@
   "name": "ClinuxFlowPatient",
   "title": "ClinuxFlow Patient",
   "status": "active",
-  "description": "A patient's demographic record, profiling FHIR R4 Patient. Unlike Facility/Provider, no local ABDM sandbox reference doc exists for ABHA (Ayushman Bharat Health Account) issuance in this repo — this profile is grounded in real, general FHIR R4 Patient conventions and ABHA's own well-known public identifier shape, not a cited local API spec; that gap is stated honestly, not papered over. Deliberately staff-mediated capture, not self-registration: SPEC-21 §6 already resolved that Patient never gets a login to this app ('Patient will not have a login... can see his health records via digi-locker no features more than that') — this profile constrains what Front Desk/Consultation Desk capture on a patient's behalf, not a self-service form.",
+  "description": "A patient's demographic record, profiling FHIR R4 Patient. Grounded against the real ABHA (Ayushman Bharat Health Account) V3 API doc (docs/NHPR SBX Doc/NHPR Doc/ABHA/ABDM_ABHA_V3_APIs_V1_31_07_2025) plus the M2/M3 milestone docs in the same folder — name/gender/birthDate/mobile/ABHA-number/ABHA-address map onto that doc's own ABHAProfile/Get-Profile field set; the KYC/verification-status extensions below map onto its §9 Get Profile / §8.6 Re-KYC / §13.7 Child-ABHA fields (see each extension's own comment for its exact source). Deliberately staff-mediated capture, not self-registration: SPEC-21 §6 already resolved that Patient never gets a login to this app ('Patient will not have a login... can see his health records via digi-locker no features more than that') — this profile constrains what Front Desk/Consultation Desk capture on a patient's behalf, not a self-service form.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -123,6 +123,107 @@
         "min": 0,
         "max": "1",
         "comment": "Narrowed from base FHIR's 0..* — one current address is what this app's own capture surfaces (Front Desk/Consultation) actually ask for."
+      },
+      {
+        "id": "Patient.contact",
+        "path": "Patient.contact",
+        "min": 0,
+        "max": "1",
+        "comment": "Narrowed from base FHIR's 0..* — one emergency contact (patient_emergency_contact_name/_phone in system-patient-profile-v1.yaml, both genuinely optional there, no required: true) is what Front Desk's own capture UI asks for. All children below stay min:0 to match — this whole group is best-effort, never a hard registration requirement."
+      },
+      {
+        "id": "Patient.contact.name.text",
+        "path": "Patient.contact.name.text",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Patient.contact.telecom",
+        "path": "Patient.contact.telecom",
+        "min": 0,
+        "max": "1",
+        "comment": "Deliberately no fixed system/use sub-constraint here, unlike Patient.telecom:mobile above — same known-deferred gap system-patient-profile-v1.yaml's own comment already flags for that slice and for identifier:abhaNumber/abhaAddress: the compiler has no mechanism to co-locate a hidden fixed value onto the same array element as the one visible field this form actually captures (patient_emergency_contact_phone -> Patient.contact.telecom.value only, no .system field exists). Requiring a fixed system here would make this element permanently unreachable, not honestly validate it."
+      },
+      {
+        "id": "Patient.extension",
+        "path": "Patient.extension",
+        "slicing": {
+          "discriminator": [{ "type": "value", "path": "url" }],
+          "rules": "open"
+        },
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Patient.extension:abhaKycVerified",
+        "path": "Patient.extension",
+        "sliceName": "abhaKycVerified",
+        "short": "Whether this patient's ABHA identity has completed full KYC verification",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-kyc-verified"] }],
+        "comment": "ABHA V3 API doc §9 Get Profile's own kycVerified (boolean) — genuinely independent of verificationStatus/emailVerified/mobileVerified below: a real documented case has kycVerified:false while verificationStatus:VERIFIED (a Child ABHA verified via parent consent, not full KYC), so these are deliberately 4 separate extensions, not one collapsed flag."
+      },
+      {
+        "id": "Patient.extension:abhaVerificationStatus",
+        "path": "Patient.extension",
+        "sliceName": "abhaVerificationStatus",
+        "short": "This patient's ABHA verification status",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-verification-status"] }],
+        "comment": "ABHA V3 API doc §9's own verificationStatus (only \"VERIFIED\" observed directly in the doc's samples, other states implied by the field's existence but not enumerated). Naming note: §14.4.1's separate ABHA-address profile response calls the same underlying concept kycStatus instead — normalized to this one canonical field here rather than reproducing that doc-level inconsistency."
+      },
+      {
+        "id": "Patient.extension:abhaVerificationType",
+        "path": "Patient.extension",
+        "sliceName": "abhaVerificationType",
+        "short": "How this patient's ABHA identity was verified",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-verification-type"] }],
+        "comment": "ABHA V3 API doc: AADHAAR and CHILD_ABHA confirmed directly as real verificationType values (§13.7); DRIVING_LICENCE is presumed by symmetry with the enrol/byDocument creation flow but was not directly observed as a verificationType value in the doc — no binding/ValueSet asserted here for that reason, left open (rules:'open' on the parent slicing already allows it)."
+      },
+      {
+        "id": "Patient.extension:abhaEmailVerified",
+        "path": "Patient.extension",
+        "sliceName": "abhaEmailVerified",
+        "short": "Whether this patient's ABHA email was OTP-verified",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-email-verified"] }],
+        "comment": "ABHA V3 API doc §14.4.1 — tracked independently of kycVerified/mobileVerified (confirmed as 3 separate booleans in that response shape, not one combined flag)."
+      },
+      {
+        "id": "Patient.extension:abhaMobileVerified",
+        "path": "Patient.extension",
+        "sliceName": "abhaMobileVerified",
+        "short": "Whether this patient's ABHA mobile number was OTP-verified",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-mobile-verified"] }],
+        "comment": "ABHA V3 API doc §14.4.1 — a real, documented reason this matters beyond just presence of Patient.telecom:mobile: ABHA's own profile.mobile field is explicitly null whenever the patient's primary mobile differs from their Aadhaar-linked mobile and hasn't separately been OTP-verified, so a captured mobile number alone doesn't imply it's verified."
+      },
+      {
+        "id": "Patient.extension:abhaStatus",
+        "path": "Patient.extension",
+        "sliceName": "abhaStatus",
+        "short": "This ABHA account's own lifecycle status",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-status"] }],
+        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/abha-status" },
+        "comment": "ABHA V3 API doc §7.4 (login, 'list of ABHA numbers (ACTIVE and DEACTIVATED)') / §12.2 — ACTIVE or DEACTIVATED. A third, harder-terminal 'deleted' state exists via §8.3 (Delete ABHA) but is never itself returned as a status value in the doc's own samples, so it's excluded from this vocabulary rather than guessed at."
+      },
+      {
+        "id": "Patient.extension:abhaAuthMethods",
+        "path": "Patient.extension",
+        "sliceName": "abhaAuthMethods",
+        "short": "Verification channels currently usable for this patient's ABHA account",
+        "min": 0,
+        "max": "*",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-auth-methods"] }],
+        "comment": "ABHA V3 API doc's own authMethods[] (AADHAAR_OTP, AADHAAR_BIO, MOBILE_OTP, PASSWORD, DEMOGRAPHICS — varies by endpoint/account) — repeating, unlike the other ABHA extensions here, since an account can genuinely support more than one channel at once."
       }
     ]
   }

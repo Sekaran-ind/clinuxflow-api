@@ -205,6 +205,263 @@
         "max": "1",
         "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-jurisdiction-district-code"] }],
         "comment": "HPR: districtCode, Optional."
+      },
+      {
+        "id": "Practitioner.extension:salutation",
+        "path": "Practitioner.extension",
+        "sliceName": "salutation",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-salutation"] }],
+        "comment": "register-professional-new: personalInformation.salutation, Optional — no standard FHIR element for a title/salutation at this level (HumanName.prefix exists but this app's own Practitioner.name is a single .text/.given/.family, not prefix-bearing), a real extension."
+      },
+      {
+        "id": "Practitioner.extension:nationality",
+        "path": "Practitioner.extension",
+        "sliceName": "nationality",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-nationality"] }],
+        "comment": "register-professional-new: personalInformation.nationality, Optional."
+      },
+      {
+        "id": "Practitioner.extension:fatherName",
+        "path": "Practitioner.extension",
+        "sliceName": "fatherName",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-father-name"] }],
+        "comment": "register-professional-new: personalInformation.fatherName, Optional."
+      },
+      {
+        "id": "Practitioner.extension:motherName",
+        "path": "Practitioner.extension",
+        "sliceName": "motherName",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-mother-name"] }],
+        "comment": "register-professional-new: personalInformation.motherName, Optional."
+      },
+      {
+        "id": "Practitioner.extension:spouseName",
+        "path": "Practitioner.extension",
+        "sliceName": "spouseName",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-spouse-name"] }],
+        "comment": "register-professional-new: personalInformation.spouseName, Optional."
+      },
+      {
+        "id": "Practitioner.extension:languagesSpoken",
+        "path": "Practitioner.extension",
+        "sliceName": "languagesSpoken",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-languages-spoken"] }],
+        "comment": "register-professional-new: personalInformation.languagesKnown, Optional — stored as one comma-separated extension value rather than Communication.language (that binds to a coded ValueSet this app has no matching master data for; a real, if simplified, home)."
+      },
+      {
+        "id": "Practitioner.extension:workCurrentlyWorking",
+        "path": "Practitioner.extension",
+        "sliceName": "workCurrentlyWorking",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-currently-working"] }],
+        "comment": "register-professional-new: currentWorkDetails.currentlyWorking, Optional — no standard FHIR element for this on Practitioner itself (PractitionerRole.active covers active-at-a-specific-role, not a person-level employment declaration)."
+      },
+      {
+        "id": "Practitioner.extension:workPurpose",
+        "path": "Practitioner.extension",
+        "sliceName": "workPurpose",
+        "min": 0,
+        "max": "*",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-purpose"] }],
+        "comment": "register-professional-new: currentWorkDetails.purposeOfRegistration, Optional. NHPR user manual's own \"Nature of Work\" step explicitly allows selecting more than one (Practice/Administrative/Teaching/Teleconsultation) — widened from max:1 to max:* to match; abdmAdapter.js's buildPractitionerPayload joins the selections back into one string for the real API, whose own true singular/array shape isn't independently confirmed (same honest-gap treatment already applied elsewhere in this profile)."
+      },
+      {
+        "id": "Practitioner.extension:workTeleconsultationUrl",
+        "path": "Practitioner.extension",
+        "sliceName": "workTeleconsultationUrl",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-teleconsultation-url"] }],
+        "comment": "NHPR user manual's own Work Details step — a real field shown right next to Nature of Work, relevant when Teleconsultation is one of the selected options. No confirmed live API field name."
+      },
+      {
+        "id": "Practitioner.extension:workStatus",
+        "path": "Practitioner.extension",
+        "sliceName": "workStatus",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-status"] }],
+        "comment": "register-professional-new: currentWorkDetails.chooseWorkStatus, Optional."
+      },
+      {
+        "id": "Practitioner.extension:workReasonNotWorking",
+        "path": "Practitioner.extension",
+        "sliceName": "workReasonNotWorking",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-reason-not-working"] }],
+        "comment": "register-professional-new: currentWorkDetails.reasonForNotWorking — mandatory only when currentlyWorking is false, per the real spec's own note; enforced in the UI, not here (no conditional-required primitive in this validator yet)."
+      },
+      {
+        "id": "Practitioner.extension:workFacilityId",
+        "path": "Practitioner.extension",
+        "sliceName": "workFacilityId",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-id"] }],
+        "comment": "register-professional-new: currentWorkDetails.facilityId — the real ABDM Facility ID, once picked via ProviderWorkExperienceHost.vue's own Search Facility panel."
+      },
+      {
+        "id": "Practitioner.extension:workFacilityName",
+        "path": "Practitioner.extension",
+        "sliceName": "workFacilityName",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-name"] }],
+        "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.facilityName — mandatory only when facilityId isn't already known, per the real spec's own note; enforced in the UI."
+      },
+      {
+        "id": "Practitioner.extension:workFacilityAddress",
+        "path": "Practitioner.extension",
+        "sliceName": "workFacilityAddress",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-address"] }],
+        "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.facilityAddress, Optional."
+      },
+      {
+        "id": "Practitioner.extension:workFacilityPincode",
+        "path": "Practitioner.extension",
+        "sliceName": "workFacilityPincode",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-pincode"] }],
+        "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.pincode, Optional."
+      },
+      {
+        "id": "Practitioner.extension:workFacilityType",
+        "path": "Practitioner.extension",
+        "sliceName": "workFacilityType",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-type"] }],
+        "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.facilityType, Optional."
+      },
+      {
+        "id": "Practitioner.extension:workFacilityDepartment",
+        "path": "Practitioner.extension",
+        "sliceName": "workFacilityDepartment",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-department"] }],
+        "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.department, Optional."
+      },
+      {
+        "id": "Practitioner.extension:workFacilityDesignation",
+        "path": "Practitioner.extension",
+        "sliceName": "workFacilityDesignation",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-designation"] }],
+        "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.designation, Optional."
+      },
+      {
+        "id": "Practitioner.extension:workMinistry",
+        "path": "Practitioner.extension",
+        "sliceName": "workMinistry",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-ministry"] }],
+        "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.ministry — mandatory only when chooseWorkStatus is Government or Both, per the real spec's own note; enforced in the UI. No getAllMinistry master data exists yet."
+      },
+      {
+        "id": "Practitioner.extension:workGovtCategory",
+        "path": "Practitioner.extension",
+        "sliceName": "workGovtCategory",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-govt-category"] }],
+        "comment": "NHPR user manual's own Work Details step: Central/State radio shown when Work Status is Government or Both, gating whether a Ministry (Central) or a state government department is being declared. No confirmed live API field name — same honest-gap treatment as :workMinistry above."
+      },
+      {
+        "id": "Practitioner.extension:workPsuYesNo",
+        "path": "Practitioner.extension",
+        "sliceName": "workPsuYesNo",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-psu-yesno"] }],
+        "comment": "NHPR user manual's own Work Details step: \"Are you working in a PSU?\" — only shown when workGovtCategory is Central."
+      },
+      {
+        "id": "Practitioner.extension:workPsuName",
+        "path": "Practitioner.extension",
+        "sliceName": "workPsuName",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-psu-name"] }],
+        "comment": "NHPR user manual's own Work Details step — free text, no getAllPSU master data exists anywhere (same honest-gap treatment as :workMinistry)."
+      },
+      {
+        "id": "Practitioner.extension:workGovtProofDocument",
+        "path": "Practitioner.extension",
+        "sliceName": "workGovtProofDocument",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-govt-proof-document"] }],
+        "comment": "NHPR user manual's own Work Details step — a base64 attachment (appointment letter/pay-slip/transfer order) the manual marks MANDATORY whenever Work Status is Government or Both; enforced in the UI, not here (no conditional-required primitive in this validator yet)."
+      },
+      {
+        "id": "Practitioner.extension:about",
+        "path": "Practitioner.extension",
+        "sliceName": "about",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-about"] }],
+        "comment": "NHPR user manual, Preview Profile step (\"About\" text shown alongside public display settings before e-sign) — no real ABDM API field confirmed for this yet (no register/update-professional spec block documents it); captured locally as an honest gap, same discipline facilityTypeCode/facilitySubtype etc. already carry, in case a future spec revision adds it."
+      },
+      {
+        "id": "Practitioner.extension:assistedRegistration",
+        "path": "Practitioner.extension",
+        "sliceName": "assistedRegistration",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-assisted-registration"] }],
+        "comment": "NHPR user manual, Preview Profile step's own \"Anyone assisted you to register in HPR?\" Yes/No question — same honest-gap treatment as :about above, no confirmed live API field."
+      },
+      {
+        "id": "Practitioner.extension:fullProfileSubmitted",
+        "path": "Practitioner.extension",
+        "sliceName": "fullProfileSubmitted",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-full-profile-submitted"] }],
+        "comment": "ClinuxFlow-local tracking flag, not an ABDM field — set once register-professional-new succeeds, so ProviderHprPanel.vue's own RegistrationLedger reloads onto the correct Attestation/Submitted stage instead of resetting to Preview (same role hospital_additional_info_submitted/hospital_detailed_info_submitted already play for FacilityHfrPanel.vue)."
+      },
+      {
+        "id": "Practitioner.extension:publicDisplayOptout",
+        "path": "Practitioner.extension",
+        "sliceName": "publicDisplayOptout",
+        "min": 0,
+        "max": "1",
+        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-public-display-optout"] }],
+        "comment": "NHPR user manual's own Preview Profile step (\"Your profile will be visible to the public, choose public display settings\") — mirrors hospital_public_display_optout's existing role for Organization/HFR; staff_public_mobile/staff_landline/staff_public_email stay the always-captured fields this just gates visibility of, same relationship FacilityHfrPanel.vue's own publicDisplay reactive already has to Organization's public contact fields."
+      },
+      {
+        "id": "Practitioner.qualification",
+        "path": "Practitioner.qualification",
+        "min": 0,
+        "max": "*",
+        "comment": "register-professional-new: registrationAcademic.registrationData[] — a real, repeating base FHIR BackboneElement, the correct home (not an extension). Deliberately declared as a PLAIN element here, not sliced on its own nested .extension (unlike Practitioner.extension/.telecom/.identifier above) — this validator's own generic slice-cardinality check flattens a sliced array ACROSS every repetition of an enclosing repeating element (confirmed by reading resolvePath/groupElements together: resolvePath walks straight through Practitioner.qualification's own 0..* before reaching .extension, so a max:1 per-field slice check would incorrectly count e.g. 2 different qualifications' 2 separate 'country' extensions as one array of 2, failing a max:1 constraint that is actually satisfied within each qualification). Scoping slice cardinality per-repetition-of-an-array is real, separate validator work, not attempted here — ProviderQualificationsHost.vue's own YAML-side FHIR_ARRAY_PATHS entry for 'Practitioner.qualification.extension' is what keeps each qualification's own extensions correctly scoped at the DATA layer; this profile just leaves qualification.extension's own children as open/unsliced (the StructureDefinition default) rather than risk a false-positive conformance failure on exactly the multi-qualification case this app's own onboarding was built and tested against."
+      },
+      {
+        "id": "Practitioner.qualification.code",
+        "path": "Practitioner.qualification.code",
+        "min": 1,
+        "max": "*",
+        "comment": "register-professional-new: registrationAcademic.registrationData[].qualification (the degree/diploma code) — the real spec's own required field per qualification entry. max is deliberately '*', not '1': this element's own path descends through Practitioner.qualification's 0..* repetition, and this validator's checkCardinality counts the FLATTENED total across every qualification (same resolvePath behavior documented on the Practitioner.qualification element just above) — a practitioner with 2 qualifications correctly produces 2 .code values total, which a max:1 here would have wrongly rejected (confirmed by reasoning through the exact multi-qualification case this app's own onboarding was tested against). min:1 still correctly means 'at least one qualification has a code' in aggregate."
       }
     ]
   }

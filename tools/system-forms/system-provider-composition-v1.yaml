@@ -37,9 +37,12 @@ composition:
         path: "Organization.alias"
         label: "Legal / Trade Name"
         uiComponent: "TextInput"
+      # Labeled "Facility Category" (not "Facility Type") to avoid colliding with ABDM
+      # Registration's own hospital_facility_type below — same field name, different meaning,
+      # found as a real naming collision live.
       - id: "hospital_type"
         path: "Organization.type"
-        label: "Facility Type"
+        label: "Facility Category"
         uiComponent: "Dropdown"
         choices: ["Hospital","Clinic","Pharmacy","Laboratory","Imaging Centre"]
       - id: "hospital_npi"
@@ -310,6 +313,18 @@ composition:
         extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-dental-chairs"
         label: "Number of Dental Chairs"
         uiComponent: "TextInput"
+      # Detailed Information's own real specialities[] field (per system of medicine) — codes are
+      # self-describing which system they belong to (e.g. "M-S1" -> system "M"), so one flat
+      # multi-value field is enough; FacilityHfrPanel.vue groups by prefix when building the real
+      # request body. Live-fetched (HFR master: get-specialities, per system of medicine actually
+      # selected) same as imaging/diagnostic services above — choices here is a placeholder for
+      # the compiler, same as those two already establish; the real UI never reads it.
+      - id: "hospital_specialities"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-specialities"
+        label: "Specialities / Services Offered (HFR master: SPECIALITIES)"
+        uiComponent: "MultiSelect"
+        choices: ["General Medicine", "Family Medicine", "Emergency Medicine", "Pediatrics", "General Surgery"]
 
   - resourceType: Organization
     id: section_hospital_abdm_location
@@ -368,6 +383,21 @@ composition:
         path: "Organization.identifier.value"
         label: "ABDM Facility ID (from Submit step)"
         uiComponent: "TextInput"
+      # Real, pre-existing gap found while rebuilding FacilityHfrPanel.vue's UX: rebuildFromRecord()
+      # used to infer the whole journey's stage from trackingId/facilityId alone, so reloading the
+      # page after Additional/Detailed Information succeeded (but before Submit) silently forgot
+      # that progress — the ledger would show those stages as re-doable instead of done. These two
+      # booleans are the fix: real, minimal "did this real API call already succeed" markers.
+      - id: "hospital_additional_info_submitted"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-additional-info-submitted"
+        label: "Additional Information submitted"
+        uiComponent: "Checkbox"
+      - id: "hospital_detailed_info_submitted"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-detailed-info-submitted"
+        label: "Detailed Information submitted"
+        uiComponent: "Checkbox"
       - id: "hospital_abdm_software_code"
         path: "Organization.extension"
         extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-software-code"
@@ -382,6 +412,112 @@ composition:
         path: "Organization.extension"
         extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-source-unique-id"
         label: "Source Unique ID"
+        uiComponent: "TextInput"
+      # Linked Program IDs — the manual's own step 10 ("if you have any program linked such as
+      # NIN, PMJAY, NHRR etc."). All genuinely optional national-scheme identifiers; abdmAdapter.js's
+      # linkedProgramIds request-body shape already existed but read hardcoded '' for every one of
+      # these — this is what makes that shape real instead of always-empty.
+      # NOTE: this set matches the real linkedProgramIds API body (7 fields + ceaRegistration),
+      # not a literal transcription of the manual's own screenshot — the manual shows "State HMIS
+      # ID" where the real Additional Information API has no matching key at all (State HMIS is
+      # instead the SUBMIT API's own single sourceOfInformation/sourceUniqueID pair, already
+      # captured via hospital_source_of_information/hospital_source_unique_id above, and correctly
+      # left empty for a self-registering facility per buildHfrSubmitBody's own header comment —
+      # it's a closed-set code for bulk-MIGRATED records, not a parallel identifier). Conversely
+      # the real API has a ceaRegistration slot the manual's screenshot never shows at all — kept,
+      # since matching the real API a self-registering facility actually submits to is worth more
+      # than matching a partially-cropped screenshot.
+      - id: "hospital_linked_nhrr_id"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-linked-nhrr-id"
+        label: "NHRR ID"
+        uiComponent: "TextInput"
+      - id: "hospital_linked_nin"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-linked-nin"
+        label: "National Identification Number (NIN)"
+        uiComponent: "TextInput"
+      - id: "hospital_linked_rohini_id"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-linked-rohini-id"
+        label: "ROHINI ID (as allotted by IIB)"
+        uiComponent: "TextInput"
+      - id: "hospital_linked_abpmjay_id"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-linked-abpmjay-id"
+        label: "AB PMJAY Hospital ID"
+        uiComponent: "TextInput"
+      - id: "hospital_linked_cghs_id"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-linked-cghs-id"
+        label: "CGHS Hospital ID"
+        uiComponent: "TextInput"
+      - id: "hospital_linked_echs_id"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-linked-echs-id"
+        label: "ECHS Hospital ID"
+        uiComponent: "TextInput"
+      - id: "hospital_linked_cea_registration"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-linked-cea-registration"
+        label: "Clinical Establishments Act (CEA) Registration No."
+        uiComponent: "TextInput"
+      - id: "hospital_linked_state_insurance_id"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-linked-state-insurance-id"
+        label: "State Insurance Scheme Hospital ID"
+        uiComponent: "TextInput"
+
+  # Public Display settings — the manual's own step 12: mandatory fields (name/ownership/system of
+  # medicine/type/state/timing/address/operational status) are always public and need no capture
+  # here since they're already real fields elsewhere in this composition; only the OPTIONAL fields'
+  # opt-in/opt-out and the "About" blurb are genuinely new preference data. Portal-preference data,
+  # not a real ABDM/FHIR extension the HFR API itself consumes — no matching ClinuxFlowFacility.json
+  # slice needed (verify with a conformance run rather than assuming, since these are all optional
+  # and shouldn't trip cardinality checks either way).
+  - resourceType: Organization
+    id: section_hospital_public_display
+    label: "Public Display Settings"
+    fields:
+      - id: "hospital_public_display_optout"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-public-display-optout"
+        label: "Don't show my facility's details to the public"
+        uiComponent: "Checkbox"
+      - id: "hospital_public_display_mobile"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-public-display-mobile"
+        label: "Show facility mobile number publicly"
+        uiComponent: "Checkbox"
+      - id: "hospital_public_display_email"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-public-display-email"
+        label: "Show facility email publicly"
+        uiComponent: "Checkbox"
+      - id: "hospital_public_display_landline"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-public-display-landline"
+        label: "Show facility landline publicly"
+        uiComponent: "Checkbox"
+      - id: "hospital_public_display_website"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-public-display-website"
+        label: "Show facility website publicly"
+        uiComponent: "Checkbox"
+      - id: "hospital_public_display_photo"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-public-display-photo"
+        label: "Show facility photo publicly"
+        uiComponent: "Checkbox"
+      - id: "hospital_public_display_beds"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-public-display-beds"
+        label: "Show total beds / ventilators publicly"
+        uiComponent: "Checkbox"
+      - id: "hospital_public_about"
+        path: "Organization.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-public-about"
+        label: "About (shown on your public facility page)"
         uiComponent: "TextInput"
 
   - resourceType: Location
@@ -485,14 +621,19 @@ composition:
         extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-subcategory-code"
         label: "HP Sub-Category Code"
         uiComponent: "TextInput"
+      # Real bug found live: these two used "hpr-state-code"/"hpr-district-code", but
+      # ClinuxFlowProvider.json's own declared slices are "hpr-jurisdiction-state-code"/
+      # "hpr-jurisdiction-district-code" — since Practitioner.extension slicing is open, this
+      # didn't fail validation, it just meant these values never matched their INTENDED named
+      # slice. Corrected to agree with the StructureDefinition.
       - id: "staff_state_code"
         path: "Practitioner.extension"
-        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-state-code"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-jurisdiction-state-code"
         label: "State LGD Code (HPR master: states)"
         uiComponent: "TextInput"
       - id: "staff_district_code"
         path: "Practitioner.extension"
-        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-district-code"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-jurisdiction-district-code"
         label: "District LGD Code (HPR master: districts)"
         uiComponent: "TextInput"
       - id: "staff_council"
@@ -508,6 +649,401 @@ composition:
         path: "Practitioner.identifier.value"
         label: "HPR ID Number (assigned after creation)"
         uiComponent: "TextInput"
+      # Real gap found live (NHPR spec's own createHprIdWithPreVerified/register-professional-new
+      # both carry a profilePhoto field, but nothing in this app ever captured or displayed one) —
+      # Practitioner.photo is a REAL base FHIR element (not an extension), so this is the correct
+      # home, not a workaround.
+      - id: "staff_photo"
+        path: "Practitioner.photo"
+        label: "Profile Photo"
+        uiComponent: "TextInput"
+      # Real spec fields with no direct FHIR mapping — "if the fields do not have a direct FHIR
+      # mapping add extensions" (explicit instruction). gender/birthDate ARE real base Practitioner
+      # elements; salutation/nationality/father/mother/spouse name and languagesSpoken genuinely
+      # have none, so those go to extensions.
+      - id: "staff_gender"
+        path: "Practitioner.gender"
+        label: "Gender"
+        uiComponent: "Dropdown"
+        choices: ["male","female","other"]
+      - id: "staff_date_of_birth"
+        path: "Practitioner.birthDate"
+        label: "Date of Birth"
+        uiComponent: "TextInput"
+      - id: "staff_salutation"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-salutation"
+        label: "Salutation"
+        uiComponent: "Dropdown"
+        choices: ["Dr.","Mr.","Mrs.","Ms."]
+      - id: "staff_nationality"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-nationality"
+        label: "Nationality"
+        uiComponent: "TextInput"
+      - id: "staff_father_name"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-father-name"
+        label: "Father's Name"
+        uiComponent: "TextInput"
+      - id: "staff_mother_name"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-mother-name"
+        label: "Mother's Name"
+        uiComponent: "TextInput"
+      - id: "staff_spouse_name"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-spouse-name"
+        label: "Spouse's Name"
+        uiComponent: "TextInput"
+      - id: "staff_languages_spoken"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-languages-spoken"
+        label: "Languages Spoken"
+        uiComponent: "TextInput"
+      # Communication address — Practitioner.address is a REAL base FHIR element, the correct home
+      # for the spec's communicationAddress block (not an extension).
+      - id: "staff_address_line"
+        path: "Practitioner.address.line"
+        label: "Address"
+        uiComponent: "TextInput"
+      - id: "staff_address_city"
+        path: "Practitioner.address.city"
+        label: "City"
+        uiComponent: "TextInput"
+      - id: "staff_address_district"
+        path: "Practitioner.address.district"
+        label: "District (LGD)"
+        uiComponent: "TextInput"
+      - id: "staff_address_state"
+        path: "Practitioner.address.state"
+        label: "State (LGD)"
+        uiComponent: "TextInput"
+      - id: "staff_address_postal_code"
+        path: "Practitioner.address.postalCode"
+        label: "Pincode"
+        uiComponent: "TextInput"
+      - id: "staff_address_country"
+        path: "Practitioner.address.country"
+        label: "Country"
+        uiComponent: "TextInput"
+      # Public-facing contact (contactInformation block) — deliberately separate from
+      # staff_phone/staff_email above (those are the ACCOUNT's own official contact,
+      # personalInformation-adjacent); these are what the spec's contactInformation.publicMobile/
+      # publicEmail/landLine mean — a practitioner-chosen, possibly different, public-facing
+      # number, using telecom.use to distinguish rather than a second identical field shape.
+      - id: "staff_public_mobile"
+        path: "Practitioner.telecom.value"
+        label: "Public Mobile Number"
+        uiComponent: "TextInput"
+      - id: "staff_landline"
+        path: "Practitioner.telecom.value"
+        label: "Landline Number"
+        uiComponent: "TextInput"
+      - id: "staff_public_email"
+        path: "Practitioner.telecom.value"
+        label: "Public Email"
+        uiComponent: "TextInput"
+      # Real spec gap found live (NHPR "Register Professional" API, registrationAcademic block) —
+      # nothing in this app ever captured a practitioner's actual qualifications/registrations;
+      # only a single free-text staff_qualification string existed. A genuine NESTED repeating
+      # group (type: "group", yaml-to-questionnaire.js's own recursive field-group support) —
+      # deliberately nested INSIDE section_staff, not a sibling top-level block: local-extractor.js
+      # resolves a leaf's resource-instance purely by the nearest ENCLOSING 'separate-instances'
+      # frame in its group stack, and a sibling top-level block has NO such frame of its own here
+      # (all its fields map to the identical bare Practitioner.extension path, which the mode-
+      # detection heuristic reads as one converging array field, not per-repetition instances) —
+      # confirmed live: a sibling-block version silently produced a SEPARATE, orphaned Practitioner
+      # resource with no name/identity, never merged with the real one. Nesting here means every
+      # qualification's extensions correctly land on THIS SAME repetition's own Practitioner
+      # resource. One entry per (council registration + the degree that qualifies for it) — the
+      # real spec nests `qualifications[]` INSIDE each `registrationData[]` entry; modeled here as
+      # one combined entry per pair rather than a doubly-nested repeating array, a deliberate
+      # simplification given no UI precedent exists yet for that depth.
+      - id: "section_staff_qualification"
+        type: "group"
+        path: "Practitioner.qualification"
+        label: "Qualification & Registration"
+        repeats: true
+        fields:
+          # Real degree-code table, verbatim from the NHPR spec's own
+          # "register/update professional api" qualification table — not invented. The one field
+          # in this group with a genuine direct FHIR mapping (Practitioner.qualification.code, the
+          # same real base element staff_qualification above already uses) — extensions below it
+          # are for the spec fields that truly have none.
+          - id: "staff_qual_degree_code"
+            path: "Practitioner.qualification.code"
+            label: "Degree / Diploma Obtained"
+            uiComponent: "Dropdown"
+            choices: ["4060 - MBBS (Modern Medicine)","4074 - BDS (Dentistry)","4079 - BAMS (Ayurvedic)","4082 - BUMS (Unani)","61 - BSMS (Siddha)","74 - BTMS (Sowa-Rigpa)","40 - BHMS (Homoeopathy)"]
+            required: true
+          # Real bug found live (and fixed, not just noted): every field below this comment used
+          # to declare path: "Practitioner.extension" (bare) — but local-extractor.js's own
+          # _navigateToWriteTarget unconditionally consumes THIS GROUP's own token-length from
+          # EVERY enclosed leaf's path before writing (it has no per-leaf awareness, only a
+          # per-frame one) — since this group's own frame consumes exactly 1 token
+          # ("qualification"), a bare 1-token "extension" path had NOTHING left to write after
+          # that consumption, and the value was silently lost. Confirmed empirically (a live
+          # extraction test, not assumed): every one of these fields vanished entirely, not even
+          # landing on the wrong resource. The real fix is for a leaf's OWN path to correctly
+          # extend the group's own prefix — Practitioner.qualification.extension, a real, valid
+          # FHIR shape (any BackboneElement, qualification included, may carry its own .extension
+          # array) — so the remaining ".extension" segment resolves against the SAME
+          # qualification[N] entry staff_qual_degree_code (Practitioner.qualification.code, a
+          # sibling field) already writes into, not the Practitioner's own top-level extension
+          # array.
+          - id: "staff_qual_country"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-country"
+            label: "Country"
+            uiComponent: "TextInput"
+          - id: "staff_qual_state"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-state"
+            label: "State (LGD)"
+            uiComponent: "TextInput"
+          # No college/university master data exists anywhere in this codebase yet (confirmed —
+          # neither clinuxflow-abdm-gateway nor clinuxflow-api has a route or data file for
+          # either) — honest free-text capture rather than a fabricated dropdown; becomes a real
+          # Dropdown once that master data is wired up.
+          - id: "staff_qual_college"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-college"
+            label: "College"
+            uiComponent: "TextInput"
+          - id: "staff_qual_university"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-university"
+            label: "University"
+            uiComponent: "TextInput"
+          - id: "staff_qual_year_awarded"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-year-awarded"
+            label: "Year of Awarding"
+            uiComponent: "TextInput"
+          - id: "staff_qual_degree_certificate"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-degree-certificate"
+            label: "Degree Certificate (base64)"
+            uiComponent: "TextInput"
+          # NHPR user manual's own Step 16 — asked once per document (degree here, registration
+          # certificate below): "Is your name in the [degree] the same as your name in Aadhaar?" If
+          # No, a name-change affidavit (or equivalent) attachment is required — enforced in the UI.
+          - id: "staff_qual_degree_name_matches_aadhaar"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-degree-name-matches-aadhaar"
+            label: "Is your name in the Degree Certificate the same as in Aadhaar?"
+            uiComponent: "Dropdown"
+            choices: ["Yes","No"]
+          - id: "staff_qual_degree_name_change_affidavit"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-degree-name-change-affidavit"
+            label: "Name Change Affidavit for Degree Certificate (base64, if name differs)"
+            uiComponent: "TextInput"
+          # Registration-with-council half of the same real spec block (registrationAcademic.
+          # registrationData) — registeredWithCouncil reuses the SAME master data the Create HPR
+          # ID step's /hpr/master/medical-councils route already serves (closest real master list
+          # available; the spec gives no separate council table for this step).
+          - id: "staff_qual_registered_council"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-council"
+            label: "Registered With Council (HPR master: medical-councils)"
+            uiComponent: "TextInput"
+            required: true
+          - id: "staff_qual_registration_number"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-registration-number"
+            label: "Registration Number"
+            uiComponent: "TextInput"
+            required: true
+          - id: "staff_qual_registration_date"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-registration-date"
+            label: "Registration Date"
+            uiComponent: "TextInput"
+          - id: "staff_qual_registration_certificate"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-registration-certificate"
+            label: "Registration Certificate (base64)"
+            uiComponent: "TextInput"
+          - id: "staff_qual_registration_name_matches_aadhaar"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-registration-name-matches-aadhaar"
+            label: "Is your name in the Registration Certificate the same as in Aadhaar?"
+            uiComponent: "Dropdown"
+            choices: ["Yes","No"]
+          - id: "staff_qual_registration_name_change_affidavit"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-registration-name-change-affidavit"
+            label: "Name Change Affidavit for Registration Certificate (base64, if name differs)"
+            uiComponent: "TextInput"
+          - id: "staff_qual_permanent_or_renewable"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-permanent-or-renewable"
+            label: "Permanent or Renewable"
+            uiComponent: "Dropdown"
+            choices: ["Permanent","Renewable"]
+          # Mandatory only "if isPermanentOrRenewable is Renewable" per the real spec's own note —
+          # enforced in the UI, not the compiler (no conditional-required primitive exists here yet).
+          - id: "staff_qual_renewable_due_date"
+            path: "Practitioner.qualification.extension"
+            extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-qualification-renewable-due-date"
+            label: "Renewable Due Date"
+            uiComponent: "TextInput"
+      # Real spec gap found live (NHPR "Register Professional" API, currentWorkDetails block) —
+      # deliberately PLAIN fields, not a nested group like qualification above: work experience is
+      # a SINGLE (non-repeating) declaration, with no natural backbone sub-element to nest under,
+      # so a nested-group wrapper adds real complexity (and, confirmed empirically, real risk —
+      # see the git history of this exact block for the two ways that went wrong) for zero benefit
+      # over plain sibling fields, which already correctly resolve to the SAME enclosing
+      # Practitioner instance section_staff's own fields do (same proven mechanism staff_hp_
+      # category_code etc. already use, no group-nesting needed for a non-repeating single value).
+      - id: "staff_work_currently_working"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-currently-working"
+        label: "Currently Working"
+        uiComponent: "Checkbox"
+      # NHPR user manual's own "Nature of Work" — a real multi-select ("He/She can select multiple
+      # options in Nature of work"), widened from the earlier single Dropdown to match. Still the
+      # same real currentWorkDetails.purposeOfRegistration field (ClinuxFlowProvider.json's own
+      # :workPurpose comment) — abdmAdapter.js's buildPractitionerPayload joins the selections back
+      # into one string, since the real API's own singular/array shape isn't independently
+      # confirmed.
+      - id: "staff_work_purpose"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-purpose"
+        label: "Nature of Work"
+        uiComponent: "MultiSelect"
+        choices: ["Practice","Administrative","Teaching","Teleconsultation"]
+      # Shown alongside Nature of Work in the manual — relevant when Teleconsultation is selected
+      # above; enforced as relevant-not-required in the UI, not here.
+      - id: "staff_work_teleconsultation_url"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-teleconsultation-url"
+        label: "Teleconsultation URL"
+        uiComponent: "TextInput"
+      - id: "staff_work_status"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-status"
+        label: "Work Status"
+        uiComponent: "Dropdown"
+        choices: ["Private","Government","Both"]
+      # Mandatory only "if currentlyWorking is 0" per the real spec's own note — enforced in the
+      # UI, not the compiler.
+      - id: "staff_work_reason_not_working"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-reason-not-working"
+        label: "Reason for Not Working"
+        uiComponent: "TextInput"
+      # Search Facility is now real — ProviderWorkExperienceHost.vue's own "Search Facility" panel
+      # (reusing the already-built, already-verified /hfr/facility/search gateway route) lets a
+      # practitioner pick a real ABDM-registered facility instead of typing its name blind;
+      # staff_work_facility_id carries that facility's own real ABDM Facility ID once picked (the
+      # spec's own facilityId, which per its own note makes facilityName/address/pincode/type
+      # optional — the practitioner can still edit them, this just adds the real linkage on top).
+      - id: "staff_work_facility_id"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-id"
+        label: "ABDM Facility ID (from Search Facility)"
+        uiComponent: "TextInput"
+      - id: "staff_work_facility_name"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-name"
+        label: "Facility Name"
+        uiComponent: "TextInput"
+      - id: "staff_work_facility_address"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-address"
+        label: "Facility Address"
+        uiComponent: "TextInput"
+      - id: "staff_work_facility_pincode"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-pincode"
+        label: "Facility Pincode"
+        uiComponent: "TextInput"
+      - id: "staff_work_facility_type"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-type"
+        label: "Facility Type"
+        uiComponent: "TextInput"
+      - id: "staff_work_facility_department"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-department"
+        label: "Facility Department"
+        uiComponent: "TextInput"
+      - id: "staff_work_facility_designation"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-designation"
+        label: "Facility Designation"
+        uiComponent: "TextInput"
+      # Mandatory only "if selecting chooseWorkStatus as Government or Both" per the real spec —
+      # enforced in the UI. No getAllMinistry master data exists anywhere yet — honest free-text.
+      - id: "staff_work_ministry"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-ministry"
+        label: "Ministry (if Government)"
+        uiComponent: "TextInput"
+      # NHPR user manual's own Work Details step: Central/State radio -> Ministry (Central only,
+      # above) -> "Working in a PSU?" -> PSU name — all shown only when Work Status is Government
+      # or Both, enforced in the UI same as the existing Ministry field.
+      - id: "staff_work_govt_category"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-govt-category"
+        label: "Government Category (if Government)"
+        uiComponent: "Dropdown"
+        choices: ["Central","State"]
+      - id: "staff_work_psu_yesno"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-psu-yesno"
+        label: "Working in a PSU? (if Central)"
+        uiComponent: "Dropdown"
+        choices: ["No","Yes"]
+      # No getAllPSU master data exists anywhere yet — honest free-text, same discipline the
+      # Ministry field above already carries.
+      - id: "staff_work_psu_name"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-psu-name"
+        label: "PSU Name (if working in a PSU)"
+        uiComponent: "TextInput"
+      # Mandatory whenever Work Status is Government or Both, per the manual's own screenshots
+      # ("upload proof that you work for government such as Appointment Letter, Recent Pay-slip,
+      # Recent Transfer Order etc.") — enforced in the UI, not here.
+      - id: "staff_work_govt_proof_document"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-work-govt-proof-document"
+        label: "Government Employment Proof (base64)"
+        uiComponent: "TextInput"
+      # NHPR user manual's own Preview Profile step (page 16-17) — reviewed just before Attestation
+      # & e-Sign, not part of any of the 3 capture tree elements above (Personal Details/
+      # Qualifications/Work Experience). No confirmed real ABDM API field for either — same honest-
+      # gap treatment ClinuxFlowProvider.json's own :about/:assistedRegistration comments carry.
+      - id: "staff_about"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-about"
+        label: "About (shown on your public profile)"
+        uiComponent: "TextInput"
+      - id: "staff_assisted_registration"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-assisted-registration"
+        label: "Anyone assisted you to register in HPR?"
+        uiComponent: "Dropdown"
+        choices: ["No","Yes"]
+      # ClinuxFlow-local tracking flag (not an ABDM field) — see ClinuxFlowProvider.json's own
+      # :fullProfileSubmitted comment for why ProviderHprPanel.vue's RegistrationLedger needs this
+      # persisted rather than re-derived.
+      - id: "staff_full_profile_submitted"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-full-profile-submitted"
+        label: "Full HPR profile submitted"
+        uiComponent: "Checkbox"
+      # Mirrors hospital_public_display_optout's existing role for Organization/HFR — gates
+      # visibility of the already-captured staff_public_mobile/staff_landline/staff_public_email
+      # fields, never a second capture of the same data.
+      - id: "staff_public_display_optout"
+        path: "Practitioner.extension"
+        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hpr-public-display-optout"
+        label: "Don't show my details to the public at all"
+        uiComponent: "Checkbox"
 
   # SPEC-24 §2's own real modeling upgrade: PractitionerRole (this Practitioner's role AT this
   # facility) as a genuinely separate FHIR resource from Practitioner (the person), so one person
@@ -552,6 +1088,18 @@ composition:
         label: "HPR Role (HPR master: role)"
         uiComponent: "Dropdown"
         choices: ["Healthcare Professional", "Facility Manager", "Healthcare Professional and Facility Manager"]
+      # Staff can be associated with more than one branch (design call — real for a multi-branch
+      # clinic's shared staff) — real FHIR PractitionerRole.location is genuinely 0..*, unlike
+      # HealthcareService.location's single-branch case above. Same index-correlation/deferred-
+      # resolution mechanism, MultiSelect submits one answer per chosen branch and
+      # local-extractor.js already extracts every MultiSelect answer (not just the first — see its
+      # own header comment on that fix), so no change beyond refTo was needed to support the ×N
+      # case with the exact same code path as the single-value one.
+      - id: "staff_location_ids"
+        path: "PractitionerRole.location"
+        label: "Branches"
+        uiComponent: "MultiSelect"
+        refTo: "Location"
 
   - resourceType: HealthcareService
     id: section_services_matrix
@@ -579,6 +1127,18 @@ composition:
         path: "HealthcareService.comment"
         label: "Description"
         uiComponent: "TextInput"
+      # Services belong to a branch, not the facility root (design call: a multi-branch clinic's
+      # services genuinely differ per location) — the submitted value is section_location's own
+      # instance index, resolved to a real HealthcareService.location reference by
+      # local-extractor.js's own finalization pass (see its own header comment on why an index,
+      # not a real id, is what an unsaved repeating group can offer). ServicesHost.vue renders the
+      # actual dropdown, populated from this same record's own section_location instances — not a
+      # static choices list, so none is declared here.
+      - id: "service_location_id"
+        path: "HealthcareService.location"
+        label: "Branch"
+        uiComponent: "Dropdown"
+        refTo: "Location"
 
   - resourceType: Location
     id: section_hours

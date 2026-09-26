@@ -644,4 +644,80 @@ describe('ComprehensiveLocalExtractor — real end-to-end against the improved F
     expect(Array.isArray(prac.extension)).toBe(true);
     expect(prac.extension.every((e) => e.url.startsWith('https://clinuxflow.example/fhir/StructureDefinition/'))).toBe(true);
   });
+
+  // Services/Staff scoped to a branch, not the facility root (design call) — service_location_id
+  // (HealthcareService.location, single) and staff_location_ids (PractitionerRole.location,
+  // 0..*) against the REAL compiled YAML, not a synthetic fixture, since the whole point is
+  // proving refTo's index-correlation actually resolves to the RIGHT branch out of several, not
+  // just index 0 by luck.
+  it('service_location_id resolves to the SECOND of two branches, correctly correlated by submission index, not just whichever Location happened to extract first', () => {
+    function ans(linkId, value) { return { linkId, answer: [{ valueString: value }] }; }
+    const response = {
+      item: [
+        { linkId: 'section_hospital', item: [ans('hospital_name', 'Malar Hospital')] },
+        { linkId: 'section_location', item: [ans('location_name', 'Main Branch')] },
+        { linkId: 'section_location', item: [ans('location_name', 'Satellite Branch')] },
+        { linkId: 'section_services_matrix', item: [
+          ans('service_name', 'Dialysis'),
+          ans('service_location_id', '1'), // Satellite Branch — index 1, not 0
+        ]},
+      ],
+    };
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    expect(result.warnings).toEqual([]);
+
+    const locations = result.filter((r) => r.resourceType === 'Location');
+    const service = result.find((r) => r.resourceType === 'HealthcareService');
+    const satellite = locations.find((l) => l.name === 'Satellite Branch');
+
+    expect(locations.length).toBe(2);
+    expect(Array.isArray(service.location)).toBe(true);
+    expect(service.location).toEqual([{ reference: `Location/${satellite.id}` }]);
+  });
+
+  it('staff_location_ids (MultiSelect) resolves to references for BOTH selected branches on the real PractitionerRole resource', () => {
+    function ans(linkId, value) { return { linkId, answer: [{ valueString: value }] }; }
+    const response = {
+      item: [
+        { linkId: 'section_hospital', item: [ans('hospital_name', 'Malar Hospital')] },
+        { linkId: 'section_location', item: [ans('location_name', 'Main Branch')] },
+        { linkId: 'section_location', item: [ans('location_name', 'Satellite Branch')] },
+        { linkId: 'section_staff', item: [ans('staff_name', 'Dr. Priya Rao')] },
+        { linkId: 'section_staff_role', item: [
+          ans('staff_location_ids', '0'),
+          ans('staff_location_ids', '1'),
+        ]},
+      ],
+    };
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    expect(result.warnings).toEqual([]);
+
+    const locations = result.filter((r) => r.resourceType === 'Location');
+    const role = result.find((r) => r.resourceType === 'PractitionerRole');
+    const [main, satellite] = ['Main Branch', 'Satellite Branch'].map((n) => locations.find((l) => l.name === n));
+
+    expect(role.location).toEqual(expect.arrayContaining([
+      { reference: `Location/${main.id}` },
+      { reference: `Location/${satellite.id}` },
+    ]));
+    expect(role.location.length).toBe(2);
+  });
+
+  it('a branch reference to an index that does not exist in this document drops with a warning, instead of writing a broken reference', () => {
+    function ans(linkId, value) { return { linkId, answer: [{ valueString: value }] }; }
+    const response = {
+      item: [
+        { linkId: 'section_hospital', item: [ans('hospital_name', 'Malar Hospital')] },
+        { linkId: 'section_services_matrix', item: [
+          ans('service_name', 'Dialysis'),
+          ans('service_location_id', '0'), // no section_location instance exists at all
+        ]},
+      ],
+    };
+    const result = ComprehensiveLocalExtractor.extract(compiledProvider.questionnaire, response);
+    const service = result.find((r) => r.resourceType === 'HealthcareService');
+
+    expect(service.location).toBeUndefined();
+    expect(result.warnings.some((w) => w.includes('Location#0'))).toBe(true);
+  });
 });

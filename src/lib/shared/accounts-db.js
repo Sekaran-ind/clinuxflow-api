@@ -132,6 +132,78 @@ export const AccountsDb = {
         return results;
     },
 
+    // The reverse of listAffiliatesByFacility — every facility THIS practitioner is actively
+    // affiliated with, for their own "Clinic Association" surface (PractitionerHome.vue) to
+    // render. A real gap found live: nothing ever called this query before, even though
+    // migrations/0005 already added idx_facility_affiliates_practitioner specifically for it —
+    // the practitioner-side read half of this relationship was simply never built. Joins in the
+    // facility's own name so the practitioner's client never needs a second round-trip per
+    // facility either, same reasoning listAffiliatesByFacility's own comment gives the other way.
+    listAffiliationsByAccount: async (db, practitionerAccountId) => {
+        const { results } = await db.prepare(
+            `SELECT a.facility_clinic_id AS facilityClinicId, a.role, a.status, a.created_at AS createdAt,
+                    c.name AS facilityName
+             FROM facility_affiliates a
+             JOIN clinics c ON c.id = a.facility_clinic_id
+             WHERE a.practitioner_account_id = ? AND a.status = 'active'
+             ORDER BY a.created_at ASC`
+        ).bind(practitionerAccountId).all();
+        return results;
+    },
+
+    // Organization Affiliates (migrations/0015) — the org-to-org counterpart to the 4 functions
+    // just above. Same "consistent method" shape deliberately: addOrganizationAffiliate mirrors
+    // addAffiliate's own INSERT-OR-reactivate semantics, revokeOrganizationAffiliate mirrors
+    // revokeAffiliate, and the two list functions below mirror listAffiliatesByFacility/
+    // listAffiliationsByAccount exactly, just joining clinics instead of accounts on the far side
+    // (a real Organization has its own clinic row, not an account). ABDM (HFR) registration status
+    // is orthogonal — whether either side has registered with ABDM lives in their own
+    // provider_composition, never checked or touched here.
+    addOrganizationAffiliate: (db, facilityClinicId, affiliateClinicId, relationship) => {
+        return db.prepare(
+            `INSERT INTO facility_organization_affiliates (facility_clinic_id, affiliate_clinic_id, relationship, status)
+             VALUES (?, ?, ?, 'active')
+             ON CONFLICT(facility_clinic_id, affiliate_clinic_id)
+             DO UPDATE SET relationship = excluded.relationship, status = 'active'`
+        ).bind(facilityClinicId, affiliateClinicId, relationship ?? null).run();
+    },
+
+    revokeOrganizationAffiliate: (db, facilityClinicId, affiliateClinicId) => {
+        return db.prepare(
+            "UPDATE facility_organization_affiliates SET status = 'revoked' WHERE facility_clinic_id = ? AND affiliate_clinic_id = ?"
+        ).bind(facilityClinicId, affiliateClinicId).run();
+    },
+
+    // Joins in the affiliate organization's own clinic name — same one-round-trip reasoning
+    // listAffiliatesByFacility's own comment gives.
+    listOrganizationAffiliatesByFacility: async (db, facilityClinicId) => {
+        const { results } = await db.prepare(
+            `SELECT oa.affiliate_clinic_id AS affiliateClinicId, oa.relationship, oa.status, oa.created_at AS createdAt,
+                    c.name AS affiliateClinicName
+             FROM facility_organization_affiliates oa
+             JOIN clinics c ON c.id = oa.affiliate_clinic_id
+             WHERE oa.facility_clinic_id = ? AND oa.status = 'active'
+             ORDER BY oa.created_at ASC`
+        ).bind(facilityClinicId).all();
+        return results;
+    },
+
+    // The reverse of listOrganizationAffiliatesByFacility — every facility MY organization is
+    // linked to as a partner, for this clinic's own admin-facing "Partner Organizations" surface
+    // to render (the org-level counterpart to listAffiliationsByAccount's practitioner-facing
+    // "Clinic Association" card).
+    listOrganizationAffiliationsByClinic: async (db, clinicId) => {
+        const { results } = await db.prepare(
+            `SELECT oa.facility_clinic_id AS facilityClinicId, oa.relationship, oa.status, oa.created_at AS createdAt,
+                    c.name AS facilityName
+             FROM facility_organization_affiliates oa
+             JOIN clinics c ON c.id = oa.facility_clinic_id
+             WHERE oa.affiliate_clinic_id = ? AND oa.status = 'active'
+             ORDER BY oa.created_at ASC`
+        ).bind(clinicId).all();
+        return results;
+    },
+
     // The direct (non-QR) Provider-composition mirror — see migrations/0005's own comment. One
     // row per clinic; upsert on every PUT, same ON CONFLICT pattern the Tauri shared server's own
     // /api/collections/:name route already uses for the identical reason (idempotent re-push).
