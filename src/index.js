@@ -21,6 +21,8 @@ import { authRoutes } from './routes/auth.js';
 import { controlRoutes } from './routes/control.js';
 import { runtimeRoutes } from './routes/runtime.js';
 import { platformRoutes } from './routes/platform.js';
+import { operationsRoutes } from './routes/operations.js';
+import { provenanceRoutes } from './routes/provenance.js';
 import { handleCuboTaskQueue } from './lib/control/cubo-task-queue-consumer.js';
 
 export { ChatSignalingRoom } from './durable-objects/ChatSignalingRoom.js';
@@ -68,6 +70,8 @@ app.route('/', authRoutes);
 app.route('/', controlRoutes);
 app.route('/', runtimeRoutes);
 app.route('/', platformRoutes);
+app.route('/', operationsRoutes);
+app.route('/', provenanceRoutes);
 
 // A plain Hono app instance only ever implements `fetch` — a Queue consumer needs the Worker's
 // default export to also carry a `queue(batch, env, ctx)` handler (docs/SPEC-26-FACILITY-JOIN-

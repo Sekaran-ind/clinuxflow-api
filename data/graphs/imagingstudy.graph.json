@@ -1,0 +1,2762 @@
+[
+  {
+    "path": "ImagingStudy.resourceType",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a ImagingStudy resource",
+      "coreKeywords": [
+        "imagingstudy",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"ImagingStudy.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a ImagingStudy resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.id",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"ImagingStudy.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.text",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImagingStudy.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.contained",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"ImagingStudy.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.extension",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"ImagingStudy.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.modifierExtension",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"ImagingStudy.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.identifier",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Identifiers for the whole study",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "textinput",
+        "identifiers",
+        "whole"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"ImagingStudy.identifier\"\n        label: \"Enter identifier\"\n        description: \"Identifiers for the whole study\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.identifier.use",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"ImagingStudy.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "ImagingStudy.identifier.type",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"ImagingStudy.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "ImagingStudy.identifier.type.coding",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ImagingStudy.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ImagingStudy.identifier.type.coding.system",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImagingStudy.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.identifier.type.coding.version",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImagingStudy.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.identifier.type.coding.code",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImagingStudy.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.identifier.type.coding.display",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImagingStudy.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.identifier.type.coding.userSelected",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImagingStudy.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImagingStudy.identifier.type.text",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImagingStudy.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.identifier.system",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImagingStudy.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.identifier.value",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"ImagingStudy.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.identifier.period",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"ImagingStudy.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.identifier.period.start",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"ImagingStudy.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ImagingStudy.identifier.period.end",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"ImagingStudy.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ImagingStudy.identifier.assigner",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"ImagingStudy.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.status",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"registered\\\" | \\\"available\\\" | \\\"cancelled\\\" | \\\"entered-in-error\\\" | \\\"unknown\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "registered | available | cancelled | entered-in-error | unknown",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "status",
+        "dropdown",
+        "registered",
+        "available",
+        "cancelled",
+        "entered",
+        "error",
+        "unknown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"ImagingStudy.status\"\n        label: \"Enter status\"\n        description: \"registered | available | cancelled | entered-in-error | unknown\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/imagingstudy-status"
+    },
+    "choices": [
+      "registered",
+      "available",
+      "cancelled",
+      "entered-in-error",
+      "unknown"
+    ]
+  },
+  {
+    "path": "ImagingStudy.modality",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modality\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "All series modality if actual acquisition modalities",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "modality",
+        "multiselect",
+        "all",
+        "series",
+        "actual",
+        "acquisition",
+        "modalities"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modality\"\n        path: \"ImagingStudy.modality\"\n        label: \"Enter modality\"\n        description: \"All series modality if actual acquisition modalities\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html"
+    }
+  },
+  {
+    "path": "ImagingStudy.modality.system",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "modality",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImagingStudy.modality.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.modality.version",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "modality",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImagingStudy.modality.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.modality.code",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "modality",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImagingStudy.modality.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.modality.display",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "modality",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImagingStudy.modality.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.modality.userSelected",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "modality",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImagingStudy.modality.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImagingStudy.subject",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Group",
+        "traversalPath": "Group.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"subject\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who or what is the subject of the study",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "subject",
+        "textinput",
+        "who",
+        "what"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"subject\"\n        path: \"ImagingStudy.subject\"\n        label: \"Enter subject\"\n        description: \"Who or what is the subject of the study\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.encounter",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "encounter-link",
+        "targetResource": "Encounter",
+        "traversalPath": "Encounter.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"encounter\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Encounter with which this imaging study is associated",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "encounter",
+        "textinput",
+        "which",
+        "associated"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"encounter\"\n        path: \"ImagingStudy.encounter\"\n        label: \"Enter encounter\"\n        description: \"Encounter with which this imaging study is associated\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.started",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"started\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the study was started",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "started",
+        "datepicker",
+        "when"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"started\"\n        path: \"ImagingStudy.started\"\n        label: \"Enter started\"\n        description: \"When the study was started\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ImagingStudy.basedOn",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "CarePlan",
+        "traversalPath": "CarePlan.id"
+      },
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "ServiceRequest",
+        "traversalPath": "ServiceRequest.id"
+      },
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "Appointment",
+        "traversalPath": "Appointment.id"
+      },
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "AppointmentResponse",
+        "traversalPath": "AppointmentResponse.id"
+      },
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "Task",
+        "traversalPath": "Task.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"based_on\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Request fulfilled",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "based",
+        "textinput",
+        "request",
+        "fulfilled"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"based_on\"\n        path: \"ImagingStudy.basedOn\"\n        label: \"Enter basedOn\"\n        description: \"Request fulfilled\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.referrer",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "referrer-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "referrer-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"referrer\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Referring physician",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "referrer",
+        "textinput",
+        "referring",
+        "physician"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"referrer\"\n        path: \"ImagingStudy.referrer\"\n        label: \"Enter referrer\"\n        description: \"Referring physician\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.interpreter",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "interpreter-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "interpreter-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"interpreter\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who interpreted images",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "interpreter",
+        "textinput",
+        "who",
+        "interpreted",
+        "images"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"interpreter\"\n        path: \"ImagingStudy.interpreter\"\n        label: \"Enter interpreter\"\n        description: \"Who interpreted images\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.endpoint",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "endpoint-link",
+        "targetResource": "Endpoint",
+        "traversalPath": "Endpoint.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"endpoint\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Study access endpoint",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "endpoint",
+        "textinput",
+        "access"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"endpoint\"\n        path: \"ImagingStudy.endpoint\"\n        label: \"Enter endpoint\"\n        description: \"Study access endpoint\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.numberOfSeries",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "unsignedInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"number_of_series\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Number of Study Related Series",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "number",
+        "series",
+        "numericinput",
+        "related"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"number_of_series\"\n        path: \"ImagingStudy.numberOfSeries\"\n        label: \"Enter numberOfSeries\"\n        description: \"Number of Study Related Series\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ImagingStudy.numberOfInstances",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "unsignedInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"number_of_instances\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Number of Study Related Instances",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "number",
+        "instances",
+        "numericinput",
+        "related"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"number_of_instances\"\n        path: \"ImagingStudy.numberOfInstances\"\n        label: \"Enter numberOfInstances\"\n        description: \"Number of Study Related Instances\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ImagingStudy.procedureReference",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "procedureReference-link",
+        "targetResource": "Procedure",
+        "traversalPath": "Procedure.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"procedure_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The performed Procedure reference",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "procedure",
+        "reference",
+        "textinput",
+        "performed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"procedure_reference\"\n        path: \"ImagingStudy.procedureReference\"\n        label: \"Enter procedureReference\"\n        description: \"The performed Procedure reference\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.procedureCode",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"procedure_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The performed procedure code",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "procedure",
+        "code",
+        "multiselect",
+        "performed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"procedure_code\"\n        path: \"ImagingStudy.procedureCode\"\n        label: \"Enter procedureCode\"\n        description: \"The performed procedure code\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://www.rsna.org/RadLex_Playbook.aspx"
+    }
+  },
+  {
+    "path": "ImagingStudy.procedureCode.coding",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "procedure",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ImagingStudy.procedureCode.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ImagingStudy.procedureCode.coding.system",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "procedure",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImagingStudy.procedureCode.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.procedureCode.coding.version",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "procedure",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImagingStudy.procedureCode.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.procedureCode.coding.code",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "procedure",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImagingStudy.procedureCode.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.procedureCode.coding.display",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "procedure",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImagingStudy.procedureCode.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.procedureCode.coding.userSelected",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "procedure",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImagingStudy.procedureCode.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImagingStudy.procedureCode.text",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "procedure",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImagingStudy.procedureCode.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.location",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "location-link",
+        "targetResource": "Location",
+        "traversalPath": "Location.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"location\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Where ImagingStudy occurred",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "location",
+        "textinput",
+        "where",
+        "imagingstudy",
+        "occurred"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"location\"\n        path: \"ImagingStudy.location\"\n        label: \"Enter location\"\n        description: \"Where ImagingStudy occurred\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.reasonCode",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"reason_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Why the study was requested",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "reason",
+        "code",
+        "multiselect",
+        "why",
+        "requested"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason_code\"\n        path: \"ImagingStudy.reasonCode\"\n        label: \"Enter reasonCode\"\n        description: \"Why the study was requested\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/procedure-reason"
+    }
+  },
+  {
+    "path": "ImagingStudy.reasonCode.coding",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "reason",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ImagingStudy.reasonCode.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ImagingStudy.reasonCode.coding.system",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "reason",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImagingStudy.reasonCode.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.reasonCode.coding.version",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "reason",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImagingStudy.reasonCode.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.reasonCode.coding.code",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "reason",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImagingStudy.reasonCode.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.reasonCode.coding.display",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "reason",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImagingStudy.reasonCode.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.reasonCode.coding.userSelected",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "reason",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImagingStudy.reasonCode.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImagingStudy.reasonCode.text",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "reason",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImagingStudy.reasonCode.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.reasonReference",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "Condition",
+        "traversalPath": "Condition.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "Observation",
+        "traversalPath": "Observation.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "Media",
+        "traversalPath": "Media.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "DiagnosticReport",
+        "traversalPath": "DiagnosticReport.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "DocumentReference",
+        "traversalPath": "DocumentReference.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"reason_reference\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Why was study performed",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "reason",
+        "reference",
+        "textinput",
+        "why",
+        "performed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason_reference\"\n        path: \"ImagingStudy.reasonReference\"\n        label: \"Enter reasonReference\"\n        description: \"Why was study performed\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.note",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "User-defined comments",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "note",
+        "textinput",
+        "user",
+        "defined",
+        "comments"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"ImagingStudy.note\"\n        label: \"Enter note\"\n        description: \"User-defined comments\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.note.author[x]",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author[x]-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "note",
+        "authorx",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author[x]\"\n        path: \"ImagingStudy.note.author[x]\"\n        label: \"Enter author[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.note.authorReference",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "note",
+        "author",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"ImagingStudy.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.note.authorString",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "note",
+        "author",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"ImagingStudy.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.note.time",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "note",
+        "time",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"ImagingStudy.note.time\"\n        label: \"Enter time\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ImagingStudy.note.text",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "note",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImagingStudy.note.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.description",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Institution-generated description",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "description",
+        "textinput",
+        "institution",
+        "generated"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"ImagingStudy.description\"\n        label: \"Enter description\"\n        description: \"Institution-generated description\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"series\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Each study has one or more series of instances",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "textinput",
+        "has",
+        "one",
+        "more",
+        "instances"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"series\"\n        path: \"ImagingStudy.series\"\n        label: \"Enter series\"\n        description: \"Each study has one or more series of instances\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.extension",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"ImagingStudy.series.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.modifierExtension",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"ImagingStudy.series.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.uid",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "id",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"uid\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "DICOM Series Instance UID for the series",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "uid",
+        "textinput",
+        "dicom",
+        "instance"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"uid\"\n        path: \"ImagingStudy.series.uid\"\n        label: \"Enter uid\"\n        description: \"DICOM Series Instance UID for the series\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.number",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "unsignedInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"number\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Numeric identifier of this series",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "number",
+        "numericinput",
+        "numeric",
+        "identifier"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"number\"\n        path: \"ImagingStudy.series.number\"\n        label: \"Enter number\"\n        description: \"Numeric identifier of this series\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ImagingStudy.series.modality",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modality\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The modality of the instances in the series",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "modality",
+        "dropdown",
+        "instances"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modality\"\n        path: \"ImagingStudy.series.modality\"\n        label: \"Enter modality\"\n        description: \"The modality of the instances in the series\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html"
+    }
+  },
+  {
+    "path": "ImagingStudy.series.modality.system",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "modality",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImagingStudy.series.modality.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.modality.version",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "modality",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImagingStudy.series.modality.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.modality.code",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "modality",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImagingStudy.series.modality.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.series.modality.display",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "modality",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImagingStudy.series.modality.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.modality.userSelected",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "modality",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImagingStudy.series.modality.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImagingStudy.series.description",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A short human readable summary of the series",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "description",
+        "textinput",
+        "short",
+        "human",
+        "readable",
+        "summary"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"ImagingStudy.series.description\"\n        label: \"Enter description\"\n        description: \"A short human readable summary of the series\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.numberOfInstances",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "unsignedInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"number_of_instances\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Number of Series Related Instances",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "number",
+        "instances",
+        "numericinput",
+        "related"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"number_of_instances\"\n        path: \"ImagingStudy.series.numberOfInstances\"\n        label: \"Enter numberOfInstances\"\n        description: \"Number of Series Related Instances\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ImagingStudy.series.endpoint",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "endpoint-link",
+        "targetResource": "Endpoint",
+        "traversalPath": "Endpoint.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"endpoint\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Series access endpoint",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "endpoint",
+        "textinput",
+        "access"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"endpoint\"\n        path: \"ImagingStudy.series.endpoint\"\n        label: \"Enter endpoint\"\n        description: \"Series access endpoint\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.bodySite",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"body_site\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Body part examined",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "body",
+        "site",
+        "dropdown",
+        "part",
+        "examined"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"body_site\"\n        path: \"ImagingStudy.series.bodySite\"\n        label: \"Enter bodySite\"\n        description: \"Body part examined\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+    }
+  },
+  {
+    "path": "ImagingStudy.series.bodySite.system",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "body",
+        "site",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImagingStudy.series.bodySite.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.bodySite.version",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "body",
+        "site",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImagingStudy.series.bodySite.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.bodySite.code",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "body",
+        "site",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImagingStudy.series.bodySite.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.series.bodySite.display",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "body",
+        "site",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImagingStudy.series.bodySite.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.bodySite.userSelected",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "body",
+        "site",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImagingStudy.series.bodySite.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImagingStudy.series.laterality",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"laterality\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Body part laterality",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "laterality",
+        "dropdown",
+        "body",
+        "part"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"laterality\"\n        path: \"ImagingStudy.series.laterality\"\n        label: \"Enter laterality\"\n        description: \"Body part laterality\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/bodysite-laterality"
+    }
+  },
+  {
+    "path": "ImagingStudy.series.laterality.system",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "laterality",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImagingStudy.series.laterality.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.laterality.version",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "laterality",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImagingStudy.series.laterality.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.laterality.code",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "laterality",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImagingStudy.series.laterality.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.series.laterality.display",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "laterality",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImagingStudy.series.laterality.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.laterality.userSelected",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "laterality",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImagingStudy.series.laterality.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImagingStudy.series.specimen",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "specimen-link",
+        "targetResource": "Specimen",
+        "traversalPath": "Specimen.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"specimen\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Specimen imaged",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "specimen",
+        "textinput",
+        "imaged"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"specimen\"\n        path: \"ImagingStudy.series.specimen\"\n        label: \"Enter specimen\"\n        description: \"Specimen imaged\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.started",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"started\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the series started",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "started",
+        "datepicker",
+        "when"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"started\"\n        path: \"ImagingStudy.series.started\"\n        label: \"Enter started\"\n        description: \"When the series started\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ImagingStudy.series.performer",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"performer\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who performed the series",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "textinput",
+        "who",
+        "performed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"performer\"\n        path: \"ImagingStudy.series.performer\"\n        label: \"Enter performer\"\n        description: \"Who performed the series\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.performer.extension",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"ImagingStudy.series.performer.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.performer.modifierExtension",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"ImagingStudy.series.performer.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.performer.function",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"function\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Type of performance",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "function",
+        "dropdown",
+        "performance"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"function\"\n        path: \"ImagingStudy.series.performer.function\"\n        label: \"Enter function\"\n        description: \"Type of performance\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/series-performer-function"
+    }
+  },
+  {
+    "path": "ImagingStudy.series.performer.function.coding",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "function",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ImagingStudy.series.performer.function.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ImagingStudy.series.performer.function.coding.system",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "function",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImagingStudy.series.performer.function.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.performer.function.coding.version",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "function",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImagingStudy.series.performer.function.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.performer.function.coding.code",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "function",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImagingStudy.series.performer.function.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.series.performer.function.coding.display",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "function",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImagingStudy.series.performer.function.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.performer.function.coding.userSelected",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "function",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImagingStudy.series.performer.function.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImagingStudy.series.performer.function.text",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "function",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImagingStudy.series.performer.function.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.performer.actor",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "CareTeam",
+        "traversalPath": "CareTeam.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"actor\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who performed the series",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "performer",
+        "actor",
+        "textinput",
+        "who",
+        "performed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"actor\"\n        path: \"ImagingStudy.series.performer.actor\"\n        label: \"Enter actor\"\n        description: \"Who performed the series\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.instance",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"instance\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A single SOP instance from the series",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "textinput",
+        "single",
+        "sop"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"instance\"\n        path: \"ImagingStudy.series.instance\"\n        label: \"Enter instance\"\n        description: \"A single SOP instance from the series\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.instance.extension",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"ImagingStudy.series.instance.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.instance.modifierExtension",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"ImagingStudy.series.instance.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.instance.uid",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "id",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"uid\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "DICOM SOP Instance UID",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "uid",
+        "textinput",
+        "dicom",
+        "sop"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"uid\"\n        path: \"ImagingStudy.series.instance.uid\"\n        label: \"Enter uid\"\n        description: \"DICOM SOP Instance UID\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.instance.sopClass",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"sop_class\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "DICOM class type",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "sop",
+        "class",
+        "dropdown",
+        "dicom"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"sop_class\"\n        path: \"ImagingStudy.series.instance.sopClass\"\n        label: \"Enter sopClass\"\n        description: \"DICOM class type\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1"
+    }
+  },
+  {
+    "path": "ImagingStudy.series.instance.sopClass.system",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "sop",
+        "class",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImagingStudy.series.instance.sopClass.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.instance.sopClass.version",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "sop",
+        "class",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImagingStudy.series.instance.sopClass.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.instance.sopClass.code",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "sop",
+        "class",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImagingStudy.series.instance.sopClass.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImagingStudy.series.instance.sopClass.display",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "sop",
+        "class",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImagingStudy.series.instance.sopClass.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImagingStudy.series.instance.sopClass.userSelected",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "sop",
+        "class",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImagingStudy.series.instance.sopClass.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImagingStudy.series.instance.number",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "unsignedInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"number\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The number of this instance in the series",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "number",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"number\"\n        path: \"ImagingStudy.series.instance.number\"\n        label: \"Enter number\"\n        description: \"The number of this instance in the series\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ImagingStudy.series.instance.title",
+    "resourceType": "ImagingStudy",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"title\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Description of instance",
+      "coreKeywords": [
+        "imaging",
+        "study",
+        "series",
+        "instance",
+        "title",
+        "textinput",
+        "description"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"title\"\n        path: \"ImagingStudy.series.instance.title\"\n        label: \"Enter title\"\n        description: \"Description of instance\"\n        uiComponent: \"TextInput\""
+  }
+]

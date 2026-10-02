@@ -1,0 +1,2770 @@
+[
+  {
+    "path": "ChargeItem.resourceType",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a ChargeItem resource",
+      "coreKeywords": [
+        "chargeitem",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"ChargeItem.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a ChargeItem resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.id",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"ChargeItem.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.text",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ChargeItem.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.contained",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"ChargeItem.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.extension",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"ChargeItem.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.modifierExtension",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"ChargeItem.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.identifier",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Business Identifier for item",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "textinput",
+        "business"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"ChargeItem.identifier\"\n        label: \"Enter identifier\"\n        description: \"Business Identifier for item\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.identifier.use",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"ChargeItem.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "ChargeItem.identifier.type",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"ChargeItem.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "ChargeItem.identifier.type.coding",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ChargeItem.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ChargeItem.identifier.type.coding.system",
+    "resourceType": "ChargeItem",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ChargeItem.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.identifier.type.coding.version",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ChargeItem.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.identifier.type.coding.code",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ChargeItem.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.identifier.type.coding.display",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ChargeItem.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.identifier.type.coding.userSelected",
+    "resourceType": "ChargeItem",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ChargeItem.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ChargeItem.identifier.type.text",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ChargeItem.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.identifier.system",
+    "resourceType": "ChargeItem",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ChargeItem.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.identifier.value",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"ChargeItem.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.identifier.period",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"ChargeItem.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.identifier.period.start",
+    "resourceType": "ChargeItem",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"ChargeItem.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ChargeItem.identifier.period.end",
+    "resourceType": "ChargeItem",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"ChargeItem.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ChargeItem.identifier.assigner",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"ChargeItem.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.definitionUri",
+    "resourceType": "ChargeItem",
+    "primitiveType": "uri",
+    "isArray": true,
+    "arrayTargetType": "uri",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"definition_uri\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Defining information about the code of this charge item",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "definition",
+        "uri",
+        "textinput",
+        "defining",
+        "information",
+        "about",
+        "code"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"definition_uri\"\n        path: \"ChargeItem.definitionUri\"\n        label: \"Enter definitionUri\"\n        description: \"Defining information about the code of this charge item\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.definitionCanonical",
+    "resourceType": "ChargeItem",
+    "primitiveType": "canonical",
+    "isArray": true,
+    "arrayTargetType": "canonical",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"definition_canonical\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Resource defining the code of this ChargeItem",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "definition",
+        "canonical",
+        "textinput",
+        "resource",
+        "defining",
+        "code",
+        "chargeitem"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"definition_canonical\"\n        path: \"ChargeItem.definitionCanonical\"\n        label: \"Enter definitionCanonical\"\n        description: \"Resource defining the code of this ChargeItem\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.status",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"planned\\\" | \\\"billable\\\" | \\\"not-billable\\\" | \\\"aborted\\\" | \\\"billed\\\" | \\\"entered-in-error\\\" | \\\"unknown\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "planned | billable | not-billable | aborted | billed | entered-in-error | unknown",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "status",
+        "dropdown",
+        "planned",
+        "billable",
+        "not",
+        "aborted",
+        "billed",
+        "entered",
+        "error",
+        "unknown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"ChargeItem.status\"\n        label: \"Enter status\"\n        description: \"planned | billable | not-billable | aborted | billed | entered-in-error | unknown\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/chargeitem-status"
+    },
+    "choices": [
+      "planned",
+      "billable",
+      "not-billable",
+      "aborted",
+      "billed",
+      "entered-in-error",
+      "unknown"
+    ]
+  },
+  {
+    "path": "ChargeItem.partOf",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "partOf-link",
+        "targetResource": "ChargeItem",
+        "traversalPath": "ChargeItem.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"part_of\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Part of referenced ChargeItem",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "part",
+        "textinput",
+        "referenced",
+        "chargeitem"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"part_of\"\n        path: \"ChargeItem.partOf\"\n        label: \"Enter partOf\"\n        description: \"Part of referenced ChargeItem\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.code",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A code that identifies the charge, like a billing code",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "code",
+        "dropdown",
+        "identifies",
+        "like",
+        "billing"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ChargeItem.code\"\n        label: \"Enter code\"\n        description: \"A code that identifies the charge, like a billing code\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/chargeitem-billingcodes"
+    }
+  },
+  {
+    "path": "ChargeItem.code.coding",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ChargeItem.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ChargeItem.code.coding.system",
+    "resourceType": "ChargeItem",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ChargeItem.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.code.coding.version",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ChargeItem.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.code.coding.code",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ChargeItem.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.code.coding.display",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ChargeItem.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.code.coding.userSelected",
+    "resourceType": "ChargeItem",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ChargeItem.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ChargeItem.code.text",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ChargeItem.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.subject",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Group",
+        "traversalPath": "Group.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"subject\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Individual service was done for/to",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "subject",
+        "textinput",
+        "individual",
+        "service",
+        "done",
+        "forto"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"subject\"\n        path: \"ChargeItem.subject\"\n        label: \"Enter subject\"\n        description: \"Individual service was done for/to\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.context",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "context-link",
+        "targetResource": "Encounter",
+        "traversalPath": "Encounter.id"
+      },
+      {
+        "relationshipType": "context-link",
+        "targetResource": "EpisodeOfCare",
+        "traversalPath": "EpisodeOfCare.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"context\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Encounter / Episode associated with event",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "context",
+        "textinput",
+        "encounter",
+        "episode",
+        "associated",
+        "event"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"context\"\n        path: \"ChargeItem.context\"\n        label: \"Enter context\"\n        description: \"Encounter / Episode associated with event\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.occurrence[x]",
+    "resourceType": "ChargeItem",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"occurrence[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the charged service was applied",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrencex",
+        "datepicker",
+        "when",
+        "charged",
+        "service",
+        "applied"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"occurrence[x]\"\n        path: \"ChargeItem.occurrence[x]\"\n        label: \"Enter occurrence[x]\"\n        description: \"When the charged service was applied\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ChargeItem.occurrenceDateTime",
+    "resourceType": "ChargeItem",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"occurrence_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the charged service was applied",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "date",
+        "time",
+        "datepicker",
+        "when",
+        "charged",
+        "service",
+        "applied"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"occurrence_date_time\"\n        path: \"ChargeItem.occurrenceDateTime\"\n        label: \"Enter occurrenceDateTime\"\n        description: \"When the charged service was applied\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ChargeItem.occurrencePeriod",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"occurrence_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the charged service was applied",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "period",
+        "textinput",
+        "when",
+        "charged",
+        "service",
+        "applied"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"occurrence_period\"\n        path: \"ChargeItem.occurrencePeriod\"\n        label: \"Enter occurrencePeriod\"\n        description: \"When the charged service was applied\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.occurrencePeriod.start",
+    "resourceType": "ChargeItem",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"ChargeItem.occurrencePeriod.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ChargeItem.occurrencePeriod.end",
+    "resourceType": "ChargeItem",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"ChargeItem.occurrencePeriod.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ChargeItem.occurrenceTiming",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"occurrence_timing\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the charged service was applied",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "timing",
+        "textinput",
+        "when",
+        "charged",
+        "service",
+        "applied"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"occurrence_timing\"\n        path: \"ChargeItem.occurrenceTiming\"\n        label: \"Enter occurrenceTiming\"\n        description: \"When the charged service was applied\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.occurrenceTiming.event",
+    "resourceType": "ChargeItem",
+    "primitiveType": "dateTime",
+    "isArray": true,
+    "arrayTargetType": "dateTime",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"event\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "timing",
+        "event",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"event\"\n        path: \"ChargeItem.occurrenceTiming.event\"\n        label: \"Enter event\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ChargeItem.occurrenceTiming.repeat",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"repeat\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "timing",
+        "repeat",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"repeat\"\n        path: \"ChargeItem.occurrenceTiming.repeat\"\n        label: \"Enter repeat\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.occurrenceTiming.code",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "timing",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ChargeItem.occurrenceTiming.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/timing-abbreviation"
+    }
+  },
+  {
+    "path": "ChargeItem.occurrenceTiming.code.coding",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "timing",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ChargeItem.occurrenceTiming.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ChargeItem.occurrenceTiming.code.coding.system",
+    "resourceType": "ChargeItem",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "timing",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ChargeItem.occurrenceTiming.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.occurrenceTiming.code.coding.version",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "timing",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ChargeItem.occurrenceTiming.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.occurrenceTiming.code.coding.code",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "timing",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ChargeItem.occurrenceTiming.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.occurrenceTiming.code.coding.display",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "timing",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ChargeItem.occurrenceTiming.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.occurrenceTiming.code.coding.userSelected",
+    "resourceType": "ChargeItem",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "timing",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ChargeItem.occurrenceTiming.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ChargeItem.occurrenceTiming.code.text",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "occurrence",
+        "timing",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ChargeItem.occurrenceTiming.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.performer",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"performer\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who performed charged service",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "textinput",
+        "who",
+        "performed",
+        "charged",
+        "service"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"performer\"\n        path: \"ChargeItem.performer\"\n        label: \"Enter performer\"\n        description: \"Who performed charged service\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.performer.extension",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"ChargeItem.performer.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.performer.modifierExtension",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"ChargeItem.performer.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.performer.function",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"function\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "What type of performance was done",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "function",
+        "dropdown",
+        "what",
+        "performance",
+        "done"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"function\"\n        path: \"ChargeItem.performer.function\"\n        label: \"Enter function\"\n        description: \"What type of performance was done\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/performer-role"
+    }
+  },
+  {
+    "path": "ChargeItem.performer.function.coding",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "function",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ChargeItem.performer.function.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ChargeItem.performer.function.coding.system",
+    "resourceType": "ChargeItem",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "function",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ChargeItem.performer.function.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.performer.function.coding.version",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "function",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ChargeItem.performer.function.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.performer.function.coding.code",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "function",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ChargeItem.performer.function.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.performer.function.coding.display",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "function",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ChargeItem.performer.function.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.performer.function.coding.userSelected",
+    "resourceType": "ChargeItem",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "function",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ChargeItem.performer.function.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ChargeItem.performer.function.text",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "function",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ChargeItem.performer.function.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.performer.actor",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "CareTeam",
+        "traversalPath": "CareTeam.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"actor\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Individual who was performing",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performer",
+        "actor",
+        "textinput",
+        "individual",
+        "who",
+        "performing"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"actor\"\n        path: \"ChargeItem.performer.actor\"\n        label: \"Enter actor\"\n        description: \"Individual who was performing\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.performingOrganization",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "performingOrganization-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"performing_organization\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization providing the charged service",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "performing",
+        "organization",
+        "textinput",
+        "providing",
+        "charged",
+        "service"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"performing_organization\"\n        path: \"ChargeItem.performingOrganization\"\n        label: \"Enter performingOrganization\"\n        description: \"Organization providing the charged service\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.requestingOrganization",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "requestingOrganization-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"requesting_organization\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization requesting the charged service",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "requesting",
+        "organization",
+        "textinput",
+        "charged",
+        "service"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"requesting_organization\"\n        path: \"ChargeItem.requestingOrganization\"\n        label: \"Enter requestingOrganization\"\n        description: \"Organization requesting the charged service\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.costCenter",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "costCenter-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"cost_center\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Organization that has ownership of the (potential, future) revenue",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "cost",
+        "center",
+        "textinput",
+        "organization",
+        "has",
+        "ownership",
+        "potential",
+        "future",
+        "revenue"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"cost_center\"\n        path: \"ChargeItem.costCenter\"\n        label: \"Enter costCenter\"\n        description: \"Organization that has ownership of the (potential, future) revenue\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.quantity",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"quantity\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Quantity of which the charge item has been serviced",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "quantity",
+        "textinput",
+        "which",
+        "has",
+        "serviced"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"quantity\"\n        path: \"ChargeItem.quantity\"\n        label: \"Enter quantity\"\n        description: \"Quantity of which the charge item has been serviced\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.quantity.value",
+    "resourceType": "ChargeItem",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "quantity",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"ChargeItem.quantity.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ChargeItem.quantity.comparator",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "quantity",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"ChargeItem.quantity.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "ChargeItem.quantity.unit",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "quantity",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"ChargeItem.quantity.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.quantity.system",
+    "resourceType": "ChargeItem",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "quantity",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ChargeItem.quantity.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.quantity.code",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "quantity",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ChargeItem.quantity.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.bodysite",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"bodysite\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Anatomical location, if relevant",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "bodysite",
+        "multiselect",
+        "anatomical",
+        "location",
+        "relevant"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"bodysite\"\n        path: \"ChargeItem.bodysite\"\n        label: \"Enter bodysite\"\n        description: \"Anatomical location, if relevant\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+    }
+  },
+  {
+    "path": "ChargeItem.bodysite.coding",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "bodysite",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ChargeItem.bodysite.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ChargeItem.bodysite.coding.system",
+    "resourceType": "ChargeItem",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "bodysite",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ChargeItem.bodysite.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.bodysite.coding.version",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "bodysite",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ChargeItem.bodysite.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.bodysite.coding.code",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "bodysite",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ChargeItem.bodysite.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.bodysite.coding.display",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "bodysite",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ChargeItem.bodysite.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.bodysite.coding.userSelected",
+    "resourceType": "ChargeItem",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "bodysite",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ChargeItem.bodysite.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ChargeItem.bodysite.text",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "bodysite",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ChargeItem.bodysite.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.factorOverride",
+    "resourceType": "ChargeItem",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"factor_override\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Factor overriding the associated rules",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "factor",
+        "override",
+        "numericinput",
+        "overriding",
+        "associated",
+        "rules"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"factor_override\"\n        path: \"ChargeItem.factorOverride\"\n        label: \"Enter factorOverride\"\n        description: \"Factor overriding the associated rules\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ChargeItem.priceOverride",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"price_override\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Price overriding the associated rules",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "price",
+        "override",
+        "textinput",
+        "overriding",
+        "associated",
+        "rules"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"price_override\"\n        path: \"ChargeItem.priceOverride\"\n        label: \"Enter priceOverride\"\n        description: \"Price overriding the associated rules\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.priceOverride.value",
+    "resourceType": "ChargeItem",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "price",
+        "override",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"ChargeItem.priceOverride.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ChargeItem.priceOverride.currency",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"currency\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "price",
+        "override",
+        "currency",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"currency\"\n        path: \"ChargeItem.priceOverride.currency\"\n        label: \"Enter currency\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/currencies"
+    }
+  },
+  {
+    "path": "ChargeItem.overrideReason",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"override_reason\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Reason for overriding the list price/factor",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "override",
+        "reason",
+        "textinput",
+        "overriding",
+        "list",
+        "pricefactor"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"override_reason\"\n        path: \"ChargeItem.overrideReason\"\n        label: \"Enter overrideReason\"\n        description: \"Reason for overriding the list price/factor\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.enterer",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "enterer-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "enterer-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "enterer-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      },
+      {
+        "relationshipType": "enterer-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "enterer-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "enterer-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"enterer\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Individual who was entering",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "enterer",
+        "textinput",
+        "individual",
+        "who",
+        "entering"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"enterer\"\n        path: \"ChargeItem.enterer\"\n        label: \"Enter enterer\"\n        description: \"Individual who was entering\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.enteredDate",
+    "resourceType": "ChargeItem",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"entered_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Date the charge item was entered",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "entered",
+        "date",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"entered_date\"\n        path: \"ChargeItem.enteredDate\"\n        label: \"Enter enteredDate\"\n        description: \"Date the charge item was entered\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ChargeItem.reason",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"reason\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Why was the charged  service rendered?",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "reason",
+        "multiselect",
+        "why",
+        "charged",
+        "service",
+        "rendered"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason\"\n        path: \"ChargeItem.reason\"\n        label: \"Enter reason\"\n        description: \"Why was the charged  service rendered?\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/icd-10"
+    }
+  },
+  {
+    "path": "ChargeItem.reason.coding",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "reason",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ChargeItem.reason.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ChargeItem.reason.coding.system",
+    "resourceType": "ChargeItem",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "reason",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ChargeItem.reason.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.reason.coding.version",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "reason",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ChargeItem.reason.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.reason.coding.code",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "reason",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ChargeItem.reason.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.reason.coding.display",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "reason",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ChargeItem.reason.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.reason.coding.userSelected",
+    "resourceType": "ChargeItem",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "reason",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ChargeItem.reason.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ChargeItem.reason.text",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "reason",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ChargeItem.reason.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.service",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "service-link",
+        "targetResource": "DiagnosticReport",
+        "traversalPath": "DiagnosticReport.id"
+      },
+      {
+        "relationshipType": "service-link",
+        "targetResource": "ImagingStudy",
+        "traversalPath": "ImagingStudy.id"
+      },
+      {
+        "relationshipType": "service-link",
+        "targetResource": "Immunization",
+        "traversalPath": "Immunization.id"
+      },
+      {
+        "relationshipType": "service-link",
+        "targetResource": "MedicationAdministration",
+        "traversalPath": "MedicationAdministration.id"
+      },
+      {
+        "relationshipType": "service-link",
+        "targetResource": "MedicationDispense",
+        "traversalPath": "MedicationDispense.id"
+      },
+      {
+        "relationshipType": "service-link",
+        "targetResource": "Observation",
+        "traversalPath": "Observation.id"
+      },
+      {
+        "relationshipType": "service-link",
+        "targetResource": "Procedure",
+        "traversalPath": "Procedure.id"
+      },
+      {
+        "relationshipType": "service-link",
+        "targetResource": "SupplyDelivery",
+        "traversalPath": "SupplyDelivery.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"service\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Which rendered service is being charged?",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "service",
+        "textinput",
+        "which",
+        "rendered",
+        "being",
+        "charged"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"service\"\n        path: \"ChargeItem.service\"\n        label: \"Enter service\"\n        description: \"Which rendered service is being charged?\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.product[x]",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "product[x]-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "product[x]-link",
+        "targetResource": "Medication",
+        "traversalPath": "Medication.id"
+      },
+      {
+        "relationshipType": "product[x]-link",
+        "targetResource": "Substance",
+        "traversalPath": "Substance.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"product[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Product charged",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "productx",
+        "textinput",
+        "product",
+        "charged"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"product[x]\"\n        path: \"ChargeItem.product[x]\"\n        label: \"Enter product[x]\"\n        description: \"Product charged\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/device-kind"
+    }
+  },
+  {
+    "path": "ChargeItem.productReference",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "productReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"product_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Product charged",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "product",
+        "reference",
+        "textinput",
+        "charged"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"product_reference\"\n        path: \"ChargeItem.productReference\"\n        label: \"Enter productReference\"\n        description: \"Product charged\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/device-kind"
+    }
+  },
+  {
+    "path": "ChargeItem.productCodeableConcept",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"product_codeable_concept\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Product charged",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "product",
+        "codeable",
+        "concept",
+        "dropdown",
+        "charged"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"product_codeable_concept\"\n        path: \"ChargeItem.productCodeableConcept\"\n        label: \"Enter productCodeableConcept\"\n        description: \"Product charged\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/device-kind"
+    }
+  },
+  {
+    "path": "ChargeItem.productCodeableConcept.coding",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ChargeItem.productCodeableConcept.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ChargeItem.productCodeableConcept.coding.system",
+    "resourceType": "ChargeItem",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ChargeItem.productCodeableConcept.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.productCodeableConcept.coding.version",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ChargeItem.productCodeableConcept.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.productCodeableConcept.coding.code",
+    "resourceType": "ChargeItem",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ChargeItem.productCodeableConcept.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.productCodeableConcept.coding.display",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ChargeItem.productCodeableConcept.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.productCodeableConcept.coding.userSelected",
+    "resourceType": "ChargeItem",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ChargeItem.productCodeableConcept.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ChargeItem.productCodeableConcept.text",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "product",
+        "codeable",
+        "concept",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ChargeItem.productCodeableConcept.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ChargeItem.account",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "account-link",
+        "targetResource": "Account",
+        "traversalPath": "Account.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"account\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Account to place this charge",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "account",
+        "textinput",
+        "place"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"account\"\n        path: \"ChargeItem.account\"\n        label: \"Enter account\"\n        description: \"Account to place this charge\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.note",
+    "resourceType": "ChargeItem",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Comments made about the ChargeItem",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "note",
+        "textinput",
+        "comments",
+        "made",
+        "about",
+        "chargeitem"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"ChargeItem.note\"\n        label: \"Enter note\"\n        description: \"Comments made about the ChargeItem\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.note.author[x]",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author[x]-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "note",
+        "authorx",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author[x]\"\n        path: \"ChargeItem.note.author[x]\"\n        label: \"Enter author[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.note.authorReference",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "note",
+        "author",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"ChargeItem.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.note.authorString",
+    "resourceType": "ChargeItem",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "note",
+        "author",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"ChargeItem.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.note.time",
+    "resourceType": "ChargeItem",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "note",
+        "time",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"ChargeItem.note.time\"\n        label: \"Enter time\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ChargeItem.note.text",
+    "resourceType": "ChargeItem",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "note",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ChargeItem.note.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ChargeItem.supportingInformation",
+    "resourceType": "ChargeItem",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "supportingInformation-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"supporting_information\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Further information supporting this charge",
+      "coreKeywords": [
+        "charge",
+        "item",
+        "supporting",
+        "information",
+        "textinput",
+        "further"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"supporting_information\"\n        path: \"ChargeItem.supportingInformation\"\n        label: \"Enter supportingInformation\"\n        description: \"Further information supporting this charge\"\n        uiComponent: \"TextInput\""
+  }
+]

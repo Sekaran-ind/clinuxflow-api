@@ -28,7 +28,7 @@ describe('ComprehensiveLocalExtractor — silent-drop hardening', () => {
     expect(result.warnings.length).toBe(1);
     expect(result.warnings[0]).toContain('untracked_field');
     // the mapped field still extracts correctly alongside the warning
-    expect(result.find((r) => r.resourceType === 'Practitioner').name.text).toBe('Dr. Priya');
+    expect(result.find((r) => r.resourceType === 'Practitioner').name[0].text).toBe('Dr. Priya'); // name is 0..* in FHIR: an array
   });
 
   it('logs and collects a warning for a malformed definition string (no "#")', () => {
@@ -133,7 +133,7 @@ describe('ComprehensiveLocalExtractor — repeating-group handling (severe bug, 
     };
 
     const result = ComprehensiveLocalExtractor.extract(bp, response);
-    const names = result.filter((r) => r.resourceType === 'Practitioner').map((r) => r.name.text);
+    const names = result.filter((r) => r.resourceType === 'Practitioner').map((r) => r.name[0].text);
 
     expect(names).toEqual(['Dr. Priya Rao', 'Dr. Arjun Mehta']); // both survive; first one used to be silently destroyed
   });
@@ -278,7 +278,7 @@ describe('ComprehensiveLocalExtractor — repeating-group handling (severe bug, 
     const result = ComprehensiveLocalExtractor.extract(bp, response);
     const roles = result.filter((r) => r.resourceType === 'PractitionerRole');
 
-    expect(roles.map((r) => r.code)).toEqual(['1', '2']); // both survive; used to collapse to just ['2']
+    expect(roles.map((r) => r.code[0].text)).toEqual(['1', '2']); // both survive; used to collapse to just ['2']
   });
 
   it('each per-repetition PractitionerRole correctly cross-references its OWN Practitioner (and the shared singleton Organization), not another repetition\'s', () => {
@@ -312,10 +312,10 @@ describe('ComprehensiveLocalExtractor — repeating-group handling (severe bug, 
 
     const result = ComprehensiveLocalExtractor.extract(bp, response);
     const org = result.find((r) => r.resourceType === 'Organization');
-    const alice = result.find((r) => r.resourceType === 'Practitioner' && r.name.text === 'Dr. Alice');
-    const bob = result.find((r) => r.resourceType === 'Practitioner' && r.name.text === 'Dr. Bob');
-    const aliceRole = result.find((r) => r.resourceType === 'PractitionerRole' && r.code === '1');
-    const bobRole = result.find((r) => r.resourceType === 'PractitionerRole' && r.code === '2');
+    const alice = result.find((r) => r.resourceType === 'Practitioner' && r.name[0].text === 'Dr. Alice');
+    const bob = result.find((r) => r.resourceType === 'Practitioner' && r.name[0].text === 'Dr. Bob');
+    const aliceRole = result.find((r) => r.resourceType === 'PractitionerRole' && r.code[0].text === '1');
+    const bobRole = result.find((r) => r.resourceType === 'PractitionerRole' && r.code[0].text === '2');
 
     expect(aliceRole.practitioner.reference).toBe(`Practitioner/${alice.id}`);
     expect(bobRole.practitioner.reference).toBe(`Practitioner/${bob.id}`);
@@ -402,8 +402,8 @@ describe('ComprehensiveLocalExtractor — FHIR array-cardinality fix (real data-
     expect(Array.isArray(practitioner.extension)).toBe(true);
     expect(practitioner.extension.length).toBe(5);
     const byUrl = Object.fromEntries(practitioner.extension.map((e) => [e.url, e]));
-    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hpr-category-code'].valueString).toBe('CAT-1');
-    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council'].valueBoolean).toBe(true);
+    expect(byUrl['https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-category-code'].valueString).toBe('CAT-1');
+    expect(byUrl['https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-registered-with-council'].valueBoolean).toBe(true);
   });
 
   it('SPEC-24 §2: staff_provider_role/staff_role_active (section_staff_role, a sibling block) extract to a real, separate PractitionerRole resource, auto-linked to the Practitioner and Organization from the same submission', () => {
@@ -422,7 +422,10 @@ describe('ComprehensiveLocalExtractor — FHIR array-cardinality fix (real data-
     const practitioner = result.find((r) => r.resourceType === 'Practitioner');
     const role = result.find((r) => r.resourceType === 'PractitionerRole');
 
-    expect(role.code).toBe('Facility Manager');
+    // Role vs entitlement: the HPR role is an entitlement source, kept as its own extension —
+    // never PractitionerRole.code, which is the SNOMED professional role (none captured here).
+    expect(role.extension).toEqual([{ url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-role', valueString: 'Facility Manager' }]);
+    expect(role.code).toBeUndefined();
     expect(role.active).toBe(true);
     expect(role.practitioner.reference).toBe(`Practitioner/${practitioner.id}`);
     expect(role.organization.reference).toBe(`Organization/${org.id}`);
@@ -453,9 +456,9 @@ describe('ComprehensiveLocalExtractor — FHIR array-cardinality fix (real data-
 
     // Practitioner.name itself stays a single real entry (this app only ever captures one name
     // per person) — .given WITHIN it is the genuinely multi-value part.
-    expect(practitioner.name.text).toBe('Dr. Given Test');
-    expect(practitioner.name.given.sort()).toEqual(['Alpha', 'Beta'].sort());
-    expect(practitioner.name.family).toBe('Gamma');
+    expect(practitioner.name[0].text).toBe('Dr. Given Test');
+    expect(practitioner.name[0].given.sort()).toEqual(['Alpha', 'Beta'].sort());
+    expect(practitioner.name[0].family).toBe('Gamma');
   });
 
   // UPDATE — ownership/facility-type/facility-subtype moved off the generic Organization.type
@@ -482,13 +485,13 @@ describe('ComprehensiveLocalExtractor — FHIR array-cardinality fix (real data-
 
     // Organization.type is genuinely 0..* in real FHIR — correctly a real 1-element array now
     // (not a bare string), even with only one field left targeting it; no longer a collision case.
-    expect(org.type).toEqual(['Hospital']);
+    expect(org.type).toEqual([{ text: 'Hospital' }]);
     expect(Array.isArray(org.extension)).toBe(true);
     expect(org.extension.length).toBe(3);
     const byUrl = Object.fromEntries(org.extension.map((e) => [e.url, e]));
-    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code'].valueString).toBe('OWN-1');
-    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-type'].valueString).toBe('FT-1');
-    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-subtype'].valueString).toBe('FST-1');
+    expect(byUrl['https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-ownership-code'].valueString).toBe('OWN-1');
+    expect(byUrl['https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-facility-type'].valueString).toBe('FT-1');
+    expect(byUrl['https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-facility-subtype'].valueString).toBe('FST-1');
     expect(org.name).toBe('Test Hospital'); // Organization.name is genuinely 0..1 — confirms non-array paths are unaffected
   });
 
@@ -518,7 +521,7 @@ describe('ComprehensiveLocalExtractor — real FHIR extension.url tagging', () =
   }
 
   it('writes a real {url, valueString} extension, not a bare value', () => {
-    const bp = blueprint([itemWithExtensionUrl('ownership', 'Organization.extension', 'https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code')]);
+    const bp = blueprint([itemWithExtensionUrl('ownership', 'Organization.extension', 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-ownership-code')]);
     const response = { item: [answered('ownership', 'P')] };
 
     const result = ComprehensiveLocalExtractor.extract(bp, response);
@@ -526,15 +529,15 @@ describe('ComprehensiveLocalExtractor — real FHIR extension.url tagging', () =
 
     expect(Array.isArray(org.extension)).toBe(true);
     expect(org.extension[0]).toEqual({
-      url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code',
+      url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-ownership-code',
       valueString: 'P',
     });
   });
 
   it('two DIFFERENT extension fields produce two distinct, correctly-tagged entries — not one overwriting the other', () => {
     const bp = blueprint([
-      itemWithExtensionUrl('ownership', 'Organization.extension', 'https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code'),
-      itemWithExtensionUrl('facilityType', 'Organization.extension', 'https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-type'),
+      itemWithExtensionUrl('ownership', 'Organization.extension', 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-ownership-code'),
+      itemWithExtensionUrl('facilityType', 'Organization.extension', 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-facility-type'),
     ]);
     const response = { item: [answered('ownership', 'P'), answered('facilityType', 'HOSPITAL')] };
 
@@ -543,19 +546,19 @@ describe('ComprehensiveLocalExtractor — real FHIR extension.url tagging', () =
 
     expect(org.extension.length).toBe(2);
     const byUrl = Object.fromEntries(org.extension.map((e) => [e.url, e]));
-    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code'].valueString).toBe('P');
-    expect(byUrl['https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-type'].valueString).toBe('HOSPITAL');
+    expect(byUrl['https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-ownership-code'].valueString).toBe('P');
+    expect(byUrl['https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-facility-type'].valueString).toBe('HOSPITAL');
   });
 
   it('picks the real matching value[x] key from the answer\'s own FHIR type — valueBoolean for a boolean answer', () => {
-    const bp = blueprint([itemWithExtensionUrl('council', 'Practitioner.extension', 'https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council', 'boolean')]);
+    const bp = blueprint([itemWithExtensionUrl('council', 'Practitioner.extension', 'https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-registered-with-council', 'boolean')]);
     const response = { item: [{ linkId: 'council', answer: [{ valueBoolean: true }] }] };
 
     const result = ComprehensiveLocalExtractor.extract(bp, response);
     const practitioner = result.find((r) => r.resourceType === 'Practitioner');
 
     expect(practitioner.extension[0]).toEqual({
-      url: 'https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council',
+      url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-registered-with-council',
       valueBoolean: true,
     });
   });
@@ -635,14 +638,18 @@ describe('ComprehensiveLocalExtractor — real end-to-end against the improved F
     expect(Array.isArray(org.telecom)).toBe(true);
     expect(org.active).toBe(true);
     expect(Array.isArray(org.extension)).toBe(true);
-    expect(org.extension.every((e) => e.url.startsWith('https://clinuxflow.example/fhir/StructureDefinition/'))).toBe(true);
-    expect(org.identifier).toBeUndefined(); // no generic identifiers used in this response — confirms nothing fell back to the old catch-all
+    expect(org.extension.every((e) => e.url.startsWith('https://clinux.yaxb.ai/fhir/StructureDefinition/'))).toBe(true);
+    // No captured identifier fell back to the old catch-all: the only identifier is the ABDM IG's
+    // required one (min 1), ClinuxFlow's own typed record id, until HFR issues a facility id.
+    expect(org.identifier).toEqual([{ type: { coding: [{ system: 'http://terminology.hl7.org/CodeSystem/v2-0203', code: 'PRN', display: 'Provider number' }], text: 'Provider number' }, system: 'https://clinux.yaxb.ai/fhir/sid/clinic', value: org.id }]);
 
-    expect(prac.name.text).toBe('Dr. Priya Rao');
+    expect(prac.name[0].text).toBe('Dr. Priya Rao');
     expect(Array.isArray(prac.identifier)).toBe(true);
     expect(prac.identifier[0].value).toBe('MCI-12345'); // the genuine license identifier, alone — not mixed with ABDM codes
+    // ...and typed as the ABDM IG requires (data/ig-conformance.json slice licenseNumber: v2-0203 MD).
+    expect(prac.identifier[0].type.coding[0]).toMatchObject({ system: 'http://terminology.hl7.org/CodeSystem/v2-0203', code: 'MD' });
     expect(Array.isArray(prac.extension)).toBe(true);
-    expect(prac.extension.every((e) => e.url.startsWith('https://clinuxflow.example/fhir/StructureDefinition/'))).toBe(true);
+    expect(prac.extension.every((e) => e.url.startsWith('https://clinux.yaxb.ai/fhir/StructureDefinition/'))).toBe(true);
   });
 
   // Services/Staff scoped to a branch, not the facility root (design call) — service_location_id
@@ -720,4 +727,27 @@ describe('ComprehensiveLocalExtractor — real end-to-end against the improved F
     expect(service.location).toBeUndefined();
     expect(result.warnings.some((w) => w.includes('Location#0'))).toBe(true);
   });
+});
+
+describe('ComprehensiveLocalExtractor — professional role vs entitlement (ABDM IG)', () => {
+    it('codes PractitionerRole.code in SNOMED CT from the staff member\'s HPR category, and keeps the HPR role as an extension', async () => {
+        const { default: lib } = await import('../../../data/system-forms-library.json', { with: { type: 'json' } });
+        const q = Object.values(lib['system-provider-composition-v1'].versions).at(-1).questionnaire;
+        const response = {
+            resourceType: 'QuestionnaireResponse',
+            item: [
+                { linkId: 'section_hospital', item: [{ linkId: 'hospital_name', answer: [{ valueString: 'Asha Clinic' }] }] },
+                { linkId: 'section_staff', item: [
+                    { linkId: 'staff_first_name', answer: [{ valueString: 'Meera' }] },
+                    { linkId: 'staff_hp_category_code', answer: [{ valueString: '2' }] },
+                ] },
+                { linkId: 'section_staff_role', item: [
+                    { linkId: 'staff_provider_role', answer: [{ valueString: 'Facility Manager' }] },
+                ] },
+            ],
+        };
+        const role = ComprehensiveLocalExtractor.extract(q, response).find((r) => r.resourceType === 'PractitionerRole');
+        expect(role.code).toEqual([{ coding: [{ system: 'http://snomed.info/sct', code: '106292003', display: 'Professional nurse' }], text: 'Professional nurse' }]);
+        expect(role.extension).toEqual([{ url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-role', valueString: 'Facility Manager' }]);
+    });
 });

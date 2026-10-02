@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "clinuxflow-provider-role",
-  "url": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowProviderRole",
+  "url": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowProviderRole",
   "version": "1.0.0",
   "name": "ClinuxFlowProviderRole",
   "title": "ClinuxFlow Provider Role (a Provider's role at their home Facility)",
@@ -11,7 +11,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "PractitionerRole",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+  "baseDefinition": "https://nrces.in/ndhm/fhir/r4/StructureDefinition/PractitionerRole",
   "derivation": "constraint",
   "differential": {
     "element": [
@@ -26,14 +26,28 @@
         "path": "PractitionerRole.practitioner",
         "min": 1,
         "max": "1",
-        "type": [{ "code": "Reference", "targetProfile": ["https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowProvider"] }]
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowProvider"
+            ]
+          }
+        ]
       },
       {
         "id": "PractitionerRole.organization",
         "path": "PractitionerRole.organization",
         "min": 1,
         "max": "1",
-        "type": [{ "code": "Reference", "targetProfile": ["https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowFacility"] }],
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowFacility"
+            ]
+          }
+        ],
         "comment": "The facility this role is held at. For a provider's HOME facility this is their own employer; ClinuxFlowAffiliatePractitionerRole (a sibling profile, same base resource) is the same shape used for a VISITING practitioner's role at a facility that isn't their home one — the distinction is which profile applies, not a different resource."
       },
       {

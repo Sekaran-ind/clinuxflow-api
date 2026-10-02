@@ -1,13 +1,13 @@
 {
   "resourceType": "GraphDefinition",
   "id": "clinuxflow-onboarding-graph",
-  "url": "https://clinuxflow.example/fhir/GraphDefinition/ClinuxFlowOnboardingGraph",
+  "url": "https://clinux.yaxb.ai/fhir/GraphDefinition/ClinuxFlowOnboardingGraph",
   "version": "1.0.0",
   "name": "ClinuxFlowOnboardingGraph",
   "status": "active",
   "description": "The real reference-structure graph between the onboarding entities (SPEC-24 §3) — describes which resources link to which, for two real, honest jobs: (1) $graph-style bundle assembly, and (2) as the STRUCTURAL half of next-best-action derivation (src/lib/next-best-action.js) — a link's target is only actionable once its source exists and is Profile-valid. Deliberately does NOT carry sequence/time semantics itself (real FHIR GraphDefinition can't; see SPEC-24 §3's own honest split) — business-rule ordering lives in each StructureDefinition's own invariants instead. Deliberately scoped to the 4 orchestration entities (Facility/Provider/ProviderRole/Affiliate x2) — Patient is NOT a node here: Patient capture is staff-mediated, part of the clinical/Front-Desk flow, not this onboarding graph (SPEC-21 §6's own resolution), so it has no real structural dependency on Facility/Provider to model.",
   "start": "Organization",
-  "profile": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowFacility",
+  "profile": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowFacility",
   "link": [
     {
       "path": "PractitionerRole.organization",
@@ -18,8 +18,8 @@
           "type": "PractitionerRole",
           "params": "organization={ref}",
           "extension": [
-            { "url": "https://clinuxflow.example/fhir/StructureDefinition/graph-link-direction", "valueCode": "reverse" },
-            { "url": "https://clinuxflow.example/fhir/StructureDefinition/graph-link-profiles", "valueString": "ClinuxFlowProviderRole,ClinuxFlowAffiliatePractitionerRole" }
+            { "url": "https://clinux.yaxb.ai/fhir/StructureDefinition/graph-link-direction", "valueCode": "reverse" },
+            { "url": "https://clinux.yaxb.ai/fhir/StructureDefinition/graph-link-profiles", "valueString": "ClinuxFlowProviderRole,ClinuxFlowAffiliatePractitionerRole" }
           ]
         }
       ]
@@ -32,9 +32,9 @@
         {
           "type": "OrganizationAffiliation",
           "params": "organization={ref}",
-          "profile": ["https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowAffiliateOrganization"],
+          "profile": ["https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowAffiliateOrganization"],
           "extension": [
-            { "url": "https://clinuxflow.example/fhir/StructureDefinition/graph-link-direction", "valueCode": "reverse" }
+            { "url": "https://clinux.yaxb.ai/fhir/StructureDefinition/graph-link-direction", "valueCode": "reverse" }
           ]
         }
       ]
@@ -47,7 +47,7 @@
         {
           "type": "Practitioner",
           "extension": [
-            { "url": "https://clinuxflow.example/fhir/StructureDefinition/graph-link-direction", "valueCode": "forward" }
+            { "url": "https://clinux.yaxb.ai/fhir/StructureDefinition/graph-link-direction", "valueCode": "forward" }
           ]
         }
       ]
@@ -60,7 +60,7 @@
         {
           "type": "Organization",
           "extension": [
-            { "url": "https://clinuxflow.example/fhir/StructureDefinition/graph-link-direction", "valueCode": "forward" }
+            { "url": "https://clinux.yaxb.ai/fhir/StructureDefinition/graph-link-direction", "valueCode": "forward" }
           ]
         }
       ]

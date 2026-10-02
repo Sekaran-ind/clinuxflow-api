@@ -1,0 +1,65 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "clinuxflow-provenance",
+  "url": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowProvenance",
+  "version": "1.0.0",
+  "name": "ClinuxFlowProvenance",
+  "title": "ClinuxFlow Provenance",
+  "status": "active",
+  "description": "Digital provenance for every write a ClinuxFlow workspace makes (a captured record, a registry journey's outcome): who made it, on whose behalf, from what, and when. Built and kept on the clinic's device (clinux-frontend src/provenance/), published to clinuxflow-api on the paid plan only. The ABDM IG (ndhm.in 6.5.0) profiles no Provenance, so this constrains base R4 directly. agent.who is the verified professional (HPR ID, https://doctor.ndhm.gov.in) once known, else the ClinuxFlow account; agent.onBehalfOf is the facility (HFR id, https://facility.ndhm.gov.in, once registered, else the clinic).",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Provenance",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Provenance",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Provenance",
+        "path": "Provenance"
+      },
+      {
+        "id": "Provenance.target",
+        "path": "Provenance.target",
+        "min": 1,
+        "max": "*",
+        "comment": "The written record: a QuestionnaireResponse reference, or a logical reference by identifier (e.g. an HPR ID) before a local resource id exists."
+      },
+      {
+        "id": "Provenance.recorded",
+        "path": "Provenance.recorded",
+        "min": 1,
+        "max": "1",
+        "comment": "When the device recorded it."
+      },
+      {
+        "id": "Provenance.activity",
+        "path": "Provenance.activity",
+        "min": 1,
+        "max": "1",
+        "comment": "Narrowed from 0..1: every ClinuxFlow write says what it was (v3-DataOperation CREATE / UPDATE / DELETE)."
+      },
+      {
+        "id": "Provenance.agent",
+        "path": "Provenance.agent",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Provenance.agent.who",
+        "path": "Provenance.agent.who",
+        "min": 1,
+        "max": "1",
+        "comment": "The verified professional (HPR ID) once linked, else the ClinuxFlow account."
+      },
+      {
+        "id": "Provenance.agent.onBehalfOf",
+        "path": "Provenance.agent.onBehalfOf",
+        "min": 1,
+        "max": "1",
+        "comment": "Narrowed from 0..1: authority comes from the facility — its HFR id once registered, else the clinic. This is what ties a write to the role and entitlement it was made under."
+      }
+    ]
+  }
+}

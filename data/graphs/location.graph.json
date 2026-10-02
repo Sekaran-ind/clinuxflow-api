@@ -11,8 +11,7 @@
       "jsdocDefinition": "This is a Location resource",
       "coreKeywords": [
         "location",
-        "resource",
-        "textinput"
+        "resource"
       ]
     },
     "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Location.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Location resource\"\n        uiComponent: \"TextInput\""
@@ -26,21 +25,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "jsdocDefinition": "Logical id of this artifact",
       "coreKeywords": [
         "location",
         "textinput",
         "logical",
-        "resource",
-        "used",
-        "url",
-        "once",
-        "assigned",
-        "never",
-        "changes"
+        "artifact"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Location.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Location.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.text",
@@ -51,48 +44,38 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
       "coreKeywords": [
         "location",
         "text",
-        "dropdown",
-        "human",
-        "readable",
-        "narrative",
+        "textinput",
         "summary",
         "resource",
-        "can",
-        "used",
-        "represent",
-        "content",
-        "need",
-        "not",
-        "encode",
-        "all",
-        "structured",
-        "data",
-        "but",
-        "required",
-        "contain",
-        "sufficient",
-        "detail",
-        "make",
-        "clinically",
-        "safe",
-        "just",
-        "read",
-        "definitions",
-        "may",
-        "define",
-        "what",
-        "should",
-        "represented",
-        "ensure",
-        "clinical",
-        "safety"
+        "human",
+        "interpretation"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Location.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Location.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Location.contained",
+    "resourceType": "Location",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "location",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"Location.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.extension",
@@ -103,42 +86,18 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "location",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.modifierExtension",
@@ -149,65 +108,18 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored",
       "coreKeywords": [
         "location",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "modifies",
-        "understanding",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "allowed",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Location.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Location.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.identifier",
@@ -218,7 +130,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Unique code or number identifying the location to its users.",
+      "jsdocDefinition": "Unique code or number identifying the location to its users",
       "coreKeywords": [
         "location",
         "identifier",
@@ -231,103 +143,30 @@
         "users"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Location.identifier\"\n        label: \"Enter identifier\"\n        description: \"Unique code or number identifying the location to its users.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.identifier.id",
-    "resourceType": "Location",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "location",
-        "identifier",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Location.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.identifier.extension",
-    "resourceType": "Location",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "location",
-        "identifier",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Location.identifier\"\n        label: \"Enter identifier\"\n        description: \"Unique code or number identifying the location to its users\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.identifier.use",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The purpose of this identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "identifier",
         "use",
-        "textinput",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Location.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Location.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
     "choices": [
       "usual",
       "official",
@@ -345,49 +184,176 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "identifier",
-        "dropdown",
-        "coded",
-        "can",
-        "used",
-        "determine",
-        "which",
-        "use",
-        "specific",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Location.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Location.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
   },
   {
-    "path": "Location.identifier.system",
+    "path": "Location.identifier.type.coding",
     "resourceType": "Location",
-    "primitiveType": "Uri",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Location.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Location.identifier.type.coding.system",
+    "resourceType": "Location",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Location.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Location.identifier.type.coding.version",
+    "resourceType": "Location",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Location.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Location.identifier.type.coding.code",
+    "resourceType": "Location",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Location.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Location.identifier.type.coding.display",
+    "resourceType": "Location",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Location.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Location.identifier.type.coding.userSelected",
+    "resourceType": "Location",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Location.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Location.identifier.type.text",
+    "resourceType": "Location",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Location.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Location.identifier.system",
+    "resourceType": "Location",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "identifier",
         "system",
-        "textinput",
-        "establishes",
-        "namespace",
-        "url",
-        "describes",
-        "set",
-        "values",
-        "are",
-        "unique"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Location.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Location.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.identifier.value",
@@ -398,23 +364,14 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "identifier",
-        "textinput",
-        "portion",
-        "typically",
-        "relevant",
-        "user",
-        "which",
-        "unique",
-        "within",
-        "context",
-        "system"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Location.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Location.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.identifier.period",
@@ -425,155 +382,55 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "identifier",
         "period",
-        "textinput",
-        "time",
-        "during",
-        "which",
-        "iswas",
-        "valid",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Location.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.identifier.period.id",
-    "resourceType": "Location",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "location",
-        "identifier",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Location.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.identifier.period.extension",
-    "resourceType": "Location",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "location",
-        "identifier",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Location.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.identifier.period.start",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "identifier",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Location.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Location.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Location.identifier.period.end",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "identifier",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Location.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Location.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Location.identifier.assigner",
@@ -584,55 +441,46 @@
     "outboundEdges": [
       {
         "relationshipType": "assigner-link",
-        "targetResource": "assigner",
-        "traversalPath": "assigner.id"
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "identifier",
         "assigner",
-        "dropdown",
-        "organization",
-        "issuedmanages"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Location.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Location.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.status",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"active\\\" | \\\"suspended\\\" | \\\"inactive\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.",
+      "jsdocDefinition": "active | suspended | inactive",
       "coreKeywords": [
         "location",
         "status",
-        "textinput",
-        "covers",
-        "general",
-        "availability",
-        "resource",
-        "not",
-        "current",
-        "which",
-        "may",
-        "covered",
-        "operationstatus",
-        "scheduleslots",
-        "they",
-        "are",
-        "configured"
+        "dropdown",
+        "active",
+        "suspended",
+        "inactive"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Location.status\"\n        label: \"Enter status\"\n        description: \"The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Location.status\"\n        label: \"Enter status\"\n        description: \"active | suspended | inactive\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/location-status"
+    },
     "choices": [
       "active",
       "suspended",
@@ -646,142 +494,44 @@
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"operational_status\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"operational_status\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.",
+      "jsdocDefinition": "The operational status of the location (typically only for a bed/room)",
       "coreKeywords": [
         "location",
         "operational",
         "status",
-        "textinput",
-        "covers",
-        "operation",
-        "values",
-        "most",
-        "relevant",
-        "beds",
-        "but",
-        "can",
-        "also",
-        "apply",
-        "roomsunitschairsetc",
-        "isolation",
-        "unitdialysis",
-        "chair",
+        "dropdown",
         "typically",
-        "concepts",
-        "contamination",
-        "housekeeping",
-        "other",
-        "activities",
-        "like",
-        "maintenance"
+        "only",
+        "bedroom"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"operational_status\"\n        path: \"Location.operationalStatus\"\n        label: \"Enter operationalStatus\"\n        description: \"The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.operationalStatus.id",
-    "resourceType": "Location",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "location",
-        "operational",
-        "status",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Location.operationalStatus.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.operationalStatus.extension",
-    "resourceType": "Location",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "location",
-        "operational",
-        "status",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.operationalStatus.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"operational_status\"\n        path: \"Location.operationalStatus\"\n        label: \"Enter operationalStatus\"\n        description: \"The operational status of the location (typically only for a bed/room)\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://terminology.hl7.org/ValueSet/v2-0116"
+    }
   },
   {
     "path": "Location.operationalStatus.system",
     "resourceType": "Location",
-    "primitiveType": "Uri",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The identification of the code system that defines the meaning of the symbol in the code.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "operational",
         "status",
         "system",
-        "textinput",
-        "identification",
-        "code",
-        "defines",
-        "meaning",
-        "symbol"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Location.operationalStatus.system\"\n        label: \"Enter system\"\n        description: \"The identification of the code system that defines the meaning of the symbol in the code.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Location.operationalStatus.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.operationalStatus.version",
@@ -792,72 +542,36 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "operational",
         "status",
         "version",
-        "textinput",
-        "code",
-        "system",
-        "which",
-        "used",
-        "when",
-        "choosing",
-        "note",
-        "well",
-        "maintained",
-        "does",
-        "not",
-        "need",
-        "reported",
-        "because",
-        "meaning",
-        "codes",
-        "consistent",
-        "across",
-        "versions",
-        "however",
-        "cannot",
-        "consistently",
-        "assured",
-        "guaranteed",
-        "should",
-        "exchanged"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Location.operationalStatus.version\"\n        label: \"Enter version\"\n        description: \"The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Location.operationalStatus.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.operationalStatus.code",
     "resourceType": "Location",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "operational",
         "status",
         "code",
-        "dropdown",
-        "symbol",
-        "syntax",
-        "defined",
-        "system",
-        "may",
-        "predefined",
-        "expression",
-        "coding",
-        "post",
-        "coordination"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Location.operationalStatus.code\"\n        label: \"Enter code\"\n        description: \"A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Location.operationalStatus.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Location.operationalStatus.display",
@@ -868,22 +582,16 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A representation of the meaning of the code in the system, following the rules of the system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "operational",
         "status",
         "display",
-        "textinput",
-        "representation",
-        "meaning",
-        "code",
-        "system",
-        "following",
-        "rules"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Location.operationalStatus.display\"\n        label: \"Enter display\"\n        description: \"A representation of the meaning of the code in the system, following the rules of the system.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Location.operationalStatus.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.operationalStatus.userSelected",
@@ -894,28 +602,17 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "operational",
         "status",
         "user",
         "selected",
-        "checkbox",
-        "indicates",
-        "coding",
-        "chosen",
-        "directly",
-        "off",
-        "pick",
-        "list",
-        "available",
-        "items",
-        "codes",
-        "displays"
+        "checkbox"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Location.operationalStatus.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).\"\n        uiComponent: \"Checkbox\""
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Location.operationalStatus.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
   },
   {
     "path": "Location.name",
@@ -926,20 +623,16 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"name\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Name of the location as used by humans. Does not need to be unique.",
+      "jsdocDefinition": "Name of the location as used by humans",
       "coreKeywords": [
         "location",
         "name",
         "textinput",
         "used",
-        "humans",
-        "does",
-        "not",
-        "need",
-        "unique"
+        "humans"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"Location.name\"\n        label: \"Enter name\"\n        description: \"Name of the location as used by humans. Does not need to be unique.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"Location.name\"\n        label: \"Enter name\"\n        description: \"Name of the location as used by humans\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.alias",
@@ -950,7 +643,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"alias\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A list of alternate names that the location is known as, or was known as, in the past.",
+      "jsdocDefinition": "A list of alternate names that the location is known as, or was known as, in the past",
       "coreKeywords": [
         "location",
         "alias",
@@ -962,7 +655,7 @@
         "past"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"alias\"\n        path: \"Location.alias\"\n        label: \"Enter alias\"\n        description: \"A list of alternate names that the location is known as, or was known as, in the past.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"alias\"\n        path: \"Location.alias\"\n        label: \"Enter alias\"\n        description: \"A list of alternate names that the location is known as, or was known as, in the past\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.description",
@@ -973,45 +666,49 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Description of the Location, which helps in finding or referencing the place.",
+      "jsdocDefinition": "Additional details about the location that could be displayed as further information to identify the location beyond its name",
       "coreKeywords": [
         "location",
         "description",
         "textinput",
-        "which",
-        "helps",
-        "finding",
-        "referencing",
-        "place"
+        "additional",
+        "details",
+        "about",
+        "could",
+        "displayed",
+        "further",
+        "information",
+        "identify",
+        "beyond",
+        "its",
+        "name"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"Location.description\"\n        label: \"Enter description\"\n        description: \"Description of the Location, which helps in finding or referencing the place.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"Location.description\"\n        label: \"Enter description\"\n        description: \"Additional details about the location that could be displayed as further information to identify the location beyond its name\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.mode",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"mode\\\": \\\"\" (\\\"instance\\\" | \\\"kind\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Indicates whether a resource instance represents a specific location or a class of locations.",
+      "jsdocDefinition": "instance | kind",
       "coreKeywords": [
         "location",
         "mode",
-        "textinput",
-        "indicates",
-        "whether",
-        "resource",
+        "dropdown",
         "instance",
-        "represents",
-        "specific",
-        "class",
-        "locations"
+        "kind"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"mode\"\n        path: \"Location.mode\"\n        label: \"Enter mode\"\n        description: \"Indicates whether a resource instance represents a specific location or a class of locations.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"mode\"\n        path: \"Location.mode\"\n        label: \"Enter mode\"\n        description: \"instance | kind\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/location-mode"
+    },
     "choices": [
       "instance",
       "kind"
@@ -1026,16 +723,151 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Indicates the type of function performed at the location.",
+      "jsdocDefinition": "Type of function performed",
       "coreKeywords": [
         "location",
         "multiselect",
-        "indicates",
         "function",
         "performed"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Location.type\"\n        label: \"Enter type\"\n        description: \"Indicates the type of function performed at the location.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Location.type\"\n        label: \"Enter type\"\n        description: \"Type of function performed\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType"
+    }
+  },
+  {
+    "path": "Location.type.coding",
+    "resourceType": "Location",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Location.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Location.type.coding.system",
+    "resourceType": "Location",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Location.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Location.type.coding.version",
+    "resourceType": "Location",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Location.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Location.type.coding.code",
+    "resourceType": "Location",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Location.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Location.type.coding.display",
+    "resourceType": "Location",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Location.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Location.type.coding.userSelected",
+    "resourceType": "Location",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Location.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Location.type.text",
+    "resourceType": "Location",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Location.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.telecom",
@@ -1046,133 +878,39 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"telecom\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.",
+      "jsdocDefinition": "Contact details of the location",
       "coreKeywords": [
         "location",
         "telecom",
         "textinput",
         "contact",
-        "details",
-        "communication",
-        "devices",
-        "available",
-        "can",
-        "include",
-        "phone",
-        "numbers",
-        "fax",
-        "mobile",
-        "email",
-        "addresses",
-        "web",
-        "sites"
+        "details"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"telecom\"\n        path: \"Location.telecom\"\n        label: \"Enter telecom\"\n        description: \"The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.telecom.id",
-    "resourceType": "Location",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "location",
-        "telecom",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Location.telecom.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.telecom.extension",
-    "resourceType": "Location",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "location",
-        "telecom",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.telecom.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"telecom\"\n        path: \"Location.telecom\"\n        label: \"Enter telecom\"\n        description: \"Contact details of the location\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.telecom.system",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" (\\\"phone\\\" | \\\"fax\\\" | \\\"email\\\" | \\\"pager\\\" | \\\"url\\\" | \\\"sms\\\" | \\\"other\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Telecommunications form for contact point - what communications system is required to make use of the contact.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "telecom",
         "system",
-        "textinput",
-        "telecommunications",
-        "form",
-        "contact",
-        "point",
-        "what",
-        "communications",
-        "required",
-        "make",
-        "use"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Location.telecom.system\"\n        label: \"Enter system\"\n        description: \"Telecommunications form for contact point - what communications system is required to make use of the contact.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Location.telecom.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-system"
+    },
     "choices": [
       "phone",
       "fax",
@@ -1192,91 +930,63 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "telecom",
-        "textinput",
-        "actual",
-        "contact",
-        "point",
-        "details",
-        "form",
-        "meaningful",
-        "designated",
-        "communication",
-        "system",
-        "phone",
-        "number",
-        "email",
-        "address"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Location.telecom.value\"\n        label: \"Enter value\"\n        description: \"The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Location.telecom.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.telecom.use",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"temp\\\" | \\\"old\\\" | \\\"home\\\" | \\\"work\\\" | \\\"mobile\\\") \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"home\\\" | \\\"work\\\" | \\\"temp\\\" | \\\"old\\\" | \\\"mobile\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Identifies the purpose for the contact point.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "telecom",
         "use",
-        "textinput",
-        "identifies",
-        "purpose",
-        "contact",
-        "point"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Location.telecom.use\"\n        label: \"Enter use\"\n        description: \"Identifies the purpose for the contact point.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Location.telecom.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-use"
+    },
     "choices": [
-      "temp",
-      "old",
       "home",
       "work",
+      "temp",
+      "old",
       "mobile"
     ]
   },
   {
     "path": "Location.telecom.rank",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "positiveInt",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "telecom",
         "rank",
-        "textinput",
-        "specifies",
-        "preferred",
-        "order",
-        "which",
-        "use",
-        "set",
-        "contacts",
-        "contactpoints",
-        "lower",
-        "values",
-        "are",
-        "more",
-        "than",
-        "those",
-        "higher"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"Location.telecom.rank\"\n        label: \"Enter rank\"\n        description: \"Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"Location.telecom.rank\"\n        label: \"Enter rank\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Location.telecom.period",
@@ -1287,155 +997,55 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period when the contact point was/is in use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "telecom",
         "period",
-        "textinput",
-        "time",
-        "when",
-        "contact",
-        "point",
-        "wasis",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Location.telecom.period\"\n        label: \"Enter period\"\n        description: \"Time period when the contact point was/is in use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.telecom.period.id",
-    "resourceType": "Location",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "location",
-        "telecom",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Location.telecom.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.telecom.period.extension",
-    "resourceType": "Location",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "location",
-        "telecom",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.telecom.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Location.telecom.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.telecom.period.start",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "telecom",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Location.telecom.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Location.telecom.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Location.telecom.period.end",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "telecom",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Location.telecom.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Location.telecom.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Location.address",
@@ -1446,7 +1056,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"address\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Physical location.",
+      "jsdocDefinition": "Physical location",
       "coreKeywords": [
         "location",
         "address",
@@ -1454,142 +1064,59 @@
         "physical"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"address\"\n        path: \"Location.address\"\n        label: \"Enter address\"\n        description: \"Physical location.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.address.id",
-    "resourceType": "Location",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "location",
-        "address",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Location.address.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.address.extension",
-    "resourceType": "Location",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "location",
-        "address",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.address.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"address\"\n        path: \"Location.address\"\n        label: \"Enter address\"\n        description: \"Physical location\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.address.use",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"temp\\\" | \\\"old\\\" | \\\"home\\\" | \\\"work\\\" | \\\"billing\\\") \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"home\\\" | \\\"work\\\" | \\\"temp\\\" | \\\"old\\\" | \\\"billing\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The purpose of this address.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
         "use",
-        "textinput",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Location.address.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this address.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Location.address.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/address-use"
+    },
     "choices": [
-      "temp",
-      "old",
       "home",
       "work",
+      "temp",
+      "old",
       "billing"
     ]
   },
   {
     "path": "Location.address.type",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" (\\\"postal\\\" | \\\"physical\\\" | \\\"both\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
-        "textinput",
-        "distinguishes",
-        "between",
-        "physical",
-        "addresses",
-        "those",
-        "you",
-        "can",
-        "visit",
-        "mailing",
-        "boxes",
-        "care",
-        "most",
-        "are",
-        "both"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Location.address.type\"\n        label: \"Enter type\"\n        description: \"Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Location.address.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/address-type"
+    },
     "choices": [
       "postal",
       "physical",
@@ -1605,27 +1132,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
         "text",
-        "textinput",
-        "specifies",
-        "entire",
-        "should",
-        "displayed",
-        "postal",
-        "label",
-        "may",
-        "provided",
-        "instead",
-        "well",
-        "specific",
-        "parts"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Location.address.text\"\n        label: \"Enter text\"\n        description: \"Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Location.address.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.address.line",
@@ -1636,27 +1151,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"line\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
         "line",
-        "textinput",
-        "component",
-        "house",
-        "number",
-        "apartment",
-        "street",
-        "name",
-        "direction",
-        "box",
-        "delivery",
-        "hints",
-        "similar",
-        "information"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"line\"\n        path: \"Location.address.line\"\n        label: \"Enter line\"\n        description: \"This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"line\"\n        path: \"Location.address.line\"\n        label: \"Enter line\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.address.city",
@@ -1667,23 +1170,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"city\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The name of the city, town, suburb, village or other community or delivery center.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
         "city",
-        "textinput",
-        "name",
-        "town",
-        "suburb",
-        "village",
-        "other",
-        "community",
-        "delivery",
-        "center"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"city\"\n        path: \"Location.address.city\"\n        label: \"Enter city\"\n        description: \"The name of the city, town, suburb, village or other community or delivery center.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"city\"\n        path: \"Location.address.city\"\n        label: \"Enter city\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.address.district",
@@ -1694,19 +1189,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"district\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The name of the administrative area (county).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
         "district",
-        "textinput",
-        "name",
-        "administrative",
-        "area",
-        "county"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"district\"\n        path: \"Location.address.district\"\n        label: \"Enter district\"\n        description: \"The name of the administrative area (county).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"district\"\n        path: \"Location.address.district\"\n        label: \"Enter district\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.address.state",
@@ -1717,30 +1208,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"state\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
         "state",
-        "textinput",
-        "sub",
-        "unit",
-        "country",
-        "limited",
-        "sovereignty",
-        "federally",
-        "organized",
-        "code",
-        "may",
-        "used",
-        "codes",
-        "are",
-        "common",
-        "use",
-        "letter"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"state\"\n        path: \"Location.address.state\"\n        label: \"Enter state\"\n        description: \"Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"state\"\n        path: \"Location.address.state\"\n        label: \"Enter state\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.address.postalCode",
@@ -1751,20 +1227,16 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"postal_code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A postal code designating a region defined by the postal service.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
         "postal",
         "code",
-        "dropdown",
-        "designating",
-        "region",
-        "defined",
-        "service"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"postal_code\"\n        path: \"Location.address.postalCode\"\n        label: \"Enter postalCode\"\n        description: \"A postal code designating a region defined by the postal service.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"postal_code\"\n        path: \"Location.address.postalCode\"\n        label: \"Enter postalCode\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Location.address.country",
@@ -1775,20 +1247,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"country\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Country - a nation as commonly understood or generally accepted.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
         "country",
-        "textinput",
-        "nation",
-        "commonly",
-        "understood",
-        "generally",
-        "accepted"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"country\"\n        path: \"Location.address.country\"\n        label: \"Enter country\"\n        description: \"Country - a nation as commonly understood or generally accepted.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"country\"\n        path: \"Location.address.country\"\n        label: \"Enter country\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.address.period",
@@ -1799,153 +1266,55 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period when address was/is in use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
         "period",
-        "textinput",
-        "time",
-        "when",
-        "wasis",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Location.address.period\"\n        label: \"Enter period\"\n        description: \"Time period when address was/is in use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.address.period.id",
-    "resourceType": "Location",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "location",
-        "address",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Location.address.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.address.period.extension",
-    "resourceType": "Location",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "location",
-        "address",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.address.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Location.address.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.address.period.start",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Location.address.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Location.address.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Location.address.period.end",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "location",
         "address",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Location.address.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Location.address.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Location.physicalType",
@@ -1956,19 +1325,158 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"physical_type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Physical form of the location, e.g. building, room, vehicle, road.",
+      "jsdocDefinition": "Physical form of the location",
       "coreKeywords": [
         "location",
         "physical",
         "dropdown",
-        "form",
-        "building",
-        "room",
-        "vehicle",
-        "road"
+        "form"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"physical_type\"\n        path: \"Location.physicalType\"\n        label: \"Enter physicalType\"\n        description: \"Physical form of the location, e.g. building, room, vehicle, road.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"physical_type\"\n        path: \"Location.physicalType\"\n        label: \"Enter physicalType\"\n        description: \"Physical form of the location\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/location-physical-type"
+    }
+  },
+  {
+    "path": "Location.physicalType.coding",
+    "resourceType": "Location",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "physical",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Location.physicalType.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Location.physicalType.coding.system",
+    "resourceType": "Location",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "physical",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Location.physicalType.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Location.physicalType.coding.version",
+    "resourceType": "Location",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "physical",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Location.physicalType.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Location.physicalType.coding.code",
+    "resourceType": "Location",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "physical",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Location.physicalType.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Location.physicalType.coding.display",
+    "resourceType": "Location",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "physical",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Location.physicalType.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Location.physicalType.coding.userSelected",
+    "resourceType": "Location",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "physical",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Location.physicalType.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Location.physicalType.text",
+    "resourceType": "Location",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "location",
+        "physical",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Location.physicalType.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.position",
@@ -1979,55 +1487,16 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"position\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The absolute geographic location of the Location, expressed using the WGS84 datum (This is the same co-ordinate system used in KML).",
+      "jsdocDefinition": "The absolute geographic location",
       "coreKeywords": [
         "location",
         "position",
         "textinput",
         "absolute",
-        "geographic",
-        "expressed",
-        "using",
-        "wgs",
-        "datum",
-        "same",
-        "ordinate",
-        "system",
-        "used",
-        "kml"
+        "geographic"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"position\"\n        path: \"Location.position\"\n        label: \"Enter position\"\n        description: \"The absolute geographic location of the Location, expressed using the WGS84 datum (This is the same co-ordinate system used in KML).\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.position.id",
-    "resourceType": "Location",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "location",
-        "position",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Location.position.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"position\"\n        path: \"Location.position\"\n        label: \"Enter position\"\n        description: \"The absolute geographic location\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.position.extension",
@@ -2038,42 +1507,19 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "location",
         "position",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.position.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.position.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.position.modifierExtension",
@@ -2084,152 +1530,84 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "location",
         "position",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Location.position.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Location.position.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.position.longitude",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "decimal",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"longitude\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"longitude\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).",
+      "jsdocDefinition": "Longitude with WGS84 datum",
       "coreKeywords": [
         "location",
         "position",
         "longitude",
-        "textinput",
-        "domain",
-        "interpretation",
-        "are",
-        "same",
-        "text",
-        "kml",
-        "see",
-        "notes",
-        "below"
+        "numericinput",
+        "wgs",
+        "datum"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"longitude\"\n        path: \"Location.position.longitude\"\n        label: \"Enter longitude\"\n        description: \"Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"longitude\"\n        path: \"Location.position.longitude\"\n        label: \"Enter longitude\"\n        description: \"Longitude with WGS84 datum\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Location.position.latitude",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "decimal",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"latitude\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"latitude\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).",
+      "jsdocDefinition": "Latitude with WGS84 datum",
       "coreKeywords": [
         "location",
         "position",
         "latitude",
-        "textinput",
-        "domain",
-        "interpretation",
-        "are",
-        "same",
-        "text",
-        "kml",
-        "see",
-        "notes",
-        "below"
+        "numericinput",
+        "wgs",
+        "datum"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"latitude\"\n        path: \"Location.position.latitude\"\n        label: \"Enter latitude\"\n        description: \"Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"latitude\"\n        path: \"Location.position.latitude\"\n        label: \"Enter latitude\"\n        description: \"Latitude with WGS84 datum\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Location.position.altitude",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "decimal",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"altitude\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"altitude\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).",
+      "jsdocDefinition": "Altitude with WGS84 datum",
       "coreKeywords": [
         "location",
         "position",
         "altitude",
-        "textinput",
-        "domain",
-        "interpretation",
-        "are",
-        "same",
-        "text",
-        "kml",
-        "see",
-        "notes",
-        "below"
+        "numericinput",
+        "wgs",
+        "datum"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"altitude\"\n        path: \"Location.position.altitude\"\n        label: \"Enter altitude\"\n        description: \"Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"altitude\"\n        path: \"Location.position.altitude\"\n        label: \"Enter altitude\"\n        description: \"Altitude with WGS84 datum\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Location.managingOrganization",
@@ -2240,24 +1618,24 @@
     "outboundEdges": [
       {
         "relationshipType": "managingOrganization-link",
-        "targetResource": "managingOrganization",
-        "traversalPath": "managingOrganization.id"
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"managing_organization\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The organization responsible for the provisioning and upkeep of the location.",
+      "jsdocDefinition": "Organization responsible for provisioning and upkeep",
       "coreKeywords": [
         "location",
         "managing",
         "organization",
-        "dropdown",
+        "textinput",
         "responsible",
         "provisioning",
         "upkeep"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"managing_organization\"\n        path: \"Location.managingOrganization\"\n        label: \"Enter managingOrganization\"\n        description: \"The organization responsible for the provisioning and upkeep of the location.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"managing_organization\"\n        path: \"Location.managingOrganization\"\n        label: \"Enter managingOrganization\"\n        description: \"Organization responsible for provisioning and upkeep\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.partOf",
@@ -2268,34 +1646,34 @@
     "outboundEdges": [
       {
         "relationshipType": "partOf-link",
-        "targetResource": "partOf",
-        "traversalPath": "partOf.id"
+        "targetResource": "Location",
+        "traversalPath": "Location.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"part_of\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Another Location of which this Location is physically a part of.",
+      "jsdocDefinition": "Another Location this one is physically a part of",
       "coreKeywords": [
         "location",
         "part",
-        "dropdown",
+        "textinput",
         "another",
-        "which",
+        "one",
         "physically"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"part_of\"\n        path: \"Location.partOf\"\n        label: \"Enter partOf\"\n        description: \"Another Location of which this Location is physically a part of.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"part_of\"\n        path: \"Location.partOf\"\n        label: \"Enter partOf\"\n        description: \"Another Location this one is physically a part of\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.hoursOfOperation",
     "resourceType": "Location",
     "primitiveType": "object",
     "isArray": true,
-    "arrayTargetType": "LocationHoursOfOperation",
+    "arrayTargetType": "BackboneElement",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"hours_of_operation\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "What days/times during a week is this location usually open.",
+      "jsdocDefinition": "What days/times during a week is this location usually open",
       "coreKeywords": [
         "location",
         "hours",
@@ -2309,38 +1687,7 @@
         "open"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"hours_of_operation\"\n        path: \"Location.hoursOfOperation\"\n        label: \"Enter hoursOfOperation\"\n        description: \"What days/times during a week is this location usually open.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Location.hoursOfOperation.id",
-    "resourceType": "Location",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "location",
-        "hours",
-        "operation",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Location.hoursOfOperation.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"hours_of_operation\"\n        path: \"Location.hoursOfOperation\"\n        label: \"Enter hoursOfOperation\"\n        description: \"What days/times during a week is this location usually open\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.hoursOfOperation.extension",
@@ -2351,43 +1698,20 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "location",
         "hours",
         "operation",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.hoursOfOperation.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Location.hoursOfOperation.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.hoursOfOperation.modifierExtension",
@@ -2398,98 +1722,63 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "location",
         "hours",
         "operation",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Location.hoursOfOperation.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Location.hoursOfOperation.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.hoursOfOperation.daysOfWeek",
     "resourceType": "Location",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": true,
-    "arrayTargetType": "Code",
+    "arrayTargetType": "code",
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"days_of_week\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "gbnfRuleToken": "\"\\\"days_of_week\\\": [ \" ( \\\"\" (\\\"mon\\\" | \\\"tue\\\" | \\\"wed\\\" | \\\"thu\\\" | \\\"fri\\\" | \\\"sat\\\" | \\\"sun\\\") \"\\\"\" ( \", \\\"\" (\\\"mon\\\" | \\\"tue\\\" | \\\"wed\\\" | \\\"thu\\\" | \\\"fri\\\" | \\\"sat\\\" | \\\"sun\\\") \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Indicates which days of the week are available between the start and end Times.",
+      "jsdocDefinition": "mon | tue | wed | thu | fri | sat | sun",
       "coreKeywords": [
         "location",
         "hours",
         "operation",
         "days",
         "week",
-        "textinput",
-        "indicates",
-        "which",
-        "are",
-        "available",
-        "between",
-        "start",
-        "end",
-        "times"
+        "multiselect",
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"days_of_week\"\n        path: \"Location.hoursOfOperation.daysOfWeek\"\n        label: \"Enter daysOfWeek\"\n        description: \"Indicates which days of the week are available between the start and end Times.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"days_of_week\"\n        path: \"Location.hoursOfOperation.daysOfWeek\"\n        label: \"Enter daysOfWeek\"\n        description: \"mon | tue | wed | thu | fri | sat | sun\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/days-of-week"
+    },
+    "choices": [
+      "mon",
+      "tue",
+      "wed",
+      "thu",
+      "fri",
+      "sat",
+      "sun"
+    ]
   },
   {
     "path": "Location.hoursOfOperation.allDay",
@@ -2500,7 +1789,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"all_day\\\": \\\"\" (true | false) \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The Location is open all day.",
+      "jsdocDefinition": "The Location is open all day",
       "coreKeywords": [
         "location",
         "hours",
@@ -2511,18 +1800,18 @@
         "open"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"all_day\"\n        path: \"Location.hoursOfOperation.allDay\"\n        label: \"Enter allDay\"\n        description: \"The Location is open all day.\"\n        uiComponent: \"Checkbox\""
+    "reverseYamlSnippet": "      - id: \"all_day\"\n        path: \"Location.hoursOfOperation.allDay\"\n        label: \"Enter allDay\"\n        description: \"The Location is open all day\"\n        uiComponent: \"Checkbox\""
   },
   {
     "path": "Location.hoursOfOperation.openingTime",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "time",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"opening_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time that the Location opens.",
+      "jsdocDefinition": "Time that the Location opens",
       "coreKeywords": [
         "location",
         "hours",
@@ -2533,18 +1822,18 @@
         "opens"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"opening_time\"\n        path: \"Location.hoursOfOperation.openingTime\"\n        label: \"Enter openingTime\"\n        description: \"Time that the Location opens.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"opening_time\"\n        path: \"Location.hoursOfOperation.openingTime\"\n        label: \"Enter openingTime\"\n        description: \"Time that the Location opens\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.hoursOfOperation.closingTime",
     "resourceType": "Location",
-    "primitiveType": "object",
+    "primitiveType": "time",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"closing_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time that the Location closes.",
+      "jsdocDefinition": "Time that the Location closes",
       "coreKeywords": [
         "location",
         "hours",
@@ -2555,7 +1844,7 @@
         "closes"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"closing_time\"\n        path: \"Location.hoursOfOperation.closingTime\"\n        label: \"Enter closingTime\"\n        description: \"Time that the Location closes.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"closing_time\"\n        path: \"Location.hoursOfOperation.closingTime\"\n        label: \"Enter closingTime\"\n        description: \"Time that the Location closes\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.availabilityExceptions",
@@ -2566,33 +1855,16 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"availability_exceptions\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.",
+      "jsdocDefinition": "Description of availability exceptions",
       "coreKeywords": [
         "location",
         "availability",
         "exceptions",
         "textinput",
-        "description",
-        "when",
-        "locations",
-        "opening",
-        "ours",
-        "are",
-        "different",
-        "normal",
-        "public",
-        "holiday",
-        "succinctly",
-        "describing",
-        "all",
-        "possible",
-        "site",
-        "detailed",
-        "hours",
-        "times"
+        "description"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"availability_exceptions\"\n        path: \"Location.availabilityExceptions\"\n        label: \"Enter availabilityExceptions\"\n        description: \"A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"availability_exceptions\"\n        path: \"Location.availabilityExceptions\"\n        label: \"Enter availabilityExceptions\"\n        description: \"Description of availability exceptions\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Location.endpoint",
@@ -2603,17 +1875,17 @@
     "outboundEdges": [
       {
         "relationshipType": "endpoint-link",
-        "targetResource": "endpoint",
-        "traversalPath": "endpoint.id"
+        "targetResource": "Endpoint",
+        "traversalPath": "Endpoint.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"endpoint\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Technical endpoints providing access to services operated for the location.",
+      "jsdocDefinition": "Technical endpoints providing access to services operated for the location",
       "coreKeywords": [
         "location",
         "endpoint",
-        "multiselect",
+        "textinput",
         "technical",
         "endpoints",
         "providing",
@@ -2622,6 +1894,6 @@
         "operated"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"endpoint\"\n        path: \"Location.endpoint\"\n        label: \"Enter endpoint\"\n        description: \"Technical endpoints providing access to services operated for the location.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"endpoint\"\n        path: \"Location.endpoint\"\n        label: \"Enter endpoint\"\n        description: \"Technical endpoints providing access to services operated for the location\"\n        uiComponent: \"TextInput\""
   }
 ]

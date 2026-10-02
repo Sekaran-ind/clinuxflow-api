@@ -1,0 +1,10 @@
+{
+  "comment": "Official FHIR packages this API is built from, pinned by version and sha256. Fetched from the FHIR package registry by `npm run fetch:packages`; the build turns them into src/generated/. The ABDM package's content (profiles, value sets, code systems, examples) is identical to clinux-docs/abdm-fhir-data-xchange/package.tgz; only the IG build timestamp differs.",
+  "registry": "https://packages.fhir.org",
+  "packages": [
+    { "id": "hl7.fhir.r4.core", "version": "4.0.1", "sha256": "ebd7731df7d36b5b7d39d5fb6c9d77b44bb7fe5742f1a2e87f164738c3289d44", "role": "FHIR R4 base: every resource and datatype definition" },
+    { "id": "hl7.terminology.r4", "version": "6.0.2", "sha256": "8e59fc4e707c6924b6bdc7cf4fa9bc4b05dadb23892cf70eb2cd612158819881", "role": "HL7 terminology (THO): code systems and value sets the ABDM IG depends on" },
+    { "id": "hl7.fhir.uv.extensions.r4", "version": "5.1.0", "sha256": "f96eec24d8ad2c043cf295acdfab46b01e0e1fcc568740aab3fd1acee4cb0456", "role": "HL7 extension definitions the ABDM IG depends on" },
+    { "id": "ndhm.in", "version": "6.5.0", "sha256": "fc5a7a539238fb30dd9134b4c915a62c8bc052db1e5d286af98d74a0a730cafe", "role": "FHIR Implementation Guide for ABDM (NRCeS), the profiles ClinuxFlow conforms to" }
+  ]
+}

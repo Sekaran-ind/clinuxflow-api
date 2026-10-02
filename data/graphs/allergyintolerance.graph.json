@@ -1,0 +1,2850 @@
+[
+  {
+    "path": "AllergyIntolerance.resourceType",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a AllergyIntolerance resource",
+      "coreKeywords": [
+        "allergyintolerance",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"AllergyIntolerance.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a AllergyIntolerance resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.id",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"AllergyIntolerance.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.text",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"AllergyIntolerance.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.contained",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"AllergyIntolerance.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.extension",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"AllergyIntolerance.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.modifierExtension",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"AllergyIntolerance.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "External ids for this item",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "textinput",
+        "external",
+        "ids",
+        "item"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"AllergyIntolerance.identifier\"\n        label: \"Enter identifier\"\n        description: \"External ids for this item\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.use",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"AllergyIntolerance.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "AllergyIntolerance.identifier.type",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"AllergyIntolerance.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "AllergyIntolerance.identifier.type.coding",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"AllergyIntolerance.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.type.coding.system",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"AllergyIntolerance.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.type.coding.version",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"AllergyIntolerance.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.type.coding.code",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"AllergyIntolerance.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.type.coding.display",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"AllergyIntolerance.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.type.coding.userSelected",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"AllergyIntolerance.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.type.text",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"AllergyIntolerance.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.system",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"AllergyIntolerance.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.value",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"AllergyIntolerance.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.period",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"AllergyIntolerance.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.period.start",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"AllergyIntolerance.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.period.end",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"AllergyIntolerance.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "AllergyIntolerance.identifier.assigner",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"AllergyIntolerance.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.clinicalStatus",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"clinical_status\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "active | inactive | resolved",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "clinical",
+        "status",
+        "dropdown",
+        "active",
+        "inactive",
+        "resolved"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"clinical_status\"\n        path: \"AllergyIntolerance.clinicalStatus\"\n        label: \"Enter clinicalStatus\"\n        description: \"active | inactive | resolved\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/allergyintolerance-clinical"
+    }
+  },
+  {
+    "path": "AllergyIntolerance.clinicalStatus.coding",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "clinical",
+        "status",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"AllergyIntolerance.clinicalStatus.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "AllergyIntolerance.clinicalStatus.coding.system",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "clinical",
+        "status",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"AllergyIntolerance.clinicalStatus.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.clinicalStatus.coding.version",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "clinical",
+        "status",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"AllergyIntolerance.clinicalStatus.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.clinicalStatus.coding.code",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "clinical",
+        "status",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"AllergyIntolerance.clinicalStatus.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.clinicalStatus.coding.display",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "clinical",
+        "status",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"AllergyIntolerance.clinicalStatus.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.clinicalStatus.coding.userSelected",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "clinical",
+        "status",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"AllergyIntolerance.clinicalStatus.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "AllergyIntolerance.clinicalStatus.text",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "clinical",
+        "status",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"AllergyIntolerance.clinicalStatus.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.verificationStatus",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"verification_status\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "unconfirmed | confirmed | refuted | entered-in-error",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "verification",
+        "status",
+        "dropdown",
+        "unconfirmed",
+        "confirmed",
+        "refuted",
+        "entered",
+        "error"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"verification_status\"\n        path: \"AllergyIntolerance.verificationStatus\"\n        label: \"Enter verificationStatus\"\n        description: \"unconfirmed | confirmed | refuted | entered-in-error\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/allergyintolerance-verification"
+    }
+  },
+  {
+    "path": "AllergyIntolerance.verificationStatus.coding",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "verification",
+        "status",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"AllergyIntolerance.verificationStatus.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "AllergyIntolerance.verificationStatus.coding.system",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "verification",
+        "status",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"AllergyIntolerance.verificationStatus.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.verificationStatus.coding.version",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "verification",
+        "status",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"AllergyIntolerance.verificationStatus.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.verificationStatus.coding.code",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "verification",
+        "status",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"AllergyIntolerance.verificationStatus.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.verificationStatus.coding.display",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "verification",
+        "status",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"AllergyIntolerance.verificationStatus.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.verificationStatus.coding.userSelected",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "verification",
+        "status",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"AllergyIntolerance.verificationStatus.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "AllergyIntolerance.verificationStatus.text",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "verification",
+        "status",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"AllergyIntolerance.verificationStatus.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.type",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" (\\\"allergy\\\" | \\\"intolerance\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "allergy | intolerance - Underlying mechanism (if known)",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "dropdown",
+        "underlying",
+        "mechanism",
+        "known"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"AllergyIntolerance.type\"\n        label: \"Enter type\"\n        description: \"allergy | intolerance - Underlying mechanism (if known)\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/allergy-intolerance-type"
+    },
+    "choices": [
+      "allergy",
+      "intolerance"
+    ]
+  },
+  {
+    "path": "AllergyIntolerance.category",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": true,
+    "arrayTargetType": "code",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"category\\\": [ \" ( \\\"\" (\\\"food\\\" | \\\"medication\\\" | \\\"environment\\\" | \\\"biologic\\\") \"\\\"\" ( \", \\\"\" (\\\"food\\\" | \\\"medication\\\" | \\\"environment\\\" | \\\"biologic\\\") \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "food | medication | environment | biologic",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "category",
+        "multiselect",
+        "food",
+        "medication",
+        "environment",
+        "biologic"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"category\"\n        path: \"AllergyIntolerance.category\"\n        label: \"Enter category\"\n        description: \"food | medication | environment | biologic\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/allergy-intolerance-category"
+    },
+    "choices": [
+      "food",
+      "medication",
+      "environment",
+      "biologic"
+    ]
+  },
+  {
+    "path": "AllergyIntolerance.criticality",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"criticality\\\": \\\"\" (\\\"low\\\" | \\\"high\\\" | \\\"unable-to-assess\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "low | high | unable-to-assess",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "criticality",
+        "dropdown",
+        "low",
+        "high",
+        "unable",
+        "assess"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"criticality\"\n        path: \"AllergyIntolerance.criticality\"\n        label: \"Enter criticality\"\n        description: \"low | high | unable-to-assess\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality"
+    },
+    "choices": [
+      "low",
+      "high",
+      "unable-to-assess"
+    ]
+  },
+  {
+    "path": "AllergyIntolerance.code",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Code that identifies the allergy or intolerance",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "code",
+        "dropdown",
+        "identifies"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"AllergyIntolerance.code\"\n        label: \"Enter code\"\n        description: \"Code that identifies the allergy or intolerance\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/allergyintolerance-code"
+    }
+  },
+  {
+    "path": "AllergyIntolerance.code.coding",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"AllergyIntolerance.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "AllergyIntolerance.code.coding.system",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"AllergyIntolerance.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.code.coding.version",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"AllergyIntolerance.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.code.coding.code",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"AllergyIntolerance.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.code.coding.display",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"AllergyIntolerance.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.code.coding.userSelected",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"AllergyIntolerance.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "AllergyIntolerance.code.text",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"AllergyIntolerance.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.patient",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "patient-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"patient\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who the sensitivity is for",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "patient",
+        "textinput",
+        "who",
+        "sensitivity"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"patient\"\n        path: \"AllergyIntolerance.patient\"\n        label: \"Enter patient\"\n        description: \"Who the sensitivity is for\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.encounter",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "encounter-link",
+        "targetResource": "Encounter",
+        "traversalPath": "Encounter.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"encounter\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Encounter when the allergy or intolerance was asserted",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "encounter",
+        "textinput",
+        "when",
+        "asserted"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"encounter\"\n        path: \"AllergyIntolerance.encounter\"\n        label: \"Enter encounter\"\n        description: \"Encounter when the allergy or intolerance was asserted\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onset[x]",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When allergy or intolerance was identified",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onsetx",
+        "datepicker",
+        "when",
+        "identified"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset[x]\"\n        path: \"AllergyIntolerance.onset[x]\"\n        label: \"Enter onset[x]\"\n        description: \"When allergy or intolerance was identified\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetDateTime",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When allergy or intolerance was identified",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "date",
+        "time",
+        "datepicker",
+        "when",
+        "identified"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_date_time\"\n        path: \"AllergyIntolerance.onsetDateTime\"\n        label: \"Enter onsetDateTime\"\n        description: \"When allergy or intolerance was identified\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetAge",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_age\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When allergy or intolerance was identified",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "age",
+        "textinput",
+        "when",
+        "identified"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_age\"\n        path: \"AllergyIntolerance.onsetAge\"\n        label: \"Enter onsetAge\"\n        description: \"When allergy or intolerance was identified\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetAge.value",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "age",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"AllergyIntolerance.onsetAge.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetAge.comparator",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "age",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"AllergyIntolerance.onsetAge.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "AllergyIntolerance.onsetAge.unit",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "age",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"AllergyIntolerance.onsetAge.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetAge.system",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "age",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"AllergyIntolerance.onsetAge.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetAge.code",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "age",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"AllergyIntolerance.onsetAge.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetPeriod",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When allergy or intolerance was identified",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "period",
+        "textinput",
+        "when",
+        "identified"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_period\"\n        path: \"AllergyIntolerance.onsetPeriod\"\n        label: \"Enter onsetPeriod\"\n        description: \"When allergy or intolerance was identified\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetPeriod.start",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"AllergyIntolerance.onsetPeriod.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetPeriod.end",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"AllergyIntolerance.onsetPeriod.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_range\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When allergy or intolerance was identified",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "textinput",
+        "when",
+        "identified"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_range\"\n        path: \"AllergyIntolerance.onsetRange\"\n        label: \"Enter onsetRange\"\n        description: \"When allergy or intolerance was identified\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.low",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"low\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "low",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"low\"\n        path: \"AllergyIntolerance.onsetRange.low\"\n        label: \"Enter low\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.low.value",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "low",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"AllergyIntolerance.onsetRange.low.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.low.comparator",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "low",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"AllergyIntolerance.onsetRange.low.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.low.unit",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "low",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"AllergyIntolerance.onsetRange.low.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.low.system",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "low",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"AllergyIntolerance.onsetRange.low.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.low.code",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "low",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"AllergyIntolerance.onsetRange.low.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.high",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"high\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "high",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"high\"\n        path: \"AllergyIntolerance.onsetRange.high\"\n        label: \"Enter high\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.high.value",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "high",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"AllergyIntolerance.onsetRange.high.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.high.comparator",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "high",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"AllergyIntolerance.onsetRange.high.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.high.unit",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "high",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"AllergyIntolerance.onsetRange.high.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.high.system",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "high",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"AllergyIntolerance.onsetRange.high.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetRange.high.code",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "range",
+        "high",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"AllergyIntolerance.onsetRange.high.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.onsetString",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When allergy or intolerance was identified",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "onset",
+        "string",
+        "textinput",
+        "when",
+        "identified"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_string\"\n        path: \"AllergyIntolerance.onsetString\"\n        label: \"Enter onsetString\"\n        description: \"When allergy or intolerance was identified\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.recordedDate",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"recorded_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Date first version of the resource instance was recorded",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "recorded",
+        "date",
+        "datepicker",
+        "first",
+        "version",
+        "resource",
+        "instance"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"recorded_date\"\n        path: \"AllergyIntolerance.recordedDate\"\n        label: \"Enter recordedDate\"\n        description: \"Date first version of the resource instance was recorded\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "AllergyIntolerance.recorder",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "recorder-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "recorder-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "recorder-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "recorder-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"recorder\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who recorded the sensitivity",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "recorder",
+        "textinput",
+        "who",
+        "recorded",
+        "sensitivity"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"recorder\"\n        path: \"AllergyIntolerance.recorder\"\n        label: \"Enter recorder\"\n        description: \"Who recorded the sensitivity\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.asserter",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "asserter-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "asserter-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      },
+      {
+        "relationshipType": "asserter-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "asserter-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"asserter\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Source of the information about the allergy",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "asserter",
+        "textinput",
+        "source",
+        "information",
+        "about"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"asserter\"\n        path: \"AllergyIntolerance.asserter\"\n        label: \"Enter asserter\"\n        description: \"Source of the information about the allergy\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.lastOccurrence",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"last_occurrence\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Date(/time) of last known occurrence of a reaction",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "last",
+        "occurrence",
+        "datepicker",
+        "datetime",
+        "known",
+        "reaction"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"last_occurrence\"\n        path: \"AllergyIntolerance.lastOccurrence\"\n        label: \"Enter lastOccurrence\"\n        description: \"Date(/time) of last known occurrence of a reaction\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "AllergyIntolerance.note",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional text not captured in other fields",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "note",
+        "textinput",
+        "additional",
+        "text",
+        "not",
+        "captured",
+        "other",
+        "fields"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"AllergyIntolerance.note\"\n        label: \"Enter note\"\n        description: \"Additional text not captured in other fields\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.note.author[x]",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author[x]-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "note",
+        "authorx",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author[x]\"\n        path: \"AllergyIntolerance.note.author[x]\"\n        label: \"Enter author[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.note.authorReference",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "note",
+        "author",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"AllergyIntolerance.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.note.authorString",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "note",
+        "author",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"AllergyIntolerance.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.note.time",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "note",
+        "time",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"AllergyIntolerance.note.time\"\n        label: \"Enter time\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "AllergyIntolerance.note.text",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "note",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"AllergyIntolerance.note.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"reaction\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Adverse Reaction Events linked to exposure to substance",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "textinput",
+        "adverse",
+        "events",
+        "linked",
+        "exposure",
+        "substance"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reaction\"\n        path: \"AllergyIntolerance.reaction\"\n        label: \"Enter reaction\"\n        description: \"Adverse Reaction Events linked to exposure to substance\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.extension",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"AllergyIntolerance.reaction.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.modifierExtension",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"AllergyIntolerance.reaction.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.substance",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"substance\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Specific substance or pharmaceutical product considered to be responsible for event",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "substance",
+        "dropdown",
+        "specific",
+        "pharmaceutical",
+        "product",
+        "considered",
+        "responsible",
+        "event"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"substance\"\n        path: \"AllergyIntolerance.reaction.substance\"\n        label: \"Enter substance\"\n        description: \"Specific substance or pharmaceutical product considered to be responsible for event\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/substance-code"
+    }
+  },
+  {
+    "path": "AllergyIntolerance.reaction.substance.coding",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "substance",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"AllergyIntolerance.reaction.substance.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.substance.coding.system",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "substance",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"AllergyIntolerance.reaction.substance.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.substance.coding.version",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "substance",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"AllergyIntolerance.reaction.substance.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.substance.coding.code",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "substance",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"AllergyIntolerance.reaction.substance.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.substance.coding.display",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "substance",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"AllergyIntolerance.reaction.substance.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.substance.coding.userSelected",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "substance",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"AllergyIntolerance.reaction.substance.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.substance.text",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "substance",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"AllergyIntolerance.reaction.substance.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.manifestation",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"manifestation\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Clinical symptoms/signs associated with the Event",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "manifestation",
+        "multiselect",
+        "clinical",
+        "symptomssigns",
+        "associated",
+        "event"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"manifestation\"\n        path: \"AllergyIntolerance.reaction.manifestation\"\n        label: \"Enter manifestation\"\n        description: \"Clinical symptoms/signs associated with the Event\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/clinical-findings"
+    }
+  },
+  {
+    "path": "AllergyIntolerance.reaction.manifestation.coding",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "manifestation",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"AllergyIntolerance.reaction.manifestation.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.manifestation.coding.system",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "manifestation",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"AllergyIntolerance.reaction.manifestation.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.manifestation.coding.version",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "manifestation",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"AllergyIntolerance.reaction.manifestation.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.manifestation.coding.code",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "manifestation",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"AllergyIntolerance.reaction.manifestation.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.manifestation.coding.display",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "manifestation",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"AllergyIntolerance.reaction.manifestation.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.manifestation.coding.userSelected",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "manifestation",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"AllergyIntolerance.reaction.manifestation.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.manifestation.text",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "manifestation",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"AllergyIntolerance.reaction.manifestation.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.description",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Description of the event as a whole",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "description",
+        "textinput",
+        "event",
+        "whole"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"AllergyIntolerance.reaction.description\"\n        label: \"Enter description\"\n        description: \"Description of the event as a whole\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.onset",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Date(/time) when manifestations showed",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "onset",
+        "datepicker",
+        "datetime",
+        "when",
+        "manifestations",
+        "showed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset\"\n        path: \"AllergyIntolerance.reaction.onset\"\n        label: \"Enter onset\"\n        description: \"Date(/time) when manifestations showed\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.severity",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"severity\\\": \\\"\" (\\\"mild\\\" | \\\"moderate\\\" | \\\"severe\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "mild | moderate | severe (of event as a whole)",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "severity",
+        "dropdown",
+        "mild",
+        "moderate",
+        "severe",
+        "event",
+        "whole"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"severity\"\n        path: \"AllergyIntolerance.reaction.severity\"\n        label: \"Enter severity\"\n        description: \"mild | moderate | severe (of event as a whole)\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/reaction-event-severity"
+    },
+    "choices": [
+      "mild",
+      "moderate",
+      "severe"
+    ]
+  },
+  {
+    "path": "AllergyIntolerance.reaction.exposureRoute",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"exposure_route\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How the subject was exposed to the substance",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "exposure",
+        "route",
+        "dropdown",
+        "how",
+        "subject",
+        "exposed",
+        "substance"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"exposure_route\"\n        path: \"AllergyIntolerance.reaction.exposureRoute\"\n        label: \"Enter exposureRoute\"\n        description: \"How the subject was exposed to the substance\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/route-codes"
+    }
+  },
+  {
+    "path": "AllergyIntolerance.reaction.exposureRoute.coding",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "exposure",
+        "route",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"AllergyIntolerance.reaction.exposureRoute.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.exposureRoute.coding.system",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "exposure",
+        "route",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"AllergyIntolerance.reaction.exposureRoute.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.exposureRoute.coding.version",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "exposure",
+        "route",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"AllergyIntolerance.reaction.exposureRoute.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.exposureRoute.coding.code",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "exposure",
+        "route",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"AllergyIntolerance.reaction.exposureRoute.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.exposureRoute.coding.display",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "exposure",
+        "route",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"AllergyIntolerance.reaction.exposureRoute.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.exposureRoute.coding.userSelected",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "exposure",
+        "route",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"AllergyIntolerance.reaction.exposureRoute.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.exposureRoute.text",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "exposure",
+        "route",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"AllergyIntolerance.reaction.exposureRoute.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.note",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text about event not captured in other fields",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "note",
+        "textinput",
+        "text",
+        "about",
+        "event",
+        "not",
+        "captured",
+        "other",
+        "fields"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"AllergyIntolerance.reaction.note\"\n        label: \"Enter note\"\n        description: \"Text about event not captured in other fields\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.note.author[x]",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author[x]-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "note",
+        "authorx",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author[x]\"\n        path: \"AllergyIntolerance.reaction.note.author[x]\"\n        label: \"Enter author[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.note.authorReference",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "note",
+        "author",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"AllergyIntolerance.reaction.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.note.authorString",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "note",
+        "author",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"AllergyIntolerance.reaction.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.note.time",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "note",
+        "time",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"AllergyIntolerance.reaction.note.time\"\n        label: \"Enter time\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "AllergyIntolerance.reaction.note.text",
+    "resourceType": "AllergyIntolerance",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "allergy",
+        "intolerance",
+        "reaction",
+        "note",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"AllergyIntolerance.reaction.note.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  }
+]

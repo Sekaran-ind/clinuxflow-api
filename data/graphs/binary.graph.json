@@ -1,0 +1,115 @@
+[
+  {
+    "path": "Binary.resourceType",
+    "resourceType": "Binary",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a Binary resource",
+      "coreKeywords": [
+        "binary",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Binary.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Binary resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Binary.id",
+    "resourceType": "Binary",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "binary",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Binary.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Binary.contentType",
+    "resourceType": "Binary",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"content_type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "MimeType of the binary content",
+      "coreKeywords": [
+        "binary",
+        "content",
+        "dropdown",
+        "mimetype"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"content_type\"\n        path: \"Binary.contentType\"\n        label: \"Enter contentType\"\n        description: \"MimeType of the binary content\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/mimetypes"
+    }
+  },
+  {
+    "path": "Binary.securityContext",
+    "resourceType": "Binary",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "securityContext-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"security_context\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Identifies another resource to use as proxy when enforcing access control",
+      "coreKeywords": [
+        "binary",
+        "security",
+        "context",
+        "textinput",
+        "identifies",
+        "another",
+        "resource",
+        "use",
+        "proxy",
+        "when",
+        "enforcing",
+        "access",
+        "control"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"security_context\"\n        path: \"Binary.securityContext\"\n        label: \"Enter securityContext\"\n        description: \"Identifies another resource to use as proxy when enforcing access control\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Binary.data",
+    "resourceType": "Binary",
+    "primitiveType": "base64Binary",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"data\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The actual content",
+      "coreKeywords": [
+        "binary",
+        "data",
+        "textinput",
+        "actual",
+        "content"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"data\"\n        path: \"Binary.data\"\n        label: \"Enter data\"\n        description: \"The actual content\"\n        uiComponent: \"TextInput\""
+  }
+]

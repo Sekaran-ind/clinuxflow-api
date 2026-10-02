@@ -8,7 +8,8 @@
     "deploy": "wrangler deploy",
     "predeploy": "npm run build:kernel",
     "build:kernel": "npm run build:dictionary && npm run build:graphs-bundle && npm run build:system-forms && npm run build:system-flows",
-    "build:dictionary": "node tools/dictionary-builder.js",
+    "fetch:packages": "node tools/fhir/fetch-packages.js",
+    "build:dictionary": "node tools/fhir/fetch-packages.js && node tools/build-fhir-dictionary.js",
     "build:graphs-bundle": "node tools/build-graphs-bundle.js",
     "build:system-forms": "node tools/build-system-forms.js",
     "build:system-flows": "node tools/build-system-flows.js",
@@ -22,8 +23,6 @@
     "uuid": "^14.0.1"
   },
   "devDependencies": {
-    "@smile-cdr/fhirts": "^2.4.1",
-    "ts-morph": "^28.0.0",
     "vitest": "^4.1.10",
     "wrangler": "^4.0.0"
   }

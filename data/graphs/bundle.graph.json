@@ -1,0 +1,1516 @@
+[
+  {
+    "path": "Bundle.resourceType",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a Bundle resource",
+      "coreKeywords": [
+        "bundle",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Bundle.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Bundle resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.id",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "bundle",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Bundle.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.identifier",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Persistent identifier for the bundle",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "textinput",
+        "persistent"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Bundle.identifier\"\n        label: \"Enter identifier\"\n        description: \"Persistent identifier for the bundle\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.identifier.use",
+    "resourceType": "Bundle",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Bundle.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "Bundle.identifier.type",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Bundle.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "Bundle.identifier.type.coding",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Bundle.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Bundle.identifier.type.coding.system",
+    "resourceType": "Bundle",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Bundle.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.identifier.type.coding.version",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Bundle.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.identifier.type.coding.code",
+    "resourceType": "Bundle",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Bundle.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Bundle.identifier.type.coding.display",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Bundle.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.identifier.type.coding.userSelected",
+    "resourceType": "Bundle",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Bundle.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Bundle.identifier.type.text",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Bundle.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.identifier.system",
+    "resourceType": "Bundle",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Bundle.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.identifier.value",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Bundle.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.identifier.period",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Bundle.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.identifier.period.start",
+    "resourceType": "Bundle",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Bundle.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Bundle.identifier.period.end",
+    "resourceType": "Bundle",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Bundle.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Bundle.identifier.assigner",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Bundle.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.type",
+    "resourceType": "Bundle",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" (\\\"document\\\" | \\\"message\\\" | \\\"transaction\\\" | \\\"transaction-response\\\" | \\\"batch\\\" | \\\"batch-response\\\" | \\\"history\\\" | \\\"searchset\\\" | \\\"collection\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "document | message | transaction | transaction-response | batch | batch-response | history | searchset | collection",
+      "coreKeywords": [
+        "bundle",
+        "dropdown",
+        "document",
+        "message",
+        "transaction",
+        "response",
+        "batch",
+        "history",
+        "searchset",
+        "collection"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Bundle.type\"\n        label: \"Enter type\"\n        description: \"document | message | transaction | transaction-response | batch | batch-response | history | searchset | collection\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type"
+    },
+    "choices": [
+      "document",
+      "message",
+      "transaction",
+      "transaction-response",
+      "batch",
+      "batch-response",
+      "history",
+      "searchset",
+      "collection"
+    ]
+  },
+  {
+    "path": "Bundle.timestamp",
+    "resourceType": "Bundle",
+    "primitiveType": "instant",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"timestamp\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the bundle was assembled",
+      "coreKeywords": [
+        "bundle",
+        "timestamp",
+        "textinput",
+        "when",
+        "assembled"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"timestamp\"\n        path: \"Bundle.timestamp\"\n        label: \"Enter timestamp\"\n        description: \"When the bundle was assembled\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.total",
+    "resourceType": "Bundle",
+    "primitiveType": "unsignedInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"total\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "If search, the total number of matches",
+      "coreKeywords": [
+        "bundle",
+        "total",
+        "numericinput",
+        "search",
+        "number",
+        "matches"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"total\"\n        path: \"Bundle.total\"\n        label: \"Enter total\"\n        description: \"If search, the total number of matches\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Bundle.link",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"link\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Links related to this Bundle",
+      "coreKeywords": [
+        "bundle",
+        "link",
+        "textinput",
+        "links",
+        "related"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"link\"\n        path: \"Bundle.link\"\n        label: \"Enter link\"\n        description: \"Links related to this Bundle\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.link.extension",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "bundle",
+        "link",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Bundle.link.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.link.modifierExtension",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "bundle",
+        "link",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Bundle.link.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.link.relation",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"relation\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "See http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1",
+      "coreKeywords": [
+        "bundle",
+        "link",
+        "relation",
+        "textinput",
+        "see",
+        "httpwww",
+        "iana",
+        "orgassignmentslink",
+        "relationslink",
+        "relations",
+        "xhtmllink"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"relation\"\n        path: \"Bundle.link.relation\"\n        label: \"Enter relation\"\n        description: \"See http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.link.url",
+    "resourceType": "Bundle",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"url\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Reference details for the link",
+      "coreKeywords": [
+        "bundle",
+        "link",
+        "url",
+        "textinput",
+        "reference",
+        "details"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"Bundle.link.url\"\n        label: \"Enter url\"\n        description: \"Reference details for the link\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"entry\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Entry in the bundle - will have a resource or information",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "textinput",
+        "will",
+        "have",
+        "resource",
+        "information"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"entry\"\n        path: \"Bundle.entry\"\n        label: \"Enter entry\"\n        description: \"Entry in the bundle - will have a resource or information\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.extension",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Bundle.entry.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.modifierExtension",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Bundle.entry.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.link",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"link\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Links related to this entry",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "link",
+        "textinput",
+        "links",
+        "related"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"link\"\n        path: \"Bundle.entry.link\"\n        label: \"Enter link\"\n        description: \"Links related to this entry\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.fullUrl",
+    "resourceType": "Bundle",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"full_url\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "URI for resource (Absolute URL server address or URI for UUID/OID)",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "full",
+        "url",
+        "textinput",
+        "uri",
+        "resource",
+        "absolute",
+        "server",
+        "address",
+        "uuidoid"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"full_url\"\n        path: \"Bundle.entry.fullUrl\"\n        label: \"Enter fullUrl\"\n        description: \"URI for resource (Absolute URL server address or URI for UUID/OID)\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.resource",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A resource in the bundle",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "resource",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource\"\n        path: \"Bundle.entry.resource\"\n        label: \"Enter resource\"\n        description: \"A resource in the bundle\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.search",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"search\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Search related information",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "search",
+        "textinput",
+        "related",
+        "information"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"search\"\n        path: \"Bundle.entry.search\"\n        label: \"Enter search\"\n        description: \"Search related information\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.search.extension",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "search",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Bundle.entry.search.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.search.modifierExtension",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "search",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Bundle.entry.search.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.search.mode",
+    "resourceType": "Bundle",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"mode\\\": \\\"\" (\\\"match\\\" | \\\"include\\\" | \\\"outcome\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "match | include | outcome - why this is in the result set",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "search",
+        "mode",
+        "dropdown",
+        "match",
+        "include",
+        "outcome",
+        "why",
+        "result",
+        "set"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"mode\"\n        path: \"Bundle.entry.search.mode\"\n        label: \"Enter mode\"\n        description: \"match | include | outcome - why this is in the result set\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode"
+    },
+    "choices": [
+      "match",
+      "include",
+      "outcome"
+    ]
+  },
+  {
+    "path": "Bundle.entry.search.score",
+    "resourceType": "Bundle",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"score\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Search ranking (between 0 and 1)",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "search",
+        "score",
+        "numericinput",
+        "ranking",
+        "between"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"score\"\n        path: \"Bundle.entry.search.score\"\n        label: \"Enter score\"\n        description: \"Search ranking (between 0 and 1)\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Bundle.entry.request",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"request\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional execution information (transaction/batch/history)",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "request",
+        "textinput",
+        "additional",
+        "execution",
+        "information",
+        "transactionbatchhistory"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"request\"\n        path: \"Bundle.entry.request\"\n        label: \"Enter request\"\n        description: \"Additional execution information (transaction/batch/history)\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.request.extension",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "request",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Bundle.entry.request.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.request.modifierExtension",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "request",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Bundle.entry.request.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.request.method",
+    "resourceType": "Bundle",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"method\\\": \\\"\" (\\\"GET\\\" | \\\"HEAD\\\" | \\\"POST\\\" | \\\"PUT\\\" | \\\"DELETE\\\" | \\\"PATCH\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "GET | HEAD | POST | PUT | DELETE | PATCH",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "request",
+        "method",
+        "dropdown",
+        "get",
+        "head",
+        "post",
+        "put",
+        "delete",
+        "patch"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"method\"\n        path: \"Bundle.entry.request.method\"\n        label: \"Enter method\"\n        description: \"GET | HEAD | POST | PUT | DELETE | PATCH\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/http-verb"
+    },
+    "choices": [
+      "GET",
+      "HEAD",
+      "POST",
+      "PUT",
+      "DELETE",
+      "PATCH"
+    ]
+  },
+  {
+    "path": "Bundle.entry.request.url",
+    "resourceType": "Bundle",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"url\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "URL for HTTP equivalent of this entry",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "request",
+        "url",
+        "textinput",
+        "http",
+        "equivalent"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"Bundle.entry.request.url\"\n        label: \"Enter url\"\n        description: \"URL for HTTP equivalent of this entry\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.request.ifNoneMatch",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"if_none_match\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "For managing cache currency",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "request",
+        "none",
+        "match",
+        "textinput",
+        "managing",
+        "cache",
+        "currency"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"if_none_match\"\n        path: \"Bundle.entry.request.ifNoneMatch\"\n        label: \"Enter ifNoneMatch\"\n        description: \"For managing cache currency\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.request.ifModifiedSince",
+    "resourceType": "Bundle",
+    "primitiveType": "instant",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"if_modified_since\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "For managing cache currency",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "request",
+        "modified",
+        "since",
+        "textinput",
+        "managing",
+        "cache",
+        "currency"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"if_modified_since\"\n        path: \"Bundle.entry.request.ifModifiedSince\"\n        label: \"Enter ifModifiedSince\"\n        description: \"For managing cache currency\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.request.ifMatch",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"if_match\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "For managing update contention",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "request",
+        "match",
+        "textinput",
+        "managing",
+        "update",
+        "contention"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"if_match\"\n        path: \"Bundle.entry.request.ifMatch\"\n        label: \"Enter ifMatch\"\n        description: \"For managing update contention\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.request.ifNoneExist",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"if_none_exist\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "For conditional creates",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "request",
+        "none",
+        "exist",
+        "textinput",
+        "conditional",
+        "creates"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"if_none_exist\"\n        path: \"Bundle.entry.request.ifNoneExist\"\n        label: \"Enter ifNoneExist\"\n        description: \"For conditional creates\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.response",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"response\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Results of execution (transaction/batch/history)",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "response",
+        "textinput",
+        "results",
+        "execution",
+        "transactionbatchhistory"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"response\"\n        path: \"Bundle.entry.response\"\n        label: \"Enter response\"\n        description: \"Results of execution (transaction/batch/history)\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.response.extension",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "response",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Bundle.entry.response.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.response.modifierExtension",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "response",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Bundle.entry.response.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.response.status",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Status response code (text optional)",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "response",
+        "status",
+        "textinput",
+        "code",
+        "text",
+        "optional"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Bundle.entry.response.status\"\n        label: \"Enter status\"\n        description: \"Status response code (text optional)\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.response.location",
+    "resourceType": "Bundle",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"location\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The location (if the operation returns a location)",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "response",
+        "location",
+        "textinput",
+        "operation",
+        "returns"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"location\"\n        path: \"Bundle.entry.response.location\"\n        label: \"Enter location\"\n        description: \"The location (if the operation returns a location)\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.response.etag",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"etag\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The Etag for the resource (if relevant)",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "response",
+        "etag",
+        "textinput",
+        "resource",
+        "relevant"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"etag\"\n        path: \"Bundle.entry.response.etag\"\n        label: \"Enter etag\"\n        description: \"The Etag for the resource (if relevant)\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.response.lastModified",
+    "resourceType": "Bundle",
+    "primitiveType": "instant",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"last_modified\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Server's date time modified",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "response",
+        "last",
+        "modified",
+        "textinput",
+        "servers",
+        "date",
+        "time"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"last_modified\"\n        path: \"Bundle.entry.response.lastModified\"\n        label: \"Enter lastModified\"\n        description: \"Server's date time modified\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.entry.response.outcome",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"outcome\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "OperationOutcome with hints and warnings (for batch/transaction)",
+      "coreKeywords": [
+        "bundle",
+        "entry",
+        "response",
+        "outcome",
+        "textinput",
+        "operationoutcome",
+        "hints",
+        "warnings",
+        "batchtransaction"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"outcome\"\n        path: \"Bundle.entry.response.outcome\"\n        label: \"Enter outcome\"\n        description: \"OperationOutcome with hints and warnings (for batch/transaction)\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.signature",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"signature\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Digital Signature",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "textinput",
+        "digital"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"signature\"\n        path: \"Bundle.signature\"\n        label: \"Enter signature\"\n        description: \"Digital Signature\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.signature.type",
+    "resourceType": "Bundle",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Bundle.signature.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/signature-type"
+    }
+  },
+  {
+    "path": "Bundle.signature.type.system",
+    "resourceType": "Bundle",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Bundle.signature.type.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.signature.type.version",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Bundle.signature.type.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.signature.type.code",
+    "resourceType": "Bundle",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Bundle.signature.type.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Bundle.signature.type.display",
+    "resourceType": "Bundle",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Bundle.signature.type.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.signature.type.userSelected",
+    "resourceType": "Bundle",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Bundle.signature.type.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Bundle.signature.when",
+    "resourceType": "Bundle",
+    "primitiveType": "instant",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"when\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "when",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"when\"\n        path: \"Bundle.signature.when\"\n        label: \"Enter when\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.signature.who",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "who-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"who\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "who",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"who\"\n        path: \"Bundle.signature.who\"\n        label: \"Enter who\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.signature.onBehalfOf",
+    "resourceType": "Bundle",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "onBehalfOf-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"on_behalf_of\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "behalf",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"on_behalf_of\"\n        path: \"Bundle.signature.onBehalfOf\"\n        label: \"Enter onBehalfOf\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Bundle.signature.targetFormat",
+    "resourceType": "Bundle",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"target_format\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "target",
+        "format",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"target_format\"\n        path: \"Bundle.signature.targetFormat\"\n        label: \"Enter targetFormat\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/mimetypes"
+    }
+  },
+  {
+    "path": "Bundle.signature.sigFormat",
+    "resourceType": "Bundle",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"sig_format\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "sig",
+        "format",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"sig_format\"\n        path: \"Bundle.signature.sigFormat\"\n        label: \"Enter sigFormat\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/mimetypes"
+    }
+  },
+  {
+    "path": "Bundle.signature.data",
+    "resourceType": "Bundle",
+    "primitiveType": "base64Binary",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"data\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "bundle",
+        "signature",
+        "data",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"data\"\n        path: \"Bundle.signature.data\"\n        label: \"Enter data\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  }
+]

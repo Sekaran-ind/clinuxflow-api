@@ -32,9 +32,27 @@ describe('POST /api/auth/register', () => {
         const res = await app.request('/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
-            body: JSON.stringify({ email: 'a@b.com', password: 'password123' }),
+            body: JSON.stringify({ email: 'a@b.com' }),
         }, baseEnv);
         expect(res.status).toBe(400);
+    });
+
+    it('defaults the role to admin_and_health_professional when none is sent', async () => {
+        vi.spyOn(AccountsDb, 'getAccountByEmail').mockResolvedValue(null);
+        const createSpy = vi.spyOn(AccountsDb, 'createClinicAndAccount').mockResolvedValue(undefined);
+
+        const res = await app.request('/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Service-Key': SERVICE_KEY },
+            body: JSON.stringify({ email: 'norole@example.com', password: 'password123' }),
+        }, baseEnv);
+        expect(res.status).toBe(201);
+        const body = await res.json();
+        expect(body.account.role).toBe('admin_and_health_professional');
+        expect(createSpy).toHaveBeenCalledWith(
+            baseEnv.DB, expect.any(String), expect.any(String), expect.any(String), 'norole@example.com',
+            expect.any(String), undefined, undefined, 'facility', 'admin_and_health_professional'
+        );
     });
 
     it('400s on a too-short password', async () => {
@@ -2599,14 +2617,17 @@ describe('POST /api/provider/conformance', () => {
         const body = await res.json();
 
         expect(body.providers).toHaveLength(2);
-        const priya = body.providers.find((p) => p.practitioner.name.given?.includes('Priya'));
-        const arjun = body.providers.find((p) => p.practitioner.name.given?.includes('Arjun'));
+        const priya = body.providers.find((p) => p.practitioner.name[0].given?.includes('Priya'));
+        const arjun = body.providers.find((p) => p.practitioner.name[0].given?.includes('Arjun'));
 
         // Priya has a real license/HPR-id/category set but no license (identifier slicing is a
         // known, deliberately deferred gap — see the YAML's own comment); Arjun has almost nothing.
-        expect(priya.role.code).toBe('Healthcare Professional');
+        // Role vs entitlement: the HPR role is an entitlement source (extension hpr-role); the
+        // professional role (SNOMED CT, from the HPR category) is PractitionerRole.code.
+        expect(priya.role.extension).toEqual(expect.arrayContaining([{ url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-role', valueString: 'Healthcare Professional' }]));
+        expect(priya.role.code?.[0]?.coding?.[0]?.system ?? 'http://snomed.info/sct').toBe('http://snomed.info/sct');
         expect(priya.role.practitioner.reference).toBe(`Practitioner/${priya.practitioner.id}`);
-        expect(arjun.role.code).toBe('Facility Manager');
+        expect(arjun.role.extension).toEqual(expect.arrayContaining([{ url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-role', valueString: 'Facility Manager' }]));
         expect(arjun.role.practitioner.reference).toBe(`Practitioner/${arjun.practitioner.id}`);
         // Neither role got cross-linked to the OTHER practitioner — the real bug this whole chain exists to catch.
         expect(priya.role.practitioner.reference).not.toBe(arjun.role.practitioner.reference);
@@ -2679,7 +2700,7 @@ describe('POST /api/affiliate-organization/conformance', () => {
         expect(body.affiliations).toHaveLength(1);
         const org = body.affiliations[0].organizationAffiliation;
         expect(org.participatingOrganization).toBe('City Diagnostics Lab');
-        expect(org.code).toEqual(['Diagnostics', 'Laboratory']); // both MultiSelect answers survived, not truncated to the first
+        expect(org.code).toEqual([{ text: 'Diagnostics' }, { text: 'Laboratory' }]); // both MultiSelect answers survived, not truncated to the first
         expect(org.organization.reference).toMatch(/^Organization\//); // auto-linked, never a form field
         expect(body.affiliations[0].valid).toBe(true); // active + code + organization + participatingOrganization all present
 
@@ -2777,7 +2798,7 @@ describe('POST /api/resources/:resourceType/conformance', () => {
         expect(body.nextActions).toEqual([]);
     });
 
-    it('the real chain: a fully-captured patient reports the one known-deferred gap (Patient.telecom:mobile slicing) and nothing else', async () => {
+    it('the real chain: a fully-captured patient is now fully conformant — the former Patient.telecom:mobile slicing gap is closed by the mobile slice', async () => {
         // Same fixture the now-retired POST /api/patient/conformance's own test suite proved
         // this exact result against before the cutover — kept as a regression anchor so this
         // route stays behaviorally equivalent to what it replaced, without a second live route
@@ -2799,12 +2820,14 @@ describe('POST /api/resources/:resourceType/conformance', () => {
             body: JSON.stringify({ questionnaireJson, responseJson }),
         }, baseEnv);
         const body = await res.json();
-        expect(body.resource.name.given).toBe('Arjun');
-        expect(body.resource.name.family).toBe('Verma');
+        expect(body.resource.name[0].given).toEqual(['Arjun']);
+        expect(body.resource.name[0].family).toBe('Verma');
         expect(body.resource.active).toBe(true);
         expect(body.errors.some((e) => e.path === 'Patient.name.given')).toBe(false);
-        expect(body.errors).toEqual([{ path: 'Patient.telecom:mobile', message: expect.any(String) }]);
-        expect(body.nextActions).toEqual([]); // still invalid — known-deferred telecom:mobile gap
+        // The formerly known-deferred Patient.telecom:mobile slicing gap is closed: patient_mobile
+        // now writes the mobile slice (data/ig-conformance.json: system phone, use mobile).
+        expect(body.errors).toEqual([]);
+        expect(body.resource.telecom).toEqual([{ system: 'phone', use: 'mobile', value: expect.any(String) }]);
     });
 
     it("surfaces the real Patient-graph next-action once valid — mocked past the known-deferred telecom:mobile capture gap to isolate this route's own conformance -> next-best-action wiring", async () => {

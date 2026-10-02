@@ -11,8 +11,7 @@
       "jsdocDefinition": "This is a Invoice resource",
       "coreKeywords": [
         "invoice",
-        "resource",
-        "textinput"
+        "resource"
       ]
     },
     "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Invoice.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Invoice resource\"\n        uiComponent: \"TextInput\""
@@ -26,21 +25,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "jsdocDefinition": "Logical id of this artifact",
       "coreKeywords": [
         "invoice",
         "textinput",
         "logical",
-        "resource",
-        "used",
-        "url",
-        "once",
-        "assigned",
-        "never",
-        "changes"
+        "artifact"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.text",
@@ -51,48 +44,38 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
       "coreKeywords": [
         "invoice",
         "text",
-        "dropdown",
-        "human",
-        "readable",
-        "narrative",
+        "textinput",
         "summary",
         "resource",
-        "can",
-        "used",
-        "represent",
-        "content",
-        "need",
-        "not",
-        "encode",
-        "all",
-        "structured",
-        "data",
-        "but",
-        "required",
-        "contain",
-        "sufficient",
-        "detail",
-        "make",
-        "clinically",
-        "safe",
-        "just",
-        "read",
-        "definitions",
-        "may",
-        "define",
-        "what",
-        "should",
-        "represented",
-        "ensure",
-        "clinical",
-        "safety"
+        "human",
+        "interpretation"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Invoice.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Invoice.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Invoice.contained",
+    "resourceType": "Invoice",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "invoice",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"Invoice.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.extension",
@@ -103,42 +86,18 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "invoice",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.modifierExtension",
@@ -149,65 +108,18 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored",
       "coreKeywords": [
         "invoice",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "modifies",
-        "understanding",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "allowed",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Invoice.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Invoice.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.identifier",
@@ -218,117 +130,39 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Identifier of this Invoice, often used for reference in correspondence about this invoice or for tracking of payments.",
+      "jsdocDefinition": "Business Identifier for item",
       "coreKeywords": [
         "invoice",
         "identifier",
         "textinput",
-        "often",
-        "used",
-        "reference",
-        "correspondence",
-        "about",
-        "tracking",
-        "payments"
+        "business",
+        "item"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Invoice.identifier\"\n        label: \"Enter identifier\"\n        description: \"Identifier of this Invoice, often used for reference in correspondence about this invoice or for tracking of payments.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.identifier.id",
-    "resourceType": "Invoice",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "invoice",
-        "identifier",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.identifier.extension",
-    "resourceType": "Invoice",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "invoice",
-        "identifier",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Invoice.identifier\"\n        label: \"Enter identifier\"\n        description: \"Business Identifier for item\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.identifier.use",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The purpose of this identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "identifier",
         "use",
-        "textinput",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Invoice.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Invoice.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
     "choices": [
       "usual",
       "official",
@@ -346,49 +180,176 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "identifier",
-        "dropdown",
-        "coded",
-        "can",
-        "used",
-        "determine",
-        "which",
-        "use",
-        "specific",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Invoice.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Invoice.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
   },
   {
-    "path": "Invoice.identifier.system",
+    "path": "Invoice.identifier.type.coding",
     "resourceType": "Invoice",
-    "primitiveType": "Uri",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Invoice.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Invoice.identifier.type.coding.system",
+    "resourceType": "Invoice",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Invoice.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Invoice.identifier.type.coding.version",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Invoice.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Invoice.identifier.type.coding.code",
+    "resourceType": "Invoice",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Invoice.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.identifier.type.coding.display",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Invoice.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Invoice.identifier.type.coding.userSelected",
+    "resourceType": "Invoice",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Invoice.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Invoice.identifier.type.text",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Invoice.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Invoice.identifier.system",
+    "resourceType": "Invoice",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "identifier",
         "system",
-        "textinput",
-        "establishes",
-        "namespace",
-        "url",
-        "describes",
-        "set",
-        "values",
-        "are",
-        "unique"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Invoice.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Invoice.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.identifier.value",
@@ -399,23 +360,14 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "identifier",
-        "textinput",
-        "portion",
-        "typically",
-        "relevant",
-        "user",
-        "which",
-        "unique",
-        "within",
-        "context",
-        "system"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Invoice.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Invoice.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.identifier.period",
@@ -426,155 +378,55 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "identifier",
         "period",
-        "textinput",
-        "time",
-        "during",
-        "which",
-        "iswas",
-        "valid",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Invoice.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.identifier.period.id",
-    "resourceType": "Invoice",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "invoice",
-        "identifier",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.identifier.period.extension",
-    "resourceType": "Invoice",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "invoice",
-        "identifier",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Invoice.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.identifier.period.start",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "identifier",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Invoice.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Invoice.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Invoice.identifier.period.end",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "identifier",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Invoice.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Invoice.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Invoice.identifier.assigner",
@@ -585,49 +437,55 @@
     "outboundEdges": [
       {
         "relationshipType": "assigner-link",
-        "targetResource": "assigner",
-        "traversalPath": "assigner.id"
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "identifier",
         "assigner",
-        "dropdown",
-        "organization",
-        "issuedmanages"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Invoice.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Invoice.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.status",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"cancelled\\\" | \\\"entered-in-error\\\" | \\\"draft\\\" | \\\"issued\\\" | \\\"balanced\\\") \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"draft\\\" | \\\"issued\\\" | \\\"balanced\\\" | \\\"cancelled\\\" | \\\"entered-in-error\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The current state of the Invoice.",
+      "jsdocDefinition": "draft | issued | balanced | cancelled | entered-in-error",
       "coreKeywords": [
         "invoice",
         "status",
-        "textinput",
-        "current",
-        "state"
+        "dropdown",
+        "draft",
+        "issued",
+        "balanced",
+        "cancelled",
+        "entered",
+        "error"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Invoice.status\"\n        label: \"Enter status\"\n        description: \"The current state of the Invoice.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Invoice.status\"\n        label: \"Enter status\"\n        description: \"draft | issued | balanced | cancelled | entered-in-error\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/invoice-status"
+    },
     "choices": [
-      "cancelled",
-      "entered-in-error",
       "draft",
       "issued",
-      "balanced"
+      "balanced",
+      "cancelled",
+      "entered-in-error"
     ]
   },
   {
@@ -639,24 +497,16 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"cancelled_reason\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "In case of Invoice cancellation a reason must be given (entered in error, superseded by corrected invoice etc.).",
+      "jsdocDefinition": "Reason for cancellation of this Invoice",
       "coreKeywords": [
         "invoice",
         "cancelled",
         "reason",
         "textinput",
-        "case",
-        "cancellation",
-        "must",
-        "given",
-        "entered",
-        "error",
-        "superseded",
-        "corrected",
-        "etc"
+        "cancellation"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"cancelled_reason\"\n        path: \"Invoice.cancelledReason\"\n        label: \"Enter cancelledReason\"\n        description: \"In case of Invoice cancellation a reason must be given (entered in error, superseded by corrected invoice etc.).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"cancelled_reason\"\n        path: \"Invoice.cancelledReason\"\n        label: \"Enter cancelledReason\"\n        description: \"Reason for cancellation of this Invoice\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.type",
@@ -667,20 +517,145 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Type of Invoice depending on domain, realm an usage (e.g. internal/external, dental, preliminary).",
+      "jsdocDefinition": "Type of Invoice",
       "coreKeywords": [
         "invoice",
-        "dropdown",
-        "depending",
-        "domain",
-        "realm",
-        "usage",
-        "internalexternal",
-        "dental",
-        "preliminary"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Invoice.type\"\n        label: \"Enter type\"\n        description: \"Type of Invoice depending on domain, realm an usage (e.g. internal/external, dental, preliminary).\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Invoice.type\"\n        label: \"Enter type\"\n        description: \"Type of Invoice\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.type.coding",
+    "resourceType": "Invoice",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Invoice.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Invoice.type.coding.system",
+    "resourceType": "Invoice",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Invoice.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Invoice.type.coding.version",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Invoice.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Invoice.type.coding.code",
+    "resourceType": "Invoice",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Invoice.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.type.coding.display",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Invoice.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Invoice.type.coding.userSelected",
+    "resourceType": "Invoice",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Invoice.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Invoice.type.text",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Invoice.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.subject",
@@ -693,25 +668,26 @@
         "relationshipType": "subject-link",
         "targetResource": "Patient",
         "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Group",
+        "traversalPath": "Group.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"subject\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The individual or set of individuals receiving the goods and services billed in this invoice.",
+      "jsdocDefinition": "Recipient(s) of goods and services",
       "coreKeywords": [
         "invoice",
         "subject",
-        "dropdown",
-        "individual",
-        "set",
-        "individuals",
-        "receiving",
+        "textinput",
+        "recipients",
         "goods",
-        "services",
-        "billed"
+        "services"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"subject\"\n        path: \"Invoice.subject\"\n        label: \"Enter subject\"\n        description: \"The individual or set of individuals receiving the goods and services billed in this invoice.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"subject\"\n        path: \"Invoice.subject\"\n        label: \"Enter subject\"\n        description: \"Recipient(s) of goods and services\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.recipient",
@@ -722,100 +698,68 @@
     "outboundEdges": [
       {
         "relationshipType": "recipient-link",
-        "targetResource": "recipient",
-        "traversalPath": "recipient.id"
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      },
+      {
+        "relationshipType": "recipient-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "recipient-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"recipient\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The individual or Organization responsible for balancing of this invoice.",
+      "jsdocDefinition": "Recipient of this invoice",
       "coreKeywords": [
         "invoice",
         "recipient",
-        "dropdown",
-        "individual",
-        "organization",
-        "responsible",
-        "balancing"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"recipient\"\n        path: \"Invoice.recipient\"\n        label: \"Enter recipient\"\n        description: \"The individual or Organization responsible for balancing of this invoice.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"recipient\"\n        path: \"Invoice.recipient\"\n        label: \"Enter recipient\"\n        description: \"Recipient of this invoice\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.date",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Date/time(s) of when this Invoice was posted.",
+      "jsdocDefinition": "Invoice date / posting date",
       "coreKeywords": [
         "invoice",
         "date",
-        "textinput",
-        "datetimes",
-        "when",
-        "posted"
+        "datepicker",
+        "posting"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"date\"\n        path: \"Invoice.date\"\n        label: \"Enter date\"\n        description: \"Date/time(s) of when this Invoice was posted.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"date\"\n        path: \"Invoice.date\"\n        label: \"Enter date\"\n        description: \"Invoice date / posting date\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Invoice.participant",
     "resourceType": "Invoice",
     "primitiveType": "object",
     "isArray": true,
-    "arrayTargetType": "InvoiceParticipant",
+    "arrayTargetType": "BackboneElement",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"participant\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Indicates who or what performed or participated in the charged service.",
+      "jsdocDefinition": "Participant in creation of this Invoice",
       "coreKeywords": [
         "invoice",
         "participant",
         "textinput",
-        "indicates",
-        "who",
-        "what",
-        "performed",
-        "participated",
-        "charged",
-        "service"
+        "creation"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"participant\"\n        path: \"Invoice.participant\"\n        label: \"Enter participant\"\n        description: \"Indicates who or what performed or participated in the charged service.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.participant.id",
-    "resourceType": "Invoice",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "invoice",
-        "participant",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.participant.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"participant\"\n        path: \"Invoice.participant\"\n        label: \"Enter participant\"\n        description: \"Participant in creation of this Invoice\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.participant.extension",
@@ -826,42 +770,19 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "invoice",
         "participant",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.participant.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.participant.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.participant.modifierExtension",
@@ -872,68 +793,21 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "invoice",
         "participant",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Invoice.participant.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Invoice.participant.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.participant.role",
@@ -944,29 +818,163 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"role\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Describes the type of involvement (e.g. transcriptionist, creator etc.). If the invoice has been created automatically, the Participant may be a billing engine or another kind of device.",
+      "jsdocDefinition": "Type of involvement in creation of this Invoice",
       "coreKeywords": [
         "invoice",
         "participant",
         "role",
         "dropdown",
-        "describes",
         "involvement",
-        "transcriptionist",
-        "creator",
-        "etc",
-        "has",
-        "created",
-        "automatically",
-        "may",
-        "billing",
-        "engine",
-        "another",
-        "kind",
-        "device"
+        "creation"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"role\"\n        path: \"Invoice.participant.role\"\n        label: \"Enter role\"\n        description: \"Describes the type of involvement (e.g. transcriptionist, creator etc.). If the invoice has been created automatically, the Participant may be a billing engine or another kind of device.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"role\"\n        path: \"Invoice.participant.role\"\n        label: \"Enter role\"\n        description: \"Type of involvement in creation of this Invoice\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.participant.role.coding",
+    "resourceType": "Invoice",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "participant",
+        "role",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Invoice.participant.role.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Invoice.participant.role.coding.system",
+    "resourceType": "Invoice",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "participant",
+        "role",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Invoice.participant.role.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Invoice.participant.role.coding.version",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "participant",
+        "role",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Invoice.participant.role.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Invoice.participant.role.coding.code",
+    "resourceType": "Invoice",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "participant",
+        "role",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Invoice.participant.role.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.participant.role.coding.display",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "participant",
+        "role",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Invoice.participant.role.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Invoice.participant.role.coding.userSelected",
+    "resourceType": "Invoice",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "participant",
+        "role",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Invoice.participant.role.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Invoice.participant.role.text",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "participant",
+        "role",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Invoice.participant.role.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.participant.actor",
@@ -977,28 +985,49 @@
     "outboundEdges": [
       {
         "relationshipType": "actor-link",
-        "targetResource": "actor",
-        "traversalPath": "actor.id"
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "actor-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"actor\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The device, practitioner, etc. who performed or participated in the service.",
+      "jsdocDefinition": "Individual who was involved",
       "coreKeywords": [
         "invoice",
         "participant",
         "actor",
-        "dropdown",
-        "device",
-        "practitioner",
-        "etc",
+        "textinput",
+        "individual",
         "who",
-        "performed",
-        "participated",
-        "service"
+        "involved"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"actor\"\n        path: \"Invoice.participant.actor\"\n        label: \"Enter actor\"\n        description: \"The device, practitioner, etc. who performed or participated in the service.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"actor\"\n        path: \"Invoice.participant.actor\"\n        label: \"Enter actor\"\n        description: \"Individual who was involved\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.issuer",
@@ -1009,21 +1038,22 @@
     "outboundEdges": [
       {
         "relationshipType": "issuer-link",
-        "targetResource": "issuer",
-        "traversalPath": "issuer.id"
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"issuer\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The organizationissuing the Invoice.",
+      "jsdocDefinition": "Issuing Organization of Invoice",
       "coreKeywords": [
         "invoice",
         "issuer",
-        "dropdown",
-        "organizationissuing"
+        "textinput",
+        "issuing",
+        "organization"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"issuer\"\n        path: \"Invoice.issuer\"\n        label: \"Enter issuer\"\n        description: \"The organizationissuing the Invoice.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"issuer\"\n        path: \"Invoice.issuer\"\n        label: \"Enter issuer\"\n        description: \"Issuing Organization of Invoice\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.account",
@@ -1034,88 +1064,42 @@
     "outboundEdges": [
       {
         "relationshipType": "account-link",
-        "targetResource": "account",
-        "traversalPath": "account.id"
+        "targetResource": "Account",
+        "traversalPath": "Account.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"account\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Account which is supposed to be balanced with this Invoice.",
+      "jsdocDefinition": "Account that is being balanced",
       "coreKeywords": [
         "invoice",
         "account",
-        "dropdown",
-        "which",
-        "supposed",
+        "textinput",
+        "being",
         "balanced"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"account\"\n        path: \"Invoice.account\"\n        label: \"Enter account\"\n        description: \"Account which is supposed to be balanced with this Invoice.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"account\"\n        path: \"Invoice.account\"\n        label: \"Enter account\"\n        description: \"Account that is being balanced\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.lineItem",
     "resourceType": "Invoice",
     "primitiveType": "object",
     "isArray": true,
-    "arrayTargetType": "InvoiceLineItem",
+    "arrayTargetType": "BackboneElement",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"line_item\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Each line item represents one charge for goods and services rendered. Details such as date, code and amount are found in the referenced ChargeItem resource.",
+      "jsdocDefinition": "Line items of this Invoice",
       "coreKeywords": [
         "invoice",
         "line",
         "item",
         "textinput",
-        "represents",
-        "one",
-        "charge",
-        "goods",
-        "services",
-        "rendered",
-        "details",
-        "date",
-        "code",
-        "amount",
-        "are",
-        "found",
-        "referenced",
-        "chargeitem",
-        "resource"
+        "items"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"line_item\"\n        path: \"Invoice.lineItem\"\n        label: \"Enter lineItem\"\n        description: \"Each line item represents one charge for goods and services rendered. Details such as date, code and amount are found in the referenced ChargeItem resource.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.lineItem.id",
-    "resourceType": "Invoice",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "invoice",
-        "line",
-        "item",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.lineItem.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"line_item\"\n        path: \"Invoice.lineItem\"\n        label: \"Enter lineItem\"\n        description: \"Line items of this Invoice\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.lineItem.extension",
@@ -1126,43 +1110,20 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "invoice",
         "line",
         "item",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.lineItem.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.lineItem.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.lineItem.modifierExtension",
@@ -1173,92 +1134,77 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "invoice",
         "line",
         "item",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Invoice.lineItem.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Invoice.lineItem.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.lineItem.sequence",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "positiveInt",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"sequence\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"sequence\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Sequence in which the items appear on the invoice.",
+      "jsdocDefinition": "Sequence number of line item",
       "coreKeywords": [
         "invoice",
         "line",
         "item",
         "sequence",
-        "textinput",
-        "which",
-        "items",
-        "appear"
+        "numericinput",
+        "number"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"sequence\"\n        path: \"Invoice.lineItem.sequence\"\n        label: \"Enter sequence\"\n        description: \"Sequence in which the items appear on the invoice.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"sequence\"\n        path: \"Invoice.lineItem.sequence\"\n        label: \"Enter sequence\"\n        description: \"Sequence number of line item\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Invoice.lineItem.chargeItem[x]",
+    "resourceType": "Invoice",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "chargeItem[x]-link",
+        "targetResource": "ChargeItem",
+        "traversalPath": "ChargeItem.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"charge_item[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Reference to ChargeItem containing details of this line item or an inline billing code",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "charge",
+        "itemx",
+        "textinput",
+        "reference",
+        "chargeitem",
+        "containing",
+        "details",
+        "inline",
+        "billing",
+        "code"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"charge_item[x]\"\n        path: \"Invoice.lineItem.chargeItem[x]\"\n        label: \"Enter chargeItem[x]\"\n        description: \"Reference to ChargeItem containing details of this line item or an inline billing code\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.lineItem.chargeItemReference",
@@ -1269,43 +1215,23 @@
     "outboundEdges": [
       {
         "relationshipType": "chargeItemReference-link",
-        "targetResource": "chargeItemReference",
-        "traversalPath": "chargeItemReference.id"
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"charge_item_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The ChargeItem contains information such as the billing code, date, amount etc. If no further details are required for the lineItem, inline billing codes can be added using the CodeableConcept data type instead of the Reference.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "line",
         "item",
         "charge",
         "reference",
-        "dropdown",
-        "chargeitem",
-        "information",
-        "billing",
-        "code",
-        "date",
-        "amount",
-        "etc",
-        "further",
-        "details",
-        "are",
-        "required",
-        "lineitem",
-        "inline",
-        "codes",
-        "can",
-        "added",
-        "using",
-        "codeableconcept",
-        "data",
-        "instead"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"charge_item_reference\"\n        path: \"Invoice.lineItem.chargeItemReference\"\n        label: \"Enter chargeItemReference\"\n        description: \"The ChargeItem contains information such as the billing code, date, amount etc. If no further details are required for the lineItem, inline billing codes can be added using the CodeableConcept data type instead of the Reference.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"charge_item_reference\"\n        path: \"Invoice.lineItem.chargeItemReference\"\n        label: \"Enter chargeItemReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.lineItem.chargeItemCodeableConcept",
@@ -1316,7 +1242,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"charge_item_codeable_concept\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The ChargeItem contains information such as the billing code, date, amount etc. If no further details are required for the lineItem, inline billing codes can be added using the CodeableConcept data type instead of the Reference.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "line",
@@ -1324,42 +1250,188 @@
         "charge",
         "codeable",
         "concept",
-        "dropdown",
-        "chargeitem",
-        "information",
-        "billing",
-        "code",
-        "date",
-        "amount",
-        "etc",
-        "further",
-        "details",
-        "are",
-        "required",
-        "lineitem",
-        "inline",
-        "codes",
-        "can",
-        "added",
-        "using",
-        "codeableconcept",
-        "data",
-        "instead",
-        "reference"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"charge_item_codeable_concept\"\n        path: \"Invoice.lineItem.chargeItemCodeableConcept\"\n        label: \"Enter chargeItemCodeableConcept\"\n        description: \"The ChargeItem contains information such as the billing code, date, amount etc. If no further details are required for the lineItem, inline billing codes can be added using the CodeableConcept data type instead of the Reference.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"charge_item_codeable_concept\"\n        path: \"Invoice.lineItem.chargeItemCodeableConcept\"\n        label: \"Enter chargeItemCodeableConcept\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.lineItem.chargeItemCodeableConcept.coding",
+    "resourceType": "Invoice",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "charge",
+        "codeable",
+        "concept",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Invoice.lineItem.chargeItemCodeableConcept.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Invoice.lineItem.chargeItemCodeableConcept.coding.system",
+    "resourceType": "Invoice",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "charge",
+        "codeable",
+        "concept",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Invoice.lineItem.chargeItemCodeableConcept.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.lineItem.chargeItemCodeableConcept.coding.version",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "charge",
+        "codeable",
+        "concept",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Invoice.lineItem.chargeItemCodeableConcept.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.lineItem.chargeItemCodeableConcept.coding.code",
+    "resourceType": "Invoice",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "charge",
+        "codeable",
+        "concept",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Invoice.lineItem.chargeItemCodeableConcept.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.lineItem.chargeItemCodeableConcept.coding.display",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "charge",
+        "codeable",
+        "concept",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Invoice.lineItem.chargeItemCodeableConcept.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.lineItem.chargeItemCodeableConcept.coding.userSelected",
+    "resourceType": "Invoice",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "charge",
+        "codeable",
+        "concept",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Invoice.lineItem.chargeItemCodeableConcept.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Invoice.lineItem.chargeItemCodeableConcept.text",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "charge",
+        "codeable",
+        "concept",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Invoice.lineItem.chargeItemCodeableConcept.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Invoice.lineItem.priceComponent",
     "resourceType": "Invoice",
     "primitiveType": "object",
     "isArray": true,
-    "arrayTargetType": "InvoicePriceComponent",
+    "arrayTargetType": "BackboneElement",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"price_component\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice as to how the prices have been calculated.",
+      "jsdocDefinition": "Components of total line item price",
       "coreKeywords": [
         "invoice",
         "line",
@@ -1367,67 +1439,11 @@
         "price",
         "component",
         "textinput",
-        "chargeitem",
-        "may",
-        "calculated",
-        "base",
-        "surchargesdeductions",
-        "apply",
-        "certain",
-        "conditions",
-        "chargeitemdefinition",
-        "resource",
-        "defines",
-        "prices",
-        "factors",
-        "billing",
-        "code",
-        "currently",
-        "development",
-        "pricecomponent",
-        "can",
-        "used",
-        "offer",
-        "transparency",
-        "recipient",
-        "how",
-        "have"
+        "components",
+        "total"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"price_component\"\n        path: \"Invoice.lineItem.priceComponent\"\n        label: \"Enter priceComponent\"\n        description: \"The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice as to how the prices have been calculated.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.lineItem.priceComponent.id",
-    "resourceType": "Invoice",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "invoice",
-        "line",
-        "item",
-        "price",
-        "component",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.lineItem.priceComponent.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"price_component\"\n        path: \"Invoice.lineItem.priceComponent\"\n        label: \"Enter priceComponent\"\n        description: \"Components of total line item price\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.lineItem.priceComponent.extension",
@@ -1438,7 +1454,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "invoice",
         "line",
@@ -1446,37 +1462,14 @@
         "price",
         "component",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.lineItem.priceComponent.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.lineItem.priceComponent.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.lineItem.priceComponent.modifierExtension",
@@ -1487,7 +1480,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "invoice",
         "line",
@@ -1496,85 +1489,46 @@
         "component",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Invoice.lineItem.priceComponent.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Invoice.lineItem.priceComponent.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.lineItem.priceComponent.type",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" (\\\"base\\\" | \\\"surcharge\\\" | \\\"deduction\\\" | \\\"discount\\\" | \\\"tax\\\" | \\\"informational\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "This code identifies the type of the component.",
+      "jsdocDefinition": "base | surcharge | deduction | discount | tax | informational",
       "coreKeywords": [
         "invoice",
         "line",
         "item",
         "price",
         "component",
-        "textinput",
-        "code",
-        "identifies"
+        "dropdown",
+        "base",
+        "surcharge",
+        "deduction",
+        "discount",
+        "tax",
+        "informational"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Invoice.lineItem.priceComponent.type\"\n        label: \"Enter type\"\n        description: \"This code identifies the type of the component.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Invoice.lineItem.priceComponent.type\"\n        label: \"Enter type\"\n        description: \"base | surcharge | deduction | discount | tax | informational\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/invoice-priceComponentType"
+    },
     "choices": [
       "base",
       "surcharge",
@@ -1593,7 +1547,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.",
+      "jsdocDefinition": "Code identifying the specific component",
       "coreKeywords": [
         "invoice",
         "line",
@@ -1602,31 +1556,188 @@
         "component",
         "code",
         "dropdown",
-        "identifies",
-        "codes",
-        "may",
-        "used",
-        "differentiate",
-        "between",
-        "kinds",
-        "taxes",
-        "surcharges",
-        "discounts",
-        "etc"
+        "identifying",
+        "specific"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Invoice.lineItem.priceComponent.code\"\n        label: \"Enter code\"\n        description: \"A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Invoice.lineItem.priceComponent.code\"\n        label: \"Enter code\"\n        description: \"Code identifying the specific component\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.lineItem.priceComponent.code.coding",
+    "resourceType": "Invoice",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "price",
+        "component",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Invoice.lineItem.priceComponent.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Invoice.lineItem.priceComponent.code.coding.system",
+    "resourceType": "Invoice",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "price",
+        "component",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Invoice.lineItem.priceComponent.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.lineItem.priceComponent.code.coding.version",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "price",
+        "component",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Invoice.lineItem.priceComponent.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.lineItem.priceComponent.code.coding.code",
+    "resourceType": "Invoice",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "price",
+        "component",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Invoice.lineItem.priceComponent.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.lineItem.priceComponent.code.coding.display",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "price",
+        "component",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Invoice.lineItem.priceComponent.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Invoice.lineItem.priceComponent.code.coding.userSelected",
+    "resourceType": "Invoice",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "price",
+        "component",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Invoice.lineItem.priceComponent.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Invoice.lineItem.priceComponent.code.text",
+    "resourceType": "Invoice",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "invoice",
+        "line",
+        "item",
+        "price",
+        "component",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Invoice.lineItem.priceComponent.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Invoice.lineItem.priceComponent.factor",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "decimal",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"factor\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"factor\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The factor that has been applied on the base price for calculating this component.",
+      "jsdocDefinition": "Factor used for calculating this component",
       "coreKeywords": [
         "invoice",
         "line",
@@ -1634,14 +1745,12 @@
         "price",
         "component",
         "factor",
-        "textinput",
-        "has",
-        "applied",
-        "base",
+        "numericinput",
+        "used",
         "calculating"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"factor\"\n        path: \"Invoice.lineItem.priceComponent.factor\"\n        label: \"Enter factor\"\n        description: \"The factor that has been applied on the base price for calculating this component.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"factor\"\n        path: \"Invoice.lineItem.priceComponent.factor\"\n        label: \"Enter factor\"\n        description: \"Factor used for calculating this component\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Invoice.lineItem.priceComponent.amount",
@@ -1652,7 +1761,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"amount\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The amount calculated for this component.",
+      "jsdocDefinition": "Monetary amount associated with this component",
       "coreKeywords": [
         "invoice",
         "line",
@@ -1661,105 +1770,22 @@
         "component",
         "amount",
         "textinput",
-        "calculated"
+        "monetary",
+        "associated"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"amount\"\n        path: \"Invoice.lineItem.priceComponent.amount\"\n        label: \"Enter amount\"\n        description: \"The amount calculated for this component.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.lineItem.priceComponent.amount.id",
-    "resourceType": "Invoice",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "invoice",
-        "line",
-        "item",
-        "price",
-        "component",
-        "amount",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.lineItem.priceComponent.amount.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.lineItem.priceComponent.amount.extension",
-    "resourceType": "Invoice",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "invoice",
-        "line",
-        "item",
-        "price",
-        "component",
-        "amount",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.lineItem.priceComponent.amount.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"amount\"\n        path: \"Invoice.lineItem.priceComponent.amount\"\n        label: \"Enter amount\"\n        description: \"Monetary amount associated with this component\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.lineItem.priceComponent.amount.value",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "decimal",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Numerical value (with implicit precision).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "line",
@@ -1767,24 +1793,21 @@
         "price",
         "component",
         "amount",
-        "textinput",
-        "numerical",
-        "implicit",
-        "precision"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Invoice.lineItem.priceComponent.amount.value\"\n        label: \"Enter value\"\n        description: \"Numerical value (with implicit precision).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Invoice.lineItem.priceComponent.amount.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Invoice.lineItem.priceComponent.amount.currency",
     "resourceType": "Invoice",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"currency\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"currency\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "ISO 4217 Currency Code.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "line",
@@ -1793,442 +1816,35 @@
         "component",
         "amount",
         "currency",
-        "textinput",
-        "iso",
-        "code"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"currency\"\n        path: \"Invoice.lineItem.priceComponent.amount.currency\"\n        label: \"Enter currency\"\n        description: \"ISO 4217 Currency Code.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"currency\"\n        path: \"Invoice.lineItem.priceComponent.amount.currency\"\n        label: \"Enter currency\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/currencies"
+    }
   },
   {
     "path": "Invoice.totalPriceComponent",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "string",
     "isArray": true,
-    "arrayTargetType": "InvoicePriceComponent",
+    "arrayTargetType": "string",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"total_price_component\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The total amount for the Invoice may be calculated as the sum of the line items with surcharges/deductions that apply in certain conditions. The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the total price was calculated.",
+      "jsdocDefinition": "Components of Invoice total",
       "coreKeywords": [
         "invoice",
         "total",
         "price",
         "component",
         "textinput",
-        "amount",
-        "may",
-        "calculated",
-        "sum",
-        "line",
-        "items",
-        "surchargesdeductions",
-        "apply",
-        "certain",
-        "conditions",
-        "pricecomponent",
-        "can",
-        "used",
-        "offer",
-        "transparency",
-        "recipient",
-        "how"
+        "components"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"total_price_component\"\n        path: \"Invoice.totalPriceComponent\"\n        label: \"Enter totalPriceComponent\"\n        description: \"The total amount for the Invoice may be calculated as the sum of the line items with surcharges/deductions that apply in certain conditions. The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the total price was calculated.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.totalPriceComponent.id",
-    "resourceType": "Invoice",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "price",
-        "component",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.totalPriceComponent.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.totalPriceComponent.extension",
-    "resourceType": "Invoice",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "price",
-        "component",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.totalPriceComponent.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
-  },
-  {
-    "path": "Invoice.totalPriceComponent.modifierExtension",
-    "resourceType": "Invoice",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "price",
-        "component",
-        "modifier",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
-        "cannot",
-        "modifierextension",
-        "itself"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Invoice.totalPriceComponent.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
-  },
-  {
-    "path": "Invoice.totalPriceComponent.type",
-    "resourceType": "Invoice",
-    "primitiveType": "object",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" (\\\"base\\\" | \\\"surcharge\\\" | \\\"deduction\\\" | \\\"discount\\\" | \\\"tax\\\" | \\\"informational\\\") \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "This code identifies the type of the component.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "price",
-        "component",
-        "textinput",
-        "code",
-        "identifies"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Invoice.totalPriceComponent.type\"\n        label: \"Enter type\"\n        description: \"This code identifies the type of the component.\"\n        uiComponent: \"TextInput\"",
-    "choices": [
-      "base",
-      "surcharge",
-      "deduction",
-      "discount",
-      "tax",
-      "informational"
-    ]
-  },
-  {
-    "path": "Invoice.totalPriceComponent.code",
-    "resourceType": "Invoice",
-    "primitiveType": "polymorphic-codeableconcept",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "price",
-        "component",
-        "code",
-        "dropdown",
-        "identifies",
-        "codes",
-        "may",
-        "used",
-        "differentiate",
-        "between",
-        "kinds",
-        "taxes",
-        "surcharges",
-        "discounts",
-        "etc"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Invoice.totalPriceComponent.code\"\n        label: \"Enter code\"\n        description: \"A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.\"\n        uiComponent: \"Dropdown\""
-  },
-  {
-    "path": "Invoice.totalPriceComponent.factor",
-    "resourceType": "Invoice",
-    "primitiveType": "object",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"factor\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "The factor that has been applied on the base price for calculating this component.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "price",
-        "component",
-        "factor",
-        "textinput",
-        "has",
-        "applied",
-        "base",
-        "calculating"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"factor\"\n        path: \"Invoice.totalPriceComponent.factor\"\n        label: \"Enter factor\"\n        description: \"The factor that has been applied on the base price for calculating this component.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.totalPriceComponent.amount",
-    "resourceType": "Invoice",
-    "primitiveType": "object",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"amount\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "The amount calculated for this component.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "price",
-        "component",
-        "amount",
-        "textinput",
-        "calculated"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"amount\"\n        path: \"Invoice.totalPriceComponent.amount\"\n        label: \"Enter amount\"\n        description: \"The amount calculated for this component.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.totalPriceComponent.amount.id",
-    "resourceType": "Invoice",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "price",
-        "component",
-        "amount",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.totalPriceComponent.amount.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.totalPriceComponent.amount.extension",
-    "resourceType": "Invoice",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "price",
-        "component",
-        "amount",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.totalPriceComponent.amount.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
-  },
-  {
-    "path": "Invoice.totalPriceComponent.amount.value",
-    "resourceType": "Invoice",
-    "primitiveType": "object",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Numerical value (with implicit precision).",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "price",
-        "component",
-        "amount",
-        "textinput",
-        "numerical",
-        "implicit",
-        "precision"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Invoice.totalPriceComponent.amount.value\"\n        label: \"Enter value\"\n        description: \"Numerical value (with implicit precision).\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.totalPriceComponent.amount.currency",
-    "resourceType": "Invoice",
-    "primitiveType": "Code",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"currency\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "ISO 4217 Currency Code.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "price",
-        "component",
-        "amount",
-        "currency",
-        "textinput",
-        "iso",
-        "code"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"currency\"\n        path: \"Invoice.totalPriceComponent.amount.currency\"\n        label: \"Enter currency\"\n        description: \"ISO 4217 Currency Code.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"total_price_component\"\n        path: \"Invoice.totalPriceComponent\"\n        label: \"Enter totalPriceComponent\"\n        description: \"Components of Invoice total\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.totalNet",
@@ -2239,139 +1855,58 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"total_net\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Invoice total , taxes excluded.",
+      "jsdocDefinition": "Net total of this Invoice",
       "coreKeywords": [
         "invoice",
         "total",
         "net",
-        "textinput",
-        "taxes",
-        "excluded"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"total_net\"\n        path: \"Invoice.totalNet\"\n        label: \"Enter totalNet\"\n        description: \"Invoice total , taxes excluded.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.totalNet.id",
-    "resourceType": "Invoice",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "net",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.totalNet.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.totalNet.extension",
-    "resourceType": "Invoice",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "net",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.totalNet.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"total_net\"\n        path: \"Invoice.totalNet\"\n        label: \"Enter totalNet\"\n        description: \"Net total of this Invoice\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.totalNet.value",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "decimal",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Numerical value (with implicit precision).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "total",
         "net",
-        "textinput",
-        "numerical",
-        "implicit",
-        "precision"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Invoice.totalNet.value\"\n        label: \"Enter value\"\n        description: \"Numerical value (with implicit precision).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Invoice.totalNet.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Invoice.totalNet.currency",
     "resourceType": "Invoice",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"currency\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"currency\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "ISO 4217 Currency Code.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "total",
         "net",
         "currency",
-        "textinput",
-        "iso",
-        "code"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"currency\"\n        path: \"Invoice.totalNet.currency\"\n        label: \"Enter currency\"\n        description: \"ISO 4217 Currency Code.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"currency\"\n        path: \"Invoice.totalNet.currency\"\n        label: \"Enter currency\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/currencies"
+    }
   },
   {
     "path": "Invoice.totalGross",
@@ -2382,163 +1917,78 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"total_gross\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Invoice total, tax included.",
+      "jsdocDefinition": "Gross total of this Invoice",
       "coreKeywords": [
         "invoice",
         "total",
         "gross",
-        "textinput",
-        "tax",
-        "included"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"total_gross\"\n        path: \"Invoice.totalGross\"\n        label: \"Enter totalGross\"\n        description: \"Invoice total, tax included.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.totalGross.id",
-    "resourceType": "Invoice",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "gross",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.totalGross.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.totalGross.extension",
-    "resourceType": "Invoice",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "invoice",
-        "total",
-        "gross",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.totalGross.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"total_gross\"\n        path: \"Invoice.totalGross\"\n        label: \"Enter totalGross\"\n        description: \"Gross total of this Invoice\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.totalGross.value",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "decimal",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Numerical value (with implicit precision).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "total",
         "gross",
-        "textinput",
-        "numerical",
-        "implicit",
-        "precision"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Invoice.totalGross.value\"\n        label: \"Enter value\"\n        description: \"Numerical value (with implicit precision).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Invoice.totalGross.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Invoice.totalGross.currency",
     "resourceType": "Invoice",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"currency\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"currency\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "ISO 4217 Currency Code.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "total",
         "gross",
         "currency",
-        "textinput",
-        "iso",
-        "code"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"currency\"\n        path: \"Invoice.totalGross.currency\"\n        label: \"Enter currency\"\n        description: \"ISO 4217 Currency Code.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"currency\"\n        path: \"Invoice.totalGross.currency\"\n        label: \"Enter currency\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/currencies"
+    }
   },
   {
     "path": "Invoice.paymentTerms",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "markdown",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"payment_terms\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Payment details such as banking details, period of payment, deductibles, methods of payment.",
+      "jsdocDefinition": "Payment details",
       "coreKeywords": [
         "invoice",
         "payment",
         "terms",
         "textinput",
-        "details",
-        "banking",
-        "period",
-        "deductibles",
-        "methods"
+        "details"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"payment_terms\"\n        path: \"Invoice.paymentTerms\"\n        label: \"Enter paymentTerms\"\n        description: \"Payment details such as banking details, period of payment, deductibles, methods of payment.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"payment_terms\"\n        path: \"Invoice.paymentTerms\"\n        label: \"Enter paymentTerms\"\n        description: \"Payment details\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.note",
@@ -2549,97 +1999,42 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Comments made about the invoice by the issuer, subject, or other participants.",
+      "jsdocDefinition": "Comments made about the invoice",
       "coreKeywords": [
         "invoice",
         "note",
         "textinput",
         "comments",
         "made",
-        "about",
-        "issuer",
-        "subject",
-        "other",
-        "participants"
+        "about"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"Invoice.note\"\n        label: \"Enter note\"\n        description: \"Comments made about the invoice by the issuer, subject, or other participants.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"Invoice.note\"\n        label: \"Enter note\"\n        description: \"Comments made about the invoice\"\n        uiComponent: \"TextInput\""
   },
   {
-    "path": "Invoice.note.id",
+    "path": "Invoice.note.author[x]",
     "resourceType": "Invoice",
-    "primitiveType": "string",
+    "primitiveType": "polymorphic-reference",
     "isArray": false,
     "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "outboundEdges": [
+      {
+        "relationshipType": "author[x]-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "note",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
+        "authorx",
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Invoice.note.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Invoice.note.extension",
-    "resourceType": "Invoice",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "invoice",
-        "note",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Invoice.note.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"author[x]\"\n        path: \"Invoice.note.author[x]\"\n        label: \"Enter author[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.note.authorReference",
@@ -2650,26 +2045,22 @@
     "outboundEdges": [
       {
         "relationshipType": "authorReference-link",
-        "targetResource": "authorReference",
-        "traversalPath": "authorReference.id"
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The individual responsible for making the annotation.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "note",
         "author",
         "reference",
-        "dropdown",
-        "individual",
-        "responsible",
-        "making",
-        "annotation"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"Invoice.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"The individual responsible for making the annotation.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"Invoice.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.note.authorString",
@@ -2680,65 +2071,53 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The individual responsible for making the annotation.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "note",
         "author",
         "string",
-        "textinput",
-        "individual",
-        "responsible",
-        "making",
-        "annotation"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"Invoice.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"The individual responsible for making the annotation.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"Invoice.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Invoice.note.time",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Indicates when this particular annotation was made.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "note",
         "time",
-        "textinput",
-        "indicates",
-        "when",
-        "particular",
-        "annotation",
-        "made"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"Invoice.note.time\"\n        label: \"Enter time\"\n        description: \"Indicates when this particular annotation was made.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"Invoice.note.time\"\n        label: \"Enter time\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Invoice.note.text",
     "resourceType": "Invoice",
-    "primitiveType": "object",
+    "primitiveType": "markdown",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The text of the annotation in markdown format.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "invoice",
         "note",
         "text",
-        "textinput",
-        "annotation",
-        "markdown",
-        "format"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Invoice.note.text\"\n        label: \"Enter text\"\n        description: \"The text of the annotation in markdown format.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Invoice.note.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   }
 ]

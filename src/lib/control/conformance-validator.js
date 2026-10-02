@@ -114,7 +114,19 @@ export function validate(structureDefinition, resource) {
     const relativePath = el.path.slice(resourceType.length + 1); // drop 'Organization.' prefix
     if (!relativePath) return; // the root element itself, nothing to check
     const values = resolvePath(resource, relativePath);
-    checkCardinality(errors, el.path, values.length, el.min ?? 0, el.max ?? '*');
+    // Cardinality per repetition of the parent, as FHIR defines it (and as clinuxflow-fhir-api's
+    // validator does): Practitioner.qualification.code 1..1 means one code IN EACH qualification,
+    // not one across all of them — the old aggregate count wrongly failed a practitioner with two
+    // qualifications under the IG-based profiles. A child's min applies only where its parent
+    // exists; direct children of the resource are checked against the resource itself.
+    const segments = relativePath.split('.');
+    const parents = segments.length === 1 ? [resource] : resolvePath(resource, segments.slice(0, -1).join('.'));
+    const leaf = segments[segments.length - 1];
+    parents.forEach((parent) => {
+      const v = parent?.[leaf];
+      const count = v === undefined || v === null ? 0 : Array.isArray(v) ? v.length : 1;
+      checkCardinality(errors, el.path, count, el.min ?? 0, el.max ?? '*');
+    });
     const fixed = fixedValueOf(el);
     if (fixed !== undefined) {
       values.forEach((v) => {

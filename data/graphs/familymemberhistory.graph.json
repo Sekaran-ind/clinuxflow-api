@@ -1,0 +1,4022 @@
+[
+  {
+    "path": "FamilyMemberHistory.resourceType",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a FamilyMemberHistory resource",
+      "coreKeywords": [
+        "familymemberhistory",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"FamilyMemberHistory.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a FamilyMemberHistory resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.id",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"FamilyMemberHistory.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.text",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"FamilyMemberHistory.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.contained",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"FamilyMemberHistory.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.extension",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"FamilyMemberHistory.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.modifierExtension",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"FamilyMemberHistory.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "External Id(s) for this record",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "textinput",
+        "external",
+        "ids",
+        "record"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"FamilyMemberHistory.identifier\"\n        label: \"Enter identifier\"\n        description: \"External Id(s) for this record\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.use",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"FamilyMemberHistory.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.type",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"FamilyMemberHistory.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.type.coding",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"FamilyMemberHistory.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.type.coding.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.type.coding.version",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"FamilyMemberHistory.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.type.coding.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.type.coding.display",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"FamilyMemberHistory.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.type.coding.userSelected",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"FamilyMemberHistory.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.type.text",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"FamilyMemberHistory.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.value",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"FamilyMemberHistory.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.period",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"FamilyMemberHistory.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.period.start",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"FamilyMemberHistory.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.period.end",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"FamilyMemberHistory.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "FamilyMemberHistory.identifier.assigner",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"FamilyMemberHistory.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.instantiatesCanonical",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "canonical",
+    "isArray": true,
+    "arrayTargetType": "canonical",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"instantiates_canonical\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Instantiates FHIR protocol or definition",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "instantiates",
+        "canonical",
+        "textinput",
+        "fhir",
+        "protocol",
+        "definition"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"instantiates_canonical\"\n        path: \"FamilyMemberHistory.instantiatesCanonical\"\n        label: \"Enter instantiatesCanonical\"\n        description: \"Instantiates FHIR protocol or definition\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.instantiatesUri",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": true,
+    "arrayTargetType": "uri",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"instantiates_uri\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Instantiates external protocol or definition",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "instantiates",
+        "uri",
+        "textinput",
+        "external",
+        "protocol",
+        "definition"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"instantiates_uri\"\n        path: \"FamilyMemberHistory.instantiatesUri\"\n        label: \"Enter instantiatesUri\"\n        description: \"Instantiates external protocol or definition\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.status",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"partial\\\" | \\\"completed\\\" | \\\"entered-in-error\\\" | \\\"health-unknown\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "partial | completed | entered-in-error | health-unknown",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "status",
+        "dropdown",
+        "partial",
+        "completed",
+        "entered",
+        "error",
+        "health",
+        "unknown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"FamilyMemberHistory.status\"\n        label: \"Enter status\"\n        description: \"partial | completed | entered-in-error | health-unknown\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/history-status"
+    },
+    "choices": [
+      "partial",
+      "completed",
+      "entered-in-error",
+      "health-unknown"
+    ]
+  },
+  {
+    "path": "FamilyMemberHistory.dataAbsentReason",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"data_absent_reason\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "subject-unknown | withheld | unable-to-obtain | deferred",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "data",
+        "absent",
+        "reason",
+        "dropdown",
+        "subject",
+        "unknown",
+        "withheld",
+        "unable",
+        "obtain",
+        "deferred"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"data_absent_reason\"\n        path: \"FamilyMemberHistory.dataAbsentReason\"\n        label: \"Enter dataAbsentReason\"\n        description: \"subject-unknown | withheld | unable-to-obtain | deferred\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/history-absent-reason"
+    }
+  },
+  {
+    "path": "FamilyMemberHistory.dataAbsentReason.coding",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "data",
+        "absent",
+        "reason",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"FamilyMemberHistory.dataAbsentReason.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "FamilyMemberHistory.dataAbsentReason.coding.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "data",
+        "absent",
+        "reason",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.dataAbsentReason.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.dataAbsentReason.coding.version",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "data",
+        "absent",
+        "reason",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"FamilyMemberHistory.dataAbsentReason.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.dataAbsentReason.coding.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "data",
+        "absent",
+        "reason",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.dataAbsentReason.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.dataAbsentReason.coding.display",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "data",
+        "absent",
+        "reason",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"FamilyMemberHistory.dataAbsentReason.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.dataAbsentReason.coding.userSelected",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "data",
+        "absent",
+        "reason",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"FamilyMemberHistory.dataAbsentReason.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "FamilyMemberHistory.dataAbsentReason.text",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "data",
+        "absent",
+        "reason",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"FamilyMemberHistory.dataAbsentReason.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.patient",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "patient-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"patient\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Patient history is about",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "patient",
+        "textinput",
+        "about"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"patient\"\n        path: \"FamilyMemberHistory.patient\"\n        label: \"Enter patient\"\n        description: \"Patient history is about\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.date",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When history was recorded or last updated",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "date",
+        "datepicker",
+        "when",
+        "recorded",
+        "last",
+        "updated"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"date\"\n        path: \"FamilyMemberHistory.date\"\n        label: \"Enter date\"\n        description: \"When history was recorded or last updated\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "FamilyMemberHistory.name",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"name\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The family member described",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "name",
+        "textinput",
+        "described"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"FamilyMemberHistory.name\"\n        label: \"Enter name\"\n        description: \"The family member described\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.relationship",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"relationship\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Relationship to the subject",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "relationship",
+        "dropdown",
+        "subject"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"relationship\"\n        path: \"FamilyMemberHistory.relationship\"\n        label: \"Enter relationship\"\n        description: \"Relationship to the subject\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://terminology.hl7.org/ValueSet/v3-FamilyMember"
+    }
+  },
+  {
+    "path": "FamilyMemberHistory.relationship.coding",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "relationship",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"FamilyMemberHistory.relationship.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "FamilyMemberHistory.relationship.coding.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "relationship",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.relationship.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.relationship.coding.version",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "relationship",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"FamilyMemberHistory.relationship.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.relationship.coding.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "relationship",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.relationship.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.relationship.coding.display",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "relationship",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"FamilyMemberHistory.relationship.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.relationship.coding.userSelected",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "relationship",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"FamilyMemberHistory.relationship.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "FamilyMemberHistory.relationship.text",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "relationship",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"FamilyMemberHistory.relationship.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.sex",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"sex\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "male | female | other | unknown",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "sex",
+        "dropdown",
+        "male",
+        "female",
+        "other",
+        "unknown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"sex\"\n        path: \"FamilyMemberHistory.sex\"\n        label: \"Enter sex\"\n        description: \"male | female | other | unknown\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/administrative-gender"
+    }
+  },
+  {
+    "path": "FamilyMemberHistory.sex.coding",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "sex",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"FamilyMemberHistory.sex.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "FamilyMemberHistory.sex.coding.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "sex",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.sex.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.sex.coding.version",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "sex",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"FamilyMemberHistory.sex.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.sex.coding.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "sex",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.sex.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.sex.coding.display",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "sex",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"FamilyMemberHistory.sex.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.sex.coding.userSelected",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "sex",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"FamilyMemberHistory.sex.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "FamilyMemberHistory.sex.text",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "sex",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"FamilyMemberHistory.sex.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.born[x]",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"born[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "(approximate) date of birth",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "bornx",
+        "textinput",
+        "approximate",
+        "date",
+        "birth"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"born[x]\"\n        path: \"FamilyMemberHistory.born[x]\"\n        label: \"Enter born[x]\"\n        description: \"(approximate) date of birth\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.bornPeriod",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"born_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "(approximate) date of birth",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "born",
+        "period",
+        "textinput",
+        "approximate",
+        "date",
+        "birth"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"born_period\"\n        path: \"FamilyMemberHistory.bornPeriod\"\n        label: \"Enter bornPeriod\"\n        description: \"(approximate) date of birth\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.bornPeriod.start",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "born",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"FamilyMemberHistory.bornPeriod.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "FamilyMemberHistory.bornPeriod.end",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "born",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"FamilyMemberHistory.bornPeriod.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "FamilyMemberHistory.bornDate",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "date",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"born_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "(approximate) date of birth",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "born",
+        "date",
+        "datepicker",
+        "approximate",
+        "birth"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"born_date\"\n        path: \"FamilyMemberHistory.bornDate\"\n        label: \"Enter bornDate\"\n        description: \"(approximate) date of birth\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "FamilyMemberHistory.bornString",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"born_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "(approximate) date of birth",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "born",
+        "string",
+        "textinput",
+        "approximate",
+        "date",
+        "birth"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"born_string\"\n        path: \"FamilyMemberHistory.bornString\"\n        label: \"Enter bornString\"\n        description: \"(approximate) date of birth\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.age[x]",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"age[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "(approximate) age",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "agex",
+        "textinput",
+        "approximate",
+        "age"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"age[x]\"\n        path: \"FamilyMemberHistory.age[x]\"\n        label: \"Enter age[x]\"\n        description: \"(approximate) age\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageAge",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"age_age\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "(approximate) age",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "textinput",
+        "approximate"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"age_age\"\n        path: \"FamilyMemberHistory.ageAge\"\n        label: \"Enter ageAge\"\n        description: \"(approximate) age\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageAge.value",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"FamilyMemberHistory.ageAge.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageAge.comparator",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"FamilyMemberHistory.ageAge.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "FamilyMemberHistory.ageAge.unit",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"FamilyMemberHistory.ageAge.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageAge.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.ageAge.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageAge.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.ageAge.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"age_range\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "(approximate) age",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "textinput",
+        "approximate"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"age_range\"\n        path: \"FamilyMemberHistory.ageRange\"\n        label: \"Enter ageRange\"\n        description: \"(approximate) age\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.low",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"low\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "low",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"low\"\n        path: \"FamilyMemberHistory.ageRange.low\"\n        label: \"Enter low\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.low.value",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "low",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"FamilyMemberHistory.ageRange.low.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.low.comparator",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "low",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"FamilyMemberHistory.ageRange.low.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.low.unit",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "low",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"FamilyMemberHistory.ageRange.low.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.low.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "low",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.ageRange.low.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.low.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "low",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.ageRange.low.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.high",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"high\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "high",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"high\"\n        path: \"FamilyMemberHistory.ageRange.high\"\n        label: \"Enter high\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.high.value",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "high",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"FamilyMemberHistory.ageRange.high.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.high.comparator",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "high",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"FamilyMemberHistory.ageRange.high.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.high.unit",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "high",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"FamilyMemberHistory.ageRange.high.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.high.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "high",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.ageRange.high.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageRange.high.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "range",
+        "high",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.ageRange.high.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.ageString",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"age_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "(approximate) age",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "age",
+        "string",
+        "textinput",
+        "approximate"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"age_string\"\n        path: \"FamilyMemberHistory.ageString\"\n        label: \"Enter ageString\"\n        description: \"(approximate) age\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.estimatedAge",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"estimated_age\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Age is estimated?",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "estimated",
+        "age",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"estimated_age\"\n        path: \"FamilyMemberHistory.estimatedAge\"\n        label: \"Enter estimatedAge\"\n        description: \"Age is estimated?\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceased[x]",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"deceased[x]\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Dead? How old/when?",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceasedx",
+        "checkbox",
+        "dead",
+        "how",
+        "oldwhen"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"deceased[x]\"\n        path: \"FamilyMemberHistory.deceased[x]\"\n        label: \"Enter deceased[x]\"\n        description: \"Dead? How old/when?\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedBoolean",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"deceased_boolean\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Dead? How old/when?",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "boolean",
+        "checkbox",
+        "dead",
+        "how",
+        "oldwhen"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"deceased_boolean\"\n        path: \"FamilyMemberHistory.deceasedBoolean\"\n        label: \"Enter deceasedBoolean\"\n        description: \"Dead? How old/when?\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedAge",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"deceased_age\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Dead? How old/when?",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "age",
+        "textinput",
+        "dead",
+        "how",
+        "oldwhen"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"deceased_age\"\n        path: \"FamilyMemberHistory.deceasedAge\"\n        label: \"Enter deceasedAge\"\n        description: \"Dead? How old/when?\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedAge.value",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "age",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"FamilyMemberHistory.deceasedAge.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedAge.comparator",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "age",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"FamilyMemberHistory.deceasedAge.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedAge.unit",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "age",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"FamilyMemberHistory.deceasedAge.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedAge.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "age",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.deceasedAge.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedAge.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "age",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.deceasedAge.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"deceased_range\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Dead? How old/when?",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "textinput",
+        "dead",
+        "how",
+        "oldwhen"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"deceased_range\"\n        path: \"FamilyMemberHistory.deceasedRange\"\n        label: \"Enter deceasedRange\"\n        description: \"Dead? How old/when?\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.low",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"low\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "low",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"low\"\n        path: \"FamilyMemberHistory.deceasedRange.low\"\n        label: \"Enter low\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.low.value",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "low",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"FamilyMemberHistory.deceasedRange.low.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.low.comparator",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "low",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"FamilyMemberHistory.deceasedRange.low.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.low.unit",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "low",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"FamilyMemberHistory.deceasedRange.low.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.low.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "low",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.deceasedRange.low.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.low.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "low",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.deceasedRange.low.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.high",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"high\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "high",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"high\"\n        path: \"FamilyMemberHistory.deceasedRange.high\"\n        label: \"Enter high\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.high.value",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "high",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"FamilyMemberHistory.deceasedRange.high.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.high.comparator",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "high",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"FamilyMemberHistory.deceasedRange.high.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.high.unit",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "high",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"FamilyMemberHistory.deceasedRange.high.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.high.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "high",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.deceasedRange.high.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedRange.high.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "range",
+        "high",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.deceasedRange.high.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedDate",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "date",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"deceased_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Dead? How old/when?",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "date",
+        "datepicker",
+        "dead",
+        "how",
+        "oldwhen"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"deceased_date\"\n        path: \"FamilyMemberHistory.deceasedDate\"\n        label: \"Enter deceasedDate\"\n        description: \"Dead? How old/when?\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "FamilyMemberHistory.deceasedString",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"deceased_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Dead? How old/when?",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "deceased",
+        "string",
+        "textinput",
+        "dead",
+        "how",
+        "oldwhen"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"deceased_string\"\n        path: \"FamilyMemberHistory.deceasedString\"\n        label: \"Enter deceasedString\"\n        description: \"Dead? How old/when?\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.reasonCode",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"reason_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Why was family member history performed?",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "reason",
+        "code",
+        "multiselect",
+        "why",
+        "performed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason_code\"\n        path: \"FamilyMemberHistory.reasonCode\"\n        label: \"Enter reasonCode\"\n        description: \"Why was family member history performed?\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/clinical-findings"
+    }
+  },
+  {
+    "path": "FamilyMemberHistory.reasonCode.coding",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "reason",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"FamilyMemberHistory.reasonCode.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "FamilyMemberHistory.reasonCode.coding.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "reason",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.reasonCode.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.reasonCode.coding.version",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "reason",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"FamilyMemberHistory.reasonCode.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.reasonCode.coding.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "reason",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.reasonCode.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.reasonCode.coding.display",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "reason",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"FamilyMemberHistory.reasonCode.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.reasonCode.coding.userSelected",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "reason",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"FamilyMemberHistory.reasonCode.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "FamilyMemberHistory.reasonCode.text",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "reason",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"FamilyMemberHistory.reasonCode.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.reasonReference",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "Condition",
+        "traversalPath": "Condition.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "Observation",
+        "traversalPath": "Observation.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "AllergyIntolerance",
+        "traversalPath": "AllergyIntolerance.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "QuestionnaireResponse",
+        "traversalPath": "QuestionnaireResponse.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "DiagnosticReport",
+        "traversalPath": "DiagnosticReport.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "DocumentReference",
+        "traversalPath": "DocumentReference.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"reason_reference\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Why was family member history performed?",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "reason",
+        "reference",
+        "textinput",
+        "why",
+        "performed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason_reference\"\n        path: \"FamilyMemberHistory.reasonReference\"\n        label: \"Enter reasonReference\"\n        description: \"Why was family member history performed?\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.note",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "General note about related person",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "note",
+        "textinput",
+        "general",
+        "about",
+        "related",
+        "person"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"FamilyMemberHistory.note\"\n        label: \"Enter note\"\n        description: \"General note about related person\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.note.author[x]",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author[x]-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "note",
+        "authorx",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author[x]\"\n        path: \"FamilyMemberHistory.note.author[x]\"\n        label: \"Enter author[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.note.authorReference",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "note",
+        "author",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"FamilyMemberHistory.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.note.authorString",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "note",
+        "author",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"FamilyMemberHistory.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.note.time",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "note",
+        "time",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"FamilyMemberHistory.note.time\"\n        label: \"Enter time\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "FamilyMemberHistory.note.text",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "note",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"FamilyMemberHistory.note.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"condition\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Condition that the related person had",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "textinput",
+        "related",
+        "person",
+        "had"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"condition\"\n        path: \"FamilyMemberHistory.condition\"\n        label: \"Enter condition\"\n        description: \"Condition that the related person had\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.extension",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"FamilyMemberHistory.condition.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.modifierExtension",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"FamilyMemberHistory.condition.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Condition suffered by relation",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "code",
+        "dropdown",
+        "suffered",
+        "relation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.condition.code\"\n        label: \"Enter code\"\n        description: \"Condition suffered by relation\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/condition-code"
+    }
+  },
+  {
+    "path": "FamilyMemberHistory.condition.code.coding",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"FamilyMemberHistory.condition.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.code.coding.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.condition.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.code.coding.version",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"FamilyMemberHistory.condition.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.code.coding.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.condition.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.code.coding.display",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"FamilyMemberHistory.condition.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.code.coding.userSelected",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"FamilyMemberHistory.condition.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.code.text",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"FamilyMemberHistory.condition.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.outcome",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"outcome\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "deceased | permanent disability | etc.",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "outcome",
+        "dropdown",
+        "deceased",
+        "permanent",
+        "disability",
+        "etc"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"outcome\"\n        path: \"FamilyMemberHistory.condition.outcome\"\n        label: \"Enter outcome\"\n        description: \"deceased | permanent disability | etc.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/condition-outcome"
+    }
+  },
+  {
+    "path": "FamilyMemberHistory.condition.outcome.coding",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "outcome",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"FamilyMemberHistory.condition.outcome.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.outcome.coding.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "outcome",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.condition.outcome.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.outcome.coding.version",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "outcome",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"FamilyMemberHistory.condition.outcome.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.outcome.coding.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "outcome",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.condition.outcome.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.outcome.coding.display",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "outcome",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"FamilyMemberHistory.condition.outcome.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.outcome.coding.userSelected",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "outcome",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"FamilyMemberHistory.condition.outcome.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.outcome.text",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "outcome",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"FamilyMemberHistory.condition.outcome.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.contributedToDeath",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contributed_to_death\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Whether the condition contributed to the cause of death",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "contributed",
+        "death",
+        "checkbox",
+        "whether",
+        "cause"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contributed_to_death\"\n        path: \"FamilyMemberHistory.condition.contributedToDeath\"\n        label: \"Enter contributedToDeath\"\n        description: \"Whether the condition contributed to the cause of death\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onset[x]",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When condition first manifested",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onsetx",
+        "textinput",
+        "when",
+        "first",
+        "manifested"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset[x]\"\n        path: \"FamilyMemberHistory.condition.onset[x]\"\n        label: \"Enter onset[x]\"\n        description: \"When condition first manifested\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetAge",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_age\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When condition first manifested",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "age",
+        "textinput",
+        "when",
+        "first",
+        "manifested"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_age\"\n        path: \"FamilyMemberHistory.condition.onsetAge\"\n        label: \"Enter onsetAge\"\n        description: \"When condition first manifested\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetAge.value",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "age",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"FamilyMemberHistory.condition.onsetAge.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetAge.comparator",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "age",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"FamilyMemberHistory.condition.onsetAge.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetAge.unit",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "age",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"FamilyMemberHistory.condition.onsetAge.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetAge.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "age",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.condition.onsetAge.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetAge.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "age",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.condition.onsetAge.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_range\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When condition first manifested",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "textinput",
+        "when",
+        "first",
+        "manifested"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_range\"\n        path: \"FamilyMemberHistory.condition.onsetRange\"\n        label: \"Enter onsetRange\"\n        description: \"When condition first manifested\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.low",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"low\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"low\"\n        path: \"FamilyMemberHistory.condition.onsetRange.low\"\n        label: \"Enter low\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.low.value",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"FamilyMemberHistory.condition.onsetRange.low.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.low.comparator",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"FamilyMemberHistory.condition.onsetRange.low.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.low.unit",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"FamilyMemberHistory.condition.onsetRange.low.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.low.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.condition.onsetRange.low.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.low.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "low",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.condition.onsetRange.low.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.high",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"high\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"high\"\n        path: \"FamilyMemberHistory.condition.onsetRange.high\"\n        label: \"Enter high\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.high.value",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"FamilyMemberHistory.condition.onsetRange.high.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.high.comparator",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"FamilyMemberHistory.condition.onsetRange.high.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.high.unit",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"FamilyMemberHistory.condition.onsetRange.high.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.high.system",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"FamilyMemberHistory.condition.onsetRange.high.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetRange.high.code",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "range",
+        "high",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"FamilyMemberHistory.condition.onsetRange.high.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetPeriod",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When condition first manifested",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "period",
+        "textinput",
+        "when",
+        "first",
+        "manifested"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_period\"\n        path: \"FamilyMemberHistory.condition.onsetPeriod\"\n        label: \"Enter onsetPeriod\"\n        description: \"When condition first manifested\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetPeriod.start",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"FamilyMemberHistory.condition.onsetPeriod.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetPeriod.end",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"FamilyMemberHistory.condition.onsetPeriod.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.onsetString",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"onset_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When condition first manifested",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "onset",
+        "string",
+        "textinput",
+        "when",
+        "first",
+        "manifested"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"onset_string\"\n        path: \"FamilyMemberHistory.condition.onsetString\"\n        label: \"Enter onsetString\"\n        description: \"When condition first manifested\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.note",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extra information about condition",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "note",
+        "textinput",
+        "extra",
+        "information",
+        "about"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"FamilyMemberHistory.condition.note\"\n        label: \"Enter note\"\n        description: \"Extra information about condition\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.note.author[x]",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author[x]-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "note",
+        "authorx",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author[x]\"\n        path: \"FamilyMemberHistory.condition.note.author[x]\"\n        label: \"Enter author[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.note.authorReference",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "note",
+        "author",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"FamilyMemberHistory.condition.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.note.authorString",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "note",
+        "author",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"FamilyMemberHistory.condition.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.note.time",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "note",
+        "time",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"FamilyMemberHistory.condition.note.time\"\n        label: \"Enter time\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "FamilyMemberHistory.condition.note.text",
+    "resourceType": "FamilyMemberHistory",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "family",
+        "member",
+        "history",
+        "condition",
+        "note",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"FamilyMemberHistory.condition.note.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  }
+]

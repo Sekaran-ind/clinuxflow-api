@@ -1,0 +1,1814 @@
+[
+  {
+    "path": "QuestionnaireResponse.resourceType",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a QuestionnaireResponse resource",
+      "coreKeywords": [
+        "questionnaireresponse",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"QuestionnaireResponse.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a QuestionnaireResponse resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.id",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"QuestionnaireResponse.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.text",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"QuestionnaireResponse.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.contained",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"QuestionnaireResponse.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.extension",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"QuestionnaireResponse.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.modifierExtension",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"QuestionnaireResponse.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for this set of answers",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "textinput",
+        "unique",
+        "set",
+        "answers"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"QuestionnaireResponse.identifier\"\n        label: \"Enter identifier\"\n        description: \"Unique id for this set of answers\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.use",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"QuestionnaireResponse.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.type",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"QuestionnaireResponse.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.type.coding",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"QuestionnaireResponse.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.type.coding.system",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"QuestionnaireResponse.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.type.coding.version",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"QuestionnaireResponse.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.type.coding.code",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"QuestionnaireResponse.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.type.coding.display",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"QuestionnaireResponse.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.type.coding.userSelected",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"QuestionnaireResponse.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.type.text",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"QuestionnaireResponse.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.system",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"QuestionnaireResponse.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.value",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"QuestionnaireResponse.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.period",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"QuestionnaireResponse.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.period.start",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"QuestionnaireResponse.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.period.end",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"QuestionnaireResponse.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "QuestionnaireResponse.identifier.assigner",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"QuestionnaireResponse.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.basedOn",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "CarePlan",
+        "traversalPath": "CarePlan.id"
+      },
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "ServiceRequest",
+        "traversalPath": "ServiceRequest.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"based_on\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Request fulfilled by this QuestionnaireResponse",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "based",
+        "textinput",
+        "request",
+        "fulfilled",
+        "questionnaireresponse"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"based_on\"\n        path: \"QuestionnaireResponse.basedOn\"\n        label: \"Enter basedOn\"\n        description: \"Request fulfilled by this QuestionnaireResponse\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.partOf",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "partOf-link",
+        "targetResource": "Observation",
+        "traversalPath": "Observation.id"
+      },
+      {
+        "relationshipType": "partOf-link",
+        "targetResource": "Procedure",
+        "traversalPath": "Procedure.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"part_of\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Part of this action",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "part",
+        "textinput",
+        "action"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"part_of\"\n        path: \"QuestionnaireResponse.partOf\"\n        label: \"Enter partOf\"\n        description: \"Part of this action\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.questionnaire",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "canonical",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"questionnaire\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Form being answered",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "textinput",
+        "form",
+        "being",
+        "answered"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"questionnaire\"\n        path: \"QuestionnaireResponse.questionnaire\"\n        label: \"Enter questionnaire\"\n        description: \"Form being answered\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.status",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"in-progress\\\" | \\\"completed\\\" | \\\"amended\\\" | \\\"entered-in-error\\\" | \\\"stopped\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "in-progress | completed | amended | entered-in-error | stopped",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "status",
+        "dropdown",
+        "progress",
+        "completed",
+        "amended",
+        "entered",
+        "error",
+        "stopped"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"QuestionnaireResponse.status\"\n        label: \"Enter status\"\n        description: \"in-progress | completed | amended | entered-in-error | stopped\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers-status"
+    },
+    "choices": [
+      "in-progress",
+      "completed",
+      "amended",
+      "entered-in-error",
+      "stopped"
+    ]
+  },
+  {
+    "path": "QuestionnaireResponse.subject",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"subject\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The subject of the questions",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "subject",
+        "textinput",
+        "questions"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"subject\"\n        path: \"QuestionnaireResponse.subject\"\n        label: \"Enter subject\"\n        description: \"The subject of the questions\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.encounter",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "encounter-link",
+        "targetResource": "Encounter",
+        "traversalPath": "Encounter.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"encounter\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Encounter created as part of",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "encounter",
+        "textinput",
+        "created",
+        "part"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"encounter\"\n        path: \"QuestionnaireResponse.encounter\"\n        label: \"Enter encounter\"\n        description: \"Encounter created as part of\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.authored",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"authored\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Date the answers were gathered",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "authored",
+        "datepicker",
+        "date",
+        "answers",
+        "gathered"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"authored\"\n        path: \"QuestionnaireResponse.authored\"\n        label: \"Enter authored\"\n        description: \"Date the answers were gathered\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "QuestionnaireResponse.author",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "author-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "author-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "author-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "author-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      },
+      {
+        "relationshipType": "author-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Person who received and recorded the answers",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "author",
+        "textinput",
+        "person",
+        "who",
+        "received",
+        "recorded",
+        "answers"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author\"\n        path: \"QuestionnaireResponse.author\"\n        label: \"Enter author\"\n        description: \"Person who received and recorded the answers\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.source",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "source-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "source-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "source-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "source-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"source\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The person who answered the questions",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "source",
+        "textinput",
+        "person",
+        "who",
+        "answered",
+        "questions"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"source\"\n        path: \"QuestionnaireResponse.source\"\n        label: \"Enter source\"\n        description: \"The person who answered the questions\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"item\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Groups and questions",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "textinput",
+        "groups",
+        "questions"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"item\"\n        path: \"QuestionnaireResponse.item\"\n        label: \"Enter item\"\n        description: \"Groups and questions\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.extension",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"QuestionnaireResponse.item.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.modifierExtension",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"QuestionnaireResponse.item.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.linkId",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"link_id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Pointer to specific item from Questionnaire",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "link",
+        "textinput",
+        "pointer",
+        "specific"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"link_id\"\n        path: \"QuestionnaireResponse.item.linkId\"\n        label: \"Enter linkId\"\n        description: \"Pointer to specific item from Questionnaire\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.definition",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"definition\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "ElementDefinition - details for the item",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "definition",
+        "textinput",
+        "elementdefinition",
+        "details"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"definition\"\n        path: \"QuestionnaireResponse.item.definition\"\n        label: \"Enter definition\"\n        description: \"ElementDefinition - details for the item\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.text",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Name for group or question text",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "text",
+        "textinput",
+        "name",
+        "group",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"QuestionnaireResponse.item.text\"\n        label: \"Enter text\"\n        description: \"Name for group or question text\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The response(s) to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "textinput",
+        "responses",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer\"\n        path: \"QuestionnaireResponse.item.answer\"\n        label: \"Enter answer\"\n        description: \"The response(s) to the question\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.extension",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"QuestionnaireResponse.item.answer.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.modifierExtension",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"QuestionnaireResponse.item.answer.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.value[x]",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value[x]\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "valuex",
+        "checkbox",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value[x]\"\n        path: \"QuestionnaireResponse.item.answer.value[x]\"\n        label: \"Enter value[x]\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"Checkbox\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueBoolean",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_boolean\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "boolean",
+        "checkbox",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_boolean\"\n        path: \"QuestionnaireResponse.item.answer.valueBoolean\"\n        label: \"Enter valueBoolean\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"Checkbox\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueDecimal",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_decimal\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "decimal",
+        "numericinput",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_decimal\"\n        path: \"QuestionnaireResponse.item.answer.valueDecimal\"\n        label: \"Enter valueDecimal\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"NumericInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueInteger",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "integer",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_integer\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "integer",
+        "numericinput",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_integer\"\n        path: \"QuestionnaireResponse.item.answer.valueInteger\"\n        label: \"Enter valueInteger\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"NumericInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueDate",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "date",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "date",
+        "datepicker",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_date\"\n        path: \"QuestionnaireResponse.item.answer.valueDate\"\n        label: \"Enter valueDate\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"DatePicker\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueDateTime",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "date",
+        "time",
+        "datepicker",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_date_time\"\n        path: \"QuestionnaireResponse.item.answer.valueDateTime\"\n        label: \"Enter valueDateTime\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"DatePicker\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueTime",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "time",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "time",
+        "textinput",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_time\"\n        path: \"QuestionnaireResponse.item.answer.valueTime\"\n        label: \"Enter valueTime\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueString",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "string",
+        "textinput",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_string\"\n        path: \"QuestionnaireResponse.item.answer.valueString\"\n        label: \"Enter valueString\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueUri",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_uri\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "uri",
+        "textinput",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_uri\"\n        path: \"QuestionnaireResponse.item.answer.valueUri\"\n        label: \"Enter valueUri\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueAttachment",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_attachment\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "attachment",
+        "textinput",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_attachment\"\n        path: \"QuestionnaireResponse.item.answer.valueAttachment\"\n        label: \"Enter valueAttachment\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueAttachment.contentType",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"content_type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "attachment",
+        "content",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"content_type\"\n        path: \"QuestionnaireResponse.item.answer.valueAttachment.contentType\"\n        label: \"Enter contentType\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/mimetypes"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueAttachment.language",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"language\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "attachment",
+        "language",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"language\"\n        path: \"QuestionnaireResponse.item.answer.valueAttachment.language\"\n        label: \"Enter language\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueAttachment.data",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "base64Binary",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"data\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "attachment",
+        "data",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"data\"\n        path: \"QuestionnaireResponse.item.answer.valueAttachment.data\"\n        label: \"Enter data\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueAttachment.url",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "url",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"url\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "attachment",
+        "url",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"QuestionnaireResponse.item.answer.valueAttachment.url\"\n        label: \"Enter url\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueAttachment.size",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "unsignedInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"size\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "attachment",
+        "size",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"size\"\n        path: \"QuestionnaireResponse.item.answer.valueAttachment.size\"\n        label: \"Enter size\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueAttachment.hash",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "base64Binary",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"hash\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "attachment",
+        "hash",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"hash\"\n        path: \"QuestionnaireResponse.item.answer.valueAttachment.hash\"\n        label: \"Enter hash\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueAttachment.title",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"title\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "attachment",
+        "title",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"title\"\n        path: \"QuestionnaireResponse.item.answer.valueAttachment.title\"\n        label: \"Enter title\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueAttachment.creation",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"creation\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "attachment",
+        "creation",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"creation\"\n        path: \"QuestionnaireResponse.item.answer.valueAttachment.creation\"\n        label: \"Enter creation\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueCoding",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_coding\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "coding",
+        "dropdown",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_coding\"\n        path: \"QuestionnaireResponse.item.answer.valueCoding\"\n        label: \"Enter valueCoding\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueCoding.system",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"QuestionnaireResponse.item.answer.valueCoding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueCoding.version",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"QuestionnaireResponse.item.answer.valueCoding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueCoding.code",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"QuestionnaireResponse.item.answer.valueCoding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueCoding.display",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"QuestionnaireResponse.item.answer.valueCoding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueCoding.userSelected",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"QuestionnaireResponse.item.answer.valueCoding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueQuantity",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_quantity\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "quantity",
+        "textinput",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_quantity\"\n        path: \"QuestionnaireResponse.item.answer.valueQuantity\"\n        label: \"Enter valueQuantity\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueQuantity.value",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "quantity",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"QuestionnaireResponse.item.answer.valueQuantity.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueQuantity.comparator",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "quantity",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"QuestionnaireResponse.item.answer.valueQuantity.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueQuantity.unit",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "quantity",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"QuestionnaireResponse.item.answer.valueQuantity.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueQuantity.system",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "quantity",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"QuestionnaireResponse.item.answer.valueQuantity.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueQuantity.code",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "quantity",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"QuestionnaireResponse.item.answer.valueQuantity.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.valueReference",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "valueReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"value_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Single-valued answer to the question",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "reference",
+        "textinput",
+        "single",
+        "valued",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_reference\"\n        path: \"QuestionnaireResponse.item.answer.valueReference\"\n        label: \"Enter valueReference\"\n        description: \"Single-valued answer to the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "QuestionnaireResponse.item.answer.item",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"item\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Nested groups and questions",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "answer",
+        "textinput",
+        "nested",
+        "groups",
+        "questions"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"item\"\n        path: \"QuestionnaireResponse.item.answer.item\"\n        label: \"Enter item\"\n        description: \"Nested groups and questions\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "QuestionnaireResponse.item.item",
+    "resourceType": "QuestionnaireResponse",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"item\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Nested questionnaire response items",
+      "coreKeywords": [
+        "questionnaire",
+        "response",
+        "item",
+        "textinput",
+        "nested",
+        "items"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"item\"\n        path: \"QuestionnaireResponse.item.item\"\n        label: \"Enter item\"\n        description: \"Nested questionnaire response items\"\n        uiComponent: \"TextInput\""
+  }
+]

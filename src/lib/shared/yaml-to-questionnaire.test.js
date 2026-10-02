@@ -324,11 +324,11 @@ composition:
         path: "Organization.extension"
         label: "Ownership"
         uiComponent: "TextInput"
-        extensionUrl: "https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code"
+        extensionUrl: "https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-ownership-code"
 `;
         const result = compileYamlToQuestionnaire(yamlSource);
         expect(result.success).toBe(true);
-        expect(result.questionnaire.item[0].item[0].extensionUrl).toBe('https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code');
+        expect(result.questionnaire.item[0].item[0].extensionUrl).toBe('https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-ownership-code');
     });
 
     it('a field with no extensionUrl compiles with no extensionUrl property at all (not undefined-but-present)', () => {

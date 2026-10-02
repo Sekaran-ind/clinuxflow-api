@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "clinuxflow-task",
-  "url": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowTask",
+  "url": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowTask",
   "version": "1.0.0",
   "name": "ClinuxFlowTask",
   "title": "ClinuxFlow Task",

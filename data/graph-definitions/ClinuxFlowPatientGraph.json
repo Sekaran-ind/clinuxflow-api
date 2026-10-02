@@ -1,13 +1,13 @@
 {
   "resourceType": "GraphDefinition",
   "id": "clinuxflow-patient-graph",
-  "url": "https://clinuxflow.example/fhir/GraphDefinition/ClinuxFlowPatientGraph",
+  "url": "https://clinux.yaxb.ai/fhir/GraphDefinition/ClinuxFlowPatientGraph",
   "version": "1.0.0",
   "name": "ClinuxFlowPatientGraph",
   "status": "active",
   "description": "The real reference-structure graph rooted on Patient — deliberately separate from ClinuxFlowOnboardingGraph.json (that graph's own header correctly excludes Patient: facility-registration topology is a different root/scope from patient-clinical topology, and conflating the two would misrepresent both). ClinuxFlowPatient.json is a genuine leaf profile — zero Reference-typed elements of its own — so there is nothing INTERNAL to Patient for a graph to walk. The one real structural edge Patient has in this system is the reverse one: a facility's Encounters point back to a Patient (real FHIR Encounter.subject). That edge is honestly GraphDefinition-shaped (reference cardinality, not time/sequence) — same reasoning ClinuxFlowOnboardingGraph's own reverse links (role-at-facility, affiliation-from-facility) already establish. Deliberately does NOT model anything INSIDE an Encounter (Register->Triage->Consult->SOAP->Checkout) — that sequence is genuinely episodic/pipeline-shaped (SPEC-16 SS3, SPEC-23 SS4/SS10), which real FHIR GraphDefinition cannot express (no concept of time/state/before-after; see SPEC-24 SS3's own honest split) and which this pass does not build a state machine for either — left as explicitly future, separate work. Walked by the same next-best-action.js as ClinuxFlowOnboardingGraph (no code changes needed): once a Patient resource is valid, this graph's one reverse link surfaces exactly one open-ended, repeatable candidate — 'capture an Encounter for this patient' — which is genuinely useful (it's literally 'what to do next after registering a patient'), not a hollow gesture.",
   "start": "Patient",
-  "profile": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowPatient",
+  "profile": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowPatient",
   "link": [
     {
       "path": "Encounter.subject",
@@ -18,7 +18,7 @@
           "type": "Encounter",
           "params": "subject={ref}",
           "extension": [
-            { "url": "https://clinuxflow.example/fhir/StructureDefinition/graph-link-direction", "valueCode": "reverse" }
+            { "url": "https://clinux.yaxb.ai/fhir/StructureDefinition/graph-link-direction", "valueCode": "reverse" }
           ]
         }
       ]

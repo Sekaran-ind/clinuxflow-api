@@ -29,17 +29,17 @@ function validFacility() {
       { system: 'email', value: 'abc@gmail.in' },
     ],
     extension: [
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-state-lgd-code', valueString: '33' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-district-lgd-code', valueString: '568' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-subdistrict-lgd-code', valueString: '5704' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-latitude', valueString: '24.068570' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-geolocation-longitude', valueString: '24.068570' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-code', valueString: 'G' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-ownership-subtype-code', valueString: 'S' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-facility-subtype', valueString: '30' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-system-of-medicine', valueString: 'M' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-system-of-medicine', valueString: 'D' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-operational-status-code', valueString: 'F' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-state-lgd-code', valueString: '33' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-district-lgd-code', valueString: '568' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-subdistrict-lgd-code', valueString: '5704' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-geolocation-latitude', valueString: '24.068570' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-geolocation-longitude', valueString: '24.068570' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-ownership-code', valueString: 'G' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-ownership-subtype-code', valueString: 'S' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-facility-subtype', valueString: '30' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-system-of-medicine', valueString: 'M' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-system-of-medicine', valueString: 'D' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-operational-status-code', valueString: 'F' },
     ],
   };
 }
@@ -104,7 +104,7 @@ describe('validate — ClinuxFlowFacility (real HFR-grounded profile)', () => {
   it('a single systemOfMedicine value still satisfies its real 1..* cardinality', () => {
     const facility = validFacility();
     facility.extension = facility.extension.filter((e) => !e.url.endsWith('hfr-system-of-medicine'));
-    facility.extension.push({ url: 'https://clinuxflow.example/fhir/StructureDefinition/hfr-system-of-medicine', valueString: 'M' });
+    facility.extension.push({ url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hfr-system-of-medicine', valueString: 'M' });
     const result = validate(sd, facility);
     expect(result.errors.some((e) => e.path === 'Organization.extension:systemOfMedicine')).toBe(false);
   });
@@ -124,10 +124,10 @@ describe('validate — ClinuxFlowProvider (real HPR-grounded profile)', () => {
       active: true,
       name: [{ given: ['Priya'], family: 'Kumar' }],
       telecom: [{ system: 'email', value: 'priya@example.com' }],
-      identifier: [{ system: 'https://facility.abdm.gov.in/hpr-id', value: 'priya1993@hpr.abdm' }],
+      identifier: [{ system: 'https://doctor.ndhm.gov.in', value: 'priya1993@hpr.abdm' }],
       extension: [
-        { url: 'https://clinuxflow.example/fhir/StructureDefinition/hpr-category-code', valueInteger: 1 },
-        { url: 'https://clinuxflow.example/fhir/StructureDefinition/hpr-subcategory-code', valueInteger: 1 },
+        { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-category-code', valueInteger: 1 },
+        { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-subcategory-code', valueInteger: 1 },
       ],
       qualification: [{ code: { coding: [{ code: '4060' }] } }],
     };
@@ -137,11 +137,21 @@ describe('validate — ClinuxFlowProvider (real HPR-grounded profile)', () => {
     expect(validate(sd, validProvider()).valid).toBe(true);
   });
 
-  it('flags a provider with no qualifications at all (register-professional-new requires at least one)', () => {
+  // FHIR cardinality is per repetition: qualification.code (1..1 in the IG-based profile) applies to
+  // each qualification that exists. A qualification without a code is flagged; having none at all
+  // is not, since neither the ABDM IG nor ClinuxFlowProvider makes Practitioner.qualification
+  // itself required (the old aggregate count only appeared to enforce that).
+  it('flags a qualification with no code — qualification.code is 1..1 in each qualification', () => {
     const p = validProvider();
-    p.qualification = [];
+    p.qualification = [{ code: { coding: [{ code: '4060' }] } }, { period: { start: '2010-01-01' } }];
     const result = validate(sd, p);
     expect(result.errors.some((e) => e.path === 'Practitioner.qualification.code')).toBe(true);
+  });
+
+  it('does not require a qualification at all (no profile makes Practitioner.qualification min 1)', () => {
+    const p = validProvider();
+    p.qualification = [];
+    expect(validate(sd, p).errors.some((e) => e.path === 'Practitioner.qualification.code')).toBe(false);
   });
 
   // Real regression this exact test guards against: this validator's generic slice/cardinality
@@ -264,14 +274,14 @@ describe('validate — ClinuxFlowPatient (ABHA verification-status extensions, g
   it('a fully ABHA-verified patient (all 7 extensions, including repeating authMethods) validates clean', () => {
     const p = validPatient();
     p.extension = [
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/abha-kyc-verified', valueBoolean: true },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/abha-verification-status', valueCode: 'VERIFIED' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/abha-verification-type', valueCode: 'AADHAAR' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/abha-email-verified', valueBoolean: false },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/abha-mobile-verified', valueBoolean: true },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/abha-status', valueCode: 'ACTIVE' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/abha-auth-methods', valueCode: 'AADHAAR_OTP' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/abha-auth-methods', valueCode: 'MOBILE_OTP' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/abha-kyc-verified', valueBoolean: true },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/abha-verification-status', valueCode: 'VERIFIED' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/abha-verification-type', valueCode: 'AADHAAR' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/abha-email-verified', valueBoolean: false },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/abha-mobile-verified', valueBoolean: true },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/abha-status', valueCode: 'ACTIVE' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/abha-auth-methods', valueCode: 'AADHAAR_OTP' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/abha-auth-methods', valueCode: 'MOBILE_OTP' },
     ];
     const result = validate(sd, p);
     expect(result.valid).toBe(true);
@@ -281,8 +291,8 @@ describe('validate — ClinuxFlowPatient (ABHA verification-status extensions, g
   it('flags more than one abhaStatus — a real, single-valued extension, unlike the repeating authMethods slice', () => {
     const p = validPatient();
     p.extension = [
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/abha-status', valueCode: 'ACTIVE' },
-      { url: 'https://clinuxflow.example/fhir/StructureDefinition/abha-status', valueCode: 'DEACTIVATED' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/abha-status', valueCode: 'ACTIVE' },
+      { url: 'https://clinux.yaxb.ai/fhir/StructureDefinition/abha-status', valueCode: 'DEACTIVATED' },
     ];
     const result = validate(sd, p);
     expect(result.valid).toBe(false);

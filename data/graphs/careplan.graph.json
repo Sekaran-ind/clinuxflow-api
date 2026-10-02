@@ -1,0 +1,3846 @@
+[
+  {
+    "path": "CarePlan.resourceType",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a CarePlan resource",
+      "coreKeywords": [
+        "careplan",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"CarePlan.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a CarePlan resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.id",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"CarePlan.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.text",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CarePlan.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.contained",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"CarePlan.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.extension",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"CarePlan.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.modifierExtension",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"CarePlan.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.identifier",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "External Ids for this plan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "textinput",
+        "external",
+        "ids"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"CarePlan.identifier\"\n        label: \"Enter identifier\"\n        description: \"External Ids for this plan\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.identifier.use",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"CarePlan.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "CarePlan.identifier.type",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"CarePlan.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "CarePlan.identifier.type.coding",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CarePlan.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CarePlan.identifier.type.coding.system",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CarePlan.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.identifier.type.coding.version",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CarePlan.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.identifier.type.coding.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.identifier.type.coding.display",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CarePlan.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.identifier.type.coding.userSelected",
+    "resourceType": "CarePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CarePlan.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CarePlan.identifier.type.text",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CarePlan.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.identifier.system",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CarePlan.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.identifier.value",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"CarePlan.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.identifier.period",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"CarePlan.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.identifier.period.start",
+    "resourceType": "CarePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"CarePlan.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CarePlan.identifier.period.end",
+    "resourceType": "CarePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"CarePlan.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CarePlan.identifier.assigner",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"CarePlan.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.instantiatesCanonical",
+    "resourceType": "CarePlan",
+    "primitiveType": "canonical",
+    "isArray": true,
+    "arrayTargetType": "canonical",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"instantiates_canonical\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Instantiates FHIR protocol or definition",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "instantiates",
+        "canonical",
+        "textinput",
+        "fhir",
+        "protocol",
+        "definition"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"instantiates_canonical\"\n        path: \"CarePlan.instantiatesCanonical\"\n        label: \"Enter instantiatesCanonical\"\n        description: \"Instantiates FHIR protocol or definition\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.instantiatesUri",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": true,
+    "arrayTargetType": "uri",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"instantiates_uri\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Instantiates external protocol or definition",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "instantiates",
+        "uri",
+        "textinput",
+        "external",
+        "protocol",
+        "definition"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"instantiates_uri\"\n        path: \"CarePlan.instantiatesUri\"\n        label: \"Enter instantiatesUri\"\n        description: \"Instantiates external protocol or definition\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.basedOn",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "CarePlan",
+        "traversalPath": "CarePlan.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"based_on\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Fulfills CarePlan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "based",
+        "textinput",
+        "fulfills",
+        "careplan"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"based_on\"\n        path: \"CarePlan.basedOn\"\n        label: \"Enter basedOn\"\n        description: \"Fulfills CarePlan\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.replaces",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "replaces-link",
+        "targetResource": "CarePlan",
+        "traversalPath": "CarePlan.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"replaces\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "CarePlan replaced by this CarePlan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "replaces",
+        "textinput",
+        "careplan",
+        "replaced"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"replaces\"\n        path: \"CarePlan.replaces\"\n        label: \"Enter replaces\"\n        description: \"CarePlan replaced by this CarePlan\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.partOf",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "partOf-link",
+        "targetResource": "CarePlan",
+        "traversalPath": "CarePlan.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"part_of\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Part of referenced CarePlan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "part",
+        "textinput",
+        "referenced",
+        "careplan"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"part_of\"\n        path: \"CarePlan.partOf\"\n        label: \"Enter partOf\"\n        description: \"Part of referenced CarePlan\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.status",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"draft\\\" | \\\"active\\\" | \\\"on-hold\\\" | \\\"revoked\\\" | \\\"completed\\\" | \\\"entered-in-error\\\" | \\\"unknown\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "draft | active | on-hold | revoked | completed | entered-in-error | unknown",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "status",
+        "dropdown",
+        "draft",
+        "active",
+        "hold",
+        "revoked",
+        "completed",
+        "entered",
+        "error",
+        "unknown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"CarePlan.status\"\n        label: \"Enter status\"\n        description: \"draft | active | on-hold | revoked | completed | entered-in-error | unknown\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/request-status"
+    },
+    "choices": [
+      "draft",
+      "active",
+      "on-hold",
+      "revoked",
+      "completed",
+      "entered-in-error",
+      "unknown"
+    ]
+  },
+  {
+    "path": "CarePlan.intent",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"intent\\\": \\\"\" (\\\"proposal\\\" | \\\"plan\\\" | \\\"order\\\" | \\\"option\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "proposal | plan | order | option",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "intent",
+        "dropdown",
+        "proposal",
+        "order",
+        "option"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"intent\"\n        path: \"CarePlan.intent\"\n        label: \"Enter intent\"\n        description: \"proposal | plan | order | option\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/care-plan-intent"
+    },
+    "choices": [
+      "proposal",
+      "plan",
+      "order",
+      "option"
+    ]
+  },
+  {
+    "path": "CarePlan.category",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"category\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Type of plan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "category",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"category\"\n        path: \"CarePlan.category\"\n        label: \"Enter category\"\n        description: \"Type of plan\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/care-plan-category"
+    }
+  },
+  {
+    "path": "CarePlan.category.coding",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "category",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CarePlan.category.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CarePlan.category.coding.system",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "category",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CarePlan.category.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.category.coding.version",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "category",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CarePlan.category.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.category.coding.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "category",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.category.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.category.coding.display",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "category",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CarePlan.category.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.category.coding.userSelected",
+    "resourceType": "CarePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "category",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CarePlan.category.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CarePlan.category.text",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "category",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CarePlan.category.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.title",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"title\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Human-friendly name for the care plan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "title",
+        "textinput",
+        "human",
+        "friendly",
+        "name"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"title\"\n        path: \"CarePlan.title\"\n        label: \"Enter title\"\n        description: \"Human-friendly name for the care plan\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.description",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Summary of nature of plan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "description",
+        "textinput",
+        "summary",
+        "nature"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"CarePlan.description\"\n        label: \"Enter description\"\n        description: \"Summary of nature of plan\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.subject",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Group",
+        "traversalPath": "Group.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"subject\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who the care plan is for",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "subject",
+        "textinput",
+        "who"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"subject\"\n        path: \"CarePlan.subject\"\n        label: \"Enter subject\"\n        description: \"Who the care plan is for\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.encounter",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "encounter-link",
+        "targetResource": "Encounter",
+        "traversalPath": "Encounter.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"encounter\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Encounter created as part of",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "encounter",
+        "textinput",
+        "created",
+        "part"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"encounter\"\n        path: \"CarePlan.encounter\"\n        label: \"Enter encounter\"\n        description: \"Encounter created as part of\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.period",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Time period plan covers",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "period",
+        "textinput",
+        "time",
+        "covers"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"CarePlan.period\"\n        label: \"Enter period\"\n        description: \"Time period plan covers\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.period.start",
+    "resourceType": "CarePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"CarePlan.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CarePlan.period.end",
+    "resourceType": "CarePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"CarePlan.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CarePlan.created",
+    "resourceType": "CarePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"created\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Date record was first recorded",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "created",
+        "datepicker",
+        "date",
+        "record",
+        "first",
+        "recorded"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"created\"\n        path: \"CarePlan.created\"\n        label: \"Enter created\"\n        description: \"Date record was first recorded\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CarePlan.author",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "author-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "author-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "author-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "author-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      },
+      {
+        "relationshipType": "author-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      },
+      {
+        "relationshipType": "author-link",
+        "targetResource": "CareTeam",
+        "traversalPath": "CareTeam.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who is the designated responsible party",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "author",
+        "textinput",
+        "who",
+        "designated",
+        "responsible",
+        "party"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author\"\n        path: \"CarePlan.author\"\n        label: \"Enter author\"\n        description: \"Who is the designated responsible party\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.contributor",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "contributor-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "contributor-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "contributor-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "contributor-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "contributor-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      },
+      {
+        "relationshipType": "contributor-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      },
+      {
+        "relationshipType": "contributor-link",
+        "targetResource": "CareTeam",
+        "traversalPath": "CareTeam.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"contributor\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who provided the content of the care plan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "contributor",
+        "textinput",
+        "who",
+        "provided",
+        "content"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contributor\"\n        path: \"CarePlan.contributor\"\n        label: \"Enter contributor\"\n        description: \"Who provided the content of the care plan\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.careTeam",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "careTeam-link",
+        "targetResource": "CareTeam",
+        "traversalPath": "CareTeam.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"care_team\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who's involved in plan?",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "team",
+        "textinput",
+        "whos",
+        "involved"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"care_team\"\n        path: \"CarePlan.careTeam\"\n        label: \"Enter careTeam\"\n        description: \"Who's involved in plan?\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.addresses",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "addresses-link",
+        "targetResource": "Condition",
+        "traversalPath": "Condition.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"addresses\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Health issues this plan addresses",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "addresses",
+        "textinput",
+        "health",
+        "issues"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"addresses\"\n        path: \"CarePlan.addresses\"\n        label: \"Enter addresses\"\n        description: \"Health issues this plan addresses\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.supportingInfo",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "supportingInfo-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"supporting_info\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Information considered as part of plan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "supporting",
+        "info",
+        "textinput",
+        "information",
+        "considered",
+        "part"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"supporting_info\"\n        path: \"CarePlan.supportingInfo\"\n        label: \"Enter supportingInfo\"\n        description: \"Information considered as part of plan\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.goal",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "goal-link",
+        "targetResource": "Goal",
+        "traversalPath": "Goal.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"goal\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Desired outcome of plan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "goal",
+        "textinput",
+        "desired",
+        "outcome"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"goal\"\n        path: \"CarePlan.goal\"\n        label: \"Enter goal\"\n        description: \"Desired outcome of plan\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"activity\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Action to occur as part of plan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "textinput",
+        "action",
+        "occur",
+        "part"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"activity\"\n        path: \"CarePlan.activity\"\n        label: \"Enter activity\"\n        description: \"Action to occur as part of plan\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.extension",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"CarePlan.activity.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.modifierExtension",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"CarePlan.activity.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.outcomeCodeableConcept",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"outcome_codeable_concept\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Results of the activity",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "outcome",
+        "codeable",
+        "concept",
+        "multiselect",
+        "results"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"outcome_codeable_concept\"\n        path: \"CarePlan.activity.outcomeCodeableConcept\"\n        label: \"Enter outcomeCodeableConcept\"\n        description: \"Results of the activity\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/care-plan-activity-outcome"
+    }
+  },
+  {
+    "path": "CarePlan.activity.outcomeCodeableConcept.coding",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "outcome",
+        "codeable",
+        "concept",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CarePlan.activity.outcomeCodeableConcept.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CarePlan.activity.outcomeCodeableConcept.coding.system",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "outcome",
+        "codeable",
+        "concept",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CarePlan.activity.outcomeCodeableConcept.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.outcomeCodeableConcept.coding.version",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "outcome",
+        "codeable",
+        "concept",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CarePlan.activity.outcomeCodeableConcept.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.outcomeCodeableConcept.coding.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "outcome",
+        "codeable",
+        "concept",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.activity.outcomeCodeableConcept.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.outcomeCodeableConcept.coding.display",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "outcome",
+        "codeable",
+        "concept",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CarePlan.activity.outcomeCodeableConcept.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.outcomeCodeableConcept.coding.userSelected",
+    "resourceType": "CarePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "outcome",
+        "codeable",
+        "concept",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CarePlan.activity.outcomeCodeableConcept.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CarePlan.activity.outcomeCodeableConcept.text",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "outcome",
+        "codeable",
+        "concept",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CarePlan.activity.outcomeCodeableConcept.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.outcomeReference",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "outcomeReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"outcome_reference\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Appointment, Encounter, Procedure, etc.",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "outcome",
+        "reference",
+        "textinput",
+        "appointment",
+        "encounter",
+        "procedure",
+        "etc"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"outcome_reference\"\n        path: \"CarePlan.activity.outcomeReference\"\n        label: \"Enter outcomeReference\"\n        description: \"Appointment, Encounter, Procedure, etc.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.progress",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"progress\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Comments about the activity status/progress",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "progress",
+        "textinput",
+        "comments",
+        "about",
+        "statusprogress"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"progress\"\n        path: \"CarePlan.activity.progress\"\n        label: \"Enter progress\"\n        description: \"Comments about the activity status/progress\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.progress.author[x]",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author[x]-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "progress",
+        "authorx",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author[x]\"\n        path: \"CarePlan.activity.progress.author[x]\"\n        label: \"Enter author[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.progress.authorReference",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "progress",
+        "author",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"CarePlan.activity.progress.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.progress.authorString",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "progress",
+        "author",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"CarePlan.activity.progress.authorString\"\n        label: \"Enter authorString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.progress.time",
+    "resourceType": "CarePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "progress",
+        "time",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"CarePlan.activity.progress.time\"\n        label: \"Enter time\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CarePlan.activity.progress.text",
+    "resourceType": "CarePlan",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "progress",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CarePlan.activity.progress.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.reference",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "reference-link",
+        "targetResource": "Appointment",
+        "traversalPath": "Appointment.id"
+      },
+      {
+        "relationshipType": "reference-link",
+        "targetResource": "CommunicationRequest",
+        "traversalPath": "CommunicationRequest.id"
+      },
+      {
+        "relationshipType": "reference-link",
+        "targetResource": "DeviceRequest",
+        "traversalPath": "DeviceRequest.id"
+      },
+      {
+        "relationshipType": "reference-link",
+        "targetResource": "MedicationRequest",
+        "traversalPath": "MedicationRequest.id"
+      },
+      {
+        "relationshipType": "reference-link",
+        "targetResource": "NutritionOrder",
+        "traversalPath": "NutritionOrder.id"
+      },
+      {
+        "relationshipType": "reference-link",
+        "targetResource": "Task",
+        "traversalPath": "Task.id"
+      },
+      {
+        "relationshipType": "reference-link",
+        "targetResource": "ServiceRequest",
+        "traversalPath": "ServiceRequest.id"
+      },
+      {
+        "relationshipType": "reference-link",
+        "targetResource": "VisionPrescription",
+        "traversalPath": "VisionPrescription.id"
+      },
+      {
+        "relationshipType": "reference-link",
+        "targetResource": "RequestGroup",
+        "traversalPath": "RequestGroup.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Activity details defined in specific resource",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "reference",
+        "textinput",
+        "details",
+        "defined",
+        "specific",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reference\"\n        path: \"CarePlan.activity.reference\"\n        label: \"Enter reference\"\n        description: \"Activity details defined in specific resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"detail\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "In-line definition of activity",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "textinput",
+        "line",
+        "definition"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"detail\"\n        path: \"CarePlan.activity.detail\"\n        label: \"Enter detail\"\n        description: \"In-line definition of activity\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.extension",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"CarePlan.activity.detail.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.modifierExtension",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"CarePlan.activity.detail.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.kind",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"kind\\\": \\\"\" (\\\"Appointment\\\" | \\\"CommunicationRequest\\\" | \\\"DeviceRequest\\\" | \\\"MedicationRequest\\\" | \\\"NutritionOrder\\\" | \\\"Task\\\" | \\\"ServiceRequest\\\" | \\\"VisionPrescription\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Appointment | CommunicationRequest | DeviceRequest | MedicationRequest | NutritionOrder | Task | ServiceRequest | VisionPrescription",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "kind",
+        "dropdown",
+        "appointment",
+        "communicationrequest",
+        "devicerequest",
+        "medicationrequest",
+        "nutritionorder",
+        "task",
+        "servicerequest",
+        "visionprescription"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"kind\"\n        path: \"CarePlan.activity.detail.kind\"\n        label: \"Enter kind\"\n        description: \"Appointment | CommunicationRequest | DeviceRequest | MedicationRequest | NutritionOrder | Task | ServiceRequest | VisionPrescription\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/care-plan-activity-kind"
+    },
+    "choices": [
+      "Appointment",
+      "CommunicationRequest",
+      "DeviceRequest",
+      "MedicationRequest",
+      "NutritionOrder",
+      "Task",
+      "ServiceRequest",
+      "VisionPrescription"
+    ]
+  },
+  {
+    "path": "CarePlan.activity.detail.instantiatesCanonical",
+    "resourceType": "CarePlan",
+    "primitiveType": "canonical",
+    "isArray": true,
+    "arrayTargetType": "canonical",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"instantiates_canonical\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Instantiates FHIR protocol or definition",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "instantiates",
+        "canonical",
+        "textinput",
+        "fhir",
+        "protocol",
+        "definition"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"instantiates_canonical\"\n        path: \"CarePlan.activity.detail.instantiatesCanonical\"\n        label: \"Enter instantiatesCanonical\"\n        description: \"Instantiates FHIR protocol or definition\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.instantiatesUri",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": true,
+    "arrayTargetType": "uri",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"instantiates_uri\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Instantiates external protocol or definition",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "instantiates",
+        "uri",
+        "textinput",
+        "external",
+        "protocol",
+        "definition"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"instantiates_uri\"\n        path: \"CarePlan.activity.detail.instantiatesUri\"\n        label: \"Enter instantiatesUri\"\n        description: \"Instantiates external protocol or definition\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Detail type of activity",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.activity.detail.code\"\n        label: \"Enter code\"\n        description: \"Detail type of activity\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/procedure-code"
+    }
+  },
+  {
+    "path": "CarePlan.activity.detail.code.coding",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CarePlan.activity.detail.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CarePlan.activity.detail.code.coding.system",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CarePlan.activity.detail.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.code.coding.version",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CarePlan.activity.detail.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.code.coding.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.activity.detail.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.code.coding.display",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CarePlan.activity.detail.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.code.coding.userSelected",
+    "resourceType": "CarePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CarePlan.activity.detail.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CarePlan.activity.detail.code.text",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CarePlan.activity.detail.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.reasonCode",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"reason_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Why activity should be done or why activity was prohibited",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "reason",
+        "code",
+        "multiselect",
+        "why",
+        "should",
+        "done",
+        "prohibited"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason_code\"\n        path: \"CarePlan.activity.detail.reasonCode\"\n        label: \"Enter reasonCode\"\n        description: \"Why activity should be done or why activity was prohibited\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/clinical-findings"
+    }
+  },
+  {
+    "path": "CarePlan.activity.detail.reasonCode.coding",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "reason",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CarePlan.activity.detail.reasonCode.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CarePlan.activity.detail.reasonCode.coding.system",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "reason",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CarePlan.activity.detail.reasonCode.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.reasonCode.coding.version",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "reason",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CarePlan.activity.detail.reasonCode.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.reasonCode.coding.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "reason",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.activity.detail.reasonCode.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.reasonCode.coding.display",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "reason",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CarePlan.activity.detail.reasonCode.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.reasonCode.coding.userSelected",
+    "resourceType": "CarePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "reason",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CarePlan.activity.detail.reasonCode.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CarePlan.activity.detail.reasonCode.text",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "reason",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CarePlan.activity.detail.reasonCode.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.reasonReference",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "Condition",
+        "traversalPath": "Condition.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "Observation",
+        "traversalPath": "Observation.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "DiagnosticReport",
+        "traversalPath": "DiagnosticReport.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "DocumentReference",
+        "traversalPath": "DocumentReference.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"reason_reference\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Why activity is needed",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "reason",
+        "reference",
+        "textinput",
+        "why",
+        "needed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason_reference\"\n        path: \"CarePlan.activity.detail.reasonReference\"\n        label: \"Enter reasonReference\"\n        description: \"Why activity is needed\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.goal",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "goal-link",
+        "targetResource": "Goal",
+        "traversalPath": "Goal.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"goal\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Goals this activity relates to",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "goal",
+        "textinput",
+        "goals",
+        "relates"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"goal\"\n        path: \"CarePlan.activity.detail.goal\"\n        label: \"Enter goal\"\n        description: \"Goals this activity relates to\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.status",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"not-started\\\" | \\\"scheduled\\\" | \\\"in-progress\\\" | \\\"on-hold\\\" | \\\"completed\\\" | \\\"cancelled\\\" | \\\"stopped\\\" | \\\"unknown\\\" | \\\"entered-in-error\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "not-started | scheduled | in-progress | on-hold | completed | cancelled | stopped | unknown | entered-in-error",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "status",
+        "dropdown",
+        "not",
+        "started",
+        "scheduled",
+        "progress",
+        "hold",
+        "completed",
+        "cancelled",
+        "stopped",
+        "unknown",
+        "entered",
+        "error"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"CarePlan.activity.detail.status\"\n        label: \"Enter status\"\n        description: \"not-started | scheduled | in-progress | on-hold | completed | cancelled | stopped | unknown | entered-in-error\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/care-plan-activity-status"
+    },
+    "choices": [
+      "not-started",
+      "scheduled",
+      "in-progress",
+      "on-hold",
+      "completed",
+      "cancelled",
+      "stopped",
+      "unknown",
+      "entered-in-error"
+    ]
+  },
+  {
+    "path": "CarePlan.activity.detail.statusReason",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status_reason\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Reason for current status",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "status",
+        "reason",
+        "dropdown",
+        "current"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status_reason\"\n        path: \"CarePlan.activity.detail.statusReason\"\n        label: \"Enter statusReason\"\n        description: \"Reason for current status\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.statusReason.coding",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "status",
+        "reason",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CarePlan.activity.detail.statusReason.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CarePlan.activity.detail.statusReason.coding.system",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "status",
+        "reason",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CarePlan.activity.detail.statusReason.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.statusReason.coding.version",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "status",
+        "reason",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CarePlan.activity.detail.statusReason.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.statusReason.coding.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "status",
+        "reason",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.activity.detail.statusReason.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.statusReason.coding.display",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "status",
+        "reason",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CarePlan.activity.detail.statusReason.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.statusReason.coding.userSelected",
+    "resourceType": "CarePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "status",
+        "reason",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CarePlan.activity.detail.statusReason.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CarePlan.activity.detail.statusReason.text",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "status",
+        "reason",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CarePlan.activity.detail.statusReason.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.doNotPerform",
+    "resourceType": "CarePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"do_not_perform\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "If true, activity is prohibiting action",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "not",
+        "perform",
+        "checkbox",
+        "true",
+        "prohibiting",
+        "action"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"do_not_perform\"\n        path: \"CarePlan.activity.detail.doNotPerform\"\n        label: \"Enter doNotPerform\"\n        description: \"If true, activity is prohibiting action\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduled[x]",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"scheduled[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When activity is to occur",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduledx",
+        "textinput",
+        "when",
+        "occur"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"scheduled[x]\"\n        path: \"CarePlan.activity.detail.scheduled[x]\"\n        label: \"Enter scheduled[x]\"\n        description: \"When activity is to occur\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledTiming",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"scheduled_timing\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When activity is to occur",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "timing",
+        "textinput",
+        "when",
+        "occur"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"scheduled_timing\"\n        path: \"CarePlan.activity.detail.scheduledTiming\"\n        label: \"Enter scheduledTiming\"\n        description: \"When activity is to occur\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledTiming.event",
+    "resourceType": "CarePlan",
+    "primitiveType": "dateTime",
+    "isArray": true,
+    "arrayTargetType": "dateTime",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"event\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "timing",
+        "event",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"event\"\n        path: \"CarePlan.activity.detail.scheduledTiming.event\"\n        label: \"Enter event\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledTiming.repeat",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"repeat\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "timing",
+        "repeat",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"repeat\"\n        path: \"CarePlan.activity.detail.scheduledTiming.repeat\"\n        label: \"Enter repeat\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledTiming.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "timing",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.activity.detail.scheduledTiming.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/timing-abbreviation"
+    }
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledTiming.code.coding",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "timing",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CarePlan.activity.detail.scheduledTiming.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledTiming.code.coding.system",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "timing",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CarePlan.activity.detail.scheduledTiming.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledTiming.code.coding.version",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "timing",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CarePlan.activity.detail.scheduledTiming.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledTiming.code.coding.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "timing",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.activity.detail.scheduledTiming.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledTiming.code.coding.display",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "timing",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CarePlan.activity.detail.scheduledTiming.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledTiming.code.coding.userSelected",
+    "resourceType": "CarePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "timing",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CarePlan.activity.detail.scheduledTiming.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledTiming.code.text",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "timing",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CarePlan.activity.detail.scheduledTiming.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledPeriod",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"scheduled_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When activity is to occur",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "period",
+        "textinput",
+        "when",
+        "occur"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"scheduled_period\"\n        path: \"CarePlan.activity.detail.scheduledPeriod\"\n        label: \"Enter scheduledPeriod\"\n        description: \"When activity is to occur\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledPeriod.start",
+    "resourceType": "CarePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"CarePlan.activity.detail.scheduledPeriod.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledPeriod.end",
+    "resourceType": "CarePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"CarePlan.activity.detail.scheduledPeriod.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CarePlan.activity.detail.scheduledString",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"scheduled_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When activity is to occur",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "scheduled",
+        "string",
+        "textinput",
+        "when",
+        "occur"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"scheduled_string\"\n        path: \"CarePlan.activity.detail.scheduledString\"\n        label: \"Enter scheduledString\"\n        description: \"When activity is to occur\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.location",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "location-link",
+        "targetResource": "Location",
+        "traversalPath": "Location.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"location\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Where it should happen",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "location",
+        "textinput",
+        "where",
+        "should",
+        "happen"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"location\"\n        path: \"CarePlan.activity.detail.location\"\n        label: \"Enter location\"\n        description: \"Where it should happen\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.performer",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "performer-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "performer-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "performer-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      },
+      {
+        "relationshipType": "performer-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      },
+      {
+        "relationshipType": "performer-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "performer-link",
+        "targetResource": "CareTeam",
+        "traversalPath": "CareTeam.id"
+      },
+      {
+        "relationshipType": "performer-link",
+        "targetResource": "HealthcareService",
+        "traversalPath": "HealthcareService.id"
+      },
+      {
+        "relationshipType": "performer-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"performer\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who will be responsible?",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "performer",
+        "textinput",
+        "who",
+        "will",
+        "responsible"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"performer\"\n        path: \"CarePlan.activity.detail.performer\"\n        label: \"Enter performer\"\n        description: \"Who will be responsible?\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.product[x]",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"product[x]\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "What is to be administered/supplied",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "productx",
+        "dropdown",
+        "what",
+        "administeredsupplied"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"product[x]\"\n        path: \"CarePlan.activity.detail.product[x]\"\n        label: \"Enter product[x]\"\n        description: \"What is to be administered/supplied\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-codes"
+    }
+  },
+  {
+    "path": "CarePlan.activity.detail.productCodeableConcept",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"product_codeable_concept\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "What is to be administered/supplied",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "product",
+        "codeable",
+        "concept",
+        "dropdown",
+        "what",
+        "administeredsupplied"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"product_codeable_concept\"\n        path: \"CarePlan.activity.detail.productCodeableConcept\"\n        label: \"Enter productCodeableConcept\"\n        description: \"What is to be administered/supplied\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-codes"
+    }
+  },
+  {
+    "path": "CarePlan.activity.detail.productCodeableConcept.coding",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CarePlan.activity.detail.productCodeableConcept.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CarePlan.activity.detail.productCodeableConcept.coding.system",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CarePlan.activity.detail.productCodeableConcept.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.productCodeableConcept.coding.version",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CarePlan.activity.detail.productCodeableConcept.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.productCodeableConcept.coding.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.activity.detail.productCodeableConcept.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.productCodeableConcept.coding.display",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CarePlan.activity.detail.productCodeableConcept.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.productCodeableConcept.coding.userSelected",
+    "resourceType": "CarePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "product",
+        "codeable",
+        "concept",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CarePlan.activity.detail.productCodeableConcept.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CarePlan.activity.detail.productCodeableConcept.text",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "product",
+        "codeable",
+        "concept",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CarePlan.activity.detail.productCodeableConcept.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.productReference",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "productReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"product_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "What is to be administered/supplied",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "product",
+        "reference",
+        "textinput",
+        "what",
+        "administeredsupplied"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"product_reference\"\n        path: \"CarePlan.activity.detail.productReference\"\n        label: \"Enter productReference\"\n        description: \"What is to be administered/supplied\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-codes"
+    }
+  },
+  {
+    "path": "CarePlan.activity.detail.dailyAmount",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"daily_amount\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How to consume/day?",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "daily",
+        "amount",
+        "textinput",
+        "how",
+        "consumeday"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"daily_amount\"\n        path: \"CarePlan.activity.detail.dailyAmount\"\n        label: \"Enter dailyAmount\"\n        description: \"How to consume/day?\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.dailyAmount.value",
+    "resourceType": "CarePlan",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "daily",
+        "amount",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"CarePlan.activity.detail.dailyAmount.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.dailyAmount.comparator",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "daily",
+        "amount",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"CarePlan.activity.detail.dailyAmount.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "CarePlan.activity.detail.dailyAmount.unit",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "daily",
+        "amount",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"CarePlan.activity.detail.dailyAmount.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.dailyAmount.system",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "daily",
+        "amount",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CarePlan.activity.detail.dailyAmount.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.dailyAmount.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "daily",
+        "amount",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.activity.detail.dailyAmount.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.quantity",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"quantity\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "How much to administer/supply/consume",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "quantity",
+        "textinput",
+        "how",
+        "much",
+        "administersupplyconsume"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"quantity\"\n        path: \"CarePlan.activity.detail.quantity\"\n        label: \"Enter quantity\"\n        description: \"How much to administer/supply/consume\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.quantity.value",
+    "resourceType": "CarePlan",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "quantity",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"CarePlan.activity.detail.quantity.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.quantity.comparator",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "quantity",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"CarePlan.activity.detail.quantity.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "CarePlan.activity.detail.quantity.unit",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "quantity",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"CarePlan.activity.detail.quantity.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.quantity.system",
+    "resourceType": "CarePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "quantity",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CarePlan.activity.detail.quantity.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.activity.detail.quantity.code",
+    "resourceType": "CarePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "quantity",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CarePlan.activity.detail.quantity.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CarePlan.activity.detail.description",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extra info describing activity to perform",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "activity",
+        "detail",
+        "description",
+        "textinput",
+        "extra",
+        "info",
+        "describing",
+        "perform"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"CarePlan.activity.detail.description\"\n        label: \"Enter description\"\n        description: \"Extra info describing activity to perform\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.note",
+    "resourceType": "CarePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Comments about the plan",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "note",
+        "textinput",
+        "comments",
+        "about"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"CarePlan.note\"\n        label: \"Enter note\"\n        description: \"Comments about the plan\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.note.author[x]",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author[x]-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "note",
+        "authorx",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author[x]\"\n        path: \"CarePlan.note.author[x]\"\n        label: \"Enter author[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.note.authorReference",
+    "resourceType": "CarePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "note",
+        "author",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"CarePlan.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.note.authorString",
+    "resourceType": "CarePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "note",
+        "author",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"CarePlan.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CarePlan.note.time",
+    "resourceType": "CarePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "note",
+        "time",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"CarePlan.note.time\"\n        label: \"Enter time\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CarePlan.note.text",
+    "resourceType": "CarePlan",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "care",
+        "plan",
+        "note",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CarePlan.note.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  }
+]

@@ -1,4 +1,15 @@
 import { v4 as uuidv4 } from 'uuid';
+// ABDM IG conformance (data/ig-conformance.json): identifier/telecom slices, the local identifier
+// the IG's min-1 rule needs before ABDM issues an id, and each resource's ClinuxFlow profile. The
+// official FHIR dictionary (data/graphs.bundle.json, built from the HL7/NRCeS packages) supplies
+// every element's real cardinality for the array-normalisation pass.
+import igConformance from '../../../data/ig-conformance.json' with { type: 'json' };
+import graphBundle from '../../../data/graphs.bundle.json' with { type: 'json' };
+
+// path -> true for every 0..* element in the official dictionary (Patient.name, Patient.name.given, ...).
+const REPEATING_PATHS = new Set(Object.values(graphBundle).flat().filter((n) => n.isArray).map((n) => n.path));
+// Elements whose FHIR type is CodeableConcept (PractitionerRole.code, Organization.type, ...).
+const CODEABLE_PATHS = new Set(Object.values(graphBundle).flat().filter((n) => n.primitiveType === 'polymorphic-codeableconcept').map((n) => n.path));
 
 // A real, careful FHIR R4 cardinality reference — array-typed (0..*/1..*) properties, keyed by
 // the exact dotted path from the resourceType root (e.g. "Organization.telecom"). Deliberately
@@ -120,6 +131,7 @@ export class ComprehensiveLocalExtractor {
                         type: item.type,
                         extensionUrl: item.extensionUrl, // real FHIR extension tagging — see yaml-to-questionnaire.js's own comment on this
                         refTo: item.refTo, // branch/similar reference fields — see yaml-to-questionnaire.js's own comment on this
+                        slice: item.slice, // ABDM IG slice (data/ig-conformance.json) — sets system/type/use beside the value
                     });
                 }
                 if (item.item && Array.isArray(item.item)) {
@@ -303,7 +315,7 @@ export class ComprehensiveLocalExtractor {
                             }
 
                             cleanValues.forEach((cleanValue, valueIndex) => {
-                                ComprehensiveLocalExtractor._setValueAtPath(resourceType, propertyPathTokens, consumedTokenCount, pointer, cleanValue, baseSlot + valueIndex, leafMeta.extensionUrl);
+                                ComprehensiveLocalExtractor._setValueAtPath(resourceType, propertyPathTokens, consumedTokenCount, pointer, cleanValue, baseSlot + valueIndex, leafMeta.extensionUrl, leafMeta.slice);
                             });
                         }
                     }
@@ -366,6 +378,10 @@ export class ComprehensiveLocalExtractor {
                 const practitioner = resourceCache[`Practitioner${instanceSuffix}`] || resourceCache.Practitioner;
                 if (practitioner) resource.practitioner = { reference: `Practitioner/${practitioner.id}` };
                 resource.organization = { reference: `Organization/${resourceCache.Organization.id}` };
+                // Professional role (SNOMED CT, as the ABDM IG binds PractitionerRole.code), from
+                // the same staff member's HPR category — data/ig-conformance.json professionalRoles.
+                const coded = ComprehensiveLocalExtractor._professionalRole(practitioner);
+                if (coded && !resource.code) resource.code = [coded];
             }
             // SPEC-24 §7 step 6 (Affiliate Organization) — same free structural link Location/
             // PractitionerRole already get: OrganizationAffiliation.organization is always THIS
@@ -397,6 +413,7 @@ export class ComprehensiveLocalExtractor {
                 delete resource.__pendingRefs;
             }
 
+            ComprehensiveLocalExtractor._conformToIg(resource);
             finalizedOutputResources.push(resource);
         });
 
@@ -404,6 +421,64 @@ export class ComprehensiveLocalExtractor {
 
         console.log(`  ➔ Comprehensive conversion complete. Extracted ${finalizedOutputResources.length} interdependent resources.${warnings.length ? ` ${warnings.length} warning(s) — see .warnings.` : ''}`);
         return finalizedOutputResources;
+    }
+
+    /** The SNOMED professional role for a Practitioner's HPR category, or null (unknown category). */
+    static _professionalRole(practitioner) {
+        const cfg = igConformance.professionalRoles;
+        if (!cfg || !practitioner) return null;
+        const ext = (practitioner.extension || []).find((e) => e && e.url === cfg.fromExtension);
+        const raw = ext && Object.entries(ext).find(([k]) => k.startsWith('value'))?.[1];
+        const hit = raw !== undefined && cfg.map[String(raw).trim()];
+        return hit ? { coding: [{ system: cfg.system, code: hit.code, display: hit.display }], text: hit.display } : null;
+    }
+
+    /** Sets a slice's system/use/type (data/ig-conformance.json) on an identifier or ContactPoint. */
+    static _applySlice(element, sliceName) {
+        const s = igConformance.slices[sliceName];
+        if (!s) return;
+        if (s.system) element.system = s.system;
+        if (s.use) element.use = s.use;
+        if (s.type) element.type = { coding: [{ ...s.type }], text: s.type.display };
+    }
+
+    /**
+     * ABDM IG conformance for one finished resource (data/ig-conformance.json):
+     *   1. meta.profile — the resource's ClinuxFlow profile (on the ABDM IG), unless already set;
+     *   2. the IG's min-1 identifier rule — ClinuxFlow's stable record id, typed, when no identifier
+     *      carries a value yet (no ABHA/HPR/HFR id issued yet);
+     *   3. cardinality — every element the official dictionary says is 0..* is written as an array
+     *      (Patient.name, Patient.name.given, Practitioner.name, ...), whatever the capture order.
+     */
+    static _conformToIg(resource) {
+        const type = resource.resourceType;
+        const profile = igConformance.profiles[type];
+        if (profile && !resource.meta?.profile?.length) resource.meta = { ...(resource.meta || {}), profile: [profile] };
+        const local = igConformance.localIdentifiers[type];
+        if (local && resource.id && !(resource.identifier || []).some((i) => i && i.value)) {
+            resource.identifier = [...(resource.identifier || []).filter(Boolean), {
+                type: { coding: [{ ...local.type }], text: local.type.display }, system: local.system, value: resource.id,
+            }];
+        }
+        ComprehensiveLocalExtractor._normaliseCardinality(resource, type);
+    }
+
+    static _normaliseCardinality(node, path) {
+        if (!node || typeof node !== 'object') return;
+        for (const [key, value] of Object.entries(node)) {
+            if (key === 'resourceType' || key === 'meta' || key === 'extension' || key === 'id') continue;
+            const childPath = `${path}.${key}`;
+            // A plain answer written straight onto a CodeableConcept element (e.g. a role picked
+            // from a dropdown into PractitionerRole.code) is not valid FHIR as a bare string; it
+            // becomes { text } — valid, and coded later where a terminology mapping exists.
+            if (CODEABLE_PATHS.has(childPath)) {
+                const asConcept = (v) => (v !== null && typeof v !== 'object' ? { text: String(v) } : v);
+                node[key] = Array.isArray(value) ? value.map(asConcept) : asConcept(value);
+            }
+            if (REPEATING_PATHS.has(childPath) && node[key] !== undefined && node[key] !== null && !Array.isArray(node[key])) node[key] = [node[key]];
+            const children = Array.isArray(node[key]) ? node[key] : [node[key]];
+            children.forEach((c) => ComprehensiveLocalExtractor._normaliseCardinality(c, childPath));
+        }
     }
 
     // Unwraps a FHIR answer node's typed value (valueDecimal/valueInteger/valueBoolean/valueDate),
@@ -559,7 +634,7 @@ export class ComprehensiveLocalExtractor {
      * here, since they're the same root cause (array-typed properties never being treated as
      * arrays outside the two hardcoded names).
      */
-    static _setValueAtPath(resourceType, fullPathTokens, startIndex, targetObj, assignedValue, dynamicIndexOffset = 0, extensionUrl = undefined) {
+    static _setValueAtPath(resourceType, fullPathTokens, startIndex, targetObj, assignedValue, dynamicIndexOffset = 0, extensionUrl = undefined, slice = undefined) {
         let activePointer = targetObj;
 
         for (let i = startIndex; i < fullPathTokens.length; i++) {
@@ -567,7 +642,9 @@ export class ComprehensiveLocalExtractor {
             const isLastNode = (i === fullPathTokens.length - 1);
 
             const absolutePath = `${resourceType}.${fullPathTokens.slice(0, i + 1).join('.')}`;
-            const isArrayType = currentKey === 'component' || currentKey === 'coding' || isArrayPath(absolutePath);
+            // `extension` is 0..* on every FHIR element, so it is always written as an array of
+            // {url, value[x]} — not only on the resources FHIR_ARRAY_PATHS happens to list.
+            const isArrayType = currentKey === 'component' || currentKey === 'coding' || currentKey === 'extension' || isArrayPath(absolutePath);
             const targetArrayIndex = isArrayType ? dynamicIndexOffset : 0;
 
             if (isLastNode) {
@@ -585,6 +662,10 @@ export class ComprehensiveLocalExtractor {
                         activePointer[currentKey][targetArrayIndex] = currentKey === 'coding' ? { code: assignedValue } : assignedValue;
                     }
                 } else {
+                    // A sliced identifier/telecom value (e.g. Patient.identifier.value with slice
+                    // abhaNumber): the slice's discriminating siblings go on the same element, so
+                    // it is an ABDM-conformant identifier, not a bare value.
+                    if (slice) ComprehensiveLocalExtractor._applySlice(activePointer, slice);
                     activePointer[currentKey] = assignedValue;
                 }
             } else {
