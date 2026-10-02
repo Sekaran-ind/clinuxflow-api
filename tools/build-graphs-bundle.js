@@ -1,11 +1,11 @@
-// Combines the per-resource shard files dictionary-builder.js just wrote (data/graphs/
+// Combines the per-resource shard files build-fhir-dictionary.js just wrote (data/graphs/
 // <resource>.graph.json) into the single data/graphs.bundle.json src/lib/yaml-to-questionnaire.js
 // statically imports at request time — Workers has no filesystem, so it can't read the shard
-// files individually. Run right after dictionary-builder.js (both are chained by
+// files individually. Run right after build-fhir-dictionary.js (both are chained by
 // `npm run build:kernel`).
 //
 // This step existed only informally before (someone hand-assembled graphs.bundle.json once when
-// clinuxflow-api was first set up); giving it a real script means a dictionary-builder.js re-run
+// clinuxflow-api was first set up); giving it a real script means a build-fhir-dictionary.js re-run
 // can't silently leave the bundle stale.
 import fs from 'fs';
 import path from 'path';
@@ -14,7 +14,7 @@ const GRAPHS_DIR = path.join(process.cwd(), 'data', 'graphs');
 const OUT_PATH = path.join(process.cwd(), 'data', 'graphs.bundle.json');
 
 if (!fs.existsSync(GRAPHS_DIR)) {
-    console.error(`❌ No shard directory at ${GRAPHS_DIR} — run dictionary-builder.js first.`);
+    console.error(`❌ No shard directory at ${GRAPHS_DIR} — run build-fhir-dictionary.js first.`);
     process.exit(1);
 }
 

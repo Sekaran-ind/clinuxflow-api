@@ -18,6 +18,7 @@ import { deriveStageFromCompositionRow, canAcceptFacilityJoinToken } from '../li
 import { hashPassword } from '../lib/shared/passwordHash.js';
 import { v4 as uuidv4 } from 'uuid';
 import { MAX_ACCOUNTS_PER_CLINIC } from './auth.js';
+import { recordAudit } from '../lib/shared/audit.js';
 
 import systemFormsLibrary from '../../data/system-forms-library.json';
 import clinicSpecialities from '../../data/clinic-specialities.json';
@@ -94,6 +95,7 @@ app.delete('/api/facility/affiliates/:accountId', requireUser(), async (c) => {
     const facilityClinicId = c.get('user').clinicId;
     const practitionerAccountId = c.req.param('accountId');
     await AccountsDb.revokeAffiliate(c.env.DB, facilityClinicId, practitionerAccountId);
+    await recordAudit(c.env.DB, { clinicId: facilityClinicId, actorAccountId: c.get('user').accountId, actorLabel: c.get('user').email, action: 'affiliate.revoked', objectId: practitionerAccountId });
     return c.json({ success: true });
 });
 
@@ -281,6 +283,8 @@ app.post('/api/facility/join-tokens', requireUser(), async (c) => {
         const token = generateJoinToken();
         await JoinTokensDb.issue(c.env.DB, { token, facilityClinicId: clinicId, linkKind, issuedByAccountId: c.get('user').accountId });
         const row = await JoinTokensDb.getByToken(c.env.DB, token);
+        // The token itself is a bearer secret: the log keeps only its kind, never the value.
+        await recordAudit(c.env.DB, { clinicId, actorAccountId: c.get('user').accountId, actorLabel: c.get('user').email, action: 'join_token.issued', metadata: { kind: linkKind } });
         return c.json({ success: true, token, expiresAt: row.expires_at });
     } catch (err) {
         console.error('❌ Issue Join Token Exception:', err.message);
@@ -524,6 +528,10 @@ app.post('/api/facility/join-tokens/:token/decide', requireUser(), async (c) => 
             await AccountsDb.addAffiliate(c.env.DB, row.facility_clinic_id, row.redeemed_by_account_id, role || null);
         }
 
+        await recordAudit(c.env.DB, {
+            clinicId: c.get('user').clinicId, actorAccountId: c.get('user').accountId, actorLabel: c.get('user').email,
+            action: 'join_token.decided', objectType: 'account', objectId: row.redeemed_by_account_id, metadata: { decision, kind: row.link_kind, role },
+        });
         return c.json({ success: true, decision });
     } catch (err) {
         console.error('❌ Decide Join Token Exception:', err.message);

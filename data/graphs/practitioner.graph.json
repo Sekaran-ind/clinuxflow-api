@@ -11,8 +11,7 @@
       "jsdocDefinition": "This is a Practitioner resource",
       "coreKeywords": [
         "practitioner",
-        "resource",
-        "textinput"
+        "resource"
       ]
     },
     "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Practitioner.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Practitioner resource\"\n        uiComponent: \"TextInput\""
@@ -26,21 +25,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "jsdocDefinition": "Logical id of this artifact",
       "coreKeywords": [
         "practitioner",
         "textinput",
         "logical",
-        "resource",
-        "used",
-        "url",
-        "once",
-        "assigned",
-        "never",
-        "changes"
+        "artifact"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.text",
@@ -51,48 +44,38 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
       "coreKeywords": [
         "practitioner",
         "text",
-        "dropdown",
-        "human",
-        "readable",
-        "narrative",
+        "textinput",
         "summary",
         "resource",
-        "can",
-        "used",
-        "represent",
-        "content",
-        "need",
-        "not",
-        "encode",
-        "all",
-        "structured",
-        "data",
-        "but",
-        "required",
-        "contain",
-        "sufficient",
-        "detail",
-        "make",
-        "clinically",
-        "safe",
-        "just",
-        "read",
-        "definitions",
-        "may",
-        "define",
-        "what",
-        "should",
-        "represented",
-        "ensure",
-        "clinical",
-        "safety"
+        "human",
+        "interpretation"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Practitioner.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Practitioner.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.contained",
+    "resourceType": "Practitioner",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "practitioner",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"Practitioner.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.extension",
@@ -103,42 +86,18 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "practitioner",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.modifierExtension",
@@ -149,65 +108,18 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored",
       "coreKeywords": [
         "practitioner",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "modifies",
-        "understanding",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "allowed",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Practitioner.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Practitioner.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.identifier",
@@ -218,113 +130,39 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "An identifier that applies to this person in this role.",
+      "jsdocDefinition": "An identifier for the person as this agent",
       "coreKeywords": [
         "practitioner",
         "identifier",
         "textinput",
-        "applies",
         "person",
-        "role"
+        "agent"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Practitioner.identifier\"\n        label: \"Enter identifier\"\n        description: \"An identifier that applies to this person in this role.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.identifier.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "identifier",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.identifier.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "identifier",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Practitioner.identifier\"\n        label: \"Enter identifier\"\n        description: \"An identifier for the person as this agent\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.identifier.use",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The purpose of this identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "identifier",
         "use",
-        "textinput",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Practitioner.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Practitioner.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
     "choices": [
       "usual",
       "official",
@@ -342,49 +180,176 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "identifier",
-        "dropdown",
-        "coded",
-        "can",
-        "used",
-        "determine",
-        "which",
-        "use",
-        "specific",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Practitioner.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Practitioner.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
   },
   {
-    "path": "Practitioner.identifier.system",
+    "path": "Practitioner.identifier.type.coding",
     "resourceType": "Practitioner",
-    "primitiveType": "Uri",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Practitioner.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Practitioner.identifier.type.coding.system",
+    "resourceType": "Practitioner",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Practitioner.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.identifier.type.coding.version",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Practitioner.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.identifier.type.coding.code",
+    "resourceType": "Practitioner",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Practitioner.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Practitioner.identifier.type.coding.display",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Practitioner.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.identifier.type.coding.userSelected",
+    "resourceType": "Practitioner",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Practitioner.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Practitioner.identifier.type.text",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Practitioner.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.identifier.system",
+    "resourceType": "Practitioner",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "identifier",
         "system",
-        "textinput",
-        "establishes",
-        "namespace",
-        "url",
-        "describes",
-        "set",
-        "values",
-        "are",
-        "unique"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Practitioner.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Practitioner.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.identifier.value",
@@ -395,23 +360,14 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "identifier",
-        "textinput",
-        "portion",
-        "typically",
-        "relevant",
-        "user",
-        "which",
-        "unique",
-        "within",
-        "context",
-        "system"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Practitioner.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Practitioner.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.identifier.period",
@@ -422,155 +378,55 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "identifier",
         "period",
-        "textinput",
-        "time",
-        "during",
-        "which",
-        "iswas",
-        "valid",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.identifier.period.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "identifier",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.identifier.period.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "identifier",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.identifier.period.start",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "identifier",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.identifier.period.end",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "identifier",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.identifier.assigner",
@@ -581,23 +437,21 @@
     "outboundEdges": [
       {
         "relationshipType": "assigner-link",
-        "targetResource": "assigner",
-        "traversalPath": "assigner.id"
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "identifier",
         "assigner",
-        "dropdown",
-        "organization",
-        "issuedmanages"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Practitioner.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Practitioner.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.active",
@@ -608,7 +462,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"active\\\": \\\"\" (true | false) \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Whether this practitioner's record is in active use.",
+      "jsdocDefinition": "Whether this practitioner's record is in active use",
       "coreKeywords": [
         "practitioner",
         "active",
@@ -619,7 +473,7 @@
         "use"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"active\"\n        path: \"Practitioner.active\"\n        label: \"Enter active\"\n        description: \"Whether this practitioner's record is in active use.\"\n        uiComponent: \"Checkbox\""
+    "reverseYamlSnippet": "      - id: \"active\"\n        path: \"Practitioner.active\"\n        label: \"Enter active\"\n        description: \"Whether this practitioner's record is in active use\"\n        uiComponent: \"Checkbox\""
   },
   {
     "path": "Practitioner.name",
@@ -630,7 +484,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"name\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The name(s) associated with the practitioner.",
+      "jsdocDefinition": "The name(s) associated with the practitioner",
       "coreKeywords": [
         "practitioner",
         "name",
@@ -639,111 +493,37 @@
         "associated"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"Practitioner.name\"\n        label: \"Enter name\"\n        description: \"The name(s) associated with the practitioner.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.name.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "name",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.name.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.name.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "name",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.name.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"Practitioner.name\"\n        label: \"Enter name\"\n        description: \"The name(s) associated with the practitioner\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.name.use",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"old\\\" | \\\"nickname\\\" | \\\"anonymous\\\" | \\\"maiden\\\") \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"nickname\\\" | \\\"anonymous\\\" | \\\"old\\\" | \\\"maiden\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Identifies the purpose for this name.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "name",
         "use",
-        "textinput",
-        "identifies",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Practitioner.name.use\"\n        label: \"Enter use\"\n        description: \"Identifies the purpose for this name.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Practitioner.name.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/name-use"
+    },
     "choices": [
       "usual",
       "official",
       "temp",
-      "old",
       "nickname",
       "anonymous",
+      "old",
       "maiden"
     ]
   },
@@ -756,26 +536,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "name",
         "text",
-        "textinput",
-        "specifies",
-        "entire",
-        "should",
-        "displayed",
-        "application",
-        "may",
-        "provided",
-        "instead",
-        "well",
-        "specific",
-        "parts"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Practitioner.name.text\"\n        label: \"Enter text\"\n        description: \"Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Practitioner.name.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.name.family",
@@ -786,25 +555,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"family\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "name",
         "family",
-        "textinput",
-        "part",
-        "links",
-        "genealogy",
-        "some",
-        "cultures",
-        "eritrea",
-        "son",
-        "first",
-        "his",
-        "father"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"family\"\n        path: \"Practitioner.name.family\"\n        label: \"Enter family\"\n        description: \"The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"family\"\n        path: \"Practitioner.name.family\"\n        label: \"Enter family\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.name.given",
@@ -815,7 +574,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"given\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Given name.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "name",
@@ -823,7 +582,7 @@
         "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"given\"\n        path: \"Practitioner.name.given\"\n        label: \"Enter given\"\n        description: \"Given name.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"given\"\n        path: \"Practitioner.name.given\"\n        label: \"Enter given\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.name.prefix",
@@ -834,27 +593,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"prefix\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "name",
         "prefix",
-        "textinput",
-        "part",
-        "acquired",
-        "title",
-        "due",
-        "academic",
-        "legal",
-        "employment",
-        "nobility",
-        "status",
-        "etc",
-        "appears",
-        "start"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"prefix\"\n        path: \"Practitioner.name.prefix\"\n        label: \"Enter prefix\"\n        description: \"Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"prefix\"\n        path: \"Practitioner.name.prefix\"\n        label: \"Enter prefix\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.name.suffix",
@@ -865,27 +612,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"suffix\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "name",
         "suffix",
-        "textinput",
-        "part",
-        "acquired",
-        "title",
-        "due",
-        "academic",
-        "legal",
-        "employment",
-        "nobility",
-        "status",
-        "etc",
-        "appears",
-        "end"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"suffix\"\n        path: \"Practitioner.name.suffix\"\n        label: \"Enter suffix\"\n        description: \"Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"suffix\"\n        path: \"Practitioner.name.suffix\"\n        label: \"Enter suffix\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.name.period",
@@ -896,155 +631,55 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Indicates the period of time when this name was valid for the named person.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "name",
         "period",
-        "textinput",
-        "indicates",
-        "time",
-        "when",
-        "valid",
-        "named",
-        "person"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.name.period\"\n        label: \"Enter period\"\n        description: \"Indicates the period of time when this name was valid for the named person.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.name.period.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "name",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.name.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.name.period.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "name",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.name.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.name.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.name.period.start",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "name",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.name.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.name.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.name.period.end",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "name",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.name.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.name.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.telecom",
@@ -1055,124 +690,42 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"telecom\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A contact detail for the practitioner, e.g. a telephone number or an email address.",
+      "jsdocDefinition": "A contact detail for the practitioner (that apply to all roles)",
       "coreKeywords": [
         "practitioner",
         "telecom",
         "textinput",
         "contact",
         "detail",
-        "telephone",
-        "number",
-        "email",
-        "address"
+        "apply",
+        "all",
+        "roles"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"telecom\"\n        path: \"Practitioner.telecom\"\n        label: \"Enter telecom\"\n        description: \"A contact detail for the practitioner, e.g. a telephone number or an email address.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.telecom.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "telecom",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.telecom.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.telecom.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "telecom",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.telecom.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"telecom\"\n        path: \"Practitioner.telecom\"\n        label: \"Enter telecom\"\n        description: \"A contact detail for the practitioner (that apply to all roles)\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.telecom.system",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" (\\\"phone\\\" | \\\"fax\\\" | \\\"email\\\" | \\\"pager\\\" | \\\"url\\\" | \\\"sms\\\" | \\\"other\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Telecommunications form for contact point - what communications system is required to make use of the contact.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "telecom",
         "system",
-        "textinput",
-        "telecommunications",
-        "form",
-        "contact",
-        "point",
-        "what",
-        "communications",
-        "required",
-        "make",
-        "use"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Practitioner.telecom.system\"\n        label: \"Enter system\"\n        description: \"Telecommunications form for contact point - what communications system is required to make use of the contact.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Practitioner.telecom.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-system"
+    },
     "choices": [
       "phone",
       "fax",
@@ -1192,91 +745,63 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "telecom",
-        "textinput",
-        "actual",
-        "contact",
-        "point",
-        "details",
-        "form",
-        "meaningful",
-        "designated",
-        "communication",
-        "system",
-        "phone",
-        "number",
-        "email",
-        "address"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Practitioner.telecom.value\"\n        label: \"Enter value\"\n        description: \"The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Practitioner.telecom.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.telecom.use",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"temp\\\" | \\\"old\\\" | \\\"home\\\" | \\\"work\\\" | \\\"mobile\\\") \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"home\\\" | \\\"work\\\" | \\\"temp\\\" | \\\"old\\\" | \\\"mobile\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Identifies the purpose for the contact point.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "telecom",
         "use",
-        "textinput",
-        "identifies",
-        "purpose",
-        "contact",
-        "point"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Practitioner.telecom.use\"\n        label: \"Enter use\"\n        description: \"Identifies the purpose for the contact point.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Practitioner.telecom.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-use"
+    },
     "choices": [
-      "temp",
-      "old",
       "home",
       "work",
+      "temp",
+      "old",
       "mobile"
     ]
   },
   {
     "path": "Practitioner.telecom.rank",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "positiveInt",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "telecom",
         "rank",
-        "textinput",
-        "specifies",
-        "preferred",
-        "order",
-        "which",
-        "use",
-        "set",
-        "contacts",
-        "contactpoints",
-        "lower",
-        "values",
-        "are",
-        "more",
-        "than",
-        "those",
-        "higher"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"Practitioner.telecom.rank\"\n        label: \"Enter rank\"\n        description: \"Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"Practitioner.telecom.rank\"\n        label: \"Enter rank\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Practitioner.telecom.period",
@@ -1287,155 +812,55 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period when the contact point was/is in use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "telecom",
         "period",
-        "textinput",
-        "time",
-        "when",
-        "contact",
-        "point",
-        "wasis",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.telecom.period\"\n        label: \"Enter period\"\n        description: \"Time period when the contact point was/is in use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.telecom.period.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "telecom",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.telecom.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.telecom.period.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "telecom",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.telecom.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.telecom.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.telecom.period.start",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "telecom",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.telecom.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.telecom.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.telecom.period.end",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "telecom",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.telecom.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.telecom.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.address",
@@ -1446,7 +871,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"address\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Address(es) of the practitioner that are not role specific (typically home address). Work addresses are not typically entered in this property as they are usually role dependent.",
+      "jsdocDefinition": "Address(es) of the practitioner that are not role specific (typically home address)",
       "coreKeywords": [
         "practitioner",
         "address",
@@ -1457,150 +882,62 @@
         "role",
         "specific",
         "typically",
-        "home",
-        "work",
-        "entered",
-        "they",
-        "usually",
-        "dependent"
+        "home"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"address\"\n        path: \"Practitioner.address\"\n        label: \"Enter address\"\n        description: \"Address(es) of the practitioner that are not role specific (typically home address). Work addresses are not typically entered in this property as they are usually role dependent.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.address.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "address",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.address.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.address.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "address",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.address.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"address\"\n        path: \"Practitioner.address\"\n        label: \"Enter address\"\n        description: \"Address(es) of the practitioner that are not role specific (typically home address)\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.address.use",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"temp\\\" | \\\"old\\\" | \\\"home\\\" | \\\"work\\\" | \\\"billing\\\") \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"home\\\" | \\\"work\\\" | \\\"temp\\\" | \\\"old\\\" | \\\"billing\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The purpose of this address.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
         "use",
-        "textinput",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Practitioner.address.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this address.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Practitioner.address.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/address-use"
+    },
     "choices": [
-      "temp",
-      "old",
       "home",
       "work",
+      "temp",
+      "old",
       "billing"
     ]
   },
   {
     "path": "Practitioner.address.type",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" (\\\"postal\\\" | \\\"physical\\\" | \\\"both\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
-        "textinput",
-        "distinguishes",
-        "between",
-        "physical",
-        "addresses",
-        "those",
-        "you",
-        "can",
-        "visit",
-        "mailing",
-        "boxes",
-        "care",
-        "most",
-        "are",
-        "both"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Practitioner.address.type\"\n        label: \"Enter type\"\n        description: \"Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Practitioner.address.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/address-type"
+    },
     "choices": [
       "postal",
       "physical",
@@ -1616,27 +953,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
         "text",
-        "textinput",
-        "specifies",
-        "entire",
-        "should",
-        "displayed",
-        "postal",
-        "label",
-        "may",
-        "provided",
-        "instead",
-        "well",
-        "specific",
-        "parts"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Practitioner.address.text\"\n        label: \"Enter text\"\n        description: \"Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Practitioner.address.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.address.line",
@@ -1647,27 +972,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"line\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
         "line",
-        "textinput",
-        "component",
-        "house",
-        "number",
-        "apartment",
-        "street",
-        "name",
-        "direction",
-        "box",
-        "delivery",
-        "hints",
-        "similar",
-        "information"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"line\"\n        path: \"Practitioner.address.line\"\n        label: \"Enter line\"\n        description: \"This component contains the house number, apartment number, street name, street direction, P.O. Box number, delivery hints, and similar address information.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"line\"\n        path: \"Practitioner.address.line\"\n        label: \"Enter line\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.address.city",
@@ -1678,23 +991,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"city\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The name of the city, town, suburb, village or other community or delivery center.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
         "city",
-        "textinput",
-        "name",
-        "town",
-        "suburb",
-        "village",
-        "other",
-        "community",
-        "delivery",
-        "center"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"city\"\n        path: \"Practitioner.address.city\"\n        label: \"Enter city\"\n        description: \"The name of the city, town, suburb, village or other community or delivery center.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"city\"\n        path: \"Practitioner.address.city\"\n        label: \"Enter city\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.address.district",
@@ -1705,19 +1010,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"district\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The name of the administrative area (county).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
         "district",
-        "textinput",
-        "name",
-        "administrative",
-        "area",
-        "county"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"district\"\n        path: \"Practitioner.address.district\"\n        label: \"Enter district\"\n        description: \"The name of the administrative area (county).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"district\"\n        path: \"Practitioner.address.district\"\n        label: \"Enter district\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.address.state",
@@ -1728,30 +1029,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"state\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
         "state",
-        "textinput",
-        "sub",
-        "unit",
-        "country",
-        "limited",
-        "sovereignty",
-        "federally",
-        "organized",
-        "code",
-        "may",
-        "used",
-        "codes",
-        "are",
-        "common",
-        "use",
-        "letter"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"state\"\n        path: \"Practitioner.address.state\"\n        label: \"Enter state\"\n        description: \"Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"state\"\n        path: \"Practitioner.address.state\"\n        label: \"Enter state\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.address.postalCode",
@@ -1762,20 +1048,16 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"postal_code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A postal code designating a region defined by the postal service.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
         "postal",
         "code",
-        "dropdown",
-        "designating",
-        "region",
-        "defined",
-        "service"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"postal_code\"\n        path: \"Practitioner.address.postalCode\"\n        label: \"Enter postalCode\"\n        description: \"A postal code designating a region defined by the postal service.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"postal_code\"\n        path: \"Practitioner.address.postalCode\"\n        label: \"Enter postalCode\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Practitioner.address.country",
@@ -1786,20 +1068,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"country\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Country - a nation as commonly understood or generally accepted.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
         "country",
-        "textinput",
-        "nation",
-        "commonly",
-        "understood",
-        "generally",
-        "accepted"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"country\"\n        path: \"Practitioner.address.country\"\n        label: \"Enter country\"\n        description: \"Country - a nation as commonly understood or generally accepted.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"country\"\n        path: \"Practitioner.address.country\"\n        label: \"Enter country\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.address.period",
@@ -1810,204 +1087,108 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period when address was/is in use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
         "period",
-        "textinput",
-        "time",
-        "when",
-        "wasis",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.address.period\"\n        label: \"Enter period\"\n        description: \"Time period when address was/is in use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.address.period.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "address",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.address.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.address.period.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "address",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.address.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.address.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.address.period.start",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.address.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.address.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.address.period.end",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "address",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.address.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.address.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.gender",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"gender\\\": \\\"\" (\\\"other\\\" | \\\"male\\\" | \\\"female\\\" | \\\"unknown\\\") \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"gender\\\": \\\"\" (\\\"male\\\" | \\\"female\\\" | \\\"other\\\" | \\\"unknown\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.",
+      "jsdocDefinition": "male | female | other | unknown",
       "coreKeywords": [
         "practitioner",
         "gender",
-        "textinput",
-        "administrative",
-        "person",
-        "considered",
-        "have",
-        "administration",
-        "record",
-        "keeping",
-        "purposes"
+        "dropdown",
+        "male",
+        "female",
+        "other",
+        "unknown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"gender\"\n        path: \"Practitioner.gender\"\n        label: \"Enter gender\"\n        description: \"Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"gender\"\n        path: \"Practitioner.gender\"\n        label: \"Enter gender\"\n        description: \"male | female | other | unknown\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/administrative-gender"
+    },
     "choices": [
-      "other",
       "male",
       "female",
+      "other",
       "unknown"
     ]
   },
   {
     "path": "Practitioner.birthDate",
     "resourceType": "Practitioner",
-    "primitiveType": "string",
+    "primitiveType": "date",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"birth_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The date of birth for the practitioner.",
+      "jsdocDefinition": "The date  on which the practitioner was born",
       "coreKeywords": [
         "practitioner",
         "birth",
         "date",
-        "textinput"
+        "datepicker",
+        "which",
+        "born"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"birth_date\"\n        path: \"Practitioner.birthDate\"\n        label: \"Enter birthDate\"\n        description: \"The date of birth for the practitioner.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"birth_date\"\n        path: \"Practitioner.birthDate\"\n        label: \"Enter birthDate\"\n        description: \"The date  on which the practitioner was born\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.photo",
@@ -2018,7 +1199,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"photo\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Image of the person.",
+      "jsdocDefinition": "Image of the person",
       "coreKeywords": [
         "practitioner",
         "photo",
@@ -2027,218 +1208,129 @@
         "person"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"photo\"\n        path: \"Practitioner.photo\"\n        label: \"Enter photo\"\n        description: \"Image of the person.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.photo.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "photo",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.photo.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.photo.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "photo",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.photo.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"photo\"\n        path: \"Practitioner.photo\"\n        label: \"Enter photo\"\n        description: \"Image of the person\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.photo.contentType",
     "resourceType": "Practitioner",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"content_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"content_type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "photo",
         "content",
-        "textinput",
-        "identifies",
-        "data",
-        "attachment",
-        "allows",
-        "method",
-        "chosen",
-        "interpret",
-        "render",
-        "includes",
-        "mime",
-        "parameters",
-        "charset",
-        "where",
-        "appropriate"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"content_type\"\n        path: \"Practitioner.photo.contentType\"\n        label: \"Enter contentType\"\n        description: \"Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"content_type\"\n        path: \"Practitioner.photo.contentType\"\n        label: \"Enter contentType\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/mimetypes"
+    }
+  },
+  {
+    "path": "Practitioner.photo.language",
+    "resourceType": "Practitioner",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"language\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "photo",
+        "language",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"language\"\n        path: \"Practitioner.photo.language\"\n        label: \"Enter language\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+    }
   },
   {
     "path": "Practitioner.photo.data",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "base64Binary",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"data\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The actual data of the attachment - a sequence of bytes, base64 encoded.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "photo",
         "data",
-        "textinput",
-        "actual",
-        "attachment",
-        "sequence",
-        "bytes",
-        "base",
-        "encoded"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"data\"\n        path: \"Practitioner.photo.data\"\n        label: \"Enter data\"\n        description: \"The actual data of the attachment - a sequence of bytes, base64 encoded.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"data\"\n        path: \"Practitioner.photo.data\"\n        label: \"Enter data\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.photo.url",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "url",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"url\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A location where the data can be accessed.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "photo",
         "url",
-        "textinput",
-        "location",
-        "where",
-        "data",
-        "can",
-        "accessed"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"Practitioner.photo.url\"\n        label: \"Enter url\"\n        description: \"A location where the data can be accessed.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"Practitioner.photo.url\"\n        label: \"Enter url\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.photo.size",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "unsignedInt",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"size\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"size\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The number of bytes of data that make up this attachment (before base64 encoding, if that is done).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "photo",
         "size",
-        "textinput",
-        "number",
-        "bytes",
-        "data",
-        "make",
-        "attachment",
-        "before",
-        "base",
-        "encoding",
-        "done"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"size\"\n        path: \"Practitioner.photo.size\"\n        label: \"Enter size\"\n        description: \"The number of bytes of data that make up this attachment (before base64 encoding, if that is done).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"size\"\n        path: \"Practitioner.photo.size\"\n        label: \"Enter size\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Practitioner.photo.hash",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "base64Binary",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"hash\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The calculated hash of the data using SHA-1. Represented using base64.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "photo",
         "hash",
-        "textinput",
-        "calculated",
-        "data",
-        "using",
-        "sha",
-        "represented",
-        "base"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"hash\"\n        path: \"Practitioner.photo.hash\"\n        label: \"Enter hash\"\n        description: \"The calculated hash of the data using SHA-1. Represented using base64.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"hash\"\n        path: \"Practitioner.photo.hash\"\n        label: \"Enter hash\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.photo.title",
@@ -2249,112 +1341,58 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"title\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A label or set of text to display in place of the data.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "photo",
         "title",
-        "textinput",
-        "label",
-        "set",
-        "text",
-        "display",
-        "place",
-        "data"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"title\"\n        path: \"Practitioner.photo.title\"\n        label: \"Enter title\"\n        description: \"A label or set of text to display in place of the data.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"title\"\n        path: \"Practitioner.photo.title\"\n        label: \"Enter title\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.photo.creation",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"creation\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The date that the attachment was first created.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "photo",
         "creation",
-        "textinput",
-        "date",
-        "attachment",
-        "first",
-        "created"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"creation\"\n        path: \"Practitioner.photo.creation\"\n        label: \"Enter creation\"\n        description: \"The date that the attachment was first created.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"creation\"\n        path: \"Practitioner.photo.creation\"\n        label: \"Enter creation\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.qualification",
     "resourceType": "Practitioner",
     "primitiveType": "object",
     "isArray": true,
-    "arrayTargetType": "PractitionerQualification",
+    "arrayTargetType": "BackboneElement",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"qualification\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner. For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.",
+      "jsdocDefinition": "Certification, licenses, or training pertaining to the provision of care",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "textinput",
-        "official",
-        "certifications",
-        "training",
+        "certification",
         "licenses",
-        "authorize",
-        "otherwise",
-        "pertain",
+        "training",
+        "pertaining",
         "provision",
-        "care",
-        "example",
-        "medical",
-        "license",
-        "issued",
-        "board",
-        "authorizing",
-        "practice",
-        "medicine",
-        "within",
-        "certian",
-        "locality"
+        "care"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"qualification\"\n        path: \"Practitioner.qualification\"\n        label: \"Enter qualification\"\n        description: \"The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner. For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.qualification.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "qualification",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.qualification.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"qualification\"\n        path: \"Practitioner.qualification\"\n        label: \"Enter qualification\"\n        description: \"Certification, licenses, or training pertaining to the provision of care\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.qualification.extension",
@@ -2365,42 +1403,19 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.qualification.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.qualification.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.qualification.modifierExtension",
@@ -2411,67 +1426,21 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Practitioner.qualification.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Practitioner.qualification.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.qualification.identifier",
@@ -2482,117 +1451,39 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "An identifier that applies to this person's qualification in this role.",
+      "jsdocDefinition": "An identifier for this qualification for the practitioner",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "identifier",
-        "textinput",
-        "applies",
-        "persons",
-        "role"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Practitioner.qualification.identifier\"\n        label: \"Enter identifier\"\n        description: \"An identifier that applies to this person's qualification in this role.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.qualification.identifier.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "qualification",
-        "identifier",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.qualification.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.qualification.identifier.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "qualification",
-        "identifier",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.qualification.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Practitioner.qualification.identifier\"\n        label: \"Enter identifier\"\n        description: \"An identifier for this qualification for the practitioner\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.qualification.identifier.use",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The purpose of this identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "identifier",
         "use",
-        "textinput",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Practitioner.qualification.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Practitioner.qualification.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
     "choices": [
       "usual",
       "official",
@@ -2610,51 +1501,185 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "identifier",
-        "dropdown",
-        "coded",
-        "can",
-        "used",
-        "determine",
-        "which",
-        "use",
-        "specific",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Practitioner.qualification.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Practitioner.qualification.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
   },
   {
-    "path": "Practitioner.qualification.identifier.system",
+    "path": "Practitioner.qualification.identifier.type.coding",
     "resourceType": "Practitioner",
-    "primitiveType": "Uri",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Practitioner.qualification.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Practitioner.qualification.identifier.type.coding.system",
+    "resourceType": "Practitioner",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Practitioner.qualification.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.qualification.identifier.type.coding.version",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Practitioner.qualification.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.qualification.identifier.type.coding.code",
+    "resourceType": "Practitioner",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Practitioner.qualification.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Practitioner.qualification.identifier.type.coding.display",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Practitioner.qualification.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.qualification.identifier.type.coding.userSelected",
+    "resourceType": "Practitioner",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Practitioner.qualification.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Practitioner.qualification.identifier.type.text",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Practitioner.qualification.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.qualification.identifier.system",
+    "resourceType": "Practitioner",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "identifier",
         "system",
-        "textinput",
-        "establishes",
-        "namespace",
-        "url",
-        "describes",
-        "set",
-        "values",
-        "are",
-        "unique"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Practitioner.qualification.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Practitioner.qualification.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.qualification.identifier.value",
@@ -2665,24 +1690,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "identifier",
-        "textinput",
-        "portion",
-        "typically",
-        "relevant",
-        "user",
-        "which",
-        "unique",
-        "within",
-        "context",
-        "system"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Practitioner.qualification.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Practitioner.qualification.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.qualification.identifier.period",
@@ -2693,160 +1709,58 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "identifier",
         "period",
-        "textinput",
-        "time",
-        "during",
-        "which",
-        "iswas",
-        "valid",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.qualification.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.qualification.identifier.period.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "qualification",
-        "identifier",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.qualification.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.qualification.identifier.period.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "qualification",
-        "identifier",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.qualification.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.qualification.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.qualification.identifier.period.start",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "identifier",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.qualification.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.qualification.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.qualification.identifier.period.end",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "identifier",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.qualification.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.qualification.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.qualification.identifier.assigner",
@@ -2857,24 +1771,22 @@
     "outboundEdges": [
       {
         "relationshipType": "assigner-link",
-        "targetResource": "assigner",
-        "traversalPath": "assigner.id"
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "identifier",
         "assigner",
-        "dropdown",
-        "organization",
-        "issuedmanages"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Practitioner.qualification.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Practitioner.qualification.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.qualification.code",
@@ -2885,7 +1797,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Coded representation of the qualification.",
+      "jsdocDefinition": "Coded representation of the qualification",
       "coreKeywords": [
         "practitioner",
         "qualification",
@@ -2895,7 +1807,156 @@
         "representation"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Practitioner.qualification.code\"\n        label: \"Enter code\"\n        description: \"Coded representation of the qualification.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Practitioner.qualification.code\"\n        label: \"Enter code\"\n        description: \"Coded representation of the qualification\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://terminology.hl7.org/ValueSet/v2-2.7-0360"
+    }
+  },
+  {
+    "path": "Practitioner.qualification.code.coding",
+    "resourceType": "Practitioner",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Practitioner.qualification.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Practitioner.qualification.code.coding.system",
+    "resourceType": "Practitioner",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Practitioner.qualification.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Practitioner.qualification.code.coding.version",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Practitioner.qualification.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Practitioner.qualification.code.coding.code",
+    "resourceType": "Practitioner",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Practitioner.qualification.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Practitioner.qualification.code.coding.display",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Practitioner.qualification.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Practitioner.qualification.code.coding.userSelected",
+    "resourceType": "Practitioner",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Practitioner.qualification.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Practitioner.qualification.code.text",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "qualification",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Practitioner.qualification.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Practitioner.qualification.period",
@@ -2906,7 +1967,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Period during which the qualification is valid.",
+      "jsdocDefinition": "Period during which the qualification is valid",
       "coreKeywords": [
         "practitioner",
         "qualification",
@@ -2917,141 +1978,47 @@
         "valid"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.qualification.period\"\n        label: \"Enter period\"\n        description: \"Period during which the qualification is valid.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.qualification.period.id",
-    "resourceType": "Practitioner",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "practitioner",
-        "qualification",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Practitioner.qualification.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Practitioner.qualification.period.extension",
-    "resourceType": "Practitioner",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "practitioner",
-        "qualification",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Practitioner.qualification.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Practitioner.qualification.period\"\n        label: \"Enter period\"\n        description: \"Period during which the qualification is valid\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.qualification.period.start",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.qualification.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Practitioner.qualification.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.qualification.period.end",
     "resourceType": "Practitioner",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.qualification.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Practitioner.qualification.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Practitioner.qualification.issuer",
@@ -3062,24 +2029,24 @@
     "outboundEdges": [
       {
         "relationshipType": "issuer-link",
-        "targetResource": "issuer",
-        "traversalPath": "issuer.id"
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"issuer\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Organization that regulates and issues the qualification.",
+      "jsdocDefinition": "Organization that regulates and issues the qualification",
       "coreKeywords": [
         "practitioner",
         "qualification",
         "issuer",
-        "dropdown",
+        "textinput",
         "organization",
         "regulates",
         "issues"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"issuer\"\n        path: \"Practitioner.qualification.issuer\"\n        label: \"Enter issuer\"\n        description: \"Organization that regulates and issues the qualification.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"issuer\"\n        path: \"Practitioner.qualification.issuer\"\n        label: \"Enter issuer\"\n        description: \"Organization that regulates and issues the qualification\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Practitioner.communication",
@@ -3090,7 +2057,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"communication\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A language the practitioner can use in patient communication.",
+      "jsdocDefinition": "A language the practitioner can use in patient communication",
       "coreKeywords": [
         "practitioner",
         "communication",
@@ -3101,6 +2068,149 @@
         "patient"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"communication\"\n        path: \"Practitioner.communication\"\n        label: \"Enter communication\"\n        description: \"A language the practitioner can use in patient communication.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"communication\"\n        path: \"Practitioner.communication\"\n        label: \"Enter communication\"\n        description: \"A language the practitioner can use in patient communication\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+    }
+  },
+  {
+    "path": "Practitioner.communication.coding",
+    "resourceType": "Practitioner",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "communication",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Practitioner.communication.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Practitioner.communication.coding.system",
+    "resourceType": "Practitioner",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "communication",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Practitioner.communication.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.communication.coding.version",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "communication",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Practitioner.communication.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.communication.coding.code",
+    "resourceType": "Practitioner",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "communication",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Practitioner.communication.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Practitioner.communication.coding.display",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "communication",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Practitioner.communication.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Practitioner.communication.coding.userSelected",
+    "resourceType": "Practitioner",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "communication",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Practitioner.communication.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Practitioner.communication.text",
+    "resourceType": "Practitioner",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "practitioner",
+        "communication",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Practitioner.communication.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   }
 ]

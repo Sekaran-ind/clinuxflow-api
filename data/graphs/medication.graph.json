@@ -11,8 +11,7 @@
       "jsdocDefinition": "This is a Medication resource",
       "coreKeywords": [
         "medication",
-        "resource",
-        "textinput"
+        "resource"
       ]
     },
     "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Medication.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Medication resource\"\n        uiComponent: \"TextInput\""
@@ -26,21 +25,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "jsdocDefinition": "Logical id of this artifact",
       "coreKeywords": [
         "medication",
         "textinput",
         "logical",
-        "resource",
-        "used",
-        "url",
-        "once",
-        "assigned",
-        "never",
-        "changes"
+        "artifact"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.text",
@@ -51,48 +44,38 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
       "coreKeywords": [
         "medication",
         "text",
-        "dropdown",
-        "human",
-        "readable",
-        "narrative",
+        "textinput",
         "summary",
         "resource",
-        "can",
-        "used",
-        "represent",
-        "content",
-        "need",
-        "not",
-        "encode",
-        "all",
-        "structured",
-        "data",
-        "but",
-        "required",
-        "contain",
-        "sufficient",
-        "detail",
-        "make",
-        "clinically",
-        "safe",
-        "just",
-        "read",
-        "definitions",
-        "may",
-        "define",
-        "what",
-        "should",
-        "represented",
-        "ensure",
-        "clinical",
-        "safety"
+        "human",
+        "interpretation"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Medication.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Medication.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Medication.contained",
+    "resourceType": "Medication",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "medication",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"Medication.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.extension",
@@ -103,42 +86,18 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "medication",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.modifierExtension",
@@ -149,65 +108,18 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored",
       "coreKeywords": [
         "medication",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "modifies",
-        "understanding",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "allowed",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Medication.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Medication.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.identifier",
@@ -218,7 +130,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Business identifier for this medication.",
+      "jsdocDefinition": "Business identifier for this medication",
       "coreKeywords": [
         "medication",
         "identifier",
@@ -226,103 +138,30 @@
         "business"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Medication.identifier\"\n        label: \"Enter identifier\"\n        description: \"Business identifier for this medication.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.identifier.id",
-    "resourceType": "Medication",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "medication",
-        "identifier",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.identifier.extension",
-    "resourceType": "Medication",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "medication",
-        "identifier",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Medication.identifier\"\n        label: \"Enter identifier\"\n        description: \"Business identifier for this medication\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.identifier.use",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The purpose of this identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "identifier",
         "use",
-        "textinput",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Medication.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Medication.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
     "choices": [
       "usual",
       "official",
@@ -340,49 +179,176 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "identifier",
-        "dropdown",
-        "coded",
-        "can",
-        "used",
-        "determine",
-        "which",
-        "use",
-        "specific",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Medication.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Medication.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
   },
   {
-    "path": "Medication.identifier.system",
+    "path": "Medication.identifier.type.coding",
     "resourceType": "Medication",
-    "primitiveType": "Uri",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Medication.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Medication.identifier.type.coding.system",
+    "resourceType": "Medication",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Medication.identifier.type.coding.version",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Medication.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Medication.identifier.type.coding.code",
+    "resourceType": "Medication",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Medication.identifier.type.coding.display",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Medication.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Medication.identifier.type.coding.userSelected",
+    "resourceType": "Medication",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Medication.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Medication.identifier.type.text",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Medication.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Medication.identifier.system",
+    "resourceType": "Medication",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "identifier",
         "system",
-        "textinput",
-        "establishes",
-        "namespace",
-        "url",
-        "describes",
-        "set",
-        "values",
-        "are",
-        "unique"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.identifier.value",
@@ -393,23 +359,14 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "identifier",
-        "textinput",
-        "portion",
-        "typically",
-        "relevant",
-        "user",
-        "which",
-        "unique",
-        "within",
-        "context",
-        "system"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Medication.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Medication.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.identifier.period",
@@ -420,155 +377,55 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "identifier",
         "period",
-        "textinput",
-        "time",
-        "during",
-        "which",
-        "iswas",
-        "valid",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Medication.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.identifier.period.id",
-    "resourceType": "Medication",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "medication",
-        "identifier",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.identifier.period.extension",
-    "resourceType": "Medication",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "medication",
-        "identifier",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Medication.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.identifier.period.start",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "identifier",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Medication.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Medication.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Medication.identifier.period.end",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "identifier",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Medication.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Medication.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Medication.identifier.assigner",
@@ -579,23 +436,21 @@
     "outboundEdges": [
       {
         "relationshipType": "assigner-link",
-        "targetResource": "assigner",
-        "traversalPath": "assigner.id"
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "identifier",
         "assigner",
-        "dropdown",
-        "organization",
-        "issuedmanages"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Medication.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Medication.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.code",
@@ -606,58 +461,189 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A code (or set of codes) that specify this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.",
+      "jsdocDefinition": "Codes that identify this medication",
       "coreKeywords": [
         "medication",
         "code",
         "dropdown",
-        "set",
         "codes",
-        "specify",
-        "textual",
-        "description",
-        "available",
-        "usage",
-        "note",
-        "could",
-        "standard",
-        "rxnorm",
-        "snomed",
-        "idmp",
-        "etc",
-        "also",
-        "national",
-        "local",
-        "formulary",
-        "optionally",
-        "translations",
-        "other",
-        "systems"
+        "identify"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.code\"\n        label: \"Enter code\"\n        description: \"A code (or set of codes) that specify this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.code\"\n        label: \"Enter code\"\n        description: \"Codes that identify this medication\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-codes"
+    }
+  },
+  {
+    "path": "Medication.code.coding",
+    "resourceType": "Medication",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Medication.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Medication.code.coding.system",
+    "resourceType": "Medication",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Medication.code.coding.version",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Medication.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Medication.code.coding.code",
+    "resourceType": "Medication",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Medication.code.coding.display",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Medication.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Medication.code.coding.userSelected",
+    "resourceType": "Medication",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Medication.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Medication.code.text",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Medication.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Medication.status",
     "resourceType": "Medication",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"active\\\" | \\\"inactive\\\" | \\\"entered-in-error\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A code to indicate if the medication is in active use.",
+      "jsdocDefinition": "active | inactive | entered-in-error",
       "coreKeywords": [
         "medication",
         "status",
-        "textinput",
-        "code",
-        "indicate",
+        "dropdown",
         "active",
-        "use"
+        "inactive",
+        "entered",
+        "error"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Medication.status\"\n        label: \"Enter status\"\n        description: \"A code to indicate if the medication is in active use.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Medication.status\"\n        label: \"Enter status\"\n        description: \"active | inactive | entered-in-error\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-status"
+    },
+    "choices": [
+      "active",
+      "inactive",
+      "entered-in-error"
+    ]
   },
   {
     "path": "Medication.manufacturer",
@@ -668,27 +654,21 @@
     "outboundEdges": [
       {
         "relationshipType": "manufacturer-link",
-        "targetResource": "manufacturer",
-        "traversalPath": "manufacturer.id"
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"manufacturer\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Describes the details of the manufacturer of the medication product. This is not intended to represent the distributor of a medication product.",
+      "jsdocDefinition": "Manufacturer of the item",
       "coreKeywords": [
         "medication",
         "manufacturer",
-        "dropdown",
-        "describes",
-        "details",
-        "product",
-        "not",
-        "intended",
-        "represent",
-        "distributor"
+        "textinput",
+        "item"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"manufacturer\"\n        path: \"Medication.manufacturer\"\n        label: \"Enter manufacturer\"\n        description: \"Describes the details of the manufacturer of the medication product. This is not intended to represent the distributor of a medication product.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"manufacturer\"\n        path: \"Medication.manufacturer\"\n        label: \"Enter manufacturer\"\n        description: \"Manufacturer of the item\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.form",
@@ -699,19 +679,160 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"form\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Describes the form of the item. Powder; tablets; capsule.",
+      "jsdocDefinition": "powder | tablets | capsule +",
       "coreKeywords": [
         "medication",
         "form",
         "dropdown",
-        "describes",
-        "item",
         "powder",
         "tablets",
         "capsule"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"form\"\n        path: \"Medication.form\"\n        label: \"Enter form\"\n        description: \"Describes the form of the item. Powder; tablets; capsule.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"form\"\n        path: \"Medication.form\"\n        label: \"Enter form\"\n        description: \"powder | tablets | capsule +\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-form-codes"
+    }
+  },
+  {
+    "path": "Medication.form.coding",
+    "resourceType": "Medication",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "form",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Medication.form.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Medication.form.coding.system",
+    "resourceType": "Medication",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "form",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.form.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Medication.form.coding.version",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "form",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Medication.form.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Medication.form.coding.code",
+    "resourceType": "Medication",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "form",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.form.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Medication.form.coding.display",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "form",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Medication.form.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Medication.form.coding.userSelected",
+    "resourceType": "Medication",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "form",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Medication.form.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Medication.form.text",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "form",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Medication.form.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.amount",
@@ -722,112 +843,16 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"amount\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Specific amount of the drug in the packaged product. For example, when specifying a product that has the same strength (For example, Insulin glargine 100 unit per mL solution for injection), this attribute provides additional clarification of the package amount (For example, 3 mL, 10mL, etc.).",
+      "jsdocDefinition": "Amount of drug in package",
       "coreKeywords": [
         "medication",
         "amount",
         "textinput",
-        "specific",
         "drug",
-        "packaged",
-        "product",
-        "example",
-        "when",
-        "specifying",
-        "has",
-        "same",
-        "strength",
-        "insulin",
-        "glargine",
-        "unit",
-        "per",
-        "solution",
-        "injection",
-        "attribute",
-        "provides",
-        "additional",
-        "clarification",
-        "package",
-        "etc"
+        "package"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"amount\"\n        path: \"Medication.amount\"\n        label: \"Enter amount\"\n        description: \"Specific amount of the drug in the packaged product. For example, when specifying a product that has the same strength (For example, Insulin glargine 100 unit per mL solution for injection), this attribute provides additional clarification of the package amount (For example, 3 mL, 10mL, etc.).\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.amount.id",
-    "resourceType": "Medication",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "medication",
-        "amount",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.amount.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.amount.extension",
-    "resourceType": "Medication",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "medication",
-        "amount",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.amount.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"amount\"\n        path: \"Medication.amount\"\n        label: \"Enter amount\"\n        description: \"Amount of drug in package\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.amount.numerator",
@@ -838,7 +863,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"numerator\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The value of the numerator.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
@@ -846,144 +871,50 @@
         "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"numerator\"\n        path: \"Medication.amount.numerator\"\n        label: \"Enter numerator\"\n        description: \"The value of the numerator.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.amount.numerator.id",
-    "resourceType": "Medication",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "medication",
-        "amount",
-        "numerator",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.amount.numerator.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.amount.numerator.extension",
-    "resourceType": "Medication",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "medication",
-        "amount",
-        "numerator",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.amount.numerator.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"numerator\"\n        path: \"Medication.amount.numerator\"\n        label: \"Enter numerator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.amount.numerator.value",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "decimal",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
         "numerator",
-        "textinput",
-        "measured",
-        "includes",
-        "implicit",
-        "precision",
-        "presentation"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Medication.amount.numerator.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Medication.amount.numerator.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Medication.amount.numerator.comparator",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
         "numerator",
         "comparator",
-        "textinput",
-        "how",
-        "should",
-        "understood",
-        "represented",
-        "whether",
-        "actual",
-        "greater",
-        "less",
-        "than",
-        "stated",
-        "due",
-        "measurement",
-        "issues",
-        "then",
-        "real"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Medication.amount.numerator.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Medication.amount.numerator.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
     "choices": [
       "<",
       "<=",
@@ -1000,71 +931,56 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A human-readable form of the unit.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
         "numerator",
         "unit",
-        "textinput",
-        "human",
-        "readable",
-        "form"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Medication.amount.numerator.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Medication.amount.numerator.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.amount.numerator.system",
     "resourceType": "Medication",
-    "primitiveType": "Uri",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
         "numerator",
         "system",
-        "textinput",
-        "identification",
-        "provides",
-        "coded",
-        "form",
-        "unit"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.amount.numerator.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.amount.numerator.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.amount.numerator.code",
     "resourceType": "Medication",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
         "numerator",
         "code",
-        "dropdown",
-        "computer",
-        "processable",
-        "form",
-        "unit",
-        "some",
-        "representation",
-        "system"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.amount.numerator.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.amount.numerator.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Medication.amount.denominator",
@@ -1075,7 +991,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"denominator\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The value of the denominator.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
@@ -1083,144 +999,50 @@
         "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"denominator\"\n        path: \"Medication.amount.denominator\"\n        label: \"Enter denominator\"\n        description: \"The value of the denominator.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.amount.denominator.id",
-    "resourceType": "Medication",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "medication",
-        "amount",
-        "denominator",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.amount.denominator.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.amount.denominator.extension",
-    "resourceType": "Medication",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "medication",
-        "amount",
-        "denominator",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.amount.denominator.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"denominator\"\n        path: \"Medication.amount.denominator\"\n        label: \"Enter denominator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.amount.denominator.value",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "decimal",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
         "denominator",
-        "textinput",
-        "measured",
-        "includes",
-        "implicit",
-        "precision",
-        "presentation"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Medication.amount.denominator.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Medication.amount.denominator.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Medication.amount.denominator.comparator",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
         "denominator",
         "comparator",
-        "textinput",
-        "how",
-        "should",
-        "understood",
-        "represented",
-        "whether",
-        "actual",
-        "greater",
-        "less",
-        "than",
-        "stated",
-        "due",
-        "measurement",
-        "issues",
-        "then",
-        "real"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Medication.amount.denominator.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Medication.amount.denominator.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
     "choices": [
       "<",
       "<=",
@@ -1237,124 +1059,76 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A human-readable form of the unit.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
         "denominator",
         "unit",
-        "textinput",
-        "human",
-        "readable",
-        "form"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Medication.amount.denominator.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Medication.amount.denominator.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.amount.denominator.system",
     "resourceType": "Medication",
-    "primitiveType": "Uri",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
         "denominator",
         "system",
-        "textinput",
-        "identification",
-        "provides",
-        "coded",
-        "form",
-        "unit"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.amount.denominator.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.amount.denominator.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.amount.denominator.code",
     "resourceType": "Medication",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "amount",
         "denominator",
         "code",
-        "dropdown",
-        "computer",
-        "processable",
-        "form",
-        "unit",
-        "some",
-        "representation",
-        "system"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.amount.denominator.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.amount.denominator.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Medication.ingredient",
     "resourceType": "Medication",
     "primitiveType": "object",
     "isArray": true,
-    "arrayTargetType": "MedicationIngredient",
+    "arrayTargetType": "BackboneElement",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"ingredient\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Identifies a particular constituent of interest in the product.",
+      "jsdocDefinition": "Active or inactive ingredient",
       "coreKeywords": [
         "medication",
         "ingredient",
         "textinput",
-        "identifies",
-        "particular",
-        "constituent",
-        "interest",
-        "product"
+        "active",
+        "inactive"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"ingredient\"\n        path: \"Medication.ingredient\"\n        label: \"Enter ingredient\"\n        description: \"Identifies a particular constituent of interest in the product.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.ingredient.id",
-    "resourceType": "Medication",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "medication",
-        "ingredient",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.ingredient.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"ingredient\"\n        path: \"Medication.ingredient\"\n        label: \"Enter ingredient\"\n        description: \"Active or inactive ingredient\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.ingredient.extension",
@@ -1365,42 +1139,19 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "medication",
         "ingredient",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.ingredient.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.ingredient.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.ingredient.modifierExtension",
@@ -1411,68 +1162,42 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "medication",
         "ingredient",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Medication.ingredient.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Medication.ingredient.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Medication.ingredient.item[x]",
+    "resourceType": "Medication",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"item[x]\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The actual ingredient or content",
+      "coreKeywords": [
+        "medication",
+        "ingredient",
+        "itemx",
+        "dropdown",
+        "actual",
+        "content"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"item[x]\"\n        path: \"Medication.ingredient.item[x]\"\n        label: \"Enter item[x]\"\n        description: \"The actual ingredient or content\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Medication.ingredient.itemCodeableConcept",
@@ -1483,7 +1208,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"item_codeable_concept\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The actual ingredient - either a substance (simple ingredient) or another medication of a medication.",
+      "jsdocDefinition": "The actual ingredient or content",
       "coreKeywords": [
         "medication",
         "ingredient",
@@ -1492,13 +1217,170 @@
         "concept",
         "dropdown",
         "actual",
-        "either",
-        "substance",
-        "simple",
-        "another"
+        "content"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"item_codeable_concept\"\n        path: \"Medication.ingredient.itemCodeableConcept\"\n        label: \"Enter itemCodeableConcept\"\n        description: \"The actual ingredient - either a substance (simple ingredient) or another medication of a medication.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"item_codeable_concept\"\n        path: \"Medication.ingredient.itemCodeableConcept\"\n        label: \"Enter itemCodeableConcept\"\n        description: \"The actual ingredient or content\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Medication.ingredient.itemCodeableConcept.coding",
+    "resourceType": "Medication",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "ingredient",
+        "item",
+        "codeable",
+        "concept",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Medication.ingredient.itemCodeableConcept.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Medication.ingredient.itemCodeableConcept.coding.system",
+    "resourceType": "Medication",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "ingredient",
+        "item",
+        "codeable",
+        "concept",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.ingredient.itemCodeableConcept.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Medication.ingredient.itemCodeableConcept.coding.version",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "ingredient",
+        "item",
+        "codeable",
+        "concept",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Medication.ingredient.itemCodeableConcept.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Medication.ingredient.itemCodeableConcept.coding.code",
+    "resourceType": "Medication",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "ingredient",
+        "item",
+        "codeable",
+        "concept",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.ingredient.itemCodeableConcept.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Medication.ingredient.itemCodeableConcept.coding.display",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "ingredient",
+        "item",
+        "codeable",
+        "concept",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Medication.ingredient.itemCodeableConcept.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Medication.ingredient.itemCodeableConcept.coding.userSelected",
+    "resourceType": "Medication",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "ingredient",
+        "item",
+        "codeable",
+        "concept",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Medication.ingredient.itemCodeableConcept.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Medication.ingredient.itemCodeableConcept.text",
+    "resourceType": "Medication",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "ingredient",
+        "item",
+        "codeable",
+        "concept",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Medication.ingredient.itemCodeableConcept.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Medication.ingredient.itemReference",
@@ -1509,27 +1391,24 @@
     "outboundEdges": [
       {
         "relationshipType": "itemReference-link",
-        "targetResource": "itemReference",
-        "traversalPath": "itemReference.id"
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"item_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The actual ingredient - either a substance (simple ingredient) or another medication of a medication.",
+      "jsdocDefinition": "The actual ingredient or content",
       "coreKeywords": [
         "medication",
         "ingredient",
         "item",
         "reference",
-        "dropdown",
+        "textinput",
         "actual",
-        "either",
-        "substance",
-        "simple",
-        "another"
+        "content"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"item_reference\"\n        path: \"Medication.ingredient.itemReference\"\n        label: \"Enter itemReference\"\n        description: \"The actual ingredient - either a substance (simple ingredient) or another medication of a medication.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"item_reference\"\n        path: \"Medication.ingredient.itemReference\"\n        label: \"Enter itemReference\"\n        description: \"The actual ingredient or content\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.ingredient.isActive",
@@ -1540,21 +1419,16 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"is_active\\\": \\\"\" (true | false) \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Indication of whether this ingredient affects the therapeutic action of the drug.",
+      "jsdocDefinition": "Active ingredient indicator",
       "coreKeywords": [
         "medication",
         "ingredient",
         "active",
         "checkbox",
-        "indication",
-        "whether",
-        "affects",
-        "therapeutic",
-        "action",
-        "drug"
+        "indicator"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"is_active\"\n        path: \"Medication.ingredient.isActive\"\n        label: \"Enter isActive\"\n        description: \"Indication of whether this ingredient affects the therapeutic action of the drug.\"\n        uiComponent: \"Checkbox\""
+    "reverseYamlSnippet": "      - id: \"is_active\"\n        path: \"Medication.ingredient.isActive\"\n        label: \"Enter isActive\"\n        description: \"Active ingredient indicator\"\n        uiComponent: \"Checkbox\""
   },
   {
     "path": "Medication.ingredient.strength",
@@ -1565,108 +1439,17 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"strength\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Specifies how many (or how much) of the items there are in this Medication. For example, 250 mg per tablet. This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.",
+      "jsdocDefinition": "Quantity of ingredient present",
       "coreKeywords": [
         "medication",
         "ingredient",
         "strength",
         "textinput",
-        "specifies",
-        "how",
-        "many",
-        "much",
-        "items",
-        "there",
-        "are",
-        "example",
-        "per",
-        "tablet",
-        "expressed",
-        "ratio",
-        "where",
-        "numerator",
-        "denominator"
+        "quantity",
+        "present"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"strength\"\n        path: \"Medication.ingredient.strength\"\n        label: \"Enter strength\"\n        description: \"Specifies how many (or how much) of the items there are in this Medication. For example, 250 mg per tablet. This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.ingredient.strength.id",
-    "resourceType": "Medication",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "medication",
-        "ingredient",
-        "strength",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.ingredient.strength.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.ingredient.strength.extension",
-    "resourceType": "Medication",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "medication",
-        "ingredient",
-        "strength",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.ingredient.strength.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"strength\"\n        path: \"Medication.ingredient.strength\"\n        label: \"Enter strength\"\n        description: \"Quantity of ingredient present\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.ingredient.strength.numerator",
@@ -1677,7 +1460,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"numerator\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The value of the numerator.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
@@ -1686,149 +1469,52 @@
         "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"numerator\"\n        path: \"Medication.ingredient.strength.numerator\"\n        label: \"Enter numerator\"\n        description: \"The value of the numerator.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.ingredient.strength.numerator.id",
-    "resourceType": "Medication",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "medication",
-        "ingredient",
-        "strength",
-        "numerator",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.ingredient.strength.numerator.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.ingredient.strength.numerator.extension",
-    "resourceType": "Medication",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "medication",
-        "ingredient",
-        "strength",
-        "numerator",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.ingredient.strength.numerator.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"numerator\"\n        path: \"Medication.ingredient.strength.numerator\"\n        label: \"Enter numerator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.ingredient.strength.numerator.value",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "decimal",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
         "strength",
         "numerator",
-        "textinput",
-        "measured",
-        "amount",
-        "includes",
-        "implicit",
-        "precision",
-        "presentation"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Medication.ingredient.strength.numerator.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Medication.ingredient.strength.numerator.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Medication.ingredient.strength.numerator.comparator",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
         "strength",
         "numerator",
         "comparator",
-        "textinput",
-        "how",
-        "should",
-        "understood",
-        "represented",
-        "whether",
-        "actual",
-        "greater",
-        "less",
-        "than",
-        "stated",
-        "due",
-        "measurement",
-        "issues",
-        "then",
-        "real"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Medication.ingredient.strength.numerator.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Medication.ingredient.strength.numerator.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
     "choices": [
       "<",
       "<=",
@@ -1845,74 +1531,59 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A human-readable form of the unit.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
         "strength",
         "numerator",
         "unit",
-        "textinput",
-        "human",
-        "readable",
-        "form"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Medication.ingredient.strength.numerator.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Medication.ingredient.strength.numerator.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.ingredient.strength.numerator.system",
     "resourceType": "Medication",
-    "primitiveType": "Uri",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
         "strength",
         "numerator",
         "system",
-        "textinput",
-        "identification",
-        "provides",
-        "coded",
-        "form",
-        "unit"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.ingredient.strength.numerator.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.ingredient.strength.numerator.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.ingredient.strength.numerator.code",
     "resourceType": "Medication",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
         "strength",
         "numerator",
         "code",
-        "dropdown",
-        "computer",
-        "processable",
-        "form",
-        "unit",
-        "some",
-        "representation",
-        "system"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.ingredient.strength.numerator.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.ingredient.strength.numerator.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Medication.ingredient.strength.denominator",
@@ -1923,7 +1594,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"denominator\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The value of the denominator.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
@@ -1932,149 +1603,52 @@
         "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"denominator\"\n        path: \"Medication.ingredient.strength.denominator\"\n        label: \"Enter denominator\"\n        description: \"The value of the denominator.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.ingredient.strength.denominator.id",
-    "resourceType": "Medication",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "medication",
-        "ingredient",
-        "strength",
-        "denominator",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.ingredient.strength.denominator.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.ingredient.strength.denominator.extension",
-    "resourceType": "Medication",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "medication",
-        "ingredient",
-        "strength",
-        "denominator",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.ingredient.strength.denominator.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"denominator\"\n        path: \"Medication.ingredient.strength.denominator\"\n        label: \"Enter denominator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.ingredient.strength.denominator.value",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "decimal",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
         "strength",
         "denominator",
-        "textinput",
-        "measured",
-        "amount",
-        "includes",
-        "implicit",
-        "precision",
-        "presentation"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Medication.ingredient.strength.denominator.value\"\n        label: \"Enter value\"\n        description: \"The value of the measured amount. The value includes an implicit precision in the presentation of the value.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Medication.ingredient.strength.denominator.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "Medication.ingredient.strength.denominator.comparator",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
         "strength",
         "denominator",
         "comparator",
-        "textinput",
-        "how",
-        "should",
-        "understood",
-        "represented",
-        "whether",
-        "actual",
-        "greater",
-        "less",
-        "than",
-        "stated",
-        "due",
-        "measurement",
-        "issues",
-        "then",
-        "real"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Medication.ingredient.strength.denominator.comparator\"\n        label: \"Enter comparator\"\n        description: \"How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \\\"<\\\" , then the real value is < stated value.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Medication.ingredient.strength.denominator.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
     "choices": [
       "<",
       "<=",
@@ -2091,74 +1665,59 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A human-readable form of the unit.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
         "strength",
         "denominator",
         "unit",
-        "textinput",
-        "human",
-        "readable",
-        "form"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Medication.ingredient.strength.denominator.unit\"\n        label: \"Enter unit\"\n        description: \"A human-readable form of the unit.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Medication.ingredient.strength.denominator.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.ingredient.strength.denominator.system",
     "resourceType": "Medication",
-    "primitiveType": "Uri",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The identification of the system that provides the coded form of the unit.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
         "strength",
         "denominator",
         "system",
-        "textinput",
-        "identification",
-        "provides",
-        "coded",
-        "form",
-        "unit"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.ingredient.strength.denominator.system\"\n        label: \"Enter system\"\n        description: \"The identification of the system that provides the coded form of the unit.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Medication.ingredient.strength.denominator.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.ingredient.strength.denominator.code",
     "resourceType": "Medication",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A computer processable form of the unit in some unit representation system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "medication",
         "ingredient",
         "strength",
         "denominator",
         "code",
-        "dropdown",
-        "computer",
-        "processable",
-        "form",
-        "unit",
-        "some",
-        "representation",
-        "system"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.ingredient.strength.denominator.code\"\n        label: \"Enter code\"\n        description: \"A computer processable form of the unit in some unit representation system.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Medication.ingredient.strength.denominator.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "Medication.batch",
@@ -2169,50 +1728,18 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"batch\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Information that only applies to packages (not products).",
+      "jsdocDefinition": "Details about packaged medications",
       "coreKeywords": [
         "medication",
         "batch",
         "textinput",
-        "information",
-        "only",
-        "applies",
-        "packages",
-        "not",
-        "products"
+        "details",
+        "about",
+        "packaged",
+        "medications"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"batch\"\n        path: \"Medication.batch\"\n        label: \"Enter batch\"\n        description: \"Information that only applies to packages (not products).\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Medication.batch.id",
-    "resourceType": "Medication",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "medication",
-        "batch",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Medication.batch.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"batch\"\n        path: \"Medication.batch\"\n        label: \"Enter batch\"\n        description: \"Details about packaged medications\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.batch.extension",
@@ -2223,42 +1750,19 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "medication",
         "batch",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.batch.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Medication.batch.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.batch.modifierExtension",
@@ -2269,68 +1773,21 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "medication",
         "batch",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Medication.batch.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Medication.batch.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.batch.lotNumber",
@@ -2341,43 +1798,40 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"lot_number\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The assigned lot number of a batch of the specified product.",
+      "jsdocDefinition": "Identifier assigned to batch",
       "coreKeywords": [
         "medication",
         "batch",
         "lot",
         "number",
         "textinput",
-        "assigned",
-        "specified",
-        "product"
+        "identifier",
+        "assigned"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"lot_number\"\n        path: \"Medication.batch.lotNumber\"\n        label: \"Enter lotNumber\"\n        description: \"The assigned lot number of a batch of the specified product.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"lot_number\"\n        path: \"Medication.batch.lotNumber\"\n        label: \"Enter lotNumber\"\n        description: \"Identifier assigned to batch\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Medication.batch.expirationDate",
     "resourceType": "Medication",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"expiration_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "When this specific batch of product will expire.",
+      "jsdocDefinition": "When batch will expire",
       "coreKeywords": [
         "medication",
         "batch",
         "expiration",
         "date",
-        "textinput",
+        "datepicker",
         "when",
-        "specific",
-        "product",
         "will",
         "expire"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"expiration_date\"\n        path: \"Medication.batch.expirationDate\"\n        label: \"Enter expirationDate\"\n        description: \"When this specific batch of product will expire.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"expiration_date\"\n        path: \"Medication.batch.expirationDate\"\n        label: \"Enter expirationDate\"\n        description: \"When batch will expire\"\n        uiComponent: \"DatePicker\""
   }
 ]

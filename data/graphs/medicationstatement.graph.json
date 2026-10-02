@@ -1,0 +1,3667 @@
+[
+  {
+    "path": "MedicationStatement.resourceType",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a MedicationStatement resource",
+      "coreKeywords": [
+        "medicationstatement",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"MedicationStatement.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a MedicationStatement resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.id",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"MedicationStatement.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.contained",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"MedicationStatement.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.extension",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"MedicationStatement.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.modifierExtension",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"MedicationStatement.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.identifier",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "External identifier",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "textinput",
+        "external"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"MedicationStatement.identifier\"\n        label: \"Enter identifier\"\n        description: \"External identifier\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.identifier.use",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"MedicationStatement.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "MedicationStatement.identifier.type",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"MedicationStatement.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "MedicationStatement.identifier.type.coding",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"MedicationStatement.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "MedicationStatement.identifier.type.coding.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.identifier.type.coding.version",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"MedicationStatement.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.identifier.type.coding.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.identifier.type.coding.display",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"MedicationStatement.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.identifier.type.coding.userSelected",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"MedicationStatement.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "MedicationStatement.identifier.type.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.identifier.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.identifier.value",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"MedicationStatement.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.identifier.period",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"MedicationStatement.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.identifier.period.start",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"MedicationStatement.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "MedicationStatement.identifier.period.end",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"MedicationStatement.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "MedicationStatement.identifier.assigner",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"MedicationStatement.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.basedOn",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "MedicationRequest",
+        "traversalPath": "MedicationRequest.id"
+      },
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "CarePlan",
+        "traversalPath": "CarePlan.id"
+      },
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "ServiceRequest",
+        "traversalPath": "ServiceRequest.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"based_on\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Fulfils plan, proposal or order",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "based",
+        "textinput",
+        "fulfils",
+        "plan",
+        "proposal",
+        "order"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"based_on\"\n        path: \"MedicationStatement.basedOn\"\n        label: \"Enter basedOn\"\n        description: \"Fulfils plan, proposal or order\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.partOf",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "partOf-link",
+        "targetResource": "MedicationAdministration",
+        "traversalPath": "MedicationAdministration.id"
+      },
+      {
+        "relationshipType": "partOf-link",
+        "targetResource": "MedicationDispense",
+        "traversalPath": "MedicationDispense.id"
+      },
+      {
+        "relationshipType": "partOf-link",
+        "targetResource": "MedicationStatement",
+        "traversalPath": "MedicationStatement.id"
+      },
+      {
+        "relationshipType": "partOf-link",
+        "targetResource": "Procedure",
+        "traversalPath": "Procedure.id"
+      },
+      {
+        "relationshipType": "partOf-link",
+        "targetResource": "Observation",
+        "traversalPath": "Observation.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"part_of\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Part of referenced event",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "part",
+        "textinput",
+        "referenced",
+        "event"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"part_of\"\n        path: \"MedicationStatement.partOf\"\n        label: \"Enter partOf\"\n        description: \"Part of referenced event\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.status",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"active\\\" | \\\"completed\\\" | \\\"entered-in-error\\\" | \\\"intended\\\" | \\\"stopped\\\" | \\\"on-hold\\\" | \\\"unknown\\\" | \\\"not-taken\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "active | completed | entered-in-error | intended | stopped | on-hold | unknown | not-taken",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "status",
+        "dropdown",
+        "active",
+        "completed",
+        "entered",
+        "error",
+        "intended",
+        "stopped",
+        "hold",
+        "unknown",
+        "not",
+        "taken"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"MedicationStatement.status\"\n        label: \"Enter status\"\n        description: \"active | completed | entered-in-error | intended | stopped | on-hold | unknown | not-taken\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-statement-status"
+    },
+    "choices": [
+      "active",
+      "completed",
+      "entered-in-error",
+      "intended",
+      "stopped",
+      "on-hold",
+      "unknown",
+      "not-taken"
+    ]
+  },
+  {
+    "path": "MedicationStatement.statusReason",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status_reason\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Reason for current status",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "status",
+        "reason",
+        "multiselect",
+        "current"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status_reason\"\n        path: \"MedicationStatement.statusReason\"\n        label: \"Enter statusReason\"\n        description: \"Reason for current status\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/reason-medication-status-codes"
+    }
+  },
+  {
+    "path": "MedicationStatement.statusReason.coding",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "status",
+        "reason",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"MedicationStatement.statusReason.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "MedicationStatement.statusReason.coding.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "status",
+        "reason",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.statusReason.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.statusReason.coding.version",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "status",
+        "reason",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"MedicationStatement.statusReason.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.statusReason.coding.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "status",
+        "reason",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.statusReason.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.statusReason.coding.display",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "status",
+        "reason",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"MedicationStatement.statusReason.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.statusReason.coding.userSelected",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "status",
+        "reason",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"MedicationStatement.statusReason.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "MedicationStatement.statusReason.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "status",
+        "reason",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.statusReason.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.category",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"category\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Type of medication usage",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "category",
+        "dropdown",
+        "usage"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"category\"\n        path: \"MedicationStatement.category\"\n        label: \"Enter category\"\n        description: \"Type of medication usage\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-statement-category"
+    }
+  },
+  {
+    "path": "MedicationStatement.category.coding",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "category",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"MedicationStatement.category.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "MedicationStatement.category.coding.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "category",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.category.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.category.coding.version",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "category",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"MedicationStatement.category.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.category.coding.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "category",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.category.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.category.coding.display",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "category",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"MedicationStatement.category.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.category.coding.userSelected",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "category",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"MedicationStatement.category.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "MedicationStatement.category.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "category",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.category.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.medication[x]",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"medication[x]\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "What medication was taken",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "medicationx",
+        "dropdown",
+        "what",
+        "taken"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"medication[x]\"\n        path: \"MedicationStatement.medication[x]\"\n        label: \"Enter medication[x]\"\n        description: \"What medication was taken\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-codes"
+    }
+  },
+  {
+    "path": "MedicationStatement.medicationCodeableConcept",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"medication_codeable_concept\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "What medication was taken",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "codeable",
+        "concept",
+        "dropdown",
+        "what",
+        "taken"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"medication_codeable_concept\"\n        path: \"MedicationStatement.medicationCodeableConcept\"\n        label: \"Enter medicationCodeableConcept\"\n        description: \"What medication was taken\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-codes"
+    }
+  },
+  {
+    "path": "MedicationStatement.medicationCodeableConcept.coding",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "codeable",
+        "concept",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"MedicationStatement.medicationCodeableConcept.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "MedicationStatement.medicationCodeableConcept.coding.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "codeable",
+        "concept",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.medicationCodeableConcept.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.medicationCodeableConcept.coding.version",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "codeable",
+        "concept",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"MedicationStatement.medicationCodeableConcept.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.medicationCodeableConcept.coding.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "codeable",
+        "concept",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.medicationCodeableConcept.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.medicationCodeableConcept.coding.display",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "codeable",
+        "concept",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"MedicationStatement.medicationCodeableConcept.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.medicationCodeableConcept.coding.userSelected",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "codeable",
+        "concept",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"MedicationStatement.medicationCodeableConcept.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "MedicationStatement.medicationCodeableConcept.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "codeable",
+        "concept",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.medicationCodeableConcept.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.medicationReference",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "medicationReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"medication_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "What medication was taken",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "reference",
+        "textinput",
+        "what",
+        "taken"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"medication_reference\"\n        path: \"MedicationStatement.medicationReference\"\n        label: \"Enter medicationReference\"\n        description: \"What medication was taken\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-codes"
+    }
+  },
+  {
+    "path": "MedicationStatement.subject",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Group",
+        "traversalPath": "Group.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"subject\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who is/was taking  the medication",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "subject",
+        "textinput",
+        "who",
+        "iswas",
+        "taking"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"subject\"\n        path: \"MedicationStatement.subject\"\n        label: \"Enter subject\"\n        description: \"Who is/was taking  the medication\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.context",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "context-link",
+        "targetResource": "Encounter",
+        "traversalPath": "Encounter.id"
+      },
+      {
+        "relationshipType": "context-link",
+        "targetResource": "EpisodeOfCare",
+        "traversalPath": "EpisodeOfCare.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"context\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Encounter / Episode associated with MedicationStatement",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "context",
+        "textinput",
+        "encounter",
+        "episode",
+        "associated",
+        "medicationstatement"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"context\"\n        path: \"MedicationStatement.context\"\n        label: \"Enter context\"\n        description: \"Encounter / Episode associated with MedicationStatement\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.effective[x]",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"effective[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date/time or interval when the medication is/was/will be taken",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "effectivex",
+        "datepicker",
+        "datetime",
+        "interval",
+        "when",
+        "iswaswill",
+        "taken"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"effective[x]\"\n        path: \"MedicationStatement.effective[x]\"\n        label: \"Enter effective[x]\"\n        description: \"The date/time or interval when the medication is/was/will be taken\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "MedicationStatement.effectiveDateTime",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"effective_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date/time or interval when the medication is/was/will be taken",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "effective",
+        "date",
+        "time",
+        "datepicker",
+        "datetime",
+        "interval",
+        "when",
+        "iswaswill",
+        "taken"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"effective_date_time\"\n        path: \"MedicationStatement.effectiveDateTime\"\n        label: \"Enter effectiveDateTime\"\n        description: \"The date/time or interval when the medication is/was/will be taken\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "MedicationStatement.effectivePeriod",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"effective_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The date/time or interval when the medication is/was/will be taken",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "effective",
+        "period",
+        "textinput",
+        "datetime",
+        "interval",
+        "when",
+        "iswaswill",
+        "taken"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"effective_period\"\n        path: \"MedicationStatement.effectivePeriod\"\n        label: \"Enter effectivePeriod\"\n        description: \"The date/time or interval when the medication is/was/will be taken\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.effectivePeriod.start",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "effective",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"MedicationStatement.effectivePeriod.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "MedicationStatement.effectivePeriod.end",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "effective",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"MedicationStatement.effectivePeriod.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "MedicationStatement.dateAsserted",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"date_asserted\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the statement was asserted?",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "date",
+        "asserted",
+        "datepicker",
+        "when"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"date_asserted\"\n        path: \"MedicationStatement.dateAsserted\"\n        label: \"Enter dateAsserted\"\n        description: \"When the statement was asserted?\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "MedicationStatement.informationSource",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "informationSource-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "informationSource-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "informationSource-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "informationSource-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      },
+      {
+        "relationshipType": "informationSource-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"information_source\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Person or organization that provided the information about the taking of this medication",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "information",
+        "source",
+        "textinput",
+        "person",
+        "organization",
+        "provided",
+        "about",
+        "taking"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"information_source\"\n        path: \"MedicationStatement.informationSource\"\n        label: \"Enter informationSource\"\n        description: \"Person or organization that provided the information about the taking of this medication\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.derivedFrom",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "derivedFrom-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"derived_from\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional supporting information",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "derived",
+        "textinput",
+        "additional",
+        "supporting",
+        "information"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"derived_from\"\n        path: \"MedicationStatement.derivedFrom\"\n        label: \"Enter derivedFrom\"\n        description: \"Additional supporting information\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.reasonCode",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"reason_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Reason for why the medication is being/was taken",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "reason",
+        "code",
+        "multiselect",
+        "why",
+        "beingwas",
+        "taken"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason_code\"\n        path: \"MedicationStatement.reasonCode\"\n        label: \"Enter reasonCode\"\n        description: \"Reason for why the medication is being/was taken\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/condition-code"
+    }
+  },
+  {
+    "path": "MedicationStatement.reasonCode.coding",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "reason",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"MedicationStatement.reasonCode.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "MedicationStatement.reasonCode.coding.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "reason",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.reasonCode.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.reasonCode.coding.version",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "reason",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"MedicationStatement.reasonCode.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.reasonCode.coding.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "reason",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.reasonCode.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.reasonCode.coding.display",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "reason",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"MedicationStatement.reasonCode.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.reasonCode.coding.userSelected",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "reason",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"MedicationStatement.reasonCode.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "MedicationStatement.reasonCode.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "reason",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.reasonCode.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.reasonReference",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "Condition",
+        "traversalPath": "Condition.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "Observation",
+        "traversalPath": "Observation.id"
+      },
+      {
+        "relationshipType": "reasonReference-link",
+        "targetResource": "DiagnosticReport",
+        "traversalPath": "DiagnosticReport.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"reason_reference\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Condition or observation that supports why the medication is being/was taken",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "reason",
+        "reference",
+        "textinput",
+        "condition",
+        "observation",
+        "supports",
+        "why",
+        "beingwas",
+        "taken"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason_reference\"\n        path: \"MedicationStatement.reasonReference\"\n        label: \"Enter reasonReference\"\n        description: \"Condition or observation that supports why the medication is being/was taken\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.note",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Further information about the statement",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "note",
+        "textinput",
+        "further",
+        "information",
+        "about"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"MedicationStatement.note\"\n        label: \"Enter note\"\n        description: \"Further information about the statement\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.note.author[x]",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author[x]-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "note",
+        "authorx",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author[x]\"\n        path: \"MedicationStatement.note.author[x]\"\n        label: \"Enter author[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.note.authorReference",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "note",
+        "author",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"MedicationStatement.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.note.authorString",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "note",
+        "author",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"MedicationStatement.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.note.time",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "note",
+        "time",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"MedicationStatement.note.time\"\n        label: \"Enter time\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "MedicationStatement.note.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "note",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.note.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Dosage",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"dosage\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Details of how medication is/was taken or should be taken",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "textinput",
+        "details",
+        "how",
+        "iswas",
+        "taken",
+        "should"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"dosage\"\n        path: \"MedicationStatement.dosage\"\n        label: \"Enter dosage\"\n        description: \"Details of how medication is/was taken or should be taken\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.sequence",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "integer",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"sequence\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "sequence",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"sequence\"\n        path: \"MedicationStatement.dosage.sequence\"\n        label: \"Enter sequence\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.dosage.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.additionalInstruction",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"additional_instruction\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "additional",
+        "instruction",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"additional_instruction\"\n        path: \"MedicationStatement.dosage.additionalInstruction\"\n        label: \"Enter additionalInstruction\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/additional-instruction-codes"
+    }
+  },
+  {
+    "path": "MedicationStatement.dosage.additionalInstruction.coding",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "additional",
+        "instruction",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"MedicationStatement.dosage.additionalInstruction.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "MedicationStatement.dosage.additionalInstruction.coding.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "additional",
+        "instruction",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.dosage.additionalInstruction.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.additionalInstruction.coding.version",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "additional",
+        "instruction",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"MedicationStatement.dosage.additionalInstruction.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.additionalInstruction.coding.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "additional",
+        "instruction",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.dosage.additionalInstruction.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.additionalInstruction.coding.display",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "additional",
+        "instruction",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"MedicationStatement.dosage.additionalInstruction.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.additionalInstruction.coding.userSelected",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "additional",
+        "instruction",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"MedicationStatement.dosage.additionalInstruction.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "MedicationStatement.dosage.additionalInstruction.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "additional",
+        "instruction",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.dosage.additionalInstruction.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.patientInstruction",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"patient_instruction\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "patient",
+        "instruction",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"patient_instruction\"\n        path: \"MedicationStatement.dosage.patientInstruction\"\n        label: \"Enter patientInstruction\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.timing",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"timing\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "timing",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"timing\"\n        path: \"MedicationStatement.dosage.timing\"\n        label: \"Enter timing\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.timing.event",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "dateTime",
+    "isArray": true,
+    "arrayTargetType": "dateTime",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"event\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "timing",
+        "event",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"event\"\n        path: \"MedicationStatement.dosage.timing.event\"\n        label: \"Enter event\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "MedicationStatement.dosage.timing.repeat",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"repeat\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "timing",
+        "repeat",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"repeat\"\n        path: \"MedicationStatement.dosage.timing.repeat\"\n        label: \"Enter repeat\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.timing.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "timing",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.dosage.timing.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/timing-abbreviation"
+    }
+  },
+  {
+    "path": "MedicationStatement.dosage.timing.code.coding",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "timing",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"MedicationStatement.dosage.timing.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "MedicationStatement.dosage.timing.code.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "timing",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.dosage.timing.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.asNeeded[x]",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"as_needed[x]\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "neededx",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"as_needed[x]\"\n        path: \"MedicationStatement.dosage.asNeeded[x]\"\n        label: \"Enter asNeeded[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-as-needed-reason"
+    }
+  },
+  {
+    "path": "MedicationStatement.dosage.asNeededBoolean",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"as_needed_boolean\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "needed",
+        "boolean",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"as_needed_boolean\"\n        path: \"MedicationStatement.dosage.asNeededBoolean\"\n        label: \"Enter asNeededBoolean\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-as-needed-reason"
+    }
+  },
+  {
+    "path": "MedicationStatement.dosage.asNeededCodeableConcept",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"as_needed_codeable_concept\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "needed",
+        "codeable",
+        "concept",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"as_needed_codeable_concept\"\n        path: \"MedicationStatement.dosage.asNeededCodeableConcept\"\n        label: \"Enter asNeededCodeableConcept\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/medication-as-needed-reason"
+    }
+  },
+  {
+    "path": "MedicationStatement.dosage.asNeededCodeableConcept.coding",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "needed",
+        "codeable",
+        "concept",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"MedicationStatement.dosage.asNeededCodeableConcept.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "MedicationStatement.dosage.asNeededCodeableConcept.coding.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "needed",
+        "codeable",
+        "concept",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.dosage.asNeededCodeableConcept.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.asNeededCodeableConcept.coding.version",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "needed",
+        "codeable",
+        "concept",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"MedicationStatement.dosage.asNeededCodeableConcept.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.asNeededCodeableConcept.coding.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "needed",
+        "codeable",
+        "concept",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.dosage.asNeededCodeableConcept.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.asNeededCodeableConcept.coding.display",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "needed",
+        "codeable",
+        "concept",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"MedicationStatement.dosage.asNeededCodeableConcept.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.asNeededCodeableConcept.coding.userSelected",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "needed",
+        "codeable",
+        "concept",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"MedicationStatement.dosage.asNeededCodeableConcept.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "MedicationStatement.dosage.asNeededCodeableConcept.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "needed",
+        "codeable",
+        "concept",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.dosage.asNeededCodeableConcept.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.site",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"site\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "site",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"site\"\n        path: \"MedicationStatement.dosage.site\"\n        label: \"Enter site\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/approach-site-codes"
+    }
+  },
+  {
+    "path": "MedicationStatement.dosage.site.coding",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "site",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"MedicationStatement.dosage.site.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "MedicationStatement.dosage.site.coding.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "site",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.dosage.site.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.site.coding.version",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "site",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"MedicationStatement.dosage.site.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.site.coding.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "site",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.dosage.site.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.site.coding.display",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "site",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"MedicationStatement.dosage.site.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.site.coding.userSelected",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "site",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"MedicationStatement.dosage.site.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "MedicationStatement.dosage.site.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "site",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.dosage.site.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.route",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"route\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "route",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"route\"\n        path: \"MedicationStatement.dosage.route\"\n        label: \"Enter route\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/route-codes"
+    }
+  },
+  {
+    "path": "MedicationStatement.dosage.route.coding",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "route",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"MedicationStatement.dosage.route.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "MedicationStatement.dosage.route.coding.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "route",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.dosage.route.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.route.coding.version",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "route",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"MedicationStatement.dosage.route.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.route.coding.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "route",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.dosage.route.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.route.coding.display",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "route",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"MedicationStatement.dosage.route.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.route.coding.userSelected",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "route",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"MedicationStatement.dosage.route.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "MedicationStatement.dosage.route.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "route",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.dosage.route.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.method",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"method\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "method",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"method\"\n        path: \"MedicationStatement.dosage.method\"\n        label: \"Enter method\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/administration-method-codes"
+    }
+  },
+  {
+    "path": "MedicationStatement.dosage.method.coding",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "method",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"MedicationStatement.dosage.method.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "MedicationStatement.dosage.method.coding.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "method",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.dosage.method.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.method.coding.version",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "method",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"MedicationStatement.dosage.method.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.method.coding.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "method",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.dosage.method.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.method.coding.display",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "method",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"MedicationStatement.dosage.method.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.method.coding.userSelected",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "method",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"MedicationStatement.dosage.method.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "MedicationStatement.dosage.method.text",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "method",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"MedicationStatement.dosage.method.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.doseAndRate",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Element",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"dose_and_rate\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "dose",
+        "rate",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"dose_and_rate\"\n        path: \"MedicationStatement.dosage.doseAndRate\"\n        label: \"Enter doseAndRate\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"max_dose_per_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"max_dose_per_period\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod\"\n        label: \"Enter maxDosePerPeriod\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.numerator",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"numerator\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "numerator",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"numerator\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.numerator\"\n        label: \"Enter numerator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.numerator.value",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "numerator",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.numerator.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.numerator.comparator",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "numerator",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.numerator.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.numerator.unit",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "numerator",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.numerator.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.numerator.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "numerator",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.numerator.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.numerator.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "numerator",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.numerator.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.denominator",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"denominator\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "denominator",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"denominator\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.denominator\"\n        label: \"Enter denominator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.denominator.value",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "denominator",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.denominator.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.denominator.comparator",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "denominator",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.denominator.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.denominator.unit",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "denominator",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.denominator.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.denominator.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "denominator",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.denominator.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerPeriod.denominator.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "period",
+        "denominator",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.dosage.maxDosePerPeriod.denominator.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerAdministration",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"max_dose_per_administration\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "administration",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"max_dose_per_administration\"\n        path: \"MedicationStatement.dosage.maxDosePerAdministration\"\n        label: \"Enter maxDosePerAdministration\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerAdministration.value",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "administration",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"MedicationStatement.dosage.maxDosePerAdministration.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerAdministration.comparator",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "administration",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"MedicationStatement.dosage.maxDosePerAdministration.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerAdministration.unit",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "administration",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"MedicationStatement.dosage.maxDosePerAdministration.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerAdministration.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "administration",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.dosage.maxDosePerAdministration.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerAdministration.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "administration",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.dosage.maxDosePerAdministration.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerLifetime",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"max_dose_per_lifetime\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "lifetime",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"max_dose_per_lifetime\"\n        path: \"MedicationStatement.dosage.maxDosePerLifetime\"\n        label: \"Enter maxDosePerLifetime\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerLifetime.value",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "lifetime",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"MedicationStatement.dosage.maxDosePerLifetime.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerLifetime.comparator",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "lifetime",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"MedicationStatement.dosage.maxDosePerLifetime.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerLifetime.unit",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "lifetime",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"MedicationStatement.dosage.maxDosePerLifetime.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerLifetime.system",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "lifetime",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"MedicationStatement.dosage.maxDosePerLifetime.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "MedicationStatement.dosage.maxDosePerLifetime.code",
+    "resourceType": "MedicationStatement",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "medication",
+        "statement",
+        "dosage",
+        "max",
+        "dose",
+        "per",
+        "lifetime",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"MedicationStatement.dosage.maxDosePerLifetime.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  }
+]

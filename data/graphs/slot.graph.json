@@ -11,8 +11,7 @@
       "jsdocDefinition": "This is a Slot resource",
       "coreKeywords": [
         "slot",
-        "resource",
-        "textinput"
+        "resource"
       ]
     },
     "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Slot.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Slot resource\"\n        uiComponent: \"TextInput\""
@@ -26,21 +25,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "jsdocDefinition": "Logical id of this artifact",
       "coreKeywords": [
         "slot",
         "textinput",
         "logical",
-        "resource",
-        "used",
-        "url",
-        "once",
-        "assigned",
-        "never",
-        "changes"
+        "artifact"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Slot.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Slot.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.text",
@@ -51,48 +44,38 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
       "coreKeywords": [
         "slot",
         "text",
-        "dropdown",
-        "human",
-        "readable",
-        "narrative",
+        "textinput",
         "summary",
         "resource",
-        "can",
-        "used",
-        "represent",
-        "content",
-        "need",
-        "not",
-        "encode",
-        "all",
-        "structured",
-        "data",
-        "but",
-        "required",
-        "contain",
-        "sufficient",
-        "detail",
-        "make",
-        "clinically",
-        "safe",
-        "just",
-        "read",
-        "definitions",
-        "may",
-        "define",
-        "what",
-        "should",
-        "represented",
-        "ensure",
-        "clinical",
-        "safety"
+        "human",
+        "interpretation"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Slot.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Slot.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.contained",
+    "resourceType": "Slot",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "slot",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"Slot.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.extension",
@@ -103,42 +86,18 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "slot",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Slot.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Slot.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.modifierExtension",
@@ -149,65 +108,18 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored",
       "coreKeywords": [
         "slot",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "modifies",
-        "understanding",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "allowed",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Slot.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Slot.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.identifier",
@@ -218,7 +130,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "External Ids for this item.",
+      "jsdocDefinition": "External Ids for this item",
       "coreKeywords": [
         "slot",
         "identifier",
@@ -228,103 +140,30 @@
         "item"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Slot.identifier\"\n        label: \"Enter identifier\"\n        description: \"External Ids for this item.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Slot.identifier.id",
-    "resourceType": "Slot",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "slot",
-        "identifier",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Slot.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Slot.identifier.extension",
-    "resourceType": "Slot",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "slot",
-        "identifier",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Slot.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Slot.identifier\"\n        label: \"Enter identifier\"\n        description: \"External Ids for this item\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.identifier.use",
     "resourceType": "Slot",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The purpose of this identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "slot",
         "identifier",
         "use",
-        "textinput",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Slot.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Slot.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
     "choices": [
       "usual",
       "official",
@@ -342,49 +181,176 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "slot",
         "identifier",
-        "dropdown",
-        "coded",
-        "can",
-        "used",
-        "determine",
-        "which",
-        "use",
-        "specific",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Slot.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Slot.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
   },
   {
-    "path": "Slot.identifier.system",
+    "path": "Slot.identifier.type.coding",
     "resourceType": "Slot",
-    "primitiveType": "Uri",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Slot.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Slot.identifier.type.coding.system",
+    "resourceType": "Slot",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Slot.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.identifier.type.coding.version",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Slot.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.identifier.type.coding.code",
+    "resourceType": "Slot",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Slot.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Slot.identifier.type.coding.display",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Slot.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.identifier.type.coding.userSelected",
+    "resourceType": "Slot",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Slot.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Slot.identifier.type.text",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Slot.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.identifier.system",
+    "resourceType": "Slot",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
       "coreKeywords": [
         "slot",
         "identifier",
         "system",
-        "textinput",
-        "establishes",
-        "namespace",
-        "url",
-        "describes",
-        "set",
-        "values",
-        "are",
-        "unique"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Slot.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Slot.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.identifier.value",
@@ -395,23 +361,14 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "slot",
         "identifier",
-        "textinput",
-        "portion",
-        "typically",
-        "relevant",
-        "user",
-        "which",
-        "unique",
-        "within",
-        "context",
-        "system"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Slot.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Slot.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.identifier.period",
@@ -422,155 +379,55 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "slot",
         "identifier",
         "period",
-        "textinput",
-        "time",
-        "during",
-        "which",
-        "iswas",
-        "valid",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Slot.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Slot.identifier.period.id",
-    "resourceType": "Slot",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "slot",
-        "identifier",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Slot.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "Slot.identifier.period.extension",
-    "resourceType": "Slot",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "slot",
-        "identifier",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Slot.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Slot.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.identifier.period.start",
     "resourceType": "Slot",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "slot",
         "identifier",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Slot.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Slot.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Slot.identifier.period.end",
     "resourceType": "Slot",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "slot",
         "identifier",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Slot.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Slot.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "Slot.identifier.assigner",
@@ -581,23 +438,21 @@
     "outboundEdges": [
       {
         "relationshipType": "assigner-link",
-        "targetResource": "assigner",
-        "traversalPath": "assigner.id"
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "slot",
         "identifier",
         "assigner",
-        "dropdown",
-        "organization",
-        "issuedmanages"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Slot.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Slot.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.serviceCategory",
@@ -608,7 +463,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"service_category\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A broad categorization of the service that is to be performed during this appointment.",
+      "jsdocDefinition": "A broad categorization of the service that is to be performed during this appointment",
       "coreKeywords": [
         "slot",
         "service",
@@ -621,7 +476,157 @@
         "appointment"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"service_category\"\n        path: \"Slot.serviceCategory\"\n        label: \"Enter serviceCategory\"\n        description: \"A broad categorization of the service that is to be performed during this appointment.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"service_category\"\n        path: \"Slot.serviceCategory\"\n        label: \"Enter serviceCategory\"\n        description: \"A broad categorization of the service that is to be performed during this appointment\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/service-category"
+    }
+  },
+  {
+    "path": "Slot.serviceCategory.coding",
+    "resourceType": "Slot",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "category",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Slot.serviceCategory.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Slot.serviceCategory.coding.system",
+    "resourceType": "Slot",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "category",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Slot.serviceCategory.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.serviceCategory.coding.version",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "category",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Slot.serviceCategory.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.serviceCategory.coding.code",
+    "resourceType": "Slot",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "category",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Slot.serviceCategory.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Slot.serviceCategory.coding.display",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "category",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Slot.serviceCategory.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.serviceCategory.coding.userSelected",
+    "resourceType": "Slot",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "category",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Slot.serviceCategory.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Slot.serviceCategory.text",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "category",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Slot.serviceCategory.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.serviceType",
@@ -632,7 +637,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"service_type\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.",
+      "jsdocDefinition": "The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource",
       "coreKeywords": [
         "slot",
         "service",
@@ -655,7 +660,150 @@
         "resource"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"service_type\"\n        path: \"Slot.serviceType\"\n        label: \"Enter serviceType\"\n        description: \"The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"service_type\"\n        path: \"Slot.serviceType\"\n        label: \"Enter serviceType\"\n        description: \"The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/service-type"
+    }
+  },
+  {
+    "path": "Slot.serviceType.coding",
+    "resourceType": "Slot",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Slot.serviceType.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Slot.serviceType.coding.system",
+    "resourceType": "Slot",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Slot.serviceType.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.serviceType.coding.version",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Slot.serviceType.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.serviceType.coding.code",
+    "resourceType": "Slot",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Slot.serviceType.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Slot.serviceType.coding.display",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Slot.serviceType.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.serviceType.coding.userSelected",
+    "resourceType": "Slot",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Slot.serviceType.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Slot.serviceType.text",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "service",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Slot.serviceType.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.specialty",
@@ -666,7 +814,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"specialty\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The specialty of a practitioner that would be required to perform the service requested in this appointment.",
+      "jsdocDefinition": "The specialty of a practitioner that would be required to perform the service requested in this appointment",
       "coreKeywords": [
         "slot",
         "specialty",
@@ -680,7 +828,150 @@
         "appointment"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"specialty\"\n        path: \"Slot.specialty\"\n        label: \"Enter specialty\"\n        description: \"The specialty of a practitioner that would be required to perform the service requested in this appointment.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"specialty\"\n        path: \"Slot.specialty\"\n        label: \"Enter specialty\"\n        description: \"The specialty of a practitioner that would be required to perform the service requested in this appointment\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/c80-practice-codes"
+    }
+  },
+  {
+    "path": "Slot.specialty.coding",
+    "resourceType": "Slot",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "specialty",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Slot.specialty.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Slot.specialty.coding.system",
+    "resourceType": "Slot",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "specialty",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Slot.specialty.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.specialty.coding.version",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "specialty",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Slot.specialty.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.specialty.coding.code",
+    "resourceType": "Slot",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "specialty",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Slot.specialty.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Slot.specialty.coding.display",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "specialty",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Slot.specialty.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.specialty.coding.userSelected",
+    "resourceType": "Slot",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "specialty",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Slot.specialty.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Slot.specialty.text",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "specialty",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Slot.specialty.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.appointmentType",
@@ -691,7 +982,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"appointment_type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The style of appointment or patient that may be booked in the slot (not service type).",
+      "jsdocDefinition": "The style of appointment or patient that may be booked in the slot (not service type)",
       "coreKeywords": [
         "slot",
         "appointment",
@@ -704,7 +995,150 @@
         "service"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"appointment_type\"\n        path: \"Slot.appointmentType\"\n        label: \"Enter appointmentType\"\n        description: \"The style of appointment or patient that may be booked in the slot (not service type).\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"appointment_type\"\n        path: \"Slot.appointmentType\"\n        label: \"Enter appointmentType\"\n        description: \"The style of appointment or patient that may be booked in the slot (not service type)\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://terminology.hl7.org/ValueSet/v2-0276"
+    }
+  },
+  {
+    "path": "Slot.appointmentType.coding",
+    "resourceType": "Slot",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "appointment",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Slot.appointmentType.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Slot.appointmentType.coding.system",
+    "resourceType": "Slot",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "appointment",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Slot.appointmentType.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.appointmentType.coding.version",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "appointment",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Slot.appointmentType.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.appointmentType.coding.code",
+    "resourceType": "Slot",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "appointment",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Slot.appointmentType.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Slot.appointmentType.coding.display",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "appointment",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Slot.appointmentType.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Slot.appointmentType.coding.userSelected",
+    "resourceType": "Slot",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "appointment",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Slot.appointmentType.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Slot.appointmentType.text",
+    "resourceType": "Slot",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "slot",
+        "appointment",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Slot.appointmentType.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.schedule",
@@ -715,17 +1149,17 @@
     "outboundEdges": [
       {
         "relationshipType": "schedule-link",
-        "targetResource": "schedule",
-        "traversalPath": "schedule.id"
+        "targetResource": "Schedule",
+        "traversalPath": "Schedule.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"schedule\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The schedule resource that this slot defines an interval of status information.",
+      "jsdocDefinition": "The schedule resource that this slot defines an interval of status information",
       "coreKeywords": [
         "slot",
         "schedule",
-        "dropdown",
+        "textinput",
         "resource",
         "defines",
         "interval",
@@ -733,22 +1167,22 @@
         "information"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"schedule\"\n        path: \"Slot.schedule\"\n        label: \"Enter schedule\"\n        description: \"The schedule resource that this slot defines an interval of status information.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"schedule\"\n        path: \"Slot.schedule\"\n        label: \"Enter schedule\"\n        description: \"The schedule resource that this slot defines an interval of status information\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.status",
     "resourceType": "Slot",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"entered-in-error\\\" | \\\"busy\\\" | \\\"free\\\" | \\\"busy-unavailable\\\" | \\\"busy-tentative\\\") \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"busy\\\" | \\\"free\\\" | \\\"busy-unavailable\\\" | \\\"busy-tentative\\\" | \\\"entered-in-error\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "busy | free | busy-unavailable | busy-tentative | entered-in-error.",
+      "jsdocDefinition": "busy | free | busy-unavailable | busy-tentative | entered-in-error",
       "coreKeywords": [
         "slot",
         "status",
-        "textinput",
+        "dropdown",
         "busy",
         "free",
         "unavailable",
@@ -757,25 +1191,29 @@
         "error"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Slot.status\"\n        label: \"Enter status\"\n        description: \"busy | free | busy-unavailable | busy-tentative | entered-in-error.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Slot.status\"\n        label: \"Enter status\"\n        description: \"busy | free | busy-unavailable | busy-tentative | entered-in-error\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/slotstatus"
+    },
     "choices": [
-      "entered-in-error",
       "busy",
       "free",
       "busy-unavailable",
-      "busy-tentative"
+      "busy-tentative",
+      "entered-in-error"
     ]
   },
   {
     "path": "Slot.start",
     "resourceType": "Slot",
-    "primitiveType": "Instant",
+    "primitiveType": "instant",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Date/Time that the slot is to begin.",
+      "jsdocDefinition": "Date/Time that the slot is to begin",
       "coreKeywords": [
         "slot",
         "start",
@@ -784,18 +1222,18 @@
         "begin"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Slot.start\"\n        label: \"Enter start\"\n        description: \"Date/Time that the slot is to begin.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Slot.start\"\n        label: \"Enter start\"\n        description: \"Date/Time that the slot is to begin\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.end",
     "resourceType": "Slot",
-    "primitiveType": "Instant",
+    "primitiveType": "instant",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Date/Time that the slot is to conclude.",
+      "jsdocDefinition": "Date/Time that the slot is to conclude",
       "coreKeywords": [
         "slot",
         "end",
@@ -804,7 +1242,7 @@
         "conclude"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Slot.end\"\n        label: \"Enter end\"\n        description: \"Date/Time that the slot is to conclude.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Slot.end\"\n        label: \"Enter end\"\n        description: \"Date/Time that the slot is to conclude\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "Slot.overbooked",
@@ -815,7 +1253,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"overbooked\\\": \\\"\" (true | false) \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "This slot has already been overbooked, appointments are unlikely to be accepted for this time.",
+      "jsdocDefinition": "This slot has already been overbooked, appointments are unlikely to be accepted for this time",
       "coreKeywords": [
         "slot",
         "overbooked",
@@ -829,7 +1267,7 @@
         "time"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"overbooked\"\n        path: \"Slot.overbooked\"\n        label: \"Enter overbooked\"\n        description: \"This slot has already been overbooked, appointments are unlikely to be accepted for this time.\"\n        uiComponent: \"Checkbox\""
+    "reverseYamlSnippet": "      - id: \"overbooked\"\n        path: \"Slot.overbooked\"\n        label: \"Enter overbooked\"\n        description: \"This slot has already been overbooked, appointments are unlikely to be accepted for this time\"\n        uiComponent: \"Checkbox\""
   },
   {
     "path": "Slot.comment",
@@ -840,7 +1278,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"comment\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Comments on the slot to describe any extended information. Such as custom constraints on the slot.",
+      "jsdocDefinition": "Comments on the slot to describe any extended information. Such as custom constraints on the slot",
       "coreKeywords": [
         "slot",
         "comment",
@@ -854,6 +1292,6 @@
         "constraints"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"comment\"\n        path: \"Slot.comment\"\n        label: \"Enter comment\"\n        description: \"Comments on the slot to describe any extended information. Such as custom constraints on the slot.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"comment\"\n        path: \"Slot.comment\"\n        label: \"Enter comment\"\n        description: \"Comments on the slot to describe any extended information. Such as custom constraints on the slot\"\n        uiComponent: \"TextInput\""
   }
 ]

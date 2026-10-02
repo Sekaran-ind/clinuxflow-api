@@ -1,0 +1,2675 @@
+[
+  {
+    "path": "CoverageEligibilityRequest.resourceType",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a CoverageEligibilityRequest resource",
+      "coreKeywords": [
+        "coverageeligibilityrequest",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"CoverageEligibilityRequest.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a CoverageEligibilityRequest resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.id",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"CoverageEligibilityRequest.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.text",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CoverageEligibilityRequest.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.contained",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"CoverageEligibilityRequest.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.extension",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"CoverageEligibilityRequest.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.modifierExtension",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"CoverageEligibilityRequest.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Business Identifier for coverage eligiblity request",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "textinput",
+        "business",
+        "eligiblity"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"CoverageEligibilityRequest.identifier\"\n        label: \"Enter identifier\"\n        description: \"Business Identifier for coverage eligiblity request\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.use",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"CoverageEligibilityRequest.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.type",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"CoverageEligibilityRequest.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.type.coding",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CoverageEligibilityRequest.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.type.coding.system",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CoverageEligibilityRequest.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.type.coding.version",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CoverageEligibilityRequest.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.type.coding.code",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CoverageEligibilityRequest.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.type.coding.display",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CoverageEligibilityRequest.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.type.coding.userSelected",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CoverageEligibilityRequest.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.type.text",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CoverageEligibilityRequest.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.system",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CoverageEligibilityRequest.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.value",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"CoverageEligibilityRequest.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.period",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"CoverageEligibilityRequest.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.period.start",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"CoverageEligibilityRequest.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.period.end",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"CoverageEligibilityRequest.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.identifier.assigner",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"CoverageEligibilityRequest.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.status",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"active\\\" | \\\"cancelled\\\" | \\\"draft\\\" | \\\"entered-in-error\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "active | cancelled | draft | entered-in-error",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "status",
+        "dropdown",
+        "active",
+        "cancelled",
+        "draft",
+        "entered",
+        "error"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"CoverageEligibilityRequest.status\"\n        label: \"Enter status\"\n        description: \"active | cancelled | draft | entered-in-error\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/fm-status"
+    },
+    "choices": [
+      "active",
+      "cancelled",
+      "draft",
+      "entered-in-error"
+    ]
+  },
+  {
+    "path": "CoverageEligibilityRequest.priority",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"priority\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Desired processing priority",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "priority",
+        "dropdown",
+        "desired",
+        "processing"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"priority\"\n        path: \"CoverageEligibilityRequest.priority\"\n        label: \"Enter priority\"\n        description: \"Desired processing priority\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/process-priority"
+    }
+  },
+  {
+    "path": "CoverageEligibilityRequest.priority.coding",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "priority",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CoverageEligibilityRequest.priority.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.priority.coding.system",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "priority",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CoverageEligibilityRequest.priority.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.priority.coding.version",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "priority",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CoverageEligibilityRequest.priority.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.priority.coding.code",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "priority",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CoverageEligibilityRequest.priority.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.priority.coding.display",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "priority",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CoverageEligibilityRequest.priority.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.priority.coding.userSelected",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "priority",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CoverageEligibilityRequest.priority.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.priority.text",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "priority",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CoverageEligibilityRequest.priority.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.purpose",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": true,
+    "arrayTargetType": "code",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"purpose\\\": [ \" ( \\\"\" (\\\"auth-requirements\\\" | \\\"benefits\\\" | \\\"discovery\\\" | \\\"validation\\\") \"\\\"\" ( \", \\\"\" (\\\"auth-requirements\\\" | \\\"benefits\\\" | \\\"discovery\\\" | \\\"validation\\\") \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "auth-requirements | benefits | discovery | validation",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "purpose",
+        "multiselect",
+        "auth",
+        "requirements",
+        "benefits",
+        "discovery",
+        "validation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"purpose\"\n        path: \"CoverageEligibilityRequest.purpose\"\n        label: \"Enter purpose\"\n        description: \"auth-requirements | benefits | discovery | validation\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/eligibilityrequest-purpose"
+    },
+    "choices": [
+      "auth-requirements",
+      "benefits",
+      "discovery",
+      "validation"
+    ]
+  },
+  {
+    "path": "CoverageEligibilityRequest.patient",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "patient-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"patient\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Intended recipient of products and services",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "patient",
+        "textinput",
+        "intended",
+        "recipient",
+        "products",
+        "services"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"patient\"\n        path: \"CoverageEligibilityRequest.patient\"\n        label: \"Enter patient\"\n        description: \"Intended recipient of products and services\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.serviced[x]",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "date",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"serviced[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Estimated date or dates of service",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "servicedx",
+        "datepicker",
+        "estimated",
+        "date",
+        "dates",
+        "service"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"serviced[x]\"\n        path: \"CoverageEligibilityRequest.serviced[x]\"\n        label: \"Enter serviced[x]\"\n        description: \"Estimated date or dates of service\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.servicedDate",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "date",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"serviced_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Estimated date or dates of service",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "serviced",
+        "date",
+        "datepicker",
+        "estimated",
+        "dates",
+        "service"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"serviced_date\"\n        path: \"CoverageEligibilityRequest.servicedDate\"\n        label: \"Enter servicedDate\"\n        description: \"Estimated date or dates of service\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.servicedPeriod",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"serviced_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Estimated date or dates of service",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "serviced",
+        "period",
+        "textinput",
+        "estimated",
+        "date",
+        "dates",
+        "service"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"serviced_period\"\n        path: \"CoverageEligibilityRequest.servicedPeriod\"\n        label: \"Enter servicedPeriod\"\n        description: \"Estimated date or dates of service\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.servicedPeriod.start",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "serviced",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"CoverageEligibilityRequest.servicedPeriod.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.servicedPeriod.end",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "serviced",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"CoverageEligibilityRequest.servicedPeriod.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.created",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"created\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Creation date",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "created",
+        "datepicker",
+        "creation",
+        "date"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"created\"\n        path: \"CoverageEligibilityRequest.created\"\n        label: \"Enter created\"\n        description: \"Creation date\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.enterer",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "enterer-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "enterer-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"enterer\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Author",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "enterer",
+        "textinput",
+        "author"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"enterer\"\n        path: \"CoverageEligibilityRequest.enterer\"\n        label: \"Enter enterer\"\n        description: \"Author\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.provider",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "provider-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "provider-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "provider-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"provider\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Party responsible for the request",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "provider",
+        "textinput",
+        "party",
+        "responsible"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"provider\"\n        path: \"CoverageEligibilityRequest.provider\"\n        label: \"Enter provider\"\n        description: \"Party responsible for the request\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.insurer",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "insurer-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"insurer\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Coverage issuer",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "insurer",
+        "textinput",
+        "issuer"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"insurer\"\n        path: \"CoverageEligibilityRequest.insurer\"\n        label: \"Enter insurer\"\n        description: \"Coverage issuer\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.facility",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "facility-link",
+        "targetResource": "Location",
+        "traversalPath": "Location.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"facility\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Servicing facility",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "facility",
+        "textinput",
+        "servicing"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"facility\"\n        path: \"CoverageEligibilityRequest.facility\"\n        label: \"Enter facility\"\n        description: \"Servicing facility\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.supportingInfo",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"supporting_info\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Supporting information",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "supporting",
+        "info",
+        "textinput",
+        "information"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"supporting_info\"\n        path: \"CoverageEligibilityRequest.supportingInfo\"\n        label: \"Enter supportingInfo\"\n        description: \"Supporting information\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.supportingInfo.extension",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "supporting",
+        "info",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"CoverageEligibilityRequest.supportingInfo.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.supportingInfo.modifierExtension",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "supporting",
+        "info",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"CoverageEligibilityRequest.supportingInfo.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.supportingInfo.sequence",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "positiveInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"sequence\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Information instance identifier",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "supporting",
+        "info",
+        "sequence",
+        "numericinput",
+        "information",
+        "instance",
+        "identifier"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"sequence\"\n        path: \"CoverageEligibilityRequest.supportingInfo.sequence\"\n        label: \"Enter sequence\"\n        description: \"Information instance identifier\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.supportingInfo.information",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "information-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"information\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Data to be provided",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "supporting",
+        "info",
+        "information",
+        "textinput",
+        "data",
+        "provided"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"information\"\n        path: \"CoverageEligibilityRequest.supportingInfo.information\"\n        label: \"Enter information\"\n        description: \"Data to be provided\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.supportingInfo.appliesToAll",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"applies_to_all\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Applies to all items",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "supporting",
+        "info",
+        "applies",
+        "all",
+        "checkbox",
+        "items"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"applies_to_all\"\n        path: \"CoverageEligibilityRequest.supportingInfo.appliesToAll\"\n        label: \"Enter appliesToAll\"\n        description: \"Applies to all items\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.insurance",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"insurance\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Patient insurance information",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "insurance",
+        "textinput",
+        "patient",
+        "information"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"insurance\"\n        path: \"CoverageEligibilityRequest.insurance\"\n        label: \"Enter insurance\"\n        description: \"Patient insurance information\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.insurance.extension",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "insurance",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"CoverageEligibilityRequest.insurance.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.insurance.modifierExtension",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "insurance",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"CoverageEligibilityRequest.insurance.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.insurance.focal",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"focal\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Applicable coverage",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "insurance",
+        "focal",
+        "checkbox",
+        "applicable"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"focal\"\n        path: \"CoverageEligibilityRequest.insurance.focal\"\n        label: \"Enter focal\"\n        description: \"Applicable coverage\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.insurance.coverage",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "coverage-link",
+        "targetResource": "Coverage",
+        "traversalPath": "Coverage.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"coverage\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Insurance information",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "insurance",
+        "textinput",
+        "information"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coverage\"\n        path: \"CoverageEligibilityRequest.insurance.coverage\"\n        label: \"Enter coverage\"\n        description: \"Insurance information\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.insurance.businessArrangement",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"business_arrangement\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional provider contract number",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "insurance",
+        "business",
+        "arrangement",
+        "textinput",
+        "additional",
+        "provider",
+        "contract",
+        "number"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"business_arrangement\"\n        path: \"CoverageEligibilityRequest.insurance.businessArrangement\"\n        label: \"Enter businessArrangement\"\n        description: \"Additional provider contract number\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"item\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Item to be evaluated for eligibiity",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "textinput",
+        "evaluated",
+        "eligibiity"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"item\"\n        path: \"CoverageEligibilityRequest.item\"\n        label: \"Enter item\"\n        description: \"Item to be evaluated for eligibiity\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.extension",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"CoverageEligibilityRequest.item.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.modifierExtension",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"CoverageEligibilityRequest.item.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.supportingInfoSequence",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "positiveInt",
+    "isArray": true,
+    "arrayTargetType": "positiveInt",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"supporting_info_sequence\\\": [ \" ( \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\" ( \", \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Applicable exception or supporting information",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "supporting",
+        "info",
+        "sequence",
+        "numericinput",
+        "applicable",
+        "exception",
+        "information"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"supporting_info_sequence\"\n        path: \"CoverageEligibilityRequest.item.supportingInfoSequence\"\n        label: \"Enter supportingInfoSequence\"\n        description: \"Applicable exception or supporting information\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.category",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"category\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Benefit classification",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "category",
+        "dropdown",
+        "benefit",
+        "classification"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"category\"\n        path: \"CoverageEligibilityRequest.item.category\"\n        label: \"Enter category\"\n        description: \"Benefit classification\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/ex-benefitcategory"
+    }
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.category.coding",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "category",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CoverageEligibilityRequest.item.category.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.category.coding.system",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "category",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CoverageEligibilityRequest.item.category.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.category.coding.version",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "category",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CoverageEligibilityRequest.item.category.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.category.coding.code",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "category",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CoverageEligibilityRequest.item.category.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.category.coding.display",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "category",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CoverageEligibilityRequest.item.category.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.category.coding.userSelected",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "category",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CoverageEligibilityRequest.item.category.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.category.text",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "category",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CoverageEligibilityRequest.item.category.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.productOrService",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"product_or_service\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Billing, service, product, or drug code",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "product",
+        "service",
+        "dropdown",
+        "billing",
+        "drug",
+        "code"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"product_or_service\"\n        path: \"CoverageEligibilityRequest.item.productOrService\"\n        label: \"Enter productOrService\"\n        description: \"Billing, service, product, or drug code\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/service-uscls"
+    }
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.productOrService.coding",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "product",
+        "service",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CoverageEligibilityRequest.item.productOrService.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.productOrService.coding.system",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "product",
+        "service",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CoverageEligibilityRequest.item.productOrService.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.productOrService.coding.version",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "product",
+        "service",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CoverageEligibilityRequest.item.productOrService.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.productOrService.coding.code",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "product",
+        "service",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CoverageEligibilityRequest.item.productOrService.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.productOrService.coding.display",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "product",
+        "service",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CoverageEligibilityRequest.item.productOrService.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.productOrService.coding.userSelected",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "product",
+        "service",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CoverageEligibilityRequest.item.productOrService.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.productOrService.text",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "product",
+        "service",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CoverageEligibilityRequest.item.productOrService.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.modifier",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Product or service billing modifiers",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "modifier",
+        "multiselect",
+        "product",
+        "service",
+        "billing",
+        "modifiers"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier\"\n        path: \"CoverageEligibilityRequest.item.modifier\"\n        label: \"Enter modifier\"\n        description: \"Product or service billing modifiers\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/claim-modifiers"
+    }
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.modifier.coding",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "modifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CoverageEligibilityRequest.item.modifier.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.modifier.coding.system",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "modifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CoverageEligibilityRequest.item.modifier.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.modifier.coding.version",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "modifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CoverageEligibilityRequest.item.modifier.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.modifier.coding.code",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "modifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CoverageEligibilityRequest.item.modifier.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.modifier.coding.display",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "modifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CoverageEligibilityRequest.item.modifier.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.modifier.coding.userSelected",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "modifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CoverageEligibilityRequest.item.modifier.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.modifier.text",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "modifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CoverageEligibilityRequest.item.modifier.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.provider",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "provider-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "provider-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"provider\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Perfoming practitioner",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "provider",
+        "textinput",
+        "perfoming",
+        "practitioner"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"provider\"\n        path: \"CoverageEligibilityRequest.item.provider\"\n        label: \"Enter provider\"\n        description: \"Perfoming practitioner\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.quantity",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"quantity\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Count of products or services",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "quantity",
+        "textinput",
+        "count",
+        "products",
+        "services"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"quantity\"\n        path: \"CoverageEligibilityRequest.item.quantity\"\n        label: \"Enter quantity\"\n        description: \"Count of products or services\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.quantity.value",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "quantity",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"CoverageEligibilityRequest.item.quantity.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.quantity.comparator",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "quantity",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"CoverageEligibilityRequest.item.quantity.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.quantity.unit",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "quantity",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"CoverageEligibilityRequest.item.quantity.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.quantity.system",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "quantity",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CoverageEligibilityRequest.item.quantity.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.quantity.code",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "quantity",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CoverageEligibilityRequest.item.quantity.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.unitPrice",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit_price\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Fee, charge or cost per item",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "unit",
+        "price",
+        "textinput",
+        "fee",
+        "charge",
+        "cost",
+        "per"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit_price\"\n        path: \"CoverageEligibilityRequest.item.unitPrice\"\n        label: \"Enter unitPrice\"\n        description: \"Fee, charge or cost per item\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.unitPrice.value",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "unit",
+        "price",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"CoverageEligibilityRequest.item.unitPrice.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.unitPrice.currency",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"currency\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "unit",
+        "price",
+        "currency",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"currency\"\n        path: \"CoverageEligibilityRequest.item.unitPrice.currency\"\n        label: \"Enter currency\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/currencies"
+    }
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.facility",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "facility-link",
+        "targetResource": "Location",
+        "traversalPath": "Location.id"
+      },
+      {
+        "relationshipType": "facility-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"facility\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Servicing facility",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "facility",
+        "textinput",
+        "servicing"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"facility\"\n        path: \"CoverageEligibilityRequest.item.facility\"\n        label: \"Enter facility\"\n        description: \"Servicing facility\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"diagnosis\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Applicable diagnosis",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "textinput",
+        "applicable"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"diagnosis\"\n        path: \"CoverageEligibilityRequest.item.diagnosis\"\n        label: \"Enter diagnosis\"\n        description: \"Applicable diagnosis\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.extension",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.modifierExtension",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.diagnosis[x]",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"diagnosis[x]\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Nature of illness or problem",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "diagnosisx",
+        "dropdown",
+        "nature",
+        "illness",
+        "problem"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"diagnosis[x]\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.diagnosis[x]\"\n        label: \"Enter diagnosis[x]\"\n        description: \"Nature of illness or problem\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/icd-10"
+    }
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"diagnosis_codeable_concept\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Nature of illness or problem",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "codeable",
+        "concept",
+        "dropdown",
+        "nature",
+        "illness",
+        "problem"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"diagnosis_codeable_concept\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept\"\n        label: \"Enter diagnosisCodeableConcept\"\n        description: \"Nature of illness or problem\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/icd-10"
+    }
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "codeable",
+        "concept",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding.system",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "codeable",
+        "concept",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding.version",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "codeable",
+        "concept",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding.code",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "codeable",
+        "concept",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding.display",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "codeable",
+        "concept",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding.userSelected",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "codeable",
+        "concept",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.text",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "codeable",
+        "concept",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.diagnosisCodeableConcept.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.diagnosis.diagnosisReference",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "diagnosisReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"diagnosis_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Nature of illness or problem",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "diagnosis",
+        "reference",
+        "textinput",
+        "nature",
+        "illness",
+        "problem"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"diagnosis_reference\"\n        path: \"CoverageEligibilityRequest.item.diagnosis.diagnosisReference\"\n        label: \"Enter diagnosisReference\"\n        description: \"Nature of illness or problem\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/icd-10"
+    }
+  },
+  {
+    "path": "CoverageEligibilityRequest.item.detail",
+    "resourceType": "CoverageEligibilityRequest",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "detail-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"detail\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Product or service details",
+      "coreKeywords": [
+        "coverage",
+        "eligibility",
+        "request",
+        "item",
+        "detail",
+        "textinput",
+        "product",
+        "service",
+        "details"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"detail\"\n        path: \"CoverageEligibilityRequest.item.detail\"\n        label: \"Enter detail\"\n        description: \"Product or service details\"\n        uiComponent: \"TextInput\""
+  }
+]

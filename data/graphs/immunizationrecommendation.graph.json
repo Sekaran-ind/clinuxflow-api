@@ -1,0 +1,2038 @@
+[
+  {
+    "path": "ImmunizationRecommendation.resourceType",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a ImmunizationRecommendation resource",
+      "coreKeywords": [
+        "immunizationrecommendation",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"ImmunizationRecommendation.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a ImmunizationRecommendation resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.id",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"ImmunizationRecommendation.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.text",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImmunizationRecommendation.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.contained",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"ImmunizationRecommendation.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.extension",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"ImmunizationRecommendation.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.modifierExtension",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"ImmunizationRecommendation.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Business identifier",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "textinput",
+        "business"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"ImmunizationRecommendation.identifier\"\n        label: \"Enter identifier\"\n        description: \"Business identifier\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.use",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"ImmunizationRecommendation.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.type",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"ImmunizationRecommendation.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.type.coding",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ImmunizationRecommendation.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.type.coding.system",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImmunizationRecommendation.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.type.coding.version",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImmunizationRecommendation.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.type.coding.code",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImmunizationRecommendation.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.type.coding.display",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImmunizationRecommendation.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.type.coding.userSelected",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImmunizationRecommendation.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.type.text",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImmunizationRecommendation.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.system",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImmunizationRecommendation.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.value",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"ImmunizationRecommendation.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.period",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"ImmunizationRecommendation.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.period.start",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"ImmunizationRecommendation.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.period.end",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"ImmunizationRecommendation.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ImmunizationRecommendation.identifier.assigner",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"ImmunizationRecommendation.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.patient",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "patient-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"patient\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who this profile is for",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "patient",
+        "textinput",
+        "who",
+        "profile"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"patient\"\n        path: \"ImmunizationRecommendation.patient\"\n        label: \"Enter patient\"\n        description: \"Who this profile is for\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.date",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Date recommendation(s) created",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "datepicker",
+        "recommendations",
+        "created"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"date\"\n        path: \"ImmunizationRecommendation.date\"\n        label: \"Enter date\"\n        description: \"Date recommendation(s) created\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ImmunizationRecommendation.authority",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authority-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"authority\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who is responsible for protocol",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "authority",
+        "textinput",
+        "who",
+        "responsible",
+        "protocol"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"authority\"\n        path: \"ImmunizationRecommendation.authority\"\n        label: \"Enter authority\"\n        description: \"Who is responsible for protocol\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"recommendation\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Vaccine administration recommendations",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "textinput",
+        "vaccine",
+        "administration",
+        "recommendations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"recommendation\"\n        path: \"ImmunizationRecommendation.recommendation\"\n        label: \"Enter recommendation\"\n        description: \"Vaccine administration recommendations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.extension",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"ImmunizationRecommendation.recommendation.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.modifierExtension",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"ImmunizationRecommendation.recommendation.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.vaccineCode",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"vaccine_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Vaccine  or vaccine group recommendation applies to",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "vaccine",
+        "code",
+        "multiselect",
+        "group",
+        "applies"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"vaccine_code\"\n        path: \"ImmunizationRecommendation.recommendation.vaccineCode\"\n        label: \"Enter vaccineCode\"\n        description: \"Vaccine  or vaccine group recommendation applies to\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/vaccine-code"
+    }
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.vaccineCode.coding",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "vaccine",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ImmunizationRecommendation.recommendation.vaccineCode.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.vaccineCode.coding.system",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "vaccine",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImmunizationRecommendation.recommendation.vaccineCode.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.vaccineCode.coding.version",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "vaccine",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImmunizationRecommendation.recommendation.vaccineCode.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.vaccineCode.coding.code",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "vaccine",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImmunizationRecommendation.recommendation.vaccineCode.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.vaccineCode.coding.display",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "vaccine",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImmunizationRecommendation.recommendation.vaccineCode.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.vaccineCode.coding.userSelected",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "vaccine",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImmunizationRecommendation.recommendation.vaccineCode.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.vaccineCode.text",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "vaccine",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImmunizationRecommendation.recommendation.vaccineCode.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.targetDisease",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"target_disease\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Disease to be immunized against",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "target",
+        "disease",
+        "dropdown",
+        "immunized",
+        "against"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"target_disease\"\n        path: \"ImmunizationRecommendation.recommendation.targetDisease\"\n        label: \"Enter targetDisease\"\n        description: \"Disease to be immunized against\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/immunization-recommendation-target-disease"
+    }
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.targetDisease.coding",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "target",
+        "disease",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ImmunizationRecommendation.recommendation.targetDisease.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.targetDisease.coding.system",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "target",
+        "disease",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImmunizationRecommendation.recommendation.targetDisease.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.targetDisease.coding.version",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "target",
+        "disease",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImmunizationRecommendation.recommendation.targetDisease.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.targetDisease.coding.code",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "target",
+        "disease",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImmunizationRecommendation.recommendation.targetDisease.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.targetDisease.coding.display",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "target",
+        "disease",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImmunizationRecommendation.recommendation.targetDisease.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.targetDisease.coding.userSelected",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "target",
+        "disease",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImmunizationRecommendation.recommendation.targetDisease.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.targetDisease.text",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "target",
+        "disease",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImmunizationRecommendation.recommendation.targetDisease.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.contraindicatedVaccineCode",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contraindicated_vaccine_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Vaccine which is contraindicated to fulfill the recommendation",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "contraindicated",
+        "vaccine",
+        "code",
+        "multiselect",
+        "which",
+        "fulfill"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contraindicated_vaccine_code\"\n        path: \"ImmunizationRecommendation.recommendation.contraindicatedVaccineCode\"\n        label: \"Enter contraindicatedVaccineCode\"\n        description: \"Vaccine which is contraindicated to fulfill the recommendation\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/vaccine-code"
+    }
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "contraindicated",
+        "vaccine",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding.system",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "contraindicated",
+        "vaccine",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding.version",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "contraindicated",
+        "vaccine",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding.code",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "contraindicated",
+        "vaccine",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding.display",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "contraindicated",
+        "vaccine",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding.userSelected",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "contraindicated",
+        "vaccine",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.text",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "contraindicated",
+        "vaccine",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImmunizationRecommendation.recommendation.contraindicatedVaccineCode.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastStatus",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"forecast_status\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Vaccine recommendation status",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "status",
+        "dropdown",
+        "vaccine"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"forecast_status\"\n        path: \"ImmunizationRecommendation.recommendation.forecastStatus\"\n        label: \"Enter forecastStatus\"\n        description: \"Vaccine recommendation status\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/immunization-recommendation-status"
+    }
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastStatus.coding",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "status",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ImmunizationRecommendation.recommendation.forecastStatus.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastStatus.coding.system",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "status",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImmunizationRecommendation.recommendation.forecastStatus.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastStatus.coding.version",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "status",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImmunizationRecommendation.recommendation.forecastStatus.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastStatus.coding.code",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "status",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImmunizationRecommendation.recommendation.forecastStatus.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastStatus.coding.display",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "status",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImmunizationRecommendation.recommendation.forecastStatus.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastStatus.coding.userSelected",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "status",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImmunizationRecommendation.recommendation.forecastStatus.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastStatus.text",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "status",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImmunizationRecommendation.recommendation.forecastStatus.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastReason",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"forecast_reason\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Vaccine administration status reason",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "reason",
+        "multiselect",
+        "vaccine",
+        "administration",
+        "status"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"forecast_reason\"\n        path: \"ImmunizationRecommendation.recommendation.forecastReason\"\n        label: \"Enter forecastReason\"\n        description: \"Vaccine administration status reason\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/immunization-recommendation-reason"
+    }
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastReason.coding",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "reason",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ImmunizationRecommendation.recommendation.forecastReason.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastReason.coding.system",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "reason",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImmunizationRecommendation.recommendation.forecastReason.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastReason.coding.version",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "reason",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImmunizationRecommendation.recommendation.forecastReason.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastReason.coding.code",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "reason",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImmunizationRecommendation.recommendation.forecastReason.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastReason.coding.display",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "reason",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImmunizationRecommendation.recommendation.forecastReason.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastReason.coding.userSelected",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "reason",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImmunizationRecommendation.recommendation.forecastReason.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.forecastReason.text",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "forecast",
+        "reason",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImmunizationRecommendation.recommendation.forecastReason.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"date_criterion\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Dates governing proposed immunization",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "textinput",
+        "dates",
+        "governing",
+        "proposed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"date_criterion\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion\"\n        label: \"Enter dateCriterion\"\n        description: \"Dates governing proposed immunization\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion.extension",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion.modifierExtension",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion.code",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Type of date",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion.code\"\n        label: \"Enter code\"\n        description: \"Type of date\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/immunization-recommendation-date-criterion"
+    }
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion.code.coding",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion.code.coding.system",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion.code.coding.version",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion.code.coding.code",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion.code.coding.display",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion.code.coding.userSelected",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion.code.text",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.dateCriterion.value",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Recommended date",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "date",
+        "criterion",
+        "datepicker",
+        "recommended"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"ImmunizationRecommendation.recommendation.dateCriterion.value\"\n        label: \"Enter value\"\n        description: \"Recommended date\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.description",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Protocol details",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "description",
+        "textinput",
+        "protocol",
+        "details"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"ImmunizationRecommendation.recommendation.description\"\n        label: \"Enter description\"\n        description: \"Protocol details\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.series",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"series\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Name of vaccination series",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "series",
+        "textinput",
+        "name",
+        "vaccination"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"series\"\n        path: \"ImmunizationRecommendation.recommendation.series\"\n        label: \"Enter series\"\n        description: \"Name of vaccination series\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.doseNumber[x]",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "positiveInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"dose_number[x]\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Recommended dose number within series",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "dose",
+        "numberx",
+        "numericinput",
+        "recommended",
+        "number",
+        "within",
+        "series"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"dose_number[x]\"\n        path: \"ImmunizationRecommendation.recommendation.doseNumber[x]\"\n        label: \"Enter doseNumber[x]\"\n        description: \"Recommended dose number within series\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.doseNumberPositiveInt",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "positiveInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"dose_number_positive_int\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "dose",
+        "number",
+        "positive",
+        "int",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"dose_number_positive_int\"\n        path: \"ImmunizationRecommendation.recommendation.doseNumberPositiveInt\"\n        label: \"Enter doseNumberPositiveInt\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.doseNumberString",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"dose_number_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "dose",
+        "number",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"dose_number_string\"\n        path: \"ImmunizationRecommendation.recommendation.doseNumberString\"\n        label: \"Enter doseNumberString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.seriesDoses[x]",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "positiveInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"series_doses[x]\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Recommended number of doses for immunity",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "series",
+        "dosesx",
+        "numericinput",
+        "recommended",
+        "number",
+        "doses",
+        "immunity"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"series_doses[x]\"\n        path: \"ImmunizationRecommendation.recommendation.seriesDoses[x]\"\n        label: \"Enter seriesDoses[x]\"\n        description: \"Recommended number of doses for immunity\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.seriesDosesPositiveInt",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "positiveInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"series_doses_positive_int\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "series",
+        "doses",
+        "positive",
+        "int",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"series_doses_positive_int\"\n        path: \"ImmunizationRecommendation.recommendation.seriesDosesPositiveInt\"\n        label: \"Enter seriesDosesPositiveInt\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.seriesDosesString",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"series_doses_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "series",
+        "doses",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"series_doses_string\"\n        path: \"ImmunizationRecommendation.recommendation.seriesDosesString\"\n        label: \"Enter seriesDosesString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.supportingImmunization",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "supportingImmunization-link",
+        "targetResource": "Immunization",
+        "traversalPath": "Immunization.id"
+      },
+      {
+        "relationshipType": "supportingImmunization-link",
+        "targetResource": "ImmunizationEvaluation",
+        "traversalPath": "ImmunizationEvaluation.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"supporting_immunization\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Past immunizations supporting recommendation",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "supporting",
+        "textinput",
+        "past",
+        "immunizations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"supporting_immunization\"\n        path: \"ImmunizationRecommendation.recommendation.supportingImmunization\"\n        label: \"Enter supportingImmunization\"\n        description: \"Past immunizations supporting recommendation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "ImmunizationRecommendation.recommendation.supportingPatientInformation",
+    "resourceType": "ImmunizationRecommendation",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "supportingPatientInformation-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"supporting_patient_information\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Patient observations supporting recommendation",
+      "coreKeywords": [
+        "immunization",
+        "recommendation",
+        "supporting",
+        "patient",
+        "information",
+        "textinput",
+        "observations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"supporting_patient_information\"\n        path: \"ImmunizationRecommendation.recommendation.supportingPatientInformation\"\n        label: \"Enter supportingPatientInformation\"\n        description: \"Patient observations supporting recommendation\"\n        uiComponent: \"TextInput\""
+  }
+]

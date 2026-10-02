@@ -1,0 +1,142 @@
+{
+  "$comment": "Entitlements: who may do what in a ClinuxFlow clinic. Read by src/lib/shared/permissions.js (server checks) and served to clinux-frontend's Operations → Access & roles. Change entitlements here, not in code. `enforced` per permission is honest: 'server' = a clinuxflow-api route checks it; 'workspace' = only the workspace's screens apply it today. Role vs entitlement: an account role grants a set of permissions; a staff member's PROFESSIONAL role (PractitionerRole.code, SNOMED CT) is not an entitlement, and their HPR role (extension hpr-role: Healthcare Professional / Facility Manager) is an entitlement source — see hprRoles.",
+  "defaultRole": "admin_and_health_professional",
+  "permissions": [
+    {
+      "id": "patients:write",
+      "label": "Register and edit patients",
+      "group": "Clinical",
+      "enforced": "workspace"
+    },
+    {
+      "id": "encounters:write",
+      "label": "Run Front Desk, Consultation and Checkout",
+      "group": "Clinical",
+      "enforced": "workspace"
+    },
+    {
+      "id": "abha:write",
+      "label": "Find, link or create a patient’s ABHA",
+      "group": "Registries",
+      "enforced": "workspace"
+    },
+    {
+      "id": "hpr:write",
+      "label": "Link or register an HPR ID",
+      "group": "Registries",
+      "enforced": "workspace"
+    },
+    {
+      "id": "hfr:write",
+      "label": "Register the facility with HFR",
+      "group": "Registries",
+      "enforced": "workspace"
+    },
+    {
+      "id": "facility:write",
+      "label": "Edit the facility profile and clinic page",
+      "group": "Facility",
+      "enforced": "workspace"
+    },
+    {
+      "id": "team:manage",
+      "label": "Issue join links and approve staff",
+      "group": "Facility",
+      "enforced": "workspace"
+    },
+    {
+      "id": "forms:design",
+      "label": "Design forms (Forms library)",
+      "group": "Facility",
+      "enforced": "workspace"
+    },
+    {
+      "id": "activity:own",
+      "label": "See their own activity and ABDM calls",
+      "group": "Operations",
+      "enforced": "server"
+    },
+    {
+      "id": "activity:clinic",
+      "label": "See the whole clinic’s activity and ABDM calls",
+      "group": "Operations",
+      "enforced": "server"
+    }
+  ],
+  "roles": {
+    "hospital_admin": {
+      "label": "Hospital admin",
+      "summary": "Runs a facility: its profile, team and clinic page, and sees the whole clinic’s activity.",
+      "grants": [
+        "patients:write",
+        "encounters:write",
+        "abha:write",
+        "hpr:write",
+        "hfr:write",
+        "facility:write",
+        "team:manage",
+        "forms:design",
+        "activity:own",
+        "activity:clinic"
+      ]
+    },
+    "admin_and_health_professional": {
+      "label": "Admin & health professional",
+      "summary": "Everything: runs the facility and practises there. The default for new accounts.",
+      "grants": [
+        "patients:write",
+        "encounters:write",
+        "abha:write",
+        "hpr:write",
+        "hfr:write",
+        "facility:write",
+        "team:manage",
+        "forms:design",
+        "activity:own",
+        "activity:clinic"
+      ]
+    },
+    "health_professional": {
+      "label": "Health professional",
+      "summary": "Practises: patients, consultations and their own HPR profile. Sees only their own activity.",
+      "grants": [
+        "patients:write",
+        "encounters:write",
+        "abha:write",
+        "hpr:write",
+        "hfr:write",
+        "activity:own"
+      ]
+    }
+  },
+  "hprRoles": {
+    "$comment": "What a staff member's HPR role (PractitionerRole extension hpr-role) should grant at this facility. Not enforced yet: it takes effect once a login account is linked to its staff member's PractitionerRole (today accounts carry only the account role above).",
+    "Healthcare Professional": [
+      "patients:write",
+      "encounters:write",
+      "abha:write",
+      "hpr:write",
+      "activity:own"
+    ],
+    "Facility Manager": [
+      "facility:write",
+      "team:manage",
+      "forms:design",
+      "hfr:write",
+      "activity:clinic",
+      "activity:own"
+    ],
+    "Healthcare Professional and Facility Manager": [
+      "patients:write",
+      "encounters:write",
+      "abha:write",
+      "hpr:write",
+      "hfr:write",
+      "facility:write",
+      "team:manage",
+      "forms:design",
+      "activity:own",
+      "activity:clinic"
+    ]
+  }
+}

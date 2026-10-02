@@ -1,0 +1,199 @@
+{
+  "$comment": "How ClinuxFlow's extracted FHIR resources conform to the ABDM Implementation Guide (NRCeS ndhm.in 6.5.0, https://nrces.in/ndhm/fhir/r4/index.html) and ClinuxFlow's own profiles on it (clinuxflow-fhir-api/profiles). Read by the YAML compiler (a field's `slice:` must name an entry here) and by local-extractor.js. Identifier conventions follow the IG's own examples: Patient ABHA = v2-0203 MR at https://healthid.ndhm.gov.in, Practitioner HPR = MD at https://doctor.ndhm.gov.in, Organization HFR = PRN at https://facility.ndhm.gov.in. Change conformance here, not in code.",
+  "canonicalBase": "https://clinux.yaxb.ai/fhir",
+  "profiles": {
+    "Organization": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowFacility",
+    "Practitioner": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowProvider",
+    "PractitionerRole": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowProviderRole",
+    "Patient": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowPatient",
+    "OrganizationAffiliation": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowAffiliateOrganization"
+  },
+  "slices": {
+    "abhaNumber": {
+      "element": "identifier",
+      "system": "https://healthid.ndhm.gov.in",
+      "type": {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "MR",
+        "display": "Medical record number"
+      }
+    },
+    "abhaAddress": {
+      "element": "identifier",
+      "type": {
+        "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+        "code": "ABHA",
+        "display": "Ayushman Bharat Health Account (ABHA) ID"
+      }
+    },
+    "hprId": {
+      "element": "identifier",
+      "system": "https://doctor.ndhm.gov.in",
+      "type": {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "MD",
+        "display": "Medical License number"
+      }
+    },
+    "hprAddress": {
+      "element": "identifier",
+      "type": {
+        "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+        "code": "HPID",
+        "display": "Healthcare Professional ID (HPID)"
+      }
+    },
+    "licenseNumber": {
+      "element": "identifier",
+      "type": {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "MD",
+        "display": "Medical License number"
+      }
+    },
+    "hfrFacilityId": {
+      "element": "identifier",
+      "system": "https://facility.ndhm.gov.in",
+      "type": {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "PRN",
+        "display": "Provider number"
+      }
+    },
+    "facilityRegistrationNumber": {
+      "element": "identifier",
+      "type": {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "PRN",
+        "display": "Provider number"
+      }
+    },
+    "mobile": {
+      "element": "telecom",
+      "system": "phone",
+      "use": "mobile"
+    },
+    "contactPhone": {
+      "element": "telecom",
+      "system": "phone",
+      "use": "mobile"
+    },
+    "phoneWork": {
+      "element": "telecom",
+      "system": "phone",
+      "use": "work"
+    },
+    "landline": {
+      "element": "telecom",
+      "system": "phone",
+      "use": "work"
+    },
+    "whatsapp": {
+      "element": "telecom",
+      "system": "other",
+      "use": "mobile"
+    },
+    "email": {
+      "element": "telecom",
+      "system": "email"
+    },
+    "emailWork": {
+      "element": "telecom",
+      "system": "email",
+      "use": "work"
+    },
+    "website": {
+      "element": "telecom",
+      "system": "url"
+    }
+  },
+  "localIdentifiers": {
+    "$comment": "The IG requires at least one identifier on Patient, Practitioner and Organization (min 1, with a coded type). Before ABDM issues an ABHA, HPR or HFR id, ClinuxFlow's own stable record id stands in.",
+    "Patient": {
+      "system": "https://clinux.yaxb.ai/fhir/sid/patient",
+      "type": {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "MR",
+        "display": "Medical record number"
+      }
+    },
+    "Practitioner": {
+      "system": "https://clinux.yaxb.ai/fhir/sid/practitioner",
+      "type": {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "PRN",
+        "display": "Provider number"
+      }
+    },
+    "Organization": {
+      "system": "https://clinux.yaxb.ai/fhir/sid/clinic",
+      "type": {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "PRN",
+        "display": "Provider number"
+      }
+    },
+    "PractitionerRole": {
+      "system": "https://clinux.yaxb.ai/fhir/sid/practitioner-role",
+      "type": {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "EI",
+        "display": "Employee number"
+      }
+    }
+  },
+  "fieldSlices": {
+    "$comment": "Which field (by id) writes which slice, applied by the YAML compiler (yaml-to-questionnaire.js) so the system-form YAML stays readable; a YAML field can also say `slice:` itself, which wins.",
+    "patient_mobile": "mobile",
+    "patient_abha_number": "abhaNumber",
+    "patient_abha_address": "abhaAddress",
+    "hospital_npi": "facilityRegistrationNumber",
+    "hospital_phone": "contactPhone",
+    "hospital_whatsapp": "whatsapp",
+    "hospital_email": "email",
+    "hospital_website": "website",
+    "hospital_facility_id": "hfrFacilityId",
+    "location_phone": "phoneWork",
+    "staff_phone": "mobile",
+    "staff_email": "email",
+    "staff_license": "licenseNumber",
+    "staff_hprid": "hprAddress",
+    "staff_hpr_id_number": "hprId",
+    "staff_public_mobile": "phoneWork",
+    "staff_landline": "landline",
+    "staff_public_email": "emailWork",
+    "affiliate_org_phone": "phoneWork",
+    "affiliate_org_email": "email"
+  },
+  "professionalRoles": {
+    "$comment": "Role vs entitlement. PractitionerRole.code is the professional role, coded in SNOMED CT as the ABDM IG binds it (ValueSet ndhm-practitioner-role: is-a 223366009 Healthcare professional | is-a 307988006). Derived from the HPR category (Practitioner extension hpr-category-code, HPR API hpCategoryCode). The HPR role (1/2/3, extension hpr-role) is the entitlement source and never goes into PractitionerRole.code.",
+    "fromExtension": "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-category-code",
+    "system": "http://snomed.info/sct",
+    "map": {
+      "1": {
+        "code": "158965000",
+        "display": "Medical practitioner"
+      },
+      "Doctor": {
+        "code": "158965000",
+        "display": "Medical practitioner"
+      },
+      "2": {
+        "code": "106292003",
+        "display": "Professional nurse"
+      },
+      "Nurse": {
+        "code": "106292003",
+        "display": "Professional nurse"
+      },
+      "6": {
+        "code": "46255001",
+        "display": "Pharmacist"
+      },
+      "Pharmacist": {
+        "code": "46255001",
+        "display": "Pharmacist"
+      }
+    }
+  }
+}

@@ -10,11 +10,8 @@
     "semanticFingerprint": {
       "jsdocDefinition": "This is a EpisodeOfCare resource",
       "coreKeywords": [
-        "episode",
-        "care",
-        "resource",
-        "textinput",
-        "episodeofcare"
+        "episodeofcare",
+        "resource"
       ]
     },
     "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"EpisodeOfCare.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a EpisodeOfCare resource\"\n        uiComponent: \"TextInput\""
@@ -28,22 +25,16 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "jsdocDefinition": "Logical id of this artifact",
       "coreKeywords": [
         "episode",
         "care",
         "textinput",
         "logical",
-        "resource",
-        "used",
-        "url",
-        "once",
-        "assigned",
-        "never",
-        "changes"
+        "artifact"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"EpisodeOfCare.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"EpisodeOfCare.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.text",
@@ -54,49 +45,40 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
       "coreKeywords": [
         "episode",
         "care",
         "text",
-        "dropdown",
-        "human",
-        "readable",
-        "narrative",
+        "textinput",
         "summary",
         "resource",
-        "can",
-        "used",
-        "represent",
-        "content",
-        "need",
-        "not",
-        "encode",
-        "all",
-        "structured",
-        "data",
-        "but",
-        "required",
-        "contain",
-        "sufficient",
-        "detail",
-        "make",
-        "clinically",
-        "safe",
-        "just",
-        "read",
-        "definitions",
-        "may",
-        "define",
-        "what",
-        "should",
-        "represented",
-        "ensure",
-        "clinical",
-        "safety"
+        "human",
+        "interpretation"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"EpisodeOfCare.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"EpisodeOfCare.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "EpisodeOfCare.contained",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"EpisodeOfCare.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.extension",
@@ -107,43 +89,19 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "episode",
         "care",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"EpisodeOfCare.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"EpisodeOfCare.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.modifierExtension",
@@ -154,66 +112,19 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored",
       "coreKeywords": [
         "episode",
         "care",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "modifies",
-        "understanding",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "allowed",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"EpisodeOfCare.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"EpisodeOfCare.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.identifier",
@@ -224,127 +135,43 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.",
+      "jsdocDefinition": "Business Identifier(s) relevant for this EpisodeOfCare",
       "coreKeywords": [
         "episode",
         "care",
         "identifier",
         "textinput",
-        "episodeofcare",
-        "may",
-        "known",
-        "different",
+        "business",
         "identifiers",
-        "contexts",
-        "use",
-        "when",
-        "external",
-        "agency",
-        "tracking",
-        "funding",
-        "purposes"
+        "relevant",
+        "episodeofcare"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"EpisodeOfCare.identifier\"\n        label: \"Enter identifier\"\n        description: \"The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "EpisodeOfCare.identifier.id",
-    "resourceType": "EpisodeOfCare",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "episode",
-        "care",
-        "identifier",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"EpisodeOfCare.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "EpisodeOfCare.identifier.extension",
-    "resourceType": "EpisodeOfCare",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "episode",
-        "care",
-        "identifier",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"EpisodeOfCare.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"EpisodeOfCare.identifier\"\n        label: \"Enter identifier\"\n        description: \"Business Identifier(s) relevant for this EpisodeOfCare\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.identifier.use",
     "resourceType": "EpisodeOfCare",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The purpose of this identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
         "identifier",
         "use",
-        "textinput",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"EpisodeOfCare.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"EpisodeOfCare.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
     "choices": [
       "usual",
       "official",
@@ -362,51 +189,185 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
         "identifier",
-        "dropdown",
-        "coded",
-        "can",
-        "used",
-        "determine",
-        "which",
-        "use",
-        "specific",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"EpisodeOfCare.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"EpisodeOfCare.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
   },
   {
-    "path": "EpisodeOfCare.identifier.system",
+    "path": "EpisodeOfCare.identifier.type.coding",
     "resourceType": "EpisodeOfCare",
-    "primitiveType": "Uri",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"EpisodeOfCare.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "EpisodeOfCare.identifier.type.coding.system",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"EpisodeOfCare.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "EpisodeOfCare.identifier.type.coding.version",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"EpisodeOfCare.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "EpisodeOfCare.identifier.type.coding.code",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"EpisodeOfCare.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "EpisodeOfCare.identifier.type.coding.display",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"EpisodeOfCare.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "EpisodeOfCare.identifier.type.coding.userSelected",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"EpisodeOfCare.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "EpisodeOfCare.identifier.type.text",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"EpisodeOfCare.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "EpisodeOfCare.identifier.system",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
         "identifier",
         "system",
-        "textinput",
-        "establishes",
-        "namespace",
-        "url",
-        "describes",
-        "set",
-        "values",
-        "are",
-        "unique"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"EpisodeOfCare.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"EpisodeOfCare.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.identifier.value",
@@ -417,24 +378,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
         "identifier",
-        "textinput",
-        "portion",
-        "typically",
-        "relevant",
-        "user",
-        "which",
-        "unique",
-        "within",
-        "context",
-        "system"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"EpisodeOfCare.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"EpisodeOfCare.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.identifier.period",
@@ -445,160 +397,58 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
         "identifier",
         "period",
-        "textinput",
-        "time",
-        "during",
-        "which",
-        "iswas",
-        "valid",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"EpisodeOfCare.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "EpisodeOfCare.identifier.period.id",
-    "resourceType": "EpisodeOfCare",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "episode",
-        "care",
-        "identifier",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"EpisodeOfCare.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "EpisodeOfCare.identifier.period.extension",
-    "resourceType": "EpisodeOfCare",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "episode",
-        "care",
-        "identifier",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"EpisodeOfCare.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"EpisodeOfCare.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.identifier.period.start",
     "resourceType": "EpisodeOfCare",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
         "identifier",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"EpisodeOfCare.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"EpisodeOfCare.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "EpisodeOfCare.identifier.period.end",
     "resourceType": "EpisodeOfCare",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
         "identifier",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"EpisodeOfCare.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"EpisodeOfCare.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "EpisodeOfCare.identifier.assigner",
@@ -609,57 +459,61 @@
     "outboundEdges": [
       {
         "relationshipType": "assigner-link",
-        "targetResource": "assigner",
-        "traversalPath": "assigner.id"
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
         "identifier",
         "assigner",
-        "dropdown",
-        "organization",
-        "issuedmanages"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"EpisodeOfCare.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"EpisodeOfCare.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.status",
     "resourceType": "EpisodeOfCare",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"cancelled\\\" | \\\"entered-in-error\\\" | \\\"planned\\\" | \\\"finished\\\" | \\\"active\\\" | \\\"waitlist\\\" | \\\"onhold\\\") \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"planned\\\" | \\\"waitlist\\\" | \\\"active\\\" | \\\"onhold\\\" | \\\"finished\\\" | \\\"cancelled\\\" | \\\"entered-in-error\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "planned | waitlist | active | onhold | finished | cancelled.",
+      "jsdocDefinition": "planned | waitlist | active | onhold | finished | cancelled | entered-in-error",
       "coreKeywords": [
         "episode",
         "care",
         "status",
-        "textinput",
+        "dropdown",
         "planned",
         "waitlist",
         "active",
         "onhold",
         "finished",
-        "cancelled"
+        "cancelled",
+        "entered",
+        "error"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"EpisodeOfCare.status\"\n        label: \"Enter status\"\n        description: \"planned | waitlist | active | onhold | finished | cancelled.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"EpisodeOfCare.status\"\n        label: \"Enter status\"\n        description: \"planned | waitlist | active | onhold | finished | cancelled | entered-in-error\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/episode-of-care-status"
+    },
     "choices": [
-      "cancelled",
-      "entered-in-error",
       "planned",
-      "finished",
-      "active",
       "waitlist",
-      "onhold"
+      "active",
+      "onhold",
+      "finished",
+      "cancelled",
+      "entered-in-error"
     ]
   },
   {
@@ -667,60 +521,29 @@
     "resourceType": "EpisodeOfCare",
     "primitiveType": "object",
     "isArray": true,
-    "arrayTargetType": "EpisodeOfCareStatusHistory",
+    "arrayTargetType": "BackboneElement",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"status_history\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).",
+      "jsdocDefinition": "Past list of status codes (the current status may be included to cover the start date of the status)",
       "coreKeywords": [
         "episode",
         "care",
         "status",
         "history",
         "textinput",
-        "statuses",
-        "episodeofcare",
-        "has",
-        "through",
-        "without",
-        "requiring",
-        "processing",
-        "resource"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"status_history\"\n        path: \"EpisodeOfCare.statusHistory\"\n        label: \"Enter statusHistory\"\n        description: \"The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "EpisodeOfCare.statusHistory.id",
-    "resourceType": "EpisodeOfCare",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "episode",
-        "care",
-        "status",
-        "history",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
+        "past",
+        "list",
+        "codes",
+        "current",
         "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
+        "included",
+        "cover",
+        "start",
+        "date"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"EpisodeOfCare.statusHistory.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"status_history\"\n        path: \"EpisodeOfCare.statusHistory\"\n        label: \"Enter statusHistory\"\n        description: \"Past list of status codes (the current status may be included to cover the start date of the status)\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.statusHistory.extension",
@@ -731,44 +554,21 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "episode",
         "care",
         "status",
         "history",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"EpisodeOfCare.statusHistory.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"EpisodeOfCare.statusHistory.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.statusHistory.modifierExtension",
@@ -779,7 +579,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "episode",
         "care",
@@ -787,96 +587,55 @@
         "history",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"EpisodeOfCare.statusHistory.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"EpisodeOfCare.statusHistory.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.statusHistory.status",
     "resourceType": "EpisodeOfCare",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"cancelled\\\" | \\\"entered-in-error\\\" | \\\"planned\\\" | \\\"finished\\\" | \\\"active\\\" | \\\"waitlist\\\" | \\\"onhold\\\") \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"planned\\\" | \\\"waitlist\\\" | \\\"active\\\" | \\\"onhold\\\" | \\\"finished\\\" | \\\"cancelled\\\" | \\\"entered-in-error\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "planned | waitlist | active | onhold | finished | cancelled.",
+      "jsdocDefinition": "planned | waitlist | active | onhold | finished | cancelled | entered-in-error",
       "coreKeywords": [
         "episode",
         "care",
         "status",
         "history",
-        "textinput",
+        "dropdown",
         "planned",
         "waitlist",
         "active",
         "onhold",
         "finished",
-        "cancelled"
+        "cancelled",
+        "entered",
+        "error"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"EpisodeOfCare.statusHistory.status\"\n        label: \"Enter status\"\n        description: \"planned | waitlist | active | onhold | finished | cancelled.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"EpisodeOfCare.statusHistory.status\"\n        label: \"Enter status\"\n        description: \"planned | waitlist | active | onhold | finished | cancelled | entered-in-error\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/episode-of-care-status"
+    },
     "choices": [
-      "cancelled",
-      "entered-in-error",
       "planned",
-      "finished",
-      "active",
       "waitlist",
-      "onhold"
+      "active",
+      "onhold",
+      "finished",
+      "cancelled",
+      "entered-in-error"
     ]
   },
   {
@@ -888,7 +647,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The period during this EpisodeOfCare that the specific status applied.",
+      "jsdocDefinition": "Duration the EpisodeOfCare was in the specified status",
       "coreKeywords": [
         "episode",
         "care",
@@ -896,106 +655,23 @@
         "history",
         "period",
         "textinput",
-        "during",
+        "duration",
         "episodeofcare",
-        "specific",
-        "applied"
+        "specified"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"EpisodeOfCare.statusHistory.period\"\n        label: \"Enter period\"\n        description: \"The period during this EpisodeOfCare that the specific status applied.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "EpisodeOfCare.statusHistory.period.id",
-    "resourceType": "EpisodeOfCare",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "episode",
-        "care",
-        "status",
-        "history",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"EpisodeOfCare.statusHistory.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "EpisodeOfCare.statusHistory.period.extension",
-    "resourceType": "EpisodeOfCare",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "episode",
-        "care",
-        "status",
-        "history",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"EpisodeOfCare.statusHistory.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"EpisodeOfCare.statusHistory.period\"\n        label: \"Enter period\"\n        description: \"Duration the EpisodeOfCare was in the specified status\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.statusHistory.period.start",
     "resourceType": "EpisodeOfCare",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
@@ -1003,23 +679,21 @@
         "history",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"EpisodeOfCare.statusHistory.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"EpisodeOfCare.statusHistory.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "EpisodeOfCare.statusHistory.period.end",
     "resourceType": "EpisodeOfCare",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
@@ -1027,24 +701,10 @@
         "history",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"EpisodeOfCare.statusHistory.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"EpisodeOfCare.statusHistory.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "EpisodeOfCare.type",
@@ -1055,31 +715,173 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A classification of the type of episode of care; e.g. specialist referral, disease management, type of funded care.",
+      "jsdocDefinition": "Type/class  - e.g. specialist referral, disease management",
       "coreKeywords": [
         "episode",
         "care",
         "multiselect",
-        "classification",
+        "typeclass",
         "specialist",
         "referral",
         "disease",
-        "management",
-        "funded"
+        "management"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"EpisodeOfCare.type\"\n        label: \"Enter type\"\n        description: \"A classification of the type of episode of care; e.g. specialist referral, disease management, type of funded care.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"EpisodeOfCare.type\"\n        label: \"Enter type\"\n        description: \"Type/class  - e.g. specialist referral, disease management\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/episodeofcare-type"
+    }
+  },
+  {
+    "path": "EpisodeOfCare.type.coding",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"EpisodeOfCare.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "EpisodeOfCare.type.coding.system",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"EpisodeOfCare.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "EpisodeOfCare.type.coding.version",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"EpisodeOfCare.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "EpisodeOfCare.type.coding.code",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"EpisodeOfCare.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "EpisodeOfCare.type.coding.display",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"EpisodeOfCare.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "EpisodeOfCare.type.coding.userSelected",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"EpisodeOfCare.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "EpisodeOfCare.type.text",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"EpisodeOfCare.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.diagnosis",
     "resourceType": "EpisodeOfCare",
     "primitiveType": "object",
     "isArray": true,
-    "arrayTargetType": "EpisodeOfCareDiagnosis",
+    "arrayTargetType": "BackboneElement",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"diagnosis\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The list of diagnosis relevant to this episode of care.",
+      "jsdocDefinition": "The list of diagnosis relevant to this episode of care",
       "coreKeywords": [
         "episode",
         "care",
@@ -1089,38 +891,7 @@
         "relevant"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"diagnosis\"\n        path: \"EpisodeOfCare.diagnosis\"\n        label: \"Enter diagnosis\"\n        description: \"The list of diagnosis relevant to this episode of care.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "EpisodeOfCare.diagnosis.id",
-    "resourceType": "EpisodeOfCare",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "episode",
-        "care",
-        "diagnosis",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"EpisodeOfCare.diagnosis.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"diagnosis\"\n        path: \"EpisodeOfCare.diagnosis\"\n        label: \"Enter diagnosis\"\n        description: \"The list of diagnosis relevant to this episode of care\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.diagnosis.extension",
@@ -1131,43 +902,20 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "episode",
         "care",
         "diagnosis",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"EpisodeOfCare.diagnosis.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"EpisodeOfCare.diagnosis.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.diagnosis.modifierExtension",
@@ -1178,69 +926,22 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "episode",
         "care",
         "diagnosis",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"EpisodeOfCare.diagnosis.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"EpisodeOfCare.diagnosis.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.diagnosis.condition",
@@ -1251,26 +952,23 @@
     "outboundEdges": [
       {
         "relationshipType": "condition-link",
-        "targetResource": "condition",
-        "traversalPath": "condition.id"
+        "targetResource": "Condition",
+        "traversalPath": "Condition.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"condition\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A list of conditions/problems/diagnoses that this episode of care is intended to be providing care for.",
+      "jsdocDefinition": "Conditions/problems/diagnoses this episode of care is for",
       "coreKeywords": [
         "episode",
         "care",
         "diagnosis",
         "condition",
-        "dropdown",
-        "list",
-        "conditionsproblemsdiagnoses",
-        "intended",
-        "providing"
+        "textinput",
+        "conditionsproblemsdiagnoses"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"condition\"\n        path: \"EpisodeOfCare.diagnosis.condition\"\n        label: \"Enter condition\"\n        description: \"A list of conditions/problems/diagnoses that this episode of care is intended to be providing care for.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"condition\"\n        path: \"EpisodeOfCare.diagnosis.condition\"\n        label: \"Enter condition\"\n        description: \"Conditions/problems/diagnoses this episode of care is for\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.diagnosis.role",
@@ -1281,7 +979,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"role\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Role that this diagnosis has within the episode of care (e.g. admission, billing, discharge …).",
+      "jsdocDefinition": "Role that this diagnosis has within the episode of care (e.g. admission, billing, discharge …)",
       "coreKeywords": [
         "episode",
         "care",
@@ -1295,29 +993,186 @@
         "discharge"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"role\"\n        path: \"EpisodeOfCare.diagnosis.role\"\n        label: \"Enter role\"\n        description: \"Role that this diagnosis has within the episode of care (e.g. admission, billing, discharge …).\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"role\"\n        path: \"EpisodeOfCare.diagnosis.role\"\n        label: \"Enter role\"\n        description: \"Role that this diagnosis has within the episode of care (e.g. admission, billing, discharge …)\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/diagnosis-role"
+    }
+  },
+  {
+    "path": "EpisodeOfCare.diagnosis.role.coding",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "diagnosis",
+        "role",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"EpisodeOfCare.diagnosis.role.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "EpisodeOfCare.diagnosis.role.coding.system",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "diagnosis",
+        "role",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"EpisodeOfCare.diagnosis.role.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "EpisodeOfCare.diagnosis.role.coding.version",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "diagnosis",
+        "role",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"EpisodeOfCare.diagnosis.role.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "EpisodeOfCare.diagnosis.role.coding.code",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "diagnosis",
+        "role",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"EpisodeOfCare.diagnosis.role.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "EpisodeOfCare.diagnosis.role.coding.display",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "diagnosis",
+        "role",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"EpisodeOfCare.diagnosis.role.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "EpisodeOfCare.diagnosis.role.coding.userSelected",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "diagnosis",
+        "role",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"EpisodeOfCare.diagnosis.role.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "EpisodeOfCare.diagnosis.role.text",
+    "resourceType": "EpisodeOfCare",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "episode",
+        "care",
+        "diagnosis",
+        "role",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"EpisodeOfCare.diagnosis.role.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.diagnosis.rank",
     "resourceType": "EpisodeOfCare",
-    "primitiveType": "object",
+    "primitiveType": "positiveInt",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Ranking of the diagnosis (for each role type).",
+      "jsdocDefinition": "Ranking of the diagnosis (for each role type)",
       "coreKeywords": [
         "episode",
         "care",
         "diagnosis",
         "rank",
-        "textinput",
+        "numericinput",
         "ranking",
         "role"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"EpisodeOfCare.diagnosis.rank\"\n        label: \"Enter rank\"\n        description: \"Ranking of the diagnosis (for each role type).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"EpisodeOfCare.diagnosis.rank\"\n        label: \"Enter rank\"\n        description: \"Ranking of the diagnosis (for each role type)\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "EpisodeOfCare.patient",
@@ -1328,23 +1183,23 @@
     "outboundEdges": [
       {
         "relationshipType": "patient-link",
-        "targetResource": "patient",
-        "traversalPath": "patient.id"
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"patient\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The patient who is the focus of this episode of care.",
+      "jsdocDefinition": "The patient who is the focus of this episode of care",
       "coreKeywords": [
         "episode",
         "care",
         "patient",
-        "dropdown",
+        "textinput",
         "who",
         "focus"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"patient\"\n        path: \"EpisodeOfCare.patient\"\n        label: \"Enter patient\"\n        description: \"The patient who is the focus of this episode of care.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"patient\"\n        path: \"EpisodeOfCare.patient\"\n        label: \"Enter patient\"\n        description: \"The patient who is the focus of this episode of care\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.managingOrganization",
@@ -1355,28 +1210,23 @@
     "outboundEdges": [
       {
         "relationshipType": "managingOrganization-link",
-        "targetResource": "managingOrganization",
-        "traversalPath": "managingOrganization.id"
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"managing_organization\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The organization that has assumed the specific responsibilities for the specified duration.",
+      "jsdocDefinition": "Organization that assumes care",
       "coreKeywords": [
         "episode",
         "care",
         "managing",
         "organization",
-        "dropdown",
-        "has",
-        "assumed",
-        "specific",
-        "responsibilities",
-        "specified",
-        "duration"
+        "textinput",
+        "assumes"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"managing_organization\"\n        path: \"EpisodeOfCare.managingOrganization\"\n        label: \"Enter managingOrganization\"\n        description: \"The organization that has assumed the specific responsibilities for the specified duration.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"managing_organization\"\n        path: \"EpisodeOfCare.managingOrganization\"\n        label: \"Enter managingOrganization\"\n        description: \"Organization that assumes care\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.period",
@@ -1387,7 +1237,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The interval during which the managing organization assumes the defined responsibility.",
+      "jsdocDefinition": "Interval during responsibility is assumed",
       "coreKeywords": [
         "episode",
         "care",
@@ -1395,149 +1245,51 @@
         "textinput",
         "interval",
         "during",
-        "which",
-        "managing",
-        "organization",
-        "assumes",
-        "defined",
-        "responsibility"
+        "responsibility",
+        "assumed"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"EpisodeOfCare.period\"\n        label: \"Enter period\"\n        description: \"The interval during which the managing organization assumes the defined responsibility.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "EpisodeOfCare.period.id",
-    "resourceType": "EpisodeOfCare",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "episode",
-        "care",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"EpisodeOfCare.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "EpisodeOfCare.period.extension",
-    "resourceType": "EpisodeOfCare",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "episode",
-        "care",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"EpisodeOfCare.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"EpisodeOfCare.period\"\n        label: \"Enter period\"\n        description: \"Interval during responsibility is assumed\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.period.start",
     "resourceType": "EpisodeOfCare",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"EpisodeOfCare.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"EpisodeOfCare.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "EpisodeOfCare.period.end",
     "resourceType": "EpisodeOfCare",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "episode",
         "care",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"EpisodeOfCare.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"EpisodeOfCare.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "EpisodeOfCare.referralRequest",
@@ -1548,28 +1300,24 @@
     "outboundEdges": [
       {
         "relationshipType": "referralRequest-link",
-        "targetResource": "referralRequest",
-        "traversalPath": "referralRequest.id"
+        "targetResource": "ServiceRequest",
+        "traversalPath": "ServiceRequest.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"referral_request\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.",
+      "jsdocDefinition": "Originating Referral Request(s)",
       "coreKeywords": [
         "episode",
         "care",
         "referral",
         "request",
-        "multiselect",
-        "requests",
-        "are",
-        "fulfilled",
-        "episodeofcare",
-        "incoming",
-        "referrals"
+        "textinput",
+        "originating",
+        "requests"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"referral_request\"\n        path: \"EpisodeOfCare.referralRequest\"\n        label: \"Enter referralRequest\"\n        description: \"Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"referral_request\"\n        path: \"EpisodeOfCare.referralRequest\"\n        label: \"Enter referralRequest\"\n        description: \"Originating Referral Request(s)\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.careManager",
@@ -1580,25 +1328,29 @@
     "outboundEdges": [
       {
         "relationshipType": "careManager-link",
-        "targetResource": "careManager",
-        "traversalPath": "careManager.id"
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "careManager-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"care_manager\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The practitioner that is the care manager/care coordinator for this patient.",
+      "jsdocDefinition": "Care manager/care coordinator for the patient",
       "coreKeywords": [
         "episode",
         "care",
         "manager",
-        "dropdown",
-        "practitioner",
+        "textinput",
         "managercare",
         "coordinator",
         "patient"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"care_manager\"\n        path: \"EpisodeOfCare.careManager\"\n        label: \"Enter careManager\"\n        description: \"The practitioner that is the care manager/care coordinator for this patient.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"care_manager\"\n        path: \"EpisodeOfCare.careManager\"\n        label: \"Enter careManager\"\n        description: \"Care manager/care coordinator for the patient\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.team",
@@ -1609,27 +1361,24 @@
     "outboundEdges": [
       {
         "relationshipType": "team-link",
-        "targetResource": "team",
-        "traversalPath": "team.id"
+        "targetResource": "CareTeam",
+        "traversalPath": "CareTeam.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"team\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The list of practitioners that may be facilitating this episode of care for specific purposes.",
+      "jsdocDefinition": "Other practitioners facilitating this episode of care",
       "coreKeywords": [
         "episode",
         "care",
         "team",
-        "multiselect",
-        "list",
+        "textinput",
+        "other",
         "practitioners",
-        "may",
-        "facilitating",
-        "specific",
-        "purposes"
+        "facilitating"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"team\"\n        path: \"EpisodeOfCare.team\"\n        label: \"Enter team\"\n        description: \"The list of practitioners that may be facilitating this episode of care for specific purposes.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"team\"\n        path: \"EpisodeOfCare.team\"\n        label: \"Enter team\"\n        description: \"Other practitioners facilitating this episode of care\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "EpisodeOfCare.account",
@@ -1640,18 +1389,18 @@
     "outboundEdges": [
       {
         "relationshipType": "account-link",
-        "targetResource": "account",
-        "traversalPath": "account.id"
+        "targetResource": "Account",
+        "traversalPath": "Account.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"account\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The set of accounts that may be used for billing for this EpisodeOfCare.",
+      "jsdocDefinition": "The set of accounts that may be used for billing for this EpisodeOfCare",
       "coreKeywords": [
         "episode",
         "care",
         "account",
-        "multiselect",
+        "textinput",
         "set",
         "accounts",
         "may",
@@ -1660,6 +1409,6 @@
         "episodeofcare"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"account\"\n        path: \"EpisodeOfCare.account\"\n        label: \"Enter account\"\n        description: \"The set of accounts that may be used for billing for this EpisodeOfCare.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"account\"\n        path: \"EpisodeOfCare.account\"\n        label: \"Enter account\"\n        description: \"The set of accounts that may be used for billing for this EpisodeOfCare\"\n        uiComponent: \"TextInput\""
   }
 ]

@@ -10,7 +10,7 @@
 // both at build time and request time, means there's only ever one place to fix a compiler bug.
 //
 // Requires data/form-schematics.schema.json and data/graphs.bundle.json to already exist — run
-// dictionary-builder.js + build-graphs-bundle.js first (again, `build:kernel` chains all three).
+// build-fhir-dictionary.js + build-graphs-bundle.js first (again, `build:kernel` chains all three).
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

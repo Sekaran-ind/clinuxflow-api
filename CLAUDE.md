@@ -28,6 +28,26 @@ npm install
 wrangler dev --port 8787   # default port most of clinux-frontend's src/config.js expects
 ```
 
+## FHIR conformance (ABDM IG)
+
+- The FHIR path dictionary (`data/graphs/`, `data/graphs.bundle.json`, `data/form-schematics.schema.json`)
+  is built by `tools/build-fhir-dictionary.js` from the official packages pinned in
+  `fhir-packages.json` (HL7 R4 core, terminology, extensions, and the ABDM IG `ndhm.in` 6.5.0 —
+  https://nrces.in/ndhm/fhir/r4), using clinuxflow-fhir-api's generator (copied to `tools/fhir/`;
+  change it in fhir-api first). `npm run build:kernel` fetches (sha256-verified) and rebuilds.
+  `@smile-cdr/fhirts` is no longer used.
+- `data/ig-conformance.json` drives IG conformance of extracted resources: identifier/telecom
+  slices (a YAML field's `slice:` or `fieldSlices` by id), the local identifier the IG's min-1 rule
+  needs, profile URLs, and `professionalRoles` (HPR category -> SNOMED PractitionerRole.code).
+  `local-extractor.js` also normalises cardinality from the official dictionary.
+- `data/structure-definitions/` are clinuxflow-fhir-api's IG-based profiles (copied); canonical
+  base `https://clinux.yaxb.ai/fhir`.
+- Role vs entitlement: `data/entitlements.json` (account-role grants, HPR-role grants) is the
+  policy `src/lib/shared/permissions.js` reads. The HPR role is an entitlement source
+  (PractitionerRole extension `hpr-role`), never PractitionerRole.code.
+- Provenance: `POST /api/provenance` (paid tier only) stores what devices publish; the free tier
+  never writes it.
+
 ## Known-fragile spots
 
 - `data/vitals-room.yaml` (served by `GET /api/workflow/default-blueprint`) must stay compilable

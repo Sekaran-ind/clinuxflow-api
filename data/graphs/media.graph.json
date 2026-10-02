@@ -1,0 +1,2096 @@
+[
+  {
+    "path": "Media.resourceType",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a Media resource",
+      "coreKeywords": [
+        "media",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Media.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Media resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.id",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "media",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Media.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.text",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "media",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Media.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.contained",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "media",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"Media.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.extension",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "media",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Media.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.modifierExtension",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "media",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Media.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.identifier",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Identifier(s) for the image",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "textinput",
+        "identifiers",
+        "image"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Media.identifier\"\n        label: \"Enter identifier\"\n        description: \"Identifier(s) for the image\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.identifier.use",
+    "resourceType": "Media",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Media.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "Media.identifier.type",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Media.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "Media.identifier.type.coding",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Media.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Media.identifier.type.coding.system",
+    "resourceType": "Media",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Media.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.identifier.type.coding.version",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Media.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.identifier.type.coding.code",
+    "resourceType": "Media",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Media.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Media.identifier.type.coding.display",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Media.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.identifier.type.coding.userSelected",
+    "resourceType": "Media",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Media.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Media.identifier.type.text",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Media.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.identifier.system",
+    "resourceType": "Media",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Media.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.identifier.value",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Media.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.identifier.period",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Media.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.identifier.period.start",
+    "resourceType": "Media",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Media.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Media.identifier.period.end",
+    "resourceType": "Media",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Media.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Media.identifier.assigner",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Media.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.basedOn",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "ServiceRequest",
+        "traversalPath": "ServiceRequest.id"
+      },
+      {
+        "relationshipType": "basedOn-link",
+        "targetResource": "CarePlan",
+        "traversalPath": "CarePlan.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"based_on\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Procedure that caused this media to be created",
+      "coreKeywords": [
+        "media",
+        "based",
+        "textinput",
+        "procedure",
+        "caused",
+        "created"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"based_on\"\n        path: \"Media.basedOn\"\n        label: \"Enter basedOn\"\n        description: \"Procedure that caused this media to be created\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.partOf",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "partOf-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"part_of\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Part of referenced event",
+      "coreKeywords": [
+        "media",
+        "part",
+        "textinput",
+        "referenced",
+        "event"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"part_of\"\n        path: \"Media.partOf\"\n        label: \"Enter partOf\"\n        description: \"Part of referenced event\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.status",
+    "resourceType": "Media",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"preparation\\\" | \\\"in-progress\\\" | \\\"not-done\\\" | \\\"on-hold\\\" | \\\"stopped\\\" | \\\"completed\\\" | \\\"entered-in-error\\\" | \\\"unknown\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown",
+      "coreKeywords": [
+        "media",
+        "status",
+        "dropdown",
+        "preparation",
+        "progress",
+        "not",
+        "done",
+        "hold",
+        "stopped",
+        "completed",
+        "entered",
+        "error",
+        "unknown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Media.status\"\n        label: \"Enter status\"\n        description: \"preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/event-status"
+    },
+    "choices": [
+      "preparation",
+      "in-progress",
+      "not-done",
+      "on-hold",
+      "stopped",
+      "completed",
+      "entered-in-error",
+      "unknown"
+    ]
+  },
+  {
+    "path": "Media.type",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Classification of media as image, video, or audio",
+      "coreKeywords": [
+        "media",
+        "dropdown",
+        "classification",
+        "image",
+        "video",
+        "audio"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Media.type\"\n        label: \"Enter type\"\n        description: \"Classification of media as image, video, or audio\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/media-type"
+    }
+  },
+  {
+    "path": "Media.type.coding",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Media.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Media.type.coding.system",
+    "resourceType": "Media",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Media.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.type.coding.version",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Media.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.type.coding.code",
+    "resourceType": "Media",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Media.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Media.type.coding.display",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Media.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.type.coding.userSelected",
+    "resourceType": "Media",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Media.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Media.type.text",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Media.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.modality",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modality\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The type of acquisition equipment/process",
+      "coreKeywords": [
+        "media",
+        "modality",
+        "dropdown",
+        "acquisition",
+        "equipmentprocess"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modality\"\n        path: \"Media.modality\"\n        label: \"Enter modality\"\n        description: \"The type of acquisition equipment/process\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/media-modality"
+    }
+  },
+  {
+    "path": "Media.modality.coding",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "modality",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Media.modality.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Media.modality.coding.system",
+    "resourceType": "Media",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "modality",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Media.modality.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.modality.coding.version",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "modality",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Media.modality.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.modality.coding.code",
+    "resourceType": "Media",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "modality",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Media.modality.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Media.modality.coding.display",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "modality",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Media.modality.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.modality.coding.userSelected",
+    "resourceType": "Media",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "modality",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Media.modality.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Media.modality.text",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "modality",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Media.modality.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.view",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"view\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Imaging view, e.g. Lateral or Antero-posterior",
+      "coreKeywords": [
+        "media",
+        "view",
+        "dropdown",
+        "imaging",
+        "lateral",
+        "antero",
+        "posterior"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"view\"\n        path: \"Media.view\"\n        label: \"Enter view\"\n        description: \"Imaging view, e.g. Lateral or Antero-posterior\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/media-view"
+    }
+  },
+  {
+    "path": "Media.view.coding",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "view",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Media.view.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Media.view.coding.system",
+    "resourceType": "Media",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "view",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Media.view.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.view.coding.version",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "view",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Media.view.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.view.coding.code",
+    "resourceType": "Media",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "view",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Media.view.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Media.view.coding.display",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "view",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Media.view.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.view.coding.userSelected",
+    "resourceType": "Media",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "view",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Media.view.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Media.view.text",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "view",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Media.view.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.subject",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Group",
+        "traversalPath": "Group.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Specimen",
+        "traversalPath": "Specimen.id"
+      },
+      {
+        "relationshipType": "subject-link",
+        "targetResource": "Location",
+        "traversalPath": "Location.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"subject\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Who/What this Media is a record of",
+      "coreKeywords": [
+        "media",
+        "subject",
+        "textinput",
+        "whowhat",
+        "record"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"subject\"\n        path: \"Media.subject\"\n        label: \"Enter subject\"\n        description: \"Who/What this Media is a record of\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.encounter",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "encounter-link",
+        "targetResource": "Encounter",
+        "traversalPath": "Encounter.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"encounter\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Encounter associated with media",
+      "coreKeywords": [
+        "media",
+        "encounter",
+        "textinput",
+        "associated"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"encounter\"\n        path: \"Media.encounter\"\n        label: \"Enter encounter\"\n        description: \"Encounter associated with media\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.created[x]",
+    "resourceType": "Media",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"created[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When Media was collected",
+      "coreKeywords": [
+        "media",
+        "createdx",
+        "datepicker",
+        "when",
+        "collected"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"created[x]\"\n        path: \"Media.created[x]\"\n        label: \"Enter created[x]\"\n        description: \"When Media was collected\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Media.createdDateTime",
+    "resourceType": "Media",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"created_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When Media was collected",
+      "coreKeywords": [
+        "media",
+        "created",
+        "date",
+        "time",
+        "datepicker",
+        "when",
+        "collected"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"created_date_time\"\n        path: \"Media.createdDateTime\"\n        label: \"Enter createdDateTime\"\n        description: \"When Media was collected\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Media.createdPeriod",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"created_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When Media was collected",
+      "coreKeywords": [
+        "media",
+        "created",
+        "period",
+        "textinput",
+        "when",
+        "collected"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"created_period\"\n        path: \"Media.createdPeriod\"\n        label: \"Enter createdPeriod\"\n        description: \"When Media was collected\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.createdPeriod.start",
+    "resourceType": "Media",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "created",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Media.createdPeriod.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Media.createdPeriod.end",
+    "resourceType": "Media",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "created",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Media.createdPeriod.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Media.issued",
+    "resourceType": "Media",
+    "primitiveType": "instant",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"issued\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Date/Time this version was made available",
+      "coreKeywords": [
+        "media",
+        "issued",
+        "textinput",
+        "datetime",
+        "version",
+        "made",
+        "available"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"issued\"\n        path: \"Media.issued\"\n        label: \"Enter issued\"\n        description: \"Date/Time this version was made available\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.operator",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "operator-link",
+        "targetResource": "Practitioner",
+        "traversalPath": "Practitioner.id"
+      },
+      {
+        "relationshipType": "operator-link",
+        "targetResource": "PractitionerRole",
+        "traversalPath": "PractitionerRole.id"
+      },
+      {
+        "relationshipType": "operator-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      },
+      {
+        "relationshipType": "operator-link",
+        "targetResource": "CareTeam",
+        "traversalPath": "CareTeam.id"
+      },
+      {
+        "relationshipType": "operator-link",
+        "targetResource": "Patient",
+        "traversalPath": "Patient.id"
+      },
+      {
+        "relationshipType": "operator-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "operator-link",
+        "targetResource": "RelatedPerson",
+        "traversalPath": "RelatedPerson.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"operator\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The person who generated the image",
+      "coreKeywords": [
+        "media",
+        "operator",
+        "textinput",
+        "person",
+        "who",
+        "generated",
+        "image"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"operator\"\n        path: \"Media.operator\"\n        label: \"Enter operator\"\n        description: \"The person who generated the image\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.reasonCode",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"reason_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Why was event performed?",
+      "coreKeywords": [
+        "media",
+        "reason",
+        "code",
+        "multiselect",
+        "why",
+        "event",
+        "performed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"reason_code\"\n        path: \"Media.reasonCode\"\n        label: \"Enter reasonCode\"\n        description: \"Why was event performed?\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/procedure-reason"
+    }
+  },
+  {
+    "path": "Media.reasonCode.coding",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "reason",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Media.reasonCode.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Media.reasonCode.coding.system",
+    "resourceType": "Media",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "reason",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Media.reasonCode.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Media.reasonCode.coding.version",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "reason",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Media.reasonCode.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Media.reasonCode.coding.code",
+    "resourceType": "Media",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "reason",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Media.reasonCode.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Media.reasonCode.coding.display",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "reason",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Media.reasonCode.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Media.reasonCode.coding.userSelected",
+    "resourceType": "Media",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "reason",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Media.reasonCode.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Media.reasonCode.text",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "reason",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Media.reasonCode.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Media.bodySite",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"body_site\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Observed body part",
+      "coreKeywords": [
+        "media",
+        "body",
+        "site",
+        "dropdown",
+        "observed",
+        "part"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"body_site\"\n        path: \"Media.bodySite\"\n        label: \"Enter bodySite\"\n        description: \"Observed body part\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+    }
+  },
+  {
+    "path": "Media.bodySite.coding",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "body",
+        "site",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Media.bodySite.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Media.bodySite.coding.system",
+    "resourceType": "Media",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "body",
+        "site",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Media.bodySite.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.bodySite.coding.version",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "body",
+        "site",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Media.bodySite.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.bodySite.coding.code",
+    "resourceType": "Media",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "body",
+        "site",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Media.bodySite.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Media.bodySite.coding.display",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "body",
+        "site",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Media.bodySite.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.bodySite.coding.userSelected",
+    "resourceType": "Media",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "body",
+        "site",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Media.bodySite.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Media.bodySite.text",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "body",
+        "site",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Media.bodySite.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.deviceName",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"device_name\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Name of the device/manufacturer",
+      "coreKeywords": [
+        "media",
+        "device",
+        "name",
+        "textinput",
+        "devicemanufacturer"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"device_name\"\n        path: \"Media.deviceName\"\n        label: \"Enter deviceName\"\n        description: \"Name of the device/manufacturer\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.device",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "device-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      },
+      {
+        "relationshipType": "device-link",
+        "targetResource": "DeviceMetric",
+        "traversalPath": "DeviceMetric.id"
+      },
+      {
+        "relationshipType": "device-link",
+        "targetResource": "Device",
+        "traversalPath": "Device.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"device\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Observing Device",
+      "coreKeywords": [
+        "media",
+        "device",
+        "textinput",
+        "observing"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"device\"\n        path: \"Media.device\"\n        label: \"Enter device\"\n        description: \"Observing Device\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.height",
+    "resourceType": "Media",
+    "primitiveType": "positiveInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"height\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Height of the image in pixels (photo/video)",
+      "coreKeywords": [
+        "media",
+        "height",
+        "numericinput",
+        "image",
+        "pixels",
+        "photovideo"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"height\"\n        path: \"Media.height\"\n        label: \"Enter height\"\n        description: \"Height of the image in pixels (photo/video)\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Media.width",
+    "resourceType": "Media",
+    "primitiveType": "positiveInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"width\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Width of the image in pixels (photo/video)",
+      "coreKeywords": [
+        "media",
+        "width",
+        "numericinput",
+        "image",
+        "pixels",
+        "photovideo"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"width\"\n        path: \"Media.width\"\n        label: \"Enter width\"\n        description: \"Width of the image in pixels (photo/video)\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Media.frames",
+    "resourceType": "Media",
+    "primitiveType": "positiveInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"frames\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Number of frames if > 1 (photo)",
+      "coreKeywords": [
+        "media",
+        "frames",
+        "numericinput",
+        "number",
+        "photo"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"frames\"\n        path: \"Media.frames\"\n        label: \"Enter frames\"\n        description: \"Number of frames if > 1 (photo)\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Media.duration",
+    "resourceType": "Media",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"duration\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Length in seconds (audio / video)",
+      "coreKeywords": [
+        "media",
+        "duration",
+        "numericinput",
+        "length",
+        "seconds",
+        "audio",
+        "video"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"duration\"\n        path: \"Media.duration\"\n        label: \"Enter duration\"\n        description: \"Length in seconds (audio / video)\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Media.content",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"content\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual Media - reference or data",
+      "coreKeywords": [
+        "media",
+        "content",
+        "textinput",
+        "actual",
+        "reference",
+        "data"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"content\"\n        path: \"Media.content\"\n        label: \"Enter content\"\n        description: \"Actual Media - reference or data\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.content.contentType",
+    "resourceType": "Media",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"content_type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "content",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"content_type\"\n        path: \"Media.content.contentType\"\n        label: \"Enter contentType\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/mimetypes"
+    }
+  },
+  {
+    "path": "Media.content.language",
+    "resourceType": "Media",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"language\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "content",
+        "language",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"language\"\n        path: \"Media.content.language\"\n        label: \"Enter language\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+    }
+  },
+  {
+    "path": "Media.content.data",
+    "resourceType": "Media",
+    "primitiveType": "base64Binary",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"data\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "content",
+        "data",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"data\"\n        path: \"Media.content.data\"\n        label: \"Enter data\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.content.url",
+    "resourceType": "Media",
+    "primitiveType": "url",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"url\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "content",
+        "url",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"Media.content.url\"\n        label: \"Enter url\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.content.size",
+    "resourceType": "Media",
+    "primitiveType": "unsignedInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"size\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "content",
+        "size",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"size\"\n        path: \"Media.content.size\"\n        label: \"Enter size\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Media.content.hash",
+    "resourceType": "Media",
+    "primitiveType": "base64Binary",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"hash\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "content",
+        "hash",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"hash\"\n        path: \"Media.content.hash\"\n        label: \"Enter hash\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.content.title",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"title\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "content",
+        "title",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"title\"\n        path: \"Media.content.title\"\n        label: \"Enter title\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.content.creation",
+    "resourceType": "Media",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"creation\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "content",
+        "creation",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"creation\"\n        path: \"Media.content.creation\"\n        label: \"Enter creation\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Media.note",
+    "resourceType": "Media",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Annotation",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"note\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Comments made about the media",
+      "coreKeywords": [
+        "media",
+        "note",
+        "textinput",
+        "comments",
+        "made",
+        "about"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"note\"\n        path: \"Media.note\"\n        label: \"Enter note\"\n        description: \"Comments made about the media\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.note.author[x]",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "author[x]-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author[x]\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "note",
+        "authorx",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author[x]\"\n        path: \"Media.note.author[x]\"\n        label: \"Enter author[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.note.authorReference",
+    "resourceType": "Media",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "authorReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"author_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "note",
+        "author",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_reference\"\n        path: \"Media.note.authorReference\"\n        label: \"Enter authorReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.note.authorString",
+    "resourceType": "Media",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"author_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "note",
+        "author",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"author_string\"\n        path: \"Media.note.authorString\"\n        label: \"Enter authorString\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Media.note.time",
+    "resourceType": "Media",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "note",
+        "time",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"time\"\n        path: \"Media.note.time\"\n        label: \"Enter time\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Media.note.text",
+    "resourceType": "Media",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "media",
+        "note",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Media.note.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  }
+]

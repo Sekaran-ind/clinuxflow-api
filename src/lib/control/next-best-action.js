@@ -31,8 +31,8 @@
 // a real, deliberate scoping to what ClinuxFlowOnboardingGraph.json actually contains (a single
 // root radiating outward), not a general rule for an arbitrary future GraphDefinition.
 
-const DIRECTION_EXT = 'https://clinuxflow.example/fhir/StructureDefinition/graph-link-direction';
-const PROFILES_EXT = 'https://clinuxflow.example/fhir/StructureDefinition/graph-link-profiles';
+const DIRECTION_EXT = 'https://clinux.yaxb.ai/fhir/StructureDefinition/graph-link-direction';
+const PROFILES_EXT = 'https://clinux.yaxb.ai/fhir/StructureDefinition/graph-link-profiles';
 
 function extensionValue(extensions, url) {
   const ext = (extensions || []).find((e) => e.url === url);

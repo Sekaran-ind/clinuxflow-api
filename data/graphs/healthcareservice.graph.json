@@ -10,11 +10,8 @@
     "semanticFingerprint": {
       "jsdocDefinition": "This is a HealthcareService resource",
       "coreKeywords": [
-        "healthcare",
-        "service",
-        "resource",
-        "textinput",
-        "healthcareservice"
+        "healthcareservice",
+        "resource"
       ]
     },
     "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"HealthcareService.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a HealthcareService resource\"\n        uiComponent: \"TextInput\""
@@ -28,22 +25,16 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+      "jsdocDefinition": "Logical id of this artifact",
       "coreKeywords": [
         "healthcare",
         "service",
         "textinput",
         "logical",
-        "resource",
-        "used",
-        "url",
-        "once",
-        "assigned",
-        "never",
-        "changes"
+        "artifact"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"HealthcareService.id\"\n        label: \"Enter id\"\n        description: \"The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"HealthcareService.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.text",
@@ -54,49 +45,40 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
       "coreKeywords": [
         "healthcare",
         "service",
         "text",
-        "dropdown",
-        "human",
-        "readable",
-        "narrative",
+        "textinput",
         "summary",
         "resource",
-        "can",
-        "used",
-        "represent",
-        "content",
-        "need",
-        "not",
-        "encode",
-        "all",
-        "structured",
-        "data",
-        "but",
-        "required",
-        "contain",
-        "sufficient",
-        "detail",
-        "make",
-        "clinically",
-        "safe",
-        "just",
-        "read",
-        "definitions",
-        "may",
-        "define",
-        "what",
-        "should",
-        "represented",
-        "ensure",
-        "clinical",
-        "safety"
+        "human",
+        "interpretation"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.text\"\n        label: \"Enter text\"\n        description: \"A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \\\"clinically safe\\\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.contained",
+    "resourceType": "HealthcareService",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"HealthcareService.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.extension",
@@ -107,43 +89,19 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "healthcare",
         "service",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.modifierExtension",
@@ -154,66 +112,19 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored",
       "coreKeywords": [
         "healthcare",
         "service",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "resource",
-        "modifies",
-        "understanding",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "allowed",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"HealthcareService.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"HealthcareService.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.identifier",
@@ -224,7 +135,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "External identifiers for this item.",
+      "jsdocDefinition": "External identifiers for this item",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -235,106 +146,31 @@
         "item"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"HealthcareService.identifier\"\n        label: \"Enter identifier\"\n        description: \"External identifiers for this item.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.identifier.id",
-    "resourceType": "HealthcareService",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "identifier",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"HealthcareService.identifier.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.identifier.extension",
-    "resourceType": "HealthcareService",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "identifier",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.identifier.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"HealthcareService.identifier\"\n        label: \"Enter identifier\"\n        description: \"External identifiers for this item\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.identifier.use",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The purpose of this identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "identifier",
         "use",
-        "textinput",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"HealthcareService.identifier.use\"\n        label: \"Enter use\"\n        description: \"The purpose of this identifier.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"HealthcareService.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
     "choices": [
       "usual",
       "official",
@@ -352,51 +188,185 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "identifier",
-        "dropdown",
-        "coded",
-        "can",
-        "used",
-        "determine",
-        "which",
-        "use",
-        "specific",
-        "purpose"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"HealthcareService.identifier.type\"\n        label: \"Enter type\"\n        description: \"A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"HealthcareService.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
   },
   {
-    "path": "HealthcareService.identifier.system",
+    "path": "HealthcareService.identifier.type.coding",
     "resourceType": "HealthcareService",
-    "primitiveType": "Uri",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"HealthcareService.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "HealthcareService.identifier.type.coding.system",
+    "resourceType": "HealthcareService",
+    "primitiveType": "uri",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.identifier.type.coding.version",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"HealthcareService.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.identifier.type.coding.code",
+    "resourceType": "HealthcareService",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.identifier.type.coding.display",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"HealthcareService.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.identifier.type.coding.userSelected",
+    "resourceType": "HealthcareService",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"HealthcareService.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "HealthcareService.identifier.type.text",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.identifier.system",
+    "resourceType": "HealthcareService",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "identifier",
         "system",
-        "textinput",
-        "establishes",
-        "namespace",
-        "url",
-        "describes",
-        "set",
-        "values",
-        "are",
-        "unique"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.identifier.system\"\n        label: \"Enter system\"\n        description: \"Establishes the namespace for the value - that is, a URL that describes a set values that are unique.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.identifier.value",
@@ -407,24 +377,15 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "identifier",
-        "textinput",
-        "portion",
-        "typically",
-        "relevant",
-        "user",
-        "which",
-        "unique",
-        "within",
-        "context",
-        "system"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"HealthcareService.identifier.value\"\n        label: \"Enter value\"\n        description: \"The portion of the identifier typically relevant to the user and which is unique within the context of the system.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"HealthcareService.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.identifier.period",
@@ -435,160 +396,58 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period during which identifier is/was valid for use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "identifier",
         "period",
-        "textinput",
-        "time",
-        "during",
-        "which",
-        "iswas",
-        "valid",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"HealthcareService.identifier.period\"\n        label: \"Enter period\"\n        description: \"Time period during which identifier is/was valid for use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.identifier.period.id",
-    "resourceType": "HealthcareService",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "identifier",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"HealthcareService.identifier.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.identifier.period.extension",
-    "resourceType": "HealthcareService",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "identifier",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.identifier.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"HealthcareService.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.identifier.period.start",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "identifier",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"HealthcareService.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"HealthcareService.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "HealthcareService.identifier.period.end",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "identifier",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"HealthcareService.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"HealthcareService.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "HealthcareService.identifier.assigner",
@@ -599,24 +458,22 @@
     "outboundEdges": [
       {
         "relationshipType": "assigner-link",
-        "targetResource": "assigner",
-        "traversalPath": "assigner.id"
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Organization that issued/manages the identifier.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "identifier",
         "assigner",
-        "dropdown",
-        "organization",
-        "issuedmanages"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"HealthcareService.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Organization that issued/manages the identifier.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"HealthcareService.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.active",
@@ -627,27 +484,19 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"active\\\": \\\"\" (true | false) \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "This flag is used to mark the record to not be used. This is not used when a center is closed for maintenance, or for holidays, the notAvailable period is to be used for this.",
+      "jsdocDefinition": "Whether this HealthcareService record is in active use",
       "coreKeywords": [
         "healthcare",
         "service",
         "active",
         "checkbox",
-        "flag",
-        "used",
-        "mark",
+        "whether",
+        "healthcareservice",
         "record",
-        "not",
-        "when",
-        "center",
-        "closed",
-        "maintenance",
-        "holidays",
-        "notavailable",
-        "period"
+        "use"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"active\"\n        path: \"HealthcareService.active\"\n        label: \"Enter active\"\n        description: \"This flag is used to mark the record to not be used. This is not used when a center is closed for maintenance, or for holidays, the notAvailable period is to be used for this.\"\n        uiComponent: \"Checkbox\""
+    "reverseYamlSnippet": "      - id: \"active\"\n        path: \"HealthcareService.active\"\n        label: \"Enter active\"\n        description: \"Whether this HealthcareService record is in active use\"\n        uiComponent: \"Checkbox\""
   },
   {
     "path": "HealthcareService.providedBy",
@@ -658,23 +507,23 @@
     "outboundEdges": [
       {
         "relationshipType": "providedBy-link",
-        "targetResource": "providedBy",
-        "traversalPath": "providedBy.id"
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"provided_by\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The organization that provides this healthcare service.",
+      "jsdocDefinition": "Organization that provides this service",
       "coreKeywords": [
         "healthcare",
         "service",
         "provided",
-        "dropdown",
+        "textinput",
         "organization",
         "provides"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"provided_by\"\n        path: \"HealthcareService.providedBy\"\n        label: \"Enter providedBy\"\n        description: \"The organization that provides this healthcare service.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"provided_by\"\n        path: \"HealthcareService.providedBy\"\n        label: \"Enter providedBy\"\n        description: \"Organization that provides this service\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.category",
@@ -685,20 +534,169 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"category\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Identifies the broad category of service being performed or delivered.",
+      "jsdocDefinition": "Broad category of service being performed or delivered",
       "coreKeywords": [
         "healthcare",
         "service",
         "category",
         "multiselect",
-        "identifies",
         "broad",
         "being",
         "performed",
         "delivered"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"category\"\n        path: \"HealthcareService.category\"\n        label: \"Enter category\"\n        description: \"Identifies the broad category of service being performed or delivered.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"category\"\n        path: \"HealthcareService.category\"\n        label: \"Enter category\"\n        description: \"Broad category of service being performed or delivered\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/service-category"
+    }
+  },
+  {
+    "path": "HealthcareService.category.coding",
+    "resourceType": "HealthcareService",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "category",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"HealthcareService.category.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "HealthcareService.category.coding.system",
+    "resourceType": "HealthcareService",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "category",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.category.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.category.coding.version",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "category",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"HealthcareService.category.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.category.coding.code",
+    "resourceType": "HealthcareService",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "category",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.category.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.category.coding.display",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "category",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"HealthcareService.category.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.category.coding.userSelected",
+    "resourceType": "HealthcareService",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "category",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"HealthcareService.category.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "HealthcareService.category.text",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "category",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.category.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.type",
@@ -709,18 +707,160 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"type\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The specific type of service that may be delivered or performed.",
+      "jsdocDefinition": "Type of service that may be delivered or performed",
       "coreKeywords": [
         "healthcare",
         "service",
         "multiselect",
-        "specific",
         "may",
         "delivered",
         "performed"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"HealthcareService.type\"\n        label: \"Enter type\"\n        description: \"The specific type of service that may be delivered or performed.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"HealthcareService.type\"\n        label: \"Enter type\"\n        description: \"Type of service that may be delivered or performed\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/service-type"
+    }
+  },
+  {
+    "path": "HealthcareService.type.coding",
+    "resourceType": "HealthcareService",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"HealthcareService.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "HealthcareService.type.coding.system",
+    "resourceType": "HealthcareService",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.type.coding.version",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"HealthcareService.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.type.coding.code",
+    "resourceType": "HealthcareService",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.type.coding.display",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"HealthcareService.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.type.coding.userSelected",
+    "resourceType": "HealthcareService",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"HealthcareService.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "HealthcareService.type.text",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.specialty",
@@ -731,22 +871,168 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"specialty\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Collection of specialties handled by the service site. This is more of a medical term.",
+      "jsdocDefinition": "Specialties handled by the HealthcareService",
       "coreKeywords": [
         "healthcare",
         "service",
         "specialty",
         "multiselect",
-        "collection",
         "specialties",
         "handled",
-        "site",
-        "more",
-        "medical",
-        "term"
+        "healthcareservice"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"specialty\"\n        path: \"HealthcareService.specialty\"\n        label: \"Enter specialty\"\n        description: \"Collection of specialties handled by the service site. This is more of a medical term.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"specialty\"\n        path: \"HealthcareService.specialty\"\n        label: \"Enter specialty\"\n        description: \"Specialties handled by the HealthcareService\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/c80-practice-codes"
+    }
+  },
+  {
+    "path": "HealthcareService.specialty.coding",
+    "resourceType": "HealthcareService",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "specialty",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"HealthcareService.specialty.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "HealthcareService.specialty.coding.system",
+    "resourceType": "HealthcareService",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "specialty",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.specialty.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.specialty.coding.version",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "specialty",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"HealthcareService.specialty.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.specialty.coding.code",
+    "resourceType": "HealthcareService",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "specialty",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.specialty.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.specialty.coding.display",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "specialty",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"HealthcareService.specialty.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.specialty.coding.userSelected",
+    "resourceType": "HealthcareService",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "specialty",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"HealthcareService.specialty.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "HealthcareService.specialty.text",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "specialty",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.specialty.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.location",
@@ -757,25 +1043,25 @@
     "outboundEdges": [
       {
         "relationshipType": "location-link",
-        "targetResource": "location",
-        "traversalPath": "location.id"
+        "targetResource": "Location",
+        "traversalPath": "Location.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"location\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The location(s) where this healthcare service may be provided.",
+      "jsdocDefinition": "Location(s) where service may be provided",
       "coreKeywords": [
         "healthcare",
         "service",
         "location",
-        "multiselect",
+        "textinput",
         "locations",
         "where",
         "may",
         "provided"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"location\"\n        path: \"HealthcareService.location\"\n        label: \"Enter location\"\n        description: \"The location(s) where this healthcare service may be provided.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"location\"\n        path: \"HealthcareService.location\"\n        label: \"Enter location\"\n        description: \"Location(s) where service may be provided\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.name",
@@ -786,22 +1072,20 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"name\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Further description of the service as it would be presented to a consumer while searching.",
+      "jsdocDefinition": "Description of service as presented to a consumer while searching",
       "coreKeywords": [
         "healthcare",
         "service",
         "name",
         "textinput",
-        "further",
         "description",
-        "would",
         "presented",
         "consumer",
         "while",
         "searching"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"HealthcareService.name\"\n        label: \"Enter name\"\n        description: \"Further description of the service as it would be presented to a consumer while searching.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"HealthcareService.name\"\n        label: \"Enter name\"\n        description: \"Description of service as presented to a consumer while searching\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.comment",
@@ -812,42 +1096,35 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"comment\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Any additional description of the service and/or any specific issues not covered by the other attributes, which can be displayed as further detail under the serviceName.",
+      "jsdocDefinition": "Additional description and/or any specific issues not covered elsewhere",
       "coreKeywords": [
         "healthcare",
         "service",
         "comment",
         "textinput",
-        "any",
         "additional",
         "description",
         "andor",
+        "any",
         "specific",
         "issues",
         "not",
         "covered",
-        "other",
-        "attributes",
-        "which",
-        "can",
-        "displayed",
-        "further",
-        "detail",
-        "servicename"
+        "elsewhere"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"comment\"\n        path: \"HealthcareService.comment\"\n        label: \"Enter comment\"\n        description: \"Any additional description of the service and/or any specific issues not covered by the other attributes, which can be displayed as further detail under the serviceName.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"comment\"\n        path: \"HealthcareService.comment\"\n        label: \"Enter comment\"\n        description: \"Additional description and/or any specific issues not covered elsewhere\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.extraDetails",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "markdown",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extra_details\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Extra details about the service that can't be placed in the other fields.",
+      "jsdocDefinition": "Extra details about the service that can't be placed in the other fields",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -861,7 +1138,7 @@
         "fields"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extra_details\"\n        path: \"HealthcareService.extraDetails\"\n        label: \"Enter extraDetails\"\n        description: \"Extra details about the service that can't be placed in the other fields.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"extra_details\"\n        path: \"HealthcareService.extraDetails\"\n        label: \"Enter extraDetails\"\n        description: \"Extra details about the service that can't be placed in the other fields\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.photo",
@@ -872,244 +1149,146 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"photo\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "If there is a photo/symbol associated with this HealthcareService, it may be included here to facilitate quick identification of the service in a list.",
+      "jsdocDefinition": "Facilitates quick identification of the service",
       "coreKeywords": [
         "healthcare",
         "service",
         "photo",
         "textinput",
-        "there",
-        "photosymbol",
-        "associated",
-        "healthcareservice",
-        "may",
-        "included",
-        "here",
-        "facilitate",
+        "facilitates",
         "quick",
-        "identification",
-        "list"
+        "identification"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"photo\"\n        path: \"HealthcareService.photo\"\n        label: \"Enter photo\"\n        description: \"If there is a photo/symbol associated with this HealthcareService, it may be included here to facilitate quick identification of the service in a list.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.photo.id",
-    "resourceType": "HealthcareService",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "photo",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"HealthcareService.photo.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.photo.extension",
-    "resourceType": "HealthcareService",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "photo",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.photo.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"photo\"\n        path: \"HealthcareService.photo\"\n        label: \"Enter photo\"\n        description: \"Facilitates quick identification of the service\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.photo.contentType",
     "resourceType": "HealthcareService",
-    "primitiveType": "Code",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"content_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"content_type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "photo",
         "content",
-        "textinput",
-        "identifies",
-        "data",
-        "attachment",
-        "allows",
-        "method",
-        "chosen",
-        "interpret",
-        "render",
-        "includes",
-        "mime",
-        "parameters",
-        "charset",
-        "where",
-        "appropriate"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"content_type\"\n        path: \"HealthcareService.photo.contentType\"\n        label: \"Enter contentType\"\n        description: \"Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"content_type\"\n        path: \"HealthcareService.photo.contentType\"\n        label: \"Enter contentType\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/mimetypes"
+    }
+  },
+  {
+    "path": "HealthcareService.photo.language",
+    "resourceType": "HealthcareService",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"language\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "photo",
+        "language",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"language\"\n        path: \"HealthcareService.photo.language\"\n        label: \"Enter language\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+    }
   },
   {
     "path": "HealthcareService.photo.data",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "base64Binary",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"data\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The actual data of the attachment - a sequence of bytes, base64 encoded.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "photo",
         "data",
-        "textinput",
-        "actual",
-        "attachment",
-        "sequence",
-        "bytes",
-        "base",
-        "encoded"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"data\"\n        path: \"HealthcareService.photo.data\"\n        label: \"Enter data\"\n        description: \"The actual data of the attachment - a sequence of bytes, base64 encoded.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"data\"\n        path: \"HealthcareService.photo.data\"\n        label: \"Enter data\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.photo.url",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "url",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"url\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A location where the data can be accessed.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "photo",
         "url",
-        "textinput",
-        "location",
-        "where",
-        "data",
-        "can",
-        "accessed"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"HealthcareService.photo.url\"\n        label: \"Enter url\"\n        description: \"A location where the data can be accessed.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"HealthcareService.photo.url\"\n        label: \"Enter url\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.photo.size",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "unsignedInt",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"size\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"size\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The number of bytes of data that make up this attachment (before base64 encoding, if that is done).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "photo",
         "size",
-        "textinput",
-        "number",
-        "bytes",
-        "data",
-        "make",
-        "attachment",
-        "before",
-        "base",
-        "encoding",
-        "done"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"size\"\n        path: \"HealthcareService.photo.size\"\n        label: \"Enter size\"\n        description: \"The number of bytes of data that make up this attachment (before base64 encoding, if that is done).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"size\"\n        path: \"HealthcareService.photo.size\"\n        label: \"Enter size\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "HealthcareService.photo.hash",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "base64Binary",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"hash\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The calculated hash of the data using SHA-1. Represented using base64.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "photo",
         "hash",
-        "textinput",
-        "calculated",
-        "data",
-        "using",
-        "sha",
-        "represented",
-        "base"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"hash\"\n        path: \"HealthcareService.photo.hash\"\n        label: \"Enter hash\"\n        description: \"The calculated hash of the data using SHA-1. Represented using base64.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"hash\"\n        path: \"HealthcareService.photo.hash\"\n        label: \"Enter hash\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.photo.title",
@@ -1120,46 +1299,36 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"title\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A label or set of text to display in place of the data.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "photo",
         "title",
-        "textinput",
-        "label",
-        "set",
-        "text",
-        "display",
-        "place",
-        "data"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"title\"\n        path: \"HealthcareService.photo.title\"\n        label: \"Enter title\"\n        description: \"A label or set of text to display in place of the data.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"title\"\n        path: \"HealthcareService.photo.title\"\n        label: \"Enter title\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.photo.creation",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"creation\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The date that the attachment was first created.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "photo",
         "creation",
-        "textinput",
-        "date",
-        "attachment",
-        "first",
-        "created"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"creation\"\n        path: \"HealthcareService.photo.creation\"\n        label: \"Enter creation\"\n        description: \"The date that the attachment was first created.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"creation\"\n        path: \"HealthcareService.photo.creation\"\n        label: \"Enter creation\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "HealthcareService.telecom",
@@ -1170,126 +1339,41 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"telecom\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "List of contacts related to this specific healthcare service.",
+      "jsdocDefinition": "Contacts related to the healthcare service",
       "coreKeywords": [
         "healthcare",
         "service",
         "telecom",
         "textinput",
-        "list",
         "contacts",
-        "related",
-        "specific"
+        "related"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"telecom\"\n        path: \"HealthcareService.telecom\"\n        label: \"Enter telecom\"\n        description: \"List of contacts related to this specific healthcare service.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.telecom.id",
-    "resourceType": "HealthcareService",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "telecom",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"HealthcareService.telecom.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.telecom.extension",
-    "resourceType": "HealthcareService",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "telecom",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.telecom.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"telecom\"\n        path: \"HealthcareService.telecom\"\n        label: \"Enter telecom\"\n        description: \"Contacts related to the healthcare service\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.telecom.system",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"system\\\": \\\"\" (\\\"phone\\\" | \\\"fax\\\" | \\\"email\\\" | \\\"pager\\\" | \\\"url\\\" | \\\"sms\\\" | \\\"other\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Telecommunications form for contact point - what communications system is required to make use of the contact.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "telecom",
         "system",
-        "textinput",
-        "telecommunications",
-        "form",
-        "contact",
-        "point",
-        "what",
-        "communications",
-        "required",
-        "make",
-        "use"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.telecom.system\"\n        label: \"Enter system\"\n        description: \"Telecommunications form for contact point - what communications system is required to make use of the contact.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.telecom.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-system"
+    },
     "choices": [
       "phone",
       "fax",
@@ -1309,94 +1393,66 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "telecom",
-        "textinput",
-        "actual",
-        "contact",
-        "point",
-        "details",
-        "form",
-        "meaningful",
-        "designated",
-        "communication",
-        "system",
-        "phone",
-        "number",
-        "email",
-        "address"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"HealthcareService.telecom.value\"\n        label: \"Enter value\"\n        description: \"The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"HealthcareService.telecom.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.telecom.use",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "code",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"temp\\\" | \\\"old\\\" | \\\"home\\\" | \\\"work\\\" | \\\"mobile\\\") \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"home\\\" | \\\"work\\\" | \\\"temp\\\" | \\\"old\\\" | \\\"mobile\\\") \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Identifies the purpose for the contact point.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "telecom",
         "use",
-        "textinput",
-        "identifies",
-        "purpose",
-        "contact",
-        "point"
+        "dropdown"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"HealthcareService.telecom.use\"\n        label: \"Enter use\"\n        description: \"Identifies the purpose for the contact point.\"\n        uiComponent: \"TextInput\"",
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"HealthcareService.telecom.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-use"
+    },
     "choices": [
-      "temp",
-      "old",
       "home",
       "work",
+      "temp",
+      "old",
       "mobile"
     ]
   },
   {
     "path": "HealthcareService.telecom.rank",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "positiveInt",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "telecom",
         "rank",
-        "textinput",
-        "specifies",
-        "preferred",
-        "order",
-        "which",
-        "use",
-        "set",
-        "contacts",
-        "contactpoints",
-        "lower",
-        "values",
-        "are",
-        "more",
-        "than",
-        "those",
-        "higher"
+        "numericinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"HealthcareService.telecom.rank\"\n        label: \"Enter rank\"\n        description: \"Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"HealthcareService.telecom.rank\"\n        label: \"Enter rank\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
   },
   {
     "path": "HealthcareService.telecom.period",
@@ -1407,160 +1463,58 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Time period when the contact point was/is in use.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "telecom",
         "period",
-        "textinput",
-        "time",
-        "when",
-        "contact",
-        "point",
-        "wasis",
-        "use"
+        "textinput"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"HealthcareService.telecom.period\"\n        label: \"Enter period\"\n        description: \"Time period when the contact point was/is in use.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.telecom.period.id",
-    "resourceType": "HealthcareService",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "telecom",
-        "period",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"HealthcareService.telecom.period.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.telecom.period.extension",
-    "resourceType": "HealthcareService",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "telecom",
-        "period",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.telecom.period.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"HealthcareService.telecom.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.telecom.period.start",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "telecom",
         "period",
         "start",
-        "textinput",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"HealthcareService.telecom.period.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"HealthcareService.telecom.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "HealthcareService.telecom.period.end",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
         "telecom",
         "period",
         "end",
-        "textinput",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"HealthcareService.telecom.period.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"HealthcareService.telecom.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "HealthcareService.coverageArea",
@@ -1571,27 +1525,25 @@
     "outboundEdges": [
       {
         "relationshipType": "coverageArea-link",
-        "targetResource": "coverageArea",
-        "traversalPath": "coverageArea.id"
+        "targetResource": "Location",
+        "traversalPath": "Location.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"coverage_area\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The location(s) that this service is available to (not where the service is provided).",
+      "jsdocDefinition": "Location(s) service is intended for/available to",
       "coreKeywords": [
         "healthcare",
         "service",
         "coverage",
         "area",
-        "multiselect",
+        "textinput",
         "locations",
-        "available",
-        "not",
-        "where",
-        "provided"
+        "intended",
+        "foravailable"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"coverage_area\"\n        path: \"HealthcareService.coverageArea\"\n        label: \"Enter coverageArea\"\n        description: \"The location(s) that this service is available to (not where the service is provided).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"coverage_area\"\n        path: \"HealthcareService.coverageArea\"\n        label: \"Enter coverageArea\"\n        description: \"Location(s) service is intended for/available to\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.serviceProvisionCode",
@@ -1602,79 +1554,198 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"service_provision_code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The code(s) that detail the conditions under which the healthcare service is available/offered.",
+      "jsdocDefinition": "Conditions under which service is available/offered",
       "coreKeywords": [
         "healthcare",
         "service",
         "provision",
         "code",
         "multiselect",
-        "codes",
-        "detail",
         "conditions",
         "which",
         "availableoffered"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"service_provision_code\"\n        path: \"HealthcareService.serviceProvisionCode\"\n        label: \"Enter serviceProvisionCode\"\n        description: \"The code(s) that detail the conditions under which the healthcare service is available/offered.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"service_provision_code\"\n        path: \"HealthcareService.serviceProvisionCode\"\n        label: \"Enter serviceProvisionCode\"\n        description: \"Conditions under which service is available/offered\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/service-provision-conditions"
+    }
+  },
+  {
+    "path": "HealthcareService.serviceProvisionCode.coding",
+    "resourceType": "HealthcareService",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "provision",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"HealthcareService.serviceProvisionCode.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "HealthcareService.serviceProvisionCode.coding.system",
+    "resourceType": "HealthcareService",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "provision",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.serviceProvisionCode.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.serviceProvisionCode.coding.version",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "provision",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"HealthcareService.serviceProvisionCode.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.serviceProvisionCode.coding.code",
+    "resourceType": "HealthcareService",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "provision",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.serviceProvisionCode.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.serviceProvisionCode.coding.display",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "provision",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"HealthcareService.serviceProvisionCode.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.serviceProvisionCode.coding.userSelected",
+    "resourceType": "HealthcareService",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "provision",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"HealthcareService.serviceProvisionCode.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "HealthcareService.serviceProvisionCode.text",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "provision",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.serviceProvisionCode.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "HealthcareService.eligibility",
     "resourceType": "HealthcareService",
     "primitiveType": "object",
     "isArray": true,
-    "arrayTargetType": "HealthcareServiceEligibility",
+    "arrayTargetType": "BackboneElement",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"eligibility\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Does this service have specific eligibility requirements that need to be met in order to use the service?",
+      "jsdocDefinition": "Specific eligibility requirements required to use the service",
       "coreKeywords": [
         "healthcare",
         "service",
         "eligibility",
         "textinput",
-        "does",
-        "have",
         "specific",
         "requirements",
-        "need",
-        "met",
-        "order",
+        "required",
         "use"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"eligibility\"\n        path: \"HealthcareService.eligibility\"\n        label: \"Enter eligibility\"\n        description: \"Does this service have specific eligibility requirements that need to be met in order to use the service?\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.eligibility.id",
-    "resourceType": "HealthcareService",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "eligibility",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"HealthcareService.eligibility.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"eligibility\"\n        path: \"HealthcareService.eligibility\"\n        label: \"Enter eligibility\"\n        description: \"Specific eligibility requirements required to use the service\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.eligibility.extension",
@@ -1685,43 +1756,20 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "healthcare",
         "service",
         "eligibility",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.eligibility.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.eligibility.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.eligibility.modifierExtension",
@@ -1732,69 +1780,22 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "healthcare",
         "service",
         "eligibility",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"HealthcareService.eligibility.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"HealthcareService.eligibility.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.eligibility.code",
@@ -1805,7 +1806,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Coded value for the eligibility.",
+      "jsdocDefinition": "Coded value for the eligibility",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -1815,18 +1816,170 @@
         "coded"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.eligibility.code\"\n        label: \"Enter code\"\n        description: \"Coded value for the eligibility.\"\n        uiComponent: \"Dropdown\""
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.eligibility.code\"\n        label: \"Enter code\"\n        description: \"Coded value for the eligibility\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.eligibility.code.coding",
+    "resourceType": "HealthcareService",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "eligibility",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"HealthcareService.eligibility.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "HealthcareService.eligibility.code.coding.system",
+    "resourceType": "HealthcareService",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "eligibility",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.eligibility.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.eligibility.code.coding.version",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "eligibility",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"HealthcareService.eligibility.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.eligibility.code.coding.code",
+    "resourceType": "HealthcareService",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "eligibility",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.eligibility.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.eligibility.code.coding.display",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "eligibility",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"HealthcareService.eligibility.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.eligibility.code.coding.userSelected",
+    "resourceType": "HealthcareService",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "eligibility",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"HealthcareService.eligibility.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "HealthcareService.eligibility.code.text",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "eligibility",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.eligibility.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
   },
   {
     "path": "HealthcareService.eligibility.comment",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "markdown",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"comment\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Describes the eligibility conditions for the service.",
+      "jsdocDefinition": "Describes the eligibility conditions for the service",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -1837,7 +1990,7 @@
         "conditions"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"comment\"\n        path: \"HealthcareService.eligibility.comment\"\n        label: \"Enter comment\"\n        description: \"Describes the eligibility conditions for the service.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"comment\"\n        path: \"HealthcareService.eligibility.comment\"\n        label: \"Enter comment\"\n        description: \"Describes the eligibility conditions for the service\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.program",
@@ -1848,7 +2001,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"program\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Programs that this service is applicable to.",
+      "jsdocDefinition": "Programs that this service is applicable to",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -1858,7 +2011,157 @@
         "applicable"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"program\"\n        path: \"HealthcareService.program\"\n        label: \"Enter program\"\n        description: \"Programs that this service is applicable to.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"program\"\n        path: \"HealthcareService.program\"\n        label: \"Enter program\"\n        description: \"Programs that this service is applicable to\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/program"
+    }
+  },
+  {
+    "path": "HealthcareService.program.coding",
+    "resourceType": "HealthcareService",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "program",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"HealthcareService.program.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "HealthcareService.program.coding.system",
+    "resourceType": "HealthcareService",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "program",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.program.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.program.coding.version",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "program",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"HealthcareService.program.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.program.coding.code",
+    "resourceType": "HealthcareService",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "program",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.program.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.program.coding.display",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "program",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"HealthcareService.program.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.program.coding.userSelected",
+    "resourceType": "HealthcareService",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "program",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"HealthcareService.program.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "HealthcareService.program.text",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "program",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.program.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.characteristic",
@@ -1869,7 +2172,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"characteristic\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Collection of characteristics (attributes).",
+      "jsdocDefinition": "Collection of characteristics (attributes)",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -1880,7 +2183,153 @@
         "attributes"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"characteristic\"\n        path: \"HealthcareService.characteristic\"\n        label: \"Enter characteristic\"\n        description: \"Collection of characteristics (attributes).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"characteristic\"\n        path: \"HealthcareService.characteristic\"\n        label: \"Enter characteristic\"\n        description: \"Collection of characteristics (attributes)\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "HealthcareService.characteristic.coding",
+    "resourceType": "HealthcareService",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "characteristic",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"HealthcareService.characteristic.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "HealthcareService.characteristic.coding.system",
+    "resourceType": "HealthcareService",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "characteristic",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.characteristic.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.characteristic.coding.version",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "characteristic",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"HealthcareService.characteristic.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.characteristic.coding.code",
+    "resourceType": "HealthcareService",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "characteristic",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.characteristic.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.characteristic.coding.display",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "characteristic",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"HealthcareService.characteristic.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.characteristic.coding.userSelected",
+    "resourceType": "HealthcareService",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "characteristic",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"HealthcareService.characteristic.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "HealthcareService.characteristic.text",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "characteristic",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.characteristic.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.communication",
@@ -1891,35 +2340,167 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"communication\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Some services are specifically made available in multiple languages, this property permits a directory to declare the languages this is offered in. Typically this is only provided where a service operates in communities with mixed languages used.",
+      "jsdocDefinition": "The language that this service is offered in",
       "coreKeywords": [
         "healthcare",
         "service",
         "communication",
         "multiselect",
-        "some",
-        "services",
-        "are",
-        "specifically",
-        "made",
-        "available",
-        "multiple",
-        "languages",
-        "permits",
-        "directory",
-        "declare",
-        "offered",
-        "typically",
-        "only",
-        "provided",
-        "where",
-        "operates",
-        "communities",
-        "mixed",
-        "used"
+        "language",
+        "offered"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"communication\"\n        path: \"HealthcareService.communication\"\n        label: \"Enter communication\"\n        description: \"Some services are specifically made available in multiple languages, this property permits a directory to declare the languages this is offered in. Typically this is only provided where a service operates in communities with mixed languages used.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"communication\"\n        path: \"HealthcareService.communication\"\n        label: \"Enter communication\"\n        description: \"The language that this service is offered in\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+    }
+  },
+  {
+    "path": "HealthcareService.communication.coding",
+    "resourceType": "HealthcareService",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "communication",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"HealthcareService.communication.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "HealthcareService.communication.coding.system",
+    "resourceType": "HealthcareService",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "communication",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.communication.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.communication.coding.version",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "communication",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"HealthcareService.communication.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.communication.coding.code",
+    "resourceType": "HealthcareService",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "communication",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.communication.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.communication.coding.display",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "communication",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"HealthcareService.communication.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.communication.coding.userSelected",
+    "resourceType": "HealthcareService",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "communication",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"HealthcareService.communication.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "HealthcareService.communication.text",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "communication",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.communication.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.referralMethod",
@@ -1930,7 +2511,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"referral_method\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required.",
+      "jsdocDefinition": "Ways that the service accepts referrals",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -1939,15 +2520,167 @@
         "multiselect",
         "ways",
         "accepts",
-        "referrals",
-        "not",
-        "provided",
-        "then",
-        "implied",
-        "required"
+        "referrals"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"referral_method\"\n        path: \"HealthcareService.referralMethod\"\n        label: \"Enter referralMethod\"\n        description: \"Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"referral_method\"\n        path: \"HealthcareService.referralMethod\"\n        label: \"Enter referralMethod\"\n        description: \"Ways that the service accepts referrals\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/service-referral-method"
+    }
+  },
+  {
+    "path": "HealthcareService.referralMethod.coding",
+    "resourceType": "HealthcareService",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "referral",
+        "method",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"HealthcareService.referralMethod.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "HealthcareService.referralMethod.coding.system",
+    "resourceType": "HealthcareService",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "referral",
+        "method",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"HealthcareService.referralMethod.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.referralMethod.coding.version",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "referral",
+        "method",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"HealthcareService.referralMethod.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.referralMethod.coding.code",
+    "resourceType": "HealthcareService",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "referral",
+        "method",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"HealthcareService.referralMethod.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "HealthcareService.referralMethod.coding.display",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "referral",
+        "method",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"HealthcareService.referralMethod.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "HealthcareService.referralMethod.coding.userSelected",
+    "resourceType": "HealthcareService",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "referral",
+        "method",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"HealthcareService.referralMethod.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "HealthcareService.referralMethod.text",
+    "resourceType": "HealthcareService",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "healthcare",
+        "service",
+        "referral",
+        "method",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"HealthcareService.referralMethod.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.appointmentRequired",
@@ -1958,83 +2691,39 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"appointment_required\\\": \\\"\" (true | false) \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.",
+      "jsdocDefinition": "If an appointment is required for access to this service",
       "coreKeywords": [
         "healthcare",
         "service",
         "appointment",
         "required",
         "checkbox",
-        "indicates",
-        "whether",
-        "not",
-        "prospective",
-        "consumer",
-        "will",
-        "require",
-        "particular",
-        "site",
-        "provided",
-        "organization",
         "access"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"appointment_required\"\n        path: \"HealthcareService.appointmentRequired\"\n        label: \"Enter appointmentRequired\"\n        description: \"Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.\"\n        uiComponent: \"Checkbox\""
+    "reverseYamlSnippet": "      - id: \"appointment_required\"\n        path: \"HealthcareService.appointmentRequired\"\n        label: \"Enter appointmentRequired\"\n        description: \"If an appointment is required for access to this service\"\n        uiComponent: \"Checkbox\""
   },
   {
     "path": "HealthcareService.availableTime",
     "resourceType": "HealthcareService",
     "primitiveType": "object",
     "isArray": true,
-    "arrayTargetType": "HealthcareServiceAvailableTime",
+    "arrayTargetType": "BackboneElement",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"available_time\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A collection of times that the Service Site is available.",
+      "jsdocDefinition": "Times the Service Site is available",
       "coreKeywords": [
         "healthcare",
         "service",
         "available",
         "time",
         "textinput",
-        "collection",
         "times",
         "site"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"available_time\"\n        path: \"HealthcareService.availableTime\"\n        label: \"Enter availableTime\"\n        description: \"A collection of times that the Service Site is available.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.availableTime.id",
-    "resourceType": "HealthcareService",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "available",
-        "time",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "not",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"HealthcareService.availableTime.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"available_time\"\n        path: \"HealthcareService.availableTime\"\n        label: \"Enter availableTime\"\n        description: \"Times the Service Site is available\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.availableTime.extension",
@@ -2045,44 +2734,21 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "healthcare",
         "service",
         "available",
         "time",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.availableTime.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.availableTime.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.availableTime.modifierExtension",
@@ -2093,7 +2759,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -2101,73 +2767,26 @@
         "time",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "not",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"HealthcareService.availableTime.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"HealthcareService.availableTime.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.availableTime.daysOfWeek",
     "resourceType": "HealthcareService",
-    "primitiveType": "any",
+    "primitiveType": "code",
     "isArray": true,
-    "arrayTargetType": "any",
+    "arrayTargetType": "code",
     "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"days_of_week\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "gbnfRuleToken": "\"\\\"days_of_week\\\": [ \" ( \\\"\" (\\\"mon\\\" | \\\"tue\\\" | \\\"wed\\\" | \\\"thu\\\" | \\\"fri\\\" | \\\"sat\\\" | \\\"sun\\\") \"\\\"\" ( \", \\\"\" (\\\"mon\\\" | \\\"tue\\\" | \\\"wed\\\" | \\\"thu\\\" | \\\"fri\\\" | \\\"sat\\\" | \\\"sun\\\") \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Indicates which days of the week are available between the start and end Times.",
+      "jsdocDefinition": "mon | tue | wed | thu | fri | sat | sun",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -2175,17 +2794,30 @@
         "time",
         "days",
         "week",
-        "textinput",
-        "indicates",
-        "which",
-        "are",
-        "between",
-        "start",
-        "end",
-        "times"
+        "multiselect",
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"days_of_week\"\n        path: \"HealthcareService.availableTime.daysOfWeek\"\n        label: \"Enter daysOfWeek\"\n        description: \"Indicates which days of the week are available between the start and end Times.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"days_of_week\"\n        path: \"HealthcareService.availableTime.daysOfWeek\"\n        label: \"Enter daysOfWeek\"\n        description: \"mon | tue | wed | thu | fri | sat | sun\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/days-of-week"
+    },
+    "choices": [
+      "mon",
+      "tue",
+      "wed",
+      "thu",
+      "fri",
+      "sat",
+      "sun"
+    ]
   },
   {
     "path": "HealthcareService.availableTime.allDay",
@@ -2196,7 +2828,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"all_day\\\": \\\"\" (true | false) \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Is this always available? (hence times are irrelevant) e.g. 24 hour service.",
+      "jsdocDefinition": "Always available? e.g. 24 hour service",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -2206,25 +2838,21 @@
         "day",
         "checkbox",
         "always",
-        "hence",
-        "times",
-        "are",
-        "irrelevant",
         "hour"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"all_day\"\n        path: \"HealthcareService.availableTime.allDay\"\n        label: \"Enter allDay\"\n        description: \"Is this always available? (hence times are irrelevant) e.g. 24 hour service.\"\n        uiComponent: \"Checkbox\""
+    "reverseYamlSnippet": "      - id: \"all_day\"\n        path: \"HealthcareService.availableTime.allDay\"\n        label: \"Enter allDay\"\n        description: \"Always available? e.g. 24 hour service\"\n        uiComponent: \"Checkbox\""
   },
   {
     "path": "HealthcareService.availableTime.availableStartTime",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "time",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"available_start_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The opening time of day. Note: If the AllDay flag is set, then this time is ignored.",
+      "jsdocDefinition": "Opening time of day (ignored if allDay = true)",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -2234,26 +2862,23 @@
         "textinput",
         "opening",
         "day",
-        "note",
+        "ignored",
         "allday",
-        "flag",
-        "set",
-        "then",
-        "ignored"
+        "true"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"available_start_time\"\n        path: \"HealthcareService.availableTime.availableStartTime\"\n        label: \"Enter availableStartTime\"\n        description: \"The opening time of day. Note: If the AllDay flag is set, then this time is ignored.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"available_start_time\"\n        path: \"HealthcareService.availableTime.availableStartTime\"\n        label: \"Enter availableStartTime\"\n        description: \"Opening time of day (ignored if allDay = true)\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.availableTime.availableEndTime",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "time",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"available_end_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The closing time of day. Note: If the AllDay flag is set, then this time is ignored.",
+      "jsdocDefinition": "Closing time of day (ignored if allDay = true)",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -2263,73 +2888,37 @@
         "textinput",
         "closing",
         "day",
-        "note",
+        "ignored",
         "allday",
-        "flag",
-        "set",
-        "then",
-        "ignored"
+        "true"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"available_end_time\"\n        path: \"HealthcareService.availableTime.availableEndTime\"\n        label: \"Enter availableEndTime\"\n        description: \"The closing time of day. Note: If the AllDay flag is set, then this time is ignored.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"available_end_time\"\n        path: \"HealthcareService.availableTime.availableEndTime\"\n        label: \"Enter availableEndTime\"\n        description: \"Closing time of day (ignored if allDay = true)\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.notAvailable",
     "resourceType": "HealthcareService",
     "primitiveType": "object",
     "isArray": true,
-    "arrayTargetType": "HealthcareServiceNotAvailable",
+    "arrayTargetType": "BackboneElement",
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"not_available\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The HealthcareService is not available during this period of time due to the provided reason.",
+      "jsdocDefinition": "Not available during this time due to provided reason",
       "coreKeywords": [
         "healthcare",
         "service",
         "not",
         "available",
         "textinput",
-        "healthcareservice",
         "during",
-        "period",
         "time",
         "due",
         "provided",
         "reason"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"not_available\"\n        path: \"HealthcareService.notAvailable\"\n        label: \"Enter notAvailable\"\n        description: \"The HealthcareService is not available during this period of time due to the provided reason.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.notAvailable.id",
-    "resourceType": "HealthcareService",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "not",
-        "available",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"HealthcareService.notAvailable.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"not_available\"\n        path: \"HealthcareService.notAvailable\"\n        label: \"Enter notAvailable\"\n        description: \"Not available during this time due to provided reason\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.notAvailable.extension",
@@ -2340,43 +2929,21 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "jsdocDefinition": "Additional content defined by implementations",
       "coreKeywords": [
         "healthcare",
         "service",
         "not",
         "available",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
+        "textinput",
         "additional",
-        "information",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
+        "content",
+        "defined",
+        "implementations"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.notAvailable.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.notAvailable.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.notAvailable.modifierExtension",
@@ -2387,7 +2954,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -2395,61 +2962,15 @@
         "available",
         "modifier",
         "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "part",
-        "basic",
-        "definition",
-        "modifies",
-        "understanding",
-        "which",
-        "contained",
-        "andor",
-        "containing",
-        "elements",
-        "descendants",
-        "usually",
-        "provide",
-        "negation",
-        "qualification",
-        "make",
-        "use",
+        "textinput",
         "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met",
-        "applications",
-        "processing",
-        "resource",
-        "are",
-        "required",
-        "check",
-        "change",
-        "meaning",
-        "domainresource",
-        "including",
         "cannot",
-        "modifierextension",
-        "itself"
+        "ignored",
+        "even",
+        "unrecognized"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"HealthcareService.notAvailable.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions. Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"HealthcareService.notAvailable.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.notAvailable.description",
@@ -2460,7 +2981,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The reason that can be presented to the user as to why this time is not available.",
+      "jsdocDefinition": "Reason presented to the user explaining why time not available",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -2469,14 +2990,14 @@
         "description",
         "textinput",
         "reason",
-        "can",
         "presented",
         "user",
+        "explaining",
         "why",
         "time"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"HealthcareService.notAvailable.description\"\n        label: \"Enter description\"\n        description: \"The reason that can be presented to the user as to why this time is not available.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"HealthcareService.notAvailable.description\"\n        label: \"Enter description\"\n        description: \"Reason presented to the user explaining why time not available\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.notAvailable.during",
@@ -2487,7 +3008,7 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"during\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Service is not available (seasonally or for a public holiday) from this date.",
+      "jsdocDefinition": "Service not available from this date",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -2495,104 +3016,21 @@
         "available",
         "during",
         "textinput",
-        "seasonally",
-        "public",
-        "holiday",
         "date"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"during\"\n        path: \"HealthcareService.notAvailable.during\"\n        label: \"Enter during\"\n        description: \"Service is not available (seasonally or for a public holiday) from this date.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.notAvailable.during.id",
-    "resourceType": "HealthcareService",
-    "primitiveType": "string",
-    "isArray": false,
-    "arrayTargetType": null,
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "not",
-        "available",
-        "during",
-        "textinput",
-        "unique",
-        "within",
-        "resource",
-        "internal",
-        "references",
-        "may",
-        "any",
-        "string",
-        "does",
-        "contain",
-        "spaces"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"HealthcareService.notAvailable.during.id\"\n        label: \"Enter id\"\n        description: \"Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.\"\n        uiComponent: \"TextInput\""
-  },
-  {
-    "path": "HealthcareService.notAvailable.during.extension",
-    "resourceType": "HealthcareService",
-    "primitiveType": "polymorphic-extension",
-    "isArray": true,
-    "arrayTargetType": "Extension",
-    "outboundEdges": null,
-    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
-    "semanticFingerprint": {
-      "jsdocDefinition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "coreKeywords": [
-        "healthcare",
-        "service",
-        "not",
-        "available",
-        "during",
-        "extension",
-        "multiselect",
-        "may",
-        "used",
-        "represent",
-        "additional",
-        "information",
-        "part",
-        "basic",
-        "definition",
-        "make",
-        "use",
-        "extensions",
-        "safe",
-        "manageable",
-        "there",
-        "strict",
-        "set",
-        "governance",
-        "applied",
-        "though",
-        "any",
-        "implementer",
-        "can",
-        "define",
-        "requirements",
-        "shall",
-        "met"
-      ]
-    },
-    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"HealthcareService.notAvailable.during.extension\"\n        label: \"Enter extension\"\n        description: \"May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"during\"\n        path: \"HealthcareService.notAvailable.during\"\n        label: \"Enter during\"\n        description: \"Service not available from this date\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.notAvailable.during.start",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The start of the period. The boundary is inclusive.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -2600,24 +3038,21 @@
         "available",
         "during",
         "start",
-        "textinput",
-        "period",
-        "boundary",
-        "inclusive"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"HealthcareService.notAvailable.during.start\"\n        label: \"Enter start\"\n        description: \"The start of the period. The boundary is inclusive.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"HealthcareService.notAvailable.during.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "HealthcareService.notAvailable.during.end",
     "resourceType": "HealthcareService",
-    "primitiveType": "object",
+    "primitiveType": "dateTime",
     "isArray": false,
     "arrayTargetType": null,
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+      "jsdocDefinition": "",
       "coreKeywords": [
         "healthcare",
         "service",
@@ -2625,25 +3060,10 @@
         "available",
         "during",
         "end",
-        "textinput",
-        "period",
-        "missing",
-        "means",
-        "known",
-        "planned",
-        "time",
-        "instance",
-        "created",
-        "start",
-        "may",
-        "past",
-        "date",
-        "future",
-        "which",
-        "expectedplanned"
+        "datepicker"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"HealthcareService.notAvailable.during.end\"\n        label: \"Enter end\"\n        description: \"The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"HealthcareService.notAvailable.during.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
   },
   {
     "path": "HealthcareService.availabilityExceptions",
@@ -2654,29 +3074,17 @@
     "outboundEdges": null,
     "gbnfRuleToken": "\"\\\"availability_exceptions\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.",
+      "jsdocDefinition": "Description of availability exceptions",
       "coreKeywords": [
         "healthcare",
         "service",
         "availability",
         "exceptions",
         "textinput",
-        "description",
-        "site",
-        "public",
-        "holiday",
-        "succinctly",
-        "describing",
-        "all",
-        "possible",
-        "normal",
-        "details",
-        "available",
-        "times",
-        "not"
+        "description"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"availability_exceptions\"\n        path: \"HealthcareService.availabilityExceptions\"\n        label: \"Enter availabilityExceptions\"\n        description: \"A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.\"\n        uiComponent: \"TextInput\""
+    "reverseYamlSnippet": "      - id: \"availability_exceptions\"\n        path: \"HealthcareService.availabilityExceptions\"\n        label: \"Enter availabilityExceptions\"\n        description: \"Description of availability exceptions\"\n        uiComponent: \"TextInput\""
   },
   {
     "path": "HealthcareService.endpoint",
@@ -2687,29 +3095,27 @@
     "outboundEdges": [
       {
         "relationshipType": "endpoint-link",
-        "targetResource": "endpoint",
-        "traversalPath": "endpoint.id"
+        "targetResource": "Endpoint",
+        "traversalPath": "Endpoint.id"
       }
     ],
     "gbnfRuleToken": "\"\\\"endpoint\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
     "semanticFingerprint": {
-      "jsdocDefinition": "Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.",
+      "jsdocDefinition": "Technical endpoints providing access to electronic services operated for the healthcare service",
       "coreKeywords": [
         "healthcare",
         "service",
         "endpoint",
-        "multiselect",
+        "textinput",
         "technical",
         "endpoints",
         "providing",
         "access",
+        "electronic",
         "services",
-        "operated",
-        "specific",
-        "defined",
-        "resource"
+        "operated"
       ]
     },
-    "reverseYamlSnippet": "      - id: \"endpoint\"\n        path: \"HealthcareService.endpoint\"\n        label: \"Enter endpoint\"\n        description: \"Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.\"\n        uiComponent: \"MultiSelect\""
+    "reverseYamlSnippet": "      - id: \"endpoint\"\n        path: \"HealthcareService.endpoint\"\n        label: \"Enter endpoint\"\n        description: \"Technical endpoints providing access to electronic services operated for the healthcare service\"\n        uiComponent: \"TextInput\""
   }
 ]

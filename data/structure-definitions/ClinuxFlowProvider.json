@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "clinuxflow-provider",
-  "url": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowProvider",
+  "url": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowProvider",
   "version": "1.0.0",
   "name": "ClinuxFlowProvider",
   "title": "ClinuxFlow Provider (the person)",
@@ -11,7 +11,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "Practitioner",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Practitioner",
+  "baseDefinition": "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Practitioner",
   "derivation": "constraint",
   "differential": {
     "element": [
@@ -66,7 +66,12 @@
         "id": "Practitioner.telecom",
         "path": "Practitioner.telecom",
         "slicing": {
-          "discriminator": [{ "type": "value", "path": "system" }],
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
           "rules": "open"
         },
         "min": 0,
@@ -113,11 +118,17 @@
         "id": "Practitioner.identifier",
         "path": "Practitioner.identifier",
         "slicing": {
-          "discriminator": [{ "type": "value", "path": "system" }],
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
           "rules": "open"
         },
-        "min": 0,
-        "max": "*"
+        "min": 1,
+        "max": "*",
+        "comment": "ABDM IG 6.5.0 requires at least one identifier on Practitioner (min 1, each with a coded identifier.type). Before the ABDM registry id exists, ClinuxFlow must still emit one: its own stable record id. The hprId slice is already required."
       },
       {
         "id": "Practitioner.identifier:hprId",
@@ -132,7 +143,7 @@
         "path": "Practitioner.identifier.system",
         "min": 1,
         "max": "1",
-        "fixedUri": "https://facility.abdm.gov.in/hpr-id"
+        "fixedUri": "https://doctor.ndhm.gov.in"
       },
       {
         "id": "Practitioner.identifier:licenseNumber",
@@ -146,7 +157,12 @@
         "id": "Practitioner.extension",
         "path": "Practitioner.extension",
         "slicing": {
-          "discriminator": [{ "type": "value", "path": "url" }],
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
           "rules": "open"
         },
         "min": 0,
@@ -158,7 +174,14 @@
         "sliceName": "sourceType",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-source-type"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-source-type"
+            ]
+          }
+        ],
         "comment": "HPR: sourceType (e.g. 'AADHAAR') — how this identity was originally verified. No standard FHIR element for identity-verification provenance at this level; a real extension."
       },
       {
@@ -167,7 +190,14 @@
         "sliceName": "hpCategoryCode",
         "min": 1,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-category-code"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-category-code"
+            ]
+          }
+        ],
         "comment": "HPR createHprId: hpCategoryCode, Required — real HPR code table: 1=Doctor, 2=Nurse. Bound to that real 2-value ValueSet, not an open string."
       },
       {
@@ -176,7 +206,14 @@
         "sliceName": "hpSubCategoryCode",
         "min": 1,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-subcategory-code"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-subcategory-code"
+            ]
+          }
+        ],
         "comment": "HPR: hpSubCategoryCode, Required — real HPR code table, e.g. 1=Modern Medicine, 2=Dentist, 3=Ayurveda, 4=Unani, 89=Sowa-Rigpa, 5=Siddha, 6=Homoeopathy (doctor); 7=RANM, 9=RN & RM, 10=RLHV, 8=RN (nurse). Bound to that real, cited table — not this app's own invented specialty list."
       },
       {
@@ -185,7 +222,14 @@
         "sliceName": "council",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-registered-with-council"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-registered-with-council"
+            ]
+          }
+        ],
         "comment": "HPR: council, a real boolean (Optional)."
       },
       {
@@ -194,7 +238,14 @@
         "sliceName": "jurisdictionState",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-jurisdiction-state-code"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-jurisdiction-state-code"
+            ]
+          }
+        ],
         "comment": "HPR: stateCode (LGD state code from master data), Optional — the state this professional's registration is anchored to; distinct from any one facility's own address."
       },
       {
@@ -203,7 +254,14 @@
         "sliceName": "jurisdictionDistrict",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-jurisdiction-district-code"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-jurisdiction-district-code"
+            ]
+          }
+        ],
         "comment": "HPR: districtCode, Optional."
       },
       {
@@ -212,7 +270,14 @@
         "sliceName": "salutation",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-salutation"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-salutation"
+            ]
+          }
+        ],
         "comment": "register-professional-new: personalInformation.salutation, Optional — no standard FHIR element for a title/salutation at this level (HumanName.prefix exists but this app's own Practitioner.name is a single .text/.given/.family, not prefix-bearing), a real extension."
       },
       {
@@ -221,7 +286,14 @@
         "sliceName": "nationality",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-nationality"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-nationality"
+            ]
+          }
+        ],
         "comment": "register-professional-new: personalInformation.nationality, Optional."
       },
       {
@@ -230,7 +302,14 @@
         "sliceName": "fatherName",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-father-name"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-father-name"
+            ]
+          }
+        ],
         "comment": "register-professional-new: personalInformation.fatherName, Optional."
       },
       {
@@ -239,7 +318,14 @@
         "sliceName": "motherName",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-mother-name"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-mother-name"
+            ]
+          }
+        ],
         "comment": "register-professional-new: personalInformation.motherName, Optional."
       },
       {
@@ -248,7 +334,14 @@
         "sliceName": "spouseName",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-spouse-name"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-spouse-name"
+            ]
+          }
+        ],
         "comment": "register-professional-new: personalInformation.spouseName, Optional."
       },
       {
@@ -257,7 +350,14 @@
         "sliceName": "languagesSpoken",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-languages-spoken"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-languages-spoken"
+            ]
+          }
+        ],
         "comment": "register-professional-new: personalInformation.languagesKnown, Optional — stored as one comma-separated extension value rather than Communication.language (that binds to a coded ValueSet this app has no matching master data for; a real, if simplified, home)."
       },
       {
@@ -266,7 +366,14 @@
         "sliceName": "workCurrentlyWorking",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-currently-working"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-currently-working"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.currentlyWorking, Optional — no standard FHIR element for this on Practitioner itself (PractitionerRole.active covers active-at-a-specific-role, not a person-level employment declaration)."
       },
       {
@@ -275,7 +382,14 @@
         "sliceName": "workPurpose",
         "min": 0,
         "max": "*",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-purpose"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-purpose"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.purposeOfRegistration, Optional. NHPR user manual's own \"Nature of Work\" step explicitly allows selecting more than one (Practice/Administrative/Teaching/Teleconsultation) — widened from max:1 to max:* to match; abdmAdapter.js's buildPractitionerPayload joins the selections back into one string for the real API, whose own true singular/array shape isn't independently confirmed (same honest-gap treatment already applied elsewhere in this profile)."
       },
       {
@@ -284,7 +398,14 @@
         "sliceName": "workTeleconsultationUrl",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-teleconsultation-url"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-teleconsultation-url"
+            ]
+          }
+        ],
         "comment": "NHPR user manual's own Work Details step — a real field shown right next to Nature of Work, relevant when Teleconsultation is one of the selected options. No confirmed live API field name."
       },
       {
@@ -293,7 +414,14 @@
         "sliceName": "workStatus",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-status"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-status"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.chooseWorkStatus, Optional."
       },
       {
@@ -302,7 +430,14 @@
         "sliceName": "workReasonNotWorking",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-reason-not-working"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-reason-not-working"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.reasonForNotWorking — mandatory only when currentlyWorking is false, per the real spec's own note; enforced in the UI, not here (no conditional-required primitive in this validator yet)."
       },
       {
@@ -311,7 +446,14 @@
         "sliceName": "workFacilityId",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-id"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-facility-id"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.facilityId — the real ABDM Facility ID, once picked via ProviderWorkExperienceHost.vue's own Search Facility panel."
       },
       {
@@ -320,7 +462,14 @@
         "sliceName": "workFacilityName",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-name"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-facility-name"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.facilityName — mandatory only when facilityId isn't already known, per the real spec's own note; enforced in the UI."
       },
       {
@@ -329,7 +478,14 @@
         "sliceName": "workFacilityAddress",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-address"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-facility-address"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.facilityAddress, Optional."
       },
       {
@@ -338,7 +494,14 @@
         "sliceName": "workFacilityPincode",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-pincode"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-facility-pincode"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.pincode, Optional."
       },
       {
@@ -347,7 +510,14 @@
         "sliceName": "workFacilityType",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-type"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-facility-type"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.facilityType, Optional."
       },
       {
@@ -356,7 +526,14 @@
         "sliceName": "workFacilityDepartment",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-department"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-facility-department"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.department, Optional."
       },
       {
@@ -365,7 +542,14 @@
         "sliceName": "workFacilityDesignation",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-facility-designation"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-facility-designation"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.designation, Optional."
       },
       {
@@ -374,7 +558,14 @@
         "sliceName": "workMinistry",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-ministry"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-ministry"
+            ]
+          }
+        ],
         "comment": "register-professional-new: currentWorkDetails.facilityDeclarationData.ministry — mandatory only when chooseWorkStatus is Government or Both, per the real spec's own note; enforced in the UI. No getAllMinistry master data exists yet."
       },
       {
@@ -383,7 +574,14 @@
         "sliceName": "workGovtCategory",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-govt-category"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-govt-category"
+            ]
+          }
+        ],
         "comment": "NHPR user manual's own Work Details step: Central/State radio shown when Work Status is Government or Both, gating whether a Ministry (Central) or a state government department is being declared. No confirmed live API field name — same honest-gap treatment as :workMinistry above."
       },
       {
@@ -392,7 +590,14 @@
         "sliceName": "workPsuYesNo",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-psu-yesno"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-psu-yesno"
+            ]
+          }
+        ],
         "comment": "NHPR user manual's own Work Details step: \"Are you working in a PSU?\" — only shown when workGovtCategory is Central."
       },
       {
@@ -401,7 +606,14 @@
         "sliceName": "workPsuName",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-psu-name"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-psu-name"
+            ]
+          }
+        ],
         "comment": "NHPR user manual's own Work Details step — free text, no getAllPSU master data exists anywhere (same honest-gap treatment as :workMinistry)."
       },
       {
@@ -410,7 +622,14 @@
         "sliceName": "workGovtProofDocument",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-work-govt-proof-document"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-work-govt-proof-document"
+            ]
+          }
+        ],
         "comment": "NHPR user manual's own Work Details step — a base64 attachment (appointment letter/pay-slip/transfer order) the manual marks MANDATORY whenever Work Status is Government or Both; enforced in the UI, not here (no conditional-required primitive in this validator yet)."
       },
       {
@@ -419,7 +638,14 @@
         "sliceName": "about",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-about"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-about"
+            ]
+          }
+        ],
         "comment": "NHPR user manual, Preview Profile step (\"About\" text shown alongside public display settings before e-sign) — no real ABDM API field confirmed for this yet (no register/update-professional spec block documents it); captured locally as an honest gap, same discipline facilityTypeCode/facilitySubtype etc. already carry, in case a future spec revision adds it."
       },
       {
@@ -428,7 +654,14 @@
         "sliceName": "assistedRegistration",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-assisted-registration"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-assisted-registration"
+            ]
+          }
+        ],
         "comment": "NHPR user manual, Preview Profile step's own \"Anyone assisted you to register in HPR?\" Yes/No question — same honest-gap treatment as :about above, no confirmed live API field."
       },
       {
@@ -437,7 +670,14 @@
         "sliceName": "fullProfileSubmitted",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-full-profile-submitted"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-full-profile-submitted"
+            ]
+          }
+        ],
         "comment": "ClinuxFlow-local tracking flag, not an ABDM field — set once register-professional-new succeeds, so ProviderHprPanel.vue's own RegistrationLedger reloads onto the correct Attestation/Submitted stage instead of resetting to Preview (same role hospital_additional_info_submitted/hospital_detailed_info_submitted already play for FacilityHfrPanel.vue)."
       },
       {
@@ -446,7 +686,14 @@
         "sliceName": "publicDisplayOptout",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/hpr-public-display-optout"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/hpr-public-display-optout"
+            ]
+          }
+        ],
         "comment": "NHPR user manual's own Preview Profile step (\"Your profile will be visible to the public, choose public display settings\") — mirrors hospital_public_display_optout's existing role for Organization/HFR; staff_public_mobile/staff_landline/staff_public_email stay the always-captured fields this just gates visibility of, same relationship FacilityHfrPanel.vue's own publicDisplay reactive already has to Organization's public contact fields."
       },
       {
@@ -454,14 +701,14 @@
         "path": "Practitioner.qualification",
         "min": 0,
         "max": "*",
-        "comment": "register-professional-new: registrationAcademic.registrationData[] — a real, repeating base FHIR BackboneElement, the correct home (not an extension). Deliberately declared as a PLAIN element here, not sliced on its own nested .extension (unlike Practitioner.extension/.telecom/.identifier above) — this validator's own generic slice-cardinality check flattens a sliced array ACROSS every repetition of an enclosing repeating element (confirmed by reading resolvePath/groupElements together: resolvePath walks straight through Practitioner.qualification's own 0..* before reaching .extension, so a max:1 per-field slice check would incorrectly count e.g. 2 different qualifications' 2 separate 'country' extensions as one array of 2, failing a max:1 constraint that is actually satisfied within each qualification). Scoping slice cardinality per-repetition-of-an-array is real, separate validator work, not attempted here — ProviderQualificationsHost.vue's own YAML-side FHIR_ARRAY_PATHS entry for 'Practitioner.qualification.extension' is what keeps each qualification's own extensions correctly scoped at the DATA layer; this profile just leaves qualification.extension's own children as open/unsliced (the StructureDefinition default) rather than risk a false-positive conformance failure on exactly the multi-qualification case this app's own onboarding was built and tested against."
+        "comment": "register-professional-new: registrationAcademic.registrationData[], a repeating base FHIR BackboneElement (the correct home, not an extension)."
       },
       {
         "id": "Practitioner.qualification.code",
         "path": "Practitioner.qualification.code",
         "min": 1,
-        "max": "*",
-        "comment": "register-professional-new: registrationAcademic.registrationData[].qualification (the degree/diploma code) — the real spec's own required field per qualification entry. max is deliberately '*', not '1': this element's own path descends through Practitioner.qualification's 0..* repetition, and this validator's checkCardinality counts the FLATTENED total across every qualification (same resolvePath behavior documented on the Practitioner.qualification element just above) — a practitioner with 2 qualifications correctly produces 2 .code values total, which a max:1 here would have wrongly rejected (confirmed by reasoning through the exact multi-qualification case this app's own onboarding was tested against). min:1 still correctly means 'at least one qualification has a code' in aggregate."
+        "max": "1",
+        "comment": "register-professional-new: registrationAcademic.registrationData[].qualification, required per qualification entry. 1..1 per FHIR R4 core. (clinuxflow-api profiled this as 0..* only to work around its validator counting across every qualification; this validator counts per repetition.)"
       }
     ]
   }

@@ -1,0 +1,4754 @@
+[
+  {
+    "path": "Questionnaire.resourceType",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a Questionnaire resource",
+      "coreKeywords": [
+        "questionnaire",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"Questionnaire.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a Questionnaire resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.id",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "questionnaire",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"Questionnaire.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.text",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "questionnaire",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Questionnaire.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.contained",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "questionnaire",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"Questionnaire.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.extension",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "questionnaire",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Questionnaire.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.modifierExtension",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "questionnaire",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Questionnaire.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.url",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"url\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Canonical identifier for this questionnaire, represented as a URI (globally unique)",
+      "coreKeywords": [
+        "questionnaire",
+        "url",
+        "textinput",
+        "canonical",
+        "identifier",
+        "represented",
+        "uri",
+        "globally",
+        "unique"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"Questionnaire.url\"\n        label: \"Enter url\"\n        description: \"Canonical identifier for this questionnaire, represented as a URI (globally unique)\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.identifier",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional identifier for the questionnaire",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "textinput",
+        "additional"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"Questionnaire.identifier\"\n        label: \"Enter identifier\"\n        description: \"Additional identifier for the questionnaire\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.identifier.use",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Questionnaire.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "Questionnaire.identifier.type",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Questionnaire.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "Questionnaire.identifier.type.coding",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Questionnaire.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Questionnaire.identifier.type.coding.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.identifier.type.coding.version",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Questionnaire.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.identifier.type.coding.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.identifier.type.coding.display",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Questionnaire.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.identifier.type.coding.userSelected",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Questionnaire.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.identifier.type.text",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Questionnaire.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.identifier.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.identifier.value",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Questionnaire.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.identifier.period",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Questionnaire.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.identifier.period.start",
+    "resourceType": "Questionnaire",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Questionnaire.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Questionnaire.identifier.period.end",
+    "resourceType": "Questionnaire",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Questionnaire.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Questionnaire.identifier.assigner",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"Questionnaire.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.version",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Business version of the questionnaire",
+      "coreKeywords": [
+        "questionnaire",
+        "version",
+        "textinput",
+        "business"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Questionnaire.version\"\n        label: \"Enter version\"\n        description: \"Business version of the questionnaire\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.name",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"name\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Name for this questionnaire (computer friendly)",
+      "coreKeywords": [
+        "questionnaire",
+        "name",
+        "textinput",
+        "computer",
+        "friendly"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"Questionnaire.name\"\n        label: \"Enter name\"\n        description: \"Name for this questionnaire (computer friendly)\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.title",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"title\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Name for this questionnaire (human friendly)",
+      "coreKeywords": [
+        "questionnaire",
+        "title",
+        "textinput",
+        "name",
+        "human",
+        "friendly"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"title\"\n        path: \"Questionnaire.title\"\n        label: \"Enter title\"\n        description: \"Name for this questionnaire (human friendly)\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.derivedFrom",
+    "resourceType": "Questionnaire",
+    "primitiveType": "canonical",
+    "isArray": true,
+    "arrayTargetType": "canonical",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"derived_from\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Instantiates protocol or definition",
+      "coreKeywords": [
+        "questionnaire",
+        "derived",
+        "textinput",
+        "instantiates",
+        "protocol",
+        "definition"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"derived_from\"\n        path: \"Questionnaire.derivedFrom\"\n        label: \"Enter derivedFrom\"\n        description: \"Instantiates protocol or definition\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.status",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"draft\\\" | \\\"active\\\" | \\\"retired\\\" | \\\"unknown\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "draft | active | retired | unknown",
+      "coreKeywords": [
+        "questionnaire",
+        "status",
+        "dropdown",
+        "draft",
+        "active",
+        "retired",
+        "unknown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"Questionnaire.status\"\n        label: \"Enter status\"\n        description: \"draft | active | retired | unknown\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/publication-status"
+    },
+    "choices": [
+      "draft",
+      "active",
+      "retired",
+      "unknown"
+    ]
+  },
+  {
+    "path": "Questionnaire.experimental",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"experimental\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "For testing purposes, not real usage",
+      "coreKeywords": [
+        "questionnaire",
+        "experimental",
+        "checkbox",
+        "testing",
+        "purposes",
+        "not",
+        "real",
+        "usage"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"experimental\"\n        path: \"Questionnaire.experimental\"\n        label: \"Enter experimental\"\n        description: \"For testing purposes, not real usage\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.subjectType",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": true,
+    "arrayTargetType": "code",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"subject_type\\\": [ \" ( \\\"\" (\\\"Account\\\" | \\\"ActivityDefinition\\\" | \\\"AdverseEvent\\\" | \\\"AllergyIntolerance\\\" | \\\"Appointment\\\" | \\\"AppointmentResponse\\\" | \\\"AuditEvent\\\" | \\\"Basic\\\" | \\\"Binary\\\" | \\\"BiologicallyDerivedProduct\\\" | \\\"BodyStructure\\\" | \\\"Bundle\\\" | \\\"CapabilityStatement\\\" | \\\"CarePlan\\\" | \\\"CareTeam\\\" | \\\"CatalogEntry\\\" | \\\"ChargeItem\\\" | \\\"ChargeItemDefinition\\\" | \\\"Claim\\\" | \\\"ClaimResponse\\\" | \\\"ClinicalImpression\\\" | \\\"CodeSystem\\\" | \\\"Communication\\\" | \\\"CommunicationRequest\\\" | \\\"CompartmentDefinition\\\" | \\\"Composition\\\" | \\\"ConceptMap\\\" | \\\"Condition\\\" | \\\"Consent\\\" | \\\"Contract\\\" | \\\"Coverage\\\" | \\\"CoverageEligibilityRequest\\\" | \\\"CoverageEligibilityResponse\\\" | \\\"DetectedIssue\\\" | \\\"Device\\\" | \\\"DeviceDefinition\\\" | \\\"DeviceMetric\\\" | \\\"DeviceRequest\\\" | \\\"DeviceUseStatement\\\" | \\\"DiagnosticReport\\\" | \\\"DocumentManifest\\\" | \\\"DocumentReference\\\" | \\\"DomainResource\\\" | \\\"EffectEvidenceSynthesis\\\" | \\\"Encounter\\\" | \\\"Endpoint\\\" | \\\"EnrollmentRequest\\\" | \\\"EnrollmentResponse\\\" | \\\"EpisodeOfCare\\\" | \\\"EventDefinition\\\" | \\\"Evidence\\\" | \\\"EvidenceVariable\\\" | \\\"ExampleScenario\\\" | \\\"ExplanationOfBenefit\\\" | \\\"FamilyMemberHistory\\\" | \\\"Flag\\\" | \\\"Goal\\\" | \\\"GraphDefinition\\\" | \\\"Group\\\" | \\\"GuidanceResponse\\\" | \\\"HealthcareService\\\" | \\\"ImagingStudy\\\" | \\\"Immunization\\\" | \\\"ImmunizationEvaluation\\\" | \\\"ImmunizationRecommendation\\\" | \\\"ImplementationGuide\\\" | \\\"InsurancePlan\\\" | \\\"Invoice\\\" | \\\"Library\\\" | \\\"Linkage\\\" | \\\"List\\\" | \\\"Location\\\" | \\\"Measure\\\" | \\\"MeasureReport\\\" | \\\"Media\\\" | \\\"Medication\\\" | \\\"MedicationAdministration\\\" | \\\"MedicationDispense\\\" | \\\"MedicationKnowledge\\\" | \\\"MedicationRequest\\\" | \\\"MedicationStatement\\\" | \\\"MedicinalProduct\\\" | \\\"MedicinalProductAuthorization\\\" | \\\"MedicinalProductContraindication\\\" | \\\"MedicinalProductIndication\\\" | \\\"MedicinalProductIngredient\\\" | \\\"MedicinalProductInteraction\\\" | \\\"MedicinalProductManufactured\\\" | \\\"MedicinalProductPackaged\\\" | \\\"MedicinalProductPharmaceutical\\\" | \\\"MedicinalProductUndesirableEffect\\\" | \\\"MessageDefinition\\\" | \\\"MessageHeader\\\" | \\\"MolecularSequence\\\" | \\\"NamingSystem\\\" | \\\"NutritionOrder\\\" | \\\"Observation\\\" | \\\"ObservationDefinition\\\" | \\\"OperationDefinition\\\" | \\\"OperationOutcome\\\" | \\\"Organization\\\" | \\\"OrganizationAffiliation\\\" | \\\"Parameters\\\" | \\\"Patient\\\" | \\\"PaymentNotice\\\" | \\\"PaymentReconciliation\\\" | \\\"Person\\\" | \\\"PlanDefinition\\\" | \\\"Practitioner\\\" | \\\"PractitionerRole\\\" | \\\"Procedure\\\" | \\\"Provenance\\\" | \\\"Questionnaire\\\" | \\\"QuestionnaireResponse\\\" | \\\"RelatedPerson\\\" | \\\"RequestGroup\\\" | \\\"ResearchDefinition\\\" | \\\"ResearchElementDefinition\\\" | \\\"ResearchStudy\\\" | \\\"ResearchSubject\\\" | \\\"Resource\\\" | \\\"RiskAssessment\\\" | \\\"RiskEvidenceSynthesis\\\" | \\\"Schedule\\\" | \\\"SearchParameter\\\" | \\\"ServiceRequest\\\" | \\\"Slot\\\" | \\\"Specimen\\\" | \\\"SpecimenDefinition\\\" | \\\"StructureDefinition\\\" | \\\"StructureMap\\\" | \\\"Subscription\\\" | \\\"Substance\\\" | \\\"SubstanceNucleicAcid\\\" | \\\"SubstancePolymer\\\" | \\\"SubstanceProtein\\\" | \\\"SubstanceReferenceInformation\\\" | \\\"SubstanceSourceMaterial\\\" | \\\"SubstanceSpecification\\\" | \\\"SupplyDelivery\\\" | \\\"SupplyRequest\\\" | \\\"Task\\\" | \\\"TerminologyCapabilities\\\" | \\\"TestReport\\\" | \\\"TestScript\\\" | \\\"ValueSet\\\" | \\\"VerificationResult\\\" | \\\"VisionPrescription\\\") \"\\\"\" ( \", \\\"\" (\\\"Account\\\" | \\\"ActivityDefinition\\\" | \\\"AdverseEvent\\\" | \\\"AllergyIntolerance\\\" | \\\"Appointment\\\" | \\\"AppointmentResponse\\\" | \\\"AuditEvent\\\" | \\\"Basic\\\" | \\\"Binary\\\" | \\\"BiologicallyDerivedProduct\\\" | \\\"BodyStructure\\\" | \\\"Bundle\\\" | \\\"CapabilityStatement\\\" | \\\"CarePlan\\\" | \\\"CareTeam\\\" | \\\"CatalogEntry\\\" | \\\"ChargeItem\\\" | \\\"ChargeItemDefinition\\\" | \\\"Claim\\\" | \\\"ClaimResponse\\\" | \\\"ClinicalImpression\\\" | \\\"CodeSystem\\\" | \\\"Communication\\\" | \\\"CommunicationRequest\\\" | \\\"CompartmentDefinition\\\" | \\\"Composition\\\" | \\\"ConceptMap\\\" | \\\"Condition\\\" | \\\"Consent\\\" | \\\"Contract\\\" | \\\"Coverage\\\" | \\\"CoverageEligibilityRequest\\\" | \\\"CoverageEligibilityResponse\\\" | \\\"DetectedIssue\\\" | \\\"Device\\\" | \\\"DeviceDefinition\\\" | \\\"DeviceMetric\\\" | \\\"DeviceRequest\\\" | \\\"DeviceUseStatement\\\" | \\\"DiagnosticReport\\\" | \\\"DocumentManifest\\\" | \\\"DocumentReference\\\" | \\\"DomainResource\\\" | \\\"EffectEvidenceSynthesis\\\" | \\\"Encounter\\\" | \\\"Endpoint\\\" | \\\"EnrollmentRequest\\\" | \\\"EnrollmentResponse\\\" | \\\"EpisodeOfCare\\\" | \\\"EventDefinition\\\" | \\\"Evidence\\\" | \\\"EvidenceVariable\\\" | \\\"ExampleScenario\\\" | \\\"ExplanationOfBenefit\\\" | \\\"FamilyMemberHistory\\\" | \\\"Flag\\\" | \\\"Goal\\\" | \\\"GraphDefinition\\\" | \\\"Group\\\" | \\\"GuidanceResponse\\\" | \\\"HealthcareService\\\" | \\\"ImagingStudy\\\" | \\\"Immunization\\\" | \\\"ImmunizationEvaluation\\\" | \\\"ImmunizationRecommendation\\\" | \\\"ImplementationGuide\\\" | \\\"InsurancePlan\\\" | \\\"Invoice\\\" | \\\"Library\\\" | \\\"Linkage\\\" | \\\"List\\\" | \\\"Location\\\" | \\\"Measure\\\" | \\\"MeasureReport\\\" | \\\"Media\\\" | \\\"Medication\\\" | \\\"MedicationAdministration\\\" | \\\"MedicationDispense\\\" | \\\"MedicationKnowledge\\\" | \\\"MedicationRequest\\\" | \\\"MedicationStatement\\\" | \\\"MedicinalProduct\\\" | \\\"MedicinalProductAuthorization\\\" | \\\"MedicinalProductContraindication\\\" | \\\"MedicinalProductIndication\\\" | \\\"MedicinalProductIngredient\\\" | \\\"MedicinalProductInteraction\\\" | \\\"MedicinalProductManufactured\\\" | \\\"MedicinalProductPackaged\\\" | \\\"MedicinalProductPharmaceutical\\\" | \\\"MedicinalProductUndesirableEffect\\\" | \\\"MessageDefinition\\\" | \\\"MessageHeader\\\" | \\\"MolecularSequence\\\" | \\\"NamingSystem\\\" | \\\"NutritionOrder\\\" | \\\"Observation\\\" | \\\"ObservationDefinition\\\" | \\\"OperationDefinition\\\" | \\\"OperationOutcome\\\" | \\\"Organization\\\" | \\\"OrganizationAffiliation\\\" | \\\"Parameters\\\" | \\\"Patient\\\" | \\\"PaymentNotice\\\" | \\\"PaymentReconciliation\\\" | \\\"Person\\\" | \\\"PlanDefinition\\\" | \\\"Practitioner\\\" | \\\"PractitionerRole\\\" | \\\"Procedure\\\" | \\\"Provenance\\\" | \\\"Questionnaire\\\" | \\\"QuestionnaireResponse\\\" | \\\"RelatedPerson\\\" | \\\"RequestGroup\\\" | \\\"ResearchDefinition\\\" | \\\"ResearchElementDefinition\\\" | \\\"ResearchStudy\\\" | \\\"ResearchSubject\\\" | \\\"Resource\\\" | \\\"RiskAssessment\\\" | \\\"RiskEvidenceSynthesis\\\" | \\\"Schedule\\\" | \\\"SearchParameter\\\" | \\\"ServiceRequest\\\" | \\\"Slot\\\" | \\\"Specimen\\\" | \\\"SpecimenDefinition\\\" | \\\"StructureDefinition\\\" | \\\"StructureMap\\\" | \\\"Subscription\\\" | \\\"Substance\\\" | \\\"SubstanceNucleicAcid\\\" | \\\"SubstancePolymer\\\" | \\\"SubstanceProtein\\\" | \\\"SubstanceReferenceInformation\\\" | \\\"SubstanceSourceMaterial\\\" | \\\"SubstanceSpecification\\\" | \\\"SupplyDelivery\\\" | \\\"SupplyRequest\\\" | \\\"Task\\\" | \\\"TerminologyCapabilities\\\" | \\\"TestReport\\\" | \\\"TestScript\\\" | \\\"ValueSet\\\" | \\\"VerificationResult\\\" | \\\"VisionPrescription\\\") \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Resource that can be subject of QuestionnaireResponse",
+      "coreKeywords": [
+        "questionnaire",
+        "subject",
+        "multiselect",
+        "resource",
+        "can",
+        "questionnaireresponse"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"subject_type\"\n        path: \"Questionnaire.subjectType\"\n        label: \"Enter subjectType\"\n        description: \"Resource that can be subject of QuestionnaireResponse\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/resource-types"
+    },
+    "choices": [
+      "Account",
+      "ActivityDefinition",
+      "AdverseEvent",
+      "AllergyIntolerance",
+      "Appointment",
+      "AppointmentResponse",
+      "AuditEvent",
+      "Basic",
+      "Binary",
+      "BiologicallyDerivedProduct",
+      "BodyStructure",
+      "Bundle",
+      "CapabilityStatement",
+      "CarePlan",
+      "CareTeam",
+      "CatalogEntry",
+      "ChargeItem",
+      "ChargeItemDefinition",
+      "Claim",
+      "ClaimResponse",
+      "ClinicalImpression",
+      "CodeSystem",
+      "Communication",
+      "CommunicationRequest",
+      "CompartmentDefinition",
+      "Composition",
+      "ConceptMap",
+      "Condition",
+      "Consent",
+      "Contract",
+      "Coverage",
+      "CoverageEligibilityRequest",
+      "CoverageEligibilityResponse",
+      "DetectedIssue",
+      "Device",
+      "DeviceDefinition",
+      "DeviceMetric",
+      "DeviceRequest",
+      "DeviceUseStatement",
+      "DiagnosticReport",
+      "DocumentManifest",
+      "DocumentReference",
+      "DomainResource",
+      "EffectEvidenceSynthesis",
+      "Encounter",
+      "Endpoint",
+      "EnrollmentRequest",
+      "EnrollmentResponse",
+      "EpisodeOfCare",
+      "EventDefinition",
+      "Evidence",
+      "EvidenceVariable",
+      "ExampleScenario",
+      "ExplanationOfBenefit",
+      "FamilyMemberHistory",
+      "Flag",
+      "Goal",
+      "GraphDefinition",
+      "Group",
+      "GuidanceResponse",
+      "HealthcareService",
+      "ImagingStudy",
+      "Immunization",
+      "ImmunizationEvaluation",
+      "ImmunizationRecommendation",
+      "ImplementationGuide",
+      "InsurancePlan",
+      "Invoice",
+      "Library",
+      "Linkage",
+      "List",
+      "Location",
+      "Measure",
+      "MeasureReport",
+      "Media",
+      "Medication",
+      "MedicationAdministration",
+      "MedicationDispense",
+      "MedicationKnowledge",
+      "MedicationRequest",
+      "MedicationStatement",
+      "MedicinalProduct",
+      "MedicinalProductAuthorization",
+      "MedicinalProductContraindication",
+      "MedicinalProductIndication",
+      "MedicinalProductIngredient",
+      "MedicinalProductInteraction",
+      "MedicinalProductManufactured",
+      "MedicinalProductPackaged",
+      "MedicinalProductPharmaceutical",
+      "MedicinalProductUndesirableEffect",
+      "MessageDefinition",
+      "MessageHeader",
+      "MolecularSequence",
+      "NamingSystem",
+      "NutritionOrder",
+      "Observation",
+      "ObservationDefinition",
+      "OperationDefinition",
+      "OperationOutcome",
+      "Organization",
+      "OrganizationAffiliation",
+      "Parameters",
+      "Patient",
+      "PaymentNotice",
+      "PaymentReconciliation",
+      "Person",
+      "PlanDefinition",
+      "Practitioner",
+      "PractitionerRole",
+      "Procedure",
+      "Provenance",
+      "Questionnaire",
+      "QuestionnaireResponse",
+      "RelatedPerson",
+      "RequestGroup",
+      "ResearchDefinition",
+      "ResearchElementDefinition",
+      "ResearchStudy",
+      "ResearchSubject",
+      "Resource",
+      "RiskAssessment",
+      "RiskEvidenceSynthesis",
+      "Schedule",
+      "SearchParameter",
+      "ServiceRequest",
+      "Slot",
+      "Specimen",
+      "SpecimenDefinition",
+      "StructureDefinition",
+      "StructureMap",
+      "Subscription",
+      "Substance",
+      "SubstanceNucleicAcid",
+      "SubstancePolymer",
+      "SubstanceProtein",
+      "SubstanceReferenceInformation",
+      "SubstanceSourceMaterial",
+      "SubstanceSpecification",
+      "SupplyDelivery",
+      "SupplyRequest",
+      "Task",
+      "TerminologyCapabilities",
+      "TestReport",
+      "TestScript",
+      "ValueSet",
+      "VerificationResult",
+      "VisionPrescription"
+    ]
+  },
+  {
+    "path": "Questionnaire.date",
+    "resourceType": "Questionnaire",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Date last changed",
+      "coreKeywords": [
+        "questionnaire",
+        "date",
+        "datepicker",
+        "last",
+        "changed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"date\"\n        path: \"Questionnaire.date\"\n        label: \"Enter date\"\n        description: \"Date last changed\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Questionnaire.publisher",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"publisher\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Name of the publisher (organization or individual)",
+      "coreKeywords": [
+        "questionnaire",
+        "publisher",
+        "textinput",
+        "name",
+        "organization",
+        "individual"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"publisher\"\n        path: \"Questionnaire.publisher\"\n        label: \"Enter publisher\"\n        description: \"Name of the publisher (organization or individual)\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.contact",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "ContactDetail",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contact\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contact details for the publisher",
+      "coreKeywords": [
+        "questionnaire",
+        "contact",
+        "textinput",
+        "details",
+        "publisher"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contact\"\n        path: \"Questionnaire.contact\"\n        label: \"Enter contact\"\n        description: \"Contact details for the publisher\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.contact.name",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"name\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "contact",
+        "name",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"Questionnaire.contact.name\"\n        label: \"Enter name\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.contact.telecom",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "ContactPoint",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"telecom\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "contact",
+        "telecom",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"telecom\"\n        path: \"Questionnaire.contact.telecom\"\n        label: \"Enter telecom\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.contact.telecom.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" (\\\"phone\\\" | \\\"fax\\\" | \\\"email\\\" | \\\"pager\\\" | \\\"url\\\" | \\\"sms\\\" | \\\"other\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "contact",
+        "telecom",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.contact.telecom.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-system"
+    },
+    "choices": [
+      "phone",
+      "fax",
+      "email",
+      "pager",
+      "url",
+      "sms",
+      "other"
+    ]
+  },
+  {
+    "path": "Questionnaire.contact.telecom.value",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "contact",
+        "telecom",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Questionnaire.contact.telecom.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.contact.telecom.use",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"home\\\" | \\\"work\\\" | \\\"temp\\\" | \\\"old\\\" | \\\"mobile\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "contact",
+        "telecom",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"Questionnaire.contact.telecom.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-use"
+    },
+    "choices": [
+      "home",
+      "work",
+      "temp",
+      "old",
+      "mobile"
+    ]
+  },
+  {
+    "path": "Questionnaire.contact.telecom.rank",
+    "resourceType": "Questionnaire",
+    "primitiveType": "positiveInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "contact",
+        "telecom",
+        "rank",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"Questionnaire.contact.telecom.rank\"\n        label: \"Enter rank\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Questionnaire.contact.telecom.period",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "contact",
+        "telecom",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"Questionnaire.contact.telecom.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.contact.telecom.period.start",
+    "resourceType": "Questionnaire",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "contact",
+        "telecom",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Questionnaire.contact.telecom.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Questionnaire.contact.telecom.period.end",
+    "resourceType": "Questionnaire",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "contact",
+        "telecom",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Questionnaire.contact.telecom.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Questionnaire.description",
+    "resourceType": "Questionnaire",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"description\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Natural language description of the questionnaire",
+      "coreKeywords": [
+        "questionnaire",
+        "description",
+        "textinput",
+        "natural",
+        "language"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"description\"\n        path: \"Questionnaire.description\"\n        label: \"Enter description\"\n        description: \"Natural language description of the questionnaire\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.useContext",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "UsageContext",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use_context\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The context that the content is intended to support",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "textinput",
+        "content",
+        "intended",
+        "support"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use_context\"\n        path: \"Questionnaire.useContext\"\n        label: \"Enter useContext\"\n        description: \"The context that the content is intended to support\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.useContext.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/usage-context-type"
+    }
+  },
+  {
+    "path": "Questionnaire.useContext.code.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "code",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.useContext.code.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.code.version",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "code",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Questionnaire.useContext.code.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.code.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.useContext.code.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.code.display",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "code",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Questionnaire.useContext.code.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.code.userSelected",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "code",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Questionnaire.useContext.code.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.useContext.value[x]",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value[x]\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "valuex",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value[x]\"\n        path: \"Questionnaire.useContext.value[x]\"\n        label: \"Enter value[x]\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/use-context"
+    }
+  },
+  {
+    "path": "Questionnaire.useContext.valueCodeableConcept",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_codeable_concept\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "codeable",
+        "concept",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_codeable_concept\"\n        path: \"Questionnaire.useContext.valueCodeableConcept\"\n        label: \"Enter valueCodeableConcept\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/use-context"
+    }
+  },
+  {
+    "path": "Questionnaire.useContext.valueCodeableConcept.coding",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "codeable",
+        "concept",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Questionnaire.useContext.valueCodeableConcept.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueCodeableConcept.coding.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "codeable",
+        "concept",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.useContext.valueCodeableConcept.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueCodeableConcept.coding.version",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "codeable",
+        "concept",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Questionnaire.useContext.valueCodeableConcept.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueCodeableConcept.coding.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "codeable",
+        "concept",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.useContext.valueCodeableConcept.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueCodeableConcept.coding.display",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "codeable",
+        "concept",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Questionnaire.useContext.valueCodeableConcept.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueCodeableConcept.coding.userSelected",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "codeable",
+        "concept",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Questionnaire.useContext.valueCodeableConcept.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueCodeableConcept.text",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "codeable",
+        "concept",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Questionnaire.useContext.valueCodeableConcept.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueQuantity",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_quantity\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "quantity",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_quantity\"\n        path: \"Questionnaire.useContext.valueQuantity\"\n        label: \"Enter valueQuantity\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/use-context"
+    }
+  },
+  {
+    "path": "Questionnaire.useContext.valueQuantity.value",
+    "resourceType": "Questionnaire",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "quantity",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Questionnaire.useContext.valueQuantity.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueQuantity.comparator",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "quantity",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Questionnaire.useContext.valueQuantity.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Questionnaire.useContext.valueQuantity.unit",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "quantity",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Questionnaire.useContext.valueQuantity.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueQuantity.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "quantity",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.useContext.valueQuantity.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueQuantity.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "quantity",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.useContext.valueQuantity.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_range\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_range\"\n        path: \"Questionnaire.useContext.valueRange\"\n        label: \"Enter valueRange\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/use-context"
+    }
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.low",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"low\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "low",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"low\"\n        path: \"Questionnaire.useContext.valueRange.low\"\n        label: \"Enter low\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.low.value",
+    "resourceType": "Questionnaire",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "low",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Questionnaire.useContext.valueRange.low.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.low.comparator",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "low",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Questionnaire.useContext.valueRange.low.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.low.unit",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "low",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Questionnaire.useContext.valueRange.low.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.low.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "low",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.useContext.valueRange.low.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.low.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "low",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.useContext.valueRange.low.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.high",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"high\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "high",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"high\"\n        path: \"Questionnaire.useContext.valueRange.high\"\n        label: \"Enter high\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.high.value",
+    "resourceType": "Questionnaire",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "high",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Questionnaire.useContext.valueRange.high.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.high.comparator",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "high",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Questionnaire.useContext.valueRange.high.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.high.unit",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "high",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Questionnaire.useContext.valueRange.high.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.high.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "high",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.useContext.valueRange.high.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueRange.high.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "range",
+        "high",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.useContext.valueRange.high.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.useContext.valueReference",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "valueReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"value_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "use",
+        "context",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_reference\"\n        path: \"Questionnaire.useContext.valueReference\"\n        label: \"Enter valueReference\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/use-context"
+    }
+  },
+  {
+    "path": "Questionnaire.jurisdiction",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"jurisdiction\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Intended jurisdiction for questionnaire (if applicable)",
+      "coreKeywords": [
+        "questionnaire",
+        "jurisdiction",
+        "multiselect",
+        "intended",
+        "applicable"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"jurisdiction\"\n        path: \"Questionnaire.jurisdiction\"\n        label: \"Enter jurisdiction\"\n        description: \"Intended jurisdiction for questionnaire (if applicable)\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/jurisdiction"
+    }
+  },
+  {
+    "path": "Questionnaire.jurisdiction.coding",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "jurisdiction",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"Questionnaire.jurisdiction.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "Questionnaire.jurisdiction.coding.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "jurisdiction",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.jurisdiction.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.jurisdiction.coding.version",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "jurisdiction",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Questionnaire.jurisdiction.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.jurisdiction.coding.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "jurisdiction",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.jurisdiction.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.jurisdiction.coding.display",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "jurisdiction",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Questionnaire.jurisdiction.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.jurisdiction.coding.userSelected",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "jurisdiction",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Questionnaire.jurisdiction.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.jurisdiction.text",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "jurisdiction",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Questionnaire.jurisdiction.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.purpose",
+    "resourceType": "Questionnaire",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"purpose\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Why this questionnaire is defined",
+      "coreKeywords": [
+        "questionnaire",
+        "purpose",
+        "textinput",
+        "why",
+        "defined"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"purpose\"\n        path: \"Questionnaire.purpose\"\n        label: \"Enter purpose\"\n        description: \"Why this questionnaire is defined\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.copyright",
+    "resourceType": "Questionnaire",
+    "primitiveType": "markdown",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"copyright\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Use and/or publishing restrictions",
+      "coreKeywords": [
+        "questionnaire",
+        "copyright",
+        "textinput",
+        "use",
+        "andor",
+        "publishing",
+        "restrictions"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"copyright\"\n        path: \"Questionnaire.copyright\"\n        label: \"Enter copyright\"\n        description: \"Use and/or publishing restrictions\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.approvalDate",
+    "resourceType": "Questionnaire",
+    "primitiveType": "date",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"approval_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the questionnaire was approved by publisher",
+      "coreKeywords": [
+        "questionnaire",
+        "approval",
+        "date",
+        "datepicker",
+        "when",
+        "approved",
+        "publisher"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"approval_date\"\n        path: \"Questionnaire.approvalDate\"\n        label: \"Enter approvalDate\"\n        description: \"When the questionnaire was approved by publisher\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Questionnaire.lastReviewDate",
+    "resourceType": "Questionnaire",
+    "primitiveType": "date",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"last_review_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the questionnaire was last reviewed",
+      "coreKeywords": [
+        "questionnaire",
+        "last",
+        "review",
+        "date",
+        "datepicker",
+        "when",
+        "reviewed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"last_review_date\"\n        path: \"Questionnaire.lastReviewDate\"\n        label: \"Enter lastReviewDate\"\n        description: \"When the questionnaire was last reviewed\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Questionnaire.effectivePeriod",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"effective_period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the questionnaire is expected to be used",
+      "coreKeywords": [
+        "questionnaire",
+        "effective",
+        "period",
+        "textinput",
+        "when",
+        "expected",
+        "used"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"effective_period\"\n        path: \"Questionnaire.effectivePeriod\"\n        label: \"Enter effectivePeriod\"\n        description: \"When the questionnaire is expected to be used\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.effectivePeriod.start",
+    "resourceType": "Questionnaire",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "effective",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"Questionnaire.effectivePeriod.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Questionnaire.effectivePeriod.end",
+    "resourceType": "Questionnaire",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "effective",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"Questionnaire.effectivePeriod.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Questionnaire.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Concept that represents the overall questionnaire",
+      "coreKeywords": [
+        "questionnaire",
+        "code",
+        "multiselect",
+        "concept",
+        "represents",
+        "overall"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.code\"\n        label: \"Enter code\"\n        description: \"Concept that represents the overall questionnaire\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-questions"
+    }
+  },
+  {
+    "path": "Questionnaire.code.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "code",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.code.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.code.version",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "code",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Questionnaire.code.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.code.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.code.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.code.display",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "code",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Questionnaire.code.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.code.userSelected",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "code",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Questionnaire.code.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.item",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"item\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Questions and sections within the Questionnaire",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "textinput",
+        "questions",
+        "sections",
+        "within"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"item\"\n        path: \"Questionnaire.item\"\n        label: \"Enter item\"\n        description: \"Questions and sections within the Questionnaire\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.extension",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Questionnaire.item.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.modifierExtension",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Questionnaire.item.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.linkId",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"link_id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Unique id for item in questionnaire",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "link",
+        "textinput",
+        "unique"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"link_id\"\n        path: \"Questionnaire.item.linkId\"\n        label: \"Enter linkId\"\n        description: \"Unique id for item in questionnaire\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.definition",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"definition\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "ElementDefinition - details for the item",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "definition",
+        "textinput",
+        "elementdefinition",
+        "details"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"definition\"\n        path: \"Questionnaire.item.definition\"\n        label: \"Enter definition\"\n        description: \"ElementDefinition - details for the item\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Corresponding concept for this item in a terminology",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "code",
+        "multiselect",
+        "corresponding",
+        "concept",
+        "terminology"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.item.code\"\n        label: \"Enter code\"\n        description: \"Corresponding concept for this item in a terminology\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-questions"
+    }
+  },
+  {
+    "path": "Questionnaire.item.code.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "code",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.item.code.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.item.code.version",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "code",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Questionnaire.item.code.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.item.code.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.item.code.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.item.code.display",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "code",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Questionnaire.item.code.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.item.code.userSelected",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "code",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Questionnaire.item.code.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.item.prefix",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"prefix\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "E.g. '1(a)', '2.5.3'",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "prefix",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"prefix\"\n        path: \"Questionnaire.item.prefix\"\n        label: \"Enter prefix\"\n        description: \"E.g. '1(a)', '2.5.3'\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.text",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Primary text for the item",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "text",
+        "textinput",
+        "primary"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"Questionnaire.item.text\"\n        label: \"Enter text\"\n        description: \"Primary text for the item\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.type",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" (\\\"group\\\" | \\\"display\\\" | \\\"question\\\" | \\\"boolean\\\" | \\\"decimal\\\" | \\\"integer\\\" | \\\"date\\\" | \\\"dateTime\\\" | \\\"time\\\" | \\\"string\\\" | \\\"text\\\" | \\\"url\\\" | \\\"choice\\\" | \\\"open-choice\\\" | \\\"attachment\\\" | \\\"reference\\\" | \\\"quantity\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "group | display | boolean | decimal | integer | date | dateTime +",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "dropdown",
+        "group",
+        "display",
+        "boolean",
+        "decimal",
+        "integer",
+        "date",
+        "datetime"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"Questionnaire.item.type\"\n        label: \"Enter type\"\n        description: \"group | display | boolean | decimal | integer | date | dateTime +\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/item-type"
+    },
+    "choices": [
+      "group",
+      "display",
+      "question",
+      "boolean",
+      "decimal",
+      "integer",
+      "date",
+      "dateTime",
+      "time",
+      "string",
+      "text",
+      "url",
+      "choice",
+      "open-choice",
+      "attachment",
+      "reference",
+      "quantity"
+    ]
+  },
+  {
+    "path": "Questionnaire.item.enableWhen",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"enable_when\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Only allow data when",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "textinput",
+        "only",
+        "allow",
+        "data"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"enable_when\"\n        path: \"Questionnaire.item.enableWhen\"\n        label: \"Enter enableWhen\"\n        description: \"Only allow data when\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.extension",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Questionnaire.item.enableWhen.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.modifierExtension",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Questionnaire.item.enableWhen.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.question",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"question\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Question that determines whether item is enabled",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "question",
+        "textinput",
+        "determines",
+        "whether",
+        "enabled"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"question\"\n        path: \"Questionnaire.item.enableWhen.question\"\n        label: \"Enter question\"\n        description: \"Question that determines whether item is enabled\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.operator",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"operator\\\": \\\"\" (\\\"exists\\\" | \\\"=\\\" | \\\"!=\\\" | \\\">\\\" | \\\"<\\\" | \\\">=\\\" | \\\"<=\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "exists | = | != | > | < | >= | <=",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "operator",
+        "dropdown",
+        "exists"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"operator\"\n        path: \"Questionnaire.item.enableWhen.operator\"\n        label: \"Enter operator\"\n        description: \"exists | = | != | > | < | >= | <=\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-enable-operator"
+    },
+    "choices": [
+      "exists",
+      "=",
+      "!=",
+      ">",
+      "<",
+      ">=",
+      "<="
+    ]
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answer[x]",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer[x]\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Value for question comparison based on operator",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answerx",
+        "checkbox",
+        "question",
+        "comparison",
+        "based",
+        "operator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer[x]\"\n        path: \"Questionnaire.item.enableWhen.answer[x]\"\n        label: \"Enter answer[x]\"\n        description: \"Value for question comparison based on operator\"\n        uiComponent: \"Checkbox\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerBoolean",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer_boolean\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Value for question comparison based on operator",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "boolean",
+        "checkbox",
+        "question",
+        "comparison",
+        "based",
+        "operator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_boolean\"\n        path: \"Questionnaire.item.enableWhen.answerBoolean\"\n        label: \"Enter answerBoolean\"\n        description: \"Value for question comparison based on operator\"\n        uiComponent: \"Checkbox\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerDecimal",
+    "resourceType": "Questionnaire",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer_decimal\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Value for question comparison based on operator",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "decimal",
+        "numericinput",
+        "question",
+        "comparison",
+        "based",
+        "operator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_decimal\"\n        path: \"Questionnaire.item.enableWhen.answerDecimal\"\n        label: \"Enter answerDecimal\"\n        description: \"Value for question comparison based on operator\"\n        uiComponent: \"NumericInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerInteger",
+    "resourceType": "Questionnaire",
+    "primitiveType": "integer",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer_integer\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Value for question comparison based on operator",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "integer",
+        "numericinput",
+        "question",
+        "comparison",
+        "based",
+        "operator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_integer\"\n        path: \"Questionnaire.item.enableWhen.answerInteger\"\n        label: \"Enter answerInteger\"\n        description: \"Value for question comparison based on operator\"\n        uiComponent: \"NumericInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerDate",
+    "resourceType": "Questionnaire",
+    "primitiveType": "date",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Value for question comparison based on operator",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "date",
+        "datepicker",
+        "question",
+        "comparison",
+        "based",
+        "operator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_date\"\n        path: \"Questionnaire.item.enableWhen.answerDate\"\n        label: \"Enter answerDate\"\n        description: \"Value for question comparison based on operator\"\n        uiComponent: \"DatePicker\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerDateTime",
+    "resourceType": "Questionnaire",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Value for question comparison based on operator",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "date",
+        "time",
+        "datepicker",
+        "question",
+        "comparison",
+        "based",
+        "operator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_date_time\"\n        path: \"Questionnaire.item.enableWhen.answerDateTime\"\n        label: \"Enter answerDateTime\"\n        description: \"Value for question comparison based on operator\"\n        uiComponent: \"DatePicker\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerTime",
+    "resourceType": "Questionnaire",
+    "primitiveType": "time",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Value for question comparison based on operator",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "time",
+        "textinput",
+        "question",
+        "comparison",
+        "based",
+        "operator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_time\"\n        path: \"Questionnaire.item.enableWhen.answerTime\"\n        label: \"Enter answerTime\"\n        description: \"Value for question comparison based on operator\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerString",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Value for question comparison based on operator",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "string",
+        "textinput",
+        "question",
+        "comparison",
+        "based",
+        "operator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_string\"\n        path: \"Questionnaire.item.enableWhen.answerString\"\n        label: \"Enter answerString\"\n        description: \"Value for question comparison based on operator\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerCoding",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer_coding\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Value for question comparison based on operator",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "coding",
+        "dropdown",
+        "question",
+        "comparison",
+        "based",
+        "operator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_coding\"\n        path: \"Questionnaire.item.enableWhen.answerCoding\"\n        label: \"Enter answerCoding\"\n        description: \"Value for question comparison based on operator\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerCoding.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.item.enableWhen.answerCoding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerCoding.version",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Questionnaire.item.enableWhen.answerCoding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerCoding.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.item.enableWhen.answerCoding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerCoding.display",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Questionnaire.item.enableWhen.answerCoding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerCoding.userSelected",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Questionnaire.item.enableWhen.answerCoding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerQuantity",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer_quantity\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Value for question comparison based on operator",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "quantity",
+        "textinput",
+        "question",
+        "comparison",
+        "based",
+        "operator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_quantity\"\n        path: \"Questionnaire.item.enableWhen.answerQuantity\"\n        label: \"Enter answerQuantity\"\n        description: \"Value for question comparison based on operator\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerQuantity.value",
+    "resourceType": "Questionnaire",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "quantity",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Questionnaire.item.enableWhen.answerQuantity.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerQuantity.comparator",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "quantity",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Questionnaire.item.enableWhen.answerQuantity.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerQuantity.unit",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "quantity",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Questionnaire.item.enableWhen.answerQuantity.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerQuantity.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "quantity",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.item.enableWhen.answerQuantity.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerQuantity.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "quantity",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.item.enableWhen.answerQuantity.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.item.enableWhen.answerReference",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "answerReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"answer_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Value for question comparison based on operator",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "when",
+        "answer",
+        "reference",
+        "textinput",
+        "question",
+        "comparison",
+        "based",
+        "operator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_reference\"\n        path: \"Questionnaire.item.enableWhen.answerReference\"\n        label: \"Enter answerReference\"\n        description: \"Value for question comparison based on operator\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.enableBehavior",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"enable_behavior\\\": \\\"\" (\\\"all\\\" | \\\"any\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "all | any",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "enable",
+        "behavior",
+        "dropdown",
+        "all",
+        "any"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"enable_behavior\"\n        path: \"Questionnaire.item.enableBehavior\"\n        label: \"Enter enableBehavior\"\n        description: \"all | any\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-enable-behavior"
+    },
+    "choices": [
+      "all",
+      "any"
+    ]
+  },
+  {
+    "path": "Questionnaire.item.required",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"required\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Whether the item must be included in data results",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "required",
+        "checkbox",
+        "whether",
+        "must",
+        "included",
+        "data",
+        "results"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"required\"\n        path: \"Questionnaire.item.required\"\n        label: \"Enter required\"\n        description: \"Whether the item must be included in data results\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.item.repeats",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"repeats\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Whether the item may repeat",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "repeats",
+        "checkbox",
+        "whether",
+        "may",
+        "repeat"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"repeats\"\n        path: \"Questionnaire.item.repeats\"\n        label: \"Enter repeats\"\n        description: \"Whether the item may repeat\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.item.readOnly",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"read_only\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Don't allow human editing",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "read",
+        "only",
+        "checkbox",
+        "dont",
+        "allow",
+        "human",
+        "editing"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"read_only\"\n        path: \"Questionnaire.item.readOnly\"\n        label: \"Enter readOnly\"\n        description: \"Don't allow human editing\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.item.maxLength",
+    "resourceType": "Questionnaire",
+    "primitiveType": "integer",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"max_length\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "No more than this many characters",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "max",
+        "length",
+        "numericinput",
+        "more",
+        "than",
+        "many",
+        "characters"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"max_length\"\n        path: \"Questionnaire.item.maxLength\"\n        label: \"Enter maxLength\"\n        description: \"No more than this many characters\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Questionnaire.item.answerValueSet",
+    "resourceType": "Questionnaire",
+    "primitiveType": "canonical",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer_value_set\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Valueset containing permitted answers",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "set",
+        "textinput",
+        "valueset",
+        "containing",
+        "permitted",
+        "answers"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_value_set\"\n        path: \"Questionnaire.item.answerValueSet\"\n        label: \"Enter answerValueSet\"\n        description: \"Valueset containing permitted answers\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.answerOption",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"answer_option\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Permitted answer",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "textinput",
+        "permitted"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"answer_option\"\n        path: \"Questionnaire.item.answerOption\"\n        label: \"Enter answerOption\"\n        description: \"Permitted answer\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.answerOption.extension",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Questionnaire.item.answerOption.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.answerOption.modifierExtension",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Questionnaire.item.answerOption.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.answerOption.value[x]",
+    "resourceType": "Questionnaire",
+    "primitiveType": "integer",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value[x]\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Answer value",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "valuex",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value[x]\"\n        path: \"Questionnaire.item.answerOption.value[x]\"\n        label: \"Enter value[x]\"\n        description: \"Answer value\"\n        uiComponent: \"NumericInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.answerOption.valueInteger",
+    "resourceType": "Questionnaire",
+    "primitiveType": "integer",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_integer\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Answer value",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "integer",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_integer\"\n        path: \"Questionnaire.item.answerOption.valueInteger\"\n        label: \"Enter valueInteger\"\n        description: \"Answer value\"\n        uiComponent: \"NumericInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.answerOption.valueDate",
+    "resourceType": "Questionnaire",
+    "primitiveType": "date",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Answer value",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "date",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_date\"\n        path: \"Questionnaire.item.answerOption.valueDate\"\n        label: \"Enter valueDate\"\n        description: \"Answer value\"\n        uiComponent: \"DatePicker\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.answerOption.valueTime",
+    "resourceType": "Questionnaire",
+    "primitiveType": "time",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Answer value",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "time",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_time\"\n        path: \"Questionnaire.item.answerOption.valueTime\"\n        label: \"Enter valueTime\"\n        description: \"Answer value\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.answerOption.valueString",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Answer value",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "string",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_string\"\n        path: \"Questionnaire.item.answerOption.valueString\"\n        label: \"Enter valueString\"\n        description: \"Answer value\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.answerOption.valueCoding",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_coding\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Answer value",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_coding\"\n        path: \"Questionnaire.item.answerOption.valueCoding\"\n        label: \"Enter valueCoding\"\n        description: \"Answer value\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.answerOption.valueCoding.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.item.answerOption.valueCoding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.answerOption.valueCoding.version",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Questionnaire.item.answerOption.valueCoding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.answerOption.valueCoding.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.item.answerOption.valueCoding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.item.answerOption.valueCoding.display",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Questionnaire.item.answerOption.valueCoding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.answerOption.valueCoding.userSelected",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Questionnaire.item.answerOption.valueCoding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.item.answerOption.valueReference",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "valueReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"value_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Answer value",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "reference",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_reference\"\n        path: \"Questionnaire.item.answerOption.valueReference\"\n        label: \"Enter valueReference\"\n        description: \"Answer value\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.answerOption.initialSelected",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"initial_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Whether option is selected by default",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "answer",
+        "option",
+        "initial",
+        "selected",
+        "checkbox",
+        "whether",
+        "default"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"initial_selected\"\n        path: \"Questionnaire.item.answerOption.initialSelected\"\n        label: \"Enter initialSelected\"\n        description: \"Whether option is selected by default\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.item.initial",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"initial\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Initial value(s) when item is first rendered",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "textinput",
+        "values",
+        "when",
+        "first",
+        "rendered"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"initial\"\n        path: \"Questionnaire.item.initial\"\n        label: \"Enter initial\"\n        description: \"Initial value(s) when item is first rendered\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.extension",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"Questionnaire.item.initial.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.modifierExtension",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"Questionnaire.item.initial.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.value[x]",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value[x]\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "valuex",
+        "checkbox",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value[x]\"\n        path: \"Questionnaire.item.initial.value[x]\"\n        label: \"Enter value[x]\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"Checkbox\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueBoolean",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_boolean\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "boolean",
+        "checkbox",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_boolean\"\n        path: \"Questionnaire.item.initial.valueBoolean\"\n        label: \"Enter valueBoolean\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"Checkbox\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueDecimal",
+    "resourceType": "Questionnaire",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_decimal\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "decimal",
+        "numericinput",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_decimal\"\n        path: \"Questionnaire.item.initial.valueDecimal\"\n        label: \"Enter valueDecimal\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"NumericInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueInteger",
+    "resourceType": "Questionnaire",
+    "primitiveType": "integer",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_integer\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "integer",
+        "numericinput",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_integer\"\n        path: \"Questionnaire.item.initial.valueInteger\"\n        label: \"Enter valueInteger\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"NumericInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueDate",
+    "resourceType": "Questionnaire",
+    "primitiveType": "date",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_date\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "date",
+        "datepicker",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_date\"\n        path: \"Questionnaire.item.initial.valueDate\"\n        label: \"Enter valueDate\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"DatePicker\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueDateTime",
+    "resourceType": "Questionnaire",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_date_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "date",
+        "time",
+        "datepicker",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_date_time\"\n        path: \"Questionnaire.item.initial.valueDateTime\"\n        label: \"Enter valueDateTime\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"DatePicker\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueTime",
+    "resourceType": "Questionnaire",
+    "primitiveType": "time",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_time\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "time",
+        "textinput",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_time\"\n        path: \"Questionnaire.item.initial.valueTime\"\n        label: \"Enter valueTime\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueString",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_string\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "string",
+        "textinput",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_string\"\n        path: \"Questionnaire.item.initial.valueString\"\n        label: \"Enter valueString\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueUri",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_uri\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "uri",
+        "textinput",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_uri\"\n        path: \"Questionnaire.item.initial.valueUri\"\n        label: \"Enter valueUri\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueAttachment",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_attachment\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "attachment",
+        "textinput",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_attachment\"\n        path: \"Questionnaire.item.initial.valueAttachment\"\n        label: \"Enter valueAttachment\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueAttachment.contentType",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"content_type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "attachment",
+        "content",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"content_type\"\n        path: \"Questionnaire.item.initial.valueAttachment.contentType\"\n        label: \"Enter contentType\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/mimetypes"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueAttachment.language",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"language\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "attachment",
+        "language",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"language\"\n        path: \"Questionnaire.item.initial.valueAttachment.language\"\n        label: \"Enter language\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "preferred",
+      "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueAttachment.data",
+    "resourceType": "Questionnaire",
+    "primitiveType": "base64Binary",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"data\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "attachment",
+        "data",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"data\"\n        path: \"Questionnaire.item.initial.valueAttachment.data\"\n        label: \"Enter data\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueAttachment.url",
+    "resourceType": "Questionnaire",
+    "primitiveType": "url",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"url\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "attachment",
+        "url",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"url\"\n        path: \"Questionnaire.item.initial.valueAttachment.url\"\n        label: \"Enter url\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueAttachment.size",
+    "resourceType": "Questionnaire",
+    "primitiveType": "unsignedInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"size\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "attachment",
+        "size",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"size\"\n        path: \"Questionnaire.item.initial.valueAttachment.size\"\n        label: \"Enter size\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueAttachment.hash",
+    "resourceType": "Questionnaire",
+    "primitiveType": "base64Binary",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"hash\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "attachment",
+        "hash",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"hash\"\n        path: \"Questionnaire.item.initial.valueAttachment.hash\"\n        label: \"Enter hash\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueAttachment.title",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"title\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "attachment",
+        "title",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"title\"\n        path: \"Questionnaire.item.initial.valueAttachment.title\"\n        label: \"Enter title\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueAttachment.creation",
+    "resourceType": "Questionnaire",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"creation\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "attachment",
+        "creation",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"creation\"\n        path: \"Questionnaire.item.initial.valueAttachment.creation\"\n        label: \"Enter creation\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueCoding",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_coding\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "coding",
+        "dropdown",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_coding\"\n        path: \"Questionnaire.item.initial.valueCoding\"\n        label: \"Enter valueCoding\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueCoding.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.item.initial.valueCoding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueCoding.version",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"Questionnaire.item.initial.valueCoding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueCoding.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.item.initial.valueCoding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueCoding.display",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"Questionnaire.item.initial.valueCoding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueCoding.userSelected",
+    "resourceType": "Questionnaire",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"Questionnaire.item.initial.valueCoding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueQuantity",
+    "resourceType": "Questionnaire",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value_quantity\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "quantity",
+        "textinput",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_quantity\"\n        path: \"Questionnaire.item.initial.valueQuantity\"\n        label: \"Enter valueQuantity\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.initial.valueQuantity.value",
+    "resourceType": "Questionnaire",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "quantity",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"Questionnaire.item.initial.valueQuantity.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueQuantity.comparator",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "quantity",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"Questionnaire.item.initial.valueQuantity.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "Questionnaire.item.initial.valueQuantity.unit",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "quantity",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"Questionnaire.item.initial.valueQuantity.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueQuantity.system",
+    "resourceType": "Questionnaire",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "quantity",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"Questionnaire.item.initial.valueQuantity.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueQuantity.code",
+    "resourceType": "Questionnaire",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "quantity",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"Questionnaire.item.initial.valueQuantity.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "Questionnaire.item.initial.valueReference",
+    "resourceType": "Questionnaire",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "valueReference-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"value_reference\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Actual value for initializing the question",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "initial",
+        "reference",
+        "textinput",
+        "actual",
+        "initializing",
+        "question"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value_reference\"\n        path: \"Questionnaire.item.initial.valueReference\"\n        label: \"Enter valueReference\"\n        description: \"Actual value for initializing the question\"\n        uiComponent: \"TextInput\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-answers"
+    }
+  },
+  {
+    "path": "Questionnaire.item.item",
+    "resourceType": "Questionnaire",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"item\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Nested questionnaire items",
+      "coreKeywords": [
+        "questionnaire",
+        "item",
+        "textinput",
+        "nested",
+        "items"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"item\"\n        path: \"Questionnaire.item.item\"\n        label: \"Enter item\"\n        description: \"Nested questionnaire items\"\n        uiComponent: \"TextInput\""
+  }
+]

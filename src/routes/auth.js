@@ -12,6 +12,8 @@ import { issueSessionToken } from '../lib/shared/session.js';
 import { AccountsDb } from '../lib/shared/accounts-db.js';
 import { requireUser } from '../lib/shared/userAuth.js';
 import { UsageTracking } from '../lib/shared/usageTracking.js';
+import { recordAudit } from '../lib/shared/audit.js';
+import { DEFAULT_ROLE } from '../lib/shared/permissions.js';
 
 export const authRoutes = new Hono();
 const app = authRoutes;
@@ -29,12 +31,17 @@ function deriveDefaultClinicName(email, role) {
 
 /**
  * POST /api/auth/register
- * Body: { email, password, role, adminName?, designation? }
+ * Body: { email, password, role?, adminName?, designation? }
  * Creates a new clinic (tier defaults to 'free') and its first account atomically, and returns a
  * session token. Still gated by serviceKeyAuth() above — X-Service-Key is an independent
  * anti-abuse layer proving "this is clinux-frontend", not superseded by this account-level auth.
  *
- * role ('hospital_admin' | 'health_professional' | 'admin_and_health_professional', required) is
+ * UPDATE: role is optional now. clinux-frontend's sign-up asks only for email and password, and its
+ * workspace no longer filters the registry journeys by role, so an account created without one
+ * gets DEFAULT_ROLE (admin_and_health_professional: may run both the facility (HFR) and the
+ * professional (HPR) journeys). A role that IS sent is still validated.
+ *
+ * role ('hospital_admin' | 'health_professional' | 'admin_and_health_professional') was
  * the simplified sign-up's only fork — it determines which self-service HFR (facility) and/or
  * HPR (professional) onboarding journeys ClinicHome offers afterward (see
  * docs/SPEC-11-ABDM-M1-M4-ALIGNMENT.md). clinicName is no longer collected here at all —
@@ -45,9 +52,11 @@ function deriveDefaultClinicName(email, role) {
  */
 app.post('/api/auth/register', async (c) => {
     try {
-        const { email, password, role, adminName, designation } = await c.req.json();
-        if (!email || !password || !role) {
-            return c.json({ success: false, error: 'email, password, and role are required.' }, 400);
+        const body = await c.req.json();
+        const { email, password, adminName, designation } = body;
+        const role = body.role ?? DEFAULT_ROLE;
+        if (!email || !password) {
+            return c.json({ success: false, error: 'email and password are required.' }, 400);
         }
         if (password.length < 8) {
             return c.json({ success: false, error: 'Password must be at least 8 characters.' }, 400);
@@ -86,6 +95,7 @@ app.post('/api/auth/register', async (c) => {
         }
 
         const token = await issueSessionToken({ sub: accountId, clinicId, email: normalizedEmail }, c.env.JWT_SECRET);
+        await recordAudit(c.env.DB, { clinicId, actorAccountId: accountId, actorLabel: normalizedEmail, action: 'account.registered', objectId: accountId, metadata: { role } });
 
         return c.json({
             success: true,
@@ -138,6 +148,7 @@ app.post('/api/auth/login', async (c) => {
         const token = await issueSessionToken(
             { sub: account.id, clinicId: account.clinic_id, email: account.email }, c.env.JWT_SECRET
         );
+        await recordAudit(c.env.DB, { clinicId: account.clinic_id, actorAccountId: account.id, actorLabel: account.email, action: 'account.signed_in', objectId: account.id });
 
         return c.json({
             success: true,
@@ -193,6 +204,7 @@ app.patch('/api/auth/clinic-name', requireUser(), async (c) => {
         }
         const clinicId = c.get('user').clinicId;
         await AccountsDb.updateClinicName(c.env.DB, clinicId, String(clinicName).trim());
+        await recordAudit(c.env.DB, { clinicId, actorAccountId: c.get('user').accountId, actorLabel: c.get('user').email, action: 'clinic.renamed', objectId: clinicId });
         return c.json({ success: true, clinicName: String(clinicName).trim() });
     } catch (err) {
         console.error('❌ Update Clinic Name Exception:', err.message);
@@ -227,6 +239,7 @@ app.patch('/api/auth/change-password', requireUser(), async (c) => {
 
         const newHash = await hashPassword(newPassword);
         await AccountsDb.updatePasswordHash(c.env.DB, accountId, newHash);
+        await recordAudit(c.env.DB, { clinicId: c.get('user').clinicId, actorAccountId: accountId, actorLabel: c.get('user').email, action: 'account.password_changed', objectId: accountId });
 
         return c.json({ success: true });
     } catch (err) {
@@ -260,6 +273,7 @@ app.patch('/api/auth/security-question', requireUser(), async (c) => {
         const accountId = c.get('user').accountId;
         const answerHash = await hashPassword(normalizeSecurityAnswer(securityAnswer));
         await AccountsDb.updateSecurityQuestion(c.env.DB, accountId, String(securityQuestion).trim(), answerHash);
+        await recordAudit(c.env.DB, { clinicId: c.get('user').clinicId, actorAccountId: accountId, actorLabel: c.get('user').email, action: 'account.security_question_set', objectId: accountId });
 
         return c.json({ success: true });
     } catch (err) {
@@ -328,6 +342,7 @@ app.post('/api/auth/forgot-password/reset', async (c) => {
 
         const newHash = await hashPassword(newPassword);
         await AccountsDb.updatePasswordHash(c.env.DB, account.id, newHash);
+        await recordAudit(c.env.DB, { clinicId: account.clinic_id, actorAccountId: account.id, actorLabel: account.email, action: 'account.password_reset', objectId: account.id });
 
         return c.json({ success: true });
     } catch (err) {

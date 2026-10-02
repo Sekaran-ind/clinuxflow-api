@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "clinuxflow-patient",
-  "url": "https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowPatient",
+  "url": "https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowPatient",
   "version": "1.0.0",
   "name": "ClinuxFlowPatient",
   "title": "ClinuxFlow Patient",
@@ -11,7 +11,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "Patient",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+  "baseDefinition": "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Patient",
   "derivation": "constraint",
   "differential": {
     "element": [
@@ -56,7 +56,12 @@
         "id": "Patient.telecom",
         "path": "Patient.telecom",
         "slicing": {
-          "discriminator": [{ "type": "value", "path": "system" }],
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
           "rules": "open"
         },
         "min": 0,
@@ -88,11 +93,17 @@
         "id": "Patient.identifier",
         "path": "Patient.identifier",
         "slicing": {
-          "discriminator": [{ "type": "value", "path": "system" }],
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
           "rules": "open"
         },
-        "min": 0,
-        "max": "*"
+        "min": 1,
+        "max": "*",
+        "comment": "ABDM IG 6.5.0 requires at least one identifier on Patient (min 1, each with a coded identifier.type). Before the ABDM registry id exists, ClinuxFlow must still emit one: its own stable record id. Most patients have no ABHA at first registration."
       },
       {
         "id": "Patient.identifier:abhaNumber",
@@ -107,7 +118,7 @@
         "path": "Patient.identifier.system",
         "min": 1,
         "max": "1",
-        "fixedUri": "https://healthid.ndhm.gov.in/abha-number"
+        "fixedUri": "https://healthid.ndhm.gov.in"
       },
       {
         "id": "Patient.identifier:abhaAddress",
@@ -148,7 +159,12 @@
         "id": "Patient.extension",
         "path": "Patient.extension",
         "slicing": {
-          "discriminator": [{ "type": "value", "path": "url" }],
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
           "rules": "open"
         },
         "min": 0,
@@ -161,7 +177,14 @@
         "short": "Whether this patient's ABHA identity has completed full KYC verification",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-kyc-verified"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/abha-kyc-verified"
+            ]
+          }
+        ],
         "comment": "ABHA V3 API doc §9 Get Profile's own kycVerified (boolean) — genuinely independent of verificationStatus/emailVerified/mobileVerified below: a real documented case has kycVerified:false while verificationStatus:VERIFIED (a Child ABHA verified via parent consent, not full KYC), so these are deliberately 4 separate extensions, not one collapsed flag."
       },
       {
@@ -171,7 +194,14 @@
         "short": "This patient's ABHA verification status",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-verification-status"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/abha-verification-status"
+            ]
+          }
+        ],
         "comment": "ABHA V3 API doc §9's own verificationStatus (only \"VERIFIED\" observed directly in the doc's samples, other states implied by the field's existence but not enumerated). Naming note: §14.4.1's separate ABHA-address profile response calls the same underlying concept kycStatus instead — normalized to this one canonical field here rather than reproducing that doc-level inconsistency."
       },
       {
@@ -181,7 +211,14 @@
         "short": "How this patient's ABHA identity was verified",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-verification-type"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/abha-verification-type"
+            ]
+          }
+        ],
         "comment": "ABHA V3 API doc: AADHAAR and CHILD_ABHA confirmed directly as real verificationType values (§13.7); DRIVING_LICENCE is presumed by symmetry with the enrol/byDocument creation flow but was not directly observed as a verificationType value in the doc — no binding/ValueSet asserted here for that reason, left open (rules:'open' on the parent slicing already allows it)."
       },
       {
@@ -191,7 +228,14 @@
         "short": "Whether this patient's ABHA email was OTP-verified",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-email-verified"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/abha-email-verified"
+            ]
+          }
+        ],
         "comment": "ABHA V3 API doc §14.4.1 — tracked independently of kycVerified/mobileVerified (confirmed as 3 separate booleans in that response shape, not one combined flag)."
       },
       {
@@ -201,7 +245,14 @@
         "short": "Whether this patient's ABHA mobile number was OTP-verified",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-mobile-verified"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/abha-mobile-verified"
+            ]
+          }
+        ],
         "comment": "ABHA V3 API doc §14.4.1 — a real, documented reason this matters beyond just presence of Patient.telecom:mobile: ABHA's own profile.mobile field is explicitly null whenever the patient's primary mobile differs from their Aadhaar-linked mobile and hasn't separately been OTP-verified, so a captured mobile number alone doesn't imply it's verified."
       },
       {
@@ -211,8 +262,18 @@
         "short": "This ABHA account's own lifecycle status",
         "min": 0,
         "max": "1",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-status"] }],
-        "binding": { "strength": "required", "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/abha-status" },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/abha-status"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://yaxb.ai/clinixkernel/ValueSet/abha-status"
+        },
         "comment": "ABHA V3 API doc §7.4 (login, 'list of ABHA numbers (ACTIVE and DEACTIVATED)') / §12.2 — ACTIVE or DEACTIVATED. A third, harder-terminal 'deleted' state exists via §8.3 (Delete ABHA) but is never itself returned as a status value in the doc's own samples, so it's excluded from this vocabulary rather than guessed at."
       },
       {
@@ -222,7 +283,14 @@
         "short": "Verification channels currently usable for this patient's ABHA account",
         "min": 0,
         "max": "*",
-        "type": [{ "code": "Extension", "profile": ["https://clinuxflow.example/fhir/StructureDefinition/abha-auth-methods"] }],
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://clinux.yaxb.ai/fhir/StructureDefinition/abha-auth-methods"
+            ]
+          }
+        ],
         "comment": "ABHA V3 API doc's own authMethods[] (AADHAAR_OTP, AADHAAR_BIO, MOBILE_OTP, PASSWORD, DEMOGRAPHICS — varies by endpoint/account) — repeating, unlike the other ABHA extensions here, since an account can genuinely support more than one channel at once."
       }
     ]

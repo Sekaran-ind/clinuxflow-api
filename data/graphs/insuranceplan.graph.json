@@ -1,0 +1,5109 @@
+[
+  {
+    "path": "InsurancePlan.resourceType",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"resource_type\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "This is a InsurancePlan resource",
+      "coreKeywords": [
+        "insuranceplan",
+        "resource"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"resource_type\"\n        path: \"InsurancePlan.resourceType\"\n        label: \"Enter resourceType\"\n        description: \"This is a InsurancePlan resource\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.id",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"id\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Logical id of this artifact",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "textinput",
+        "logical",
+        "artifact"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"id\"\n        path: \"InsurancePlan.id\"\n        label: \"Enter id\"\n        description: \"Logical id of this artifact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-narrative",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Text summary of the resource, for human interpretation",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "text",
+        "textinput",
+        "summary",
+        "resource",
+        "human",
+        "interpretation"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.text\"\n        label: \"Enter text\"\n        description: \"Text summary of the resource, for human interpretation\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contained",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Resource",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contained\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contained, inline Resources",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contained",
+        "textinput",
+        "inline",
+        "resources"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contained\"\n        path: \"InsurancePlan.contained\"\n        label: \"Enter contained\"\n        description: \"Contained, inline Resources\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.extension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"InsurancePlan.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.modifierExtension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"InsurancePlan.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.identifier",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Business Identifier for Product",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "textinput",
+        "business",
+        "product"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"InsurancePlan.identifier\"\n        label: \"Enter identifier\"\n        description: \"Business Identifier for Product\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.identifier.use",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"InsurancePlan.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "InsurancePlan.identifier.type",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"InsurancePlan.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "InsurancePlan.identifier.type.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.identifier.type.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.identifier.type.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.identifier.type.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.identifier.type.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.identifier.type.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.identifier.type.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.identifier.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.identifier.value",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"InsurancePlan.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.identifier.period",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"InsurancePlan.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.identifier.period.start",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"InsurancePlan.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.identifier.period.end",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"InsurancePlan.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.identifier.assigner",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"InsurancePlan.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.status",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"status\\\": \\\"\" (\\\"draft\\\" | \\\"active\\\" | \\\"retired\\\" | \\\"unknown\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "draft | active | retired | unknown",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "status",
+        "dropdown",
+        "draft",
+        "active",
+        "retired",
+        "unknown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"status\"\n        path: \"InsurancePlan.status\"\n        label: \"Enter status\"\n        description: \"draft | active | retired | unknown\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/publication-status"
+    },
+    "choices": [
+      "draft",
+      "active",
+      "retired",
+      "unknown"
+    ]
+  },
+  {
+    "path": "InsurancePlan.type",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Kind of product",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "multiselect",
+        "kind",
+        "product"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"InsurancePlan.type\"\n        label: \"Enter type\"\n        description: \"Kind of product\"\n        uiComponent: \"MultiSelect\"",
+    "binding": {
+      "strength": "example",
+      "valueSet": "http://hl7.org/fhir/ValueSet/insuranceplan-type"
+    }
+  },
+  {
+    "path": "InsurancePlan.type.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.type.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.type.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.type.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.type.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.type.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.type.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.name",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"name\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Official name",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "name",
+        "textinput",
+        "official"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"InsurancePlan.name\"\n        label: \"Enter name\"\n        description: \"Official name\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.alias",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"alias\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Alternate names",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "alias",
+        "textinput",
+        "alternate",
+        "names"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"alias\"\n        path: \"InsurancePlan.alias\"\n        label: \"Enter alias\"\n        description: \"Alternate names\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.period",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "When the product is available",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "period",
+        "textinput",
+        "when",
+        "product",
+        "available"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"InsurancePlan.period\"\n        label: \"Enter period\"\n        description: \"When the product is available\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.period.start",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"InsurancePlan.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.period.end",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"InsurancePlan.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.ownedBy",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "ownedBy-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"owned_by\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Plan issuer",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "owned",
+        "textinput",
+        "issuer"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"owned_by\"\n        path: \"InsurancePlan.ownedBy\"\n        label: \"Enter ownedBy\"\n        description: \"Plan issuer\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.administeredBy",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "administeredBy-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"administered_by\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Product administrator",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "administered",
+        "textinput",
+        "product",
+        "administrator"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"administered_by\"\n        path: \"InsurancePlan.administeredBy\"\n        label: \"Enter administeredBy\"\n        description: \"Product administrator\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverageArea",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "coverageArea-link",
+        "targetResource": "Location",
+        "traversalPath": "Location.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"coverage_area\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Where product applies",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "area",
+        "textinput",
+        "where",
+        "product",
+        "applies"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coverage_area\"\n        path: \"InsurancePlan.coverageArea\"\n        label: \"Enter coverageArea\"\n        description: \"Where product applies\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"contact\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contact for the product",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "textinput",
+        "product"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"contact\"\n        path: \"InsurancePlan.contact\"\n        label: \"Enter contact\"\n        description: \"Contact for the product\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.extension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"InsurancePlan.contact.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.modifierExtension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"InsurancePlan.contact.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.purpose",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"purpose\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The type of contact",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "purpose",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"purpose\"\n        path: \"InsurancePlan.contact.purpose\"\n        label: \"Enter purpose\"\n        description: \"The type of contact\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/contactentity-type"
+    }
+  },
+  {
+    "path": "InsurancePlan.contact.purpose.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "purpose",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.contact.purpose.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.contact.purpose.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "purpose",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.contact.purpose.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.purpose.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "purpose",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.contact.purpose.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.purpose.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "purpose",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.contact.purpose.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.contact.purpose.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "purpose",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.contact.purpose.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.purpose.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "purpose",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.contact.purpose.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.contact.purpose.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "purpose",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.contact.purpose.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.name",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"name\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "A name associated with the contact",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "name",
+        "textinput",
+        "associated"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"name\"\n        path: \"InsurancePlan.contact.name\"\n        label: \"Enter name\"\n        description: \"A name associated with the contact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.name.use",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"nickname\\\" | \\\"anonymous\\\" | \\\"old\\\" | \\\"maiden\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "name",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"InsurancePlan.contact.name.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/name-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "nickname",
+      "anonymous",
+      "old",
+      "maiden"
+    ]
+  },
+  {
+    "path": "InsurancePlan.contact.name.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "name",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.contact.name.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.name.family",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"family\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "name",
+        "family",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"family\"\n        path: \"InsurancePlan.contact.name.family\"\n        label: \"Enter family\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.name.given",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"given\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "name",
+        "given",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"given\"\n        path: \"InsurancePlan.contact.name.given\"\n        label: \"Enter given\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.name.prefix",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"prefix\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "name",
+        "prefix",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"prefix\"\n        path: \"InsurancePlan.contact.name.prefix\"\n        label: \"Enter prefix\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.name.suffix",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"suffix\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "name",
+        "suffix",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"suffix\"\n        path: \"InsurancePlan.contact.name.suffix\"\n        label: \"Enter suffix\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.name.period",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "name",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"InsurancePlan.contact.name.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.name.period.start",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "name",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"InsurancePlan.contact.name.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.contact.name.period.end",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "name",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"InsurancePlan.contact.name.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.contact.telecom",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "ContactPoint",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"telecom\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Contact details (telephone, email, etc.)  for a contact",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "telecom",
+        "textinput",
+        "details",
+        "telephone",
+        "email",
+        "etc"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"telecom\"\n        path: \"InsurancePlan.contact.telecom\"\n        label: \"Enter telecom\"\n        description: \"Contact details (telephone, email, etc.)  for a contact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.telecom.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" (\\\"phone\\\" | \\\"fax\\\" | \\\"email\\\" | \\\"pager\\\" | \\\"url\\\" | \\\"sms\\\" | \\\"other\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "telecom",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.contact.telecom.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-system"
+    },
+    "choices": [
+      "phone",
+      "fax",
+      "email",
+      "pager",
+      "url",
+      "sms",
+      "other"
+    ]
+  },
+  {
+    "path": "InsurancePlan.contact.telecom.value",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "telecom",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"InsurancePlan.contact.telecom.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.telecom.use",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"home\\\" | \\\"work\\\" | \\\"temp\\\" | \\\"old\\\" | \\\"mobile\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "telecom",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"InsurancePlan.contact.telecom.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-use"
+    },
+    "choices": [
+      "home",
+      "work",
+      "temp",
+      "old",
+      "mobile"
+    ]
+  },
+  {
+    "path": "InsurancePlan.contact.telecom.rank",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "positiveInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"rank\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "telecom",
+        "rank",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"rank\"\n        path: \"InsurancePlan.contact.telecom.rank\"\n        label: \"Enter rank\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.telecom.period",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "telecom",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"InsurancePlan.contact.telecom.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.telecom.period.start",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "telecom",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"InsurancePlan.contact.telecom.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.contact.telecom.period.end",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "telecom",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"InsurancePlan.contact.telecom.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.contact.address",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"address\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Visiting or postal addresses for the contact",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "textinput",
+        "visiting",
+        "postal",
+        "addresses"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"address\"\n        path: \"InsurancePlan.contact.address\"\n        label: \"Enter address\"\n        description: \"Visiting or postal addresses for the contact\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.address.use",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"home\\\" | \\\"work\\\" | \\\"temp\\\" | \\\"old\\\" | \\\"billing\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"InsurancePlan.contact.address.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/address-use"
+    },
+    "choices": [
+      "home",
+      "work",
+      "temp",
+      "old",
+      "billing"
+    ]
+  },
+  {
+    "path": "InsurancePlan.contact.address.type",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" (\\\"postal\\\" | \\\"physical\\\" | \\\"both\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"InsurancePlan.contact.address.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/address-type"
+    },
+    "choices": [
+      "postal",
+      "physical",
+      "both"
+    ]
+  },
+  {
+    "path": "InsurancePlan.contact.address.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.contact.address.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.address.line",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": true,
+    "arrayTargetType": "string",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"line\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "line",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"line\"\n        path: \"InsurancePlan.contact.address.line\"\n        label: \"Enter line\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.address.city",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"city\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "city",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"city\"\n        path: \"InsurancePlan.contact.address.city\"\n        label: \"Enter city\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.address.district",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"district\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "district",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"district\"\n        path: \"InsurancePlan.contact.address.district\"\n        label: \"Enter district\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.address.state",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"state\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "state",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"state\"\n        path: \"InsurancePlan.contact.address.state\"\n        label: \"Enter state\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.address.postalCode",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"postal_code\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "postal",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"postal_code\"\n        path: \"InsurancePlan.contact.address.postalCode\"\n        label: \"Enter postalCode\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.contact.address.country",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"country\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "country",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"country\"\n        path: \"InsurancePlan.contact.address.country\"\n        label: \"Enter country\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.address.period",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"InsurancePlan.contact.address.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.contact.address.period.start",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"InsurancePlan.contact.address.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.contact.address.period.end",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "contact",
+        "address",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"InsurancePlan.contact.address.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.endpoint",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "endpoint-link",
+        "targetResource": "Endpoint",
+        "traversalPath": "Endpoint.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"endpoint\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Technical endpoint",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "endpoint",
+        "textinput",
+        "technical"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"endpoint\"\n        path: \"InsurancePlan.endpoint\"\n        label: \"Enter endpoint\"\n        description: \"Technical endpoint\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.network",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "network-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"network\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "What networks are Included",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "network",
+        "textinput",
+        "what",
+        "networks",
+        "are",
+        "included"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"network\"\n        path: \"InsurancePlan.network\"\n        label: \"Enter network\"\n        description: \"What networks are Included\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coverage\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Coverage details",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "textinput",
+        "details"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coverage\"\n        path: \"InsurancePlan.coverage\"\n        label: \"Enter coverage\"\n        description: \"Coverage details\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.extension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"InsurancePlan.coverage.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.modifierExtension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"InsurancePlan.coverage.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.type",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Type of coverage",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"InsurancePlan.coverage.type\"\n        label: \"Enter type\"\n        description: \"Type of coverage\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.coverage.type.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.coverage.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.coverage.type.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.coverage.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.type.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.coverage.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.type.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.coverage.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.coverage.type.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.coverage.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.type.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.coverage.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.coverage.type.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.coverage.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.network",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "network-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"network\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "What networks provide coverage",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "network",
+        "textinput",
+        "what",
+        "networks",
+        "provide"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"network\"\n        path: \"InsurancePlan.coverage.network\"\n        label: \"Enter network\"\n        description: \"What networks provide coverage\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"benefit\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "List of benefits",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "textinput",
+        "list",
+        "benefits"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"benefit\"\n        path: \"InsurancePlan.coverage.benefit\"\n        label: \"Enter benefit\"\n        description: \"List of benefits\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.extension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"InsurancePlan.coverage.benefit.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.modifierExtension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"InsurancePlan.coverage.benefit.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.type",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Type of benefit",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"InsurancePlan.coverage.benefit.type\"\n        label: \"Enter type\"\n        description: \"Type of benefit\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.type.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.coverage.benefit.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.type.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.coverage.benefit.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.type.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.coverage.benefit.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.type.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.coverage.benefit.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.type.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.coverage.benefit.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.type.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.coverage.benefit.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.type.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.coverage.benefit.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.requirement",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"requirement\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Referral requirements",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "requirement",
+        "textinput",
+        "referral",
+        "requirements"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"requirement\"\n        path: \"InsurancePlan.coverage.benefit.requirement\"\n        label: \"Enter requirement\"\n        description: \"Referral requirements\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"limit\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Benefit limits",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "textinput",
+        "limits"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"limit\"\n        path: \"InsurancePlan.coverage.benefit.limit\"\n        label: \"Enter limit\"\n        description: \"Benefit limits\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.extension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"InsurancePlan.coverage.benefit.limit.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.modifierExtension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"InsurancePlan.coverage.benefit.limit.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.value",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Maximum value allowed",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "textinput",
+        "maximum",
+        "allowed"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"InsurancePlan.coverage.benefit.limit.value\"\n        label: \"Enter value\"\n        description: \"Maximum value allowed\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.value.value",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"InsurancePlan.coverage.benefit.limit.value.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.value.comparator",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"InsurancePlan.coverage.benefit.limit.value.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.value.unit",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"InsurancePlan.coverage.benefit.limit.value.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.value.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.coverage.benefit.limit.value.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.value.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.coverage.benefit.limit.value.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Benefit limit details",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "code",
+        "dropdown",
+        "details"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.coverage.benefit.limit.code\"\n        label: \"Enter code\"\n        description: \"Benefit limit details\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.code.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "code",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.coverage.benefit.limit.code.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.code.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "code",
+        "coding",
+        "system",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.coverage.benefit.limit.code.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.code.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "code",
+        "coding",
+        "version",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.coverage.benefit.limit.code.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.code.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "code",
+        "coding",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.coverage.benefit.limit.code.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.code.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "code",
+        "coding",
+        "display",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.coverage.benefit.limit.code.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.code.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "code",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.coverage.benefit.limit.code.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.coverage.benefit.limit.code.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "benefit",
+        "limit",
+        "code",
+        "text",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.coverage.benefit.limit.code.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"plan\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Plan details",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "textinput",
+        "details"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"plan\"\n        path: \"InsurancePlan.plan\"\n        label: \"Enter plan\"\n        description: \"Plan details\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.extension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"InsurancePlan.plan.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.modifierExtension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"InsurancePlan.plan.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Identifier",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"identifier\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Business Identifier for Product",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "textinput",
+        "business",
+        "product"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"identifier\"\n        path: \"InsurancePlan.plan.identifier\"\n        label: \"Enter identifier\"\n        description: \"Business Identifier for Product\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.use",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"use\\\": \\\"\" (\\\"usual\\\" | \\\"official\\\" | \\\"temp\\\" | \\\"secondary\\\" | \\\"old\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "use",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"use\"\n        path: \"InsurancePlan.plan.identifier.use\"\n        label: \"Enter use\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use"
+    },
+    "choices": [
+      "usual",
+      "official",
+      "temp",
+      "secondary",
+      "old"
+    ]
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.type",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"InsurancePlan.plan.identifier.type\"\n        label: \"Enter type\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "extensible",
+      "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+    }
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.type.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.plan.identifier.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.type.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.plan.identifier.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.type.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.plan.identifier.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.type.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.plan.identifier.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.type.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.plan.identifier.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.type.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.plan.identifier.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.type.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.plan.identifier.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.plan.identifier.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.value",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"InsurancePlan.plan.identifier.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.period",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"period\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "period",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"period\"\n        path: \"InsurancePlan.plan.identifier.period\"\n        label: \"Enter period\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.period.start",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"start\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "period",
+        "start",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"start\"\n        path: \"InsurancePlan.plan.identifier.period.start\"\n        label: \"Enter start\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.period.end",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "dateTime",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"end\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "period",
+        "end",
+        "datepicker"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"end\"\n        path: \"InsurancePlan.plan.identifier.period.end\"\n        label: \"Enter end\"\n        description: \"Clinical data element.\"\n        uiComponent: \"DatePicker\""
+  },
+  {
+    "path": "InsurancePlan.plan.identifier.assigner",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": [
+      {
+        "relationshipType": "assigner-link",
+        "targetResource": "Resource",
+        "traversalPath": "Resource.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"assigner\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "identifier",
+        "assigner",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"assigner\"\n        path: \"InsurancePlan.plan.identifier.assigner\"\n        label: \"Enter assigner\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.type",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Type of plan",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"InsurancePlan.plan.type\"\n        label: \"Enter type\"\n        description: \"Type of plan\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.type.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.plan.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.plan.type.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.plan.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.type.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.plan.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.type.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.plan.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.type.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.plan.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.type.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.plan.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.plan.type.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.plan.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.coverageArea",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "coverageArea-link",
+        "targetResource": "Location",
+        "traversalPath": "Location.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"coverage_area\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Where product applies",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "coverage",
+        "area",
+        "textinput",
+        "where",
+        "product",
+        "applies"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coverage_area\"\n        path: \"InsurancePlan.plan.coverageArea\"\n        label: \"Enter coverageArea\"\n        description: \"Where product applies\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.network",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-reference",
+    "isArray": true,
+    "arrayTargetType": "Reference",
+    "outboundEdges": [
+      {
+        "relationshipType": "network-link",
+        "targetResource": "Organization",
+        "traversalPath": "Organization.id"
+      }
+    ],
+    "gbnfRuleToken": "\"\\\"network\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "What networks provide coverage",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "network",
+        "textinput",
+        "what",
+        "networks",
+        "provide",
+        "coverage"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"network\"\n        path: \"InsurancePlan.plan.network\"\n        label: \"Enter network\"\n        description: \"What networks provide coverage\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"general_cost\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Overall costs",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "textinput",
+        "overall",
+        "costs"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"general_cost\"\n        path: \"InsurancePlan.plan.generalCost\"\n        label: \"Enter generalCost\"\n        description: \"Overall costs\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.extension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"InsurancePlan.plan.generalCost.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.modifierExtension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"InsurancePlan.plan.generalCost.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.type",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Type of cost",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"InsurancePlan.plan.generalCost.type\"\n        label: \"Enter type\"\n        description: \"Type of cost\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.type.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.plan.generalCost.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.type.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.plan.generalCost.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.type.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.plan.generalCost.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.type.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.plan.generalCost.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.type.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.plan.generalCost.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.type.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.plan.generalCost.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.type.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.plan.generalCost.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.groupSize",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "positiveInt",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"group_size\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Number of enrollees",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "group",
+        "size",
+        "numericinput",
+        "number",
+        "enrollees"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"group_size\"\n        path: \"InsurancePlan.plan.generalCost.groupSize\"\n        label: \"Enter groupSize\"\n        description: \"Number of enrollees\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.cost",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"cost\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Cost value",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"cost\"\n        path: \"InsurancePlan.plan.generalCost.cost\"\n        label: \"Enter cost\"\n        description: \"Cost value\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.cost.value",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"InsurancePlan.plan.generalCost.cost.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.cost.currency",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"currency\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "currency",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"currency\"\n        path: \"InsurancePlan.plan.generalCost.cost.currency\"\n        label: \"Enter currency\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/currencies"
+    }
+  },
+  {
+    "path": "InsurancePlan.plan.generalCost.comment",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comment\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional cost information",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "general",
+        "cost",
+        "comment",
+        "textinput",
+        "additional",
+        "information"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comment\"\n        path: \"InsurancePlan.plan.generalCost.comment\"\n        label: \"Enter comment\"\n        description: \"Additional cost information\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"specific_cost\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Specific costs",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "textinput",
+        "costs"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"specific_cost\"\n        path: \"InsurancePlan.plan.specificCost\"\n        label: \"Enter specificCost\"\n        description: \"Specific costs\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.extension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"InsurancePlan.plan.specificCost.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.modifierExtension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"InsurancePlan.plan.specificCost.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.category",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"category\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "General category of benefit",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "category",
+        "dropdown",
+        "general",
+        "benefit"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"category\"\n        path: \"InsurancePlan.plan.specificCost.category\"\n        label: \"Enter category\"\n        description: \"General category of benefit\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.category.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "category",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.plan.specificCost.category.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.category.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "category",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.plan.specificCost.category.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.category.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "category",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.plan.specificCost.category.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.category.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "category",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.plan.specificCost.category.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.category.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "category",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.plan.specificCost.category.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.category.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "category",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.plan.specificCost.category.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.category.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "category",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.plan.specificCost.category.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"benefit\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Benefits list",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "textinput",
+        "benefits",
+        "list"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"benefit\"\n        path: \"InsurancePlan.plan.specificCost.benefit\"\n        label: \"Enter benefit\"\n        description: \"Benefits list\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.extension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"InsurancePlan.plan.specificCost.benefit.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.modifierExtension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"InsurancePlan.plan.specificCost.benefit.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.type",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Type of specific benefit",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"InsurancePlan.plan.specificCost.benefit.type\"\n        label: \"Enter type\"\n        description: \"Type of specific benefit\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.type.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.plan.specificCost.benefit.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.type.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.plan.specificCost.benefit.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.type.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.plan.specificCost.benefit.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.type.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.plan.specificCost.benefit.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.type.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.plan.specificCost.benefit.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.type.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.plan.specificCost.benefit.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.type.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.plan.specificCost.benefit.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "BackboneElement",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"cost\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "List of the costs",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "textinput",
+        "list",
+        "costs"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"cost\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost\"\n        label: \"Enter cost\"\n        description: \"List of the costs\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.extension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional content defined by implementations",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "extension",
+        "textinput",
+        "additional",
+        "content",
+        "defined",
+        "implementations"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"extension\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.extension\"\n        label: \"Enter extension\"\n        description: \"Additional content defined by implementations\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.modifierExtension",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-extension",
+    "isArray": true,
+    "arrayTargetType": "Extension",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"modifier_extension\\\": [ \" ( \\\"\" [^\\\"\\r\\n]* \"\\\"\" ( \", \\\"\" [^\\\"\\r\\n]* \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Extensions that cannot be ignored even if unrecognized",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "modifier",
+        "extension",
+        "textinput",
+        "extensions",
+        "cannot",
+        "ignored",
+        "even",
+        "unrecognized"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"modifier_extension\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.modifierExtension\"\n        label: \"Enter modifierExtension\"\n        description: \"Extensions that cannot be ignored even if unrecognized\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.type",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"type\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Type of cost",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"type\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.type\"\n        label: \"Enter type\"\n        description: \"Type of cost\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.type.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.type.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.type.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.type.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.type.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.type.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.type.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.type.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.type.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.type.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.type.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.type.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.type.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.type.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.applicability",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"applicability\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "in-network | out-of-network | other",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "applicability",
+        "dropdown",
+        "network",
+        "out",
+        "other"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"applicability\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.applicability\"\n        label: \"Enter applicability\"\n        description: \"in-network | out-of-network | other\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/insuranceplan-applicability"
+    }
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.applicability.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "applicability",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.applicability.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.applicability.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "applicability",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.applicability.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.applicability.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "applicability",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.applicability.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.applicability.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "applicability",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.applicability.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.applicability.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "applicability",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.applicability.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.applicability.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "applicability",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.applicability.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.applicability.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "applicability",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.applicability.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.qualifiers",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "polymorphic-codeableconcept",
+    "isArray": true,
+    "arrayTargetType": "CodeableConcept",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"qualifiers\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "Additional information about the cost",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "qualifiers",
+        "multiselect",
+        "additional",
+        "information",
+        "about"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"qualifiers\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.qualifiers\"\n        label: \"Enter qualifiers\"\n        description: \"Additional information about the cost\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": true,
+    "arrayTargetType": "Coding",
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"coding\\\": [ \" ( \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" ( \", \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\" )* )? \" ]\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "qualifiers",
+        "coding",
+        "multiselect"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"coding\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding\"\n        label: \"Enter coding\"\n        description: \"Clinical data element.\"\n        uiComponent: \"MultiSelect\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "qualifiers",
+        "coding",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding.version",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"version\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "qualifiers",
+        "coding",
+        "version",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"version\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding.version\"\n        label: \"Enter version\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "qualifiers",
+        "coding",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding.display",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"display\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "qualifiers",
+        "coding",
+        "display",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"display\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding.display\"\n        label: \"Enter display\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding.userSelected",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "boolean",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"user_selected\\\": \\\"\" (true | false) \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "qualifiers",
+        "coding",
+        "user",
+        "selected",
+        "checkbox"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"user_selected\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.qualifiers.coding.userSelected\"\n        label: \"Enter userSelected\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Checkbox\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.qualifiers.text",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"text\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "qualifiers",
+        "text",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"text\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.qualifiers.text\"\n        label: \"Enter text\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.value",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "object",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "The actual cost value",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "textinput",
+        "actual"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.value\"\n        label: \"Enter value\"\n        description: \"The actual cost value\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.value.value",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "decimal",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"value\\\": \\\"\" [0-9]+ (\\\".\\\" [0-9]+)? \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "numericinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"value\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.value.value\"\n        label: \"Enter value\"\n        description: \"Clinical data element.\"\n        uiComponent: \"NumericInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.value.comparator",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"comparator\\\": \\\"\" (\\\"<\\\" | \\\"<=\\\" | \\\">=\\\" | \\\">\\\") \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "comparator",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"comparator\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.value.comparator\"\n        label: \"Enter comparator\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\"",
+    "binding": {
+      "strength": "required",
+      "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator"
+    },
+    "choices": [
+      "<",
+      "<=",
+      ">=",
+      ">"
+    ]
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.value.unit",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "string",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"unit\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "unit",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"unit\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.value.unit\"\n        label: \"Enter unit\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.value.system",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "uri",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"system\\\": \\\"\" [^\\\"\\r\\n]* \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "system",
+        "textinput"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"system\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.value.system\"\n        label: \"Enter system\"\n        description: \"Clinical data element.\"\n        uiComponent: \"TextInput\""
+  },
+  {
+    "path": "InsurancePlan.plan.specificCost.benefit.cost.value.code",
+    "resourceType": "InsurancePlan",
+    "primitiveType": "code",
+    "isArray": false,
+    "arrayTargetType": null,
+    "outboundEdges": null,
+    "gbnfRuleToken": "\"\\\"code\\\": \\\"\" [a-zA-Z0-9\\-]+ \"\\\"\"",
+    "semanticFingerprint": {
+      "jsdocDefinition": "",
+      "coreKeywords": [
+        "insurance",
+        "plan",
+        "specific",
+        "cost",
+        "benefit",
+        "code",
+        "dropdown"
+      ]
+    },
+    "reverseYamlSnippet": "      - id: \"code\"\n        path: \"InsurancePlan.plan.specificCost.benefit.cost.value.code\"\n        label: \"Enter code\"\n        description: \"Clinical data element.\"\n        uiComponent: \"Dropdown\""
+  }
+]

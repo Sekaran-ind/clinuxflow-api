@@ -30,7 +30,7 @@ describe('nextBestActions — reverse links (repeatable children of a valid faci
     const actions = nextBestActions(graph, [facility], { 'org-1': valid });
     const affiliation = actions.find((a) => a.linkId === 'affiliation-from-facility');
     expect(affiliation.resourceType).toBe('OrganizationAffiliation');
-    expect(affiliation.profiles).toEqual(['https://clinuxflow.example/fhir/StructureDefinition/ClinuxFlowAffiliateOrganization']);
+    expect(affiliation.profiles).toEqual(['https://clinux.yaxb.ai/fhir/StructureDefinition/ClinuxFlowAffiliateOrganization']);
   });
 
   it('keeps offering role-at-facility even once one PractitionerRole already exists — staff onboarding is open-ended', () => {
