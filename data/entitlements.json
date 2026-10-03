@@ -45,6 +45,12 @@
       "enforced": "workspace"
     },
     {
+      "id": "roster:manage",
+      "label": "Add practitioners to a facility’s doctor roster, or mark them as left",
+      "group": "Facility",
+      "enforced": "server"
+    },
+    {
       "id": "forms:design",
       "label": "Design forms (Forms library)",
       "group": "Facility",
@@ -75,6 +81,7 @@
         "hfr:write",
         "facility:write",
         "team:manage",
+        "roster:manage",
         "forms:design",
         "activity:own",
         "activity:clinic"
@@ -91,6 +98,7 @@
         "hfr:write",
         "facility:write",
         "team:manage",
+        "roster:manage",
         "forms:design",
         "activity:own",
         "activity:clinic"
@@ -121,6 +129,7 @@
     "Facility Manager": [
       "facility:write",
       "team:manage",
+      "roster:manage",
       "forms:design",
       "hfr:write",
       "activity:clinic",
@@ -134,6 +143,7 @@
       "hfr:write",
       "facility:write",
       "team:manage",
+      "roster:manage",
       "forms:design",
       "activity:own",
       "activity:clinic"

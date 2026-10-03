@@ -22,6 +22,7 @@ import { controlRoutes } from './routes/control.js';
 import { runtimeRoutes } from './routes/runtime.js';
 import { platformRoutes } from './routes/platform.js';
 import { operationsRoutes } from './routes/operations.js';
+import { rosterRoutes } from './routes/roster.js';
 import { provenanceRoutes } from './routes/provenance.js';
 import { handleCuboTaskQueue } from './lib/control/cubo-task-queue-consumer.js';
 
@@ -71,6 +72,7 @@ app.route('/', controlRoutes);
 app.route('/', runtimeRoutes);
 app.route('/', platformRoutes);
 app.route('/', operationsRoutes);
+app.route('/', rosterRoutes);
 app.route('/', provenanceRoutes);
 
 // A plain Hono app instance only ever implements `fetch` — a Queue consumer needs the Worker's
