@@ -19,6 +19,9 @@ export const AUDIT_ACTIONS = {
     'join_token.issued': { label: 'Join link issued', object: 'join_token' },
     'join_token.decided': { label: 'Join request decided', object: 'join_token' },
     'affiliate.revoked': { label: 'Affiliate removed', object: 'account' },
+    'roster.practitioner_added': { label: 'Practitioner added to the doctor roster', object: 'practitioner' },
+    'roster.practitioner_left': { label: 'Practitioner marked as left the facility', object: 'practitioner' },
+    'roster.practitioner_rejoined': { label: 'Practitioner back on the doctor roster', object: 'practitioner' },
     'hpr.linked': { label: 'HPR ID linked', object: 'practitioner', client: true },
     'hpr.registered': { label: 'HPR ID registered', object: 'practitioner', client: true },
     'hfr.draft_saved': { label: 'Facility draft saved in HFR', object: 'facility', client: true },
@@ -31,7 +34,7 @@ export const CLIENT_ACTIONS = Object.keys(AUDIT_ACTIONS).filter((a) => AUDIT_ACT
 
 // Identifier/status keys a metadata object may carry, and how long a value may be. Anything
 // else is dropped. ABHA numbers are kept masked to the last 4 digits.
-const METADATA_KEYS = ['hprId', 'trackingId', 'facilityId', 'status', 'decision', 'role', 'abhaNumber', 'abhaAddress', 'recordId', 'kind', 'via', 'mode'];
+const METADATA_KEYS = ['hprId', 'trackingId', 'facilityId', 'status', 'decision', 'role', 'abhaNumber', 'abhaAddress', 'recordId', 'kind', 'via', 'mode', 'tokenNumber'];
 const MAX_VALUE = 80;
 
 export function maskAbhaNumber(v) {

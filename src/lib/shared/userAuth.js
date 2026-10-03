@@ -16,6 +16,9 @@ export function requireUser() {
 
         try {
             const payload = await verifySessionToken(token, c.env.JWT_SECRET);
+            // Other things signed with the same secret (clinuxflow-abdm-gateway's HPR attestations)
+            // carry neither claim, so they can never pass as a session.
+            if (!payload?.sub || !payload?.clinicId) throw new Error('Not a session token');
             c.set('user', { accountId: payload.sub, clinicId: payload.clinicId, email: payload.email });
         } catch {
             return c.json({ success: false, error: 'Unauthorized' }, 401);
